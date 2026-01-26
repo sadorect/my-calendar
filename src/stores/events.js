@@ -69,6 +69,7 @@ function expandRecurringEvents(events, startDate, endDate) {
 export const useEventStore = defineStore('events', () => {
   const events = ref([])
   const loading = ref(false)
+  const templates = ref([])
 
   const eventsByDate = computed(() => {
     // Expand recurring events for the next 3 months
@@ -143,6 +144,7 @@ export const useEventStore = defineStore('events', () => {
   async function fetchEvents() {
     loading.value = true
     events.value = await db.getAllEvents()
+    templates.value = await db.getAllTemplates()
     loading.value = false
 
     // Schedule notifications for all events
@@ -475,6 +477,7 @@ export const useEventStore = defineStore('events', () => {
   return {
     events,
     loading,
+    templates,
     eventsByDate,
     upcomingEvents,
     filteredEvents,

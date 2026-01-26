@@ -6,6 +6,8 @@ import WeekView from './components/Calendar/WeekView.vue'
 import DayView from './components/Calendar/DayView.vue'
 import ListView from './components/Calendar/ListView.vue'
 import TodayDashboard from './components/Calendar/TodayDashboard.vue'
+import AnalyticsDashboard from './components/AnalyticsDashboard.vue'
+import ExportImport from './components/ExportImport.vue'
 import IconTemplates from './components/Events/IconTemplates.vue'
 import QuickAddModal from './components/Events/QuickAddModal.vue'
 import SearchFilter from './components/SearchFilter.vue'
@@ -84,6 +86,20 @@ function mobileNavClasses(view) {
         >
           List
         </button>
+        <button
+          @click="currentView = 'analytics'"
+          :class="navButtonClasses('analytics')"
+          class="px-3 py-2 rounded hover:bg-white/20 transition-colors"
+        >
+          Analytics
+        </button>
+        <button
+          @click="currentView = 'export'"
+          :class="navButtonClasses('export')"
+          class="px-3 py-2 rounded hover:bg-white/20 transition-colors"
+        >
+          Export/Import
+        </button>
       </nav>
     </header>
 
@@ -102,6 +118,8 @@ function mobileNavClasses(view) {
       <WeekView v-else-if="currentView === 'week'" />
       <DayView v-else-if="currentView === 'day'" />
       <ListView v-else-if="currentView === 'list'" />
+      <AnalyticsDashboard v-else-if="currentView === 'analytics'" />
+      <ExportImport v-else-if="currentView === 'export'" />
     </main>
 
     <!-- Mobile Bottom Navigation -->
@@ -147,6 +165,22 @@ function mobileNavClasses(view) {
       >
         <span class="text-lg">📋</span>
         <span class="text-xs mt-1">List</span>
+      </button>
+      <button
+        @click="currentView = 'analytics'"
+        :class="mobileNavClasses('analytics')"
+        class="flex flex-col items-center p-2 rounded-lg transition-colors"
+      >
+        <span class="text-lg">📈</span>
+        <span class="text-xs mt-1">Analytics</span>
+      </button>
+      <button
+        @click="currentView = 'export'"
+        :class="mobileNavClasses('export')"
+        class="flex flex-col items-center p-2 rounded-lg transition-colors"
+      >
+        <span class="text-lg">💾</span>
+        <span class="text-xs mt-1">Export</span>
       </button>
     </nav>
 
