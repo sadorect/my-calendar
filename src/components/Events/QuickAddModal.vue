@@ -67,6 +67,56 @@
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
           </div>
+
+          <!-- Conflict Warning -->
+          <div
+            v-if="conflicts.length > 0"
+            class="bg-yellow-50 border border-yellow-200 rounded-md p-3"
+          >
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="ml-3 flex-1">
+                <h3 class="text-sm font-medium text-yellow-800">Time Conflict Detected</h3>
+                <div class="mt-2 text-sm text-yellow-700">
+                  <p>This event conflicts with:</p>
+                  <ul class="mt-1 list-disc list-inside">
+                    <li v-for="conflict in conflicts" :key="conflict.id">
+                      {{ conflict.title }} ({{ formatTime(conflict.startDateTime) }} -
+                      {{ formatTime(conflict.endDateTime) }})
+                    </li>
+                  </ul>
+                </div>
+                <div v-if="availableSlots.length > 0" class="mt-3">
+                  <p class="text-sm font-medium text-yellow-800">Available time slots:</p>
+                  <div class="mt-2 flex flex-wrap gap-2">
+                    <button
+                      v-for="slot in availableSlots.slice(0, 3)"
+                      :key="slot.start"
+                      type="button"
+                      @click="selectTimeSlot(slot)"
+                      class="px-3 py-1 text-xs bg-yellow-100 hover:bg-yellow-200 text-yellow-800 rounded-md transition-colors"
+                    >
+                      {{ slot.label }}
+                    </button>
+                  </div>
+                </div>
+                <div v-else class="mt-3">
+                  <p class="text-sm text-yellow-700">
+                    No available slots today. Consider choosing a different day.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="flex gap-3 pt-4">
             <button
               type="button"
@@ -77,9 +127,10 @@
             </button>
             <button
               type="submit"
-              class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              :disabled="saving"
+              class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-blue-400 transition-colors"
             >
-              Save
+              {{ saving ? 'Saving...' : 'Save' }}
             </button>
           </div>
         </form>
@@ -89,7 +140,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useEventStore } from '@/stores/events'
 import { format } from 'date-fns'
 
@@ -101,6 +152,7 @@ const props = defineProps({
 const emit = defineEmits(['close'])
 
 const eventStore = useEventStore()
+const saving = ref(false)
 
 const eventData = ref({
   title: '',
@@ -110,6 +162,46 @@ const eventData = ref({
   isAllDay: false,
   location: '',
   notes: ''
+})
+
+// Computed property to check for conflicts
+const conflicts = computed(() => {
+  if (!eventData.value.date || !eventData.value.startTime || !eventData.value.duration) {
+    return []
+  }
+
+  const startDateTime = eventData.value.isAllDay
+    ? `${eventData.value.date}T00:00:00`
+    : `${eventData.value.date}T${eventData.value.startTime}:00`
+
+  const endDateTime = eventData.value.isAllDay
+    ? `${eventData.value.date}T23:59:59`
+    : new Date(
+        new Date(startDateTime).getTime() + eventData.value.duration * 60 * 1000
+      ).toISOString()
+
+  const proposedEvent = {
+    id: null, // New event, no ID yet
+    startDateTime,
+    endDateTime
+  }
+
+  return eventStore.checkConflicts(proposedEvent)
+})
+
+// Function to select a specific time slot
+function selectTimeSlot(slot) {
+  const startTime = new Date(slot.start)
+  eventData.value.startTime = format(startTime, 'HH:mm')
+}
+
+// Computed property to get available time slots
+const availableSlots = computed(() => {
+  if (!eventData.value.date || !eventData.value.duration) {
+    return []
+  }
+
+  return eventStore.suggestTimeSlots(eventData.value.date, eventData.value.duration)
 })
 
 watch(
@@ -130,6 +222,8 @@ watch(
 )
 
 async function saveEvent() {
+  saving.value = true
+
   const startDateTime = eventData.value.isAllDay
     ? `${eventData.value.date}T00:00:00`
     : `${eventData.value.date}T${eventData.value.startTime}:00`
@@ -152,8 +246,14 @@ async function saveEvent() {
     isCompleted: false
   }
 
-  await eventStore.addEvent(event)
-  close()
+  try {
+    await eventStore.addEvent(event)
+    close()
+  } catch (error) {
+    console.error('Error saving event:', error)
+  } finally {
+    saving.value = false
+  }
 }
 
 function close() {

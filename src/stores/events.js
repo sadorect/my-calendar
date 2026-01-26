@@ -29,6 +29,43 @@ export const useEventStore = defineStore('events', () => {
       .sort((a, b) => new Date(a.startDateTime) - new Date(b.startDateTime))
   })
 
+  // Search and filter state
+  const searchQuery = ref('')
+  const categoryFilter = ref('')
+  const dateRangeFilter = ref(null)
+
+  const filteredEvents = computed(() => {
+    let filtered = events.value
+
+    // Apply search filter
+    if (searchQuery.value) {
+      const query = searchQuery.value.toLowerCase()
+      filtered = filtered.filter(
+        (event) =>
+          event.title.toLowerCase().includes(query) ||
+          event.category.toLowerCase().includes(query) ||
+          event.notes?.toLowerCase().includes(query) ||
+          event.location?.toLowerCase().includes(query)
+      )
+    }
+
+    // Apply category filter
+    if (categoryFilter.value) {
+      filtered = filtered.filter((event) => event.category === categoryFilter.value)
+    }
+
+    // Apply date range filter
+    if (dateRangeFilter.value) {
+      const { start, end } = dateRangeFilter.value
+      filtered = filtered.filter((event) => {
+        const eventDate = new Date(event.startDateTime)
+        return eventDate >= start && eventDate <= end
+      })
+    }
+
+    return filtered
+  })
+
   async function fetchEvents() {
     loading.value = true
     events.value = await db.getAllEvents()
@@ -67,26 +104,49 @@ export const useEventStore = defineStore('events', () => {
   }
 
   function suggestTimeSlots(date, duration) {
-    // Return available slots
-    // Simple implementation: find gaps in the day
+    // Return available slots with smart suggestions
     const dayEvents = events.value.filter((event) => event.startDateTime.startsWith(date))
-    // Assume 9am to 5pm working hours
-    const startHour = 9
-    const endHour = 17
-    const slots = []
-    for (let hour = startHour; hour < endHour; hour++) {
+    const durationMs = duration * 60 * 1000 // Convert to milliseconds
+
+    // Define working hours (9 AM to 5 PM)
+    const workEnd = new Date(`${date}T17:00:00`)
+
+    const suggestions = []
+
+    // Check each hour slot
+    for (let hour = 9; hour < 17; hour++) {
       const slotStart = new Date(`${date}T${hour.toString().padStart(2, '0')}:00:00`)
-      const slotEnd = new Date(slotStart.getTime() + duration * 60 * 1000)
+      const slotEnd = new Date(slotStart.getTime() + durationMs)
+
+      // Skip if slot extends beyond working hours
+      if (slotEnd > workEnd) continue
+
       const conflict = dayEvents.some((event) => {
         const eStart = new Date(event.startDateTime)
         const eEnd = new Date(event.endDateTime)
         return slotStart < eEnd && slotEnd > eStart
       })
+
       if (!conflict) {
-        slots.push(slotStart.toISOString())
+        suggestions.push({
+          start: slotStart.toISOString(),
+          end: slotEnd.toISOString(),
+          label: `${hour}:00 - ${slotEnd.getHours()}:${slotEnd.getMinutes().toString().padStart(2, '0')}`
+        })
       }
     }
-    return slots
+
+    // If no slots available today, suggest next available day
+    if (suggestions.length === 0) {
+      const nextDay = new Date(date)
+      nextDay.setDate(nextDay.getDate() + 1)
+      const nextDayStr = nextDay.toISOString().split('T')[0]
+
+      // Recursively find next available day
+      return suggestTimeSlots(nextDayStr, duration)
+    }
+
+    return suggestions
   }
 
   async function addSampleEvents() {
@@ -168,17 +228,43 @@ export const useEventStore = defineStore('events', () => {
     }
   }
 
+  function setSearchQuery(query) {
+    searchQuery.value = query
+  }
+
+  function setCategoryFilter(category) {
+    categoryFilter.value = category
+  }
+
+  function setDateRangeFilter(range) {
+    dateRangeFilter.value = range
+  }
+
+  function clearFilters() {
+    searchQuery.value = ''
+    categoryFilter.value = ''
+    dateRangeFilter.value = null
+  }
+
   return {
     events,
     loading,
     eventsByDate,
     upcomingEvents,
+    filteredEvents,
+    searchQuery,
+    categoryFilter,
+    dateRangeFilter,
     fetchEvents,
     addEvent,
     updateEvent,
     deleteEvent,
     checkConflicts,
     suggestTimeSlots,
-    addSampleEvents
+    addSampleEvents,
+    setSearchQuery,
+    setCategoryFilter,
+    setDateRangeFilter,
+    clearFilters
   }
 })

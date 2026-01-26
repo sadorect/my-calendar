@@ -8,6 +8,7 @@ import ListView from './components/Calendar/ListView.vue'
 import TodayDashboard from './components/Calendar/TodayDashboard.vue'
 import IconTemplates from './components/Events/IconTemplates.vue'
 import QuickAddModal from './components/Events/QuickAddModal.vue'
+import SearchFilter from './components/SearchFilter.vue'
 
 const eventStore = useEventStore()
 const currentView = ref('today')
@@ -93,6 +94,9 @@ function mobileNavClasses(view) {
 
     <!-- Main Content -->
     <main class="flex-1 overflow-auto p-2 md:p-4 pb-20 md:pb-4">
+      <!-- Search and Filter (shown for calendar views, not today dashboard) -->
+      <SearchFilter v-if="currentView !== 'today'" />
+
       <TodayDashboard v-if="currentView === 'today'" />
       <MonthView v-else-if="currentView === 'month'" />
       <WeekView v-else-if="currentView === 'week'" />
