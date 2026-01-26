@@ -6,7 +6,7 @@
   >
     <div class="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-auto" @click.stop>
       <div class="p-6">
-        <h2 class="text-xl font-semibold mb-4">Add New Event</h2>
+        <h2 class="text-xl font-semibold mb-4">{{ isEditing ? 'Edit Event' : 'Add New Event' }}</h2>
         <form @submit.prevent="saveEvent" class="space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
@@ -66,6 +66,76 @@
               rows="3"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
+          </div>
+
+          <!-- Reminders -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Reminders</label>
+            <div class="space-y-2">
+              <label
+                v-for="reminder in availableReminders"
+                :key="reminder.value"
+                class="flex items-center"
+              >
+                <input
+                  v-model="eventData.reminders"
+                  :value="reminder.value"
+                  type="checkbox"
+                  class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                />
+                <span class="ml-2 text-sm text-gray-700">{{ reminder.label }}</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Recurring Event -->
+          <div>
+            <div class="flex items-center mb-2">
+              <input
+                v-model="eventData.isRecurring"
+                type="checkbox"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              />
+              <label class="ml-2 block text-sm font-medium text-gray-700">Recurring Event</label>
+            </div>
+            <div v-if="eventData.isRecurring" class="ml-6 space-y-3">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Repeat</label>
+                <select
+                  v-model="eventData.recurrence.frequency"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="yearly">Yearly</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Every</label>
+                <div class="flex items-center gap-2">
+                  <input
+                    v-model.number="eventData.recurrence.interval"
+                    type="number"
+                    min="1"
+                    max="99"
+                    class="w-20 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                  <span class="text-sm text-gray-600">{{
+                    eventData.recurrence.frequency.replace('ly', '') +
+                    (eventData.recurrence.interval > 1 ? 's' : '')
+                  }}</span>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+                <input
+                  v-model="eventData.recurrence.endDate"
+                  type="date"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
           </div>
 
           <!-- Conflict Warning -->
@@ -130,7 +200,7 @@
               :disabled="saving"
               class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-blue-400 transition-colors"
             >
-              {{ saving ? 'Saving...' : 'Save' }}
+              {{ saving ? 'Saving...' : isEditing ? 'Update' : 'Save' }}
             </button>
           </div>
         </form>
@@ -146,13 +216,16 @@ import { format } from 'date-fns'
 
 const props = defineProps({
   show: Boolean,
-  template: Object
+  template: Object,
+  initialEvent: Object
 })
 
 const emit = defineEmits(['close'])
 
 const eventStore = useEventStore()
 const saving = ref(false)
+
+const isEditing = computed(() => !!props.initialEvent)
 
 const eventData = ref({
   title: '',
@@ -161,8 +234,23 @@ const eventData = ref({
   duration: 60,
   isAllDay: false,
   location: '',
-  notes: ''
+  notes: '',
+  reminders: [15], // Default to 15 minutes reminder
+  isRecurring: false,
+  recurrence: {
+    frequency: 'weekly',
+    interval: 1,
+    endDate: ''
+  }
 })
+
+const availableReminders = [
+  { value: 1440, label: '1 day before' },
+  { value: 60, label: '1 hour before' },
+  { value: 30, label: '30 minutes before' },
+  { value: 15, label: '15 minutes before' },
+  { value: 5, label: '5 minutes before' }
+]
 
 // Computed property to check for conflicts
 const conflicts = computed(() => {
@@ -211,7 +299,7 @@ const availableSlots = computed(() => {
 watch(
   () => props.template,
   (newTemplate) => {
-    if (newTemplate) {
+    if (newTemplate && !props.initialEvent) {
       eventData.value = {
         title: newTemplate.name,
         date: format(new Date(), 'yyyy-MM-dd'),
@@ -219,7 +307,42 @@ watch(
         duration: newTemplate.defaultDuration || 60,
         isAllDay: newTemplate.allDay || false,
         location: '',
-        notes: ''
+        notes: '',
+        reminders: [15],
+        isRecurring: false,
+        recurrence: {
+          frequency: 'weekly',
+          interval: 1,
+          endDate: ''
+        }
+      }
+    }
+  }
+)
+
+watch(
+  () => props.initialEvent,
+  (newEvent) => {
+    if (newEvent) {
+      const startDate = new Date(newEvent.startDateTime)
+      const endDate = new Date(newEvent.endDateTime)
+      const duration = (endDate - startDate) / (1000 * 60) // duration in minutes
+
+      eventData.value = {
+        title: newEvent.title,
+        date: format(startDate, 'yyyy-MM-dd'),
+        startTime: format(startDate, 'HH:mm'),
+        duration: duration,
+        isAllDay: newEvent.isAllDay,
+        location: newEvent.location || '',
+        notes: newEvent.notes || '',
+        reminders: newEvent.reminders || [],
+        isRecurring: newEvent.isRecurring || false,
+        recurrence: newEvent.recurrence || {
+          frequency: 'weekly',
+          interval: 1,
+          endDate: ''
+        }
       }
     }
   }
@@ -240,18 +363,25 @@ async function saveEvent() {
 
   const event = {
     title: eventData.value.title,
-    category: props.template.category,
+    category: isEditing.value ? props.initialEvent.category : props.template.category,
     startDateTime,
     endDateTime,
     isAllDay: eventData.value.isAllDay,
     location: eventData.value.location,
     notes: eventData.value.notes,
-    color: props.template.color,
-    isCompleted: false
+    color: isEditing.value ? props.initialEvent.color : props.template.color,
+    isCompleted: isEditing.value ? props.initialEvent.isCompleted : false,
+    reminders: eventData.value.reminders || [],
+    isRecurring: eventData.value.isRecurring,
+    recurrence: eventData.value.isRecurring ? eventData.value.recurrence : null
   }
 
   try {
-    await eventStore.addEvent(event)
+    if (isEditing.value) {
+      await eventStore.updateEvent(props.initialEvent.id, event)
+    } else {
+      await eventStore.addEvent(event)
+    }
     close()
   } catch (error) {
     console.error('Error saving event:', error)

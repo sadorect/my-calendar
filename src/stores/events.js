@@ -1,15 +1,84 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import * as db from '@/services/database'
+import { notificationService } from '@/services/notifications'
+import { addDays, addWeeks, addMonths, addYears, isBefore, format, parseISO } from 'date-fns'
+
+// Function to expand recurring events into individual instances
+function expandRecurringEvents(events, startDate, endDate) {
+  const expandedEvents = []
+
+  events.forEach((event) => {
+    if (!event.isRecurring) {
+      expandedEvents.push(event)
+      return
+    }
+
+    const { recurrence } = event
+    const startDateTime = parseISO(event.startDateTime)
+    const endDateTime = parseISO(event.endDateTime)
+    const recurrenceEndDate = recurrence.endDate
+      ? parseISO(recurrence.endDate)
+      : addYears(startDateTime, 1)
+
+    let currentDate = startDateTime
+    let instanceCount = 0
+    const maxInstances = 100 // Prevent infinite loops
+
+    while (isBefore(currentDate, recurrenceEndDate) && instanceCount < maxInstances) {
+      // Check if this instance falls within the requested date range
+      if (currentDate >= startDate && currentDate <= endDate) {
+        const duration = endDateTime.getTime() - startDateTime.getTime()
+        const instanceEndDateTime = new Date(currentDate.getTime() + duration)
+
+        expandedEvents.push({
+          ...event,
+          id: `${event.id}_${format(currentDate, 'yyyy-MM-dd')}`,
+          startDateTime: currentDate.toISOString(),
+          endDateTime: instanceEndDateTime.toISOString(),
+          originalEventId: event.id,
+          isRecurringInstance: true
+        })
+      }
+
+      // Calculate next occurrence
+      switch (recurrence.frequency) {
+        case 'daily':
+          currentDate = addDays(currentDate, recurrence.interval)
+          break
+        case 'weekly':
+          currentDate = addWeeks(currentDate, recurrence.interval)
+          break
+        case 'monthly':
+          currentDate = addMonths(currentDate, recurrence.interval)
+          break
+        case 'yearly':
+          currentDate = addYears(currentDate, recurrence.interval)
+          break
+        default:
+          currentDate = addDays(currentDate, 1) // Fallback
+      }
+
+      instanceCount++
+    }
+  })
+
+  return expandedEvents
+}
 
 export const useEventStore = defineStore('events', () => {
   const events = ref([])
   const loading = ref(false)
 
   const eventsByDate = computed(() => {
+    // Expand recurring events for the next 3 months
+    const now = new Date()
+    const endDate = addMonths(now, 3)
+    const expandedEvents = expandRecurringEvents(events.value, now, endDate)
+
     // Group events by date
     const grouped = {}
-    events.value.forEach((event) => {
+    expandedEvents.forEach((event) => {
       const date = event.startDateTime.split('T')[0]
       if (!grouped[date]) grouped[date] = []
       grouped[date].push(event)
@@ -21,7 +90,9 @@ export const useEventStore = defineStore('events', () => {
     // Get next 7 days of events
     const now = new Date()
     const nextWeek = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
-    return events.value
+    const expandedEvents = expandRecurringEvents(events.value, now, nextWeek)
+
+    return expandedEvents
       .filter((event) => {
         const eventDate = new Date(event.startDateTime)
         return eventDate >= now && eventDate <= nextWeek
@@ -35,12 +106,15 @@ export const useEventStore = defineStore('events', () => {
   const dateRangeFilter = ref(null)
 
   const filteredEvents = computed(() => {
-    let filtered = events.value
+    // Expand recurring events for filtering
+    const now = new Date()
+    const endDate = addMonths(now, 3)
+    let expandedEvents = expandRecurringEvents(events.value, now, endDate)
 
     // Apply search filter
     if (searchQuery.value) {
       const query = searchQuery.value.toLowerCase()
-      filtered = filtered.filter(
+      expandedEvents = expandedEvents.filter(
         (event) =>
           event.title.toLowerCase().includes(query) ||
           event.category.toLowerCase().includes(query) ||
@@ -51,30 +125,37 @@ export const useEventStore = defineStore('events', () => {
 
     // Apply category filter
     if (categoryFilter.value) {
-      filtered = filtered.filter((event) => event.category === categoryFilter.value)
+      expandedEvents = expandedEvents.filter((event) => event.category === categoryFilter.value)
     }
 
     // Apply date range filter
     if (dateRangeFilter.value) {
       const { start, end } = dateRangeFilter.value
-      filtered = filtered.filter((event) => {
+      expandedEvents = expandedEvents.filter((event) => {
         const eventDate = new Date(event.startDateTime)
         return eventDate >= start && eventDate <= end
       })
     }
 
-    return filtered
+    return expandedEvents
   })
 
   async function fetchEvents() {
     loading.value = true
     events.value = await db.getAllEvents()
     loading.value = false
+
+    // Schedule notifications for all events
+    notificationService.scheduleAllNotifications(events.value)
   }
 
   async function addEvent(event) {
     const newEvent = await db.addEvent(event)
     events.value.push(newEvent)
+
+    // Schedule notifications for the new event
+    notificationService.scheduleEventNotifications(newEvent)
+
     return newEvent
   }
 
@@ -83,20 +164,84 @@ export const useEventStore = defineStore('events', () => {
     const index = events.value.findIndex((e) => e.id === id)
     if (index !== -1) {
       events.value[index] = { ...events.value[index], ...updates }
+
+      // Re-schedule notifications for the updated event
+      const updatedEvent = events.value[index]
+      notificationService.scheduleEventNotifications(updatedEvent)
     }
   }
 
   async function deleteEvent(id) {
+    const event = events.value.find((e) => e.id === id)
     await db.deleteEvent(id)
     events.value = events.value.filter((e) => e.id !== id)
+
+    // Cancel all notifications for the deleted event
+    if (event && event.reminders) {
+      event.reminders.forEach((minutesBefore) => {
+        notificationService.cancelNotification(`${id}_${minutesBefore}`)
+      })
+    }
+  }
+
+  async function toggleEventCompletion(id) {
+    const event = events.value.find((e) => e.id === id)
+    if (!event) return
+
+    const newCompletionStatus = !event.isCompleted
+    await updateEvent(id, { isCompleted: newCompletionStatus })
+
+    return newCompletionStatus
+  }
+
+  async function duplicateEvent(id) {
+    const originalEvent = events.value.find((e) => e.id === id)
+    if (!originalEvent) return
+
+    // Create a copy of the event with a new ID and slightly adjusted time
+    const duplicatedEvent = {
+      ...originalEvent,
+      title: `${originalEvent.title} (Copy)`,
+      isCompleted: false
+    }
+    delete duplicatedEvent.id
+    delete duplicatedEvent.createdAt
+    delete duplicatedEvent.updatedAt
+
+    // If it's a recurring event instance, duplicate the original recurring event
+    if (originalEvent.isRecurringInstance) {
+      const originalRecurringEvent = events.value.find(
+        (e) => e.id === originalEvent.originalEventId
+      )
+      if (originalRecurringEvent) {
+        const duplicatedRecurringEvent = {
+          ...originalRecurringEvent,
+          title: `${originalRecurringEvent.title} (Copy)`,
+          isCompleted: false
+        }
+        delete duplicatedRecurringEvent.id
+        delete duplicatedRecurringEvent.createdAt
+        delete duplicatedRecurringEvent.updatedAt
+        return await addEvent(duplicatedRecurringEvent)
+      }
+    }
+
+    return await addEvent(duplicatedEvent)
   }
 
   function checkConflicts(newEvent) {
     // Return conflicting events
     const start = new Date(newEvent.startDateTime)
     const end = new Date(newEvent.endDateTime)
-    return events.value.filter((event) => {
-      if (event.id === newEvent.id) return false
+
+    // For conflict checking, expand recurring events for the same day
+    const eventDate = start.toISOString().split('T')[0]
+    const dayStart = new Date(`${eventDate}T00:00:00`)
+    const dayEnd = new Date(`${eventDate}T23:59:59`)
+    const dayEvents = expandRecurringEvents(events.value, dayStart, dayEnd)
+
+    return dayEvents.filter((event) => {
+      if (event.id === newEvent.id || event.originalEventId === newEvent.id) return false
       const eStart = new Date(event.startDateTime)
       const eEnd = new Date(event.endDateTime)
       return start < eEnd && end > eStart
@@ -105,7 +250,9 @@ export const useEventStore = defineStore('events', () => {
 
   function suggestTimeSlots(date, duration, category = null) {
     // Return available slots with smart suggestions
-    const dayEvents = events.value.filter((event) => event.startDateTime.startsWith(date))
+    const dayStart = new Date(`${date}T00:00:00`)
+    const dayEnd = new Date(`${date}T23:59:59`)
+    const dayEvents = expandRecurringEvents(events.value, dayStart, dayEnd)
     const durationMs = duration * 60 * 1000 // Convert to milliseconds
 
     // Define working hours (9 AM to 5 PM)
@@ -312,6 +459,19 @@ export const useEventStore = defineStore('events', () => {
     dateRangeFilter.value = null
   }
 
+  // Notification functions
+  async function requestNotificationPermission() {
+    return await notificationService.requestPermission()
+  }
+
+  function getNotificationStatus() {
+    return notificationService.getStatus()
+  }
+
+  function canNotify() {
+    return notificationService.canNotify()
+  }
+
   return {
     events,
     loading,
@@ -325,12 +485,17 @@ export const useEventStore = defineStore('events', () => {
     addEvent,
     updateEvent,
     deleteEvent,
+    toggleEventCompletion,
+    duplicateEvent,
     checkConflicts,
     suggestTimeSlots,
     addSampleEvents,
     setSearchQuery,
     setCategoryFilter,
     setDateRangeFilter,
-    clearFilters
+    clearFilters,
+    requestNotificationPermission,
+    getNotificationStatus,
+    canNotify
   }
 })

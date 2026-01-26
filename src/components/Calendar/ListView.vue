@@ -1,6 +1,30 @@
 <template>
   <div class="calendar-container">
     <FullCalendar ref="calendarRef" :options="calendarOptions" />
+
+    <!-- Event Details Modal -->
+    <EventDetailsModal
+      v-if="showEventDetails"
+      :show="showEventDetails"
+      :event="selectedEvent"
+      @close="closeEventDetails"
+      @edit="editEvent"
+      @duplicate="duplicateEvent"
+      @delete="deleteEvent"
+    />
+
+    <!-- Edit Event Modal -->
+    <QuickAddModal
+      v-if="showEditModal"
+      :show="showEditModal"
+      :template="
+        editingEvent
+          ? { category: editingEvent.category, color: editingEvent.color, name: editingEvent.title }
+          : null
+      "
+      :initial-event="editingEvent"
+      @close="closeEditModal"
+    />
   </div>
 </template>
 
@@ -10,9 +34,19 @@ import FullCalendar from '@fullcalendar/vue3'
 import listPlugin from '@fullcalendar/list'
 import interactionPlugin from '@fullcalendar/interaction'
 import { useEventStore } from '@/stores/events'
+import EventDetailsModal from '@/components/Events/EventDetailsModal.vue'
+import QuickAddModal from '@/components/Events/QuickAddModal.vue'
 
 const eventStore = useEventStore()
 const calendarRef = ref(null)
+
+// Event details modal state
+const showEventDetails = ref(false)
+const selectedEvent = ref(null)
+
+// Edit modal state
+const showEditModal = ref(false)
+const editingEvent = ref(null)
 
 const calendarOptions = computed(() => {
   // Check for conflicts and mark events
@@ -50,7 +84,7 @@ const calendarOptions = computed(() => {
     },
     listDayFormat: { weekday: 'long' },
     listDaySideFormat: false,
-    eventContent: function(arg) {
+    eventContent: function (arg) {
       // Custom event content for list view
       const event = arg.event
       const extendedProps = event.extendedProps
@@ -86,8 +120,37 @@ const calendarOptions = computed(() => {
 })
 
 function handleEventClick(info) {
-  console.log('Event clicked:', info.event.id)
-  // TODO: Open event details modal
+  // Find the full event data from the store
+  const event =
+    eventStore.events.find((e) => e.id === info.event.id) ||
+    eventStore.filteredEvents.find((e) => e.id === info.event.id)
+  if (event) {
+    selectedEvent.value = event
+    showEventDetails.value = true
+  }
+}
+
+function closeEventDetails() {
+  showEventDetails.value = false
+  selectedEvent.value = null
+}
+
+function editEvent(event) {
+  editingEvent.value = event
+  showEditModal.value = true
+}
+
+function closeEditModal() {
+  showEditModal.value = false
+  editingEvent.value = null
+}
+
+function duplicateEvent(eventId) {
+  eventStore.duplicateEvent(eventId)
+}
+
+function deleteEvent(eventId) {
+  eventStore.deleteEvent(eventId)
 }
 </script>
 
