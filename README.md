@@ -221,9 +221,93 @@ npm run preview      # Preview production build
 npm run lint         # Run ESLint
 npm run format       # Format code with Prettier
 
+# Testing
+npm test             # Run all e2e tests
+npm run test:ui      # Run tests with UI mode
+npm run test:headed  # Run tests in headed mode (visible browser)
+npm run test:debug   # Run tests in debug mode
+
 # Git hooks (recommended)
 npm run precommit    # Run lint and format before commit
 ```
+
+### Testing
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end testing to ensure all features work correctly across different browsers and devices.
+
+#### Test Coverage
+
+The e2e tests cover:
+
+- ✅ **App Loading**: Verifies the application loads without errors
+- ✅ **Navigation**: Tests switching between different calendar views (Today, Month, Week, Day, List, Analytics)
+- ✅ **Event Creation**: Tests creating events using templates with form validation
+- ✅ **Event Management**: Tests editing, duplicating, and deleting events
+- ✅ **Search Functionality**: Tests event search and filtering
+- ✅ **Dark Mode**: Tests theme switching functionality
+- ✅ **Export/Import**: Tests data export and import features
+- ✅ **Mobile Responsiveness**: Tests mobile navigation and touch interactions
+- ✅ **Form Validation**: Tests client-side validation for event creation
+- ✅ **Calendar Views**: Tests different calendar display modes
+
+#### Running Tests
+
+```bash
+# Run all tests (headless)
+npm test
+
+# Run tests with browser UI visible
+npm run test:ui
+
+# Run specific test file
+npx playwright test tests/calendar-e2e.spec.js
+
+# Run tests in debug mode
+npm run test:debug
+
+# Run smoke tests only (quick verification)
+npx playwright test tests/smoke.spec.js
+```
+
+#### Test Configuration
+
+- **Browsers**: Chromium, Firefox, WebKit (Safari)
+- **Devices**: Desktop and mobile viewports (iPhone, Android)
+- **Parallel Execution**: Tests run in parallel for faster execution
+- **Auto-setup**: Development server starts automatically before tests
+
+#### Writing Tests
+
+Tests are located in the `tests/` directory:
+
+- `calendar-e2e.spec.js` - Comprehensive end-to-end tests
+- `smoke.spec.js` - Quick smoke tests for basic functionality
+
+Example test structure:
+
+```javascript
+test('should create a new event', async ({ page }) => {
+  // Navigate and interact with the app
+  await page.goto('/')
+  await page.click('button:has-text("Add Event")')
+
+  // Fill form and verify
+  await page.fill('input[name="title"]', 'Test Event')
+  await page.click('button[type="submit"]')
+
+  // Assert result
+  await expect(page.locator('text=Test Event')).toBeVisible()
+})
+```
+
+#### CI/CD Integration
+
+Tests are configured to run in CI environments with:
+
+- Automatic browser installation
+- Parallel test execution
+- HTML test reports
+- Screenshots on failure
 
 ### Code Quality
 

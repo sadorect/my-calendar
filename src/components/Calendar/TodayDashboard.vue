@@ -1,19 +1,19 @@
 <template>
   <div class="space-y-6">
     <div class="text-center">
-      <h1 class="text-2xl md:text-3xl font-bold text-gray-800">
+      <h1 class="text-2xl md:text-3xl font-bold text-theme-primary">
         Today - {{ formatDate(new Date()) }}
       </h1>
     </div>
 
     <div class="grid grid-cols-2 gap-4">
-      <div class="bg-blue-50 p-4 rounded-lg text-center">
-        <div class="text-2xl font-bold text-blue-600">{{ todaysEvents.length }}</div>
-        <div class="text-sm text-gray-600">Events Today</div>
+      <div class="bg-theme-secondary p-4 rounded-lg text-center">
+        <div class="text-2xl font-bold text-theme-accent">{{ todaysEvents.length }}</div>
+        <div class="text-sm text-theme-secondary">Events Today</div>
       </div>
-      <div class="bg-green-50 p-4 rounded-lg text-center">
-        <div class="text-2xl font-bold text-green-600">{{ completedEventsCount }}</div>
-        <div class="text-sm text-gray-600">Completed</div>
+      <div class="bg-theme-secondary p-4 rounded-lg text-center">
+        <div class="text-2xl font-bold text-theme-success">{{ completedEventsCount }}</div>
+        <div class="text-sm text-theme-secondary">Completed</div>
       </div>
     </div>
 
@@ -21,43 +21,51 @@
     <NotificationSettings />
 
     <div>
-      <h2 class="text-xl font-semibold mb-3 text-gray-800">Today's Events</h2>
-      <div v-if="todaysEvents.length === 0" class="text-center py-8 text-gray-500">
+      <h2 class="text-xl font-semibold mb-3 text-theme-primary">Today's Events</h2>
+      <div v-if="todaysEvents.length === 0" class="text-center py-8 text-theme-muted">
         No events scheduled for today
       </div>
       <div v-else class="space-y-3">
         <div
           v-for="event in todaysEvents"
-          :key="event.id"
-          class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+          :key="'today-' + event.id"
+          class="bg-theme-card border border-theme rounded-lg p-4 shadow-theme"
           :class="{ 'opacity-60': event.isCompleted }"
         >
           <div class="flex justify-between items-start">
             <div class="flex items-start space-x-3 flex-1">
               <input
+                :id="'event-checkbox-' + event.id"
                 type="checkbox"
                 :checked="event.isCompleted"
                 @change="toggleCompletion(event.id)"
-                class="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                :aria-label="
+                  'Mark ' + event.title + ' as ' + (event.isCompleted ? 'incomplete' : 'complete')
+                "
+                class="mt-1 h-4 w-4 text-theme-success focus:ring-theme-success border-theme rounded"
               />
               <div class="flex-1">
                 <div
-                  class="font-medium text-gray-900"
-                  :class="{ 'line-through text-gray-500': event.isCompleted }"
+                  class="font-medium text-theme-primary"
+                  :class="{ 'line-through text-theme-muted': event.isCompleted }"
                 >
                   {{ event.title }}
                 </div>
-                <div class="text-sm text-gray-600 mt-1">{{ formatTime(event.startDateTime) }}</div>
-                <div v-if="event.location" class="text-sm text-gray-500 mt-1">
+                <div class="text-sm text-theme-secondary mt-1">
+                  {{ formatTime(event.startDateTime) }}
+                </div>
+                <div v-if="event.location" class="text-sm text-theme-muted mt-1">
                   📍 {{ event.location }}
                 </div>
-                <div v-if="event.isRecurring" class="text-xs text-blue-600 mt-1">🔄 Recurring</div>
+                <div v-if="event.isRecurring" class="text-xs text-theme-accent mt-1">
+                  🔄 Recurring
+                </div>
               </div>
             </div>
             <div class="flex items-center space-x-2">
               <button
                 @click="editEvent(event)"
-                class="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
                 title="Edit event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +79,7 @@
               </button>
               <button
                 @click="duplicateEvent(event.id)"
-                class="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
                 title="Duplicate event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +93,7 @@
               </button>
               <button
                 @click="confirmDelete(event)"
-                class="p-1 text-gray-400 hover:text-red-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-error transition-colors"
                 title="Delete event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,31 +118,33 @@
     </div>
 
     <div>
-      <h2 class="text-xl font-semibold mb-3 text-gray-800">Upcoming (Next 7 days)</h2>
-      <div v-if="upcomingEvents.length === 0" class="text-center py-8 text-gray-500">
+      <h2 class="text-xl font-semibold mb-3 text-theme-primary">Upcoming (Next 7 days)</h2>
+      <div v-if="upcomingEvents.length === 0" class="text-center py-8 text-theme-muted">
         No upcoming events
       </div>
       <div v-else class="space-y-3">
         <div
           v-for="event in upcomingEvents"
-          :key="event.id"
-          class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
+          :key="'upcoming-' + event.id"
+          class="bg-theme-card border border-theme rounded-lg p-4 shadow-theme"
         >
           <div class="flex justify-between items-start">
             <div class="flex-1">
-              <div class="font-medium text-gray-900">{{ event.title }}</div>
-              <div class="text-sm text-gray-600">
+              <div class="font-medium text-theme-primary">{{ event.title }}</div>
+              <div class="text-sm text-theme-secondary">
                 {{ formatDate(new Date(event.startDateTime)) }}
               </div>
-              <div v-if="event.location" class="text-sm text-gray-500 mt-1">
+              <div v-if="event.location" class="text-sm text-theme-muted mt-1">
                 📍 {{ event.location }}
               </div>
-              <div v-if="event.isRecurring" class="text-xs text-blue-600 mt-1">🔄 Recurring</div>
+              <div v-if="event.isRecurring" class="text-xs text-theme-accent mt-1">
+                🔄 Recurring
+              </div>
             </div>
             <div class="flex items-center space-x-2">
               <button
                 @click="editEvent(event)"
-                class="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
                 title="Edit event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +158,7 @@
               </button>
               <button
                 @click="duplicateEvent(event.id)"
-                class="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
                 title="Duplicate event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +172,7 @@
               </button>
               <button
                 @click="confirmDelete(event)"
-                class="p-1 text-gray-400 hover:text-red-600 transition-colors"
+                class="p-1 text-theme-muted hover:text-theme-error transition-colors"
                 title="Delete event"
               >
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

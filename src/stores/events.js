@@ -242,12 +242,14 @@ export const useEventStore = defineStore('events', () => {
     const dayEnd = new Date(`${eventDate}T23:59:59`)
     const dayEvents = expandRecurringEvents(events.value, dayStart, dayEnd)
 
-    return dayEvents.filter((event) => {
+    const conflicts = dayEvents.filter((event) => {
       if (event.id === newEvent.id || event.originalEventId === newEvent.id) return false
       const eStart = new Date(event.startDateTime)
       const eEnd = new Date(event.endDateTime)
       return start < eEnd && end > eStart
     })
+
+    return conflicts
   }
 
   function suggestTimeSlots(date, duration, category = null) {

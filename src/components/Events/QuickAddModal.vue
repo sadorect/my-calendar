@@ -1,29 +1,63 @@
 <template>
   <div
-    v-if="show"
+    v-if="show && (isEditing || (template && template.name && template.category))"
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-30"
     @click="close"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-describedby="modal-description"
   >
     <div class="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-auto" @click.stop>
       <div class="p-6">
-        <h2 class="text-xl font-semibold mb-4">{{ isEditing ? 'Edit Event' : 'Add New Event' }}</h2>
+        <h2 id="modal-title" class="text-xl font-semibold mb-4">
+          {{ isEditing ? 'Edit Event' : 'Add New Event' }}
+        </h2>
+        <p id="modal-description" class="text-sm text-gray-600 mb-4">
+          {{
+            isEditing
+              ? 'Update the event details below.'
+              : 'Fill in the details to create a new event.'
+          }}
+        </p>
         <form @submit.prevent="saveEvent" class="space-y-4">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+            <label for="event-title" class="block text-sm font-medium text-gray-700 mb-1"
+              >Title</label
+            >
             <input
+              id="event-title"
               v-model="eventData.title"
               required
+              aria-required="true"
+              aria-describedby="title-error"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <div
+              v-if="errors.title"
+              id="title-error"
+              class="text-red-600 text-sm mt-1"
+              role="alert"
+            >
+              {{ errors.title }}
+            </div>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+            <label for="event-date" class="block text-sm font-medium text-gray-700 mb-1"
+              >Date</label
+            >
             <input
+              id="event-date"
               v-model="eventData.date"
               type="date"
               required
+              aria-required="true"
+              aria-describedby="date-error"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <div v-if="errors.date" id="date-error" class="text-red-600 text-sm mt-1" role="alert">
+              {{ errors.date }}
+            </div>
           </div>
           <div v-if="!eventData.isAllDay">
             <label class="block text-sm font-medium text-gray-700 mb-1">Start Time</label>
@@ -46,13 +80,16 @@
           </div>
           <div class="flex items-center">
             <input
+              id="all-day-checkbox"
               v-model="eventData.isAllDay"
               type="checkbox"
               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
-            <label class="ml-2 block text-sm text-gray-900">All Day</label>
+            <label for="all-day-checkbox" class="ml-2 block text-sm text-gray-900 cursor-pointer">
+              All Day Event
+            </label>
           </div>
-          <div v-if="template.requiresLocation">
+          <div v-if="template && template.requiresLocation">
             <label class="block text-sm font-medium text-gray-700 mb-1">Location</label>
             <input
               v-model="eventData.location"
@@ -78,7 +115,7 @@
                 class="flex items-center"
               >
                 <input
-                  v-model="eventData.reminders"
+                  v-model="selectedReminders"
                   :value="reminder.value"
                   type="checkbox"
                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
@@ -159,8 +196,10 @@
                   <p>This event conflicts with:</p>
                   <ul class="mt-1 list-disc list-inside">
                     <li v-for="conflict in conflicts" :key="conflict.id">
-                      {{ conflict.title }} ({{ formatTime(conflict.startDateTime) }} -
-                      {{ formatTime(conflict.endDateTime) }})
+                      {{ conflict.title || 'Untitled Event' }} ({{
+                        formatTime(conflict.startDateTime)
+                      }}
+                      - {{ formatTime(conflict.endDateTime) }})
                     </li>
                   </ul>
                 </div>
@@ -224,6 +263,7 @@ const emit = defineEmits(['close'])
 
 const eventStore = useEventStore()
 const saving = ref(false)
+const errors = ref({})
 
 const isEditing = computed(() => !!props.initialEvent)
 
@@ -235,7 +275,7 @@ const eventData = ref({
   isAllDay: false,
   location: '',
   notes: '',
-  reminders: [15], // Default to 15 minutes reminder
+  reminders: [], // Start with empty array, will be populated by checkboxes
   isRecurring: false,
   recurrence: {
     frequency: 'weekly',
@@ -252,8 +292,21 @@ const availableReminders = [
   { value: 5, label: '5 minutes before' }
 ]
 
+// Computed property to handle reminders as numbers
+const selectedReminders = computed({
+  get: () => eventData.value.reminders.map((r) => parseInt(r, 10)),
+  set: (value) => {
+    eventData.value.reminders = value.map((r) => parseInt(r, 10))
+  }
+})
+
 // Computed property to check for conflicts
 const conflicts = computed(() => {
+  // Don't compute conflicts if template is not properly set for new events
+  if (!props.show || (!props.initialEvent && (!props.template || !props.template.category))) {
+    return []
+  }
+
   if (!eventData.value.date || !eventData.value.startTime || !eventData.value.duration) {
     return []
   }
@@ -274,7 +327,15 @@ const conflicts = computed(() => {
     endDateTime
   }
 
-  return eventStore.checkConflicts(proposedEvent)
+  const conflictingEvents = eventStore.checkConflicts(proposedEvent)
+
+  // Filter out any malformed events that don't have required properties
+  const validConflicts = conflictingEvents.filter(
+    (event) =>
+      event && typeof event === 'object' && event.title && event.startDateTime && event.endDateTime
+  )
+
+  return validConflicts
 })
 
 // Function to select a specific time slot
@@ -349,6 +410,28 @@ watch(
 )
 
 async function saveEvent() {
+  // Reset errors
+  errors.value = {}
+
+  // Basic validation
+  if (!eventData.value.title.trim()) {
+    errors.value.title = 'Title is required'
+  }
+  if (!eventData.value.date) {
+    errors.value.date = 'Date is required'
+  }
+  if (!eventData.value.isAllDay && !eventData.value.startTime) {
+    errors.value.startTime = 'Start time is required'
+  }
+  if (!eventData.value.isAllDay && !eventData.value.duration) {
+    errors.value.duration = 'Duration is required'
+  }
+
+  // If there are errors, don't save
+  if (Object.keys(errors.value).length > 0) {
+    return
+  }
+
   saving.value = true
 
   const startDateTime = eventData.value.isAllDay
@@ -362,19 +445,48 @@ async function saveEvent() {
       ).toISOString()
 
   const event = {
-    title: eventData.value.title,
-    category: isEditing.value ? props.initialEvent.category : props.template.category,
-    startDateTime,
-    endDateTime,
-    isAllDay: eventData.value.isAllDay,
-    location: eventData.value.location,
-    notes: eventData.value.notes,
-    color: isEditing.value ? props.initialEvent.color : props.template.color,
-    isCompleted: isEditing.value ? props.initialEvent.isCompleted : false,
-    reminders: eventData.value.reminders || [],
-    isRecurring: eventData.value.isRecurring,
-    recurrence: eventData.value.isRecurring ? eventData.value.recurrence : null
+    title: String(eventData.value.title || '').trim(),
+    category: String(
+      isEditing.value ? props.initialEvent.category : props.template ? props.template.category : ''
+    ),
+    startDateTime: String(startDateTime),
+    endDateTime: String(endDateTime),
+    isAllDay: Boolean(eventData.value.isAllDay),
+    location: String(eventData.value.location || ''),
+    notes: String(eventData.value.notes || ''),
+    color: String(
+      isEditing.value ? props.initialEvent.color : props.template ? props.template.color : '#2196F3'
+    ),
+    isCompleted: Boolean(isEditing.value ? props.initialEvent.isCompleted : false),
+    reminders: Array.isArray(eventData.value.reminders)
+      ? eventData.value.reminders
+          .map((r) => {
+            const num = parseInt(r, 10)
+            return isNaN(num) ? null : num
+          })
+          .filter((r) => r !== null && r > 0)
+      : [],
+    isRecurring: Boolean(eventData.value.isRecurring),
+    recurrence: eventData.value.isRecurring
+      ? {
+          frequency: String(eventData.value.recurrence.frequency || 'weekly'),
+          interval: Math.max(1, parseInt(eventData.value.recurrence.interval, 10) || 1),
+          endDate: eventData.value.recurrence.endDate
+            ? String(eventData.value.recurrence.endDate)
+            : null
+        }
+      : null
   }
+
+  // Ensure all values are serializable
+  try {
+    JSON.stringify(event)
+  } catch (error) {
+    console.error('Event data is not serializable:', error, event)
+    throw new Error('Event data contains non-serializable values')
+  }
+
+  console.log('Saving event:', event)
 
   try {
     if (isEditing.value) {

@@ -1,3 +1,111 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Theme variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --card-bg: #ffffff;
+  --modal-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme variables */
+.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --border-hover: #475569;
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --error: #f87171;
+  --card-bg: #1e293b;
+  --modal-bg: #1e293b;
+  --nav-bg: #0f172a;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom utilities for theme colors */
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+.bg-theme-tertiary {
+  background-color: var(--bg-tertiary);
+}
+.text-theme-primary {
+  color: var(--text-primary);
+}
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+.text-theme-muted {
+  color: var(--text-muted);
+}
+.border-theme {
+  border-color: var(--border);
+}
+.border-theme-hover {
+  border-color: var(--border-hover);
+}
+.bg-theme-accent {
+  background-color: var(--accent);
+}
+.bg-theme-accent-hover {
+  background-color: var(--accent-hover);
+}
+.text-theme-accent {
+  color: var(--accent);
+}
+.bg-theme-success {
+  background-color: var(--success);
+}
+.bg-theme-warning {
+  background-color: var(--warning);
+}
+.bg-theme-error {
+  background-color: var(--error);
+}
+.bg-theme-card {
+  background-color: var(--card-bg);
+}
+.bg-theme-modal {
+  background-color: var(--modal-bg);
+}
+.bg-theme-nav {
+  background-color: var(--nav-bg);
+}
+.shadow-theme {
+  box-shadow:
+    0 4px 6px -1px var(--shadow),
+    0 2px 4px -1px var(--shadow);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}

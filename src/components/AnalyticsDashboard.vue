@@ -257,11 +257,19 @@ const dateRange = computed(() => {
 
 // Filtered events for the selected date range
 const filteredEvents = computed(() => {
-  return eventStore.events.filter((event) => {
-    const eventDate = parseISO(event.startDateTime)
-    return isWithinInterval(eventDate, dateRange.value)
-  })
+  const cacheKey = `${selectedPeriod.value}-${startDate.value}-${endDate.value}`
+  if (filteredEventsCache.key !== cacheKey) {
+    filteredEventsCache.key = cacheKey
+    filteredEventsCache.value = eventStore.events.filter((event) => {
+      const eventDate = parseISO(event.startDateTime)
+      return isWithinInterval(eventDate, dateRange.value)
+    })
+  }
+  return filteredEventsCache.value
 })
+
+// Cache for filtered events to avoid recomputation
+const filteredEventsCache = ref({ key: '', value: [] })
 
 // Analytics computations
 const totalEvents = computed(() => filteredEvents.value.length)

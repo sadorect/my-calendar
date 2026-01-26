@@ -1,27 +1,33 @@
 <template>
   <div class="p-4 max-w-4xl mx-auto">
     <h2 class="text-xl font-bold mb-6 text-center text-gray-800">Choose Event Type</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-      <div
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4"
+    >
+      <button
         v-for="template in eventTemplates"
         :key="template.id"
-        class="bg-white border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-blue-300 hover:shadow-lg transition-all duration-200 transform hover:scale-105 flex flex-col items-center justify-center min-h-[120px] group"
+        type="button"
+        :aria-label="'Select ' + template.name + ' event template'"
+        class="bg-white border-2 border-gray-200 rounded-xl p-3 md:p-4 cursor-pointer hover:border-blue-300 hover:shadow-lg transition-all duration-200 transform hover:scale-105 active:scale-95 flex flex-col items-center justify-center min-h-[100px] md:min-h-[120px] group touch-manipulation focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         @click="selectTemplate(template)"
       >
-        <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200">
+        <div
+          class="text-3xl md:text-4xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-200"
+        >
           {{ template.icon }}
         </div>
         <div
-          class="text-sm font-medium text-center text-gray-700 group-hover:text-blue-600 transition-colors"
+          class="text-xs md:text-sm font-medium text-center text-gray-700 group-hover:text-blue-600 transition-colors leading-tight"
         >
           {{ template.name }}
         </div>
         <div
           v-if="template.color"
-          class="w-3 h-3 rounded-full mt-2"
+          class="w-2 h-2 md:w-3 md:h-3 rounded-full mt-1 md:mt-2"
           :style="{ backgroundColor: template.color }"
         ></div>
-      </div>
+      </button>
     </div>
   </div>
 </template>
