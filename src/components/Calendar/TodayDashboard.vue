@@ -1,36 +1,60 @@
 <template>
-  <div class="space-y-6">
-    <div class="text-center">
-      <h1 class="text-2xl md:text-3xl font-bold text-theme-primary">
-        Today - {{ formatDate(new Date()) }}
-      </h1>
+  <div class="space-y-8">
+    <!-- Hero Section -->
+    <div class="text-center py-6">
+      <div class="inline-flex items-center space-x-3 bg-gradient-primary text-white px-6 py-3 rounded-2xl shadow-theme-xl mb-4">
+        <span class="text-2xl">🎯</span>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">
+          Today - {{ formatDate(new Date()) }}
+        </h1>
+      </div>
+      <p class="text-theme-secondary text-lg">Stay organized and productive</p>
     </div>
 
-    <div class="grid grid-cols-2 gap-4">
-      <div class="bg-theme-secondary p-4 rounded-lg text-center">
-        <div class="text-2xl font-bold text-theme-accent">{{ todaysEvents.length }}</div>
-        <div class="text-sm text-theme-secondary">Events Today</div>
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-2 gap-6">
+      <div class="card-glass p-6 text-center bg-gradient-accent text-white hover:scale-105 transition-transform duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+          <span class="text-2xl">📅</span>
+        </div>
+        <div class="text-3xl font-bold mb-2">{{ todaysEvents.length }}</div>
+        <div class="text-white/80 font-medium">Events Today</div>
       </div>
-      <div class="bg-theme-secondary p-4 rounded-lg text-center">
-        <div class="text-2xl font-bold text-theme-success">{{ completedEventsCount }}</div>
-        <div class="text-sm text-theme-secondary">Completed</div>
+      <div class="card-glass p-6 text-center bg-gradient-success text-white hover:scale-105 transition-transform duration-300">
+        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+          <span class="text-2xl">✅</span>
+        </div>
+        <div class="text-3xl font-bold mb-2">{{ completedEventsCount }}</div>
+        <div class="text-white/80 font-medium">Completed</div>
       </div>
     </div>
 
-    <div>
-      <h2 class="text-xl font-semibold mb-3 text-theme-primary">Today's Events</h2>
-      <div v-if="todaysEvents.length === 0" class="text-center py-8 text-theme-muted">
-        No events scheduled for today
+    <!-- Today's Events Section -->
+    <div class="card p-6">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="w-10 h-10 bg-gradient-accent rounded-2xl flex items-center justify-center text-white">
+          <span class="text-lg">📋</span>
+        </div>
+        <h2 class="text-2xl font-bold text-theme-primary">Today's Events</h2>
       </div>
-      <div v-else class="space-y-3">
+
+      <div v-if="todaysEvents.length === 0" class="text-center py-12">
+        <div class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-3xl">🎉</span>
+        </div>
+        <div class="text-xl font-semibold text-theme-primary mb-2">All caught up!</div>
+        <div class="text-theme-secondary">No events scheduled for today</div>
+      </div>
+
+      <div v-else class="space-y-4">
         <div
           v-for="event in todaysEvents"
           :key="'today-' + event.id"
-          class="bg-theme-card border border-theme rounded-lg p-4 shadow-theme"
+          class="card p-5 hover:scale-[1.02] transition-all duration-200"
           :class="{ 'opacity-60': event.isCompleted }"
         >
           <div class="flex justify-between items-start">
-            <div class="flex items-start space-x-3 flex-1">
+            <div class="flex items-start space-x-4 flex-1">
               <input
                 :id="'event-checkbox-' + event.id"
                 type="checkbox"
@@ -39,33 +63,38 @@
                 :aria-label="
                   'Mark ' + event.title + ' as ' + (event.isCompleted ? 'incomplete' : 'complete')
                 "
-                class="mt-1 h-4 w-4 text-theme-success focus:ring-theme-success border-theme rounded"
+                class="mt-1 h-5 w-5 text-theme-success focus:ring-theme-success border-theme rounded-lg"
               />
               <div class="flex-1">
                 <div
-                  class="font-medium text-theme-primary"
+                  class="font-semibold text-lg text-theme-primary mb-2"
                   :class="{ 'line-through text-theme-muted': event.isCompleted }"
                 >
                   {{ event.title }}
                 </div>
-                <div class="text-sm text-theme-secondary mt-1">
-                  {{ formatTime(event.startDateTime) }}
-                </div>
-                <div v-if="event.location" class="text-sm text-theme-muted mt-1">
-                  📍 {{ event.location }}
-                </div>
-                <div v-if="event.isRecurring" class="text-xs text-theme-accent mt-1">
-                  🔄 Recurring
+                <div class="flex items-center space-x-4 text-sm text-theme-secondary">
+                  <div class="flex items-center space-x-1">
+                    <span>🕐</span>
+                    <span>{{ formatTime(event.startDateTime) }}</span>
+                  </div>
+                  <div v-if="event.location" class="flex items-center space-x-1">
+                    <span>📍</span>
+                    <span>{{ event.location }}</span>
+                  </div>
+                  <div v-if="event.isRecurring" class="flex items-center space-x-1">
+                    <span>🔄</span>
+                    <span>Recurring</span>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="flex items-center space-x-2">
               <button
                 @click="editEvent(event)"
-                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Edit event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -76,10 +105,10 @@
               </button>
               <button
                 @click="duplicateEvent(event.id)"
-                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Duplicate event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -90,10 +119,10 @@
               </button>
               <button
                 @click="confirmDelete(event)"
-                class="p-1 text-theme-muted hover:text-theme-error transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-error hover:bg-theme-error/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Delete event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -103,7 +132,7 @@
                 </svg>
               </button>
               <div
-                class="px-2 py-1 rounded-full text-xs font-medium text-white"
+                class="px-3 py-1 rounded-full text-sm font-semibold text-white shadow-theme"
                 :style="{ backgroundColor: event.color }"
               >
                 {{ event.category }}
@@ -114,37 +143,54 @@
       </div>
     </div>
 
-    <div>
-      <h2 class="text-xl font-semibold mb-3 text-theme-primary">Upcoming (Next 7 days)</h2>
-      <div v-if="upcomingEvents.length === 0" class="text-center py-8 text-theme-muted">
-        No upcoming events
+    <!-- Upcoming Events Section -->
+    <div class="card p-6">
+      <div class="flex items-center space-x-3 mb-6">
+        <div class="w-10 h-10 bg-gradient-warning rounded-2xl flex items-center justify-center text-white">
+          <span class="text-lg">🔮</span>
+        </div>
+        <h2 class="text-2xl font-bold text-theme-primary">Upcoming (Next 7 days)</h2>
       </div>
-      <div v-else class="space-y-3">
+
+      <div v-if="upcomingEvents.length === 0" class="text-center py-12">
+        <div class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-3xl">✨</span>
+        </div>
+        <div class="text-xl font-semibold text-theme-primary mb-2">Nothing planned</div>
+        <div class="text-theme-secondary">No upcoming events in the next 7 days</div>
+      </div>
+
+      <div v-else class="space-y-4">
         <div
           v-for="event in upcomingEvents"
           :key="'upcoming-' + event.id"
-          class="bg-theme-card border border-theme rounded-lg p-4 shadow-theme"
+          class="card p-5 hover:scale-[1.02] transition-all duration-200"
         >
           <div class="flex justify-between items-start">
             <div class="flex-1">
-              <div class="font-medium text-theme-primary">{{ event.title }}</div>
-              <div class="text-sm text-theme-secondary">
-                {{ formatDate(new Date(event.startDateTime)) }}
-              </div>
-              <div v-if="event.location" class="text-sm text-theme-muted mt-1">
-                📍 {{ event.location }}
-              </div>
-              <div v-if="event.isRecurring" class="text-xs text-theme-accent mt-1">
-                🔄 Recurring
+              <div class="font-semibold text-lg text-theme-primary mb-2">{{ event.title }}</div>
+              <div class="flex items-center space-x-4 text-sm text-theme-secondary">
+                <div class="flex items-center space-x-1">
+                  <span>📅</span>
+                  <span>{{ formatDate(new Date(event.startDateTime)) }}</span>
+                </div>
+                <div v-if="event.location" class="flex items-center space-x-1">
+                  <span>📍</span>
+                  <span>{{ event.location }}</span>
+                </div>
+                <div v-if="event.isRecurring" class="flex items-center space-x-1">
+                  <span>🔄</span>
+                  <span>Recurring</span>
+                </div>
               </div>
             </div>
             <div class="flex items-center space-x-2">
               <button
                 @click="editEvent(event)"
-                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Edit event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -155,10 +201,10 @@
               </button>
               <button
                 @click="duplicateEvent(event.id)"
-                class="p-1 text-theme-muted hover:text-theme-accent transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Duplicate event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -169,10 +215,10 @@
               </button>
               <button
                 @click="confirmDelete(event)"
-                class="p-1 text-theme-muted hover:text-theme-error transition-colors"
+                class="p-2 text-theme-secondary hover:text-theme-error hover:bg-theme-error/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Delete event"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -182,7 +228,7 @@
                 </svg>
               </button>
               <div
-                class="px-2 py-1 rounded-full text-xs font-medium text-white"
+                class="px-3 py-1 rounded-full text-sm font-semibold text-white shadow-theme"
                 :style="{ backgroundColor: event.color }"
               >
                 {{ event.category }}

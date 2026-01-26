@@ -75,17 +75,22 @@ function handleKeyNavigation(event, view) {
   <div class="app min-h-screen flex flex-col bg-theme-primary">
     <!-- Desktop Header -->
     <header
-      class="hidden md:flex justify-between items-center p-4 bg-blue-600 text-white shadow-lg"
+      class="hidden md:flex justify-between items-center p-6 bg-gradient-primary text-white shadow-theme-xl"
     >
-      <h1 class="text-xl font-bold">Personal Calendar</h1>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+          <span class="text-xl">📅</span>
+        </div>
+        <h1 class="text-2xl font-bold tracking-tight">Personal Calendar</h1>
+      </div>
+      <div class="flex items-center gap-6">
         <ThemeToggle />
-        <nav class="flex gap-2">
+        <nav class="flex gap-2 bg-white/10 rounded-2xl p-1 backdrop-blur-sm">
           <button
             @click="currentView = 'today'"
             @keydown="handleKeyNavigation($event, 'today')"
             :class="navButtonClasses('today')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             Today
@@ -94,7 +99,7 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'month'"
             @keydown="handleKeyNavigation($event, 'month')"
             :class="navButtonClasses('month')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             Month
@@ -103,7 +108,7 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'week'"
             @keydown="handleKeyNavigation($event, 'week')"
             :class="navButtonClasses('week')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             Week
@@ -112,7 +117,7 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'day'"
             @keydown="handleKeyNavigation($event, 'day')"
             :class="navButtonClasses('day')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             Day
@@ -121,7 +126,7 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'list'"
             @keydown="handleKeyNavigation($event, 'list')"
             :class="navButtonClasses('list')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             List
@@ -130,7 +135,7 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'analytics'"
             @keydown="handleKeyNavigation($event, 'analytics')"
             :class="navButtonClasses('analytics')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
             Analytics
@@ -139,18 +144,23 @@ function handleKeyNavigation(event, view) {
             @click="currentView = 'export'"
             @keydown="handleKeyNavigation($event, 'export')"
             :class="navButtonClasses('export')"
-            class="px-3 py-2 rounded hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+            class="px-4 py-2 rounded-xl hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 font-medium"
             tabindex="0"
           >
-            Export/Import
+            Settings
           </button>
         </nav>
       </div>
     </header>
 
     <!-- Mobile Header -->
-    <header class="md:hidden flex items-center justify-center p-3 bg-blue-600 text-white shadow-lg">
-      <h1 class="text-lg font-bold">Calendar</h1>
+    <header class="md:hidden flex items-center justify-center p-4 bg-gradient-primary text-white shadow-theme-xl">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+          <span class="text-lg">📅</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-tight">Calendar</h1>
+      </div>
     </header>
 
     <!-- Main Content -->
@@ -169,47 +179,47 @@ function handleKeyNavigation(event, view) {
 
     <!-- Mobile Bottom Navigation -->
     <nav
-      class="md:hidden fixed bottom-0 left-0 right-0 bg-theme-nav border-t border-theme flex justify-around items-center py-2 px-4 shadow-theme"
+      class="md:hidden fixed bottom-0 left-0 right-0 bg-theme-nav/95 backdrop-blur-xl border-t border-theme flex justify-around items-center py-3 px-4 shadow-theme-xl"
     >
       <button
         @click="currentView = 'today'"
         :class="mobileNavClasses('today')"
-        class="flex flex-col items-center p-3 rounded-lg transition-colors"
+        class="flex flex-col items-center p-3 rounded-2xl transition-all duration-200 hover:scale-105"
       >
-        <span class="text-lg">📅</span>
-        <span class="text-xs mt-1">Today</span>
+        <span class="text-xl mb-1">🏠</span>
+        <span class="text-xs font-medium">Today</span>
       </button>
       <button
         @click="currentView = 'month'"
         :class="mobileNavClasses('month')"
-        class="flex flex-col items-center p-3 rounded-lg transition-colors"
+        class="flex flex-col items-center p-3 rounded-2xl transition-all duration-200 hover:scale-105"
       >
-        <span class="text-lg">📆</span>
-        <span class="text-xs mt-1">Calendar</span>
+        <span class="text-xl mb-1">📅</span>
+        <span class="text-xs font-medium">Calendar</span>
       </button>
       <button
         @click="currentView = 'list'"
         :class="mobileNavClasses('list')"
-        class="flex flex-col items-center p-3 rounded-lg transition-colors"
+        class="flex flex-col items-center p-3 rounded-2xl transition-all duration-200 hover:scale-105"
       >
-        <span class="text-lg">📋</span>
-        <span class="text-xs mt-1">List</span>
+        <span class="text-xl mb-1">📋</span>
+        <span class="text-xs font-medium">List</span>
       </button>
       <button
         @click="toggleMobileMenu"
-        class="flex flex-col items-center p-3 rounded-lg transition-colors text-theme-secondary"
+        class="flex flex-col items-center p-3 rounded-2xl transition-all duration-200 hover:scale-105 text-theme-secondary"
       >
-        <span class="text-lg">☰</span>
-        <span class="text-xs mt-1">More</span>
+        <span class="text-xl mb-1">⚙️</span>
+        <span class="text-xs font-medium">More</span>
       </button>
     </nav>
 
     <!-- Floating Action Button -->
     <button
       @click="addEvent"
-      class="fixed bottom-20 right-4 w-14 h-14 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center text-2xl z-10 md:bottom-6 md:right-6"
+      class="fixed bottom-20 right-4 w-16 h-16 bg-gradient-accent hover:bg-gradient-accent text-white rounded-2xl shadow-theme-xl hover:shadow-theme-xl transform hover:scale-110 transition-all duration-300 flex items-center justify-center text-2xl z-10 md:bottom-6 md:right-6 group"
     >
-      +
+      <span class="group-hover:rotate-90 transition-transform duration-300">+</span>
     </button>
 
     <!-- Quick Add Overlay -->
@@ -236,79 +246,51 @@ function handleKeyNavigation(event, view) {
     <!-- Mobile Menu Overlay -->
     <div
       v-if="showMobileMenu"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4 z-30 md:hidden"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-end justify-center p-4 z-30 md:hidden"
       @click="showMobileMenu = false"
     >
       <div
-        class="bg-theme-modal rounded-t-2xl w-full max-w-sm max-h-[60vh] overflow-auto shadow-theme"
+        class="bg-theme-modal rounded-t-3xl w-full max-w-sm max-h-[70vh] overflow-hidden shadow-theme-xl border border-theme/20"
         @click.stop
       >
         <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="text-lg font-semibold text-theme-primary">More Options</h3>
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold text-theme-primary">More Options</h3>
             <button
               @click="showMobileMenu = false"
-              class="text-theme-secondary hover:text-theme-primary"
+              class="w-8 h-8 rounded-full bg-theme-secondary hover:bg-theme-tertiary flex items-center justify-center transition-colors"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              ✕
             </button>
           </div>
-
           <div class="space-y-3">
-            <div class="flex items-center justify-between p-3 rounded-lg bg-theme-secondary">
-              <span class="font-medium text-theme-primary">Theme</span>
-              <ThemeToggle />
-            </div>
-
             <button
               @click="selectView('week')"
-              class="w-full flex items-center p-3 text-left rounded-lg hover:bg-theme-secondary transition-colors"
+              class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
             >
-              <span class="text-lg mr-3">📊</span>
-              <div>
-                <div class="font-medium text-theme-primary">Week View</div>
-                <div class="text-sm text-theme-secondary">Weekly calendar layout</div>
-              </div>
+              <span class="text-lg">📊</span>
+              <span class="font-medium">Week View</span>
             </button>
-
             <button
               @click="selectView('day')"
-              class="w-full flex items-center p-3 text-left rounded-lg hover:bg-theme-secondary transition-colors"
+              class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
             >
-              <span class="text-lg mr-3">🗓️</span>
-              <div>
-                <div class="font-medium text-theme-primary">Day View</div>
-                <div class="text-sm text-theme-secondary">Daily schedule view</div>
-              </div>
+              <span class="text-lg">📅</span>
+              <span class="font-medium">Day View</span>
             </button>
-
             <button
               @click="selectView('analytics')"
-              class="w-full flex items-center p-3 text-left rounded-lg hover:bg-theme-secondary transition-colors"
+              class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
             >
-              <span class="text-lg mr-3">📈</span>
-              <div>
-                <div class="font-medium text-theme-primary">Analytics</div>
-                <div class="text-sm text-theme-secondary">Productivity insights</div>
-              </div>
+              <span class="text-lg">📈</span>
+              <span class="font-medium">Analytics</span>
             </button>
-
             <button
               @click="selectView('export')"
-              class="w-full flex items-center p-3 text-left rounded-lg hover:bg-theme-secondary transition-colors"
+              class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
             >
-              <span class="text-lg mr-3">💾</span>
-              <div>
-                <div class="font-medium text-theme-primary">Export & Import</div>
-                <div class="text-sm text-theme-secondary">Backup and data transfer</div>
-              </div>
+              <span class="text-lg">⚙️</span>
+              <span class="font-medium">Settings</span>
             </button>
           </div>
         </div>
