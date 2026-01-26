@@ -44,7 +44,7 @@
           </div>
           <div>
             <label for="event-date" class="block text-sm font-medium text-gray-700 mb-1"
-              >Date</label
+              >Start Date</label
             >
             <input
               id="event-date"
@@ -59,7 +59,28 @@
               {{ errors.date }}
             </div>
           </div>
-          <div v-if="!eventData.isAllDay">
+          <div v-if="!eventData.isAllDay && eventData.isMultiDay">
+            <label for="event-end-date" class="block text-sm font-medium text-gray-700 mb-1"
+              >End Date</label
+            >
+            <input
+              id="event-end-date"
+              v-model="eventData.endDate"
+              type="date"
+              :min="eventData.date"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <div
+              v-if="errors.endDate"
+              id="end-date-error"
+              class="text-red-600 text-sm mt-1"
+              role="alert"
+            >
+              {{ errors.endDate }}
+            </div>
+          </div>
+          <div v-if="!eventData.isAllDay && !eventData.isMultiDay">
             <label class="block text-sm font-medium text-gray-700 mb-1">Start Time</label>
             <input
               v-model="eventData.startTime"
@@ -67,8 +88,11 @@
               required
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <div v-if="errors.startTime" class="text-red-600 text-sm mt-1" role="alert">
+              {{ errors.startTime }}
+            </div>
           </div>
-          <div v-if="!eventData.isAllDay">
+          <div v-if="!eventData.isAllDay && !eventData.isMultiDay">
             <label class="block text-sm font-medium text-gray-700 mb-1">Duration (minutes)</label>
             <input
               v-model.number="eventData.duration"
@@ -77,6 +101,9 @@
               required
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <div v-if="errors.duration" class="text-red-600 text-sm mt-1" role="alert">
+              {{ errors.duration }}
+            </div>
           </div>
           <div class="flex items-center">
             <input
@@ -87,6 +114,17 @@
             />
             <label for="all-day-checkbox" class="ml-2 block text-sm text-gray-900 cursor-pointer">
               All Day Event
+            </label>
+          </div>
+          <div v-if="!eventData.isAllDay" class="flex items-center">
+            <input
+              id="multi-day-checkbox"
+              v-model="eventData.isMultiDay"
+              type="checkbox"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            />
+            <label for="multi-day-checkbox" class="ml-2 block text-sm text-gray-900 cursor-pointer">
+              Multi-Day Event
             </label>
           </div>
           <div v-if="template && template.requiresLocation">
@@ -270,9 +308,11 @@ const isEditing = computed(() => !!props.initialEvent)
 const eventData = ref({
   title: '',
   date: format(new Date(), 'yyyy-MM-dd'),
+  endDate: '',
   startTime: '09:00',
   duration: 60,
   isAllDay: false,
+  isMultiDay: false,
   location: '',
   notes: '',
   reminders: [], // Start with empty array, will be populated by checkboxes
@@ -307,19 +347,38 @@ const conflicts = computed(() => {
     return []
   }
 
-  if (!eventData.value.date || !eventData.value.startTime || !eventData.value.duration) {
+  if (!eventData.value.date) {
     return []
   }
 
-  const startDateTime = eventData.value.isAllDay
-    ? `${eventData.value.date}T00:00:00`
-    : `${eventData.value.date}T${eventData.value.startTime}:00`
+  // For multi-day events, we need endDate
+  if (eventData.value.isMultiDay && !eventData.value.endDate) {
+    return []
+  }
 
-  const endDateTime = eventData.value.isAllDay
-    ? `${eventData.value.date}T23:59:59`
-    : new Date(
-        new Date(startDateTime).getTime() + eventData.value.duration * 60 * 1000
-      ).toISOString()
+  // For same-day timed events, we need startTime and duration
+  if (
+    !eventData.value.isAllDay &&
+    !eventData.value.isMultiDay &&
+    (!eventData.value.startTime || !eventData.value.duration)
+  ) {
+    return []
+  }
+
+  let startDateTime, endDateTime
+
+  if (eventData.value.isAllDay) {
+    startDateTime = `${eventData.value.date}T00:00:00`
+    endDateTime = `${eventData.value.date}T23:59:59`
+  } else if (eventData.value.isMultiDay && eventData.value.endDate) {
+    startDateTime = `${eventData.value.date}T00:00:00`
+    endDateTime = `${eventData.value.endDate}T23:59:59`
+  } else {
+    startDateTime = `${eventData.value.date}T${eventData.value.startTime}:00`
+    endDateTime = new Date(
+      new Date(startDateTime).getTime() + eventData.value.duration * 60 * 1000
+    ).toISOString()
+  }
 
   const proposedEvent = {
     id: null, // New event, no ID yet
@@ -364,9 +423,11 @@ watch(
       eventData.value = {
         title: newTemplate.name,
         date: format(new Date(), 'yyyy-MM-dd'),
+        endDate: '',
         startTime: '09:00',
         duration: newTemplate.defaultDuration || 60,
         isAllDay: newTemplate.allDay || false,
+        isMultiDay: false,
         location: '',
         notes: '',
         reminders: [15],
@@ -389,12 +450,19 @@ watch(
       const endDate = new Date(newEvent.endDateTime)
       const duration = (endDate - startDate) / (1000 * 60) // duration in minutes
 
+      // Check if this is a multi-day event
+      const startDateStr = format(startDate, 'yyyy-MM-dd')
+      const endDateStr = format(endDate, 'yyyy-MM-dd')
+      const isMultiDay = startDateStr !== endDateStr
+
       eventData.value = {
         title: newEvent.title,
-        date: format(startDate, 'yyyy-MM-dd'),
+        date: startDateStr,
+        endDate: isMultiDay ? endDateStr : '',
         startTime: format(startDate, 'HH:mm'),
         duration: duration,
         isAllDay: newEvent.isAllDay,
+        isMultiDay: isMultiDay,
         location: newEvent.location || '',
         notes: newEvent.notes || '',
         reminders: newEvent.reminders || [],
@@ -418,12 +486,18 @@ async function saveEvent() {
     errors.value.title = 'Title is required'
   }
   if (!eventData.value.date) {
-    errors.value.date = 'Date is required'
+    errors.value.date = 'Start date is required'
   }
-  if (!eventData.value.isAllDay && !eventData.value.startTime) {
+  if (eventData.value.isMultiDay && !eventData.value.endDate) {
+    errors.value.endDate = 'End date is required for multi-day events'
+  }
+  if (eventData.value.endDate && eventData.value.endDate < eventData.value.date) {
+    errors.value.endDate = 'End date must be after start date'
+  }
+  if (!eventData.value.isAllDay && !eventData.value.isMultiDay && !eventData.value.startTime) {
     errors.value.startTime = 'Start time is required'
   }
-  if (!eventData.value.isAllDay && !eventData.value.duration) {
+  if (!eventData.value.isAllDay && !eventData.value.isMultiDay && !eventData.value.duration) {
     errors.value.duration = 'Duration is required'
   }
 
@@ -438,11 +512,18 @@ async function saveEvent() {
     ? `${eventData.value.date}T00:00:00`
     : `${eventData.value.date}T${eventData.value.startTime}:00`
 
-  const endDateTime = eventData.value.isAllDay
-    ? `${eventData.value.date}T23:59:59`
-    : new Date(
-        new Date(startDateTime).getTime() + eventData.value.duration * 60 * 1000
-      ).toISOString()
+  let endDateTime
+  if (eventData.value.isAllDay) {
+    endDateTime = `${eventData.value.date}T23:59:59`
+  } else if (eventData.value.isMultiDay && eventData.value.endDate) {
+    // Multi-day event: end at the end of the end date
+    endDateTime = `${eventData.value.endDate}T23:59:59`
+  } else {
+    // Same-day event: calculate based on duration
+    endDateTime = new Date(
+      new Date(startDateTime).getTime() + eventData.value.duration * 60 * 1000
+    ).toISOString()
+  }
 
   const event = {
     title: String(eventData.value.title || '').trim(),

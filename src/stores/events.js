@@ -236,11 +236,12 @@ export const useEventStore = defineStore('events', () => {
     const start = new Date(newEvent.startDateTime)
     const end = new Date(newEvent.endDateTime)
 
-    // For conflict checking, expand recurring events for the same day
-    const eventDate = start.toISOString().split('T')[0]
-    const dayStart = new Date(`${eventDate}T00:00:00`)
-    const dayEnd = new Date(`${eventDate}T23:59:59`)
-    const dayEvents = expandRecurringEvents(events.value, dayStart, dayEnd)
+    // For multi-day events, we need to check conflicts across all days
+    const startDate = new Date(start.getFullYear(), start.getMonth(), start.getDate())
+    const endDate = new Date(end.getFullYear(), end.getMonth(), end.getDate())
+
+    // Expand recurring events for the date range
+    const dayEvents = expandRecurringEvents(events.value, startDate, endDate)
 
     const conflicts = dayEvents.filter((event) => {
       if (event.id === newEvent.id || event.originalEventId === newEvent.id) return false
