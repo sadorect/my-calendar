@@ -65,7 +65,7 @@ test.describe('Personal Calendar - Smoke Tests', () => {
       await page.waitForTimeout(1000)
 
       // Check if the modal opened
-      const modalVisible = await page.locator('[role="dialog"]').count() > 0
+      const modalVisible = (await page.locator('[role="dialog"]').count()) > 0
 
       if (modalVisible) {
         // Check for duration input elements
@@ -81,7 +81,9 @@ test.describe('Personal Calendar - Smoke Tests', () => {
         if (hasDurationInput && hasDurationSelect) {
           expect(true).toBe(true) // Test passes
         } else {
-          console.log('Duration input elements not found, but this might be expected if modal structure changed')
+          console.log(
+            'Duration input elements not found, but this might be expected if modal structure changed'
+          )
         }
       }
     } else {

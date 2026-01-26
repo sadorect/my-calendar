@@ -200,10 +200,9 @@ export const useEventStore = defineStore('events', () => {
     const originalEvent = events.value.find((e) => e.id === id)
     if (!originalEvent) return
 
-    // Create a copy of the event with a new ID and slightly adjusted time
+    // Create a copy of the event with a new ID, keeping the original title
     const duplicatedEvent = {
       ...originalEvent,
-      title: `${originalEvent.title} (Copy)`,
       isCompleted: false
     }
     delete duplicatedEvent.id
@@ -218,7 +217,6 @@ export const useEventStore = defineStore('events', () => {
       if (originalRecurringEvent) {
         const duplicatedRecurringEvent = {
           ...originalRecurringEvent,
-          title: `${originalRecurringEvent.title} (Copy)`,
           isCompleted: false
         }
         delete duplicatedRecurringEvent.id

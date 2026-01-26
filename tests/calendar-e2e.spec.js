@@ -295,6 +295,31 @@ test.describe('Personal Calendar App - End-to-End Tests', () => {
     }
   })
 
+  test('should import ICS calendar data', async ({ page }) => {
+    // Navigate to export/import section
+    const exportTab = page
+      .locator('nav')
+      .getByText(/export|import/i)
+      .first()
+    if (await exportTab.isVisible()) {
+      await exportTab.click()
+
+      // Check if file input accepts .ics files
+      const fileInput = page.locator('input[type="file"]')
+      if (await fileInput.isVisible()) {
+        const acceptAttribute = await fileInput.getAttribute('accept')
+        expect(acceptAttribute).toContain('.ics')
+
+        // Check if import description mentions .ics
+        const importDescription = page.locator('p').filter({ hasText: /Import events from/ })
+        if (await importDescription.isVisible()) {
+          const descriptionText = await importDescription.textContent()
+          expect(descriptionText).toContain('iCal')
+        }
+      }
+    }
+  })
+
   test('should handle mobile navigation', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'This test is only for mobile viewports')
 

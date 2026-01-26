@@ -456,7 +456,7 @@ const availableSlots = computed(() => {
 watch(
   () => props.template,
   (newTemplate) => {
-    if (newTemplate && !props.initialEvent) {
+    if (newTemplate && !props.initialEvent && !isEditing.value) {
       eventData.value = {
         title: newTemplate.name,
         date: format(new Date(), 'yyyy-MM-dd'),
@@ -626,7 +626,14 @@ async function saveEvent() {
 
   try {
     if (isEditing.value) {
-      await eventStore.updateEvent(props.initialEvent.id, event)
+      // Handle recurring event instances - create new event instead of updating
+      if (props.initialEvent.isRecurringInstance) {
+        // For recurring instances, create a new one-time event
+        const newEvent = { ...event, isRecurring: false, recurrence: null }
+        await eventStore.addEvent(newEvent)
+      } else {
+        await eventStore.updateEvent(props.initialEvent.id, event)
+      }
     } else {
       await eventStore.addEvent(event)
     }

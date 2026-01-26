@@ -61,7 +61,7 @@
     <div class="mb-8">
       <h3 class="text-lg font-medium text-gray-900 mb-4">Import Calendar Data</h3>
       <p class="text-sm text-gray-600 mb-4">
-        Import events from JSON or CSV files. Existing events will not be affected.
+        Import events from JSON, CSV, or iCal (.ics) files. Existing events will not be affected.
       </p>
 
       <div class="space-y-4">
@@ -73,7 +73,7 @@
             type="file"
             ref="fileInput"
             @change="handleFileSelect"
-            accept=".json,.csv"
+            accept=".json,.csv,.ics"
             class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
           />
         </div>
@@ -174,6 +174,9 @@
       </div>
     </div>
 
+    <!-- Notification Settings -->
+    <NotificationSettings />
+
     <!-- Status Messages -->
     <div
       v-if="statusMessage"
@@ -188,12 +191,14 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useEventStore } from '../stores/events'
+import NotificationSettings from '../components/NotificationSettings.vue'
 import {
   exportToJSON,
   exportToCSV,
   exportToICal,
   importFromJSON,
   importFromCSV,
+  importFromICal,
   createBackup as createBackupFile,
   restoreFromBackup
 } from '../services/export'
@@ -247,6 +252,8 @@ async function importFile() {
       importedEvents = await importFromJSON(selectedFile.value)
     } else if (selectedFile.value.name.endsWith('.csv')) {
       importedEvents = await importFromCSV(selectedFile.value)
+    } else if (selectedFile.value.name.endsWith('.ics')) {
+      importedEvents = await importFromICal(selectedFile.value)
     } else {
       throw new Error('Unsupported file format')
     }

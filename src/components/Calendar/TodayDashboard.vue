@@ -17,9 +17,6 @@
       </div>
     </div>
 
-    <!-- Notification Settings -->
-    <NotificationSettings />
-
     <div>
       <h2 class="text-xl font-semibold mb-3 text-theme-primary">Today's Events</h2>
       <div v-if="todaysEvents.length === 0" class="text-center py-8 text-theme-muted">
@@ -215,7 +212,6 @@
 import { computed, ref } from 'vue'
 import { useEventStore } from '@/stores/events'
 import { format, isToday } from 'date-fns'
-import NotificationSettings from '@/components/NotificationSettings.vue'
 import QuickAddModal from '@/components/Events/QuickAddModal.vue'
 
 const eventStore = useEventStore()

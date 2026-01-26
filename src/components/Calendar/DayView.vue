@@ -118,14 +118,19 @@ function deleteEvent(eventId) {
 function handleEventDrop(info) {
   const eventId = info.event.id
   const newStart = info.event.start
-  const newEnd = info.event.end
 
-  // Update the event in the store
+  // Get the original event to preserve its duration
+  const originalEvent = eventStore.events.find((e) => e.id === eventId)
+  if (!originalEvent) return
+
+  const originalStart = new Date(originalEvent.startDateTime)
+  const originalEnd = new Date(originalEvent.endDateTime)
+  const duration = originalEnd.getTime() - originalStart.getTime()
+
+  // Update the event in the store with preserved duration
   eventStore.updateEvent(eventId, {
     startDateTime: newStart.toISOString(),
-    endDateTime: newEnd
-      ? newEnd.toISOString()
-      : new Date(newStart.getTime() + 60 * 60 * 1000).toISOString()
+    endDateTime: new Date(newStart.getTime() + duration).toISOString()
   })
 }
 </script>

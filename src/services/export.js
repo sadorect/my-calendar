@@ -231,6 +231,143 @@ export function importFromCSV(file) {
   })
 }
 
+export function importFromICal(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      try {
+        const icalContent = e.target.result
+        const events = parseICal(icalContent)
+        resolve(events)
+      } catch (error) {
+        reject(new Error('Invalid iCal file: ' + error.message))
+      }
+    }
+    reader.onerror = () => reject(new Error('Failed to read file'))
+    reader.readAsText(file)
+  })
+}
+
+function parseICal(icalContent) {
+  const events = []
+  const lines = icalContent.split('\n')
+  let currentEvent = null
+  let inEvent = false
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim()
+
+    if (line === 'BEGIN:VEVENT') {
+      currentEvent = {
+        title: '',
+        startDateTime: '',
+        endDateTime: '',
+        isAllDay: false,
+        location: '',
+        notes: '',
+        category: 'personal',
+        isRecurring: false,
+        recurrence: null,
+        isCompleted: false
+      }
+      inEvent = true
+    } else if (line === 'END:VEVENT') {
+      if (currentEvent) {
+        // Ensure we have required fields
+        if (currentEvent.title && currentEvent.startDateTime && currentEvent.endDateTime) {
+          events.push(currentEvent)
+        }
+        currentEvent = null
+      }
+      inEvent = false
+    } else if (inEvent && currentEvent) {
+      // Parse event properties
+      if (line.startsWith('SUMMARY:')) {
+        currentEvent.title = unescapeICalText(line.substring(8))
+      } else if (line.startsWith('DTSTART:')) {
+        const dateStr = line.substring(8)
+        currentEvent.startDateTime = parseICalDateTime(dateStr)
+        currentEvent.isAllDay = dateStr.length === 8 // YYYYMMDD format indicates all-day
+      } else if (line.startsWith('DTEND:')) {
+        const dateStr = line.substring(6)
+        currentEvent.endDateTime = parseICalDateTime(dateStr)
+      } else if (line.startsWith('LOCATION:')) {
+        currentEvent.location = unescapeICalText(line.substring(9))
+      } else if (line.startsWith('DESCRIPTION:')) {
+        currentEvent.notes = unescapeICalText(line.substring(12))
+      } else if (line.startsWith('CATEGORIES:')) {
+        currentEvent.category = unescapeICalText(line.substring(11))
+      } else if (line.startsWith('RRULE:')) {
+        currentEvent.isRecurring = true
+        currentEvent.recurrence = parseICalRRule(line.substring(6))
+      }
+    }
+  }
+
+  return events
+}
+
+function parseICalDateTime(dateStr) {
+  // Handle both YYYYMMDD and YYYYMMDDTHHMMSSZ formats
+  if (dateStr.length === 8) {
+    // All-day event: YYYYMMDD
+    return `${dateStr.substring(0, 4)}-${dateStr.substring(4, 6)}-${dateStr.substring(6, 8)}T00:00:00`
+  } else if (dateStr.includes('T')) {
+    // DateTime: YYYYMMDDTHHMMSSZ
+    const year = dateStr.substring(0, 4)
+    const month = dateStr.substring(4, 6)
+    const day = dateStr.substring(6, 8)
+    const hour = dateStr.substring(9, 11)
+    const minute = dateStr.substring(11, 13)
+    const second = dateStr.substring(13, 15)
+    return `${year}-${month}-${day}T${hour}:${minute}:${second}`
+  }
+  return dateStr
+}
+
+function parseICalRRule(rruleStr) {
+  const parts = rruleStr.split(';')
+  const recurrence = {
+    frequency: 'weekly',
+    interval: 1,
+    endDate: null
+  }
+
+  parts.forEach((part) => {
+    const [key, value] = part.split('=')
+    switch (key) {
+      case 'FREQ':
+        switch (value) {
+          case 'DAILY':
+            recurrence.frequency = 'daily'
+            break
+          case 'WEEKLY':
+            recurrence.frequency = 'weekly'
+            break
+          case 'MONTHLY':
+            recurrence.frequency = 'monthly'
+            break
+          case 'YEARLY':
+            recurrence.frequency = 'yearly'
+            break
+        }
+        break
+      case 'INTERVAL':
+        recurrence.interval = parseInt(value, 10)
+        break
+      case 'UNTIL':
+        recurrence.endDate = parseICalDateTime(value)
+        break
+    }
+  })
+
+  return recurrence
+}
+
+function unescapeICalText(text) {
+  return text.replace(/\\n/g, '\n').replace(/\\,/g, ',').replace(/\\;/g, ';').replace(/\\\\/g, '\\')
+}
+
 // Backup and restore functions
 
 export async function createBackup() {

@@ -3,7 +3,6 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import './style.css'
-import { registerServiceWorker } from './services/pwa'
 import { useThemeStore } from './stores/theme'
 
 const app = createApp(App)
@@ -14,6 +13,3 @@ app.use(createPinia())
 const themeStore = useThemeStore()
 
 app.mount('#app')
-
-// Register service worker for PWA functionality
-registerServiceWorker()
