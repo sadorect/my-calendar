@@ -258,8 +258,8 @@ const dateRange = computed(() => {
 // Filtered events for the selected date range
 const filteredEvents = computed(() => {
   const cacheKey = `${selectedPeriod.value}-${startDate.value}-${endDate.value}`
-  if (filteredEventsCache.key !== cacheKey) {
-    filteredEventsCache.key = cacheKey
+  if (filteredEventsCache.value.key !== cacheKey) {
+    filteredEventsCache.value.key = cacheKey
     filteredEventsCache.value = eventStore.events.filter((event) => {
       const eventDate = parseISO(event.startDateTime)
       return isWithinInterval(eventDate, dateRange.value)

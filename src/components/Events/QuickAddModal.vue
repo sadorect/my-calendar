@@ -350,6 +350,17 @@ watch(internalDuration, (newVal) => {
   eventData.value.duration = newVal
 })
 
+// Watch for unit changes to convert the displayed value
+watch(durationUnit, (newUnit, oldUnit) => {
+  if (newUnit === 'hours' && oldUnit === 'minutes') {
+    // Converting from minutes to hours
+    durationValue.value = durationValue.value / 60
+  } else if (newUnit === 'minutes' && oldUnit === 'hours') {
+    // Converting from hours to minutes
+    durationValue.value = durationValue.value * 60
+  }
+})
+
 const availableReminders = [
   { value: 1440, label: '1 day before' },
   { value: 60, label: '1 hour before' },
