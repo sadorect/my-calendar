@@ -30,11 +30,11 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 ### Phase 2: Enhanced UX (Week 3)
 
 - [x] Drag-and-drop rescheduling
-- [ ] Event conflict detection
-- [ ] Available time slot suggestions
-- [ ] Preferred time slots per category
-- [ ] Search and filter functionality
-- [ ] List view implementation
+- [x] Event conflict detection
+- [x] Available time slot suggestions
+- [x] Preferred time slots per category
+- [x] Search and filter functionality
+- [x] List view implementation
 
 ### Phase 3: Smart Features (Week 4)
 
@@ -100,6 +100,8 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 - [x] Added conflict detection to QuickAddModal with suggestion functionality
 - [x] Enhanced time slot suggestions with smart scheduling and user-friendly interface
 - [x] Implemented comprehensive search and filter functionality with real-time updates
+- [x] Added preferred time slots per category for intelligent scheduling
+- [x] Enhanced List view with FullCalendar list plugin for better functionality
 
 ## Mobile Responsiveness Features
 

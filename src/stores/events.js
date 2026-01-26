@@ -103,7 +103,7 @@ export const useEventStore = defineStore('events', () => {
     })
   }
 
-  function suggestTimeSlots(date, duration) {
+  function suggestTimeSlots(date, duration, category = null) {
     // Return available slots with smart suggestions
     const dayEvents = events.value.filter((event) => event.startDateTime.startsWith(date))
     const durationMs = duration * 60 * 1000 // Convert to milliseconds
@@ -113,8 +113,24 @@ export const useEventStore = defineStore('events', () => {
 
     const suggestions = []
 
-    // Check each hour slot
-    for (let hour = 9; hour < 17; hour++) {
+    // If category has preferred times, prioritize them
+    let timeSlots = []
+    if (category) {
+      // Get preferred times for this category
+      const template = getTemplateByCategory(category)
+      if (template && template.preferredTimes && template.preferredTimes.length > 0) {
+        // First, try preferred times
+        timeSlots = template.preferredTimes.map((hour) => hour)
+      }
+    }
+
+    // If no preferred times or no category, use all working hours
+    if (timeSlots.length === 0) {
+      timeSlots = [9, 10, 11, 12, 13, 14, 15, 16] // 9 AM to 4 PM
+    }
+
+    // Check each time slot
+    for (const hour of timeSlots) {
       const slotStart = new Date(`${date}T${hour.toString().padStart(2, '0')}:00:00`)
       const slotEnd = new Date(slotStart.getTime() + durationMs)
 
@@ -131,19 +147,48 @@ export const useEventStore = defineStore('events', () => {
         suggestions.push({
           start: slotStart.toISOString(),
           end: slotEnd.toISOString(),
-          label: `${hour}:00 - ${slotEnd.getHours()}:${slotEnd.getMinutes().toString().padStart(2, '0')}`
+          label: `${hour}:00 - ${slotEnd.getHours()}:${slotEnd.getMinutes().toString().padStart(2, '0')}`,
+          preferred: category ? true : false
         })
       }
     }
 
-    // If no slots available today, suggest next available day
+    // If no preferred slots available, try non-preferred times
+    if (suggestions.length === 0 && category) {
+      const allHours = [9, 10, 11, 12, 13, 14, 15, 16]
+      for (const hour of allHours) {
+        if (category && getTemplateByCategory(category)?.preferredTimes?.includes(hour)) continue // Skip preferred times we already checked
+
+        const slotStart = new Date(`${date}T${hour.toString().padStart(2, '0')}:00:00`)
+        const slotEnd = new Date(slotStart.getTime() + durationMs)
+
+        if (slotEnd > workEnd) continue
+
+        const conflict = dayEvents.some((event) => {
+          const eStart = new Date(event.startDateTime)
+          const eEnd = new Date(event.endDateTime)
+          return slotStart < eEnd && slotEnd > eStart
+        })
+
+        if (!conflict) {
+          suggestions.push({
+            start: slotStart.toISOString(),
+            end: slotEnd.toISOString(),
+            label: `${hour}:00 - ${slotEnd.getHours()}:${slotEnd.getMinutes().toString().padStart(2, '0')}`,
+            preferred: false
+          })
+        }
+      }
+    }
+
+    // If still no slots available today, suggest next available day
     if (suggestions.length === 0) {
       const nextDay = new Date(date)
       nextDay.setDate(nextDay.getDate() + 1)
       const nextDayStr = nextDay.toISOString().split('T')[0]
 
       // Recursively find next available day
-      return suggestTimeSlots(nextDayStr, duration)
+      return suggestTimeSlots(nextDayStr, duration, category)
     }
 
     return suggestions
@@ -238,6 +283,27 @@ export const useEventStore = defineStore('events', () => {
 
   function setDateRangeFilter(range) {
     dateRangeFilter.value = range
+  }
+
+  function getTemplateByCategory(category) {
+    // Simple template lookup - in a real app, this might come from a separate store
+    const templates = [
+      { category: 'Work Meeting', preferredTimes: [9, 10, 11, 14, 15, 16] },
+      { category: 'Gym/Workout', preferredTimes: [6, 7, 17, 18, 19, 20] },
+      { category: 'Doctor Appointment', preferredTimes: [8, 9, 10, 11, 14, 15, 16, 17] },
+      { category: 'Meal/Lunch', preferredTimes: [11, 12, 13, 18, 19, 20] },
+      { category: 'Travel', preferredTimes: [] },
+      { category: 'Social Event', preferredTimes: [18, 19, 20, 21] },
+      { category: 'Study Session', preferredTimes: [8, 9, 10, 14, 15, 16, 19, 20, 21] },
+      { category: 'School Submission', preferredTimes: [] },
+      { category: 'Project Milestone', preferredTimes: [9, 10, 11, 14, 15, 16] },
+      { category: 'Phone Call', preferredTimes: [8, 9, 10, 11, 14, 15, 16, 17] },
+      { category: 'Class/Lecture', preferredTimes: [8, 9, 10, 11, 12, 13, 14, 15, 16] },
+      { category: 'Shopping/Errands', preferredTimes: [10, 11, 12, 13, 14, 15, 16, 18, 19, 20] },
+      { category: 'School Runs', preferredTimes: [7, 8, 15, 16] },
+      { category: 'Other', preferredTimes: [9, 10, 11, 14, 15, 16] }
+    ]
+    return templates.find((t) => t.category === category)
   }
 
   function clearFilters() {

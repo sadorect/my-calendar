@@ -201,7 +201,11 @@ const availableSlots = computed(() => {
     return []
   }
 
-  return eventStore.suggestTimeSlots(eventData.value.date, eventData.value.duration)
+  return eventStore.suggestTimeSlots(
+    eventData.value.date,
+    eventData.value.duration,
+    props.template?.category
+  )
 })
 
 watch(

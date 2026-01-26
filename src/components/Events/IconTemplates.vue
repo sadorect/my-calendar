@@ -38,7 +38,8 @@ const eventTemplates = [
     icon: '💼',
     category: 'Work Meeting',
     defaultDuration: 60,
-    color: '#2196F3'
+    color: '#2196F3',
+    preferredTimes: [9, 10, 11, 14, 15, 16] // 9-11 AM, 2-4 PM
   },
   {
     id: 'gym',
@@ -46,7 +47,8 @@ const eventTemplates = [
     icon: '🏋️',
     category: 'Gym/Workout',
     defaultDuration: 45,
-    color: '#F44336'
+    color: '#F44336',
+    preferredTimes: [6, 7, 17, 18, 19, 20] // Early morning or evening
   },
   {
     id: 'doctor',
@@ -55,7 +57,8 @@ const eventTemplates = [
     category: 'Doctor Appointment',
     defaultDuration: 30,
     color: '#4CAF50',
-    requiresLocation: true
+    requiresLocation: true,
+    preferredTimes: [8, 9, 10, 11, 14, 15, 16, 17] // Morning and afternoon
   },
   {
     id: 'meal',
@@ -63,7 +66,8 @@ const eventTemplates = [
     icon: '🍽️',
     category: 'Meal/Lunch',
     defaultDuration: 60,
-    color: '#FF9800'
+    color: '#FF9800',
+    preferredTimes: [11, 12, 13, 18, 19, 20] // Lunch time and dinner time
   },
   {
     id: 'travel',
@@ -72,7 +76,8 @@ const eventTemplates = [
     category: 'Travel',
     allDay: true,
     color: '#9C27B0',
-    requiresLocation: true
+    requiresLocation: true,
+    preferredTimes: [] // All day, no specific preference
   },
   {
     id: 'social',
@@ -80,7 +85,8 @@ const eventTemplates = [
     icon: '👥',
     category: 'Social Event',
     defaultDuration: 120,
-    color: '#E91E63'
+    color: '#E91E63',
+    preferredTimes: [18, 19, 20, 21] // Evening social events
   },
   {
     id: 'study',
@@ -88,7 +94,8 @@ const eventTemplates = [
     icon: '📚',
     category: 'Study Session',
     defaultDuration: 120,
-    color: '#3F51B5'
+    color: '#3F51B5',
+    preferredTimes: [8, 9, 10, 14, 15, 16, 19, 20, 21] // Morning, afternoon, evening
   },
   {
     id: 'submission',
@@ -96,16 +103,25 @@ const eventTemplates = [
     icon: '📝',
     category: 'School Submission',
     allDay: true,
-    color: '#FF5722'
+    color: '#FF5722',
+    preferredTimes: [] // All day, no specific preference
   },
-  { id: 'project', name: 'Project', icon: '🎯', category: 'Project Milestone', color: '#009688' },
+  {
+    id: 'project',
+    name: 'Project',
+    icon: '🎯',
+    category: 'Project Milestone',
+    color: '#009688',
+    preferredTimes: [9, 10, 11, 14, 15, 16] // Work hours
+  },
   {
     id: 'phone',
     name: 'Phone',
     icon: '📞',
     category: 'Phone Call',
     defaultDuration: 30,
-    color: '#00BCD4'
+    color: '#00BCD4',
+    preferredTimes: [8, 9, 10, 11, 14, 15, 16, 17] // Business hours
   },
   {
     id: 'class',
@@ -114,7 +130,8 @@ const eventTemplates = [
     category: 'Class/Lecture',
     defaultDuration: 60,
     color: '#FFC107',
-    requiresLocation: true
+    requiresLocation: true,
+    preferredTimes: [8, 9, 10, 11, 12, 13, 14, 15, 16] // School hours
   },
   {
     id: 'shopping',
@@ -122,7 +139,8 @@ const eventTemplates = [
     icon: '🛒',
     category: 'Shopping/Errands',
     defaultDuration: 60,
-    color: '#795548'
+    color: '#795548',
+    preferredTimes: [10, 11, 12, 13, 14, 15, 16, 18, 19, 20] // Midday and evening
   },
   {
     id: 'school-runs',
@@ -131,7 +149,8 @@ const eventTemplates = [
     category: 'School Runs',
     defaultDuration: 30,
     color: '#607D8B',
-    requiresLocation: true
+    requiresLocation: true,
+    preferredTimes: [7, 8, 15, 16] // School start/end times
   },
   {
     id: 'other',
@@ -139,7 +158,8 @@ const eventTemplates = [
     icon: '📝',
     category: 'Other',
     defaultDuration: 60,
-    color: '#9E9E9E'
+    color: '#9E9E9E',
+    preferredTimes: [9, 10, 11, 14, 15, 16] // General work hours
   }
 ]
 

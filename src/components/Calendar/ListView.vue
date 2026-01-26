@@ -1,63 +1,109 @@
 <template>
-  <div class="space-y-4">
-    <h2 class="text-xl font-semibold text-gray-800">All Events</h2>
-    <div v-if="eventStore.events.length === 0" class="text-center py-8 text-gray-500">
-      No events found
-    </div>
-    <div v-else class="space-y-3">
-      <div
-        v-for="event in eventsWithConflicts"
-        :key="event.id"
-        class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
-        :class="{ 'border-red-300 bg-red-50': event.hasConflict }"
-      >
-        <div class="flex justify-between items-start">
-          <div class="flex-1">
-            <div class="font-medium text-gray-900 flex items-center gap-2">
-              {{ event.title }}
-              <span v-if="event.hasConflict" class="text-red-500 text-sm">⚠️ Conflict</span>
-            </div>
-            <div class="text-sm text-gray-600 mt-1">{{ formatDateTime(event.startDateTime) }}</div>
-            <div v-if="event.location" class="text-sm text-gray-500 mt-1">
-              📍 {{ event.location }}
-            </div>
-            <div v-if="event.notes" class="text-sm text-gray-500 mt-1">{{ event.notes }}</div>
-          </div>
-          <div
-            class="ml-3 px-2 py-1 rounded-full text-xs font-medium text-white"
-            :style="{ backgroundColor: event.color }"
-          >
-            {{ event.category }}
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="calendar-container">
+    <FullCalendar ref="calendarRef" :options="calendarOptions" />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
+import FullCalendar from '@fullcalendar/vue3'
+import listPlugin from '@fullcalendar/list'
+import interactionPlugin from '@fullcalendar/interaction'
 import { useEventStore } from '@/stores/events'
-import { format } from 'date-fns'
 
 const eventStore = useEventStore()
+const calendarRef = ref(null)
 
-// Computed property to check for conflicts
-const eventsWithConflicts = computed(() => {
-  return eventStore.filteredEvents.map((event) => {
+const calendarOptions = computed(() => {
+  // Check for conflicts and mark events
+  const eventsWithConflicts = eventStore.filteredEvents.map((event) => {
     const conflicts = eventStore.checkConflicts(event)
     return {
       ...event,
       hasConflict: conflicts.length > 0
     }
   })
+
+  return {
+    plugins: [listPlugin, interactionPlugin],
+    initialView: 'listMonth',
+    editable: false, // List view doesn't support drag-drop well
+    events: eventsWithConflicts.map((event) => ({
+      id: event.id,
+      title: event.title,
+      start: event.startDateTime,
+      end: event.endDateTime,
+      backgroundColor: event.color,
+      allDay: event.isAllDay,
+      extendedProps: {
+        category: event.category,
+        location: event.location,
+        notes: event.notes,
+        hasConflict: event.hasConflict
+      }
+    })),
+    eventClick: handleEventClick,
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'listMonth,listWeek,listDay'
+    },
+    listDayFormat: { weekday: 'long' },
+    listDaySideFormat: false,
+    eventContent: function(arg) {
+      // Custom event content for list view
+      const event = arg.event
+      const extendedProps = event.extendedProps
+
+      let html = `<div class="flex items-center justify-between w-full">`
+      html += `<div class="flex-1">`
+      html += `<div class="font-medium ${extendedProps.hasConflict ? 'text-red-600' : 'text-gray-900'}">`
+      if (extendedProps.hasConflict) {
+        html += '⚠️ '
+      }
+      html += event.title
+      html += `</div>`
+
+      if (extendedProps.location) {
+        html += `<div class="text-sm text-gray-500">📍 ${extendedProps.location}</div>`
+      }
+
+      if (extendedProps.notes) {
+        html += `<div class="text-sm text-gray-500">${extendedProps.notes}</div>`
+      }
+
+      html += `</div>`
+
+      html += `<div class="ml-3 px-2 py-1 rounded-full text-xs font-medium text-white" style="background-color: ${event.backgroundColor}">`
+      html += extendedProps.category
+      html += `</div>`
+
+      html += `</div>`
+
+      return { html }
+    }
+  }
 })
 
-function formatDateTime(dateTime) {
-  return format(new Date(dateTime), 'PPP p')
+function handleEventClick(info) {
+  console.log('Event clicked:', info.event.id)
+  // TODO: Open event details modal
 }
 </script>
 
 <style scoped>
-/* Tailwind handles all styling */
+.calendar-container {
+  height: 70vh;
+  min-height: 400px;
+}
+
+/* Custom list view styling */
+:deep(.fc-list-event) {
+  border-left: 4px solid;
+  border-left-color: inherit;
+}
+
+:deep(.fc-list-event:hover) {
+  background-color: #f9fafb;
+}
 </style>
