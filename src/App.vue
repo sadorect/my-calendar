@@ -37,6 +37,7 @@ function addEvent() {
 
 function selectTemplate(template) {
   selectedTemplate.value = template
+  showQuickAdd.value = false
 }
 
 function closeModal() {
@@ -78,7 +79,9 @@ function handleKeyNavigation(event, view) {
       class="hidden md:flex justify-between items-center p-6 bg-gradient-primary text-white shadow-theme-xl"
     >
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+        <div
+          class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm"
+        >
           <span class="text-xl">📅</span>
         </div>
         <h1 class="text-2xl font-bold tracking-tight">Personal Calendar</h1>
@@ -154,9 +157,13 @@ function handleKeyNavigation(event, view) {
     </header>
 
     <!-- Mobile Header -->
-    <header class="md:hidden flex items-center justify-center p-4 bg-gradient-primary text-white shadow-theme-xl">
+    <header
+      class="md:hidden flex items-center justify-center p-4 bg-gradient-primary text-white shadow-theme-xl"
+    >
       <div class="flex items-center space-x-3">
-        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+        <div
+          class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
+        >
           <span class="text-lg">📅</span>
         </div>
         <h1 class="text-lg font-bold tracking-tight">Calendar</h1>

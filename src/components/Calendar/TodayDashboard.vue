@@ -2,7 +2,9 @@
   <div class="space-y-8">
     <!-- Hero Section -->
     <div class="text-center py-6">
-      <div class="inline-flex items-center space-x-3 bg-gradient-primary text-white px-6 py-3 rounded-2xl shadow-theme-xl mb-4">
+      <div
+        class="inline-flex items-center space-x-3 bg-gradient-primary text-white px-6 py-3 rounded-2xl shadow-theme-xl mb-4"
+      >
         <span class="text-2xl">🎯</span>
         <h1 class="text-2xl md:text-3xl font-bold tracking-tight">
           Today - {{ formatDate(new Date()) }}
@@ -13,15 +15,23 @@
 
     <!-- Stats Cards -->
     <div class="grid grid-cols-2 gap-6">
-      <div class="card-glass p-6 text-center bg-gradient-accent text-white hover:scale-105 transition-transform duration-300">
-        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+      <div
+        class="card-glass p-6 text-center bg-gradient-accent text-white hover:scale-105 transition-transform duration-300"
+      >
+        <div
+          class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm"
+        >
           <span class="text-2xl">📅</span>
         </div>
         <div class="text-3xl font-bold mb-2">{{ todaysEvents.length }}</div>
         <div class="text-white/80 font-medium">Events Today</div>
       </div>
-      <div class="card-glass p-6 text-center bg-gradient-success text-white hover:scale-105 transition-transform duration-300">
-        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+      <div
+        class="card-glass p-6 text-center bg-gradient-success text-white hover:scale-105 transition-transform duration-300"
+      >
+        <div
+          class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm"
+        >
           <span class="text-2xl">✅</span>
         </div>
         <div class="text-3xl font-bold mb-2">{{ completedEventsCount }}</div>
@@ -32,14 +42,18 @@
     <!-- Today's Events Section -->
     <div class="card p-6">
       <div class="flex items-center space-x-3 mb-6">
-        <div class="w-10 h-10 bg-gradient-accent rounded-2xl flex items-center justify-center text-white">
+        <div
+          class="w-10 h-10 bg-gradient-accent rounded-2xl flex items-center justify-center text-white"
+        >
           <span class="text-lg">📋</span>
         </div>
         <h2 class="text-2xl font-bold text-theme-primary">Today's Events</h2>
       </div>
 
       <div v-if="todaysEvents.length === 0" class="text-center py-12">
-        <div class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div
+          class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4"
+        >
           <span class="text-3xl">🎉</span>
         </div>
         <div class="text-xl font-semibold text-theme-primary mb-2">All caught up!</div>
@@ -146,14 +160,18 @@
     <!-- Upcoming Events Section -->
     <div class="card p-6">
       <div class="flex items-center space-x-3 mb-6">
-        <div class="w-10 h-10 bg-gradient-warning rounded-2xl flex items-center justify-center text-white">
+        <div
+          class="w-10 h-10 bg-gradient-warning rounded-2xl flex items-center justify-center text-white"
+        >
           <span class="text-lg">🔮</span>
         </div>
         <h2 class="text-2xl font-bold text-theme-primary">Upcoming (Next 7 days)</h2>
       </div>
 
       <div v-if="upcomingEvents.length === 0" class="text-center py-12">
-        <div class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
+        <div
+          class="w-16 h-16 bg-theme-secondary rounded-2xl flex items-center justify-center mx-auto mb-4"
+        >
           <span class="text-3xl">✨</span>
         </div>
         <div class="text-xl font-semibold text-theme-primary mb-2">Nothing planned</div>

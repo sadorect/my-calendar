@@ -8,12 +8,15 @@
     aria-labelledby="modal-title"
     aria-describedby="modal-description"
   >
-    <div class="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-auto" @click.stop>
+    <div
+      class="bg-theme-modal rounded-lg w-full max-w-md max-h-[90vh] overflow-auto shadow-theme"
+      @click.stop
+    >
       <div class="p-6">
         <h2 id="modal-title" class="text-xl font-semibold mb-4">
           {{ isEditing ? 'Edit Event' : 'Add New Event' }}
         </h2>
-        <p id="modal-description" class="text-sm text-gray-600 mb-4">
+        <p id="modal-description" class="text-sm text-theme-muted mb-4">
           {{
             isEditing
               ? 'Update the event details below.'
@@ -22,7 +25,7 @@
         </p>
         <form @submit.prevent="saveEvent" class="space-y-4">
           <div>
-            <label for="event-title" class="block text-sm font-medium text-gray-700 mb-1"
+            <label for="event-title" class="block text-sm font-medium text-theme-primary mb-1"
               >Title</label
             >
             <input
@@ -31,7 +34,7 @@
               required
               aria-required="true"
               aria-describedby="title-error"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              class="w-full px-3 py-2 border border-theme rounded-md focus:outline-none focus:ring-2 focus:ring-theme-accent"
             />
             <div
               v-if="errors.title"
@@ -313,6 +316,11 @@ const saving = ref(false)
 const errors = ref({})
 
 const isEditing = computed(() => !!props.initialEvent)
+
+// Helper function to format time
+const formatTime = (dateTime) => {
+  return format(new Date(dateTime), 'p')
+}
 
 const eventData = ref({
   title: '',

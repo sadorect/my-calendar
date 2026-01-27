@@ -137,7 +137,7 @@ function handleEventDrop(info) {
 
 <style scoped>
 .calendar-container {
-  height: 70vh;
+  height: 100%;
   min-height: 400px;
 }
 
