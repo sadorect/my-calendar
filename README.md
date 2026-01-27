@@ -346,6 +346,78 @@ npm run build
 - Web App Manifest for installation
 - Background sync for notifications
 
+## 🚀 CI/CD Pipeline
+
+This project uses GitHub Actions for automated testing, building, and deployment.
+
+### Workflows
+
+- **CI/CD** (`ci-cd.yml`): Runs on every push to main and pull requests
+  - Code linting with ESLint
+  - Code formatting checks with Prettier
+  - Unit and E2E tests with Playwright
+  - Production build verification
+  - Automatic deployment to Vercel
+
+- **Preview Deployments** (`preview.yml`): Runs on pull requests
+  - Full test suite
+  - Preview deployment to Vercel
+  - Automatic PR comments with preview URLs
+
+- **Security & Quality** (`security.yml`): Weekly automated checks
+  - Dependency vulnerability scanning
+  - Lighthouse performance audits
+  - Outdated dependency reports
+
+### Setup Vercel Deployment
+
+1. **Create Vercel Account**: Sign up at [vercel.com](https://vercel.com)
+
+2. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
+
+3. **Deploy Manually First**:
+   ```bash
+   vercel --prod
+   ```
+   Follow the prompts to link your GitHub repository.
+
+4. **Get Vercel Secrets**:
+   ```bash
+   vercel env pull .env.local
+   ```
+
+5. **Add Secrets to GitHub**:
+   Go to your repository Settings → Secrets and variables → Actions
+
+   Add these secrets:
+   - `VERCEL_TOKEN`: Your Vercel token (get from [vercel.com/account/tokens](https://vercel.com/account/tokens))
+   - `VERCEL_ORG_ID`: Your Vercel organization ID
+   - `VERCEL_PROJECT_ID`: Your Vercel project ID
+
+6. **Automatic Deployments**: Push to main branch to trigger production deployment
+
+### Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run tests
+npm run test
+
+# Run linter
+npm run lint
+
+# Format code
+npm run format
+```
+
 ## 🤝 Contributing
 
 1. Fork the repository
