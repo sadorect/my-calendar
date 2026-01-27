@@ -374,17 +374,21 @@ This project uses GitHub Actions for automated testing, building, and deployment
 1. **Create Vercel Account**: Sign up at [vercel.com](https://vercel.com)
 
 2. **Install Vercel CLI**:
+
    ```bash
    npm i -g vercel
    ```
 
 3. **Deploy Manually First**:
+
    ```bash
    vercel --prod
    ```
+
    Follow the prompts to link your GitHub repository.
 
 4. **Get Vercel Secrets**:
+
    ```bash
    vercel env pull .env.local
    ```
