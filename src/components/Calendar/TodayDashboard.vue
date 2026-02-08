@@ -292,16 +292,6 @@ const completedEventsCount = computed(() => {
   return todaysEvents.value.filter((event) => event.isCompleted).length
 })
 
-const freeTime = computed(() => {
-  // Simple calculation: 16 hours - total event hours
-  const totalHours = todaysEvents.value.reduce((sum, event) => {
-    const start = new Date(event.startDateTime)
-    const end = new Date(event.endDateTime)
-    return sum + (end - start) / (1000 * 60 * 60)
-  }, 0)
-  return Math.max(0, 16 - totalHours).toFixed(1)
-})
-
 const upcomingEvents = computed(() => eventStore.upcomingEvents)
 
 function formatDate(date) {

@@ -142,7 +142,7 @@ export function importFromJSON(file) {
       try {
         const events = JSON.parse(e.target.result)
         resolve(events)
-      } catch (error) {
+      } catch {
         reject(new Error('Invalid JSON file'))
       }
     }
@@ -222,7 +222,7 @@ export function importFromCSV(file) {
         })
 
         resolve(events)
-      } catch (error) {
+      } catch {
         reject(new Error('Invalid CSV file'))
       }
     }
@@ -391,7 +391,7 @@ export function restoreFromBackup(file) {
       try {
         const backup = JSON.parse(e.target.result)
         resolve(backup)
-      } catch (error) {
+      } catch {
         reject(new Error('Invalid backup file'))
       }
     }

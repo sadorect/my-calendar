@@ -33,7 +33,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
 const emit = defineEmits(['select-template'])
 
