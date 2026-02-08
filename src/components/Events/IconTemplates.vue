@@ -33,7 +33,6 @@
 </template>
 
 <script setup>
-
 const emit = defineEmits(['select-template'])
 
 const eventTemplates = [
