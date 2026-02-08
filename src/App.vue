@@ -1,10 +1,13 @@
 <script setup>
-import { ref, onMounted, defineAsyncComponent } from 'vue'
+import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue'
 import { useEventStore } from './stores/events'
+import { useAlertStore } from './stores/alerts'
+import { notificationService } from './services/notifications'
 import IconTemplates from './components/Events/IconTemplates.vue'
 import QuickAddModal from './components/Events/QuickAddModal.vue'
 import SearchFilter from './components/SearchFilter.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
+import AlertNotification from './components/AlertNotification.vue'
 
 // Lazy load calendar components for better performance
 const MonthView = defineAsyncComponent(() => import('./components/Calendar/MonthView.vue'))
@@ -22,17 +25,36 @@ const ExportImport = defineAsyncComponent(
 )
 
 const eventStore = useEventStore()
+const alertStore = useAlertStore()
 const currentView = ref('today')
 const showQuickAdd = ref(false)
 const selectedTemplate = ref(null)
+const selectedDate = ref(null)
 const showMobileMenu = ref(false)
 
 onMounted(() => {
   eventStore.fetchEvents()
+
+  // Initialize alert system
+  notificationService.setAlertStore(alertStore)
+
+  // Start periodic checking for upcoming events (every 60 seconds)
+  notificationService.startPeriodicCheck(() => eventStore.events, 60000)
+})
+
+onUnmounted(() => {
+  // Clean up periodic checking
+  notificationService.stopPeriodicCheck()
 })
 
 function addEvent() {
   showQuickAdd.value = true
+  selectedDate.value = null // No pre-selected date for FAB button
+}
+
+function handleDateClick(dateStr) {
+  selectedDate.value = dateStr // Store clicked date
+  showQuickAdd.value = true // Show template selector
 }
 
 function selectTemplate(template) {
@@ -43,6 +65,7 @@ function selectTemplate(template) {
 function closeModal() {
   showQuickAdd.value = false
   selectedTemplate.value = null
+  selectedDate.value = null
 }
 
 function toggleMobileMenu() {
@@ -74,6 +97,8 @@ function handleKeyNavigation(event, view) {
 
 <template>
   <div class="app min-h-screen flex flex-col bg-theme-primary">
+    <!-- Alert Notifications -->
+    <AlertNotification />
     <!-- Desktop Header -->
     <header
       class="hidden md:flex justify-between items-center p-6 bg-gradient-primary text-white shadow-theme-xl"
@@ -176,9 +201,9 @@ function handleKeyNavigation(event, view) {
       <SearchFilter v-if="currentView !== 'today'" />
 
       <TodayDashboard v-if="currentView === 'today'" />
-      <MonthView v-else-if="currentView === 'month'" />
-      <WeekView v-else-if="currentView === 'week'" />
-      <DayView v-else-if="currentView === 'day'" />
+      <MonthView v-else-if="currentView === 'month'" @date-click="handleDateClick" />
+      <WeekView v-else-if="currentView === 'week'" @date-click="handleDateClick" />
+      <DayView v-else-if="currentView === 'day'" @date-click="handleDateClick" />
       <ListView v-else-if="currentView === 'list'" />
       <AnalyticsDashboard v-else-if="currentView === 'analytics'" />
       <ExportImport v-else-if="currentView === 'export'" />
@@ -247,6 +272,7 @@ function handleKeyNavigation(event, view) {
     <QuickAddModal
       :show="!!(selectedTemplate && selectedTemplate.name && selectedTemplate.category)"
       :template="selectedTemplate"
+      :initial-date="selectedDate"
       @close="closeModal"
     />
 

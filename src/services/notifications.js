@@ -1,8 +1,11 @@
-// Notification service for browser notifications
+// Notification service for browser notifications and in-app alerts
 class NotificationService {
   constructor() {
     this.permission = null
     this.scheduledNotifications = new Map()
+    this.checkInterval = null
+    this.alertStore = null
+    this.notifiedEvents = new Set() // Track events we've already notified about
   }
 
   // Request notification permission
@@ -139,6 +142,117 @@ class NotificationService {
       permission: Notification.permission,
       scheduledCount: this.scheduledNotifications.size
     }
+  }
+
+  // Initialize alert store (called from main app)
+  setAlertStore(alertStore) {
+    this.alertStore = alertStore
+  }
+
+  // Show in-app alert notification
+  showInAppAlert(event, minutesBefore) {
+    if (!this.alertStore) return
+
+    const alertKey = `${event.id}_${minutesBefore}`
+
+    // Don't show duplicate alerts
+    if (this.alertStore.hasAlertForEvent(event.id, minutesBefore)) {
+      return
+    }
+
+    let message = `Starting in ${minutesBefore} minutes`
+    if (minutesBefore === 0) {
+      message = 'Starting now!'
+    } else if (minutesBefore < 60) {
+      message = `Starting in ${minutesBefore} minutes`
+    } else {
+      const hours = Math.floor(minutesBefore / 60)
+      message = `Starting in ${hours} hour${hours > 1 ? 's' : ''}`
+    }
+
+    this.alertStore.addAlert({
+      type: 'reminder',
+      title: event.title,
+      message: message,
+      location: event.location || null,
+      eventId: event.id,
+      minutesBefore: minutesBefore,
+      duration: 15000 // Show for 15 seconds
+    })
+  }
+
+  // Start periodic checking for upcoming events
+  startPeriodicCheck(getEventsCallback, intervalMs = 60000) {
+    // Stop any existing interval
+    this.stopPeriodicCheck()
+
+    // Immediately check once
+    this.checkUpcomingEvents(getEventsCallback)
+
+    // Then check periodically (default every 60 seconds)
+    this.checkInterval = setInterval(() => {
+      this.checkUpcomingEvents(getEventsCallback)
+    }, intervalMs)
+  }
+
+  // Stop periodic checking
+  stopPeriodicCheck() {
+    if (this.checkInterval) {
+      clearInterval(this.checkInterval)
+      this.checkInterval = null
+    }
+  }
+
+  // Check for upcoming events and show alerts
+  checkUpcomingEvents(getEventsCallback) {
+    const events = getEventsCallback()
+    const now = new Date()
+
+    events.forEach((event) => {
+      // Skip completed events
+      if (event.isCompleted) return
+
+      const eventStart = new Date(event.startDateTime)
+
+      // Only check future events within the next 24 hours
+      const timeDiff = eventStart.getTime() - now.getTime()
+      if (timeDiff < 0 || timeDiff > 24 * 60 * 60 * 1000) return
+
+      const minutesUntilEvent = Math.floor(timeDiff / (60 * 1000))
+
+      // Check if we should notify based on reminders
+      if (event.reminders && event.reminders.length > 0) {
+        event.reminders.forEach((reminderMinutes) => {
+          // Check if we're within the reminder window (±1 minute tolerance)
+          const diff = Math.abs(minutesUntilEvent - reminderMinutes)
+
+          if (diff <= 1) {
+            const notificationKey = `${event.id}_${reminderMinutes}`
+
+            // Only notify once per event/reminder combination
+            if (!this.notifiedEvents.has(notificationKey)) {
+              this.notifiedEvents.add(notificationKey)
+
+              // Show in-app alert
+              this.showInAppAlert(event, minutesUntilEvent)
+
+              // Also show browser notification if enabled
+              if (this.canNotify()) {
+                this.showNotification(event, reminderMinutes)
+              }
+
+              // Clean up old notifications after event has passed
+              setTimeout(
+                () => {
+                  this.notifiedEvents.delete(notificationKey)
+                },
+                timeDiff + 60 * 60 * 1000
+              ) // Clean up 1 hour after event
+            }
+          }
+        })
+      }
+    })
   }
 }
 

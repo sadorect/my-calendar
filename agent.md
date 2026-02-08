@@ -65,9 +65,9 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 
 ## Current Status
 
-- **Date**: January 26, 2026
+- **Date**: February 8, 2026
 - **Phase**: Phase 5 Complete - All features implemented and tested
-- **Last Update**: Fixed critical template access bug in QuickAddModal that was preventing event scheduling
+- **Last Update**: Implemented date click workflow with template selector - clicking dates now shows IconTemplates popup for template selection with automatic date prefilling
 
 ## Completed Tasks
 
@@ -150,6 +150,20 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 - [x] Added missing errors reactive property and validation logic to QuickAddModal
 - [x] Updated deprecated apple-mobile-web-app-capable meta tag to mobile-web-app-capable
 - [x] Fixed missing favicon by using SVG icon instead of ICO
+- [x] Created alert store (stores/alerts.js) for managing in-app notifications
+- [x] Built AlertNotification component with mobile-responsive design (desktop: top-right, mobile: bottom-up above nav)
+- [x] Updated notification service with periodic checking system (checks every 60 seconds for upcoming events)
+- [x] Integrated in-app alert system with browser notifications (dual notification support)
+- [x] Added alert initialization in App.vue with automatic cleanup on unmount
+- [x] Fixed TODO in MonthView - date clicks now open QuickAddModal pre-filled with clicked date
+- [x] Added initialDate prop to QuickAddModal for pre-selecting event dates
+- [x] Implemented active reminder alerts that show based on event reminder times (±1 minute tolerance)
+- [x] Alert system prevents duplicate notifications and auto-dismisses after duration
+- [x] Notifications persist across page refreshes via periodic checking (not dependent on setTimeout)
+- [x] Refactored date click flow: clicking dates now shows IconTemplates selector (like FAB button)
+- [x] Added date-click event emitters to MonthView, WeekView, and DayView
+- [x] Date click workflow: Calendar Date Click → Template Selector → QuickAddModal with date auto-prefilled
+- [x] Improved UX by maintaining consistent flow between FAB button and date clicks
 
 ## Mobile Responsiveness Features
 

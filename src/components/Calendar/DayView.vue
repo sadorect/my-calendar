@@ -40,6 +40,8 @@ import QuickAddModal from '@/components/Events/QuickAddModal.vue'
 const eventStore = useEventStore()
 const calendarRef = ref(null)
 
+const emit = defineEmits(['date-click'])
+
 // Event details modal state
 const showEventDetails = ref(false)
 const selectedEvent = ref(null)
@@ -78,7 +80,8 @@ const calendarOptions = computed(() => {
 })
 
 function handleDateClick(info) {
-  console.log('Date clicked:', info.dateStr)
+  // Emit date click event to parent (App.vue) to show template selector
+  emit('date-click', info.dateStr)
 }
 
 function handleEventClick(info) {

@@ -77,9 +77,11 @@ const calendarOptions = computed(() => {
   }
 })
 
+const emit = defineEmits(['date-click'])
+
 function handleDateClick(info) {
-  console.log('Date clicked:', info.dateStr)
-  // TODO: Open quick add modal
+  // Emit date click event to parent (App.vue) to show template selector
+  emit('date-click', info.dateStr)
 }
 
 function handleEventClick(info) {

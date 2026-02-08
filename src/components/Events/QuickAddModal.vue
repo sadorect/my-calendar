@@ -306,7 +306,8 @@ import { format } from 'date-fns'
 const props = defineProps({
   show: Boolean,
   template: Object,
-  initialEvent: Object
+  initialEvent: Object,
+  initialDate: String // Format: 'yyyy-MM-dd'
 })
 
 const emit = defineEmits(['close'])
@@ -465,9 +466,12 @@ watch(
   () => props.template,
   (newTemplate) => {
     if (newTemplate && !props.initialEvent && !isEditing.value) {
+      // Use initialDate if provided, otherwise use today
+      const defaultDate = props.initialDate || format(new Date(), 'yyyy-MM-dd')
+
       eventData.value = {
         title: newTemplate.name,
-        date: format(new Date(), 'yyyy-MM-dd'),
+        date: defaultDate,
         endDate: '',
         startTime: '09:00',
         duration: newTemplate.defaultDuration || 60,
@@ -492,6 +496,16 @@ watch(
         durationUnit.value = 'minutes'
         durationValue.value = templateDuration
       }
+    }
+  }
+)
+
+watch(
+  () => props.initialDate,
+  (newDate) => {
+    // Update only the date field when initialDate changes (from date click)
+    if (newDate && !props.initialEvent) {
+      eventData.value.date = newDate
     }
   }
 )
