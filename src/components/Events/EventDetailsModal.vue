@@ -105,8 +105,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useEventStore } from '@/stores/events'
 import { format } from 'date-fns'
 
 const props = defineProps({
@@ -115,8 +113,6 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['close', 'edit', 'duplicate', 'delete'])
-
-const eventStore = useEventStore()
 
 function formatDateTime(dateTime) {
   const date = new Date(dateTime)

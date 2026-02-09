@@ -10,6 +10,6 @@ const app = createApp(App)
 app.use(createPinia())
 
 // Initialize theme store to apply initial theme
-const themeStore = useThemeStore()
+useThemeStore()
 
 app.mount('#app')

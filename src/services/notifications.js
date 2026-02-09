@@ -153,8 +153,6 @@ class NotificationService {
   showInAppAlert(event, minutesBefore) {
     if (!this.alertStore) return
 
-    const alertKey = `${event.id}_${minutesBefore}`
-
     // Don't show duplicate alerts
     if (this.alertStore.hasAlertForEvent(event.id, minutesBefore)) {
       return
