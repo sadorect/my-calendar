@@ -65,9 +65,9 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 
 ## Current Status
 
-- **Date**: February 8, 2026
+- **Date**: February 9, 2026
 - **Phase**: Phase 5 Complete - All features implemented and tested
-- **Last Update**: Implemented date click workflow with template selector - clicking dates now shows IconTemplates popup for template selection with automatic date prefilling
+- **Last Update**: Rolled back problematic dependency updates that caused layout issues - reverted Tailwind v4, autoprefixer, and Playwright test updates. Menu layout restored to normal state.
 
 ## Completed Tasks
 
@@ -164,6 +164,15 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 - [x] Added date-click event emitters to MonthView, WeekView, and DayView
 - [x] Date click workflow: Calendar Date Click → Template Selector → QuickAddModal with date auto-prefilled
 - [x] Improved UX by maintaining consistent flow between FAB button and date clicks
+- [x] Fixed layout regression caused by Tailwind v4 update
+- [x] Reverted three problematic dependency merges:
+  - Merge #10 (Playwright test 1.58.1 update)
+  - Merge #9 (autoprefixer 10.4.24 update)
+  - Merge #2 (Tailwind CSS 4.1.18 update)
+- [x] Removed @tailwindcss/postcss v4 plugin, restored v3 compatible setup
+- [x] Restored postcss.config.js to use standard tailwindcss plugin
+- [x] Regenerated package-lock.json for stability
+- [x] Verified menu layout returned to normal state after rollbacks
 
 ## Mobile Responsiveness Features
 
