@@ -22,7 +22,7 @@
     "@fullcalendar/vue3": "^6.1.0",
     "chart.js": "^4.4.0",
     "date-fns": "^4.1.0",
-    "ics": "^3.7.0",
+    "ics": "^3.9.0",
     "localforage": "^1.10.0",
     "pinia": "^3.0.4",
     "uuid": "^13.0.0",
