@@ -129,7 +129,10 @@ const dateFilter = ref('all')
 
 // Computed properties
 const categories = computed(() => {
-  const uniqueCategories = [...new Set(eventStore.events.map((event) => event.category))]
+  // Merge categories from existing events and custom categories
+  const fromEvents = eventStore.events.map((event) => event.category).filter(Boolean)
+  const fromCustom = (eventStore.customCategories || []).map((c) => c.name)
+  const uniqueCategories = [...new Set([...fromEvents, ...fromCustom])]
   return uniqueCategories.sort()
 })
 

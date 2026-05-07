@@ -370,12 +370,11 @@ function unescapeICalText(text) {
 
 // Backup and restore functions
 
-export async function createBackup() {
-  // This would be implemented to backup all data
+export async function createBackup(events = [], templates = []) {
   const backup = {
-    events: [], // Would get from store
-    templates: [], // Would get from store
-    settings: {}, // Would get from store
+    version: 1,
+    events,
+    templates,
     timestamp: new Date().toISOString()
   }
 

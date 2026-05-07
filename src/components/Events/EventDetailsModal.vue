@@ -57,6 +57,36 @@
             <div class="text-sm">{{ event.notes }}</div>
           </div>
 
+          <!-- Links -->
+          <div v-if="event.links && event.links.length" class="text-gray-600">
+            <div class="font-medium mb-1">Links:</div>
+            <ul class="space-y-1">
+              <li v-for="(link, i) in event.links" :key="i">
+                <a
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-blue-600 hover:underline break-all flex items-center gap-1"
+                >
+                  <svg
+                    class="w-3 h-3 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  {{ link.label || link.url }}
+                </a>
+              </li>
+            </ul>
+          </div>
+
           <div v-if="event.isRecurring" class="flex items-center text-blue-600">
             <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path

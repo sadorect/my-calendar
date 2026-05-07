@@ -79,21 +79,31 @@
                 "
                 class="mt-1 h-5 w-5 text-theme-success focus:ring-theme-success border-theme rounded-lg"
               />
-              <div class="flex-1">
-                <div
-                  class="font-semibold text-lg text-theme-primary mb-2"
-                  :class="{ 'line-through text-theme-muted': event.isCompleted }"
-                >
-                  {{ event.title }}
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span
+                    class="font-semibold text-lg text-theme-primary"
+                    :class="{ 'line-through text-theme-muted': event.isCompleted }"
+                  >
+                    {{ event.title }}
+                  </span>
+                  <span
+                    class="px-2 py-0.5 rounded-full text-xs font-semibold text-white shadow-theme shrink-0"
+                    :style="{ backgroundColor: event.color }"
+                  >
+                    {{ event.category }}
+                  </span>
                 </div>
-                <div class="flex items-center space-x-4 text-sm text-theme-secondary">
+                <div
+                  class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-theme-secondary"
+                >
                   <div class="flex items-center space-x-1">
                     <span>🕐</span>
                     <span>{{ formatTime(event.startDateTime) }}</span>
                   </div>
                   <div v-if="event.location" class="flex items-center space-x-1">
                     <span>📍</span>
-                    <span>{{ event.location }}</span>
+                    <span class="truncate max-w-[140px]">{{ event.location }}</span>
                   </div>
                   <div v-if="event.isRecurring" class="flex items-center space-x-1">
                     <span>🔄</span>
@@ -102,7 +112,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 shrink-0">
               <button
                 @click="editEvent(event)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
@@ -145,12 +155,6 @@
                   />
                 </svg>
               </button>
-              <div
-                class="px-3 py-1 rounded-full text-sm font-semibold text-white shadow-theme"
-                :style="{ backgroundColor: event.color }"
-              >
-                {{ event.category }}
-              </div>
             </div>
           </div>
         </div>
@@ -185,16 +189,24 @@
           class="card p-5 hover:scale-[1.02] transition-all duration-200"
         >
           <div class="flex justify-between items-start">
-            <div class="flex-1">
-              <div class="font-semibold text-lg text-theme-primary mb-2">{{ event.title }}</div>
-              <div class="flex items-center space-x-4 text-sm text-theme-secondary">
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <span class="font-semibold text-lg text-theme-primary">{{ event.title }}</span>
+                <span
+                  class="px-2 py-0.5 rounded-full text-xs font-semibold text-white shadow-theme shrink-0"
+                  :style="{ backgroundColor: event.color }"
+                >
+                  {{ event.category }}
+                </span>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-theme-secondary">
                 <div class="flex items-center space-x-1">
                   <span>📅</span>
                   <span>{{ formatDate(new Date(event.startDateTime)) }}</span>
                 </div>
                 <div v-if="event.location" class="flex items-center space-x-1">
                   <span>📍</span>
-                  <span>{{ event.location }}</span>
+                  <span class="truncate max-w-[140px]">{{ event.location }}</span>
                 </div>
                 <div v-if="event.isRecurring" class="flex items-center space-x-1">
                   <span>🔄</span>
@@ -202,7 +214,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 shrink-0">
               <button
                 @click="editEvent(event)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
@@ -245,12 +257,6 @@
                   />
                 </svg>
               </button>
-              <div
-                class="px-3 py-1 rounded-full text-sm font-semibold text-white shadow-theme"
-                :style="{ backgroundColor: event.color }"
-              >
-                {{ event.category }}
-              </div>
             </div>
           </div>
         </div>
@@ -270,6 +276,9 @@
     :initial-event="editingEvent"
     @close="closeEditModal"
   />
+
+  <!-- Habit Streaks -->
+  <HabitStreaks />
 </template>
 
 <script setup>
@@ -277,6 +286,7 @@ import { computed, ref } from 'vue'
 import { useEventStore } from '@/stores/events'
 import { format, isToday } from 'date-fns'
 import QuickAddModal from '@/components/Events/QuickAddModal.vue'
+import HabitStreaks from '@/components/HabitStreaks.vue'
 
 const eventStore = useEventStore()
 

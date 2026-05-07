@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import * as db from '@/services/database'
 import { notificationService } from '@/services/notifications'
+import { useHistory } from '@/composables/useHistory'
 import { addDays, addWeeks, addMonths, addYears, isBefore, format, parseISO } from 'date-fns'
 
 // Function to expand recurring events into individual instances
@@ -70,6 +71,8 @@ export const useEventStore = defineStore('events', () => {
   const events = ref([])
   const loading = ref(false)
   const templates = ref([])
+  const customCategories = ref([])
+  const { record } = useHistory()
 
   const eventsByDate = computed(() => {
     // Expand recurring events for the next 3 months
@@ -99,6 +102,74 @@ export const useEventStore = defineStore('events', () => {
         return eventDate >= now && eventDate <= nextWeek
       })
       .sort((a, b) => new Date(a.startDateTime) - new Date(b.startDateTime))
+  })
+
+  /**
+   * Compute streaks for recurring events.
+   * Returns an array of { eventId, title, category, color, currentStreak, longestStreak }
+   * A "streak" counts consecutive periods (based on recurrence frequency) where
+   * the event was marked completed.
+   */
+  const habitStreaks = computed(() => {
+    const recurringEvents = events.value.filter((e) => e.isRecurring)
+    const now = new Date()
+
+    return recurringEvents
+      .map((event) => {
+        const { recurrence, startDateTime, endDateTime } = event
+        if (!recurrence) return null
+
+        // Expand instances from event start up to today
+        const eventStart = parseISO(startDateTime)
+        const instances = expandRecurringEvents([event], eventStart, now)
+
+        // Sort by date ascending
+        instances.sort((a, b) => new Date(a.startDateTime) - new Date(b.startDateTime))
+
+        // We only have completion stored on the base event in this implementation;
+        // use the base event.completedDates set if present, or treat all past
+        // instances as completed if event.isCompleted is true (simple heuristic).
+        // For a richer experience, per-instance completion would be tracked separately.
+        const completedDates = new Set(event.completedDates || [])
+        const isGloballyCompleted = event.isCompleted
+
+        let currentStreak = 0
+        let longestStreak = 0
+        let streak = 0
+
+        for (let i = instances.length - 1; i >= 0; i--) {
+          const inst = instances[i]
+          const dateKey = inst.startDateTime.split('T')[0]
+          const instDate = new Date(inst.startDateTime)
+
+          // Skip instances in the future relative to today
+          if (instDate > now) continue
+
+          const done =
+            completedDates.has(dateKey) || (isGloballyCompleted && i === instances.length - 1)
+
+          if (done) {
+            streak++
+            if (currentStreak === 0) currentStreak = streak
+            longestStreak = Math.max(longestStreak, streak)
+          } else {
+            if (currentStreak === 0) currentStreak = 0
+            streak = 0
+          }
+        }
+
+        return {
+          eventId: event.id,
+          title: event.title,
+          category: event.category,
+          color: event.color || '#6366F1',
+          frequency: recurrence.frequency,
+          currentStreak,
+          longestStreak,
+          totalInstances: instances.filter((i) => new Date(i.startDateTime) <= now).length
+        }
+      })
+      .filter(Boolean)
   })
 
   // Search and filter state
@@ -145,6 +216,7 @@ export const useEventStore = defineStore('events', () => {
     loading.value = true
     events.value = await db.getAllEvents()
     templates.value = await db.getAllTemplates()
+    customCategories.value = await db.getAllCategories()
     loading.value = false
 
     // Schedule notifications for all events
@@ -154,34 +226,83 @@ export const useEventStore = defineStore('events', () => {
   async function addEvent(event) {
     const newEvent = await db.addEvent(event)
     events.value.push(newEvent)
-
-    // Schedule notifications for the new event
     notificationService.scheduleEventNotifications(newEvent)
+
+    record({
+      label: `Add "${newEvent.title}"`,
+      undo: async () => {
+        await db.deleteEvent(newEvent.id)
+        events.value = events.value.filter((e) => e.id !== newEvent.id)
+      },
+      redo: async () => {
+        const { id, createdAt, updatedAt, ...rest } = newEvent
+        const reAdded = await db.addEvent(rest)
+        events.value.push(reAdded)
+        notificationService.scheduleEventNotifications(reAdded)
+      }
+    })
 
     return newEvent
   }
 
   async function updateEvent(id, updates) {
+    const original = events.value.find((e) => e.id === id)
+    const snapshot = original ? { ...original } : null
+
     await db.updateEvent(id, updates)
     const index = events.value.findIndex((e) => e.id === id)
     if (index !== -1) {
       events.value[index] = { ...events.value[index], ...updates }
+      notificationService.scheduleEventNotifications(events.value[index])
+    }
 
-      // Re-schedule notifications for the updated event
-      const updatedEvent = events.value[index]
-      notificationService.scheduleEventNotifications(updatedEvent)
+    if (snapshot) {
+      record({
+        label: `Edit "${snapshot.title}"`,
+        undo: async () => {
+          await db.updateEvent(id, snapshot)
+          const idx = events.value.findIndex((e) => e.id === id)
+          if (idx !== -1) events.value[idx] = { ...snapshot }
+          notificationService.scheduleEventNotifications(snapshot)
+        },
+        redo: async () => {
+          await db.updateEvent(id, updates)
+          const idx = events.value.findIndex((e) => e.id === id)
+          if (idx !== -1) events.value[idx] = { ...events.value[idx], ...updates }
+        }
+      })
     }
   }
 
   async function deleteEvent(id) {
     const event = events.value.find((e) => e.id === id)
+    const snapshot = event ? { ...event } : null
+
     await db.deleteEvent(id)
     events.value = events.value.filter((e) => e.id !== id)
 
-    // Cancel all notifications for the deleted event
     if (event && event.reminders) {
       event.reminders.forEach((minutesBefore) => {
         notificationService.cancelNotification(`${id}_${minutesBefore}`)
+      })
+    }
+
+    if (snapshot) {
+      record({
+        label: `Delete "${snapshot.title}"`,
+        undo: async () => {
+          const { id: _id, createdAt, updatedAt, ...rest } = snapshot
+          const reAdded = await db.addEvent(rest)
+          events.value.push(reAdded)
+          notificationService.scheduleEventNotifications(reAdded)
+        },
+        redo: async () => {
+          const reAddedEvent = events.value.find((e) => e.title === snapshot.title)
+          if (reAddedEvent) {
+            await db.deleteEvent(reAddedEvent.id)
+            events.value = events.value.filter((e) => e.id !== reAddedEvent.id)
+          }
+        }
       })
     }
   }
@@ -462,6 +583,35 @@ export const useEventStore = defineStore('events', () => {
     dateRangeFilter.value = null
   }
 
+  async function addCustomCategory(category) {
+    const newCat = await db.addCategory(category)
+    customCategories.value.push(newCat)
+    return newCat
+  }
+
+  async function updateCustomCategory(id, updates) {
+    const updated = await db.updateCategory(id, updates)
+    const idx = customCategories.value.findIndex((c) => c.id === id)
+    if (idx !== -1) customCategories.value[idx] = updated
+    return updated
+  }
+
+  async function deleteCustomCategory(id) {
+    await db.deleteCategory(id)
+    customCategories.value = customCategories.value.filter((c) => c.id !== id)
+  }
+
+  async function restoreEvents(restoredEvents = []) {
+    await db.clearAllEvents()
+    events.value = []
+    for (const event of restoredEvents) {
+      const { id, createdAt, updatedAt, ...rest } = event
+      const newEvent = await db.addEvent(rest)
+      events.value.push(newEvent)
+    }
+    notificationService.scheduleAllNotifications(events.value)
+  }
+
   // Notification functions
   async function requestNotificationPermission() {
     return await notificationService.requestPermission()
@@ -479,8 +629,10 @@ export const useEventStore = defineStore('events', () => {
     events,
     loading,
     templates,
+    customCategories,
     eventsByDate,
     upcomingEvents,
+    habitStreaks,
     filteredEvents,
     searchQuery,
     categoryFilter,
@@ -498,6 +650,10 @@ export const useEventStore = defineStore('events', () => {
     setCategoryFilter,
     setDateRangeFilter,
     clearFilters,
+    restoreEvents,
+    addCustomCategory,
+    updateCustomCategory,
+    deleteCustomCategory,
     requestNotificationPermission,
     getNotificationStatus,
     canNotify

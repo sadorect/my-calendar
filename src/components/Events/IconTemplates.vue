@@ -5,7 +5,7 @@
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4"
     >
       <button
-        v-for="template in eventTemplates"
+        v-for="template in allTemplates"
         :key="template.id"
         type="button"
         :aria-label="'Select ' + template.name + ' event template'"
@@ -33,7 +33,12 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useEventStore } from '@/stores/events'
+
 const emit = defineEmits(['select-template'])
+
+const eventStore = useEventStore()
 
 const eventTemplates = [
   {
@@ -166,6 +171,20 @@ const eventTemplates = [
     preferredTimes: [9, 10, 11, 14, 15, 16] // General work hours
   }
 ]
+
+// Merge hardcoded templates with user-created custom categories
+const allTemplates = computed(() => {
+  const custom = (eventStore.customCategories || []).map((cat) => ({
+    id: 'custom-' + cat.id,
+    name: cat.name,
+    icon: '🏷️',
+    category: cat.name,
+    defaultDuration: 60,
+    color: cat.color || '#9E9E9E',
+    preferredTimes: []
+  }))
+  return [...eventTemplates, ...custom]
+})
 
 function selectTemplate(template) {
   emit('select-template', template)

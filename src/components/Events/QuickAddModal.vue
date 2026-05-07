@@ -102,15 +102,16 @@
                 v-model.number="durationValue"
                 type="number"
                 min="1"
+                step="1"
                 required
-                class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="min-w-0 flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <select
                 v-model="durationUnit"
-                class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="shrink-0 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-                <option value="minutes">minutes</option>
-                <option value="hours">hours</option>
+                <option value="minutes">min</option>
+                <option value="hours">hrs</option>
               </select>
             </div>
             <div v-if="errors.duration" class="text-red-600 text-sm mt-1" role="alert">
@@ -153,6 +154,74 @@
               rows="3"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
+          </div>
+
+          <!-- Event Color -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Event Color</label>
+            <div class="flex items-center gap-3">
+              <input
+                v-model="eventData.color"
+                type="color"
+                class="h-10 w-16 cursor-pointer rounded border border-gray-300 p-1"
+              />
+              <span class="text-sm text-gray-500">{{ eventData.color }}</span>
+              <div
+                class="h-6 w-6 rounded-full border border-gray-300"
+                :style="{ backgroundColor: eventData.color }"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Links</label>
+            <div class="space-y-2">
+              <div
+                v-for="(link, i) in eventData.links"
+                :key="i"
+                class="flex items-center gap-2 p-2 bg-gray-50 rounded-md"
+              >
+                <a
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 text-sm text-blue-600 truncate hover:underline"
+                >
+                  {{ link.label || link.url }}
+                </a>
+                <button
+                  type="button"
+                  @click="removeLink(i)"
+                  class="text-red-400 hover:text-red-600 flex-shrink-0 text-xs"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input
+                  v-model="newLinkUrl"
+                  type="url"
+                  placeholder="https://..."
+                  class="w-full sm:flex-1 px-2 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  @keydown.enter.prevent="addLink"
+                />
+                <input
+                  v-model="newLinkLabel"
+                  type="text"
+                  placeholder="Label (optional)"
+                  class="w-full sm:w-32 px-2 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  @keydown.enter.prevent="addLink"
+                />
+                <button
+                  type="button"
+                  @click="addLink"
+                  class="w-full sm:w-auto px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm transition-colors"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
           </div>
 
           <!-- Reminders -->
@@ -307,7 +376,8 @@ const props = defineProps({
   show: Boolean,
   template: Object,
   initialEvent: Object,
-  initialDate: String // Format: 'yyyy-MM-dd'
+  initialDate: String, // Format: 'yyyy-MM-dd'
+  initialStartTime: String // Format: 'HH:mm'
 })
 
 const emit = defineEmits(['close'])
@@ -333,6 +403,8 @@ const eventData = ref({
   isMultiDay: false,
   location: '',
   notes: '',
+  color: '#2196F3',
+  links: [],
   reminders: [], // Start with empty array, will be populated by checkboxes
   isRecurring: false,
   recurrence: {
@@ -345,6 +417,24 @@ const eventData = ref({
 // Duration input handling
 const durationUnit = ref('minutes')
 const durationValue = ref(60)
+
+// Link management
+const newLinkUrl = ref('')
+const newLinkLabel = ref('')
+
+function addLink() {
+  const url = newLinkUrl.value.trim()
+  if (!url) return
+  // Ensure protocol
+  const fullUrl = /^https?:\/\//i.test(url) ? url : `https://${url}`
+  eventData.value.links.push({ url: fullUrl, label: newLinkLabel.value.trim() || '' })
+  newLinkUrl.value = ''
+  newLinkLabel.value = ''
+}
+
+function removeLink(index) {
+  eventData.value.links.splice(index, 1)
+}
 
 // Computed property to get the internal duration in minutes
 const internalDuration = computed(() => {
@@ -362,11 +452,11 @@ watch(internalDuration, (newVal) => {
 // Watch for unit changes to convert the displayed value
 watch(durationUnit, (newUnit, oldUnit) => {
   if (newUnit === 'hours' && oldUnit === 'minutes') {
-    // Converting from minutes to hours
-    durationValue.value = durationValue.value / 60
+    // Converting from minutes to hours — round to nearest integer
+    durationValue.value = Math.round(durationValue.value / 60) || 1
   } else if (newUnit === 'minutes' && oldUnit === 'hours') {
-    // Converting from hours to minutes
-    durationValue.value = durationValue.value * 60
+    // Converting from hours to minutes — round to nearest integer
+    durationValue.value = Math.round(durationValue.value * 60) || 1
   }
 })
 
@@ -473,12 +563,14 @@ watch(
         title: newTemplate.name,
         date: defaultDate,
         endDate: '',
-        startTime: '09:00',
+        startTime: props.initialStartTime || '09:00',
         duration: newTemplate.defaultDuration || 60,
         isAllDay: newTemplate.allDay || false,
         isMultiDay: false,
         location: '',
         notes: '',
+        color: newTemplate.color || '#2196F3',
+        links: [],
         reminders: [15],
         isRecurring: false,
         recurrence: {
@@ -533,6 +625,8 @@ watch(
         isMultiDay: isMultiDay,
         location: newEvent.location || '',
         notes: newEvent.notes || '',
+        color: newEvent.color || '#2196F3',
+        links: Array.isArray(newEvent.links) ? newEvent.links : [],
         reminders: newEvent.reminders || [],
         isRecurring: newEvent.isRecurring || false,
         recurrence: newEvent.recurrence || {
@@ -612,9 +706,10 @@ async function saveEvent() {
     isAllDay: Boolean(eventData.value.isAllDay),
     location: String(eventData.value.location || ''),
     notes: String(eventData.value.notes || ''),
-    color: String(
-      isEditing.value ? props.initialEvent.color : props.template ? props.template.color : '#2196F3'
-    ),
+    color: String(eventData.value.color || '#2196F3'),
+    links: Array.isArray(eventData.value.links)
+      ? eventData.value.links.filter((l) => l.url && l.url.trim())
+      : [],
     isCompleted: Boolean(isEditing.value ? props.initialEvent.isCompleted : false),
     reminders: Array.isArray(eventData.value.reminders)
       ? eventData.value.reminders

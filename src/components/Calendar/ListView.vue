@@ -89,28 +89,26 @@ const calendarOptions = computed(() => {
       const event = arg.event
       const extendedProps = event.extendedProps
 
-      let html = `<div class="flex items-center justify-between w-full">`
-      html += `<div class="flex-1">`
-      html += `<div class="font-medium ${extendedProps.hasConflict ? 'text-red-600' : 'text-gray-900'}">`
+      let html = `<div class="min-w-0 w-full">`
+      html += `<div class="flex items-center gap-2 flex-wrap">`
+      html += `<span class="font-medium leading-snug ${extendedProps.hasConflict ? 'text-red-600' : 'text-gray-900'}">`
       if (extendedProps.hasConflict) {
         html += '⚠️ '
       }
       html += event.title
+      html += `</span>`
+      html += `<span class="px-2 py-0.5 rounded-full text-xs font-medium text-white shrink-0" style="background-color: ${event.backgroundColor}">`
+      html += extendedProps.category
+      html += `</span>`
       html += `</div>`
 
       if (extendedProps.location) {
-        html += `<div class="text-sm text-gray-500">📍 ${extendedProps.location}</div>`
+        html += `<div class="text-xs text-gray-500 mt-0.5">📍 ${extendedProps.location}</div>`
       }
 
       if (extendedProps.notes) {
-        html += `<div class="text-sm text-gray-500">${extendedProps.notes}</div>`
+        html += `<div class="text-xs text-gray-500 mt-0.5 line-clamp-1">${extendedProps.notes}</div>`
       }
-
-      html += `</div>`
-
-      html += `<div class="ml-3 px-2 py-1 rounded-full text-xs font-medium text-white" style="background-color: ${event.backgroundColor}">`
-      html += extendedProps.category
-      html += `</div>`
 
       html += `</div>`
 
@@ -158,6 +156,7 @@ function deleteEvent(eventId) {
 .calendar-container {
   height: 100%;
   min-height: 400px;
+  overflow-x: hidden;
 }
 
 /* Custom list view styling */
@@ -168,5 +167,21 @@ function deleteEvent(eventId) {
 
 :deep(.fc-list-event:hover) {
   background-color: #f9fafb;
+}
+
+/* Prevent horizontal overflow on mobile */
+:deep(.fc-list-table) {
+  width: 100%;
+  table-layout: fixed;
+}
+
+:deep(.fc-list-event-title) {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+:deep(.fc-list-event-title a) {
+  display: block;
+  overflow: hidden;
 }
 </style>

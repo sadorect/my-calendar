@@ -2,12 +2,15 @@
 import { ref, onMounted, onUnmounted, defineAsyncComponent } from 'vue'
 import { useEventStore } from './stores/events'
 import { useAlertStore } from './stores/alerts'
+import { useHistory } from './composables/useHistory'
 import { notificationService } from './services/notifications'
 import IconTemplates from './components/Events/IconTemplates.vue'
 import QuickAddModal from './components/Events/QuickAddModal.vue'
 import SearchFilter from './components/SearchFilter.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 import AlertNotification from './components/AlertNotification.vue'
+import MiniCalendar from './components/MiniCalendar.vue'
+import NaturalLanguageInput from './components/NaturalLanguageInput.vue'
 
 // Lazy load calendar components for better performance
 const MonthView = defineAsyncComponent(() => import('./components/Calendar/MonthView.vue'))
@@ -26,10 +29,12 @@ const ExportImport = defineAsyncComponent(
 
 const eventStore = useEventStore()
 const alertStore = useAlertStore()
+const { canUndo, canRedo, undo, redo } = useHistory()
 const currentView = ref('today')
 const showQuickAdd = ref(false)
 const selectedTemplate = ref(null)
 const selectedDate = ref(null)
+const nlPrefilledData = ref(null)
 const showMobileMenu = ref(false)
 
 onMounted(() => {
@@ -40,12 +45,38 @@ onMounted(() => {
 
   // Start periodic checking for upcoming events (every 60 seconds)
   notificationService.startPeriodicCheck(() => eventStore.events, 60000)
+
+  // Keyboard shortcuts for undo/redo
+  window.addEventListener('keydown', handleGlobalKeydown)
 })
 
 onUnmounted(() => {
   // Clean up periodic checking
   notificationService.stopPeriodicCheck()
+  window.removeEventListener('keydown', handleGlobalKeydown)
 })
+
+function handleGlobalKeydown(e) {
+  const isMac = navigator.platform.toUpperCase().includes('MAC')
+  const ctrl = isMac ? e.metaKey : e.ctrlKey
+  if (!ctrl) return
+  if (e.key === 'z' && !e.shiftKey) {
+    e.preventDefault()
+    undo()
+  } else if ((e.key === 'z' && e.shiftKey) || e.key === 'y') {
+    e.preventDefault()
+    redo()
+  }
+}
+
+function handleMiniCalendarDate(dateStr) {
+  selectedDate.value = dateStr
+  // Switch to day view when a date is clicked from the sidebar
+  if (!['today', 'export', 'analytics'].includes(currentView.value)) {
+    currentView.value = 'day'
+  }
+  handleDateClick(dateStr)
+}
 
 function addEvent() {
   showQuickAdd.value = true
@@ -66,6 +97,21 @@ function closeModal() {
   showQuickAdd.value = false
   selectedTemplate.value = null
   selectedDate.value = null
+  nlPrefilledData.value = null
+}
+
+function handleNLParsed(data) {
+  // Use 'Other' template as a neutral base, override with parsed data
+  nlPrefilledData.value = data
+  selectedTemplate.value = {
+    name: data.title,
+    category: 'Other',
+    color: '#6366F1',
+    defaultDuration: data.duration,
+    allDay: data.isAllDay,
+    requiresLocation: false
+  }
+  selectedDate.value = data.date
 }
 
 function toggleMobileMenu() {
@@ -96,7 +142,7 @@ function handleKeyNavigation(event, view) {
 </script>
 
 <template>
-  <div class="app min-h-screen flex flex-col bg-theme-primary">
+  <div class="app min-h-screen flex flex-col bg-theme-primary overflow-x-hidden">
     <!-- Alert Notifications -->
     <AlertNotification />
     <!-- Desktop Header -->
@@ -113,6 +159,49 @@ function handleKeyNavigation(event, view) {
       </div>
       <div class="flex items-center gap-6">
         <ThemeToggle />
+        <!-- Undo / Redo -->
+        <div class="flex gap-1">
+          <button
+            @click="undo"
+            :disabled="!canUndo"
+            title="Undo (Ctrl+Z)"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 14L4 9l5-5M4 9h11a5 5 0 010 10H9"
+              />
+            </svg>
+          </button>
+          <button
+            @click="redo"
+            :disabled="!canRedo"
+            title="Redo (Ctrl+Shift+Z)"
+            class="p-2 rounded-lg bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 14l5-5-5-5M19 9H8a5 5 0 000 10h6"
+              />
+            </svg>
+          </button>
+        </div>
         <nav class="flex gap-2 bg-white/10 rounded-2xl p-1 backdrop-blur-sm">
           <button
             @click="currentView = 'today'"
@@ -196,18 +285,31 @@ function handleKeyNavigation(event, view) {
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1 overflow-auto p-2 md:p-4 pb-20 md:pb-4">
-      <!-- Search and Filter (shown for calendar views, not today dashboard) -->
-      <SearchFilter v-if="currentView !== 'today'" />
+    <div class="flex flex-1 overflow-hidden">
+      <!-- Mini Calendar Sidebar (desktop only, hidden for settings/analytics) -->
+      <MiniCalendar
+        v-if="!['export', 'analytics'].includes(currentView)"
+        @select-date="handleMiniCalendarDate"
+      />
 
-      <TodayDashboard v-if="currentView === 'today'" />
-      <MonthView v-else-if="currentView === 'month'" @date-click="handleDateClick" />
-      <WeekView v-else-if="currentView === 'week'" @date-click="handleDateClick" />
-      <DayView v-else-if="currentView === 'day'" @date-click="handleDateClick" />
-      <ListView v-else-if="currentView === 'list'" />
-      <AnalyticsDashboard v-else-if="currentView === 'analytics'" />
-      <ExportImport v-else-if="currentView === 'export'" />
-    </main>
+      <main class="flex-1 overflow-y-auto overflow-x-hidden p-2 md:p-4 pb-20 md:pb-4">
+        <!-- Natural Language Input (desktop, calendar views) -->
+        <div v-if="!['export', 'analytics'].includes(currentView)" class="hidden md:block mb-4">
+          <NaturalLanguageInput @parsed="handleNLParsed" />
+        </div>
+
+        <!-- Search and Filter (shown for calendar views, not today dashboard) -->
+        <SearchFilter v-if="currentView !== 'today'" />
+
+        <TodayDashboard v-if="currentView === 'today'" />
+        <MonthView v-else-if="currentView === 'month'" @date-click="handleDateClick" />
+        <WeekView v-else-if="currentView === 'week'" @date-click="handleDateClick" />
+        <DayView v-else-if="currentView === 'day'" @date-click="handleDateClick" />
+        <ListView v-else-if="currentView === 'list'" />
+        <AnalyticsDashboard v-else-if="currentView === 'analytics'" />
+        <ExportImport v-else-if="currentView === 'export'" />
+      </main>
+    </div>
 
     <!-- Mobile Bottom Navigation -->
     <nav
@@ -273,6 +375,7 @@ function handleKeyNavigation(event, view) {
       :show="!!(selectedTemplate && selectedTemplate.name && selectedTemplate.category)"
       :template="selectedTemplate"
       :initial-date="selectedDate"
+      :initial-start-time="nlPrefilledData ? nlPrefilledData.startTime : null"
       @close="closeModal"
     />
 
@@ -333,5 +436,26 @@ function handleKeyNavigation(event, view) {
 </template>
 
 <style>
-/* Custom styles for FullCalendar and other components */
+/* Prevent FullCalendar from creating horizontal scroll on any view */
+.fc {
+  max-width: 100%;
+}
+.fc-view-harness {
+  overflow-x: hidden !important;
+}
+.fc-scroller {
+  overflow-x: hidden !important;
+}
+.fc-scroller-liquid-absolute {
+  overflow-x: hidden !important;
+}
+/* Ensure header toolbar wraps on very small screens */
+.fc-header-toolbar {
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.fc-toolbar-chunk {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

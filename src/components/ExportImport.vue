@@ -175,7 +175,10 @@
     </div>
 
     <!-- Notification Settings -->
-    <NotificationSettings />
+    <NotificationSettings class="mt-6" />
+
+    <!-- Custom Categories -->
+    <CategoryManager class="mt-6" />
 
     <!-- Status Messages -->
     <div
@@ -192,6 +195,7 @@
 import { ref, computed } from 'vue'
 import { useEventStore } from '../stores/events'
 import NotificationSettings from '../components/NotificationSettings.vue'
+import CategoryManager from '../components/CategoryManager.vue'
 import {
   exportToJSON,
   exportToCSV,
@@ -274,7 +278,7 @@ async function importFile() {
 }
 
 function createBackup() {
-  createBackupFile()
+  createBackupFile(eventsStore.events, eventsStore.templates)
   showStatus('Backup created successfully!', 'success')
 }
 
@@ -287,10 +291,9 @@ async function restoreBackup() {
   try {
     const backup = await restoreFromBackup(selectedBackup.value)
 
-    // Restore events, templates, and settings
+    // Restore events from backup
     if (backup.events) {
-      eventsStore.events = backup.events
-      eventsStore.saveEvents()
+      await eventsStore.restoreEvents(backup.events)
     }
 
     showStatus('Backup restored successfully!', 'success')

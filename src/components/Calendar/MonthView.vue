@@ -62,6 +62,12 @@ const calendarOptions = computed(() => {
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
     editable: true,
+    headerToolbar: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'today'
+    },
+    dayMaxEvents: true,
     events: eventsWithConflicts.map((event) => ({
       id: event.id,
       title: event.title,
@@ -142,6 +148,8 @@ function handleEventDrop(info) {
 .calendar-container {
   height: 100%;
   min-height: 400px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Conflict event styling */

@@ -58,6 +58,10 @@ export async function deleteEvent(id) {
   await eventsStore.removeItem(id)
 }
 
+export async function clearAllEvents() {
+  await eventsStore.clear()
+}
+
 // Settings
 export async function getSetting(key) {
   return await settingsStore.getItem(key)
@@ -80,4 +84,34 @@ export async function addTemplate(template) {
   const newTemplate = { ...template, id: uuidv4() }
   await templatesStore.setItem(newTemplate.id, newTemplate)
   return newTemplate
+}
+
+// Custom categories
+const categoriesStore = localforage.createInstance({
+  name: 'PersonalCalendarDB',
+  storeName: 'categories'
+})
+
+export async function getAllCategories() {
+  const cats = []
+  await categoriesStore.iterate((value) => cats.push(value))
+  return cats
+}
+
+export async function addCategory(category) {
+  const newCat = { ...category, id: uuidv4(), isCustom: true }
+  await categoriesStore.setItem(newCat.id, newCat)
+  return newCat
+}
+
+export async function updateCategory(id, updates) {
+  const existing = await categoriesStore.getItem(id)
+  if (!existing) throw new Error('Category not found')
+  const updated = { ...existing, ...updates }
+  await categoriesStore.setItem(id, updated)
+  return updated
+}
+
+export async function deleteCategory(id) {
+  await categoriesStore.removeItem(id)
 }

@@ -62,8 +62,21 @@ const calendarOptions = computed(() => {
 
   return {
     plugins: [timeGridPlugin, interactionPlugin],
-    initialView: 'timeGridWeek',
+    initialView: window.innerWidth < 768 ? 'timeGridDay' : 'timeGridWeek',
     editable: true,
+    headerToolbar: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'today'
+    },
+    contentHeight: 'auto',
+    windowResize: (arg) => {
+      const isMobile = arg.view.calendar.el.offsetWidth < 768
+      const targetView = isMobile ? 'timeGridDay' : 'timeGridWeek'
+      if (arg.view.type !== targetView) {
+        arg.view.calendar.changeView(targetView)
+      }
+    },
     events: eventsWithConflicts.map((event) => ({
       id: event.id,
       title: event.title,
@@ -142,6 +155,8 @@ function handleEventDrop(info) {
 .calendar-container {
   height: 100%;
   min-height: 400px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Conflict event styling */
