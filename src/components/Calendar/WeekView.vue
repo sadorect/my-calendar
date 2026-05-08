@@ -83,6 +83,8 @@ const calendarOptions = computed(() => {
       start: event.startDateTime,
       end: event.endDateTime,
       backgroundColor: event.color,
+      borderColor: event.color,
+      textColor: '#ffffff',
       allDay: event.isAllDay,
       classNames: event.hasConflict ? ['event-conflict'] : []
     })),

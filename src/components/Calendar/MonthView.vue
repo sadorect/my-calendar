@@ -67,13 +67,15 @@ const calendarOptions = computed(() => {
       center: 'title',
       right: 'today'
     },
-    dayMaxEvents: true,
+    dayMaxEvents: false,
     events: eventsWithConflicts.map((event) => ({
       id: event.id,
       title: event.title,
       start: event.startDateTime,
       end: event.endDateTime,
       backgroundColor: event.color,
+      borderColor: event.color,
+      textColor: '#ffffff',
       allDay: event.isAllDay,
       classNames: event.hasConflict ? ['event-conflict'] : []
     })),
