@@ -6,3 +6,5 @@ dist
 playwright-report
 playwright-report/index.html
 test-results
+# Sync server deployment secrets
+sync-server/.env

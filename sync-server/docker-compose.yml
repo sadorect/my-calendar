@@ -1,0 +1,47 @@
+# Deployment for the VPS. Docker rather than a systemd unit because the deploy
+# user can run Docker unattended but cannot install units without a password —
+# `restart: unless-stopped` gives the same survive-a-reboot behaviour.
+#
+# Secrets come from a .env file beside this one (see .env.example); it is not in
+# the repository.
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: calendar_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: calendar_sync
+      POSTGRES_USER: calendar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    # Loopback only. A bare `5437:5432` would publish to the world and bypass
+    # ufw, which is how the Redis on this box ended up hijacked once.
+    ports:
+      - '127.0.0.1:5437:5432'
+    volumes:
+      - calendar_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U calendar -d calendar_sync']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    image: calendar-sync:latest
+    container_name: calendar_sync
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://calendar:${POSTGRES_PASSWORD}@postgres:5432/calendar_sync
+      TOKEN_SECRET: ${TOKEN_SECRET:?set TOKEN_SECRET in .env}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:?set ALLOWED_ORIGINS in .env}
+      ALLOW_REGISTRATION: ${ALLOW_REGISTRATION:-1}
+      TRUST_PROXY: '1'
+    ports:
+      - '127.0.0.1:8787:8787'
+
+volumes:
+  calendar_pgdata:

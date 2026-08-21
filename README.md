@@ -70,6 +70,11 @@ The app is local-first and stays that way unless you point it at a server. Run
 `sync-server/` (Node + your own Postgres) and set `VITE_SYNC_URL` at build time;
 without it, the sync UI does not appear at all.
 
+The server is live at **https://birthapp.sadorect.com** (deployed 2026-08-22 on
+the VPS — see `sync-server/README.md` for what runs where). The deployed app
+only shows its sync UI once `VITE_SYNC_URL=https://birthapp.sadorect.com` is set
+as a Vercel project environment variable and the project is redeployed.
+
 Your data is encrypted in the browser before it is sent — the server stores a
 blob it cannot read — which also means **a forgotten password cannot be reset.**
 `sync-server/README.md` covers the key derivation, the conflict protocol and
@@ -383,11 +388,37 @@ npm run build
 # Output in /dist directory
 ```
 
-### PWA Features (Future)
+### PWA and app updates
 
-- Service Worker for offline functionality
-- Web App Manifest for installation
-- Background sync for notifications
+- Service worker (Workbox, via `vite-plugin-pwa`) for offline use
+- Web app manifest for installation on a phone's home screen
+- Updates are **offered, not forced**. The worker is registered in
+  `src/services/registerServiceWorker.js` in `prompt` mode: a shipped build
+  surfaces as an "A new version is ready" banner and as the **Check for
+  updates** row (birth calendar → Settings, and the mobile More sheet). Nobody
+  needs to hard-refresh, and no reload happens mid-sentence.
+- A long-lived tab re-checks hourly, when it becomes visible again, and when
+  the device comes back online.
+- The banner and the row read their state from `src/composables/useAppUpdate.js`,
+  which has no service-worker import — that is what keeps it unit-testable and
+  keeps a browser without service-worker support from breaking Settings (there,
+  "check for updates" simply reloads).
+
+### The deployment URL
+
+Nothing in the app hardcodes its own address — share links are built from
+`window.location.origin` — so renaming the Vercel deployment needs no code
+change. Two things do follow from a rename:
+
+- **A new origin is a new box of data.** Everything the app stores (events, the
+  birth calendar, journal entries, favourites) lives in IndexedDB, which is
+  scoped to the origin. Visitors of the old URL do not carry their data to the
+  new one, and an installed home-screen app keeps pointing at the old origin
+  until it is removed and reinstalled. The self-hosted sync service is the only
+  bridge: sign in on the old URL, sync, then sign in on the new one.
+- **The sync server's CORS allowlist is by origin.** Add the new address to
+  `ALLOWED_ORIGINS` (see `sync-server/README.md`) or writes from the renamed
+  app are rejected.
 
 ## 🚀 CI/CD Pipeline
 

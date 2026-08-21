@@ -23,15 +23,15 @@ key escrow, so there is nothing to recover with.
 
 ## Endpoints
 
-| Method | Path | Notes |
-|--------|------|-------|
-| `GET` | `/health` | liveness |
-| `POST` | `/v1/auth/register` | `{ email, authSecret }` → `{ token }` |
-| `POST` | `/v1/auth/login` | `{ email, authSecret }` → `{ token }` |
-| `GET` | `/v1/vault` | → `{ vault, revision }` |
-| `PUT` | `/v1/vault` | `{ ciphertext, iv, clientUpdatedAt, baseRevision }`; `409` returns the current copy |
-| `DELETE` | `/v1/vault` | deletes the stored blob |
-| `DELETE` | `/v1/account` | deletes the account and its blob |
+| Method   | Path                | Notes                                                                               |
+| -------- | ------------------- | ----------------------------------------------------------------------------------- |
+| `GET`    | `/health`           | liveness                                                                            |
+| `POST`   | `/v1/auth/register` | `{ email, authSecret }` → `{ token }`                                               |
+| `POST`   | `/v1/auth/login`    | `{ email, authSecret }` → `{ token }`                                               |
+| `GET`    | `/v1/vault`         | → `{ vault, revision }`                                                             |
+| `PUT`    | `/v1/vault`         | `{ ciphertext, iv, clientUpdatedAt, baseRevision }`; `409` returns the current copy |
+| `DELETE` | `/v1/vault`         | deletes the stored blob                                                             |
+| `DELETE` | `/v1/account`       | deletes the account and its blob                                                    |
 
 Writes are compare-and-set on `revision`, so two devices saving at once cannot
 overwrite each other: the loser gets a `409` carrying the current copy, merges
@@ -39,78 +39,68 @@ locally and retries. Merge rules live in `src/services/mergeState.js` in the app
 
 ## Configuration
 
-| Variable | Required | Meaning |
-|----------|----------|---------|
-| `DATABASE_URL` | yes | e.g. `postgres://calendar:…@127.0.0.1:5437/calendar_sync` |
-| `TOKEN_SECRET` | yes | ≥32 chars, signs bearer tokens. Rotating it signs everyone out. |
-| `ALLOWED_ORIGINS` | yes | comma-separated exact origins, e.g. `https://calendar.example` |
-| `PORT` | no | default `8787` |
-| `HOST` | no | default `127.0.0.1` — bind to loopback and reverse-proxy |
-| `ALLOW_REGISTRATION` | no | `0` closes signup once your own accounts exist |
-| `TRUST_PROXY` | no | `1` to honour `X-Forwarded-For` for rate limiting |
-| `MIGRATE_ON_BOOT` | no | `0` to skip the schema check on start |
+| Variable             | Required | Meaning                                                         |
+| -------------------- | -------- | --------------------------------------------------------------- |
+| `DATABASE_URL`       | yes      | e.g. `postgres://calendar:…@127.0.0.1:5437/calendar_sync`       |
+| `TOKEN_SECRET`       | yes      | ≥32 chars, signs bearer tokens. Rotating it signs everyone out. |
+| `ALLOWED_ORIGINS`    | yes      | comma-separated exact origins, e.g. `https://calendar.example`  |
+| `PORT`               | no       | default `8787`                                                  |
+| `HOST`               | no       | default `127.0.0.1` — bind to loopback and reverse-proxy        |
+| `ALLOW_REGISTRATION` | no       | `0` closes signup once your own accounts exist                  |
+| `TRUST_PROXY`        | no       | `1` to honour `X-Forwarded-For` for rate limiting               |
+| `MIGRATE_ON_BOOT`    | no       | `0` to skip the schema check on start                           |
 
 ## Deploying on the VPS
 
-Postgres, in its own container so it shares nothing with the other apps on the
-box. Note the loopback bind — a published Docker port bypasses `ufw`:
+Deployed 2026-08-22 as **https://birthapp.sadorect.com**, live and in use by the
+app. What is actually running, which differs from the systemd sketch this
+section used to carry:
+
+- `docker compose` (`docker-compose.yml` beside this file), not systemd. The
+  deploy user can run Docker unattended but cannot install a unit file without
+  a sudo password, and `restart: unless-stopped` survives a reboot just as well.
+- Two containers: `calendar_postgres` (Postgres 16, published on
+  **127.0.0.1:5437** only — a bare `5437:5432` would bypass `ufw`) and
+  `calendar_sync` (this service, on **127.0.0.1:8787**). Neither is reachable
+  from outside the box.
+- The working copy lives in `/home/deploy/calendar-sync`, with secrets in
+  `.env` beside the compose file (mode 0600, never committed —
+  `.env.example` shows the shape).
+- TLS and the public hostname come from Virtualmin: `birthapp.sadorect.com` is
+  a **sub-server of sadorect.com**, so it inherits the parent's Cloudflare
+  Origin CA certificate (`*.sadorect.com`, valid to 2040) and works under
+  Cloudflare's Full (strict). The reverse proxy was added with
+  `virtualmin create-proxy --domain birthapp.sadorect.com --path / --url http://127.0.0.1:8787/`.
+- Cloudflare: proxied (orange) A record → 173.212.209.39.
+
+To redeploy after a code change:
 
 ```bash
-docker run -d --name calendar_postgres --restart unless-stopped \
-  -e POSTGRES_DB=calendar_sync \
-  -e POSTGRES_USER=calendar \
-  -e POSTGRES_PASSWORD='<generate one>' \
-  -p 127.0.0.1:5437:5432 \
-  -v calendar_pgdata:/var/lib/postgresql/data \
-  postgres:16
+cd /home/deploy/my-calendar/sync-server
+cp -r src package.json package-lock.json Dockerfile docker-compose.yml schema.sql /home/deploy/calendar-sync/
+cd /home/deploy/calendar-sync && sudo docker compose up -d --build
+curl -s https://birthapp.sadorect.com/health
 ```
 
-The service:
+Two things that bit during the first deploy, both worth keeping in mind:
 
-```bash
-cd /opt/calendar-sync && npm ci --omit=dev && npm run migrate
-```
+- Files on this box are created 0660, and `COPY` preserves the mode, so the
+  image's unprivileged `node` user could not read its own source. The Dockerfile
+  uses `COPY --chown=node:node` plus an explicit `chmod -R a+rX`.
+- `HOST` defaults to `127.0.0.1`, which inside a container means the container's
+  own loopback — nothing reaches it. The image sets `HOST=0.0.0.0`; the _host_
+  publishes on loopback, which is where the isolation actually belongs.
 
-`/etc/systemd/system/calendar-sync.service`:
+Then point the app at it by setting `VITE_SYNC_URL=https://birthapp.sadorect.com`
+in the build environment (for the live app, that is a Vercel project environment
+variable, and it takes a redeploy). Unset, the app has no sync and the UI hides
+it.
 
-```ini
-[Unit]
-Description=Calendar sync
-After=network.target docker.service
-
-[Service]
-Type=simple
-User=calendar
-WorkingDirectory=/opt/calendar-sync
-EnvironmentFile=/etc/calendar-sync.env
-ExecStart=/usr/bin/node src/index.js
-Restart=always
-RestartSec=5
-NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=strict
-ProtectHome=true
-
-[Install]
-WantedBy=multi-user.target
-```
-
-Apache vhost in front of it (TLS terminates here; the service itself only ever
-listens on loopback):
-
-```apache
-<VirtualHost *:443>
-  ServerName sync.example.com
-  SSLEngine on
-  # …certificate directives…
-  ProxyPreserveHost On
-  ProxyPass        / http://127.0.0.1:8787/
-  ProxyPassReverse / http://127.0.0.1:8787/
-</VirtualHost>
-```
-
-Then point the app at it by setting `VITE_SYNC_URL=https://sync.example.com`
-in the build environment. Unset, the app has no sync and the UI hides it.
+**Rate limiting is coarser than it looks.** `mod_remoteip` is not enabled on
+this Apache, so with `TRUST_PROXY=1` the client key is the Cloudflare edge IP
+rather than the visitor's. Ten auth attempts a minute per edge is fine for a
+handful of devices; it would need `mod_remoteip` and Cloudflare's ranges (or
+`CF-Connecting-IP`) before it meant anything at a larger scale.
 
 ## Tests
 
