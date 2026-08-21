@@ -152,23 +152,6 @@
   border: 1px solid var(--glass-border);
 }
 
-/* Gradient backgrounds */
-.bg-gradient-primary {
-  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-}
-
-.bg-gradient-accent {
-  background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
-}
-
-.bg-gradient-success {
-  background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));
-}
-
-.bg-gradient-warning {
-  background: linear-gradient(135deg, var(--warning-gradient-start), var(--warning-gradient-end));
-}
-
 /* Enhanced button styles */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
@@ -248,6 +231,24 @@
     0 2px 4px -1px var(--shadow);
 }
 
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, var(--warning-gradient-start), var(--warning-gradient-end));
+}
+
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -264,4 +265,91 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border-hover);
+}
+
+/* ---------------------------------------------------------------------------
+   Birth calendar
+   Scoped under .birth-scope so none of this leaks into the productivity
+   calendar, which has its own established look.
+   --------------------------------------------------------------------------- */
+.birth-scope {
+  --bc-from: #fdf2f4;
+  --bc-to: #fce7e9;
+  --bc-accent: #c9788a;
+  --bc-ink: #5c3742;
+  --bc-surface: rgba(255, 255, 255, 0.72);
+  --bc-surface-solid: #ffffff;
+  --bc-muted: rgba(92, 55, 66, 0.62);
+  --bc-hairline: rgba(92, 55, 66, 0.12);
+  color: var(--bc-ink);
+  background-image: linear-gradient(170deg, var(--bc-from) 0%, var(--bc-to) 100%);
+  transition: background-image 600ms ease, color 300ms ease;
+  font-size: calc(1rem * var(--bc-font-scale, 1));
+}
+
+.dark .birth-scope {
+  --bc-surface: rgba(255, 255, 255, 0.06);
+  --bc-surface-solid: #241a1e;
+  --bc-ink: #f4e9ec;
+  --bc-muted: rgba(244, 233, 236, 0.66);
+  --bc-hairline: rgba(244, 233, 236, 0.14);
+}
+
+/* High contrast: drop the gradients and translucency entirely rather than
+   merely darkening them, which is what actually helps low-vision users. */
+.birth-scope.bc-contrast {
+  background-image: none;
+  background-color: #ffffff;
+  --bc-ink: #1a1013;
+  --bc-muted: #3d2c31;
+  --bc-surface: #ffffff;
+  --bc-surface-solid: #ffffff;
+  --bc-hairline: #1a1013;
+}
+.dark .birth-scope.bc-contrast {
+  background-color: #0b0709;
+  --bc-ink: #ffffff;
+  --bc-muted: #e8dde0;
+  --bc-surface: #0b0709;
+  --bc-surface-solid: #0b0709;
+  --bc-hairline: #ffffff;
+}
+.birth-scope.bc-contrast .bc-card {
+  border-width: 2px;
+  backdrop-filter: none;
+}
+
+.bc-card {
+  background-color: var(--bc-surface);
+  border: 1px solid var(--bc-hairline);
+  backdrop-filter: blur(12px);
+  border-radius: 1.5rem;
+}
+
+.bc-muted {
+  color: var(--bc-muted);
+}
+
+.bc-accent {
+  color: var(--bc-accent);
+}
+
+/* Scripture is always serif and always slightly looser than UI text. */
+.bc-scripture {
+  font-family: theme('fontFamily.serif');
+  line-height: 1.75;
+}
+
+.bc-tap {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .birth-scope *,
+  .birth-scope *::before,
+  .birth-scope *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

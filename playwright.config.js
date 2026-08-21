@@ -5,6 +5,10 @@ import { defineConfig, devices } from '@playwright/test'
  */
 export default defineConfig({
   testDir: './tests',
+  /* tests/unit is Vitest, not Playwright. Without this Playwright tries to run
+     those files, fails on their aliases and JSON imports, and buries the real
+     e2e results in noise. Run them with `npm run test:unit`. */
+  testIgnore: ['**/unit/**'],
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

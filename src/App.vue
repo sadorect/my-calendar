@@ -11,6 +11,13 @@ import ThemeToggle from './components/ThemeToggle.vue'
 import AlertNotification from './components/AlertNotification.vue'
 import MiniCalendar from './components/MiniCalendar.vue'
 import NaturalLanguageInput from './components/NaturalLanguageInput.vue'
+import { usePregnancyStore } from './stores/pregnancy'
+
+// The birth calendar is a whole second calendar, so it is loaded on demand —
+// users who never open it should not pay for its content bundle.
+const BirthCalendar = defineAsyncComponent(
+  () => import('./components/Birth/BirthCalendar.vue')
+)
 
 // Lazy load calendar components for better performance
 const MonthView = defineAsyncComponent(() => import('./components/Calendar/MonthView.vue'))
@@ -29,6 +36,9 @@ const ExportImport = defineAsyncComponent(
 
 const eventStore = useEventStore()
 const alertStore = useAlertStore()
+const pregnancyStore = usePregnancyStore()
+/** Which calendar is on screen. Initialised from the saved default in onMounted. */
+const mode = ref('standard')
 const { canUndo, canRedo, undo, redo } = useHistory()
 const currentView = ref('today')
 const showQuickAdd = ref(false)
@@ -37,8 +47,12 @@ const selectedDate = ref(null)
 const nlPrefilledData = ref(null)
 const showMobileMenu = ref(false)
 
-onMounted(() => {
+onMounted(async () => {
   eventStore.fetchEvents()
+
+  // Restore the user's chosen default calendar before first paint of the body.
+  await pregnancyStore.load()
+  mode.value = pregnancyStore.state.settings.defaultMode || 'standard'
 
   // Initialize alert system
   notificationService.setAlertStore(alertStore)
@@ -55,6 +69,11 @@ onUnmounted(() => {
   notificationService.stopPeriodicCheck()
   window.removeEventListener('keydown', handleGlobalKeydown)
 })
+
+function switchMode(next) {
+  mode.value = next
+  showMobileMenu.value = false
+}
 
 function handleGlobalKeydown(e) {
   const isMac = navigator.platform.toUpperCase().includes('MAC')
@@ -143,6 +162,20 @@ function handleKeyNavigation(event, view) {
 
 <template>
   <div class="app min-h-screen flex flex-col bg-theme-primary overflow-x-hidden">
+    <!-- Birth calendar takes over the whole screen: it has its own navigation,
+         its own palette, and none of the productivity chrome applies to it. -->
+    <template v-if="mode === 'birth'">
+      <button
+        class="fixed top-3 right-3 z-40 px-3 py-2 rounded-full text-xs font-medium bg-black/25 text-white backdrop-blur-md hover:bg-black/35 transition"
+        style="min-height: 44px"
+        @click="switchMode('standard')"
+      >
+        ← Calendar
+      </button>
+      <BirthCalendar />
+    </template>
+
+    <template v-else>
     <!-- Alert Notifications -->
     <AlertNotification />
     <!-- Desktop Header -->
@@ -158,6 +191,14 @@ function handleKeyNavigation(event, view) {
         <h1 class="text-2xl font-bold tracking-tight">Personal Calendar</h1>
       </div>
       <div class="flex items-center gap-6">
+        <button
+          class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-sm font-medium flex items-center gap-2"
+          title="Open the birth calendar"
+          @click="switchMode('birth')"
+        >
+          <span aria-hidden="true">🤍</span>
+          Birth calendar
+        </button>
         <ThemeToggle />
         <!-- Undo / Redo -->
         <div class="flex gap-1">
@@ -341,6 +382,8 @@ function handleKeyNavigation(event, view) {
       </button>
       <button
         @click="toggleMobileMenu"
+        aria-label="More options"
+        :aria-expanded="showMobileMenu"
         class="flex flex-col items-center p-3 rounded-2xl transition-all duration-200 hover:scale-105 text-theme-secondary"
       >
         <span class="text-xl mb-1">⚙️</span>
@@ -351,15 +394,20 @@ function handleKeyNavigation(event, view) {
     <!-- Floating Action Button -->
     <button
       @click="addEvent"
+      aria-label="Add event"
+      title="Add event"
       class="fixed bottom-20 right-4 w-16 h-16 bg-gradient-accent hover:bg-gradient-accent text-white rounded-2xl shadow-theme-xl hover:shadow-theme-xl transform hover:scale-110 transition-all duration-300 flex items-center justify-center text-2xl z-10 md:bottom-6 md:right-6 group"
     >
-      <span class="group-hover:rotate-90 transition-transform duration-300">+</span>
+      <span aria-hidden="true" class="group-hover:rotate-90 transition-transform duration-300">+</span>
     </button>
 
     <!-- Quick Add Overlay -->
     <div
       v-if="showQuickAdd"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-20"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Choose an event template"
       @click="closeModal"
     >
       <div
@@ -401,6 +449,13 @@ function handleKeyNavigation(event, view) {
           </div>
           <div class="space-y-3">
             <button
+              @click="switchMode('birth')"
+              class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
+            >
+              <span class="text-lg">🤍</span>
+              <span class="font-medium">Birth Calendar</span>
+            </button>
+            <button
               @click="selectView('week')"
               class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
             >
@@ -432,6 +487,7 @@ function handleKeyNavigation(event, view) {
         </div>
       </div>
     </div>
+    </template>
   </div>
 </template>
 

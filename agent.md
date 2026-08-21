@@ -63,11 +63,92 @@ Building a comprehensive Vue.js 3 calendar app with advanced features for person
 - [x] Dark mode
 - [ ] User testing and bug fixes
 
+### Phase 6: Birth Calendar — "Womb Whispers" (2026-08-21)
+
+A second calendar living inside the same app: a daily biblical declaration and
+prayer companion for pregnancy. Users choose which calendar opens by default.
+
+- [x] Data model — 280-day / 40-week timeline, 9 months mapped to week ranges
+      (`src/data/pregnancy/README.md` documents the shape)
+- [x] Content: Months 1–3 complete (91 daily + 13 weekly declarations, each with
+      Scripture and a closing prayer for the parents)
+- [x] Months 4–9 scaffolded with theme, key Scripture, intro and palette
+- [x] Pure date maths in `src/services/pregnancyTimeline.js`, unit tested
+- [x] Pinia store with local persistence (due date, favourites, journal, spoken)
+- [x] Onboarding by due date OR current week; skip-to-browse
+- [x] Today screen, month overview, weekly cards, saved/journal, settings
+- [x] Standard ⇄ birth calendar switch + default-view preference
+- [x] Text-to-speech, share, mark-as-spoken, streak, new-month particles
+- [x] Accessibility: high contrast mode, text scaling, 44px targets, reduced motion
+- [x] Biometric app lock (WebAuthn platform authenticator) + persistent storage
+- [ ] Months 4–9 declaration content
+- [ ] Printable PDF keepsake export
+- [ ] Daily reminder delivery (setting exists; scheduling not wired)
+- [ ] Ambient audio
+- [ ] Share as an image card (currently shares text)
+- [ ] Accounts and cross-device sync — see "Sync" below
+
+### Sync (not built — decision needed)
+
+The app is entirely local-first: no backend, no accounts. Birth calendar state is
+deliberately one serialisable blob under the `birthCalendar` settings key with an
+`updatedAt`, so it is one document to push when sync arrives. Still to decide:
+provider (Supabase vs Firebase), anonymous vs email identity, and conflict
+resolution. The biometric lock is a *device* lock, not an account login, and does
+not become one without a server to verify assertions.
+
 ## Current Status
 
-- **Date**: February 9, 2026
-- **Phase**: Phase 5 Complete - All features implemented and tested
-- **Last Update**: Rolled back problematic dependency updates that caused layout issues - reverted Tailwind v4, autoprefixer, and Playwright test updates. Menu layout restored to normal state.
+- **Date**: August 21, 2026
+- **Phase**: Phase 6 — Birth calendar shipped (Months 1-3 content); Months 4-9 pending
+- **Last Update**: Added the "Womb Whispers" birth calendar alongside the
+  productivity calendar, with a user-selectable default view, a due-date driven
+  280-day timeline, and a biometric app lock. 47 unit tests and 8 Playwright
+  specs added, all passing.
+
+### Housekeeping pass (2026-08-21)
+
+The pre-existing suite had 9 failing e2e tests (confirmed against a clean
+checkout first — they were not caused by the birth calendar). All now pass:
+**23 passed, 1 skipped, 0 failed**, lint clean, 0 npm vulnerabilities.
+
+App bugs found and fixed:
+
+- **Today dashboard stat cards showed nothing.** `.card-glass` is defined after
+  `.bg-gradient-*` with equal specificity, so it overwrote the gradient with
+  translucent white — white text on a white card. Gradient utilities now come
+  after `.card-glass` in `style.css`, so an explicitly applied utility wins.
+- **Duplicate `duration` key** in `NaturalLanguageInput`'s preview object: the
+  second literal silently overwrote `isAllDay ? null : durationMin`, so all-day
+  events displayed a duration they should not have.
+- **Icon-only buttons had no accessible name** — the add-event FAB (just "+"),
+  the mobile "More" toggle, `EventDetailsModal`'s close button, and the Today
+  dashboard's edit/duplicate/delete buttons (which relied on `title` alone).
+- **`EventDetailsModal` was not a dialog** — no `role="dialog"`, `aria-modal`
+  or `aria-labelledby`. Same for the template-picker overlay in `App.vue`.
+- **`npm audit`**: 19 vulnerabilities (14 high) → 0, via non-breaking lockfile
+  updates only. `package.json` is unchanged, so no declared range moved.
+
+Test bugs found and fixed — these were the actual cause of most failures:
+
+- Six tests waited on `locator('button').getByText(/add|new|create/i)`, which
+  matched the natural-language input's **disabled** "Add" button, so Playwright
+  waited for it to become enabled until the test timed out. They now use the
+  FAB's new accessible name and drive the real create flow (FAB → template
+  picker → form → save) instead of a `select[name="template"]` and `.modal`
+  that never existed in this app.
+- Strict-mode violations from `locator('header')` (two responsive headers) and
+  `getByText('Day')` (also matches "Today").
+- `.month-view` / `.calendar-week` assertions replaced with `.fc`, which is what
+  FullCalendar actually renders.
+- Deletion is confirmed with a native `confirm()`; Playwright dismisses native
+  dialogs by default, silently cancelling the delete.
+- `playwright.config.js` now ignores `tests/unit/**` — Vitest specs that
+  Playwright was trying, and failing, to run.
+
+Known and left alone: the Today dashboard exposes per-event edit/duplicate/
+delete buttons rather than opening details on click. That is a deliberate
+design, not a bug.
 
 ## Completed Tasks
 

@@ -43,13 +43,13 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import * as chrono from 'chrono-node'
 import { format, addMinutes } from 'date-fns'
 
 const emit = defineEmits(['parsed'])
 
-const props = defineProps({
+defineProps({
   placeholder: {
     type: String,
     default: 'Describe an event in plain English…'
@@ -114,8 +114,7 @@ function parse() {
     date: format(startDate, 'yyyy-MM-dd'),
     startTime: isAllDay ? '09:00' : format(startDate, 'HH:mm'),
     endTime: format(endDate, 'HH:mm'),
-    isAllDay,
-    duration: durationMin
+    isAllDay
   }
 
   emit('parsed', {
