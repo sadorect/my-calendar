@@ -16,9 +16,11 @@ const entry = computed(() => {
   if (!props.day) return null
   const raw = dayContent(props.day)
   if (!raw) return null
+  const voiced =
+    store.state.settings.voice === 'partner' && raw.partner ? raw.partner : raw.declaration
   return {
     ...raw,
-    body: store.state.settings.voice === 'partner' && raw.partner ? raw.partner : raw.declaration
+    body: store.personalise(voiced)
   }
 })
 

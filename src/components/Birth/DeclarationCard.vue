@@ -25,15 +25,9 @@ let utterance = null
 const isFavourite = computed(() => store.isFavourite('day', props.day))
 const isSpoken = computed(() => store.isSpoken(props.day))
 
-/**
- * Substitutes the chosen name into the text. Content is written with "Little
- * one" as the address, so a chosen name replaces it rather than being appended.
- */
-const body = computed(() => {
-  const name = store.state.babyName?.trim()
-  if (!name) return props.content.body
-  return props.content.body.replace(/Little one/g, name)
-})
+// Content is written with "Little one" as the address; the store swaps in the
+// chosen name. Done here too because the card is also handed raw content.
+const body = computed(() => store.personalise(props.content.body))
 
 const speechSupported = typeof window !== 'undefined' && 'speechSynthesis' in window
 

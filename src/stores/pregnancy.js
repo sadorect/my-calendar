@@ -54,7 +54,9 @@ function emptyState() {
     settings: {
       // Which calendar opens on launch. This is the toggle between the original
       // productivity calendar and the birth calendar.
-      defaultMode: 'standard', // 'standard' | 'birth'
+      // The birth calendar is the app's front door; the productivity calendar
+      // is a tap away. Anyone who set this before keeps their own choice.
+      defaultMode: 'birth', // 'standard' | 'birth'
       voice: 'parents', // 'parents' | 'partner' — rephrases where content provides it
       reminderTime: '08:00',
       remindersEnabled: false,
@@ -207,14 +209,36 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   // ----------------------------------------------------------------- content
 
   /**
+   * Content addresses the baby as "Little one"; a chosen name replaces that
+   * address rather than being appended. Every surface reads its text through
+   * here, so the name shows up on weeks and favourites and not just on today.
+   */
+  function personalise(text) {
+    const name = state.value.babyName?.trim()
+    if (!name || typeof text !== 'string') return text
+    return text.replace(/Little one/g, name)
+  }
+
+  /** The same substitution across every prose field of a content entry. */
+  function personaliseEntry(entry) {
+    if (!entry) return entry
+    const out = { ...entry }
+    for (const key of ['declaration', 'partner', 'parentsPrayer', 'body']) {
+      if (typeof out[key] === 'string') out[key] = personalise(out[key])
+    }
+    return out
+  }
+
+  /**
    * The declaration for the active day, already resolved for the chosen voice.
    * Returns null when that day has not been written yet — the UI shows a gentle
    * placeholder rather than an error.
    */
   const activeDayContent = computed(() => {
     if (!activeDay.value) return null
-    const entry = dayContent(activeDay.value)
-    if (!entry) return null
+    const raw = dayContent(activeDay.value)
+    if (!raw) return null
+    const entry = personaliseEntry(raw)
     return {
       ...entry,
       // `partner` is optional per day; most declarations read naturally in both
@@ -228,7 +252,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   })
 
   const activeWeekContent = computed(() =>
-    activeDay.value ? weekContentForDay(activeDay.value) : null
+    activeDay.value ? personaliseEntry(weekContentForDay(activeDay.value)) : null
   )
 
   /** All four or five week cards for the month being viewed. */
@@ -237,7 +261,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     if (!month) return []
     const cards = []
     for (let w = month.startWeek; w <= month.endWeek; w++) {
-      cards.push(weekContent(w) || { week: w, placeholder: true })
+      cards.push(personaliseEntry(weekContent(w)) || { week: w, placeholder: true })
     }
     return cards
   })
@@ -274,7 +298,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
       .map(([key, savedAt]) => {
         const [kind, rawId] = key.split(':')
         const id = Number(rawId)
-        const entry = kind === 'day' ? dayContent(id) : weekContent(id)
+        const entry = personaliseEntry(kind === 'day' ? dayContent(id) : weekContent(id))
         return entry ? { key, kind, id, savedAt, entry } : null
       })
       .filter(Boolean)
@@ -361,10 +385,9 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     if (!day) return null
     const entry = dayContent(day)
     if (!entry) return null
-    const name = state.value.babyName?.trim()
     const voiced =
       state.value.settings.voice === 'partner' && entry.partner ? entry.partner : entry.declaration
-    const body = name ? voiced.replace(/Little one/g, name) : voiced
+    const body = personalise(voiced)
     return {
       title: entry.title,
       body: body.length > 180 ? body.slice(0, 177).trimEnd() + '…' : body,
@@ -483,6 +506,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     selectDay,
     goToToday,
     // content
+    personalise,
     activeDayContent,
     activeWeekContent,
     monthWeekCards,

@@ -96,7 +96,7 @@ export function buildKeepsake(state, sections = DEFAULT_SECTIONS) {
               monthTitle: month.title,
               title: entry.title,
               declaration: voiced({ declaration: entry.declaration }, voice, babyName),
-              parentsPrayer: entry.parentsPrayer
+              parentsPrayer: voiced({ declaration: entry.parentsPrayer }, voice, babyName)
             })
           }
         }
