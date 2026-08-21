@@ -12,8 +12,10 @@ test.describe('Personal Calendar App - End-to-End Tests', () => {
     // Check if the main app container is present
     await expect(page.locator('.app')).toBeVisible()
 
-    // Check if header is present
-    await expect(page.locator('header').first()).toBeVisible()
+    // There are two headers in the DOM — a desktop one and an md:hidden mobile
+    // one — and only one is ever visible. `.first()` always picked the desktop
+    // one, which is hidden on the mobile projects.
+    await expect(page.locator('header:visible').first()).toBeVisible()
 
     // Check if main content area is present
     await expect(page.locator('main')).toBeVisible()
@@ -53,7 +55,10 @@ test.describe('Personal Calendar App - End-to-End Tests', () => {
 
     const picker = page.getByRole('dialog', { name: 'Choose an event template' })
     await expect(picker).toBeVisible()
-    await picker.getByRole('button', { name: /Select .* event template/ }).first().click()
+    await picker
+      .getByRole('button', { name: /Select .* event template/ })
+      .first()
+      .click()
 
     const form = page.getByRole('dialog').filter({ has: page.getByLabel('Title') })
     await expect(form).toBeVisible()
@@ -100,9 +105,7 @@ test.describe('Personal Calendar App - End-to-End Tests', () => {
       await createEvent(page, `Searchable Event ${i}`)
     }
 
-    const searchInput = page
-      .locator('input[type="search"], input[placeholder*="earch"]')
-      .first()
+    const searchInput = page.locator('input[type="search"], input[placeholder*="earch"]').first()
 
     if (await searchInput.isVisible().catch(() => false)) {
       await searchInput.fill('Searchable')
@@ -261,5 +264,4 @@ test.describe('Personal Calendar App - End-to-End Tests', () => {
     await expect(form).toBeHidden()
     await expect(page.locator('body')).toContainText('Validation Test Event')
   })
-
 })
