@@ -25,6 +25,7 @@ export default [
         setInterval: 'readonly',
         clearInterval: 'readonly',
         Blob: 'readonly',
+        File: 'readonly',
         URL: 'readonly',
         FileReader: 'readonly',
         // Node.js globals

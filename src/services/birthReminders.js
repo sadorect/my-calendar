@@ -112,7 +112,7 @@ export function createDailyReminder({ getConfig, onFired, getPayload, now = () =
         body: payload.body,
         tag: payload.tag || 'birth-daily-reminder',
         icon: '/icon-192x192.svg',
-        badge: '/icon-192x192.svg',
+        badge: '/icon-192x192.svg'
       })
       notification.onclick = () => {
         window.focus?.()
@@ -165,6 +165,6 @@ export function createDailyReminder({ getConfig, onFired, getPayload, now = () =
     },
     get isRunning() {
       return running
-    },
+    }
   }
 }

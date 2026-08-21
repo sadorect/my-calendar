@@ -1,6 +1,13 @@
 <script setup>
 import { computed, ref, onBeforeUnmount } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
+import { weekOfPregnancy } from '../../services/pregnancyTimeline.js'
+import { monthPalette, monthForDay } from '../../data/pregnancy/index.js'
+import {
+  declarationCardBlob,
+  cardFileName,
+  canShareImage,
+} from '../../services/declarationImage.js'
 
 const props = defineProps({
   day: { type: Number, required: true },
@@ -58,22 +65,84 @@ const shareText = computed(
   () => `${body.value}\n\n“${props.content.scripture.text}”\n— ${props.content.scripture.ref}`
 )
 
+const sharingImage = ref(false)
+
+function flash(message) {
+  shareNote.value = message
+  setTimeout(() => (shareNote.value = ''), 2200)
+}
+
+/** The card image, rendered in the palette of the month the day belongs to. */
+function cardMeta() {
+  return {
+    dayLabel: `Day ${props.day}`,
+    weekLabel: `Week ${weekOfPregnancy(props.day)}`,
+    palette: monthPalette(monthForDay(props.day)),
+    babyName: store.state.babyName?.trim() || '',
+  }
+}
+
+async function cardBlob() {
+  return declarationCardBlob(
+    { title: props.content.title, body: body.value, scripture: props.content.scripture },
+    cardMeta()
+  )
+}
+
+/**
+ * Shares the declaration as an image where the platform supports it, and falls
+ * back through text share, then a download, then the clipboard. Every path
+ * leaves the user with something they can actually send.
+ */
 async function share() {
+  if (sharingImage.value) return
   shareNote.value = ''
-  const payload = { title: props.content.title, text: shareText.value }
+  sharingImage.value = true
   try {
+    if (canShareImage()) {
+      const blob = await cardBlob()
+      const file = new File([blob], cardFileName(`day-${props.day}`), { type: 'image/png' })
+      // Some platforms drop the text when files are present; the image carries
+      // the words anyway, so this is a hint, not a loss.
+      await navigator.share({ files: [file], title: props.content.title })
+      return
+    }
     if (navigator.share) {
-      await navigator.share(payload)
+      await navigator.share({ title: props.content.title, text: shareText.value })
       return
     }
     await navigator.clipboard.writeText(shareText.value)
-    shareNote.value = 'Copied'
+    flash('Copied')
   } catch (e) {
     // A user dismissing the share sheet throws AbortError — not an error worth
     // showing them.
-    if (e?.name !== 'AbortError') shareNote.value = 'Could not share'
+    if (e?.name !== 'AbortError') flash('Could not share')
+  } finally {
+    sharingImage.value = false
   }
-  if (shareNote.value) setTimeout(() => (shareNote.value = ''), 2000)
+}
+
+/** Saves the card as a PNG — the keepsake path, and the desktop fallback. */
+async function saveImage() {
+  if (sharingImage.value) return
+  sharingImage.value = true
+  try {
+    const blob = await cardBlob()
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = cardFileName(`day-${props.day}`)
+    document.body.appendChild(link)
+    link.click()
+    link.remove()
+    // Revoking immediately can cancel the download in some browsers.
+    setTimeout(() => URL.revokeObjectURL(url), 10000)
+    flash('Image saved')
+  } catch {
+    flash('Could not make the image')
+  } finally {
+    sharingImage.value = false
+  }
 }
 </script>
 
@@ -139,11 +208,23 @@ async function share() {
       </button>
 
       <button
-        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70"
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 disabled:opacity-50"
         :style="{ borderColor: 'var(--bc-hairline)' }"
+        :disabled="sharingImage"
         @click="share"
       >
         {{ shareNote || 'Share' }}
+      </button>
+
+      <button
+        v-if="prominent"
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 disabled:opacity-50"
+        :style="{ borderColor: 'var(--bc-hairline)' }"
+        :disabled="sharingImage"
+        title="Save this declaration as an image"
+        @click="saveImage"
+      >
+        Save image
       </button>
 
       <button

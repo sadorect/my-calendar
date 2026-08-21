@@ -5,7 +5,7 @@ import {
   occurrenceOn,
   nextOccurrence,
   isDue,
-  createDailyReminder,
+  createDailyReminder
 } from '../../src/services/birthReminders.js'
 
 describe('reminder time maths', () => {
@@ -52,30 +52,32 @@ describe('reminder time maths', () => {
 describe('isDue', () => {
   it('is not due before the time', () => {
     expect(isDue({ time: '08:00', now: new Date(2026, 7, 21, 7, 59), lastFiredKey: null })).toBe(
-      false,
+      false
     )
   })
 
   it('is due once the time has passed and today has not fired', () => {
-    expect(isDue({ time: '08:00', now: new Date(2026, 7, 21, 8, 0), lastFiredKey: null })).toBe(true)
+    expect(isDue({ time: '08:00', now: new Date(2026, 7, 21, 8, 0), lastFiredKey: null })).toBe(
+      true
+    )
   })
 
   it('catches up a reminder missed earlier the same day', () => {
     // The whole point: the app was closed at 08:00 and opened at 21:00.
     expect(
-      isDue({ time: '08:00', now: new Date(2026, 7, 21, 21, 0), lastFiredKey: '2026-08-20' }),
+      isDue({ time: '08:00', now: new Date(2026, 7, 21, 21, 0), lastFiredKey: '2026-08-20' })
     ).toBe(true)
   })
 
   it('does not fire twice on the same day', () => {
     expect(
-      isDue({ time: '08:00', now: new Date(2026, 7, 21, 21, 0), lastFiredKey: '2026-08-21' }),
+      isDue({ time: '08:00', now: new Date(2026, 7, 21, 21, 0), lastFiredKey: '2026-08-21' })
     ).toBe(false)
   })
 
   it('is never due for an unparseable time', () => {
     expect(isDue({ time: 'later', now: new Date(2026, 7, 21, 21, 0), lastFiredKey: null })).toBe(
-      false,
+      false
     )
   })
 })
@@ -92,7 +94,7 @@ describe('createDailyReminder', () => {
         fired.push(key)
         config = { ...config, lastFiredKey: key }
       },
-      ...overrides,
+      ...overrides
     })
   }
 
