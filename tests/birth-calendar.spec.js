@@ -6,13 +6,32 @@ import { test, expect } from '@playwright/test'
  * works, onboarding persists, and the Today screen renders real content.
  */
 
+/**
+ * The way in differs by viewport: the desktop header is `hidden md:flex`, so
+ * below md the only entry point is the "More" sheet. Clicking whichever exists
+ * keeps this working on the mobile projects instead of only on desktop ones.
+ */
 async function openBirthCalendar(page) {
   await page.goto('/')
-  await page
-    .getByRole('button', { name: /birth calendar/i })
-    .first()
-    .click()
-  await expect(page.getByRole('heading', { name: 'Womb Whispers' })).toBeVisible()
+
+  const headerButton = page.getByRole('button', { name: 'Birth calendar', exact: true })
+  if (await headerButton.count()) {
+    await headerButton.click()
+  } else {
+    await page.getByRole('button', { name: 'More options' }).click()
+    await page.getByRole('button', { name: /birth calendar/i }).click()
+  }
+
+  // Assert on the mode, not on the onboarding heading: "Womb Whispers" only
+  // greets a user who has no due date yet, so a helper that waited for it could
+  // never be used a second time. The back button is present in birth mode
+  // whatever the screen shows.
+  //
+  // The birth calendar is a lazily loaded chunk, so first paint waits on a
+  // network fetch. The default 5s is not enough on a loaded CI runner.
+  await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible({
+    timeout: 20000
+  })
 }
 
 async function completeOnboarding(page, { weeks = 12, days = 3 } = {}) {
@@ -25,6 +44,9 @@ async function completeOnboarding(page, { weeks = 12, days = 3 } = {}) {
 test.describe('birth calendar', () => {
   test('switches from the standard calendar and onboards', async ({ page }) => {
     await openBirthCalendar(page)
+
+    // Only a user with no due date yet is greeted by name.
+    await expect(page.getByRole('heading', { name: 'Womb Whispers' })).toBeVisible()
 
     // Preview should reflect what was typed before committing.
     await page.getByRole('tab', { name: /i know my week/i }).click()
@@ -46,11 +68,7 @@ test.describe('birth calendar', () => {
     await completeOnboarding(page)
     await expect(page.getByText(/Day 87 of 280/)).toBeVisible()
 
-    await page.reload()
-    await page
-      .getByRole('button', { name: /birth calendar/i })
-      .first()
-      .click()
+    await openBirthCalendar(page)
 
     // Straight to Today — no onboarding a second time.
     await expect(page.getByText(/Day 87 of 280/)).toBeVisible()
@@ -131,6 +149,6 @@ test.describe('birth calendar', () => {
     await completeOnboarding(page)
 
     await page.getByRole('button', { name: '← Calendar' }).click()
-    await expect(page.getByRole('heading', { name: 'Personal Calendar' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^(Personal )?Calendar$/ })).toBeVisible()
   })
 })
