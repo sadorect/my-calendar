@@ -353,3 +353,93 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Keepsake (print)
+   The keepsake is the app's only printable surface. On screen it is a normal
+   overlay; on paper it is the ONLY thing that exists, which is why the print
+   block hides the app rather than trying to restyle it.
+   --------------------------------------------------------------------------- */
+.keepsake-doc {
+  font-size: 11pt;
+}
+
+@media print {
+  /* Hide the app; show only the keepsake. `visibility` rather than `display`
+     so an ancestor being hidden cannot take the document down with it. */
+  body * {
+    visibility: hidden;
+  }
+  .keepsake-root,
+  .keepsake-root * {
+    visibility: visible;
+  }
+  .keepsake-root {
+    position: absolute !important;
+    inset: 0 auto auto 0;
+    width: 100%;
+    overflow: visible !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .keepsake-controls {
+    display: none !important;
+  }
+  .keepsake-doc {
+    max-width: none;
+    padding: 0;
+  }
+
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  .keepsake-cover {
+    text-align: center;
+    padding-top: 25mm;
+    break-after: page;
+    page-break-after: always;
+  }
+  .keepsake-section-title,
+  .keepsake-month-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .keepsake-section {
+    break-before: page;
+    page-break-before: always;
+  }
+  .keepsake-month {
+    break-before: page;
+    page-break-before: always;
+  }
+  /* An entry split across a page break is the one thing that would make this
+     look cheap, so never break inside one. */
+  .keepsake-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 9mm;
+  }
+
+  /* Print colours: paper is white, so the muted greys need to be readable ink
+     rather than screen-tuned translucency. */
+  .keepsake-root .text-neutral-400,
+  .keepsake-root .text-neutral-500 {
+    color: #666 !important;
+  }
+  .keepsake-root .text-neutral-600 {
+    color: #333 !important;
+  }
+}
+
+.keepsake-entry {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #f0eaec;
+}
+.keepsake-entry:last-child {
+  border-bottom: none;
+}
+.keepsake-month-title {
+  margin: 2.5rem 0 2rem;
+}

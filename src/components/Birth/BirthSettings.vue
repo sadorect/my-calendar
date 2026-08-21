@@ -3,6 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { contentCoverage } from '../../data/pregnancy/index.js'
 import { storageIsPersisted, requestPersistentStorage } from '../../services/biometric.js'
+import BirthKeepsake from './BirthKeepsake.vue'
 import {
   notificationPermission,
   requestNotificationPermission,
@@ -14,6 +15,7 @@ const confirmingReset = ref(false)
 const persisted = ref(false)
 const lockBusy = ref(false)
 const notifyPermission = ref('default')
+const keepsakeOpen = ref(false)
 
 onMounted(async () => {
   await store.detectBiometric()
@@ -285,6 +287,24 @@ async function doReset() {
         Make storage persistent
       </button>
     </section>
+
+    <!-- Printable keepsake -->
+    <section class="bc-card p-5">
+      <h2 class="font-medium mb-1">Keepsake</h2>
+      <p class="text-sm bc-muted mb-4">
+        Print the declarations, your saved favourites and your journal as one document — or
+        save it as a PDF to keep.
+      </p>
+      <button
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm font-medium text-white transition"
+        :style="{ backgroundColor: 'var(--bc-accent)' }"
+        @click="keepsakeOpen = true"
+      >
+        Make a keepsake
+      </button>
+    </section>
+
+    <BirthKeepsake v-if="keepsakeOpen" @close="keepsakeOpen = false" />
 
     <!-- Honest about what is written -->
     <section class="bc-card p-5">
