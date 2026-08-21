@@ -79,7 +79,7 @@ deployment.
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 20.19+ or 22.12+ (Vite 7 requires it) and npm
 - Modern web browser with ES6+ support
 
 ### Installation
