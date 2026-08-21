@@ -12,6 +12,356 @@
   "endDay": 154,
   "startWeek": 18,
   "endWeek": 22,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 18,
+      "title": "You Are Beginning to Hear",
+      "declaration": "Little one, sound is reaching you now. The first voices you will ever know are learning to be gentle for your sake. This week we choose carefully what fills the air around you.",
+      "parentsPrayer": "Father, guard what this child hears — from the world, and from us. Let our home sound like a place You would be comfortable in. Give us gentle voices this week. Amen."
+    },
+    {
+      "week": 19,
+      "title": "A Voice You Will Recognise",
+      "declaration": "Little one, you are learning our voices before you have ever seen our faces. And underneath ours is another voice, older and kinder, that you will learn to know too.",
+      "parentsPrayer": "Lord, let this child know Your voice early and follow it gladly. Make our voices safe ones, so that trust comes easily when we point them to You. Amen."
+    },
+    {
+      "week": 20,
+      "title": "Halfway, and Wholly Loved",
+      "declaration": "Little one, we are halfway. Half of this journey is behind us and none of God's care has run out. You are not half loved at the halfway point — you are wholly loved, all the way through.",
+      "parentsPrayer": "Father, thank You for bringing us this far. Renew our joy for the second half. Where the waiting has grown long, make it sweet again. Amen."
+    },
+    {
+      "week": 21,
+      "title": "Leaping for Joy",
+      "declaration": "Little one, you are moving, and every movement is a small announcement that you are alive and well. May joy be your first language and your lasting one.",
+      "parentsPrayer": "Lord, thank You for every kick and turn. Let joy rise in this house faster than fear does. Teach us to celebrate what You are already doing. Amen."
+    },
+    {
+      "week": 22,
+      "title": "Surrounded by Worship",
+      "declaration": "Little one, we are filling the room you are growing in with worship. Before you can sing, you are being sung over. This is the sound we want you to be at home in.",
+      "parentsPrayer": "Father, You sing over us; teach us to sing over this child. Fill our home with worship until it is simply what our home sounds like. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 120,
+      "title": "You Can Hear Us Now",
+      "declaration": "Little one, sound is reaching you. The first thing we want you to hear is this: you are loved, you are wanted, and you are safe. We will say it until you can say it back.",
+      "scripture": {
+        "ref": "Romans 10:17",
+        "text": "Faith comes from hearing the message, and the message is heard through the word about Christ."
+      }
+    },
+    {
+      "day": 121,
+      "title": "Words That Build",
+      "declaration": "Little one, we choose our words over you carefully, because words build. Nothing careless will be spoken over your life if we can help it. Only what builds.",
+      "scripture": {
+        "ref": "Ephesians 4:29",
+        "text": "Do not let any unwholesome talk come out of your mouths, but only what is helpful for building others up."
+      }
+    },
+    {
+      "day": 122,
+      "title": "The Sound of Peace",
+      "declaration": "Little one, may peace be the ordinary sound of this house. Not a house where nothing goes wrong, but a house where God is trusted when it does.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you."
+      }
+    },
+    {
+      "day": 123,
+      "title": "Leaping for Joy",
+      "declaration": "Little one, when Mary's greeting reached Elizabeth, the baby inside her leaped. Something in you already responds to what is good. May that never stop.",
+      "scripture": {
+        "ref": "Luke 1:44",
+        "text": "As soon as the sound of your greeting reached my ears, the baby in my womb leaped for joy."
+      }
+    },
+    {
+      "day": 124,
+      "title": "Sung Over",
+      "declaration": "Little one, God sings over you. It is not a picture we invented; it is what Scripture says He does. You are being sung over right now, whether or not you can hear it yet.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will take great delight in you; in his love he will no longer rebuke you, but will rejoice over you with singing."
+      }
+    },
+    {
+      "day": 125,
+      "title": "Ears to Hear",
+      "declaration": "Little one, we pray for more than working ears. We pray for a heart that hears — that recognises truth quickly and does not have to learn everything the hard way.",
+      "scripture": {
+        "ref": "Proverbs 20:12",
+        "text": "Ears that hear and eyes that see — the Lord has made them both."
+      }
+    },
+    {
+      "day": 126,
+      "title": "He Knows Your Name",
+      "declaration": "Little one, God does not call you 'the baby'. He calls you by name, and He has been calling you by it since before we chose it.",
+      "scripture": {
+        "ref": "Isaiah 43:1",
+        "text": "Do not fear, for I have redeemed you; I have summoned you by name; you are mine."
+      }
+    },
+    {
+      "day": 127,
+      "title": "A Gentle Answer",
+      "declaration": "Little one, may you grow up able to answer gently. It is a rare strength, and it will keep you out of trouble your whole life.",
+      "partner": "Little one, I am learning this before you get here. May you never hear me lose my temper more often than you hear me say sorry.",
+      "scripture": {
+        "ref": "Proverbs 15:1",
+        "text": "A gentle answer turns away wrath, but a harsh word stirs up anger."
+      }
+    },
+    {
+      "day": 128,
+      "title": "Music in the Room",
+      "declaration": "Little one, we are playing music where you are growing, because a life should have a soundtrack worth remembering. May the songs you love always point somewhere good.",
+      "scripture": {
+        "ref": "Psalm 40:3",
+        "text": "He put a new song in my mouth, a hymn of praise to our God."
+      }
+    },
+    {
+      "day": 129,
+      "title": "Halfway There",
+      "declaration": "Little one, we are halfway. God has been faithful in every day behind us, and He is already standing in every day ahead. Nothing about the second half worries Him.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion until the day of Christ Jesus."
+      }
+    },
+    {
+      "day": 130,
+      "title": "Responding to Love",
+      "declaration": "Little one, you are responding to us. That is how love works: it goes out and something comes back. May you always be someone who responds to love rather than doubts it.",
+      "scripture": {
+        "ref": "1 John 4:19",
+        "text": "We love because he first loved us."
+      }
+    },
+    {
+      "day": 131,
+      "title": "No Fear in This Room",
+      "declaration": "Little one, fear does not get to raise you. We speak it out of this house today. What God has given instead is power, love and a sound mind, and that is your inheritance.",
+      "scripture": {
+        "ref": "2 Timothy 1:7",
+        "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline."
+      }
+    },
+    {
+      "day": 132,
+      "title": "Known by Voice",
+      "declaration": "Little one, one day you will know God's voice among all the others. That is not a skill you will have to invent — His sheep simply know Him.",
+      "scripture": {
+        "ref": "John 10:27",
+        "text": "My sheep listen to my voice; I know them, and they follow me."
+      }
+    },
+    {
+      "day": 133,
+      "title": "Laughter",
+      "declaration": "Little one, we want laughter in your life. Real laughter, the kind that makes a house feel safe. God is not against joy; He invented it.",
+      "scripture": {
+        "ref": "Psalm 126:2",
+        "text": "Our mouths were filled with laughter, our tongues with songs of joy."
+      }
+    },
+    {
+      "day": 134,
+      "title": "Blessing, Not Complaint",
+      "declaration": "Little one, we refuse to complain about the very thing we prayed for. Carrying you is hard some days and it is still an answered prayer. We choose blessing today.",
+      "partner": "Little one, on the hard days I want to remember I asked for you. You are not an inconvenience; you are an answer.",
+      "scripture": {
+        "ref": "Numbers 6:24-25",
+        "text": "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you."
+      }
+    },
+    {
+      "day": 135,
+      "title": "Comfort Learned Early",
+      "declaration": "Little one, may you be comforted quickly and learn to comfort others just as quickly. God comforts us so that comfort can travel.",
+      "scripture": {
+        "ref": "2 Corinthians 1:4",
+        "text": "Who comforts us in all our troubles, so that we can comfort those in any trouble."
+      }
+    },
+    {
+      "day": 136,
+      "title": "A Name Written Down",
+      "declaration": "Little one, your name is going to be spoken thousands of times in this house. But long before that, it was written in heaven. That is where it counts.",
+      "scripture": {
+        "ref": "Luke 10:20",
+        "text": "Rejoice that your names are written in heaven."
+      }
+    },
+    {
+      "day": 137,
+      "title": "Not Alone",
+      "declaration": "Little one, you have never been alone in there. Even in the dark, even in the quiet, God has been present. You will not have to go looking for Him later; He has been there all along.",
+      "scripture": {
+        "ref": "Psalm 139:11-12",
+        "text": "Even the darkness will not be dark to you; the night will shine like the day."
+      }
+    },
+    {
+      "day": 138,
+      "title": "Truth Early",
+      "declaration": "Little one, we will tell you the truth. Not everything at once, but always the truth. Growing up in an honest house is one of the best gifts we can give you.",
+      "scripture": {
+        "ref": "Ephesians 4:15",
+        "text": "Speaking the truth in love, we will grow to become in every respect the mature body of him who is the head, that is, Christ."
+      }
+    },
+    {
+      "day": 139,
+      "title": "Kindness in the Walls",
+      "declaration": "Little one, may kindness be built into this house like the walls are. Not a mood we are in, but the way we do things here.",
+      "scripture": {
+        "ref": "Colossians 3:12",
+        "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience."
+      }
+    },
+    {
+      "day": 140,
+      "title": "Twenty Weeks of Grace",
+      "declaration": "Little one, twenty weeks. Every one of them was carried by grace and not by our competence. Thank God for that, because our competence would have run out weeks ago.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you, for my power is made perfect in weakness."
+      }
+    },
+    {
+      "day": 141,
+      "title": "Your First Songs",
+      "declaration": "Little one, the songs you hear now are your first ones. May they still mean something to you when you are grown, and may they take you back to a home where God was welcome.",
+      "scripture": {
+        "ref": "Psalm 100:2",
+        "text": "Worship the Lord with gladness; come before him with joyful songs."
+      }
+    },
+    {
+      "day": 142,
+      "title": "Made to Be Present",
+      "declaration": "Little one, you are already here — not almost here. You are present with us, part of this family, counted in every plan we make.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 143,
+      "title": "An Attentive God",
+      "declaration": "Little one, God pays attention. He is not distracted by bigger things happening elsewhere. You have His full attention right now, and so do we.",
+      "scripture": {
+        "ref": "Psalm 34:15",
+        "text": "The eyes of the Lord are on the righteous, and his ears are attentive to their cry."
+      }
+    },
+    {
+      "day": 144,
+      "title": "Discernment",
+      "declaration": "Little one, you will hear many voices in your life. We pray now for discernment — that you will know the difference between what is true and what is only loud.",
+      "scripture": {
+        "ref": "Hebrews 5:14",
+        "text": "Solid food is for the mature, who by constant use have trained themselves to distinguish good from evil."
+      }
+    },
+    {
+      "day": 145,
+      "title": "Safe to Feel",
+      "declaration": "Little one, you will be allowed to feel things in this house. Sadness will not be shamed here, and joy will not be rationed. God can handle all of it, and so can we.",
+      "partner": "Little one, you can bring me anything. I will not always have an answer, but I will always have room for you.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Trust in him at all times, you people; pour out your hearts to him, for God is our refuge."
+      }
+    },
+    {
+      "day": 146,
+      "title": "Wonder",
+      "declaration": "Little one, may you never lose your wonder. The world is full of God's fingerprints and most people stop noticing. We pray you keep noticing.",
+      "scripture": {
+        "ref": "Psalm 19:1",
+        "text": "The heavens declare the glory of God; the skies proclaim the work of his hands."
+      }
+    },
+    {
+      "day": 147,
+      "title": "Words of Life",
+      "declaration": "Little one, our words over you are seeds. We plant life today: you are strong, you are loved, you are called, you are ours and you are His.",
+      "scripture": {
+        "ref": "Proverbs 18:21",
+        "text": "The tongue has the power of life and death."
+      }
+    },
+    {
+      "day": 148,
+      "title": "Held in the Waiting",
+      "declaration": "Little one, waiting is not wasted time. God does some of His best work in the middle of it. We are being changed while we wait for you.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 149,
+      "title": "A Welcoming Home",
+      "declaration": "Little one, we are making room for you — in the house, in our time, in our hearts. You will not have to earn your place here. It was made before you arrived.",
+      "scripture": {
+        "ref": "Romans 15:7",
+        "text": "Accept one another, then, just as Christ accepted you, in order to bring praise to God."
+      }
+    },
+    {
+      "day": 150,
+      "title": "You Are Heard",
+      "declaration": "Little one, when you cry, you will be answered. That is what we want you to learn first about the world — that crying out brings someone running. It is true of us, and it is truer of God.",
+      "scripture": {
+        "ref": "Psalm 34:17",
+        "text": "The righteous cry out, and the Lord hears them; he delivers them from all their troubles."
+      }
+    },
+    {
+      "day": 151,
+      "title": "Growing in Favour",
+      "declaration": "Little one, may favour go ahead of you into rooms you have not entered yet. Not because you are impressive, but because God is generous.",
+      "scripture": {
+        "ref": "Psalm 5:12",
+        "text": "Surely, Lord, you bless the righteous; you surround them with your favour as with a shield."
+      }
+    },
+    {
+      "day": 152,
+      "title": "Courage in Your Bones",
+      "declaration": "Little one, we speak courage into you. Not recklessness — courage. The steady kind that does the right thing when it costs something.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."
+      }
+    },
+    {
+      "day": 153,
+      "title": "Every Sound Filtered",
+      "declaration": "Little one, we cannot control everything you will ever hear, but we can cover you in prayer while we still can. Every harmful word is filtered through a God who defends you.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail, and you will refute every tongue that accuses you."
+      }
+    },
+    {
+      "day": 154,
+      "title": "Responding to God",
+      "declaration": "Little one, our prayer for this month is simple: that when God speaks, something in you leaps. May you always be quick to respond to Him.",
+      "scripture": {
+        "ref": "1 Samuel 3:10",
+        "text": "Speak, for your servant is listening."
+      }
+    }
+  ]
 }

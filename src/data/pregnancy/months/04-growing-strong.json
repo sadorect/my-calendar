@@ -12,6 +12,288 @@
   "endDay": 119,
   "startWeek": 14,
   "endWeek": 17,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 14,
+      "title": "Carried by the One Who Made You",
+      "declaration": "Little one, the God who began you has not put you down. He is not tired of carrying you, and He will not hand you to anyone less careful. This week we rest in the strength of the hands you are already in.",
+      "parentsPrayer": "Father, You have carried this child every day we could not see. Carry us too. Where we are anxious about what we cannot control, remind us whose hands are already holding this. Amen."
+    },
+    {
+      "week": 15,
+      "title": "Growing Where No One Can See",
+      "declaration": "Little one, the most important growth in your life is happening where nobody can watch it. Hidden does not mean forgotten. God is doing careful work in you in the quiet, and none of it is wasted.",
+      "parentsPrayer": "Lord, teach us to trust what we cannot see. Thank You that You are working in this child in the hidden place, and in us in ours. Give us patience for slow, good things. Amen."
+    },
+    {
+      "week": 16,
+      "title": "Strength in Every Part",
+      "declaration": "Little one, we speak strength into your bones, your blood, your breath and your heartbeat. Every part of you is knitted with intention. You are not fragile in the hands of God; you are held.",
+      "parentsPrayer": "Father, strengthen this child in every part, seen and unseen. Let nothing be missing and nothing be broken. We thank You for a body being made whole. Amen."
+    },
+    {
+      "week": 17,
+      "title": "Sustained Day After Day",
+      "declaration": "Little one, you are sustained. Not by our worry, not by our watching, but by God, who upholds all things by His word. Today's strength came from Him, and tomorrow's is already prepared.",
+      "parentsPrayer": "Lord, You sustain what You start. Take the weight of these weeks from us and carry it Yourself. Let this child be sustained in Your strength and not in our striving. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 92,
+      "title": "Carried, Not Merely Kept",
+      "declaration": "Little one, God is not simply keeping you safe; He is carrying you. There is a difference. You are not stored somewhere until you are needed — you are held close by Someone who wanted you.",
+      "scripture": {
+        "ref": "Isaiah 46:4",
+        "text": "I have made you and I will carry you; I will sustain you and I will rescue you."
+      }
+    },
+    {
+      "day": 93,
+      "title": "Growing in Secret",
+      "declaration": "Little one, you are growing where no one can see, and God calls that good. Nothing about your growth is behind schedule in heaven. You are exactly where you should be today.",
+      "scripture": {
+        "ref": "Psalm 139:15",
+        "text": "My frame was not hidden from you when I was made in the secret place."
+      }
+    },
+    {
+      "day": 94,
+      "title": "Strong Bones",
+      "declaration": "Little one, we speak strength into your bones. May they be sound, straight and strong, built for a life of walking, running, kneeling and standing firm. What God builds, He builds well.",
+      "scripture": {
+        "ref": "Isaiah 58:11",
+        "text": "The Lord will guide you always; he will satisfy your needs and will strengthen your frame."
+      }
+    },
+    {
+      "day": 95,
+      "title": "A Steady Heart",
+      "declaration": "Little one, your heart is beating without you trying. That rhythm was given, not earned. We declare over you a steady heart — steady in the body, and steady in trust all your life long.",
+      "partner": "Little one, I have been listening for your heartbeat. Every steady beat is a gift, and I thank God for each one. May your heart stay strong, and may it stay soft.",
+      "scripture": {
+        "ref": "Psalm 112:7",
+        "text": "They will have no fear of bad news; their hearts are steadfast, trusting in the Lord."
+      }
+    },
+    {
+      "day": 96,
+      "title": "Fearfully Made",
+      "declaration": "Little one, you were made with awe, not carelessness. God has never made anything about you halfheartedly. We refuse every word that says you are less than wonderfully made.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I praise you because I am fearfully and wonderfully made; your works are wonderful."
+      }
+    },
+    {
+      "day": 97,
+      "title": "Sustained",
+      "declaration": "Little one, everything holding you together right now is being held by God's word. You do not have to sustain yourself, and neither do we. He is the one keeping this going.",
+      "scripture": {
+        "ref": "Hebrews 1:3",
+        "text": "The Son is the radiance of God's glory, sustaining all things by his powerful word."
+      }
+    },
+    {
+      "day": 98,
+      "title": "Nourished",
+      "declaration": "Little one, you are being fed before you have ever asked for anything. This is how God has always worked: provision arrives before the need is spoken. May you never lack what you need.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "And my God will meet all your needs according to the riches of his glory in Christ Jesus."
+      }
+    },
+    {
+      "day": 99,
+      "title": "Every Day Written",
+      "declaration": "Little one, this day was written down before it arrived. So was tomorrow, and the day you are born, and the day you take your first step. Your life is not being improvised.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book before one of them came to be."
+      }
+    },
+    {
+      "day": 100,
+      "title": "One Hundred Days of Faithfulness",
+      "declaration": "Little one, one hundred days. Every single one of them God has been faithful, whether or not we noticed. We stop today and simply say thank You — for a hundred days of unseen mercy.",
+      "partner": "Little one, a hundred days of you. I have thanked God on the good days, and He was just as faithful on the hard ones. Thank You, Lord, for this child.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His compassions never fail. They are new every morning; great is your faithfulness."
+      }
+    },
+    {
+      "day": 101,
+      "title": "Increase",
+      "declaration": "Little one, may you increase — in size, in strength, in wisdom, and in the favour of God and people. Growth is God's idea, and He is not slow about it in you.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "And Jesus grew in wisdom and stature, and in favour with God and man."
+      }
+    },
+    {
+      "day": 102,
+      "title": "His Hand on You",
+      "declaration": "Little one, God's hand is on you. Not hovering nearby, not watching from a distance — on you. Where His hand rests, fear has to leave the room.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before, and you lay your hand upon me."
+      }
+    },
+    {
+      "day": 103,
+      "title": "Not Fragile",
+      "declaration": "Little one, you are small, but you are not fragile in God's hands. We speak resilience over you today: a body that recovers, a spirit that gets back up, a life that does not break easily.",
+      "scripture": {
+        "ref": "2 Corinthians 4:9",
+        "text": "Persecuted, but not abandoned; struck down, but not destroyed."
+      }
+    },
+    {
+      "day": 104,
+      "title": "Rooted Deep",
+      "declaration": "Little one, may your roots go deeper than your growth. Deep roots are what keep a tree standing when the weather changes. We are praying for depth in you before we ever pray for height.",
+      "scripture": {
+        "ref": "Jeremiah 17:8",
+        "text": "They will be like a tree planted by the water that sends out its roots by the stream."
+      }
+    },
+    {
+      "day": 105,
+      "title": "Held Together",
+      "declaration": "Little one, in Christ all things hold together — including you. Every cell doing its work today is obeying a God who has never lost track of a single detail.",
+      "scripture": {
+        "ref": "Colossians 1:17",
+        "text": "He is before all things, and in him all things hold together."
+      }
+    },
+    {
+      "day": 106,
+      "title": "Formed for Good Works",
+      "declaration": "Little one, you were not made only to be admired. You were made to do good in the world, and God has already prepared the work with your name on it.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
+      }
+    },
+    {
+      "day": 107,
+      "title": "Strength Beyond Your Size",
+      "declaration": "Little one, God has never measured strength by size. David was the smallest in his house. You are small today and strong today, and both are true at once.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord does not look at the things people look at. People look at the outward appearance, but the Lord looks at the heart."
+      }
+    },
+    {
+      "day": 108,
+      "title": "Life in Your Limbs",
+      "declaration": "Little one, we speak life into your arms and your legs. May they be strong to work, gentle to hold, and quick to carry you to the places God is sending you.",
+      "partner": "Little one, I am imagining your hands already — small enough to hold my finger, strong enough one day to hold your own. May God make them good hands.",
+      "scripture": {
+        "ref": "Psalm 18:32",
+        "text": "It is God who arms me with strength and keeps my way secure."
+      }
+    },
+    {
+      "day": 109,
+      "title": "Kept Through the Night",
+      "declaration": "Little one, God does not sleep. While the house is quiet and everyone in it is resting, He is still watching over you. You have never once been unattended.",
+      "scripture": {
+        "ref": "Psalm 121:3-4",
+        "text": "He who watches over you will not slumber; indeed, he who watches over Israel will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 110,
+      "title": "Growing Quietly",
+      "declaration": "Little one, not all growth is loud. Some of the best things God does are quiet and slow and only obvious later. We are not rushing you. Grow at the pace He set.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "Night and day, whether he sleeps or gets up, the seed sprouts and grows, though he does not know how."
+      }
+    },
+    {
+      "day": 111,
+      "title": "A Body That Works",
+      "declaration": "Little one, we thank God for lungs that will breathe, eyes that will see, ears that will hear and a mouth that will speak. Every ordinary working part of you is a gift.",
+      "scripture": {
+        "ref": "Proverbs 20:12",
+        "text": "Ears that hear and eyes that see — the Lord has made them both."
+      }
+    },
+    {
+      "day": 112,
+      "title": "Covered in the Waiting",
+      "declaration": "Little one, this waiting season is not empty. God covers what He is not finished with. You are hidden under His hand, and that is the safest place in the world to grow.",
+      "scripture": {
+        "ref": "Psalm 91:4",
+        "text": "He will cover you with his feathers, and under his wings you will find refuge."
+      }
+    },
+    {
+      "day": 113,
+      "title": "Unhurried",
+      "declaration": "Little one, God is never in a hurry and never late. You will arrive at the right time, formed by an unhurried God who finishes what He starts.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 114,
+      "title": "Strong in Spirit",
+      "declaration": "Little one, we pray for more than a strong body. May you grow strong in spirit too — the kind of strength that stays kind, tells the truth, and does not need to win.",
+      "scripture": {
+        "ref": "Luke 1:80",
+        "text": "And the child grew and became strong in spirit."
+      }
+    },
+    {
+      "day": 115,
+      "title": "Filled with Life",
+      "declaration": "Little one, the life in you is not ordinary life. It comes from the God who breathes life into dust and calls it good. May you be full of it, all your days.",
+      "scripture": {
+        "ref": "Job 33:4",
+        "text": "The Spirit of God has made me; the breath of the Almighty gives me life."
+      }
+    },
+    {
+      "day": 116,
+      "title": "Made to Last",
+      "declaration": "Little one, God does not make disposable things. What He forms, He forms with the long view. We declare a long, full, fruitful life over you today.",
+      "scripture": {
+        "ref": "Psalm 91:16",
+        "text": "With long life I will satisfy him and show him my salvation."
+      }
+    },
+    {
+      "day": 117,
+      "title": "Increasing Grace",
+      "declaration": "Little one, may grace increase on you faster than the years do. Everything you will need for the life ahead, God is already supplying — quietly, and in good measure.",
+      "scripture": {
+        "ref": "2 Peter 3:18",
+        "text": "But grow in the grace and knowledge of our Lord and Saviour Jesus Christ."
+      }
+    },
+    {
+      "day": 118,
+      "title": "No Lack",
+      "declaration": "Little one, in God's care there is no lack. Nothing needed for you today is missing. We refuse worry about supply and thank the God who has always provided first.",
+      "partner": "Little one, providing for you is my joy, not my burden. And where I cannot provide, God already has. You will not lack.",
+      "scripture": {
+        "ref": "Psalm 23:1",
+        "text": "The Lord is my shepherd, I lack nothing."
+      }
+    },
+    {
+      "day": 119,
+      "title": "Carried Into the Next Month",
+      "declaration": "Little one, another month is finished and God has not changed. He carried you through this one and He is already in the next. We hand you over to Him again, gladly.",
+      "scripture": {
+        "ref": "Deuteronomy 1:31",
+        "text": "There you saw how the Lord your God carried you, as a father carries his son, all the way you went."
+      }
+    }
+  ]
 }

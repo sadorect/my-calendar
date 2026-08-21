@@ -12,6 +12,286 @@
   "endDay": 210,
   "startWeek": 27,
   "endWeek": 30,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 27,
+      "title": "Under the Shadow of the Almighty",
+      "declaration": "Little one, we are taking our stand this week. You live under the shadow of the Almighty, and nothing gets to you that has not passed Him first. This is not bravado; it is where you actually live.",
+      "parentsPrayer": "Father, we take our place as this child's covering in prayer. Teach us to stand in authority and not in anxiety. Let Psalm 91 be the address this family lives at. Amen."
+    },
+    {
+      "week": 28,
+      "title": "Do Not Be Afraid",
+      "declaration": "Little one, the God who formed you in the womb says one thing over and over: do not be afraid. Fear is not the atmosphere you were made to grow in, and we are clearing it out.",
+      "parentsPrayer": "Lord, drive fear out of this pregnancy and out of this home. Replace every anxious thought with what You have actually said. Amen."
+    },
+    {
+      "week": 29,
+      "title": "Guarded on Every Side",
+      "declaration": "Little one, God guards what is His. Angels are not a decoration on this story; they are on assignment. You are guarded coming and going, waking and sleeping.",
+      "parentsPrayer": "Father, thank You for guarding this child in ways we will never see. Keep us watchful without being fearful, prayerful without being frantic. Amen."
+    },
+    {
+      "week": 30,
+      "title": "Strengthened for What Is Ahead",
+      "declaration": "Little one, God does not only protect; He strengthens. He is preparing you for a life outside, and He is preparing us for the work of raising you. Neither of us goes unequipped.",
+      "parentsPrayer": "Lord, strengthen this child and strengthen us. Where we feel unready for what is coming, be our readiness. We are not doing this alone. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 183,
+      "title": "Under His Shadow",
+      "declaration": "Little one, you live in the shelter of the Most High. That is not a poetic idea; it is your actual address. Nothing reaches you that has not come past Him first.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 184,
+      "title": "Do Not Be Afraid",
+      "declaration": "Little one, God's word to you today is the same word He gave Israel: do not be afraid. He made you, He formed you, and He will help you.",
+      "scripture": {
+        "ref": "Isaiah 44:2",
+        "text": "This is what the Lord says, he who made you, who formed you in the womb, and who will help you: Do not be afraid."
+      }
+    },
+    {
+      "day": 185,
+      "title": "A Shield Around You",
+      "declaration": "Little one, God is a shield around you — not in front only, but around. There is no unguarded side to your life.",
+      "scripture": {
+        "ref": "Psalm 3:3",
+        "text": "But you, Lord, are a shield around me, my glory, the One who lifts my head high."
+      }
+    },
+    {
+      "day": 186,
+      "title": "Angels on Assignment",
+      "declaration": "Little one, God commands His angels concerning you. You are not being watched over by good luck. You are being watched over on purpose.",
+      "scripture": {
+        "ref": "Psalm 91:11",
+        "text": "For he will command his angels concerning you to guard you in all your ways."
+      }
+    },
+    {
+      "day": 187,
+      "title": "No Weapon Prospers",
+      "declaration": "Little one, we answer every threat with the same sentence: no weapon formed against you will prosper. Not sickness, not fear, not the words of people who do not know you.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail."
+      }
+    },
+    {
+      "day": 188,
+      "title": "Peace Over Your Body",
+      "declaration": "Little one, we speak peace over your body — every organ, every system, every cell doing quiet work today. May there be wholeness where God's peace rests.",
+      "partner": "Little one, I pray over your body as much as I pray over your future. Be whole, be well, be strong. God is able.",
+      "scripture": {
+        "ref": "3 John 1:2",
+        "text": "Dear friend, I pray that you may enjoy good health and that all may go well with you."
+      }
+    },
+    {
+      "day": 189,
+      "title": "The Name Above Every Name",
+      "declaration": "Little one, there is a name higher than every diagnosis, every statistic, and every fear we could name. We put you under that name today.",
+      "scripture": {
+        "ref": "Philippians 2:9",
+        "text": "Therefore God exalted him to the highest place and gave him the name that is above every name."
+      }
+    },
+    {
+      "day": 190,
+      "title": "Kept in Perfect Peace",
+      "declaration": "Little one, peace here is not the absence of trouble. It is the presence of God in the middle of it. That is the peace we are asking for you.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you."
+      }
+    },
+    {
+      "day": 191,
+      "title": "He Goes Before You",
+      "declaration": "Little one, God is already in your tomorrow. He is not following you through your life; He is ahead of it, preparing what you will walk into.",
+      "scripture": {
+        "ref": "Deuteronomy 31:8",
+        "text": "The Lord himself goes before you and will be with you; he will never leave you nor forsake you."
+      }
+    },
+    {
+      "day": 192,
+      "title": "A Strong Tower",
+      "declaration": "Little one, when you are afraid, there is somewhere to run. His name is a tower, and the people who run into it are safe.",
+      "scripture": {
+        "ref": "Proverbs 18:10",
+        "text": "The name of the Lord is a fortified tower; the righteous run to it and are safe."
+      }
+    },
+    {
+      "day": 193,
+      "title": "Every Cell Aligned",
+      "declaration": "Little one, we speak order over your body. Where anything is out of place, let it come into line with how God designed it. He does not do sloppy work.",
+      "scripture": {
+        "ref": "1 Corinthians 14:33",
+        "text": "For God is not a God of disorder but of peace."
+      }
+    },
+    {
+      "day": 194,
+      "title": "Covered by the Blood",
+      "declaration": "Little one, you are covered. The oldest picture of protection in Scripture is a covering, and yours cost God everything. Nothing gets past that.",
+      "scripture": {
+        "ref": "Exodus 12:13",
+        "text": "The blood will be a sign for you on the houses where you are, and when I see the blood, I will pass over you."
+      }
+    },
+    {
+      "day": 195,
+      "title": "He Will Not Let You Fall",
+      "declaration": "Little one, God does not sleep on the job. He will not let your foot slip, and He has never once looked away.",
+      "scripture": {
+        "ref": "Psalm 121:3",
+        "text": "He will not let your foot slip — he who watches over you will not slumber."
+      }
+    },
+    {
+      "day": 196,
+      "title": "Strength for the Weak Days",
+      "declaration": "Little one, there will be days when strength runs out — yours and ours. God specialises in exactly those days.",
+      "scripture": {
+        "ref": "Isaiah 40:29",
+        "text": "He gives strength to the weary and increases the power of the weak."
+      }
+    },
+    {
+      "day": 197,
+      "title": "Refuge",
+      "declaration": "Little one, God is a refuge, which means there is somewhere to go when things are hard. You will never have to face anything with nowhere to run.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength, an ever-present help in trouble."
+      }
+    },
+    {
+      "day": 198,
+      "title": "No Fear of Bad News",
+      "declaration": "Little one, we refuse to live braced for disaster. Whatever news comes, our hearts are already settled, because they are trusting in the Lord.",
+      "partner": "Little one, I have caught myself imagining the worst. I am handing that habit to God today. I would rather be steady for you than braced for something that may never come.",
+      "scripture": {
+        "ref": "Psalm 112:7",
+        "text": "They will have no fear of bad news; their hearts are steadfast, trusting in the Lord."
+      }
+    },
+    {
+      "day": 199,
+      "title": "Guarded Hearts and Minds",
+      "declaration": "Little one, God guards more than bodies. He guards hearts and minds too, and we are asking for that guard over yours from the very beginning.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus."
+      }
+    },
+    {
+      "day": 200,
+      "title": "Two Hundred Days",
+      "declaration": "Little one, two hundred days of being kept. Not one of them did you protect yourself. Every single one was God, and that will still be true when you are grown.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    },
+    {
+      "day": 201,
+      "title": "Authority, Not Anxiety",
+      "declaration": "Little one, we are not begging heaven; we are agreeing with it. We stand in what God has already said about you, and we say it out loud.",
+      "scripture": {
+        "ref": "Luke 10:19",
+        "text": "I have given you authority to trample on snakes and scorpions and to overcome all the power of the enemy."
+      }
+    },
+    {
+      "day": 202,
+      "title": "Rest in the Storm",
+      "declaration": "Little one, Jesus slept through a storm that terrified experienced sailors. May you inherit that kind of rest — the sort that does not depend on calm weather.",
+      "scripture": {
+        "ref": "Mark 4:38",
+        "text": "Jesus was in the stern, sleeping on a cushion."
+      }
+    },
+    {
+      "day": 203,
+      "title": "Health in Your Body",
+      "declaration": "Little one, we declare health over you: strong lungs, a strong heart, a strong immune system, a body that heals well and quickly.",
+      "scripture": {
+        "ref": "Jeremiah 30:17",
+        "text": "But I will restore you to health and heal your wounds, declares the Lord."
+      }
+    },
+    {
+      "day": 204,
+      "title": "Protected From Within",
+      "declaration": "Little one, some of the greatest dangers in life are not outside a person. We pray protection over your character too — from bitterness, from pride, from despair.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart, for everything you do flows from it."
+      }
+    },
+    {
+      "day": 205,
+      "title": "Not Overwhelmed",
+      "declaration": "Little one, the waters will not overwhelm you. God does not promise a life without deep places; He promises to be in them with you.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you; and when you pass through the rivers, they will not sweep over you."
+      }
+    },
+    {
+      "day": 206,
+      "title": "Surrounded",
+      "declaration": "Little one, the way mountains surround a city, God surrounds you. Look up in any direction and He is what you would see.",
+      "scripture": {
+        "ref": "Psalm 125:2",
+        "text": "As the mountains surround Jerusalem, so the Lord surrounds his people both now and forevermore."
+      }
+    },
+    {
+      "day": 207,
+      "title": "Every Fear Named and Handed Over",
+      "declaration": "Little one, we are not pretending we have no fears. We are naming them and handing them over, because God invites us to. He can carry what we cannot.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 208,
+      "title": "Kept Until the End",
+      "declaration": "Little one, God finishes things. He is not going to protect you for eight months and then lose interest. He keeps what He starts.",
+      "scripture": {
+        "ref": "Jude 1:24",
+        "text": "To him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy."
+      }
+    },
+    {
+      "day": 209,
+      "title": "Strengthened for the Journey",
+      "declaration": "Little one, the journey out is coming. We ask now for strength for you and strength for your mother — enough for each moment, given as it is needed.",
+      "scripture": {
+        "ref": "Philippians 4:13",
+        "text": "I can do all this through him who gives me strength."
+      }
+    },
+    {
+      "day": 210,
+      "title": "Safe",
+      "declaration": "Little one, this whole month we have said one thing many ways: you are safe. Not because the world is gentle, but because God is faithful. Sleep well in there.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+      }
+    }
+  ]
 }

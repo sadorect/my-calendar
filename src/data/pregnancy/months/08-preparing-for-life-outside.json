@@ -12,6 +12,356 @@
   "endDay": 245,
   "startWeek": 31,
   "endWeek": 35,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 31,
+      "title": "Making Room",
+      "declaration": "Little one, we are making room for you — and not only in a cupboard. Room in our time, our attention and our habits. You are being prepared for, and that is a form of love you will feel long before you can name it.",
+      "parentsPrayer": "Father, help us prepare our hearts as carefully as we prepare the house. Show us what needs to change in us before this child arrives. Amen."
+    },
+    {
+      "week": 32,
+      "title": "A Home Worth Being Born Into",
+      "declaration": "Little one, a home is made of how people treat each other, not what is in it. We are working on ours so that what you are born into is worth being born into.",
+      "parentsPrayer": "Lord, build this house. Let forgiveness be quick here, kindness be normal here, and Your presence be welcome here. Amen."
+    },
+    {
+      "week": 33,
+      "title": "Growing in Wisdom and Stature",
+      "declaration": "Little one, Jesus grew in wisdom and stature and in favour with God and people. That is the shape of a whole life, and it is what we are asking for you — all four, not just one.",
+      "parentsPrayer": "Father, grow this child in every direction — body, mind, spirit and relationships. Keep us from valuing one and neglecting the others. Amen."
+    },
+    {
+      "week": 34,
+      "title": "Almost Ready",
+      "declaration": "Little one, nearly everything in you is finished. These last weeks are not wasted time; they are the final touches of a God who does not rush good work.",
+      "parentsPrayer": "Lord, thank You for the finishing work happening quietly right now. Give us patience for these last weeks and peace in the waiting. Amen."
+    },
+    {
+      "week": 35,
+      "title": "Prepared to Receive You",
+      "declaration": "Little one, we are almost ready. Not perfect — ready. God has been preparing us the whole time He has been preparing you, and He will not deliver you to unprepared hands.",
+      "parentsPrayer": "Father, we do not feel ready, and we trust that You are. Make us the parents this child needs. We receive them from Your hand. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 211,
+      "title": "Making Room",
+      "declaration": "Little one, we are moving things to make room for you. It turns out love takes up space, and we are glad to give it.",
+      "scripture": {
+        "ref": "Isaiah 54:2",
+        "text": "Enlarge the place of your tent, stretch your tent curtains wide, do not hold back."
+      }
+    },
+    {
+      "day": 212,
+      "title": "A House Built by God",
+      "declaration": "Little one, we can paint a room and buy a cot, but only God builds a home. We are asking Him to do the building here.",
+      "scripture": {
+        "ref": "Psalm 127:1",
+        "text": "Unless the Lord builds the house, the builders labour in vain."
+      }
+    },
+    {
+      "day": 213,
+      "title": "Growing in Wisdom",
+      "declaration": "Little one, may your mind be sharp and your wisdom deeper than your cleverness. Plenty of clever people never learned wisdom, and it cost them.",
+      "scripture": {
+        "ref": "Proverbs 4:7",
+        "text": "The beginning of wisdom is this: Get wisdom. Though it cost all you have, get understanding."
+      }
+    },
+    {
+      "day": 214,
+      "title": "Favour With God and People",
+      "declaration": "Little one, we ask for favour on both sides — with God, and with the people you will live your life among. May doors open and may friendships be good ones.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "And Jesus grew in wisdom and stature, and in favour with God and man."
+      }
+    },
+    {
+      "day": 215,
+      "title": "Ready Hands",
+      "declaration": "Little one, we are praying over the hands that will hold you — ours, and everyone else's. May every hand that touches your life be a gentle one.",
+      "partner": "Little one, I have been practising being careful. I want my hands to be the ones you feel safest in.",
+      "scripture": {
+        "ref": "Mark 10:16",
+        "text": "And he took the children in his arms, placed his hands on them and blessed them."
+      }
+    },
+    {
+      "day": 216,
+      "title": "Forgiveness Lives Here",
+      "declaration": "Little one, in this house we say sorry. You will see us do it, because you will need to learn how, and nobody learns it from a lecture.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Bear with each other and forgive one another if any of you has a grievance against someone."
+      }
+    },
+    {
+      "day": 217,
+      "title": "Patience Being Built",
+      "declaration": "Little one, God is using this waiting to build patience in us, and we will need every bit of it. Thank Him for the training.",
+      "scripture": {
+        "ref": "James 1:4",
+        "text": "Let perseverance finish its work so that you may be mature and complete, not lacking anything."
+      }
+    },
+    {
+      "day": 218,
+      "title": "Your Room, Your Place",
+      "declaration": "Little one, there is a place for you here that nobody else can fill. Not a spare place — your place. It has been waiting.",
+      "scripture": {
+        "ref": "John 14:2",
+        "text": "My Father's house has many rooms; I am going there to prepare a place for you."
+      }
+    },
+    {
+      "day": 219,
+      "title": "Lungs for the First Breath",
+      "declaration": "Little one, we speak strength into your lungs. In a few weeks you will take a breath that changes everything. God has been preparing you for it since the beginning.",
+      "scripture": {
+        "ref": "Genesis 2:7",
+        "text": "Then the Lord God formed a man from the dust of the ground and breathed into his nostrils the breath of life."
+      }
+    },
+    {
+      "day": 220,
+      "title": "Sleep and Rest",
+      "declaration": "Little one, we pray for rest — yours and ours. May sleep come easily in this house, and may God give it to those He loves.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "For he grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 221,
+      "title": "Good Friends Ahead",
+      "declaration": "Little one, we are praying now for the friends you have not met. May they be honest, loyal and good for you, and may you be all three for them.",
+      "scripture": {
+        "ref": "Proverbs 27:17",
+        "text": "As iron sharpens iron, so one person sharpens another."
+      }
+    },
+    {
+      "day": 222,
+      "title": "Provision Already Prepared",
+      "declaration": "Little one, everything you will need is being provided for, often through people we have not even thought to thank. God provides earlier than we notice.",
+      "scripture": {
+        "ref": "Matthew 6:31-32",
+        "text": "Do not worry, saying 'What shall we eat?' ... your heavenly Father knows that you need them."
+      }
+    },
+    {
+      "day": 223,
+      "title": "Gentleness",
+      "declaration": "Little one, we are choosing gentleness as the tone of this house. The world will be loud enough with you soon; home should not be.",
+      "scripture": {
+        "ref": "Philippians 4:5",
+        "text": "Let your gentleness be evident to all. The Lord is near."
+      }
+    },
+    {
+      "day": 224,
+      "title": "Thirty-Two Weeks of Mercy",
+      "declaration": "Little one, thirty-two weeks. Some of them were joyful and some were hard, and mercy was underneath all of them. We are grateful today.",
+      "scripture": {
+        "ref": "Psalm 103:2",
+        "text": "Praise the Lord, my soul, and forget not all his benefits."
+      }
+    },
+    {
+      "day": 225,
+      "title": "Prepared, Not Perfect",
+      "declaration": "Little one, we will not be perfect parents. We will be present ones, and we will keep going back to God for what we do not have.",
+      "partner": "Little one, I have already decided I will get things wrong. What I will not do is stop showing up. That is the promise.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you, for my power is made perfect in weakness."
+      }
+    },
+    {
+      "day": 226,
+      "title": "A Family That Prays",
+      "declaration": "Little one, may praying together be normal here — not a performance, just how we handle things. That is the habit we want you to grow up inside.",
+      "scripture": {
+        "ref": "Matthew 18:20",
+        "text": "For where two or three gather in my name, there am I with them."
+      }
+    },
+    {
+      "day": 227,
+      "title": "Words Prepared for You",
+      "declaration": "Little one, we are practising the words we will say over you: loved, wanted, capable, forgiven, ours. May you hear them so often that they become how you think.",
+      "scripture": {
+        "ref": "Deuteronomy 6:7",
+        "text": "Impress them on your children. Talk about them when you sit at home and when you walk along the road."
+      }
+    },
+    {
+      "day": 228,
+      "title": "Strength for Your Mother",
+      "declaration": "Little one, we pray now for your mother's body — strength for these last weeks, rest at night, and peace in her heart.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."
+      }
+    },
+    {
+      "day": 229,
+      "title": "Every Detail Attended To",
+      "declaration": "Little one, God is not overwhelmed by logistics. The details of your arrival are already handled by Someone who is never caught out.",
+      "scripture": {
+        "ref": "Matthew 10:30",
+        "text": "And even the very hairs of your head are all numbered."
+      }
+    },
+    {
+      "day": 230,
+      "title": "A Grateful House",
+      "declaration": "Little one, may gratitude be the atmosphere you grow up in. Grateful people are harder to knock down, and they are much better company.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances; for this is God's will for you in Christ Jesus."
+      }
+    },
+    {
+      "day": 231,
+      "title": "Learning to Trust",
+      "declaration": "Little one, the first thing you will learn out here is whether the world can be trusted. We intend to give you a very clear answer.",
+      "scripture": {
+        "ref": "Psalm 22:9",
+        "text": "Yet you brought me out of the womb; you made me trust in you, even at my mother's breast."
+      }
+    },
+    {
+      "day": 232,
+      "title": "Room for Others",
+      "declaration": "Little one, this home will not be only for us. May you grow up in a house where guests are normal and the table is always stretched a little wider.",
+      "scripture": {
+        "ref": "Hebrews 13:2",
+        "text": "Do not forget to show hospitality to strangers, for by so doing some people have shown hospitality to angels."
+      }
+    },
+    {
+      "day": 233,
+      "title": "Health at Birth",
+      "declaration": "Little one, we declare a healthy birth: a strong cry, good colour, clear lungs and a body that works exactly as God designed it.",
+      "scripture": {
+        "ref": "Psalm 22:10",
+        "text": "From birth I was cast on you; from my mother's womb you have been my God."
+      }
+    },
+    {
+      "day": 234,
+      "title": "Not Alone in This",
+      "declaration": "Little one, your parents are not doing this alone. God has put people around us, and we are learning to let them help.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9",
+        "text": "Two are better than one, because they have a good return for their labour."
+      }
+    },
+    {
+      "day": 235,
+      "title": "Wisdom for Us",
+      "declaration": "Little one, we are asking for wisdom to raise you well — when to hold on, when to let go, when to speak and when to be quiet.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault."
+      }
+    },
+    {
+      "day": 236,
+      "title": "The Nights Ahead",
+      "declaration": "Little one, we know the nights are coming. We are asking now for grace for 3am, and for love that does not depend on sleep.",
+      "partner": "Little one, I will take my turn at night. I want you to learn early that you have two people, not one.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His compassions never fail. They are new every morning."
+      }
+    },
+    {
+      "day": 237,
+      "title": "Joy Coming",
+      "declaration": "Little one, there is joy on the other side of this. Not just relief — joy. Jesus used exactly this picture to describe it.",
+      "scripture": {
+        "ref": "John 16:21",
+        "text": "A woman giving birth to a child has pain because her time has come; but when her baby is born she forgets the anguish because of her joy that a child is born into the world."
+      }
+    },
+    {
+      "day": 238,
+      "title": "Finishing Touches",
+      "declaration": "Little one, God is finishing you. Fingernails, eyelashes, the pattern on your fingertips that nobody else will ever have. He is unhurried and thorough.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "Being confident of this, that he who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 239,
+      "title": "A Blessed Generation",
+      "declaration": "Little one, we are not only praying for you. We are praying for the people who will come after you, and asking God to bless a line He has not finished writing.",
+      "scripture": {
+        "ref": "Psalm 112:2",
+        "text": "Their children will be mighty in the land; the generation of the upright will be blessed."
+      }
+    },
+    {
+      "day": 240,
+      "title": "Peace in the House",
+      "declaration": "Little one, before you arrive, we are making peace where peace is needed. We do not want you born into an argument we could have finished.",
+      "scripture": {
+        "ref": "Romans 12:18",
+        "text": "If it is possible, as far as it depends on you, live at peace with everyone."
+      }
+    },
+    {
+      "day": 241,
+      "title": "Learning Your Face",
+      "declaration": "Little one, we have been imagining your face for months. Whatever it looks like, we have already decided it is our favourite.",
+      "scripture": {
+        "ref": "Song of Songs 2:14",
+        "text": "Show me your face, let me hear your voice; for your voice is sweet, and your face is lovely."
+      }
+    },
+    {
+      "day": 242,
+      "title": "Everything You Need",
+      "declaration": "Little one, you will arrive with nothing and lack nothing. That is how God works, and it is a good early lesson for all of us.",
+      "scripture": {
+        "ref": "Matthew 6:33",
+        "text": "But seek first his kingdom and his righteousness, and all these things will be given to you as well."
+      }
+    },
+    {
+      "day": 243,
+      "title": "Held Before You Are Held",
+      "declaration": "Little one, before our arms get to hold you, God's already are. You have never been unheld for a single second of your life.",
+      "scripture": {
+        "ref": "Deuteronomy 33:27",
+        "text": "The eternal God is your refuge, and underneath are the everlasting arms."
+      }
+    },
+    {
+      "day": 244,
+      "title": "Ready Hearts",
+      "declaration": "Little one, our hearts are as ready as they know how to be. Whatever is still missing, God will supply on the day. He always has.",
+      "scripture": {
+        "ref": "Ezekiel 36:26",
+        "text": "I will give you a new heart and put a new spirit in you."
+      }
+    },
+    {
+      "day": 245,
+      "title": "Almost",
+      "declaration": "Little one, one month left. Everything that has been prepared — in you, in us, in this house — was prepared by God. We are nearly there, and He is not tired.",
+      "scripture": {
+        "ref": "Habakkuk 2:3",
+        "text": "For the revelation awaits an appointed time; it speaks of the end and will not prove false. Though it linger, wait for it; it will certainly come."
+      }
+    }
+  ]
 }

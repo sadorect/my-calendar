@@ -257,9 +257,9 @@ async function doReset() {
     <section class="bc-card p-5">
       <h2 class="font-medium mb-2">About</h2>
       <p class="text-sm bc-muted leading-relaxed">
-        {{ coverage.daysWritten }} of {{ coverage.daysTotal }} daily declarations are written
-        (Months 1–{{ coverage.monthsWritten }}). The remaining months have their theme and
-        Scripture in place and will show a gentle placeholder until their words are added.
+        All {{ coverage.daysTotal }} daily declarations are written, across
+        {{ coverage.monthsWritten }} months and {{ coverage.weeksWritten }} weekly declarations —
+        every day of the pregnancy, each with its own Scripture and a closing prayer for you.
       </p>
       <p class="text-sm bc-muted leading-relaxed mt-3">
         Everything you save — favourites, notes, progress — stays on this device.

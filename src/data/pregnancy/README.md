@@ -71,10 +71,15 @@ edited content file fails loudly instead of quietly losing a day.
 `day` is global (1..280), not per-month. That means a day entry is meaningful on
 its own — no month context needed to place it — and the lookup is a flat map.
 
-## Adding the remaining months
+## Editing the content
 
-Months 4–9 ship with their theme, key scripture, intro and palette already set,
-and empty `weeks` / `days` arrays. Fill them in and everything else works: the
-store, views, favourites, journal and progress are all driven by the ranges
-above, not by whether content exists. A day with no entry renders a gentle
-"content coming soon" card rather than breaking.
+All nine months are written: 280 daily entries and 40 weekly entries. The store,
+views, favourites, journal and progress are driven by the ranges above, not by
+whether a given day has content, so a day left empty renders a gentle
+"content coming soon" card rather than breaking — useful while drafting a
+rewrite or a translation.
+
+`tests/unit/pregnancyContent.spec.js` asserts full coverage: every day 1..280 is
+written exactly once, every entry has a title, declaration and Scripture, every
+week has a parents' prayer, and no month repeats a day title. Run it after any
+content edit.

@@ -12,6 +12,286 @@
   "endDay": 182,
   "startWeek": 23,
   "endWeek": 26,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 23,
+      "title": "Plans Already Made",
+      "declaration": "Little one, God is not waiting to see how you turn out before He decides what to do with you. The plans came first. This week we stop guessing and start agreeing with what He has already said.",
+      "parentsPrayer": "Father, we release our own plans for this child into Your hands. Yours are better and older than ours. Give us the humility to raise them for Your purposes and not our pride. Amen."
+    },
+    {
+      "week": 24,
+      "title": "Called, Not Just Wanted",
+      "declaration": "Little one, you are wanted, and you are also called. There is something only you will do. We are not raising a child to fill a gap in our lives; we are raising a person God has sent.",
+      "parentsPrayer": "Lord, show us how to raise a called child. Keep us from making this little one carry our unfinished dreams. Let them carry Yours instead. Amen."
+    },
+    {
+      "week": 25,
+      "title": "Rooted Before Fruitful",
+      "declaration": "Little one, roots come before fruit. God is unhurried about the visible part because He is serious about the hidden part. Depth first, always.",
+      "parentsPrayer": "Father, make this child deep. Give us patience when growth is slow and wisdom not to force what You are still rooting. Amen."
+    },
+    {
+      "week": 26,
+      "title": "A Future and a Hope",
+      "declaration": "Little one, your future is not a gamble. It is held by a God whose plans for you are good — not painless, but good, and always going somewhere.",
+      "parentsPrayer": "Lord, we entrust this child's future to You today. Where we are afraid of the world they are being born into, remind us who holds it. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 155,
+      "title": "Plans Older Than You",
+      "declaration": "Little one, before you existed, God had already decided good things about you. You are not walking into an empty future; you are walking into a prepared one.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you."
+      }
+    },
+    {
+      "day": 156,
+      "title": "Set Apart",
+      "declaration": "Little one, you are set apart. Not better than anyone, but marked for something particular. God has done this from the womb before, and He has done it again with you.",
+      "scripture": {
+        "ref": "Galatians 1:15",
+        "text": "But when God, who set me apart from my mother's womb and called me by his grace, was pleased."
+      }
+    },
+    {
+      "day": 157,
+      "title": "A Purpose You Will Not Miss",
+      "declaration": "Little one, we pray you will not miss what God made you for. May every door He opens be obvious, and every door He closes be a mercy.",
+      "scripture": {
+        "ref": "Revelation 3:8",
+        "text": "See, I have placed before you an open door that no one can shut."
+      }
+    },
+    {
+      "day": 158,
+      "title": "Not Our Dream, His",
+      "declaration": "Little one, we refuse to hand you our unfinished dreams to carry. You were not made to complete us. You were made to follow God, and we will help you do it.",
+      "partner": "Little one, I will be proud of you for who you are, not for what you achieve for me. That is a promise I am making before you can hold me to it.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord, offspring a reward from him."
+      }
+    },
+    {
+      "day": 159,
+      "title": "Rooted",
+      "declaration": "Little one, may your roots go down into the love of God until nothing can shift you. Rooted people are not blown around by every opinion.",
+      "scripture": {
+        "ref": "Ephesians 3:17",
+        "text": "So that Christ may dwell in your hearts through faith. And I pray that you, being rooted and established in love."
+      }
+    },
+    {
+      "day": 160,
+      "title": "Fruit in Season",
+      "declaration": "Little one, you will bear fruit in your season, not in someone else's. We will not compare you to anyone, and we pray you will not compare yourself.",
+      "scripture": {
+        "ref": "Psalm 1:3",
+        "text": "That person is like a tree planted by streams of water, which yields its fruit in season."
+      }
+    },
+    {
+      "day": 161,
+      "title": "Chosen for a Work",
+      "declaration": "Little one, there is work with your name on it that nobody else can do properly. God prepared it in advance. It is waiting for you.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "Created in Christ Jesus to do good works, which God prepared in advance for us to do."
+      }
+    },
+    {
+      "day": 162,
+      "title": "Wisdom Beyond Your Years",
+      "declaration": "Little one, we ask for wisdom for you — early. May you make good decisions before you are old enough to have learned them the painful way.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault."
+      }
+    },
+    {
+      "day": 163,
+      "title": "A Heart That Listens",
+      "declaration": "Little one, of everything you could ask God for, we pray you ask for this: a listening heart. It was Solomon's request, and God was pleased with it.",
+      "scripture": {
+        "ref": "1 Kings 3:9",
+        "text": "So give your servant a discerning heart to govern your people and to distinguish between right and wrong."
+      }
+    },
+    {
+      "day": 164,
+      "title": "Steps Ordered",
+      "declaration": "Little one, God directs steps, not just destinations. You will not have to see the whole road to walk it well.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 165,
+      "title": "Not Behind",
+      "declaration": "Little one, you are not behind. Comparison is a thief and we are shutting the door on it now. God's timing for your life is not late.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything, and a season for every activity under the heavens."
+      }
+    },
+    {
+      "day": 166,
+      "title": "Integrity",
+      "declaration": "Little one, we would rather you be honest than impressive. Integrity is slow to build and quick to lose, and it will carry you further than talent.",
+      "scripture": {
+        "ref": "Proverbs 10:9",
+        "text": "Whoever walks in integrity walks securely."
+      }
+    },
+    {
+      "day": 167,
+      "title": "Generous Hands",
+      "declaration": "Little one, may you hold things loosely. Everything you will ever have is on loan from a generous God, and generous people are the happiest people alive.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 168,
+      "title": "Courage to Stand Alone",
+      "declaration": "Little one, one day you will have to stand alone for something true. We pray for that day now: that you will not fold, and that you will not be cruel about it either.",
+      "scripture": {
+        "ref": "Daniel 1:8",
+        "text": "But Daniel resolved not to defile himself with the royal food and wine."
+      }
+    },
+    {
+      "day": 169,
+      "title": "Every Gift From Him",
+      "declaration": "Little one, whatever you are good at came from somewhere. May you always know the source and never mistake a gift for an achievement.",
+      "scripture": {
+        "ref": "James 1:17",
+        "text": "Every good and perfect gift is from above, coming down from the Father of the heavenly lights."
+      }
+    },
+    {
+      "day": 170,
+      "title": "Made to Serve",
+      "declaration": "Little one, greatness in God's kingdom looks like service. We pray you find that out early and never feel cheated by it.",
+      "scripture": {
+        "ref": "Mark 10:43",
+        "text": "Whoever wants to become great among you must be your servant."
+      }
+    },
+    {
+      "day": 171,
+      "title": "Confidence Without Arrogance",
+      "declaration": "Little one, we pray for confidence in you that never curdles into arrogance. Know who you are, and stay kind about it.",
+      "scripture": {
+        "ref": "Romans 12:3",
+        "text": "Do not think of yourself more highly than you ought, but rather think of yourself with sober judgment."
+      }
+    },
+    {
+      "day": 172,
+      "title": "A Light Where You Are Sent",
+      "declaration": "Little one, you are being sent somewhere. Wherever that is, may you make it brighter, warmer and more honest just by being in it.",
+      "scripture": {
+        "ref": "Matthew 5:14",
+        "text": "You are the light of the world. A town built on a hill cannot be hidden."
+      }
+    },
+    {
+      "day": 173,
+      "title": "Faithful in Small Things",
+      "declaration": "Little one, God notices small faithfulness. Most of your life will be made of small things done well, and He is watching all of it with pleasure.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 174,
+      "title": "Unshakeable",
+      "declaration": "Little one, may you be built on something that does not move. Storms come to every house; only the foundation decides what happens next.",
+      "scripture": {
+        "ref": "Matthew 7:25",
+        "text": "The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock."
+      }
+    },
+    {
+      "day": 175,
+      "title": "A Good Name",
+      "declaration": "Little one, we are praying for your reputation before you have one. May your name be trusted in every room it is spoken in.",
+      "partner": "Little one, I want people to say your name the way you say the name of someone dependable. That matters more to me than anything you will earn.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches; to be esteemed is better than silver or gold."
+      }
+    },
+    {
+      "day": 176,
+      "title": "Free From Fear of People",
+      "declaration": "Little one, may you never be ruled by what people think. It is a small cage and too many good people live in it their whole lives.",
+      "scripture": {
+        "ref": "Proverbs 29:25",
+        "text": "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe."
+      }
+    },
+    {
+      "day": 177,
+      "title": "Purpose in the Waiting",
+      "declaration": "Little one, even the waiting parts of your life will have purpose. Joseph waited in a prison and it turned out to be the road to the palace.",
+      "scripture": {
+        "ref": "Genesis 50:20",
+        "text": "You intended to harm me, but God intended it for good to accomplish what is now being done."
+      }
+    },
+    {
+      "day": 178,
+      "title": "Roots in Scripture",
+      "declaration": "Little one, may God's word be familiar to you the way your own home is familiar. Not a book you visit, but a place you live.",
+      "scripture": {
+        "ref": "Psalm 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path."
+      }
+    },
+    {
+      "day": 179,
+      "title": "Doors Only He Opens",
+      "declaration": "Little one, you will not have to force anything. What God opens stays open, and what He closes was never yours to walk through.",
+      "scripture": {
+        "ref": "Revelation 3:7",
+        "text": "What he opens no one can shut, and what he shuts no one can open."
+      }
+    },
+    {
+      "day": 180,
+      "title": "Peace About the Future",
+      "declaration": "Little one, we lay down our worry about the world you are being born into. It is not a safe world, but it is a world with God in it, and He is not nervous.",
+      "scripture": {
+        "ref": "John 16:33",
+        "text": "In this world you will have trouble. But take heart! I have overcome the world."
+      }
+    },
+    {
+      "day": 181,
+      "title": "An Anchored Hope",
+      "declaration": "Little one, hope is not wishful thinking. It is an anchor, and yours is fixed to something that does not drift.",
+      "scripture": {
+        "ref": "Hebrews 6:19",
+        "text": "We have this hope as an anchor for the soul, firm and secure."
+      }
+    },
+    {
+      "day": 182,
+      "title": "Established",
+      "declaration": "Little one, this month we have declared God's plans over you. We do not have to know the details to trust the One holding them. You are established, and you are going somewhere good.",
+      "scripture": {
+        "ref": "Psalm 138:8",
+        "text": "The Lord will vindicate me; your love, Lord, endures forever — do not abandon the works of your hands."
+      }
+    }
+  ]
 }

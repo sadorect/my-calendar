@@ -12,6 +12,356 @@
   "endDay": 280,
   "startWeek": 36,
   "endWeek": 40,
-  "weeks": [],
-  "days": []
+  "weeks": [
+    {
+      "week": 36,
+      "title": "The Waiting Turns to Watching",
+      "declaration": "Little one, the waiting has changed character. We are not counting months any more; we are watching for a day. Any morning now could be the morning.",
+      "parentsPrayer": "Father, steady us in this watching season. Keep us from both panic and impatience. Let us meet each day already handed over to You. Amen."
+    },
+    {
+      "week": 37,
+      "title": "Peace Over the Arrival",
+      "declaration": "Little one, we speak peace over the day you arrive — over the room, the people in it, the decisions made in it, and every hand that will help you into the world.",
+      "parentsPrayer": "Lord, go ahead of us into that day. Guide every person who will care for us, give them skill and clear judgment, and let peace fill that room. Amen."
+    },
+    {
+      "week": 38,
+      "title": "Strength for the Journey",
+      "declaration": "Little one, the last stretch asks for strength from both of you. God gives strength for the moment it is needed, not before — and He has never once been late with it.",
+      "parentsPrayer": "Father, strengthen this mother's body and settle her heart. Be her strength when hers runs out. Carry them both safely through. Amen."
+    },
+    {
+      "week": 39,
+      "title": "God Finishes What He Starts",
+      "declaration": "Little one, God does not bring things to the point of birth and then stop. He finishes. Everything He has done in these forty weeks was heading somewhere, and we are nearly there.",
+      "parentsPrayer": "Lord, You do not abandon Your work. Finish this well. We trust You with the timing and with everything we cannot control. Amen."
+    },
+    {
+      "week": 40,
+      "title": "Welcome, Little One",
+      "declaration": "Little one, this is the week we have been walking towards. Whenever you come, you come into a family that has been praying for you every single day, and to a God who has known you from before the beginning.",
+      "parentsPrayer": "Father, thank You. For every day of these forty weeks, for every prayer prayed over this child, and for the moment we finally see their face. Bring them safely. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 246,
+      "title": "The Final Month",
+      "declaration": "Little one, we begin the last month. Everything we have declared over you still stands, and none of it depended on us being strong enough to say it.",
+      "scripture": {
+        "ref": "Psalm 138:8",
+        "text": "The Lord will fulfil his purpose for me; your love, Lord, endures forever."
+      }
+    },
+    {
+      "day": 247,
+      "title": "He Brings to Birth",
+      "declaration": "Little one, God does not take things to the edge of birth and change His mind. What He starts, He delivers.",
+      "scripture": {
+        "ref": "Isaiah 66:9",
+        "text": "Do I bring to the moment of birth and not give delivery? says the Lord."
+      }
+    },
+    {
+      "day": 248,
+      "title": "Peace in the Room",
+      "declaration": "Little one, we pray over the room you will be born in: peace in it, wisdom in it, skill in every pair of hands, and the presence of God filling it.",
+      "scripture": {
+        "ref": "Psalm 29:11",
+        "text": "The Lord gives strength to his people; the Lord blesses his people with peace."
+      }
+    },
+    {
+      "day": 249,
+      "title": "Strength for Your Mother",
+      "declaration": "Little one, we ask God for strength for the woman carrying you — in her body, in her mind, and in the moments she thinks she has nothing left.",
+      "partner": "Little one, your mother has been carrying you and carrying a lot else besides. I am asking God for her today more than for anything else.",
+      "scripture": {
+        "ref": "Isaiah 41:10",
+        "text": "I will strengthen you and help you; I will uphold you with my righteous right hand."
+      }
+    },
+    {
+      "day": 250,
+      "title": "Wisdom for Every Decision",
+      "declaration": "Little one, we pray for every decision that will be made about your arrival — that it will be wise, timely and right, and that we will have peace about it.",
+      "scripture": {
+        "ref": "Proverbs 3:5-6",
+        "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight."
+      }
+    },
+    {
+      "day": 251,
+      "title": "Skilled Hands",
+      "declaration": "Little one, we are praying for the midwives, doctors and nurses you have not met. Give them clear minds, steady hands and kind hearts on the day.",
+      "scripture": {
+        "ref": "Exodus 31:3",
+        "text": "And I have filled him with the Spirit of God, with wisdom, with understanding, with knowledge and with all kinds of skills."
+      }
+    },
+    {
+      "day": 252,
+      "title": "No Fear of the Day",
+      "declaration": "Little one, we refuse to be afraid of the day you arrive. We have prayed too long over you to meet that morning in fear.",
+      "scripture": {
+        "ref": "Psalm 56:3",
+        "text": "When I am afraid, I put my trust in you."
+      }
+    },
+    {
+      "day": 253,
+      "title": "Right Position, Right Time",
+      "declaration": "Little one, we pray you come into position at the right time and in the right way. God has ordered stars; He can order this.",
+      "scripture": {
+        "ref": "Isaiah 45:2",
+        "text": "I will go before you and will level the mountains; I will break down gates of bronze."
+      }
+    },
+    {
+      "day": 254,
+      "title": "Every Hour Held",
+      "declaration": "Little one, we do not know the hour, and God does. That is enough. We are not in charge of the timing and we are glad about it.",
+      "scripture": {
+        "ref": "Psalm 31:15",
+        "text": "My times are in your hands."
+      }
+    },
+    {
+      "day": 255,
+      "title": "Joy Ahead",
+      "declaration": "Little one, whatever the day costs, joy is on the other side of it. Jesus said it plainly, and He was right about it.",
+      "scripture": {
+        "ref": "John 16:21",
+        "text": "When her baby is born she forgets the anguish because of her joy that a child is born into the world."
+      }
+    },
+    {
+      "day": 256,
+      "title": "A Safe Passage",
+      "declaration": "Little one, we pray for a safe journey out — for you and for your mother. Safe there, safe through, safe here.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    },
+    {
+      "day": 257,
+      "title": "Your First Cry",
+      "declaration": "Little one, your first cry will be one of the best sounds this family has ever heard. We are praying for it now: strong, clear and healthy.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I praise you because I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 258,
+      "title": "Nothing Is Too Hard",
+      "declaration": "Little one, nothing about this is difficult for God. Not the timing, not the delivery, not anything unexpected. Nothing is too hard for Him.",
+      "scripture": {
+        "ref": "Jeremiah 32:27",
+        "text": "I am the Lord, the God of all mankind. Is anything too hard for me?"
+      }
+    },
+    {
+      "day": 259,
+      "title": "Rest While You Wait",
+      "declaration": "Little one, these last days are for resting, not for panicking. God is not asking us to be productive right now; He is asking us to trust Him.",
+      "scripture": {
+        "ref": "Exodus 14:14",
+        "text": "The Lord will fight for you; you need only to be still."
+      }
+    },
+    {
+      "day": 260,
+      "title": "Named and Blessed",
+      "declaration": "Little one, we speak your name over you today with blessing on it. May the Lord bless you and keep you all the days of your life.",
+      "scripture": {
+        "ref": "Numbers 6:24-26",
+        "text": "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."
+      }
+    },
+    {
+      "day": 261,
+      "title": "Every Day Written",
+      "declaration": "Little one, the day of your birth was written down before any of this began. It is not a date we are choosing; it is one we are being led to.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book before one of them came to be."
+      }
+    },
+    {
+      "day": 262,
+      "title": "Grace for the Unknown",
+      "declaration": "Little one, we do not know exactly how this will go. We know who will be there, and that has been enough for us the whole way.",
+      "partner": "Little one, I have stopped needing to know the plan. I just need to know He is in it, and I do.",
+      "scripture": {
+        "ref": "2 Corinthians 9:8",
+        "text": "And God is able to bless you abundantly, so that in all things at all times, having all that you need, you will abound in every good work."
+      }
+    },
+    {
+      "day": 263,
+      "title": "Thankful Before the Fact",
+      "declaration": "Little one, we are saying thank You before the answer arrives. That is what faith looks like, and we have had a lot of practice these forty weeks.",
+      "scripture": {
+        "ref": "Philippians 4:6",
+        "text": "In every situation, by prayer and petition, with thanksgiving, present your requests to God."
+      }
+    },
+    {
+      "day": 264,
+      "title": "A Family Waiting",
+      "declaration": "Little one, there are people who have been praying for you who you will meet in a matter of days. You are arriving into a crowd of glad people.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 265,
+      "title": "Peace Instead of Panic",
+      "declaration": "Little one, when the day comes, we choose peace. Not because we will feel calm, but because God does not become less faithful when we are afraid.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you."
+      }
+    },
+    {
+      "day": 266,
+      "title": "Strength Renewed Daily",
+      "declaration": "Little one, strength for today is here. Tomorrow's has not arrived yet and does not need to. God gives it as it is needed.",
+      "scripture": {
+        "ref": "Deuteronomy 33:25",
+        "text": "Your strength will equal your days."
+      }
+    },
+    {
+      "day": 267,
+      "title": "He Has Not Left",
+      "declaration": "Little one, God has been present every single one of these days. He will not step out of the room at the last minute. He does not do that.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you; never will I forsake you."
+      }
+    },
+    {
+      "day": 268,
+      "title": "Your Whole Life Ahead",
+      "declaration": "Little one, in a few days a whole life begins. Every part of it is already known and already loved by God.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "Your eyes saw my unformed body."
+      }
+    },
+    {
+      "day": 269,
+      "title": "Prepared and Waiting",
+      "declaration": "Little one, everything is prepared. The room, the clothes, the people, the prayers. Now we simply wait for you.",
+      "scripture": {
+        "ref": "Luke 12:37",
+        "text": "It will be good for those servants whose master finds them watching when he comes."
+      }
+    },
+    {
+      "day": 270,
+      "title": "Two Hundred and Seventy Days",
+      "declaration": "Little one, two hundred and seventy days of God's faithfulness. Not one missed. Whatever the coming days hold, that record stands.",
+      "scripture": {
+        "ref": "Psalm 100:5",
+        "text": "For the Lord is good and his love endures forever; his faithfulness continues through all generations."
+      }
+    },
+    {
+      "day": 271,
+      "title": "Courage for the Day",
+      "declaration": "Little one, we ask for courage — for your mother most of all. Not the absence of fear, but the strength to go through it anyway.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."
+      }
+    },
+    {
+      "day": 272,
+      "title": "Every Need Supplied",
+      "declaration": "Little one, whatever this week requires, God has it. He has never had to apologise to anyone for running short.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "And my God will meet all your needs according to the riches of his glory in Christ Jesus."
+      }
+    },
+    {
+      "day": 273,
+      "title": "A Good Beginning",
+      "declaration": "Little one, we pray your first hours are gentle ones — warm, quiet, safe and close to the people who love you.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms and carries them close to his heart."
+      }
+    },
+    {
+      "day": 274,
+      "title": "Trusting the Timing",
+      "declaration": "Little one, you will not be early and you will not be late. You will be on time, because your times are in His hands.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 275,
+      "title": "Not Anxious",
+      "declaration": "Little one, we lay down the last of our anxiety today. It has never once helped, and God has never once needed it.",
+      "scripture": {
+        "ref": "Matthew 6:27",
+        "text": "Can any one of you by worrying add a single hour to your life?"
+      }
+    },
+    {
+      "day": 276,
+      "title": "He Will Finish It",
+      "declaration": "Little one, God finishes. He has been finishing this quietly for forty weeks and He is not going to stop now.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 277,
+      "title": "Blessing Over Your Life",
+      "declaration": "Little one, we bless your life: long, healthy, fruitful, joyful and useful to God. Everything we have declared over you, we declare again today.",
+      "scripture": {
+        "ref": "Psalm 91:16",
+        "text": "With long life I will satisfy him and show him my salvation."
+      }
+    },
+    {
+      "day": 278,
+      "title": "Almost Face to Face",
+      "declaration": "Little one, we have known your kicks, your rhythms and your name. Soon we will know your face. What a thing to be looking forward to.",
+      "scripture": {
+        "ref": "1 Corinthians 13:12",
+        "text": "For now we see only a reflection as in a mirror; then we shall see face to face."
+      }
+    },
+    {
+      "day": 279,
+      "title": "Thank You",
+      "declaration": "Little one, before you arrive, we want to say it clearly: thank You, God. For this child, for these forty weeks, for every day we got to pray over them.",
+      "scripture": {
+        "ref": "Psalm 107:1",
+        "text": "Give thanks to the Lord, for he is good; his love endures forever."
+      }
+    },
+    {
+      "day": 280,
+      "title": "Welcome, Little One",
+      "declaration": "Little one, this is the day we have been walking towards for forty weeks. Whenever you come — today, or in the days just after — you are welcome, you are wanted, and you are loved. We have been telling you so every single day, and we are not going to stop now.",
+      "partner": "Little one, I have said these words over you for forty weeks. Now I get to say them to your face. Welcome home.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord, offspring a reward from him."
+      }
+    }
+  ]
 }

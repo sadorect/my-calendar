@@ -29,12 +29,32 @@ describe('pregnancy content', () => {
     }
   })
 
-  it('has complete written content for months 1-3', () => {
-    for (const month of MONTHS.slice(0, 3)) {
-      expect(month.days).toHaveLength(month.endDay - month.startDay + 1)
-      expect(month.weeks).toHaveLength(month.endWeek - month.startWeek + 1)
+  it('has complete written content for all nine months', () => {
+    for (const month of MONTHS) {
+      expect(month.days, `month ${month.month} days`).toHaveLength(
+        month.endDay - month.startDay + 1,
+      )
+      expect(month.weeks, `month ${month.month} weeks`).toHaveLength(
+        month.endWeek - month.startWeek + 1,
+      )
     }
-    expect(contentCoverage().daysWritten).toBe(91)
+    const coverage = contentCoverage()
+    expect(coverage.daysWritten).toBe(TOTAL_DAYS)
+    expect(coverage.monthsWritten).toBe(9)
+    expect(coverage.weeksWritten).toBe(coverage.weeksTotal)
+  })
+
+  it('writes every day exactly once across the whole pregnancy', () => {
+    const seen = new Set()
+    for (const month of MONTHS) {
+      for (const day of month.days) {
+        expect(seen.has(day.day), `day ${day.day} written twice`).toBe(false)
+        seen.add(day.day)
+      }
+    }
+    for (let day = 1; day <= TOTAL_DAYS; day++) {
+      expect(dayContent(day), `day ${day}`).toBeTruthy()
+    }
   })
 
   it('gives every written day a title, declaration and scripture', () => {
@@ -67,16 +87,19 @@ describe('pregnancy content', () => {
     }
   })
 
-  it('returns null rather than throwing for unwritten days', () => {
+  it('returns null rather than throwing outside the pregnancy range', () => {
     expect(dayContent(1)).toBeTruthy()
-    expect(dayContent(200)).toBeNull()
-    expect(weekContent(30)).toBeNull()
+    expect(dayContent(TOTAL_DAYS)).toBeTruthy()
+    expect(dayContent(0)).toBeNull()
+    expect(dayContent(TOTAL_DAYS + 1)).toBeNull()
+    expect(weekContent(0)).toBeNull()
+    expect(weekContent(41)).toBeNull()
   })
 
-  it('enumerates a full month of day numbers even where content is missing', () => {
+  it('enumerates a full month of day numbers', () => {
     const month9 = MONTHS[8]
     expect(dayNumbersInMonth(month9)).toHaveLength(35)
-    expect(month9.days).toHaveLength(0)
+    expect(month9.days).toHaveLength(35)
   })
 
   it('never repeats a day title within a month', () => {
