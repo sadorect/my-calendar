@@ -8,7 +8,10 @@ import { test, expect } from '@playwright/test'
 
 async function openBirthCalendar(page) {
   await page.goto('/')
-  await page.getByRole('button', { name: /birth calendar/i }).first().click()
+  await page
+    .getByRole('button', { name: /birth calendar/i })
+    .first()
+    .click()
   await expect(page.getByRole('heading', { name: 'Womb Whispers' })).toBeVisible()
 }
 
@@ -44,7 +47,10 @@ test.describe('birth calendar', () => {
     await expect(page.getByText(/Day 87 of 280/)).toBeVisible()
 
     await page.reload()
-    await page.getByRole('button', { name: /birth calendar/i }).first().click()
+    await page
+      .getByRole('button', { name: /birth calendar/i })
+      .first()
+      .click()
 
     // Straight to Today — no onboarding a second time.
     await expect(page.getByText(/Day 87 of 280/)).toBeVisible()
@@ -86,17 +92,19 @@ test.describe('birth calendar', () => {
     await expect(dialog.getByRole('button', { name: 'Saved', exact: true })).toBeVisible()
   })
 
-  test('browses a month and opens an unwritten day gracefully', async ({ page }) => {
+  test('browses forward into a later month and finds it written', async ({ page }) => {
     await openBirthCalendar(page)
     await completeOnboarding(page)
 
     await page.getByRole('button', { name: 'Month', exact: true }).click()
     await expect(page.getByRole('heading', { name: 'Alive with Purpose' })).toBeVisible()
 
-    // Month 4 has no declarations written yet — must show a placeholder, not break.
+    // Month 4 used to be a placeholder. Every month is written now, so the
+    // assertion is that browsing ahead lands on real content.
     await page.getByRole('button', { name: 'Next month' }).click()
     await expect(page.getByRole('heading', { name: 'Growing Strong Under His Hand' })).toBeVisible()
-    await expect(page.getByText('Coming soon').first()).toBeVisible()
+    await expect(page.getByText('Coming soon')).toHaveCount(0)
+    await expect(page.getByText('Carried, Not Merely Kept').first()).toBeVisible()
   })
 
   test('default view setting sends the user straight to the birth calendar', async ({ page }) => {
@@ -104,11 +112,18 @@ test.describe('birth calendar', () => {
     await completeOnboarding(page)
 
     await page.getByRole('button', { name: 'Settings' }).click()
-    await page.getByRole('button', { name: 'Birth calendar', exact: true }).click()
+    const option = page.getByRole('button', { name: 'Birth calendar', exact: true })
+    await option.click()
+    await expect(option).toHaveAttribute('aria-pressed', 'true')
 
-    await page.reload()
-    // No click on the switch this time: it should open here by itself.
-    await expect(page.getByText(/Day 87 of 280/)).toBeVisible()
+    // The preference is written to IndexedDB asynchronously, and aria-pressed
+    // flips on the reactive state before that write lands. Under load the
+    // reload can beat it, so retry the reload rather than assume one is enough.
+    await expect(async () => {
+      await page.reload()
+      // No click on the switch this time: it should open here by itself.
+      await expect(page.getByText(/Day 87 of 280/)).toBeVisible({ timeout: 3000 })
+    }).toPass({ timeout: 20000 })
   })
 
   test('returns to the standard calendar', async ({ page }) => {
