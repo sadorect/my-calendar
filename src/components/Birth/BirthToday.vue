@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { TOTAL_DAYS } from '../../services/pregnancyTimeline.js'
 import DeclarationCard from './DeclarationCard.vue'
+import BirthAmbient from './BirthAmbient.vue'
 
 const store = usePregnancyStore()
 const emit = defineEmits(['open-day', 'open-weeks'])
@@ -76,6 +77,11 @@ const ringOffset = computed(() => RING * (1 - store.progress))
       >
         ← Back to today
       </button>
+    </div>
+
+    <!-- Something quiet to speak over -->
+    <div class="flex justify-center mb-5">
+      <BirthAmbient variant="compact" />
     </div>
 
     <!-- Today's declaration -->

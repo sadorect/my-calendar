@@ -58,6 +58,8 @@ function emptyState() {
       voice: 'parents', // 'parents' | 'partner' — rephrases where content provides it
       reminderTime: '08:00',
       remindersEnabled: false,
+      ambientSound: 'womb',
+      ambientVolume: 0.5,
       fontScale: 1,
       highContrast: false,
       // Biometric app lock. `credentialId` is only ever set alongside a

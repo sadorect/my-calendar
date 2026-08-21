@@ -4,6 +4,7 @@ import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { contentCoverage } from '../../data/pregnancy/index.js'
 import { storageIsPersisted, requestPersistentStorage } from '../../services/biometric.js'
 import BirthKeepsake from './BirthKeepsake.vue'
+import BirthAmbient from './BirthAmbient.vue'
 import {
   notificationPermission,
   requestNotificationPermission,
@@ -287,6 +288,9 @@ async function doReset() {
         Make storage persistent
       </button>
     </section>
+
+    <!-- Ambient sound -->
+    <BirthAmbient />
 
     <!-- Printable keepsake -->
     <section class="bc-card p-5">
