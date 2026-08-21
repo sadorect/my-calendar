@@ -57,7 +57,7 @@ test.describe('Personal Calendar - Smoke Tests', () => {
 
     // Try to find and click a button that opens the quick add modal
     // Look for common button texts or classes
-    const addButtons = page.locator('button').filter({ hasText: /add|new|create/i })
+    const addButtons = page.getByRole('button', { name: 'Add event' })
     const buttonCount = await addButtons.count()
 
     if (buttonCount > 0) {

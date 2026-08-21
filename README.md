@@ -32,6 +32,27 @@ A modern, responsive calendar application built with Vue.js 3 for personal produ
 - **Type-Safe**: ESLint configuration with Vue 3 support
 - **Performance**: Optimized bundle size, lazy loading, efficient rendering
 
+## 🤍 Birth Calendar — "Womb Whispers"
+
+A second calendar inside the same app: a daily biblical declaration and prayer
+companion for expectant parents. Switch to it from the header (desktop) or the
+**More** menu (mobile), and choose which calendar opens by default in its
+Settings.
+
+- **Due-date driven** — enter a due date or "I'm 24 weeks and 3 days"; everything
+  else follows. 280-day / 40-week timeline, 9 months mapped to week ranges.
+- **Daily + weekly declarations** rooted in Scripture, with a closing prayer for
+  the parents each week. Months 1–3 are written (91 days); 4–9 are scaffolded.
+- **Today screen** with progress ring, text-to-speech ("Speak this over your
+  baby"), mark-as-spoken with a streak, and sharing.
+- **Private journal** per day, favourites, and a "For partners" voice toggle.
+- **Biometric app lock** (Face ID / Touch ID / fingerprint) guarding the journal.
+- **Accessible**: high-contrast mode, text scaling, 44px targets, reduced-motion
+  aware.
+
+Content lives in `src/data/pregnancy/months/*.json` — see
+`src/data/pregnancy/README.md` for the data model and how to add Months 4–9.
+
 ## 🚀 Quick Start
 
 ### Prerequisites

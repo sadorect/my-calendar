@@ -117,6 +117,7 @@
                 @click="editEvent(event)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Edit event"
+                aria-label="Edit event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -131,6 +132,7 @@
                 @click="duplicateEvent(event.id)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Duplicate event"
+                aria-label="Duplicate event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -145,6 +147,7 @@
                 @click="confirmDelete(event)"
                 class="p-2 text-theme-secondary hover:text-theme-error hover:bg-theme-error/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Delete event"
+                aria-label="Delete event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -219,6 +222,7 @@
                 @click="editEvent(event)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Edit event"
+                aria-label="Edit event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -233,6 +237,7 @@
                 @click="duplicateEvent(event.id)"
                 class="p-2 text-theme-secondary hover:text-theme-accent hover:bg-theme-accent/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Duplicate event"
+                aria-label="Duplicate event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -247,6 +252,7 @@
                 @click="confirmDelete(event)"
                 class="p-2 text-theme-secondary hover:text-theme-error hover:bg-theme-error/10 rounded-xl transition-all duration-200 hover:scale-110"
                 title="Delete event"
+                aria-label="Delete event"
               >
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

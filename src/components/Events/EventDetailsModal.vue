@@ -2,13 +2,18 @@
   <div
     v-if="show"
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-30"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="event-details-title"
     @click="close"
   >
     <div class="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-auto" @click.stop>
       <div class="p-6">
         <div class="flex justify-between items-start mb-4">
-          <h2 class="text-xl font-semibold text-gray-800">{{ event.title }}</h2>
-          <button @click="close" class="text-gray-400 hover:text-gray-600">
+          <h2 id="event-details-title" class="text-xl font-semibold text-gray-800">
+            {{ event.title }}
+          </h2>
+          <button @click="close" aria-label="Close" class="text-gray-400 hover:text-gray-600">
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"

@@ -116,7 +116,7 @@ export const useEventStore = defineStore('events', () => {
 
     return recurringEvents
       .map((event) => {
-        const { recurrence, startDateTime, endDateTime } = event
+        const { recurrence, startDateTime } = event
         if (!recurrence) return null
 
         // Expand instances from event start up to today

@@ -32,10 +32,20 @@ export default [
       }
     },
     rules: {
-      'vue/multi-word-component-names': 'off'
+      'vue/multi-word-component-names': 'off',
+      // `const { id, ...rest } = obj` is the idiomatic way to omit a key. Without
+      // this, every such line is reported as an unused variable.
+      'no-unused-vars': ['error', { ignoreRestSiblings: true, argsIgnorePattern: '^_' }]
     }
   },
   {
-    ignores: ['dist', 'node_modules', '.eslintrc.cjs', 'playwright-report']
+    // Test files run under Vitest/Playwright, not the browser.
+    files: ['tests/**/*.js'],
+    languageOptions: {
+      globals: { global: 'readonly', globalThis: 'readonly' }
+    }
+  },
+  {
+    ignores: ['dist', 'node_modules', '.eslintrc.cjs', 'playwright-report', 'test-results']
   }
 ]

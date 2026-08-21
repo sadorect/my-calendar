@@ -1,0 +1,84 @@
+{
+  "month": 3,
+  "slug": "alive-with-purpose",
+  "title": "Alive with Purpose",
+  "intro": "Life is not just happening to you, little one; life is being given to you, and given for a reason. This month we move from wonder at how you are made to joy at why you are here. You were created for good things, and they were prepared long before you were.",
+  "keyScripture": {
+    "ref": "Ephesians 2:10",
+    "text": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
+  },
+  "palette": "meadow",
+  "startDay": 57,
+  "endDay": 91,
+  "startWeek": 9,
+  "endWeek": 13,
+  "weeks": [
+    {
+      "week": 9,
+      "title": "The Breath of Life",
+      "declaration": "Little one, the God who breathed life into the dust is breathing life into you. You are not merely alive; you are enlivened. This week we declare vitality, energy and strength over you.",
+      "parentsPrayer": "Father, thank You for life. Let us never grow casual about the miracle happening in this house. Fill us with gratitude this week. Amen."
+    },
+    {
+      "week": 10,
+      "title": "Created for Good Works",
+      "declaration": "Little one, you were made for something. There is good waiting in the world with your name on it. We declare that you will find your purpose early and walk in it gladly.",
+      "parentsPrayer": "Lord, our child has work that only they can do. Make us the kind of parents who help them find it rather than choose it for them. Amen."
+    },
+    {
+      "week": 11,
+      "title": "Fearless and Free",
+      "declaration": "Little one, you were not given a spirit of fear. Courage is your inheritance and freedom is your birthright. We declare boldness over your heart.",
+      "parentsPrayer": "God, drive fear out of this home. Let our child inherit courage from us and not anxiety. Amen."
+    },
+    {
+      "week": 12,
+      "title": "Joy as Strength",
+      "declaration": "Little one, joy is not decoration; it is strength. We declare a deep gladness in you that circumstances cannot reach and difficulty cannot drain.",
+      "parentsPrayer": "Father, restore joy to us this week. Let laughter be common in this house, so it is the first music our child ever knows. Amen."
+    },
+    {
+      "week": 13,
+      "title": "Growing in Favour",
+      "declaration": "Little one, you are growing, and you are growing in favour. With God and with people, doors will open that no one can close. We declare increase over you.",
+      "parentsPrayer": "Lord, let favour follow this child into every room. And keep us humble enough to remember who opened the doors. Amen."
+    }
+  ],
+  "days": [
+    { "day": 57, "title": "The Breath of Life", "declaration": "Little one, God breathed and life began. He is breathing over you now. We declare full and flourishing life into every part of you today.", "scripture": { "ref": "Genesis 2:7", "text": "And breathed into his nostrils the breath of life, and the man became a living being." } },
+    { "day": 58, "title": "God's Handiwork", "declaration": "Little one, you are God's handiwork, His craftsmanship, His poem. We declare that you will live like something made on purpose, because you are.", "scripture": { "ref": "Ephesians 2:10", "text": "For we are God's handiwork." } },
+    { "day": 59, "title": "Prepared in Advance", "declaration": "Little one, the good you will do was prepared before you arrived. You are not scrambling for a place in this world; a place is already waiting. We declare purpose over you.", "scripture": { "ref": "Ephesians 2:10", "text": "Which God prepared in advance for us to do." } },
+    { "day": 60, "title": "Alive in Christ", "declaration": "Little one, we declare spiritual life over you, not just physical life. May you know God early, love Him easily, and never remember a day without Him.", "scripture": { "ref": "Ephesians 2:5", "text": "Made us alive with Christ even when we were dead in transgressions." } },
+    { "day": 61, "title": "Strong Spirit", "declaration": "Little one, we declare strength in your inner being. Not hardness, but resilience. May you bend in the storm and not break.", "scripture": { "ref": "Ephesians 3:16", "text": "Strengthened with power through his Spirit in your inner being." } },
+    { "day": 62, "title": "Not Fear, but Power", "declaration": "Little one, God has not given you a spirit of fear, but of power, love and a sound mind. We declare all three over you today.", "scripture": { "ref": "2 Timothy 1:7", "text": "For God has not given us a spirit of fear, but of power, love and a sound mind." } },
+    { "day": 63, "title": "A Sound Mind", "declaration": "Little one, we declare clarity and peace over your mind. May your thoughts be a safe place to live, and may truth come easily to you.", "scripture": { "ref": "Philippians 4:8", "text": "Whatever is true, whatever is noble... think about such things." } },
+    { "day": 64, "title": "Fearfully Alive", "declaration": "Little one, you are alive with a life that came from God Himself. We celebrate you today, and we refuse to take a single day of you for granted.", "scripture": { "ref": "Acts 17:28", "text": "For in him we live and move and have our being." } },
+    { "day": 65, "title": "Light in You", "declaration": "Little one, we declare that you will be light in dark places. Not harsh light, but warm light, the kind people move toward.", "scripture": { "ref": "Matthew 5:14", "text": "You are the light of the world." } },
+    { "day": 66, "title": "Salt and Savour", "declaration": "Little one, may your life bring flavour wherever it goes. We declare that rooms will be better because you walked into them.", "scripture": { "ref": "Matthew 5:13", "text": "You are the salt of the earth." } },
+    { "day": 67, "title": "Chosen for Fruit", "declaration": "Little one, you were chosen to bear fruit that lasts. Not activity, but fruit. We declare a life of substance over you.", "scripture": { "ref": "John 15:16", "text": "I chose you and appointed you so that you might go and bear fruit — fruit that will last." } },
+    { "day": 68, "title": "Joy Is Strength", "declaration": "Little one, the joy of the Lord is your strength, and we declare it over you now. May gladness be your reserve when everything else runs low.", "scripture": { "ref": "Nehemiah 8:10", "text": "The joy of the Lord is your strength." } },
+    { "day": 69, "title": "Laughter in the House", "declaration": "Little one, we are filling this house with laughter for you. We declare that joy will be ordinary here, not occasional.", "partner": "Little one, I want you to grow up in a house that laughs. I am starting now, so that gladness is normal by the time you get here.", "scripture": { "ref": "Psalm 126:2", "text": "Our mouths were filled with laughter, our tongues with songs of joy." } },
+    { "day": 70, "title": "Ten Weeks of Grace", "declaration": "Little one, every day so far has been carried by grace and not by our striving. We declare the same over all the days ahead.", "scripture": { "ref": "2 Corinthians 9:8", "text": "God is able to bless you abundantly, so that in all things at all times... you will abound in every good work." } },
+    { "day": 71, "title": "Wisdom Early", "declaration": "Little one, we declare wisdom over you, the kind that begins with knowing God. May you make good decisions before you can explain why.", "scripture": { "ref": "Proverbs 9:10", "text": "The fear of the Lord is the beginning of wisdom." } },
+    { "day": 72, "title": "A Generous Heart", "declaration": "Little one, we declare open hands over your life. May you hold things loosely and people closely, and may giving come naturally to you.", "scripture": { "ref": "Acts 20:35", "text": "It is more blessed to give than to receive." } },
+    { "day": 73, "title": "Made for Community", "declaration": "Little one, you were not made to be alone. We declare good friends, faithful people and deep belonging over your whole life.", "scripture": { "ref": "Ecclesiastes 4:9", "text": "Two are better than one." } },
+    { "day": 74, "title": "Growing Steadily", "declaration": "Little one, steady growth is still growth. We declare that you will not be rushed and you will not be delayed; you will come at exactly the right time.", "scripture": { "ref": "Ecclesiastes 3:1", "text": "There is a time for everything, and a season for every activity under the heavens." } },
+    { "day": 75, "title": "Guarded Heart", "declaration": "Little one, we declare a guarded heart over you, protected but not closed. May you love freely and still be safe.", "scripture": { "ref": "Proverbs 4:23", "text": "Above all else, guard your heart, for everything you do flows from it." } },
+    { "day": 76, "title": "Peace That Guards", "declaration": "Little one, the peace of God will stand guard over your heart and mind. We declare it now, before you ever need it.", "scripture": { "ref": "Philippians 4:7", "text": "And the peace of God, which transcends all understanding, will guard your hearts and your minds." } },
+    { "day": 77, "title": "Rooted Deep", "declaration": "Little one, we declare deep roots over you. May you be planted where the water is, and may drought never define you.", "scripture": { "ref": "Jeremiah 17:8", "text": "They will be like a tree planted by the water." } },
+    { "day": 78, "title": "Fruit in Season", "declaration": "Little one, your life will bear fruit in its season, and whatever you do will prosper. We declare fruitfulness over you.", "scripture": { "ref": "Psalm 1:3", "text": "Which yields its fruit in season and whose leaf does not wither." } },
+    { "day": 79, "title": "Never Alone", "declaration": "Little one, you will never walk into a room God has not already entered. We declare His presence with you always, in every place you will go.", "scripture": { "ref": "Joshua 1:9", "text": "The Lord your God will be with you wherever you go." } },
+    { "day": 80, "title": "Strength for Today", "declaration": "Little one, there is grace for today and there will be grace for tomorrow. We declare daily strength over you, never borrowed and never short.", "scripture": { "ref": "Lamentations 3:23", "text": "They are new every morning; great is your faithfulness." } },
+    { "day": 81, "title": "A Voice That Blesses", "declaration": "Little one, we declare that your words will build and not tear down. May people leave your presence lighter than they came.", "scripture": { "ref": "Proverbs 16:24", "text": "Gracious words are a honeycomb, sweet to the soul and healing to the bones." } },
+    { "day": 82, "title": "Compassion", "declaration": "Little one, we declare a soft heart over you in a hard world. May you notice people, and may noticing move you.", "scripture": { "ref": "Colossians 3:12", "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience." } },
+    { "day": 83, "title": "Courage", "declaration": "Little one, we declare courage over you, the kind that is honest about fear and moves anyway. You come from a God who tells His people not to be afraid.", "scripture": { "ref": "Deuteronomy 31:6", "text": "Be strong and courageous. Do not be afraid." } },
+    { "day": 84, "title": "Twelve Weeks Held", "declaration": "Little one, twelve weeks of being carried, and not one of them alone. We declare gratitude over this house today, and keep on trusting.", "scripture": { "ref": "Psalm 68:19", "text": "Praise be to the Lord, who daily bears our burdens." } },
+    { "day": 85, "title": "Health and Wholeness", "declaration": "Little one, we speak health over your body and wholeness over your spirit. We declare it in faith and rest it in God's hands, who does all things well.", "scripture": { "ref": "3 John 1:2", "text": "I pray that you may enjoy good health and that all may go well with you." } },
+    { "day": 86, "title": "Growing in Favour", "declaration": "Little one, may you grow in wisdom and stature, and in favour with God and people. We declare open doors ahead of you.", "scripture": { "ref": "Luke 2:52", "text": "And Jesus grew in wisdom and stature, and in favour with God and man." } },
+    { "day": 87, "title": "A Future and a Hope", "declaration": "Little one, the plans over you are good and the future ahead of you is bright. We declare hope over every year you have not lived yet.", "scripture": { "ref": "Jeremiah 29:11", "text": "For I know the plans I have for you... plans to give you hope and a future." } },
+    { "day": 88, "title": "Purpose Before Birth", "declaration": "Little one, your calling is older than your birthday. Before you were born, God had already set you apart for something. We declare that you will not miss it.", "scripture": { "ref": "Isaiah 49:1", "text": "Before I was born the Lord called me; from my mother's womb he has spoken my name." } },
+    { "day": 89, "title": "Gratitude", "declaration": "Little one, today we simply say thank You. For life, for you, for every ordinary day that is quietly a miracle. We declare a thankful heart over you.", "scripture": { "ref": "1 Thessalonians 5:18", "text": "Give thanks in all circumstances." } },
+    { "day": 90, "title": "Everything Beautiful", "declaration": "Little one, God makes everything beautiful in its time, including the parts that are still unfinished. We declare trust over the timing of your life.", "scripture": { "ref": "Ecclesiastes 3:11", "text": "He has made everything beautiful in its time." } },
+    { "day": 91, "title": "Alive and Held", "declaration": "Little one, we close this month with our hands open and our hearts full. You are alive, you are purposed, and you are held. We declare it again, gladly.", "scripture": { "ref": "Acts 17:28", "text": "For in him we live and move and have our being." } }
+  ]
+}

@@ -58,7 +58,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { format, getDaysInMonth, startOfMonth, getDay, isToday, parseISO } from 'date-fns'
+import { format, getDaysInMonth, startOfMonth, getDay, parseISO } from 'date-fns'
 import { useEventStore } from '@/stores/events'
 
 const emit = defineEmits(['select-date'])
