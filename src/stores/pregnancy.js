@@ -97,9 +97,26 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     loaded.value = true
   }
 
-  async function persist() {
-    state.value.updatedAt = new Date().toISOString()
+  /**
+   * @param {object} [options]
+   * @param {boolean} [options.touch=true]  stamp `updatedAt` with now.
+   *   Sync passes false: a merged blob already carries the timestamp the merge
+   *   decided on, and overwriting it would make every pull look like a local
+   *   edit and bounce another push straight back at the server.
+   */
+  async function persist({ touch = true } = {}) {
+    if (touch) state.value.updatedAt = new Date().toISOString()
     await setSetting(STORAGE_KEY, JSON.parse(JSON.stringify(state.value)))
+  }
+
+  /** Replaces local state with a merged blob from sync. */
+  async function applyState(next) {
+    state.value = {
+      ...emptyState(),
+      ...next,
+      settings: { ...emptyState().settings, ...(next?.settings || {}) },
+    }
+    await persist({ touch: false })
   }
 
   // ------------------------------------------------------------------ set-up
@@ -449,6 +466,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     reset,
     load,
     persist,
+    applyState,
     refreshNow,
     // timeline
     status,

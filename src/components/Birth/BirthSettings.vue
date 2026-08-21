@@ -5,6 +5,7 @@ import { contentCoverage } from '../../data/pregnancy/index.js'
 import { storageIsPersisted, requestPersistentStorage } from '../../services/biometric.js'
 import BirthKeepsake from './BirthKeepsake.vue'
 import BirthAmbient from './BirthAmbient.vue'
+import BirthSync from './BirthSync.vue'
 import {
   notificationPermission,
   requestNotificationPermission,
@@ -288,6 +289,9 @@ async function doReset() {
         Make storage persistent
       </button>
     </section>
+
+    <!-- Cross-device sync -->
+    <BirthSync />
 
     <!-- Ambient sound -->
     <BirthAmbient />

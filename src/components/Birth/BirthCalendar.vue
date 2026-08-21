@@ -2,6 +2,7 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { createDailyReminder } from '../../services/birthReminders.js'
+import { useSync } from '../../composables/useSync.js'
 import BirthOnboarding from './BirthOnboarding.vue'
 import BirthToday from './BirthToday.vue'
 import BirthMonth from './BirthMonth.vue'
@@ -99,6 +100,16 @@ watch(
   { deep: true }
 )
 
+// Sync: restore the session, pull on open and on returning to the tab, and push
+// a short while after any local change. Everything here no-ops when no sync
+// server is configured at build time.
+const sync = useSync()
+
+watch(
+  () => store.state.updatedAt,
+  () => sync.scheduleSync()
+)
+
 function handleVisibility() {
   if (document.hidden) {
     store.noteHidden()
@@ -109,6 +120,7 @@ function handleVisibility() {
   // Timers are throttled or killed in a backgrounded tab, so a reminder that
   // was owed while we were away is delivered on the way back in.
   reminder.sync()
+  sync.syncNow({ silent: true })
 }
 
 onMounted(() => {
@@ -116,6 +128,7 @@ onMounted(() => {
   store.detectBiometric()
   document.addEventListener('visibilitychange', handleVisibility)
   if (store.reminderConfig.enabled) reminder.start()
+  sync.restore().then(() => sync.syncNow({ silent: true }))
 })
 
 onBeforeUnmount(() => {

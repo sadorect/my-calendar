@@ -26,6 +26,13 @@ export default [
         clearInterval: 'readonly',
         Blob: 'readonly',
         File: 'readonly',
+        fetch: 'readonly',
+        atob: 'readonly',
+        btoa: 'readonly',
+        crypto: 'readonly',
+        TextEncoder: 'readonly',
+        TextDecoder: 'readonly',
+        globalThis: 'readonly',
         URL: 'readonly',
         FileReader: 'readonly',
         // Node.js globals
@@ -40,13 +47,38 @@ export default [
     }
   },
   {
-    // Test files run under Vitest/Playwright, not the browser.
-    files: ['tests/**/*.js'],
+    // The sync server is Node, not the browser: a different set of globals and
+    // no DOM at all.
+    files: ['sync-server/**/*.js'],
     languageOptions: {
-      globals: { global: 'readonly', globalThis: 'readonly' }
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+        Buffer: 'readonly',
+        fetch: 'readonly',
+        URL: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly'
+      }
     }
   },
   {
-    ignores: ['dist', 'node_modules', '.eslintrc.cjs', 'playwright-report', 'test-results']
+    // Test files run under Vitest/Playwright, not the browser.
+    files: ['tests/**/*.js'],
+    languageOptions: {
+      globals: { global: 'readonly', globalThis: 'readonly', Buffer: 'readonly' }
+    }
+  },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'sync-server/node_modules',
+      '.eslintrc.cjs',
+      'playwright-report',
+      'test-results'
+    ]
   }
 ]

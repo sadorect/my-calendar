@@ -42,16 +42,38 @@ Settings.
 - **Due-date driven** — enter a due date or "I'm 24 weeks and 3 days"; everything
   else follows. 280-day / 40-week timeline, 9 months mapped to week ranges.
 - **Daily + weekly declarations** rooted in Scripture, with a closing prayer for
-  the parents each week. Months 1–3 are written (91 days); 4–9 are scaffolded.
+  the parents each week. All nine months are written: 280 daily and 40 weekly.
 - **Today screen** with progress ring, text-to-speech ("Speak this over your
   baby"), mark-as-spoken with a streak, and sharing.
+- **Share as an image** — the declaration rendered as a card in the month's
+  palette, drawn on a canvas so it looks the same on every device.
+- **Daily reminder** at a time you choose. Delivered by the app itself, so it
+  arrives while the app is open or installed; a missed one is shown the next
+  time you open it that day.
+- **Ambient sound** — a womb bed with a heartbeat, rain, or a slow hum,
+  synthesised in the browser rather than downloaded, so it works offline.
+- **Printable keepsake** — the declarations, your favourites and your journal as
+  one document; "Save as PDF" in the print dialog keeps it as a file.
 - **Private journal** per day, favourites, and a "For partners" voice toggle.
 - **Biometric app lock** (Face ID / Touch ID / fingerprint) guarding the journal.
+- **Optional sync** across devices against **your own PostgreSQL** — no
+  third-party service. See `sync-server/`.
 - **Accessible**: high-contrast mode, text scaling, 44px targets, reduced-motion
   aware.
 
 Content lives in `src/data/pregnancy/months/*.json` — see
-`src/data/pregnancy/README.md` for the data model and how to add Months 4–9.
+`src/data/pregnancy/README.md` for the data model.
+
+### Sync (optional, self-hosted)
+
+The app is local-first and stays that way unless you point it at a server. Run
+`sync-server/` (Node + your own Postgres) and set `VITE_SYNC_URL` at build time;
+without it, the sync UI does not appear at all.
+
+Your data is encrypted in the browser before it is sent — the server stores a
+blob it cannot read — which also means **a forgotten password cannot be reset.**
+`sync-server/README.md` covers the key derivation, the conflict protocol and
+deployment.
 
 ## 🚀 Quick Start
 

@@ -70,9 +70,8 @@ prayer companion for pregnancy. Users choose which calendar opens by default.
 
 - [x] Data model — 280-day / 40-week timeline, 9 months mapped to week ranges
       (`src/data/pregnancy/README.md` documents the shape)
-- [x] Content: Months 1–3 complete (91 daily + 13 weekly declarations, each with
-      Scripture and a closing prayer for the parents)
-- [x] Months 4–9 scaffolded with theme, key Scripture, intro and palette
+- [x] Content: all nine months complete — 280 daily and 40 weekly declarations,
+      each with Scripture and a closing prayer for the parents
 - [x] Pure date maths in `src/services/pregnancyTimeline.js`, unit tested
 - [x] Pinia store with local persistence (due date, favourites, journal, spoken)
 - [x] Onboarding by due date OR current week; skip-to-browse
@@ -81,30 +80,55 @@ prayer companion for pregnancy. Users choose which calendar opens by default.
 - [x] Text-to-speech, share, mark-as-spoken, streak, new-month particles
 - [x] Accessibility: high contrast mode, text scaling, 44px targets, reduced motion
 - [x] Biometric app lock (WebAuthn platform authenticator) + persistent storage
-- [ ] Months 4–9 declaration content
-- [ ] Printable PDF keepsake export
-- [ ] Daily reminder delivery (setting exists; scheduling not wired)
-- [ ] Ambient audio
-- [ ] Share as an image card (currently shares text)
-- [ ] Accounts and cross-device sync — see "Sync" below
+- [x] Months 4–9 declaration content (189 days, 27 weeks)
+- [x] Printable keepsake export (`src/services/keepsake.js`, print stylesheet)
+- [x] Daily reminder delivery (`src/services/birthReminders.js`)
+- [x] Ambient audio — synthesised, not sampled (`src/services/ambientAudio.js`)
+- [x] Share as an image card (`src/services/declarationImage.js`)
+- [x] Accounts and cross-device sync against our own Postgres (`sync-server/`)
 
-### Sync (not built — decision needed)
+### Phase 7: Sync (2026-08-21)
 
-The app is entirely local-first: no backend, no accounts. Birth calendar state is
-deliberately one serialisable blob under the `birthCalendar` settings key with an
-`updatedAt`, so it is one document to push when sync arrives. Still to decide:
-provider (Supabase vs Firebase), anonymous vs email identity, and conflict
-resolution. The biometric lock is a *device* lock, not an account login, and does
-not become one without a server to verify assertions.
+Self-hosted, not Supabase or Firebase. `sync-server/` is a Node service with one
+dependency (`pg`) in front of our own PostgreSQL, deployed on the VPS behind
+Apache; the app points at it with `VITE_SYNC_URL` and hides the whole feature
+when that is unset, so local-first stays the default rather than a fallback.
+
+The server cannot read what it stores. The browser derives an AES-GCM key and an
+auth secret from the password with PBKDF2 (310k, salted with the email so a new
+device needs no salt round trip); only the auth secret is ever sent. The
+consequence is stated in the UI and must not be softened: **a forgotten password
+cannot be reset.**
+
+Writes are compare-and-set on a revision number. The loser of a race gets a 409
+carrying the current copy, merges locally and retries once. Merge rules are in
+`src/services/mergeState.js` and are chosen by what hurts least when wrong:
+journal entries are never dropped (later `updatedAt` wins; identical timestamps
+keep both texts joined), favourites and spoken days are unioned keeping the
+earliest, and settings/dueDate come from the newer blob as a set. Deletions can
+resurrect in a true concurrent conflict — the alternative is tombstones, and
+losing a journal entry is worse than an unwanted favourite coming back.
+
+The biometric lock remains a *device* lock and is unrelated to the account.
+
+#### Still open on sync
+
+- Nothing is deployed yet: the service, its Postgres container and the DNS
+  record for the API host are set up but not provisioned. `sync-server/README.md`
+  has the exact steps.
+- Password change re-encrypts everything under a new key; not implemented.
+- One account = one blob. Sharing a pregnancy between two accounts (both
+  parents, separate logins) would need a second concept and is not designed.
 
 ## Current Status
 
 - **Date**: August 21, 2026
-- **Phase**: Phase 6 — Birth calendar shipped (Months 1-3 content); Months 4-9 pending
-- **Last Update**: Added the "Womb Whispers" birth calendar alongside the
-  productivity calendar, with a user-selectable default view, a due-date driven
-  280-day timeline, and a biometric app lock. 47 unit tests and 8 Playwright
-  specs added, all passing.
+- **Phase**: Phase 7 — birth calendar complete; sync built, not yet deployed
+- **Last Update**: Finished the birth calendar. Wrote the declarations for
+  months 4–9 (189 daily, 27 weekly), then built the four features the month list
+  still had open — daily reminder delivery, image sharing, the printable
+  keepsake and ambient sound — and self-hosted sync against our own Postgres.
+  126 unit tests in the app plus 22 in the sync server, all passing.
 
 ### Housekeeping pass (2026-08-21)
 

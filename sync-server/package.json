@@ -1,0 +1,16 @@
+{
+  "name": "womb-whispers-sync",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted sync for the calendar app. Stores an encrypted blob per account in Postgres.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/index.js",
+    "migrate": "node src/migrate.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}
