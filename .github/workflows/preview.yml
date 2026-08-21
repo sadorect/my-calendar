@@ -27,8 +27,14 @@ jobs:
       - name: Check formatting
         run: npx prettier --check src/
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Run tests
         run: npm run test
+
+      - name: Run unit tests
+        run: npm run test:unit
 
       - name: Build app
         run: npm run build
