@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
+import { createDailyReminder } from '../../services/birthReminders.js'
 import BirthOnboarding from './BirthOnboarding.vue'
 import BirthToday from './BirthToday.vue'
 import BirthMonth from './BirthMonth.vue'
@@ -79,6 +80,25 @@ function scheduleMidnightRefresh() {
   }, next - Date.now())
 }
 
+// The daily reminder. Config is read live on each tick, so changing the time in
+// Settings needs no restart — but the enabled flag does decide whether the
+// scheduler runs at all, hence the watch below.
+const reminder = createDailyReminder({
+  getConfig: () => store.reminderConfig,
+  getPayload: () => store.reminderPayload,
+  onFired: (key) => store.markReminderFired(key),
+})
+
+watch(
+  () => store.reminderConfig,
+  (config) => {
+    if (config.enabled && !reminder.isRunning) reminder.start()
+    else if (!config.enabled && reminder.isRunning) reminder.stop()
+    else reminder.sync()
+  },
+  { deep: true }
+)
+
 function handleVisibility() {
   if (document.hidden) {
     store.noteHidden()
@@ -86,17 +106,22 @@ function handleVisibility() {
   }
   store.refreshNow()
   store.noteVisible()
+  // Timers are throttled or killed in a backgrounded tab, so a reminder that
+  // was owed while we were away is delivered on the way back in.
+  reminder.sync()
 }
 
 onMounted(() => {
   scheduleMidnightRefresh()
   store.detectBiometric()
   document.addEventListener('visibilitychange', handleVisibility)
+  if (store.reminderConfig.enabled) reminder.start()
 })
 
 onBeforeUnmount(() => {
   clearTimeout(midnightTimer)
   document.removeEventListener('visibilitychange', handleVisibility)
+  reminder.stop()
 })
 </script>
 

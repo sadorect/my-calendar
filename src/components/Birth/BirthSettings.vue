@@ -3,16 +3,53 @@ import { computed, onMounted, ref } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { contentCoverage } from '../../data/pregnancy/index.js'
 import { storageIsPersisted, requestPersistentStorage } from '../../services/biometric.js'
+import {
+  notificationPermission,
+  requestNotificationPermission,
+} from '../../services/birthReminders.js'
 
 const store = usePregnancyStore()
 const coverage = contentCoverage()
 const confirmingReset = ref(false)
 const persisted = ref(false)
 const lockBusy = ref(false)
+const notifyPermission = ref('default')
 
 onMounted(async () => {
   await store.detectBiometric()
   persisted.value = await storageIsPersisted()
+  notifyPermission.value = notificationPermission()
+})
+
+const settings = computed(() => store.state.settings)
+
+async function set(key, value) {
+  await store.updateSettings({ [key]: value })
+}
+
+/**
+ * Turning reminders on asks for permission FIRST. Persisting an enabled flag
+ * the browser will never honour would leave the user waiting for a reminder
+ * that cannot arrive.
+ */
+async function toggleReminders() {
+  if (settings.value.remindersEnabled) {
+    await set('remindersEnabled', false)
+    return
+  }
+  notifyPermission.value = await requestNotificationPermission()
+  if (notifyPermission.value === 'granted') await set('remindersEnabled', true)
+}
+
+const reminderNote = computed(() => {
+  if (notifyPermission.value === 'unsupported') {
+    return 'This browser cannot show notifications.'
+  }
+  if (notifyPermission.value === 'denied') {
+    return 'Notifications are blocked for this site. Allow them in your browser settings, then try again.'
+  }
+  if (!settings.value.remindersEnabled) return ''
+  return 'Reminders are delivered by the app itself, so they arrive while it is open or installed on your home screen. If one is missed, it is shown the next time you open the app that day.'
 })
 
 async function toggleLock() {
@@ -34,12 +71,6 @@ const dueInput = computed({
   get: () => (store.dueDate ? store.dueDate.toISOString().slice(0, 10) : ''),
   set: (v) => v && store.setDueDate(v),
 })
-
-const settings = computed(() => store.state.settings)
-
-async function set(key, value) {
-  await store.updateSettings({ [key]: value })
-}
 
 async function doReset() {
   await store.reset()
@@ -172,8 +203,9 @@ async function doReset() {
           class="bc-tap relative w-12 h-7 rounded-full transition shrink-0"
           role="switch"
           :aria-checked="settings.remindersEnabled"
+          :disabled="notifyPermission === 'unsupported'"
           :style="{ backgroundColor: settings.remindersEnabled ? 'var(--bc-accent)' : 'var(--bc-hairline)' }"
-          @click="set('remindersEnabled', !settings.remindersEnabled)"
+          @click="toggleReminders"
         >
           <span
             class="absolute top-1 w-5 h-5 rounded-full bg-white transition-all"
@@ -191,6 +223,7 @@ async function doReset() {
           @change="set('reminderTime', $event.target.value)"
         />
       </label>
+      <p v-if="reminderNote" class="text-sm bc-muted leading-relaxed mt-4">{{ reminderNote }}</p>
     </section>
 
     <!-- Privacy / biometric lock -->

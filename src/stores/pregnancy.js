@@ -48,6 +48,9 @@ function emptyState() {
     favourites: {}, // "day:47" | "week:12" -> ISO timestamp
     journal: {}, // day number -> { text, updatedAt }
     spoken: {}, // day number -> ISO timestamp
+    // Local day key ("2026-08-21") of the last delivered daily reminder. Kept
+    // outside `settings` because it is delivery bookkeeping, not a preference.
+    lastReminderKey: null,
     settings: {
       // Which calendar opens on launch. This is the toggle between the original
       // productivity calendar and the birth calendar.
@@ -314,6 +317,43 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     return streak
   })
 
+  // ---------------------------------------------------------------- reminders
+
+  /** Stamps a day as delivered so the same reminder cannot fire twice. */
+  async function markReminderFired(key) {
+    if (state.value.lastReminderKey === key) return
+    state.value.lastReminderKey = key
+    await persist()
+  }
+
+  /** What the scheduler reads on every tick — always current, never captured. */
+  const reminderConfig = computed(() => ({
+    enabled: Boolean(state.value.settings.remindersEnabled),
+    time: state.value.settings.reminderTime || '08:00',
+    lastFiredKey: state.value.lastReminderKey,
+  }))
+
+  /**
+   * The notification body for today. Built from today's declaration rather than
+   * the day being browsed, so a reminder that fires while the user is reading
+   * month 2 still says what today actually is.
+   */
+  const reminderPayload = computed(() => {
+    const day = todayDay.value
+    if (!day) return null
+    const entry = dayContent(day)
+    if (!entry) return null
+    const name = state.value.babyName?.trim()
+    const voiced =
+      state.value.settings.voice === 'partner' && entry.partner ? entry.partner : entry.declaration
+    const body = name ? voiced.replace(/Little one/g, name) : voiced
+    return {
+      title: entry.title,
+      body: body.length > 180 ? body.slice(0, 177).trimEnd() + '…' : body,
+      tag: `birth-daily-${day}`,
+    }
+  })
+
   // -------------------------------------------------------------- app lock
 
   const unlockedAt = ref(null)
@@ -442,6 +482,10 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     toggleSpoken,
     spokenCount,
     spokenStreak,
+    // reminders
+    markReminderFired,
+    reminderConfig,
+    reminderPayload,
     // app lock
     isLocked,
     lockEnabled,
