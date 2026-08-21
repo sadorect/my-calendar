@@ -12,8 +12,9 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Personal Calendar" />
-    <link rel="apple-touch-icon" href="/icon-192x192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- iOS ignores the manifest icons and will not accept an SVG here, so this
+         must be a real PNG or the home-screen icon is a screenshot of the page. -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>Personal Calendar</title>
   </head>
   <body>

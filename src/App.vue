@@ -10,6 +10,7 @@ import SearchFilter from './components/SearchFilter.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 import AlertNotification from './components/AlertNotification.vue'
 import MiniCalendar from './components/MiniCalendar.vue'
+import ShareApp from './components/ShareApp.vue'
 import NaturalLanguageInput from './components/NaturalLanguageInput.vue'
 import { usePregnancyStore } from './stores/pregnancy'
 
@@ -197,6 +198,7 @@ function handleKeyNavigation(event, view) {
             <span aria-hidden="true">🤍</span>
             Birth calendar
           </button>
+          <ShareApp variant="header" />
           <ThemeToggle />
           <!-- Undo / Redo -->
           <div class="flex gap-1">
@@ -455,6 +457,7 @@ function handleKeyNavigation(event, view) {
                 <span class="text-lg">🤍</span>
                 <span class="font-medium">Birth Calendar</span>
               </button>
+              <ShareApp variant="menu" />
               <button
                 @click="selectView('week')"
                 class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"

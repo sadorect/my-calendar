@@ -15,7 +15,13 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon-192x192.svg', 'icon-512x512.svg'],
+      includeAssets: [
+        'icon-192x192.svg',
+        'icon-512x512.svg',
+        'icon-192x192.png',
+        'icon-512x512.png',
+        'apple-touch-icon.png'
+      ],
       manifest: {
         name: 'Personal Calendar',
         short_name: 'Calendar',
@@ -26,18 +32,33 @@ export default defineConfig({
         orientation: 'portrait-primary',
         scope: '/',
         start_url: '/',
+        // PNG first: Chrome's installability check is happiest with raster
+        // icons at 192 and 512, and several platforms will not use an SVG at
+        // all. The SVGs stay for anything that prefers them.
         icons: [
+          {
+            src: '/icon-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any'
+          },
+          {
+            src: '/icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any'
+          },
           {
             src: '/icon-192x192.svg',
             sizes: '192x192',
             type: 'image/svg+xml',
-            purpose: 'any maskable'
+            purpose: 'any'
           },
           {
             src: '/icon-512x512.svg',
             sizes: '512x512',
             type: 'image/svg+xml',
-            purpose: 'any maskable'
+            purpose: 'any'
           }
         ],
         categories: ['productivity', 'utilities', 'lifestyle'],

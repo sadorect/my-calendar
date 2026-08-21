@@ -6,6 +6,7 @@ import { storageIsPersisted, requestPersistentStorage } from '../../services/bio
 import BirthKeepsake from './BirthKeepsake.vue'
 import BirthAmbient from './BirthAmbient.vue'
 import BirthSync from './BirthSync.vue'
+import ShareApp from '../ShareApp.vue'
 import {
   notificationPermission,
   requestNotificationPermission
@@ -299,6 +300,13 @@ async function doReset() {
         Make storage persistent
       </button>
     </section>
+
+    <!-- Share the app -->
+    <ShareApp
+      variant="card"
+      title="Womb Whispers"
+      text="A daily declaration and prayer companion for pregnancy. Install it on your phone — it works offline."
+    />
 
     <!-- Cross-device sync -->
     <BirthSync />
