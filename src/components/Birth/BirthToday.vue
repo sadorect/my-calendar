@@ -52,8 +52,15 @@ const ringOffset = computed(() => RING * (1 - store.progress))
         <svg class="w-full h-full -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
           <circle cx="60" cy="60" r="54" fill="none" stroke="var(--bc-hairline)" stroke-width="6" />
           <circle
-            cx="60" cy="60" r="54" fill="none" stroke="var(--bc-accent)" stroke-width="6"
-            stroke-linecap="round" :stroke-dasharray="RING" :stroke-dashoffset="ringOffset"
+            cx="60"
+            cy="60"
+            r="54"
+            fill="none"
+            stroke="var(--bc-accent)"
+            stroke-width="6"
+            stroke-linecap="round"
+            :stroke-dasharray="RING"
+            :stroke-dashoffset="ringOffset"
             style="transition: stroke-dashoffset 900ms cubic-bezier(0.22, 1, 0.36, 1)"
           />
         </svg>
@@ -98,13 +105,10 @@ const ringOffset = computed(() => RING * (1 - store.progress))
     <div v-else class="bc-card p-8 text-center animate-gentle-rise">
       <p class="font-serif text-xl mb-2">Still being written</p>
       <p class="bc-muted text-sm leading-relaxed">
-        The declarations for Month {{ store.activeMonth?.month }} are not ready yet.
-        Until then, rest in this month's promise.
+        The declarations for Month {{ store.activeMonth?.month }} are not ready yet. Until then,
+        rest in this month's promise.
       </p>
-      <blockquote
-        v-if="store.activeMonth?.keyScripture"
-        class="bc-scripture mt-5 text-base"
-      >
+      <blockquote v-if="store.activeMonth?.keyScripture" class="bc-scripture mt-5 text-base">
         “{{ store.activeMonth.keyScripture.text }}”
         <footer class="text-sm bc-accent mt-2 not-italic">
           {{ store.activeMonth.keyScripture.ref }}

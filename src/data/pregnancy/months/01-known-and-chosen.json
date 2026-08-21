@@ -50,13 +50,19 @@
       "title": "Wanted",
       "declaration": "Little one, you are wanted. Not tolerated, not merely expected, but genuinely wanted. Today we declare over you that you belong here, and that your arrival is good news.",
       "partner": "Little one, I want you. Before I have held you, I am already glad you are coming. You belong here, and your arrival is good news in this house.",
-      "scripture": { "ref": "Psalm 127:3", "text": "Children are a heritage from the Lord, offspring a reward from him." }
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord, offspring a reward from him."
+      }
     },
     {
       "day": 3,
       "title": "No Accident",
       "declaration": "Little one, you are no accident. Heaven has been intentional about you from the very first moment. We speak away every shadow of doubt and declare that you arrived exactly on purpose.",
-      "scripture": { "ref": "Ephesians 1:4", "text": "He chose us in him before the creation of the world." }
+      "scripture": {
+        "ref": "Ephesians 1:4",
+        "text": "He chose us in him before the creation of the world."
+      }
     },
     {
       "day": 4,
@@ -68,7 +74,10 @@
       "day": 5,
       "title": "Written in the Book",
       "declaration": "Little one, all your days were written before one of them came to be. Today is one of them, and it is held. We thank God for a story already begun in kindness.",
-      "scripture": { "ref": "Psalm 139:16", "text": "All the days ordained for me were written in your book before one of them came to be." }
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book before one of them came to be."
+      }
     },
     {
       "day": 6,
@@ -92,7 +101,10 @@
       "day": 9,
       "title": "Held in Thought",
       "declaration": "Little one, God's thoughts toward you are more than can be counted, and every one of them is good. You are on His mind today. We declare that you will always know you are thought of.",
-      "scripture": { "ref": "Psalm 139:17", "text": "How precious to me are your thoughts, God! How vast is the sum of them!" }
+      "scripture": {
+        "ref": "Psalm 139:17",
+        "text": "How precious to me are your thoughts, God! How vast is the sum of them!"
+      }
     },
     {
       "day": 10,
@@ -104,44 +116,65 @@
       "day": 11,
       "title": "Made in Love",
       "declaration": "Little one, you are being made by hands that only know how to love. Nothing about you is careless or rushed. We declare that you are crafted, not merely made.",
-      "scripture": { "ref": "Psalm 139:13", "text": "You created my inmost being; you knit me together in my mother's womb." }
+      "scripture": {
+        "ref": "Psalm 139:13",
+        "text": "You created my inmost being; you knit me together in my mother's womb."
+      }
     },
     {
       "day": 12,
       "title": "Your Days Are Counted",
       "declaration": "Little one, not one of your days is unaccounted for. God has numbered them all and He has numbered them well. We declare length of days and fullness of life over you.",
-      "scripture": { "ref": "Psalm 91:16", "text": "With long life I will satisfy him and show him my salvation." }
+      "scripture": {
+        "ref": "Psalm 91:16",
+        "text": "With long life I will satisfy him and show him my salvation."
+      }
     },
     {
       "day": 13,
       "title": "Never Hidden",
       "declaration": "Little one, you are never out of sight. Even now, hidden from ours, you are in full view of God's. We declare that you will never be overlooked or forgotten.",
-      "scripture": { "ref": "Psalm 139:15", "text": "My frame was not hidden from you when I was made in the secret place." }
+      "scripture": {
+        "ref": "Psalm 139:15",
+        "text": "My frame was not hidden from you when I was made in the secret place."
+      }
     },
     {
       "day": 14,
       "title": "Welcomed",
       "declaration": "Little one, this family is glad about you. You are walking into open arms and a ready welcome. We declare that belonging will be the first thing you learn here.",
       "partner": "Little one, I am glad about you. You are walking into open arms, and I will be one of them. Belonging will be the first thing you learn from me.",
-      "scripture": { "ref": "Mark 10:16", "text": "And he took the children in his arms, placed his hands on them and blessed them." }
+      "scripture": {
+        "ref": "Mark 10:16",
+        "text": "And he took the children in his arms, placed his hands on them and blessed them."
+      }
     },
     {
       "day": 15,
       "title": "The Beginning of You",
       "declaration": "Little one, something has begun that will never end. You are an eternal soul with a starting point but no finishing line. We thank God for the beginning of you.",
-      "scripture": { "ref": "Genesis 2:7", "text": "The Lord God formed a man... and breathed into his nostrils the breath of life." }
+      "scripture": {
+        "ref": "Genesis 2:7",
+        "text": "The Lord God formed a man... and breathed into his nostrils the breath of life."
+      }
     },
     {
       "day": 16,
       "title": "Life Speaks",
       "declaration": "Little one, life is speaking over you today and we agree with it. Every word spoken in this house about you will be a word of blessing. We choose our words for you carefully.",
-      "scripture": { "ref": "Proverbs 18:21", "text": "The tongue has the power of life and death." }
+      "scripture": {
+        "ref": "Proverbs 18:21",
+        "text": "The tongue has the power of life and death."
+      }
     },
     {
       "day": 17,
       "title": "Fearfully Made",
       "declaration": "Little one, you are fearfully and wonderfully made, and that is not a compliment but a fact. We declare that you will grow up sure of your own worth, because it was settled before you arrived.",
-      "scripture": { "ref": "Psalm 139:14", "text": "I praise you because I am fearfully and wonderfully made." }
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I praise you because I am fearfully and wonderfully made."
+      }
     },
     {
       "day": 18,
@@ -153,25 +186,37 @@
       "day": 19,
       "title": "Grace Over Beginnings",
       "declaration": "Little one, grace covers your beginning. Whatever came before you, it does not define you, and it does not follow you. We declare a clean, kind start over your life.",
-      "scripture": { "ref": "Lamentations 3:23", "text": "His mercies are new every morning; great is your faithfulness." }
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning; great is your faithfulness."
+      }
     },
     {
       "day": 20,
       "title": "Peace Over This House",
       "declaration": "Little one, we are making peace the climate you grow in. Not a house without trouble, but a house where God is trusted. We declare peace over the room you are being formed in.",
-      "scripture": { "ref": "Isaiah 26:3", "text": "You will keep in perfect peace those whose minds are steadfast." }
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast."
+      }
     },
     {
       "day": 21,
       "title": "Joy Rising",
       "declaration": "Little one, you are already bringing joy, and you have not even arrived. We declare that gladness will follow you, and that you will be a reason people smile.",
-      "scripture": { "ref": "Luke 1:14", "text": "He will be a joy and delight to you, and many will rejoice because of his birth." }
+      "scripture": {
+        "ref": "Luke 1:14",
+        "text": "He will be a joy and delight to you, and many will rejoice because of his birth."
+      }
     },
     {
       "day": 22,
       "title": "His Workmanship",
       "declaration": "Little one, you are God's handiwork, made for good things He prepared long ago. Your purpose is older than you are. We declare that you will find it and love it.",
-      "scripture": { "ref": "Ephesians 2:10", "text": "For we are God's handiwork, created in Christ Jesus to do good works." }
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "For we are God's handiwork, created in Christ Jesus to do good works."
+      }
     },
     {
       "day": 23,
@@ -189,13 +234,19 @@
       "day": 25,
       "title": "Carried Already",
       "declaration": "Little one, you are being carried in more ways than one. God has upheld you from the moment you began, and He will not put you down. We declare that you are safe in His carrying.",
-      "scripture": { "ref": "Isaiah 46:3", "text": "You whom I have upheld since your birth, and have carried since you were born." }
+      "scripture": {
+        "ref": "Isaiah 46:3",
+        "text": "You whom I have upheld since your birth, and have carried since you were born."
+      }
     },
     {
       "day": 26,
       "title": "Light Over You",
       "declaration": "Little one, God's face is turned toward you and it is shining. We declare favour over your life, and a kindness that goes ahead of you into every room you will ever enter.",
-      "scripture": { "ref": "Numbers 6:25", "text": "The Lord make his face shine on you and be gracious to you." }
+      "scripture": {
+        "ref": "Numbers 6:25",
+        "text": "The Lord make his face shine on you and be gracious to you."
+      }
     },
     {
       "day": 27,

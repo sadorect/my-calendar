@@ -18,7 +18,7 @@ const entry = computed(() => {
   if (!raw) return null
   return {
     ...raw,
-    body: store.state.settings.voice === 'partner' && raw.partner ? raw.partner : raw.declaration,
+    body: store.state.settings.voice === 'partner' && raw.partner ? raw.partner : raw.declaration
   }
 })
 
@@ -68,17 +68,25 @@ async function saveJournal() {
           :style="{
             '--bc-from': store.palette.from,
             '--bc-to': store.palette.to,
-            '--bc-accent': store.palette.accent,
+            '--bc-accent': store.palette.accent
           }"
         >
-          <header class="sticky top-0 z-10 flex items-center justify-between px-5 py-4 backdrop-blur-md"
-                  :style="{ backgroundColor: 'var(--bc-surface)' }">
+          <header
+            class="sticky top-0 z-10 flex items-center justify-between px-5 py-4 backdrop-blur-md"
+            :style="{ backgroundColor: 'var(--bc-surface)' }"
+          >
             <div>
               <p class="text-xs uppercase tracking-[0.16em] bc-muted">
                 Day {{ day }} · {{ age?.weeks }}w {{ age?.days }}d
               </p>
               <p v-if="date" class="text-sm">
-                {{ date.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' }) }}
+                {{
+                  date.toLocaleDateString(undefined, {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long'
+                  })
+                }}
               </p>
             </div>
             <button
@@ -86,7 +94,13 @@ async function saveJournal() {
               aria-label="Close"
               @click="emit('close')"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -101,7 +115,10 @@ async function saveJournal() {
             </div>
 
             <section class="bc-card p-5">
-              <label :for="`bc-journal-${day}`" class="block text-xs uppercase tracking-[0.16em] bc-muted mb-3">
+              <label
+                :for="`bc-journal-${day}`"
+                class="block text-xs uppercase tracking-[0.16em] bc-muted mb-3"
+              >
                 Your notes for this day
               </label>
               <textarea

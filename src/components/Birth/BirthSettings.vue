@@ -8,7 +8,7 @@ import BirthAmbient from './BirthAmbient.vue'
 import BirthSync from './BirthSync.vue'
 import {
   notificationPermission,
-  requestNotificationPermission,
+  requestNotificationPermission
 } from '../../services/birthReminders.js'
 
 const store = usePregnancyStore()
@@ -73,7 +73,7 @@ async function makePersistent() {
 
 const dueInput = computed({
   get: () => (store.dueDate ? store.dueDate.toISOString().slice(0, 10) : ''),
-  set: (v) => v && store.setDueDate(v),
+  set: (v) => v && store.setDueDate(v)
 })
 
 async function doReset() {
@@ -94,7 +94,7 @@ async function doReset() {
         <button
           v-for="opt in [
             { id: 'standard', label: 'Standard calendar' },
-            { id: 'birth', label: 'Birth calendar' },
+            { id: 'birth', label: 'Birth calendar' }
           ]"
           :key="opt.id"
           class="bc-tap flex-1 px-3 py-2 rounded-xl text-sm font-medium transition"
@@ -121,7 +121,7 @@ async function doReset() {
         <button
           v-for="opt in [
             { id: 'parents', label: 'Together' },
-            { id: 'partner', label: 'For partners' },
+            { id: 'partner', label: 'For partners' }
           ]"
           :key="opt.id"
           class="bc-tap flex-1 px-3 py-2 rounded-xl text-sm font-medium transition"
@@ -168,7 +168,10 @@ async function doReset() {
       <label class="flex items-center justify-between gap-4 mb-4">
         <span class="text-sm">Text size</span>
         <input
-          type="range" min="0.9" max="1.4" step="0.1"
+          type="range"
+          min="0.9"
+          max="1.4"
+          step="0.1"
           :value="settings.fontScale"
           class="w-40"
           @input="set('fontScale', Number($event.target.value))"
@@ -184,7 +187,9 @@ async function doReset() {
           class="bc-tap relative w-12 h-7 rounded-full transition shrink-0"
           role="switch"
           :aria-checked="settings.highContrast"
-          :style="{ backgroundColor: settings.highContrast ? 'var(--bc-accent)' : 'var(--bc-hairline)' }"
+          :style="{
+            backgroundColor: settings.highContrast ? 'var(--bc-accent)' : 'var(--bc-hairline)'
+          }"
           @click="set('highContrast', !settings.highContrast)"
         >
           <span
@@ -198,9 +203,7 @@ async function doReset() {
     <!-- Reminders -->
     <section class="bc-card p-5">
       <h2 class="font-medium mb-1">Daily reminder</h2>
-      <p class="text-sm bc-muted mb-4">
-        A gentle nudge with the day's declaration.
-      </p>
+      <p class="text-sm bc-muted mb-4">A gentle nudge with the day's declaration.</p>
       <label class="flex items-center justify-between gap-4 mb-4">
         <span class="text-sm">Enabled</span>
         <button
@@ -208,7 +211,9 @@ async function doReset() {
           role="switch"
           :aria-checked="settings.remindersEnabled"
           :disabled="notifyPermission === 'unsupported'"
-          :style="{ backgroundColor: settings.remindersEnabled ? 'var(--bc-accent)' : 'var(--bc-hairline)' }"
+          :style="{
+            backgroundColor: settings.remindersEnabled ? 'var(--bc-accent)' : 'var(--bc-hairline)'
+          }"
           @click="toggleReminders"
         >
           <span
@@ -234,8 +239,7 @@ async function doReset() {
     <section class="bc-card p-5">
       <h2 class="font-medium mb-1">Lock with biometrics</h2>
       <p class="text-sm bc-muted mb-4">
-        Require Face ID, Touch ID or your fingerprint before your notes and
-        declarations are shown.
+        Require Face ID, Touch ID or your fingerprint before your notes and declarations are shown.
       </p>
 
       <p v-if="!store.biometricAvailable" class="text-sm bc-muted italic">
@@ -250,7 +254,9 @@ async function doReset() {
             role="switch"
             :aria-checked="store.lockEnabled"
             :disabled="lockBusy"
-            :style="{ backgroundColor: store.lockEnabled ? 'var(--bc-accent)' : 'var(--bc-hairline)' }"
+            :style="{
+              backgroundColor: store.lockEnabled ? 'var(--bc-accent)' : 'var(--bc-hairline)'
+            }"
             @click="toggleLock"
           >
             <span
@@ -260,14 +266,18 @@ async function doReset() {
           </button>
         </label>
 
-        <p v-if="store.lockError" class="text-sm mt-3" :style="{ color: 'var(--bc-accent)' }" role="alert">
+        <p
+          v-if="store.lockError"
+          class="text-sm mt-3"
+          :style="{ color: 'var(--bc-accent)' }"
+          role="alert"
+        >
           {{ store.lockError }}
         </p>
 
         <p class="text-xs bc-muted mt-4 leading-relaxed">
-          This locks the screen, it does not encrypt your notes. It is as strong as
-          your device's own screen lock — enough to stop someone picking up your
-          phone and reading your journal.
+          This locks the screen, it does not encrypt your notes. It is as strong as your device's
+          own screen lock — enough to stop someone picking up your phone and reading your journal.
         </p>
       </template>
     </section>
@@ -276,8 +286,8 @@ async function doReset() {
     <section class="bc-card p-5">
       <h2 class="font-medium mb-1">Keep my data</h2>
       <p class="text-sm bc-muted mb-4">
-        Browsers may clear storage when space runs low. Marking this app as
-        persistent stops your due date, notes and favourites being cleared.
+        Browsers may clear storage when space runs low. Marking this app as persistent stops your
+        due date, notes and favourites being cleared.
       </p>
       <p v-if="persisted" class="text-sm bc-accent">Storage is persistent on this device.</p>
       <button
@@ -300,8 +310,8 @@ async function doReset() {
     <section class="bc-card p-5">
       <h2 class="font-medium mb-1">Keepsake</h2>
       <p class="text-sm bc-muted mb-4">
-        Print the declarations, your saved favourites and your journal as one document — or
-        save it as a PDF to keep.
+        Print the declarations, your saved favourites and your journal as one document — or save it
+        as a PDF to keep.
       </p>
       <button
         class="bc-tap px-4 py-2.5 rounded-xl text-sm font-medium text-white transition"

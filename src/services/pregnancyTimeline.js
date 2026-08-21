@@ -92,7 +92,7 @@ export function gestationalAge(day) {
   const clamped = Math.max(0, day)
   return {
     weeks: Math.floor(clamped / 7),
-    days: clamped % 7,
+    days: clamped % 7
   }
 }
 

@@ -19,7 +19,7 @@ Nine months are mapped onto forty weeks. They are NOT all the same length —
 never assumes otherwise:
 
 | Month | Weeks | Days    | Length |
-|-------|-------|---------|--------|
+| ----- | ----- | ------- | ------ |
 | 1     | 1–4   | 1–28    | 28     |
 | 2     | 5–8   | 29–56   | 28     |
 | 3     | 9–13  | 57–91   | 35     |

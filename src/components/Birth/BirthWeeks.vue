@@ -9,7 +9,9 @@ const cards = computed(() => store.monthWeekCards)
 <template>
   <div class="px-5 py-6 max-w-2xl mx-auto">
     <header class="text-center mb-6">
-      <p class="text-xs uppercase tracking-[0.2em] bc-muted">Month {{ store.activeMonth?.month }}</p>
+      <p class="text-xs uppercase tracking-[0.2em] bc-muted">
+        Month {{ store.activeMonth?.month }}
+      </p>
       <h1 class="font-serif text-2xl">{{ store.activeMonth?.title }}</h1>
       <p class="text-sm bc-muted mt-1">Weekly declarations</p>
     </header>
@@ -19,7 +21,11 @@ const cards = computed(() => store.monthWeekCards)
         v-for="card in cards"
         :key="card.week"
         class="bc-card p-6 animate-gentle-rise"
-        :style="card.week === store.activeWeek ? { borderColor: 'var(--bc-accent)', borderWidth: '2px' } : {}"
+        :style="
+          card.week === store.activeWeek
+            ? { borderColor: 'var(--bc-accent)', borderWidth: '2px' }
+            : {}
+        "
       >
         <div class="flex items-start justify-between gap-3 mb-3">
           <div>
@@ -32,17 +38,24 @@ const cards = computed(() => store.monthWeekCards)
           <button
             v-if="!card.placeholder"
             class="bc-tap shrink-0 flex items-center justify-center rounded-full transition hover:scale-110"
-            :aria-label="store.isFavourite('week', card.week) ? 'Remove from favourites' : 'Save to favourites'"
+            :aria-label="
+              store.isFavourite('week', card.week) ? 'Remove from favourites' : 'Save to favourites'
+            "
             :aria-pressed="store.isFavourite('week', card.week)"
             @click="store.toggleFavourite('week', card.week)"
           >
             <svg
-              class="w-5 h-5" viewBox="0 0 24 24" stroke-width="1.5"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
               :fill="store.isFavourite('week', card.week) ? 'var(--bc-accent)' : 'none'"
               :stroke="store.isFavourite('week', card.week) ? 'var(--bc-accent)' : 'currentColor'"
             >
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z"
+              />
             </svg>
           </button>
         </div>

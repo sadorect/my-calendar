@@ -6,14 +6,14 @@ import { monthPalette, monthForDay } from '../../data/pregnancy/index.js'
 import {
   declarationCardBlob,
   cardFileName,
-  canShareImage,
+  canShareImage
 } from '../../services/declarationImage.js'
 
 const props = defineProps({
   day: { type: Number, required: true },
   content: { type: Object, required: true },
   babyName: { type: String, default: 'your little one' },
-  prominent: { type: Boolean, default: false },
+  prominent: { type: Boolean, default: false }
 })
 const emit = defineEmits(['open'])
 
@@ -78,7 +78,7 @@ function cardMeta() {
     dayLabel: `Day ${props.day}`,
     weekLabel: `Week ${weekOfPregnancy(props.day)}`,
     palette: monthPalette(monthForDay(props.day)),
-    babyName: store.state.babyName?.trim() || '',
+    babyName: store.state.babyName?.trim() || ''
   }
 }
 
@@ -147,7 +147,10 @@ async function saveImage() {
 </script>
 
 <template>
-  <article class="bc-card overflow-hidden animate-gentle-rise" :class="prominent ? 'p-7 sm:p-8' : 'p-5'">
+  <article
+    class="bc-card overflow-hidden animate-gentle-rise"
+    :class="prominent ? 'p-7 sm:p-8' : 'p-5'"
+  >
     <header class="flex items-start justify-between gap-3 mb-4">
       <div>
         <p class="text-xs uppercase tracking-[0.16em] bc-muted mb-1">Day {{ day }}</p>
@@ -162,12 +165,17 @@ async function saveImage() {
         @click="store.toggleFavourite('day', day)"
       >
         <svg
-          class="w-6 h-6" viewBox="0 0 24 24" stroke-width="1.5"
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
           :fill="isFavourite ? 'var(--bc-accent)' : 'none'"
           :stroke="isFavourite ? 'var(--bc-accent)' : 'currentColor'"
         >
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z"
+          />
         </svg>
       </button>
     </header>
@@ -196,12 +204,19 @@ async function saveImage() {
         class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 flex items-center gap-2"
         :style="{
           borderColor: isSpoken ? 'var(--bc-accent)' : 'var(--bc-hairline)',
-          color: isSpoken ? 'var(--bc-accent)' : 'inherit',
+          color: isSpoken ? 'var(--bc-accent)' : 'inherit'
         }"
         :aria-pressed="isSpoken"
         @click="store.toggleSpoken(day)"
       >
-        <svg v-if="isSpoken" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg
+          v-if="isSpoken"
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          viewBox="0 0 24 24"
+        >
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
         </svg>
         {{ isSpoken ? 'Spoken today' : 'Mark as spoken' }}

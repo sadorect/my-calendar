@@ -1,7 +1,11 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
-import { dueDateFromCurrentProgress, gestationalAge, dayOfPregnancy } from '../../services/pregnancyTimeline.js'
+import {
+  dueDateFromCurrentProgress,
+  gestationalAge,
+  dayOfPregnancy
+} from '../../services/pregnancyTimeline.js'
 
 const store = usePregnancyStore()
 const emit = defineEmits(['done', 'browse'])
@@ -26,7 +30,7 @@ const preview = computed(() => {
     const age = gestationalAge(dayOfPregnancy(due))
     return {
       due,
-      label: `${age.weeks} weeks and ${age.days} ${age.days === 1 ? 'day' : 'days'}`,
+      label: `${age.weeks} weeks and ${age.days} ${age.days === 1 ? 'day' : 'days'}`
     }
   } catch {
     return null
@@ -62,24 +66,37 @@ async function save() {
           :style="{ backgroundColor: 'var(--bc-accent)' }"
           aria-hidden="true"
         >
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z" />
+          <svg
+            class="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z"
+            />
           </svg>
         </div>
         <h1 class="font-serif text-3xl mb-3">Womb Whispers</h1>
         <p class="bc-muted leading-relaxed">
-          A daily companion of Scripture, prayer and declaration for the little
-          one you are carrying.
+          A daily companion of Scripture, prayer and declaration for the little one you are
+          carrying.
         </p>
       </div>
 
       <div class="bc-card p-6">
-        <div class="flex gap-1 p-1 rounded-2xl mb-6" :style="{ backgroundColor: 'var(--bc-hairline)' }" role="tablist">
+        <div
+          class="flex gap-1 p-1 rounded-2xl mb-6"
+          :style="{ backgroundColor: 'var(--bc-hairline)' }"
+          role="tablist"
+        >
           <button
             v-for="option in [
               { id: 'due', label: 'I know my due date' },
-              { id: 'weeks', label: 'I know my week' },
+              { id: 'weeks', label: 'I know my week' }
             ]"
             :key="option.id"
             role="tab"
@@ -111,7 +128,11 @@ async function save() {
           <div>
             <label for="bc-weeks" class="block text-sm font-medium mb-2">Weeks</label>
             <input
-              id="bc-weeks" v-model.number="weeksInput" type="number" min="0" max="42"
+              id="bc-weeks"
+              v-model.number="weeksInput"
+              type="number"
+              min="0"
+              max="42"
               class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
               :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
             />
@@ -119,7 +140,11 @@ async function save() {
           <div>
             <label for="bc-days" class="block text-sm font-medium mb-2">Days</label>
             <input
-              id="bc-days" v-model.number="daysInput" type="number" min="0" max="6"
+              id="bc-days"
+              v-model.number="daysInput"
+              type="number"
+              min="0"
+              max="6"
               class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
               :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
             />
@@ -131,15 +156,27 @@ async function save() {
             Baby's name <span class="bc-muted font-normal">— or a nickname, optional</span>
           </label>
           <input
-            id="bc-name" v-model="babyName" type="text" maxlength="40" placeholder="Little one"
+            id="bc-name"
+            v-model="babyName"
+            type="text"
+            maxlength="40"
+            placeholder="Little one"
             class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
             :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
           />
         </div>
 
         <p v-if="preview" class="mt-5 text-sm text-center bc-muted animate-soft-fade">
-          That puts you at <strong :style="{ color: 'var(--bc-accent)' }">{{ preview.label }}</strong>,
-          due {{ preview.due.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }) }}.
+          That puts you at
+          <strong :style="{ color: 'var(--bc-accent)' }">{{ preview.label }}</strong
+          >, due
+          {{
+            preview.due.toLocaleDateString(undefined, {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+            })
+          }}.
         </p>
 
         <p v-if="error" class="mt-4 text-sm text-center text-red-600" role="alert">{{ error }}</p>

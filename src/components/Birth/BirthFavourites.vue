@@ -35,7 +35,10 @@ const emit = defineEmits(['open-day'])
       <p class="text-sm bc-muted mb-4">{{ store.journalEntries.length }} entries.</p>
       <ul class="space-y-3">
         <li v-for="note in store.journalEntries" :key="note.day">
-          <button class="bc-card w-full text-left p-5 transition hover:opacity-90" @click="emit('open-day', note.day)">
+          <button
+            class="bc-card w-full text-left p-5 transition hover:opacity-90"
+            @click="emit('open-day', note.day)"
+          >
             <p class="text-xs uppercase tracking-[0.16em] bc-muted mb-1.5">Day {{ note.day }}</p>
             <p class="bc-scripture text-sm line-clamp-3">{{ note.text }}</p>
           </button>

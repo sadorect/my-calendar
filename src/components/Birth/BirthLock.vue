@@ -17,15 +17,31 @@ onMounted(attempt)
 </script>
 
 <template>
-  <div class="fixed inset-0 z-[60] flex items-center justify-center px-6"
-       :style="{ backgroundImage: 'linear-gradient(170deg, var(--bc-from), var(--bc-to))' }"
-       role="dialog" aria-modal="true" aria-label="Locked">
+  <div
+    class="fixed inset-0 z-[60] flex items-center justify-center px-6"
+    :style="{ backgroundImage: 'linear-gradient(170deg, var(--bc-from), var(--bc-to))' }"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Locked"
+  >
     <div class="text-center max-w-xs">
-      <div class="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center"
-           :style="{ backgroundColor: 'var(--bc-accent)' }" aria-hidden="true">
-        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75M6.75 10.5h10.5a2.25 2.25 0 012.25 2.25v6a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25v-6a2.25 2.25 0 012.25-2.25z" />
+      <div
+        class="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center"
+        :style="{ backgroundColor: 'var(--bc-accent)' }"
+        aria-hidden="true"
+      >
+        <svg
+          class="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75M6.75 10.5h10.5a2.25 2.25 0 012.25 2.25v6a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25v-6a2.25 2.25 0 012.25-2.25z"
+          />
         </svg>
       </div>
 
@@ -34,7 +50,12 @@ onMounted(attempt)
         Your notes and declarations are private. Unlock with your device to continue.
       </p>
 
-      <p v-if="store.lockError" class="text-sm mb-4" :style="{ color: 'var(--bc-accent)' }" role="alert">
+      <p
+        v-if="store.lockError"
+        class="text-sm mb-4"
+        :style="{ color: 'var(--bc-accent)' }"
+        role="alert"
+      >
         {{ store.lockError }}
       </p>
 

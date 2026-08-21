@@ -6,7 +6,7 @@ import {
   enrolBiometric,
   verifyBiometric,
   requestPersistentStorage,
-  shouldRelock,
+  shouldRelock
 } from '../services/biometric.js'
 import {
   TOTAL_DAYS,
@@ -19,7 +19,7 @@ import {
   progressFraction,
   isValidDueDate,
   timelineStatus,
-  dueDateFromCurrentProgress,
+  dueDateFromCurrentProgress
 } from '../services/pregnancyTimeline.js'
 import {
   MONTHS,
@@ -28,7 +28,7 @@ import {
   dayContent,
   weekContent,
   weekContentForDay,
-  monthPalette,
+  monthPalette
 } from '../data/pregnancy/index.js'
 
 const STORAGE_KEY = 'birthCalendar'
@@ -67,9 +67,9 @@ function emptyState() {
       // is locked out of their own journal.
       appLockEnabled: false,
       credentialId: null,
-      lockGraceMinutes: 5,
+      lockGraceMinutes: 5
     },
-    updatedAt: null,
+    updatedAt: null
   }
 }
 
@@ -91,7 +91,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
       state.value = {
         ...emptyState(),
         ...saved,
-        settings: { ...emptyState().settings, ...(saved.settings || {}) },
+        settings: { ...emptyState().settings, ...(saved.settings || {}) }
       }
     }
     loaded.value = true
@@ -114,7 +114,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     state.value = {
       ...emptyState(),
       ...next,
-      settings: { ...emptyState().settings, ...(next?.settings || {}) },
+      settings: { ...emptyState().settings, ...(next?.settings || {}) }
     }
     await persist({ touch: false })
   }
@@ -123,9 +123,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   const isConfigured = computed(() => isValidDueDate(state.value.dueDate))
 
-  const dueDate = computed(() =>
-    isConfigured.value ? new Date(state.value.dueDate) : null
-  )
+  const dueDate = computed(() => (isConfigured.value ? new Date(state.value.dueDate) : null))
 
   async function setDueDate(value) {
     const d = value instanceof Date ? value : new Date(value)
@@ -221,10 +219,11 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
       ...entry,
       // `partner` is optional per day; most declarations read naturally in both
       // voices, so falling back is the norm rather than a gap.
-      body: state.value.settings.voice === 'partner' && entry.partner
-        ? entry.partner
-        : entry.declaration,
-      hasPartnerVoice: Boolean(entry.partner),
+      body:
+        state.value.settings.voice === 'partner' && entry.partner
+          ? entry.partner
+          : entry.declaration,
+      hasPartnerVoice: Boolean(entry.partner)
     }
   })
 
@@ -349,7 +348,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   const reminderConfig = computed(() => ({
     enabled: Boolean(state.value.settings.remindersEnabled),
     time: state.value.settings.reminderTime || '08:00',
-    lastFiredKey: state.value.lastReminderKey,
+    lastFiredKey: state.value.lastReminderKey
   }))
 
   /**
@@ -369,7 +368,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     return {
       title: entry.title,
       body: body.length > 180 ? body.slice(0, 177).trimEnd() + '…' : body,
-      tag: `birth-daily-${day}`,
+      tag: `birth-daily-${day}`
     }
   })
 
@@ -380,8 +379,8 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   const biometricAvailable = ref(false)
   const lockError = ref('')
 
-  const lockEnabled = computed(
-    () => Boolean(state.value.settings.appLockEnabled && state.value.settings.credentialId)
+  const lockEnabled = computed(() =>
+    Boolean(state.value.settings.appLockEnabled && state.value.settings.credentialId)
   )
 
   /** True when the lock screen should be covering the content. */
@@ -390,7 +389,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     return shouldRelock({
       unlockedAt: unlockedAt.value,
       hiddenSince: hiddenSince.value,
-      graceMs: (state.value.settings.lockGraceMinutes || 5) * 60 * 1000,
+      graceMs: (state.value.settings.lockGraceMinutes || 5) * 60 * 1000
     })
   })
 
@@ -516,6 +515,6 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     disableAppLock,
     unlock,
     noteHidden,
-    noteVisible,
+    noteVisible
   }
 })

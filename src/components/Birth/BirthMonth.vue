@@ -21,7 +21,7 @@ const days = computed(() => {
     isPast: store.todayDay != null && day < store.todayDay,
     spoken: store.isSpoken(day),
     favourite: store.isFavourite('day', day),
-    hasJournal: Boolean(store.journalFor(day)),
+    hasJournal: Boolean(store.journalFor(day))
   }))
 })
 
@@ -50,7 +50,9 @@ const canNext = computed(() => (month.value?.month || 9) < 9)
       <button
         class="bc-tap rounded-full flex items-center justify-center border transition disabled:opacity-30 hover:opacity-70"
         :style="{ borderColor: 'var(--bc-hairline)' }"
-        :disabled="!canPrev" aria-label="Previous month" @click="step(-1)"
+        :disabled="!canPrev"
+        aria-label="Previous month"
+        @click="step(-1)"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -65,7 +67,9 @@ const canNext = computed(() => (month.value?.month || 9) < 9)
       <button
         class="bc-tap rounded-full flex items-center justify-center border transition disabled:opacity-30 hover:opacity-70"
         :style="{ borderColor: 'var(--bc-hairline)' }"
-        :disabled="!canNext" aria-label="Next month" @click="step(1)"
+        :disabled="!canNext"
+        aria-label="Next month"
+        @click="step(1)"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
@@ -95,7 +99,8 @@ const canNext = computed(() => (month.value?.month || 9) < 9)
                   ? { backgroundColor: 'var(--bc-accent)', color: '#fff' }
                   : { backgroundColor: 'var(--bc-hairline)' }
               "
-            >{{ d.day }}</span>
+              >{{ d.day }}</span
+            >
 
             <span class="min-w-0 flex-1">
               <span class="block font-serif truncate" :class="d.content ? '' : 'bc-muted italic'">
@@ -105,13 +110,38 @@ const canNext = computed(() => (month.value?.month || 9) < 9)
             </span>
 
             <span class="shrink-0 flex items-center gap-1.5" aria-hidden="true">
-              <svg v-if="d.hasJournal" class="w-4 h-4 bc-muted" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" />
+              <svg
+                v-if="d.hasJournal"
+                class="w-4 h-4 bc-muted"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"
+                />
               </svg>
-              <svg v-if="d.favourite" class="w-4 h-4" viewBox="0 0 24 24" :fill="'var(--bc-accent)'">
-                <path d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z" />
+              <svg
+                v-if="d.favourite"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                :fill="'var(--bc-accent)'"
+              >
+                <path
+                  d="M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z"
+                />
               </svg>
-              <svg v-if="d.spoken" class="w-4 h-4" fill="none" :stroke="'var(--bc-accent)'" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg
+                v-if="d.spoken"
+                class="w-4 h-4"
+                fill="none"
+                :stroke="'var(--bc-accent)'"
+                stroke-width="2.5"
+                viewBox="0 0 24 24"
+              >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </span>

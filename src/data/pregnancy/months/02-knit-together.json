@@ -39,33 +39,220 @@
     }
   ],
   "days": [
-    { "day": 29, "title": "Knit Together", "declaration": "Little one, you are being knit together stitch by stitch by a God who is never rushed. Nothing about you is being left to chance. We declare careful, complete, beautiful work over you.", "scripture": { "ref": "Psalm 139:13", "text": "You knit me together in my mother's womb." } },
-    { "day": 30, "title": "Inmost Being", "declaration": "Little one, God is forming not just your body but your inmost being. Your spirit is His work too. We declare a heart that will know Him easily and love Him early.", "scripture": { "ref": "Psalm 139:13", "text": "For you created my inmost being." } },
-    { "day": 31, "title": "The Secret Place", "declaration": "Little one, you are in the secret place, and the secret place is safe. What is hidden from us is fully seen by Him. We declare peace over everything we cannot yet see.", "scripture": { "ref": "Psalm 139:15", "text": "When I was made in the secret place." } },
-    { "day": 32, "title": "Woven", "declaration": "Little one, you are being woven together with skill and delight. There is an artistry to you. We declare that you will carry the mark of the Maker all your life.", "scripture": { "ref": "Psalm 139:15", "text": "When I was woven together in the depths of the earth." } },
-    { "day": 33, "title": "Wonderful Works", "declaration": "Little one, God's works are wonderful, and you are one of His works. We declare today that you will never have to argue for your own value; it is already settled.", "scripture": { "ref": "Psalm 139:14", "text": "Your works are wonderful, I know that full well." } },
-    { "day": 34, "title": "Every Part Whole", "declaration": "Little one, we speak wholeness over every part of you being formed today. Complete, healthy, strong, and lacking nothing. We declare it in faith and we leave it in God's hands.", "scripture": { "ref": "1 Thessalonians 5:23", "text": "May your whole spirit, soul and body be kept blameless." } },
-    { "day": 35, "title": "Unhurried", "declaration": "Little one, God is not in a hurry with you, and neither are we. Growth has its own time and we will not rush it. We declare patience over this house.", "scripture": { "ref": "Ecclesiastes 3:11", "text": "He has made everything beautiful in its time." } },
-    { "day": 36, "title": "Fearless Over You", "declaration": "Little one, fear does not get to speak over you today. Where anxiety rises, love answers louder. We declare a fear-free atmosphere around your growing.", "partner": "Little one, I will not let fear speak over you. Where worry rises in me, I will answer it with love. This is a fear-free house for you to grow in.", "scripture": { "ref": "1 John 4:18", "text": "Perfect love drives out fear." } },
-    { "day": 37, "title": "Strength in the Small", "declaration": "Little one, you are small and you are strong, and both are true at once. God does mighty things in tiny beginnings. We declare strength into what looks fragile.", "scripture": { "ref": "2 Corinthians 12:9", "text": "My power is made perfect in weakness." } },
-    { "day": 38, "title": "Life in the Blood", "declaration": "Little one, life is flowing through you today. We declare health and vitality into every part of you, and we thank God for the quiet miracle of your growing.", "scripture": { "ref": "Leviticus 17:11", "text": "For the life of a creature is in the blood." } },
-    { "day": 39, "title": "Sustained", "declaration": "Little one, you are being sustained every second by a God who never looks away. You do not have to hold yourself together. We declare that He is your keeping.", "scripture": { "ref": "Hebrews 1:3", "text": "Sustaining all things by his powerful word." } },
-    { "day": 40, "title": "Good Work Begun", "declaration": "Little one, God finishes what He begins. He began you, and He will complete you. We declare confidence over your whole life today.", "scripture": { "ref": "Philippians 1:6", "text": "He who began a good work in you will carry it on to completion." } },
-    { "day": 41, "title": "Covered", "declaration": "Little one, you are covered. Not exposed, not vulnerable to whatever comes, but covered by the shadow of the Almighty. We declare shelter over you.", "scripture": { "ref": "Psalm 91:1", "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty." } },
-    { "day": 42, "title": "Rest for the Weary", "declaration": "Little one, today we receive rest on your behalf and on ours. Tiredness is not failure. We declare that you are growing in a home that knows how to rest.", "scripture": { "ref": "Matthew 11:28", "text": "Come to me, all you who are weary, and I will give you rest." } },
-    { "day": 43, "title": "Seen", "declaration": "Little one, you are seen by the God who sees. Nothing about you is too small for His attention. We declare that you will never feel invisible.", "scripture": { "ref": "Genesis 16:13", "text": "You are the God who sees me." } },
-    { "day": 44, "title": "Named Before Known", "declaration": "Little one, God knew you before we did and loved you first. We are joining a love that was already in progress. We declare that you are deeply, permanently loved.", "scripture": { "ref": "Isaiah 49:1", "text": "Before I was born the Lord called me." } },
-    { "day": 45, "title": "Peace in the Waiting", "declaration": "Little one, waiting is not wasted time. God is working in the wait. We declare peace over every day we do not yet have answers for.", "scripture": { "ref": "Isaiah 40:31", "text": "Those who hope in the Lord will renew their strength." } },
-    { "day": 46, "title": "Fearfully Made", "declaration": "Little one, you are fearfully made, which means made with awe. We declare that you will grow up amazed at God rather than anxious about yourself.", "scripture": { "ref": "Psalm 139:14", "text": "I am fearfully and wonderfully made." } },
-    { "day": 47, "title": "A Steady Heart", "declaration": "Little one, we declare a steady heart over you, one that will not be easily shaken. May courage be natural to you and peace be your default.", "scripture": { "ref": "Psalm 112:7", "text": "Their heart is steadfast, trusting in the Lord." } },
-    { "day": 48, "title": "Held Together", "declaration": "Little one, in Him all things hold together, and so do you. We declare that every system, every part, every detail of you is held by Christ today.", "scripture": { "ref": "Colossians 1:17", "text": "In him all things hold together." } },
-    { "day": 49, "title": "Grace Upon Grace", "declaration": "Little one, there is more than enough grace for you and more than enough for us. We declare an abundance over your life, never a scarcity.", "scripture": { "ref": "John 1:16", "text": "Out of his fullness we have all received grace in place of grace already given." } },
-    { "day": 50, "title": "The Breath of Life", "declaration": "Little one, the same God who breathed life into the first human is breathing life into you. We declare full life, strong life, God-given life over you.", "scripture": { "ref": "Job 33:4", "text": "The Spirit of God has made me; the breath of the Almighty gives me life." } },
-    { "day": 51, "title": "Kindness Around You", "declaration": "Little one, we are building kindness around you before you arrive. May gentleness be the first language you hear. We declare a kind home over your growing.", "scripture": { "ref": "Ephesians 4:32", "text": "Be kind and compassionate to one another." } },
-    { "day": 52, "title": "No Comparison", "declaration": "Little one, you are not a copy of anyone. God made you singular on purpose. We declare freedom from comparison over your entire life, starting now.", "scripture": { "ref": "Galatians 6:4", "text": "Each one should test their own actions... without comparing themselves to someone else." } },
-    { "day": 53, "title": "Guarded", "declaration": "Little one, God guards what belongs to Him, and you belong to Him. We declare protection over you today, in the seen and in the unseen.", "scripture": { "ref": "Psalm 121:7", "text": "The Lord will keep you from all harm." } },
-    { "day": 54, "title": "Delight", "declaration": "Little one, God delights in you. Not one day when you achieve something, but now, exactly as you are. We declare that delight will be the soundtrack of your life.", "partner": "Little one, I delight in you already. Not for anything you will do, but simply because you are. That is how I want you to hear my voice all your life.", "scripture": { "ref": "Zephaniah 3:17", "text": "He will take great delight in you." } },
-    { "day": 55, "title": "Growing Quietly", "declaration": "Little one, you are growing quietly and that is exactly right. Not everything real is loud. We declare that you will be secure without needing to be seen.", "scripture": { "ref": "Mark 4:27", "text": "The seed sprouts and grows, though he does not know how." } },
-    { "day": 56, "title": "Kept", "declaration": "Little one, we end this month the way we began it: you are held. Woven, watched over, and kept. We declare that the hands forming you will never let you go.", "scripture": { "ref": "Isaiah 41:10", "text": "I will uphold you with my righteous right hand." } }
+    {
+      "day": 29,
+      "title": "Knit Together",
+      "declaration": "Little one, you are being knit together stitch by stitch by a God who is never rushed. Nothing about you is being left to chance. We declare careful, complete, beautiful work over you.",
+      "scripture": { "ref": "Psalm 139:13", "text": "You knit me together in my mother's womb." }
+    },
+    {
+      "day": 30,
+      "title": "Inmost Being",
+      "declaration": "Little one, God is forming not just your body but your inmost being. Your spirit is His work too. We declare a heart that will know Him easily and love Him early.",
+      "scripture": { "ref": "Psalm 139:13", "text": "For you created my inmost being." }
+    },
+    {
+      "day": 31,
+      "title": "The Secret Place",
+      "declaration": "Little one, you are in the secret place, and the secret place is safe. What is hidden from us is fully seen by Him. We declare peace over everything we cannot yet see.",
+      "scripture": { "ref": "Psalm 139:15", "text": "When I was made in the secret place." }
+    },
+    {
+      "day": 32,
+      "title": "Woven",
+      "declaration": "Little one, you are being woven together with skill and delight. There is an artistry to you. We declare that you will carry the mark of the Maker all your life.",
+      "scripture": {
+        "ref": "Psalm 139:15",
+        "text": "When I was woven together in the depths of the earth."
+      }
+    },
+    {
+      "day": 33,
+      "title": "Wonderful Works",
+      "declaration": "Little one, God's works are wonderful, and you are one of His works. We declare today that you will never have to argue for your own value; it is already settled.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "Your works are wonderful, I know that full well."
+      }
+    },
+    {
+      "day": 34,
+      "title": "Every Part Whole",
+      "declaration": "Little one, we speak wholeness over every part of you being formed today. Complete, healthy, strong, and lacking nothing. We declare it in faith and we leave it in God's hands.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:23",
+        "text": "May your whole spirit, soul and body be kept blameless."
+      }
+    },
+    {
+      "day": 35,
+      "title": "Unhurried",
+      "declaration": "Little one, God is not in a hurry with you, and neither are we. Growth has its own time and we will not rush it. We declare patience over this house.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 36,
+      "title": "Fearless Over You",
+      "declaration": "Little one, fear does not get to speak over you today. Where anxiety rises, love answers louder. We declare a fear-free atmosphere around your growing.",
+      "partner": "Little one, I will not let fear speak over you. Where worry rises in me, I will answer it with love. This is a fear-free house for you to grow in.",
+      "scripture": { "ref": "1 John 4:18", "text": "Perfect love drives out fear." }
+    },
+    {
+      "day": 37,
+      "title": "Strength in the Small",
+      "declaration": "Little one, you are small and you are strong, and both are true at once. God does mighty things in tiny beginnings. We declare strength into what looks fragile.",
+      "scripture": { "ref": "2 Corinthians 12:9", "text": "My power is made perfect in weakness." }
+    },
+    {
+      "day": 38,
+      "title": "Life in the Blood",
+      "declaration": "Little one, life is flowing through you today. We declare health and vitality into every part of you, and we thank God for the quiet miracle of your growing.",
+      "scripture": {
+        "ref": "Leviticus 17:11",
+        "text": "For the life of a creature is in the blood."
+      }
+    },
+    {
+      "day": 39,
+      "title": "Sustained",
+      "declaration": "Little one, you are being sustained every second by a God who never looks away. You do not have to hold yourself together. We declare that He is your keeping.",
+      "scripture": { "ref": "Hebrews 1:3", "text": "Sustaining all things by his powerful word." }
+    },
+    {
+      "day": 40,
+      "title": "Good Work Begun",
+      "declaration": "Little one, God finishes what He begins. He began you, and He will complete you. We declare confidence over your whole life today.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 41,
+      "title": "Covered",
+      "declaration": "Little one, you are covered. Not exposed, not vulnerable to whatever comes, but covered by the shadow of the Almighty. We declare shelter over you.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 42,
+      "title": "Rest for the Weary",
+      "declaration": "Little one, today we receive rest on your behalf and on ours. Tiredness is not failure. We declare that you are growing in a home that knows how to rest.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary, and I will give you rest."
+      }
+    },
+    {
+      "day": 43,
+      "title": "Seen",
+      "declaration": "Little one, you are seen by the God who sees. Nothing about you is too small for His attention. We declare that you will never feel invisible.",
+      "scripture": { "ref": "Genesis 16:13", "text": "You are the God who sees me." }
+    },
+    {
+      "day": 44,
+      "title": "Named Before Known",
+      "declaration": "Little one, God knew you before we did and loved you first. We are joining a love that was already in progress. We declare that you are deeply, permanently loved.",
+      "scripture": { "ref": "Isaiah 49:1", "text": "Before I was born the Lord called me." }
+    },
+    {
+      "day": 45,
+      "title": "Peace in the Waiting",
+      "declaration": "Little one, waiting is not wasted time. God is working in the wait. We declare peace over every day we do not yet have answers for.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 46,
+      "title": "Fearfully Made",
+      "declaration": "Little one, you are fearfully made, which means made with awe. We declare that you will grow up amazed at God rather than anxious about yourself.",
+      "scripture": { "ref": "Psalm 139:14", "text": "I am fearfully and wonderfully made." }
+    },
+    {
+      "day": 47,
+      "title": "A Steady Heart",
+      "declaration": "Little one, we declare a steady heart over you, one that will not be easily shaken. May courage be natural to you and peace be your default.",
+      "scripture": {
+        "ref": "Psalm 112:7",
+        "text": "Their heart is steadfast, trusting in the Lord."
+      }
+    },
+    {
+      "day": 48,
+      "title": "Held Together",
+      "declaration": "Little one, in Him all things hold together, and so do you. We declare that every system, every part, every detail of you is held by Christ today.",
+      "scripture": { "ref": "Colossians 1:17", "text": "In him all things hold together." }
+    },
+    {
+      "day": 49,
+      "title": "Grace Upon Grace",
+      "declaration": "Little one, there is more than enough grace for you and more than enough for us. We declare an abundance over your life, never a scarcity.",
+      "scripture": {
+        "ref": "John 1:16",
+        "text": "Out of his fullness we have all received grace in place of grace already given."
+      }
+    },
+    {
+      "day": 50,
+      "title": "The Breath of Life",
+      "declaration": "Little one, the same God who breathed life into the first human is breathing life into you. We declare full life, strong life, God-given life over you.",
+      "scripture": {
+        "ref": "Job 33:4",
+        "text": "The Spirit of God has made me; the breath of the Almighty gives me life."
+      }
+    },
+    {
+      "day": 51,
+      "title": "Kindness Around You",
+      "declaration": "Little one, we are building kindness around you before you arrive. May gentleness be the first language you hear. We declare a kind home over your growing.",
+      "scripture": { "ref": "Ephesians 4:32", "text": "Be kind and compassionate to one another." }
+    },
+    {
+      "day": 52,
+      "title": "No Comparison",
+      "declaration": "Little one, you are not a copy of anyone. God made you singular on purpose. We declare freedom from comparison over your entire life, starting now.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions... without comparing themselves to someone else."
+      }
+    },
+    {
+      "day": 53,
+      "title": "Guarded",
+      "declaration": "Little one, God guards what belongs to Him, and you belong to Him. We declare protection over you today, in the seen and in the unseen.",
+      "scripture": { "ref": "Psalm 121:7", "text": "The Lord will keep you from all harm." }
+    },
+    {
+      "day": 54,
+      "title": "Delight",
+      "declaration": "Little one, God delights in you. Not one day when you achieve something, but now, exactly as you are. We declare that delight will be the soundtrack of your life.",
+      "partner": "Little one, I delight in you already. Not for anything you will do, but simply because you are. That is how I want you to hear my voice all your life.",
+      "scripture": { "ref": "Zephaniah 3:17", "text": "He will take great delight in you." }
+    },
+    {
+      "day": 55,
+      "title": "Growing Quietly",
+      "declaration": "Little one, you are growing quietly and that is exactly right. Not everything real is loud. We declare that you will be secure without needing to be seen.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "The seed sprouts and grows, though he does not know how."
+      }
+    },
+    {
+      "day": 56,
+      "title": "Kept",
+      "declaration": "Little one, we end this month the way we began it: you are held. Woven, watched over, and kept. We declare that the hands forming you will never let you go.",
+      "scripture": {
+        "ref": "Isaiah 41:10",
+        "text": "I will uphold you with my righteous right hand."
+      }
+    }
   ]
 }

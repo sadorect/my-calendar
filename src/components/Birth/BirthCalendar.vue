@@ -25,7 +25,7 @@ const TABS = [
   { id: 'month', label: 'Month' },
   { id: 'weeks', label: 'Weeks' },
   { id: 'saved', label: 'Saved' },
-  { id: 'settings', label: 'Settings' },
+  { id: 'settings', label: 'Settings' }
 ]
 
 const needsOnboarding = computed(() => !store.isConfigured && !browsing.value)
@@ -34,8 +34,19 @@ const scopeStyle = computed(() => ({
   '--bc-from': store.palette.from,
   '--bc-to': store.palette.to,
   '--bc-accent': store.palette.accent,
-  '--bc-font-scale': store.state.settings.fontScale,
+  '--bc-font-scale': store.state.settings.fontScale
 }))
+
+/**
+ * Browsing without a due date. A named handler rather than two statements in
+ * the template: Prettier reflows a multi-statement inline handler onto separate
+ * lines without semicolons, which Vue's expression parser then refuses to
+ * compile — a formatting pass should not be able to break the build.
+ */
+function startBrowsing() {
+  browsing.value = true
+  store.selectDay(1)
+}
 
 function openDay(day) {
   store.selectDay(day)
@@ -64,7 +75,7 @@ function celebrate() {
     id: `${Date.now()}-${i}`,
     left: 10 + Math.random() * 80,
     delay: Math.random() * 600,
-    size: 4 + Math.random() * 6,
+    size: 4 + Math.random() * 6
   }))
   setTimeout(() => (particles.value = []), 4600)
 }
@@ -87,7 +98,7 @@ function scheduleMidnightRefresh() {
 const reminder = createDailyReminder({
   getConfig: () => store.reminderConfig,
   getPayload: () => store.reminderPayload,
-  onFired: (key) => store.markReminderFired(key),
+  onFired: (key) => store.markReminderFired(key)
 })
 
 watch(
@@ -145,7 +156,11 @@ onBeforeUnmount(() => {
     :style="scopeStyle"
   >
     <!-- New-month particles -->
-    <div v-if="particles.length" class="pointer-events-none fixed inset-0 z-40 overflow-hidden" aria-hidden="true">
+    <div
+      v-if="particles.length"
+      class="pointer-events-none fixed inset-0 z-40 overflow-hidden"
+      aria-hidden="true"
+    >
       <span
         v-for="p in particles"
         :key="p.id"
@@ -155,7 +170,7 @@ onBeforeUnmount(() => {
           width: p.size + 'px',
           height: p.size + 'px',
           backgroundColor: 'var(--bc-accent)',
-          animationDelay: p.delay + 'ms',
+          animationDelay: p.delay + 'ms'
         }"
       />
     </div>
@@ -164,15 +179,12 @@ onBeforeUnmount(() => {
       v-if="needsOnboarding"
       class="pt-10"
       @done="view = 'today'"
-      @browse="browsing = true; store.selectDay(1)"
+      @browse="startBrowsing"
     />
 
     <template v-else>
       <!-- Browsing without a due date set -->
-      <div
-        v-if="!store.isConfigured"
-        class="px-5 pt-14 max-w-2xl mx-auto"
-      >
+      <div v-if="!store.isConfigured" class="px-5 pt-14 max-w-2xl mx-auto">
         <div class="bc-card px-4 py-3 flex items-center justify-between gap-3">
           <p class="text-sm bc-muted">Browsing without a due date.</p>
           <button class="bc-tap text-sm bc-accent px-3" @click="browsing = false">Set it up</button>

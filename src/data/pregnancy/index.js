@@ -52,12 +52,16 @@ function validate() {
     }
     for (const d of m.days) {
       if (d.day < m.startDay || d.day > m.endDay) {
-        problems.push(`Month ${m.month} contains day ${d.day}, outside its range ${m.startDay}-${m.endDay}`)
+        problems.push(
+          `Month ${m.month} contains day ${d.day}, outside its range ${m.startDay}-${m.endDay}`
+        )
       }
     }
     for (const w of m.weeks) {
       if (w.week < m.startWeek || w.week > m.endWeek) {
-        problems.push(`Month ${m.month} contains week ${w.week}, outside its range ${m.startWeek}-${m.endWeek}`)
+        problems.push(
+          `Month ${m.month} contains week ${w.week}, outside its range ${m.startWeek}-${m.endWeek}`
+        )
       }
     }
     expectedStart = m.endDay + 1
@@ -116,6 +120,6 @@ export function contentCoverage() {
     daysWritten: dayIndex.size,
     daysTotal: TOTAL_DAYS,
     weeksWritten: weekIndex.size,
-    weeksTotal: TOTAL_WEEKS,
+    weeksTotal: TOTAL_WEEKS
   }
 }

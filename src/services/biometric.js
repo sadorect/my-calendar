@@ -69,20 +69,20 @@ export async function enrolBiometric(label = 'This device') {
         // leaves the device and identifies nothing about the person.
         id: window.crypto.getRandomValues(new Uint8Array(16)),
         name: label,
-        displayName: label,
+        displayName: label
       },
       pubKeyCredParams: [
         { type: 'public-key', alg: -7 }, // ES256
-        { type: 'public-key', alg: -257 }, // RS256
+        { type: 'public-key', alg: -257 } // RS256
       ],
       authenticatorSelection: {
         authenticatorAttachment: 'platform',
         userVerification: 'required',
-        residentKey: 'preferred',
+        residentKey: 'preferred'
       },
       timeout: 60000,
-      attestation: 'none',
-    },
+      attestation: 'none'
+    }
   })
 
   if (!credential) throw new Error('No credential was created')
@@ -104,8 +104,8 @@ export async function verifyBiometric(credentialId) {
           ? [{ type: 'public-key', id: base64UrlToBuffer(credentialId) }]
           : [],
         userVerification: 'required',
-        timeout: 60000,
-      },
+        timeout: 60000
+      }
     })
     return Boolean(assertion)
   } catch {
@@ -146,7 +146,12 @@ export async function storageIsPersisted() {
  * Pure so it can be tested without a browser: re-locking too eagerly makes the
  * app hostile, and never re-locking makes the lock pointless.
  */
-export function shouldRelock({ unlockedAt, hiddenSince, now = Date.now(), graceMs = 5 * 60 * 1000 }) {
+export function shouldRelock({
+  unlockedAt,
+  hiddenSince,
+  now = Date.now(),
+  graceMs = 5 * 60 * 1000
+}) {
   // Null checks, not truthiness: 0 is a legitimate timestamp and treating it as
   // "absent" would silently invert the policy.
   if (unlockedAt == null) return true
