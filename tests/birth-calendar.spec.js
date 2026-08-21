@@ -52,6 +52,38 @@ test.describe('birth calendar', () => {
     await expect(page.getByText('Womb Whispers')).toBeVisible()
   })
 
+  test.describe('in dark mode', () => {
+    test.use({ colorScheme: 'dark' })
+
+    test('darkens the background as well as the text', async ({ page }) => {
+      await page.goto('/')
+      await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible({ timeout: 20000 })
+      // The back button belongs to the shell; the scope arrives with the
+      // lazily loaded calendar chunk.
+      await page.locator('.birth-scope').first().waitFor({ timeout: 20000 })
+
+      // The gradient stops are inline custom properties, so they override
+      // anything `.dark .birth-scope` sets. The bug this guards against was a
+      // near-white ink left sitting on the pale rose daytime gradient.
+      const { textLuminance, backgroundLuminance } = await page.evaluate(() => {
+        const luminance = (value) => {
+          const [r, g, b] = value.match(/\d+/g).map(Number)
+          return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255
+        }
+        const scope = document.querySelector('.birth-scope')
+        const style = getComputedStyle(scope)
+        const firstStop = style.backgroundImage.match(/rgba?\([^)]+\)/)[0]
+        return {
+          textLuminance: luminance(style.color),
+          backgroundLuminance: luminance(firstStop)
+        }
+      })
+
+      expect(backgroundLuminance).toBeLessThan(0.3)
+      expect(textLuminance - backgroundLuminance).toBeGreaterThan(0.4)
+    })
+  })
+
   test('a manifest shortcut can ask for the other calendar', async ({ page }) => {
     await page.goto('/?calendar=standard')
     await expect(page.getByRole('button', { name: '← Calendar' })).toHaveCount(0)

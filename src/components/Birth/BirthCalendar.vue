@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
+import { useThemeStore } from '../../stores/theme.js'
 import { createDailyReminder } from '../../services/birthReminders.js'
 import { useSync } from '../../composables/useSync.js'
 import BirthOnboarding from './BirthOnboarding.vue'
@@ -13,6 +14,7 @@ import BirthDayModal from './BirthDayModal.vue'
 import BirthLock from './BirthLock.vue'
 
 const store = usePregnancyStore()
+const theme = useThemeStore()
 
 const view = ref('today')
 const modalDay = ref(null)
@@ -30,9 +32,18 @@ const TABS = [
 
 const needsOnboarding = computed(() => !store.isConfigured && !browsing.value)
 
+/**
+ * The month gradient, in the right key for the theme.
+ *
+ * These are inline custom properties, so they beat anything `.dark
+ * .birth-scope` could say in the stylesheet — which is why the dark stops have
+ * to be chosen here. Without this the page kept its pale rose background while
+ * the ink turned near-white, and the whole calendar was barely readable in dark
+ * mode.
+ */
 const scopeStyle = computed(() => ({
-  '--bc-from': store.palette.from,
-  '--bc-to': store.palette.to,
+  '--bc-from': theme.isDark ? store.palette.darkFrom : store.palette.from,
+  '--bc-to': theme.isDark ? store.palette.darkTo : store.palette.to,
   '--bc-accent': store.palette.accent,
   '--bc-font-scale': store.state.settings.fontScale
 }))

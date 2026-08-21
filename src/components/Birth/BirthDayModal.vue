@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
+import { useThemeStore } from '../../stores/theme.js'
 import { dayContent } from '../../data/pregnancy/index.js'
 import { gestationalAge } from '../../services/pregnancyTimeline.js'
 import DeclarationCard from './DeclarationCard.vue'
@@ -9,6 +10,7 @@ const props = defineProps({ day: { type: Number, default: null } })
 const emit = defineEmits(['close'])
 
 const store = usePregnancyStore()
+const theme = useThemeStore()
 const journal = ref('')
 const savedNote = ref(false)
 
@@ -28,6 +30,15 @@ const age = computed(() => (props.day ? gestationalAge(props.day) : null))
 const date = computed(() =>
   props.day && store.isConfigured ? store.dueDate && new Date(store.activeDate) : null
 )
+
+// The modal is its own .birth-scope, so it needs the theme-correct gradient
+// stops for the same reason the calendar does: inline custom properties win
+// over the stylesheet's dark overrides.
+const scopeStyle = computed(() => ({
+  '--bc-from': theme.isDark ? store.palette.darkFrom : store.palette.from,
+  '--bc-to': theme.isDark ? store.palette.darkTo : store.palette.to,
+  '--bc-accent': store.palette.accent
+}))
 
 // Reload the note whenever the modal opens on a different day, so an unsaved
 // draft never leaks from one day onto another.
@@ -67,11 +78,7 @@ async function saveJournal() {
         <div
           class="birth-scope relative w-full sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl shadow-2xl animate-gentle-rise"
           :class="{ 'bc-contrast': store.state.settings.highContrast }"
-          :style="{
-            '--bc-from': store.palette.from,
-            '--bc-to': store.palette.to,
-            '--bc-accent': store.palette.accent
-          }"
+          :style="scopeStyle"
         >
           <header
             class="sticky top-0 z-10 flex items-center justify-between px-5 py-4 backdrop-blur-md"
