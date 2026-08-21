@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Personal Calendar App - End-to-End Tests', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to the app
-    await page.goto('/')
+    await page.goto('/?calendar=standard')
     // Wait for the app to load
     await page.waitForSelector('header, main, .app', { timeout: 10000 })
   })

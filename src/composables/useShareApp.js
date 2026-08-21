@@ -59,7 +59,7 @@ export function useShareApp() {
    * Native share sheet where there is one, clipboard everywhere else. Both end
    * with the recipient holding a URL, which is the whole point.
    */
-  async function share({ title = 'Personal Calendar', text } = {}) {
+  async function share({ title = 'Birth Calendar', text } = {}) {
     if (busy.value) return
     busy.value = true
     const url = appUrl()

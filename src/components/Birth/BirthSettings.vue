@@ -7,6 +7,7 @@ import BirthKeepsake from './BirthKeepsake.vue'
 import BirthAmbient from './BirthAmbient.vue'
 import BirthSync from './BirthSync.vue'
 import ShareApp from '../ShareApp.vue'
+import CheckForUpdate from '../CheckForUpdate.vue'
 import {
   notificationPermission,
   requestNotificationPermission
@@ -307,6 +308,9 @@ async function doReset() {
       title="Womb Whispers"
       text="A daily declaration and prayer companion for pregnancy. Install it on your phone — it works offline."
     />
+
+    <!-- Update the app without a hard refresh -->
+    <CheckForUpdate variant="card" />
 
     <!-- Cross-device sync -->
     <BirthSync />

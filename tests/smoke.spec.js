@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Personal Calendar - Smoke Tests', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to the app
-    await page.goto('/')
+    await page.goto('/?calendar=standard')
     // Wait for the app to load - just wait for body to have content
     await page.waitForTimeout(2000)
   })
@@ -94,7 +94,7 @@ test.describe('Personal Calendar - Smoke Tests', () => {
   test('should handle mobile viewport', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 }) // iPhone SE size
 
-    await page.goto('/')
+    await page.goto('/?calendar=standard')
     await page.waitForTimeout(2000)
 
     // Just verify the page loads on mobile

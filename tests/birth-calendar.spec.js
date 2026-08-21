@@ -12,7 +12,9 @@ import { test, expect } from '@playwright/test'
  * keeps this working on the mobile projects instead of only on desktop ones.
  */
 async function openBirthCalendar(page) {
-  await page.goto('/')
+  // Deliberately starts on the productivity calendar — the app's own default is
+  // the birth calendar now, and this helper is here to prove the switch works.
+  await page.goto('/?calendar=standard')
 
   const headerButton = page.getByRole('button', { name: 'Birth calendar', exact: true })
   if (await headerButton.count()) {
@@ -42,6 +44,19 @@ async function completeOnboarding(page, { weeks = 12, days = 3 } = {}) {
 }
 
 test.describe('birth calendar', () => {
+  test('is where a first-time visitor lands', async ({ page }) => {
+    await page.goto('/')
+    // Nothing saved yet, so this is the shipped default rather than a
+    // preference — the birth calendar owns the front door.
+    await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible({ timeout: 20000 })
+    await expect(page.getByText('Womb Whispers')).toBeVisible()
+  })
+
+  test('a manifest shortcut can ask for the other calendar', async ({ page }) => {
+    await page.goto('/?calendar=standard')
+    await expect(page.getByRole('button', { name: '← Calendar' })).toHaveCount(0)
+  })
+
   test('switches from the standard calendar and onboards', async ({ page }) => {
     await openBirthCalendar(page)
 
@@ -138,7 +153,9 @@ test.describe('birth calendar', () => {
     // flips on the reactive state before that write lands. Under load the
     // reload can beat it, so retry the reload rather than assume one is enough.
     await expect(async () => {
-      await page.reload()
+      // Back to the bare URL: this helper started on ?calendar=standard, and
+      // that param deliberately outranks the saved preference.
+      await page.goto('/')
       // No click on the switch this time: it should open here by itself.
       await expect(page.getByText(/Day 87 of 280/)).toBeVisible({ timeout: 3000 })
     }).toPass({ timeout: 20000 })
@@ -149,6 +166,6 @@ test.describe('birth calendar', () => {
     await completeOnboarding(page)
 
     await page.getByRole('button', { name: '← Calendar' }).click()
-    await expect(page.getByRole('heading', { name: /^(Personal )?Calendar$/ })).toBeVisible()
+    await expect(page.getByRole('heading', { name: /^(My |Personal )?Calendar$/ })).toBeVisible()
   })
 })

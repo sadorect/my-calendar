@@ -11,6 +11,8 @@ import ThemeToggle from './components/ThemeToggle.vue'
 import AlertNotification from './components/AlertNotification.vue'
 import MiniCalendar from './components/MiniCalendar.vue'
 import ShareApp from './components/ShareApp.vue'
+import UpdateBanner from './components/UpdateBanner.vue'
+import CheckForUpdate from './components/CheckForUpdate.vue'
 import NaturalLanguageInput from './components/NaturalLanguageInput.vue'
 import { usePregnancyStore } from './stores/pregnancy'
 
@@ -51,7 +53,13 @@ onMounted(async () => {
 
   // Restore the user's chosen default calendar before first paint of the body.
   await pregnancyStore.load()
-  mode.value = pregnancyStore.state.settings.defaultMode || 'standard'
+  // A manifest shortcut (or any link) can ask for one calendar explicitly;
+  // otherwise the saved default decides, and that default is the birth calendar.
+  const requested = new URLSearchParams(window.location.search).get('calendar')
+  mode.value =
+    requested === 'birth' || requested === 'standard'
+      ? requested
+      : pregnancyStore.state.settings.defaultMode || 'birth'
 
   // Initialize alert system
   notificationService.setAlertStore(alertStore)
@@ -161,6 +169,9 @@ function handleKeyNavigation(event, view) {
 
 <template>
   <div class="app min-h-screen flex flex-col bg-theme-primary overflow-x-hidden">
+    <!-- Offered in both calendars: a new version never waits on a hard refresh. -->
+    <UpdateBanner />
+
     <!-- Birth calendar takes over the whole screen: it has its own navigation,
          its own palette, and none of the productivity chrome applies to it. -->
     <template v-if="mode === 'birth'">
@@ -187,7 +198,7 @@ function handleKeyNavigation(event, view) {
           >
             <span class="text-xl">📅</span>
           </div>
-          <h1 class="text-2xl font-bold tracking-tight">Personal Calendar</h1>
+          <h1 class="text-2xl font-bold tracking-tight">My Calendar</h1>
         </div>
         <div class="flex items-center gap-6">
           <button
@@ -458,6 +469,7 @@ function handleKeyNavigation(event, view) {
                 <span class="font-medium">Birth Calendar</span>
               </button>
               <ShareApp variant="menu" />
+              <CheckForUpdate variant="menu" />
               <button
                 @click="selectView('week')"
                 class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"

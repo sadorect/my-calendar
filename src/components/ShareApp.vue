@@ -9,7 +9,7 @@ const props = defineProps({
    * card   — labelled section for a settings screen
    */
   variant: { type: String, default: 'header' },
-  title: { type: String, default: 'Personal Calendar' },
+  title: { type: String, default: 'Birth Calendar' },
   text: { type: String, default: '' }
 })
 

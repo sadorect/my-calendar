@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 import { VitePWA } from 'vite-plugin-pwa'
+import { readFileSync } from 'node:fs'
+
+const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,7 +17,12 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: 'autoUpdate',
+      // 'prompt', not 'autoUpdate': the app registers the worker itself in
+      // src/services/registerServiceWorker.js and offers the update as a
+      // banner and a settings row, so nobody has to hard-refresh — and no
+      // reload happens mid-sentence either.
+      registerType: 'prompt',
+      injectRegister: null,
       includeAssets: [
         'icon-192x192.svg',
         'icon-512x512.svg',
@@ -23,11 +31,12 @@ export default defineConfig({
         'apple-touch-icon.png'
       ],
       manifest: {
-        name: 'Personal Calendar',
-        short_name: 'Calendar',
-        description: 'A comprehensive personal productivity calendar with smart features',
-        theme_color: '#2563eb',
-        background_color: '#ffffff',
+        name: 'Birth Calendar',
+        short_name: 'Birth',
+        description:
+          'A 280-day companion for pregnancy — a declaration and a prayer for every day, with a calendar for the rest of life alongside it',
+        theme_color: '#c9788a',
+        background_color: '#fdf2f4',
         display: 'standalone',
         orientation: 'portrait-primary',
         scope: '/',
@@ -61,26 +70,32 @@ export default defineConfig({
             purpose: 'any'
           }
         ],
-        categories: ['productivity', 'utilities', 'lifestyle'],
+        categories: ['lifestyle', 'health', 'productivity'],
+        // The birth calendar is what the app opens on now, so the shortcuts
+        // lead there; `?calendar=` overrides the saved default for one launch.
         shortcuts: [
           {
-            name: 'Add Event',
-            short_name: 'Add Event',
-            description: 'Quickly add a new event',
-            url: '/?action=add',
+            name: "Today's declaration",
+            short_name: 'Today',
+            description: "Read today's declaration and prayer",
+            url: '/?calendar=birth',
             icons: [{ src: '/icon-192x192.svg', sizes: '192x192' }]
           },
           {
-            name: "Today's Events",
-            short_name: 'Today',
-            description: "View today's events",
-            url: '/?view=today',
+            name: 'My calendar',
+            short_name: 'Calendar',
+            description: 'Events, reminders and the rest of life',
+            url: '/?calendar=standard',
             icons: [{ src: '/icon-192x192.svg', sizes: '192x192' }]
           }
         ]
       }
     })
   ],
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+    __APP_BUILD__: JSON.stringify(new Date().toISOString())
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
