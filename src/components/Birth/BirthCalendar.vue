@@ -22,12 +22,43 @@ const modalDay = ref(null)
 const browsing = ref(false)
 const particles = ref([])
 
+/**
+ * One 24x24 outline glyph per tab, drawn in the same key as the rest of the
+ * birth calendar's icons: stroke 1.5, round joins, currentColor. `filled` is
+ * the path drawn solid inside the outline, which is how Today gets its ring
+ * marker and Saved its heart without a second file.
+ */
 const TABS = [
-  { id: 'today', label: 'Today' },
-  { id: 'month', label: 'Month' },
-  { id: 'weeks', label: 'Weeks' },
-  { id: 'saved', label: 'Saved' },
-  { id: 'settings', label: 'Settings' }
+  {
+    id: 'today',
+    label: 'Today',
+    // The day ring from the app icon: the term, and where in it you are.
+    icon: 'M12 4a8 8 0 1 1-7.61 10.47',
+    track: true,
+    dot: { cx: 4.39, cy: 14.47 }
+  },
+  {
+    id: 'month',
+    label: 'Month',
+    icon: 'M8 2.75v3M16 2.75v3M3.75 9.5h16.5M6 5.25h12a2.25 2.25 0 0 1 2.25 2.25v11.25A2.25 2.25 0 0 1 18 21H6a2.25 2.25 0 0 1-2.25-2.25V7.5A2.25 2.25 0 0 1 6 5.25Z'
+  },
+  {
+    id: 'weeks',
+    label: 'Weeks',
+    // Stacked entries: the forty weekly cards, one under the next.
+    icon: 'M9 6.5h11.25M9 12h11.25M9 17.5h11.25M3.75 6.5h.008M3.75 12h.008M3.75 17.5h.008'
+  },
+  {
+    id: 'saved',
+    label: 'Saved',
+    // Matches the favourite heart used on the day and week cards.
+    icon: 'M12 21s-6.5-4.35-8.5-8A4.5 4.5 0 0112 7.5 4.5 4.5 0 0120.5 13c-2 3.65-8.5 8-8.5 8z'
+  },
+  {
+    id: 'settings',
+    label: 'Settings',
+    icon: 'M3.75 7.5h4.5M13.5 7.5h6.75M3.75 16.5h9.75M18.75 16.5h1.5M10.5 7.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM15.75 16.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z'
+  }
 ]
 
 const needsOnboarding = computed(() => !store.isConfigured && !browsing.value)
@@ -162,7 +193,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="birth-scope min-h-full relative"
+    class="birth-scope relative flex-1"
     :class="{ 'bc-contrast': store.state.settings.highContrast }"
     :style="scopeStyle"
   >
@@ -229,11 +260,36 @@ onBeforeUnmount(() => {
           <button
             v-for="tab in TABS"
             :key="tab.id"
-            class="bc-tap flex-1 py-3 text-xs font-medium transition"
+            class="bc-tap flex-1 py-2 flex flex-col items-center gap-1 text-xs font-medium transition"
             :aria-current="view === tab.id ? 'page' : undefined"
             :style="{ color: view === tab.id ? 'var(--bc-accent)' : 'var(--bc-muted)' }"
             @click="view = tab.id"
           >
+            <svg
+              class="w-6 h-6 transition-transform"
+              :class="view === tab.id ? 'scale-110' : ''"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle v-if="tab.track" cx="12" cy="12" r="8" opacity="0.3" />
+              <path
+                :d="tab.icon"
+                :fill="view === tab.id && tab.id === 'saved' ? 'currentColor' : 'none'"
+              />
+              <circle
+                v-if="tab.dot"
+                :cx="tab.dot.cx"
+                :cy="tab.dot.cy"
+                r="1.6"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
             {{ tab.label }}
           </button>
         </div>

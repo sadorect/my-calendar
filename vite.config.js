@@ -46,6 +46,8 @@ export default defineConfig({
         'icon-512x512.svg',
         'icon-192x192.png',
         'icon-512x512.png',
+        'icon-maskable-512x512.svg',
+        'icon-maskable-512x512.png',
         'apple-touch-icon.png'
       ],
       manifest: {
@@ -74,6 +76,15 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
+          },
+          // Android masks the icon into whatever shape the launcher uses, and
+          // crops roughly the outer 10% doing it. The maskable art is therefore
+          // full-bleed with no corner radius of its own.
+          {
+            src: '/icon-maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           },
           {
             src: '/icon-192x192.svg',

@@ -34,9 +34,14 @@ export default [
         TextDecoder: 'readonly',
         globalThis: 'readonly',
         URL: 'readonly',
+        URLSearchParams: 'readonly',
         FileReader: 'readonly',
+        getComputedStyle: 'readonly',
         // Node.js globals
-        process: 'readonly'
+        process: 'readonly',
+        // Injected by Vite's `define` at build time, so undefined to eslint.
+        __APP_BUILD__: 'readonly',
+        __APP_VERSION__: 'readonly'
       }
     },
     rules: {
