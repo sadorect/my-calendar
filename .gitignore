@@ -8,3 +8,6 @@ playwright-report/index.html
 test-results
 # Sync server deployment secrets
 sync-server/.env
+.vercel
+.env*
+
