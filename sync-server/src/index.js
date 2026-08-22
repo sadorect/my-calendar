@@ -16,7 +16,8 @@ const app = createApp({
     .split(',')
     .map((o) => o.trim())
     .filter(Boolean),
-  allowRegistration: process.env.ALLOW_REGISTRATION !== '0'
+  allowRegistration: process.env.ALLOW_REGISTRATION !== '0',
+  statsToken: process.env.STATS_TOKEN || ''
 })
 
 const server = http.createServer(app)

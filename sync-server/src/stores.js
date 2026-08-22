@@ -11,6 +11,7 @@ export function memoryStore() {
   const accounts = new Map() // emailKey -> account
   const byId = new Map()
   const vaults = new Map() // accountId -> vault
+  const usage = [] // { installId, name, occurredAt }
   let nextId = 1
 
   return {
@@ -64,6 +65,38 @@ export function memoryStore() {
       byId.delete(account.id)
       accounts.delete(account.emailKey)
       vaults.delete(account.id)
+    },
+    async recordEvents(installId, events) {
+      for (const event of events) {
+        usage.push({ installId, name: event.name, occurredAt: event.occurredAt })
+      }
+      return events.length
+    },
+    async stats({ now = new Date() } = {}) {
+      const since = (days) => new Date(now.getTime() - days * 86400000)
+      const countAccounts = (days) =>
+        [...byId.values()].filter((a) => new Date(a.createdAt) >= since(days)).length
+      const activeVaults = (days) =>
+        [...vaults.values()].filter((v) => new Date(v.updatedAt) >= since(days)).length
+      const recent = usage.filter((e) => new Date(e.occurredAt) >= since(30))
+      const byName = {}
+      for (const event of recent) byName[event.name] = (byName[event.name] || 0) + 1
+      return {
+        accounts: { total: byId.size, new7d: countAccounts(7), new30d: countAccounts(30) },
+        vaults: {
+          total: vaults.size,
+          synced7d: activeVaults(7),
+          synced30d: activeVaults(30),
+          bytes: [...vaults.values()].reduce((sum, v) => sum + (v.bytes || 0), 0)
+        },
+        usage: {
+          installs7d: new Set(
+            usage.filter((e) => new Date(e.occurredAt) >= since(7)).map((e) => e.installId)
+          ).size,
+          installs30d: new Set(recent.map((e) => e.installId)).size,
+          events30d: byName
+        }
+      }
     }
   }
 }
@@ -159,6 +192,59 @@ export function postgresStore(pool) {
 
     async deleteAccount(accountId) {
       await pool.query('DELETE FROM accounts WHERE id = $1', [accountId])
+    },
+
+    /** One multi-row insert per batch; the client sends at most a handful. */
+    async recordEvents(installId, events) {
+      if (!events.length) return 0
+      const values = []
+      const params = [installId]
+      for (const event of events) {
+        params.push(event.name, event.occurredAt)
+        values.push(`($1, $${params.length - 1}, $${params.length})`)
+      }
+      await pool.query(
+        `INSERT INTO usage_events (install_id, name, occurred_at) VALUES ${values.join(', ')}`,
+        params
+      )
+      return events.length
+    },
+
+    /**
+     * Aggregate only. Registrations come from the accounts table the service
+     * already keeps, so counting them costs no tracking of any kind — and no
+     * query here returns an email, an install id or a row that belongs to one
+     * identifiable person.
+     */
+    async stats() {
+      const [accounts, vaults, installs, events] = await Promise.all([
+        pool.query(`SELECT count(*)::int AS total,
+                           count(*) FILTER (WHERE created_at >= now() - interval '7 days')::int AS new7d,
+                           count(*) FILTER (WHERE created_at >= now() - interval '30 days')::int AS new30d
+                      FROM accounts`),
+        pool.query(`SELECT count(*)::int AS total,
+                           count(*) FILTER (WHERE updated_at >= now() - interval '7 days')::int AS synced7d,
+                           count(*) FILTER (WHERE updated_at >= now() - interval '30 days')::int AS synced30d,
+                           coalesce(sum(bytes), 0)::bigint AS bytes
+                      FROM vaults`),
+        pool.query(`SELECT count(DISTINCT install_id) FILTER (WHERE occurred_at >= now() - interval '7 days')::int AS installs7d,
+                           count(DISTINCT install_id) FILTER (WHERE occurred_at >= now() - interval '30 days')::int AS installs30d
+                      FROM usage_events`),
+        pool.query(`SELECT name, count(*)::int AS count
+                      FROM usage_events
+                     WHERE occurred_at >= now() - interval '30 days'
+                  GROUP BY name
+                  ORDER BY count DESC`)
+      ])
+      return {
+        accounts: accounts.rows[0],
+        vaults: { ...vaults.rows[0], bytes: Number(vaults.rows[0].bytes) },
+        usage: {
+          installs7d: installs.rows[0].installs7d,
+          installs30d: installs.rows[0].installs30d,
+          events30d: Object.fromEntries(events.rows.map((r) => [r.name, r.count]))
+        }
+      }
     }
   }
 }

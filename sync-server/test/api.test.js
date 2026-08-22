@@ -8,6 +8,7 @@ import { hashSecret, verifySecret, issueToken, verifyToken, isPlausibleEmail } f
 
 const SECRET = 'test-secret-that-is-long-enough-to-pass-32'
 const ORIGIN = 'https://calendar.example'
+const STATS_TOKEN = 'stats-token-for-tests'
 
 let server
 let base
@@ -19,6 +20,7 @@ before(async () => {
     store,
     tokenSecret: SECRET,
     allowedOrigins: [ORIGIN],
+    statsToken: STATS_TOKEN,
     limiter: createRateLimiter({ windowMs: 60_000, max: 1000 })
   })
   server = http.createServer(app)
@@ -275,5 +277,92 @@ describe('CORS and hardening', () => {
 
   test('404s an unknown path', async () => {
     assert.equal((await call('/v1/nope')).status, 404)
+  })
+})
+
+describe('usage counters', () => {
+  const installId = 'install-abcdefgh'
+  const event = (name, at = new Date()) => ({ name, occurredAt: at.toISOString() })
+
+  test('accepts a batch of allowlisted events', async () => {
+    const { status, body } = await call('/v1/usage', {
+      method: 'POST',
+      origin: ORIGIN,
+      body: { installId, events: [event('app_open'), event('view_today')] }
+    })
+    assert.equal(status, 202)
+    assert.equal(body.stored, 2)
+  })
+
+  test('drops names that are not on the allowlist', async () => {
+    const { status } = await call('/v1/usage', {
+      method: 'POST',
+      origin: ORIGIN,
+      body: { installId, events: [{ name: 'journal_text', occurredAt: new Date().toISOString() }] }
+    })
+    // Nothing survived the filter, so there is nothing to store.
+    assert.equal(status, 400)
+  })
+
+  test('drops events from a clock that is days out', async () => {
+    const longAgo = new Date(Date.now() - 30 * 86400000)
+    const { status } = await call('/v1/usage', {
+      method: 'POST',
+      origin: ORIGIN,
+      body: { installId, events: [event('app_open', longAgo)] }
+    })
+    assert.equal(status, 400)
+  })
+
+  test('rejects an install id that is not an opaque token', async () => {
+    const { status, body } = await call('/v1/usage', {
+      method: 'POST',
+      origin: ORIGIN,
+      body: { installId: 'someone@example.com', events: [event('app_open')] }
+    })
+    assert.equal(status, 400)
+    assert.equal(body.error, 'invalid_install_id')
+  })
+
+  test('refuses an oversized batch', async () => {
+    const { status } = await call('/v1/usage', {
+      method: 'POST',
+      origin: ORIGIN,
+      body: { installId, events: Array.from({ length: 51 }, () => event('app_open')) }
+    })
+    assert.equal(status, 400)
+  })
+})
+
+describe('stats', () => {
+  test('needs the stats token', async () => {
+    const anonymous = await call('/v1/stats', { origin: ORIGIN })
+    assert.equal(anonymous.status, 401)
+
+    const wrong = await call('/v1/stats', { origin: ORIGIN, token: 'not-the-token' })
+    assert.equal(wrong.status, 401)
+  })
+
+  test('reports aggregates and nothing identifying', async () => {
+    const { status, body } = await call('/v1/stats', { origin: ORIGIN, token: STATS_TOKEN })
+    assert.equal(status, 200)
+    assert.ok(Number.isInteger(body.accounts.total))
+    assert.ok(Number.isInteger(body.accounts.new7d))
+    assert.ok(Number.isInteger(body.vaults.total))
+    assert.ok(Number.isInteger(body.usage.installs7d))
+    assert.equal(typeof body.usage.events30d, 'object')
+
+    const serialised = JSON.stringify(body)
+    assert.ok(!serialised.includes('@'), 'no email should appear in the stats')
+    assert.ok(!serialised.includes('install-'), 'no install id should appear in the stats')
+  })
+
+  test('is absent entirely when no token is configured', async () => {
+    const bare = createApp({ store: memoryStore(), tokenSecret: SECRET, allowedOrigins: [ORIGIN] })
+    const server2 = http.createServer(bare)
+    await new Promise((resolve) => server2.listen(0, '127.0.0.1', resolve))
+    const res = await fetch(`http://127.0.0.1:${server2.address().port}/v1/stats`)
+    assert.equal(res.status, 404)
+    await new Promise((resolve) => server2.close(resolve))
   })
 })

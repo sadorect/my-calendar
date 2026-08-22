@@ -9,7 +9,8 @@ import {
   issueToken,
   verifyToken,
   emailKey,
-  isPlausibleEmail
+  isPlausibleEmail,
+  safeEqual
 } from './auth.js'
 import { createRateLimiter } from './rateLimit.js'
 
@@ -69,12 +70,38 @@ function isBase64(value, { maxLength = MAX_BODY_BYTES } = {}) {
  * @param {string[]} deps.allowedOrigins exact origins allowed to call this API
  * @param {boolean} deps.allowRegistration  false locks the instance to existing accounts
  */
+/**
+ * Every usage event this service will store. An allowlist rather than free-form
+ * names: it is the difference between a counter and an open-ended log of what
+ * somebody did, and only one of those belongs next to a pregnancy journal.
+ */
+export const USAGE_EVENTS = [
+  'app_open',
+  'birth_open',
+  'onboarding_complete',
+  'view_today',
+  'view_month',
+  'view_weeks',
+  'view_saved',
+  'view_settings',
+  'reminders_enabled',
+  'keepsake_made',
+  'declaration_shared',
+  'sync_registered',
+  'sync_signed_in',
+  'update_installed'
+]
+
 export function createApp({
   store,
   tokenSecret,
   allowedOrigins = [],
   allowRegistration = true,
-  limiter = createRateLimiter({ windowMs: 60_000, max: 10 })
+  statsToken = '',
+  limiter = createRateLimiter({ windowMs: 60_000, max: 10 }),
+  // Usage batches are chatty by nature and carry nothing worth guessing at, so
+  // they get their own, looser bucket rather than eating the auth allowance.
+  usageLimiter = createRateLimiter({ windowMs: 60_000, max: 60 })
 }) {
   if (!tokenSecret || tokenSecret.length < 32) {
     throw new Error('TOKEN_SECRET must be at least 32 characters')
@@ -190,6 +217,38 @@ export function createApp({
     )
   }
 
+  /**
+   * Anonymous counters. No authentication on purpose — requiring an account
+   * would tie every event to a person, which is the thing being avoided. The
+   * defences are instead: an exact-origin CORS allowlist, a rate limit, a
+   * bounded batch, a name allowlist and a timestamp window.
+   */
+  async function handleUsage(res, body, cors) {
+    const installId = typeof body.installId === 'string' ? body.installId.trim() : ''
+    if (!/^[A-Za-z0-9_-]{8,64}$/.test(installId)) {
+      return send(res, 400, { error: 'invalid_install_id' }, cors)
+    }
+    if (!Array.isArray(body.events) || body.events.length === 0 || body.events.length > 50) {
+      return send(res, 400, { error: 'invalid_batch' }, cors)
+    }
+
+    const window = 7 * 24 * 60 * 60 * 1000
+    const now = Date.now()
+    const events = []
+    for (const event of body.events) {
+      if (!USAGE_EVENTS.includes(event?.name)) continue
+      const at = Date.parse(event.occurredAt)
+      // A clock that is days out is either broken or lying; either way the row
+      // would poison the daily counts.
+      if (Number.isNaN(at) || Math.abs(now - at) > window) continue
+      events.push({ name: event.name, occurredAt: new Date(at).toISOString() })
+    }
+    if (!events.length) return send(res, 400, { error: 'no_valid_events' }, cors)
+
+    const stored = await store.recordEvents(installId, events)
+    return send(res, 202, { stored }, cors)
+  }
+
   return async function handler(req, res) {
     const cors = corsHeaders(req)
     const url = new URL(req.url, 'http://localhost')
@@ -236,6 +295,28 @@ export function createApp({
           return send(res, 200, { ok: true }, cors)
         }
         return send(res, 405, { error: 'method_not_allowed' }, cors)
+      }
+
+      if (path === '/v1/usage') {
+        if (req.method !== 'POST') return send(res, 405, { error: 'method_not_allowed' }, cors)
+        const { allowed, retryAfter } = usageLimiter.check(`usage:${clientKey(req)}`)
+        if (!allowed) {
+          return send(res, 429, { error: 'too_many_events' }, { ...cors, 'Retry-After': String(retryAfter) })
+        }
+        return handleUsage(res, await readBody(req), cors)
+      }
+
+      if (path === '/v1/stats') {
+        // Off unless a token is configured, so an instance that never wanted
+        // this endpoint does not quietly expose one.
+        if (!statsToken) return send(res, 404, { error: 'not_found' }, cors)
+        if (req.method !== 'GET') return send(res, 405, { error: 'method_not_allowed' }, cors)
+        const header = req.headers.authorization || ''
+        const presented = header.startsWith('Bearer ') ? header.slice(7) : ''
+        if (!safeEqual(presented, statsToken)) {
+          return send(res, 401, { error: 'unauthorised' }, cors)
+        }
+        return send(res, 200, await store.stats(), cors)
       }
 
       if (path === '/v1/account' && req.method === 'DELETE') {

@@ -413,6 +413,26 @@ npm run build
   keeps a browser without service-worker support from breaking Settings (there,
   "check for updates" simply reloads).
 
+### Analytics
+
+Three layers, deliberately separate:
+
+- **Registrations and sync usage** come from the sync service's own tables — no
+  tracking involved, since `accounts.created_at` and `vaults.updated_at` already
+  exist. `GET /v1/stats` on the sync API returns the aggregates behind a bearer
+  token (`STATS_TOKEN`).
+- **Visits** are Vercel Web Analytics: page views, referrers, country, device,
+  installed-app versus browser. No cookies, no identifiers, nothing about what
+  is inside the app.
+- **In-app usage** is opt-in and off by default — a toggle in birth Settings.
+  Turned on, `src/services/analytics.js` sends counts of event names from a
+  fixed allowlist against a random token the device made up for itself. It never
+  sends journal text, the baby's name, dates, or anything else written in the
+  app, and turning it off deletes the token rather than parking it.
+
+The default matters: onboarding tells people "nothing is uploaded", and that has
+to stay true for anyone who never touches the toggle.
+
 ### The deployment URL
 
 Nothing in the app hardcodes its own address — share links are built from

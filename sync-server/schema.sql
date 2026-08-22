@@ -30,3 +30,18 @@ CREATE TABLE IF NOT EXISTS vaults (
 );
 
 CREATE INDEX IF NOT EXISTS vaults_updated_at_idx ON vaults (updated_at);
+
+-- Anonymous, opt-in usage counters. Deliberately thin: an opaque install id the
+-- browser generates for itself, an event name from a fixed allowlist, and when
+-- it happened. No IP address, no account link, nothing free-text — so this
+-- table cannot become a record of what any particular person wrote or read.
+CREATE TABLE IF NOT EXISTS usage_events (
+  id           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  install_id   TEXT NOT NULL,
+  name         TEXT NOT NULL,
+  occurred_at  TIMESTAMPTZ NOT NULL,
+  received_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS usage_events_name_idx ON usage_events (name, occurred_at);
+CREATE INDEX IF NOT EXISTS usage_events_install_idx ON usage_events (install_id, occurred_at);

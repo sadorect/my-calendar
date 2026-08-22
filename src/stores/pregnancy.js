@@ -64,6 +64,10 @@ function emptyState() {
       ambientVolume: 0.5,
       fontScale: 1,
       highContrast: false,
+      // Opt-in, and staying that way: this app tells people on the onboarding
+      // screen that nothing is uploaded, and a default-on counter would make
+      // that a lie.
+      usageAnalytics: false,
       // Biometric app lock. `credentialId` is only ever set alongside a
       // successful enrolment — never enable one without the other or the user
       // is locked out of their own journal.

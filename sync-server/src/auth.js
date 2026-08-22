@@ -74,6 +74,19 @@ export function verifyToken(token, secret) {
 }
 
 /** Lowercased and trimmed. This is the lookup key and the client's KDF salt. */
+/** Constant-time string compare, for secrets presented by a caller. */
+export function safeEqual(presented, expected) {
+  const a = Buffer.from(String(presented))
+  const b = Buffer.from(String(expected))
+  // timingSafeEqual throws on a length mismatch, which would itself leak the
+  // length; compare against a same-length buffer and let the result decide.
+  if (a.length !== b.length) {
+    timingSafeEqual(b, b)
+    return false
+  }
+  return timingSafeEqual(a, b)
+}
+
 export function emailKey(email) {
   return String(email || '')
     .trim()

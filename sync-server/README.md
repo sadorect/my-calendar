@@ -32,23 +32,49 @@ key escrow, so there is nothing to recover with.
 | `PUT`    | `/v1/vault`         | `{ ciphertext, iv, clientUpdatedAt, baseRevision }`; `409` returns the current copy |
 | `DELETE` | `/v1/vault`         | deletes the stored blob                                                             |
 | `DELETE` | `/v1/account`       | deletes the account and its blob                                                    |
+| `POST`   | `/v1/usage`         | `{ installId, events:[{name, occurredAt}] }` → `202`; opt-in anonymous counters     |
+| `GET`    | `/v1/stats`         | aggregate counts, `Authorization: Bearer $STATS_TOKEN`                              |
 
 Writes are compare-and-set on `revision`, so two devices saving at once cannot
 overwrite each other: the loser gets a `409` carrying the current copy, merges
 locally and retries. Merge rules live in `src/services/mergeState.js` in the app.
 
+## Counting without tracking
+
+Two separate things live behind the usage and stats routes, and neither can
+identify anybody.
+
+**Registrations come for free.** `accounts.created_at` and `vaults.updated_at`
+already exist, so how many accounts there are, how many were made this week and
+how many devices synced recently are questions the service can answer without
+recording anything new. `/v1/stats` returns those aggregates and nothing else —
+no email, no install id, no row belonging to one person.
+
+**Usage counters are opt-in and deliberately thin.** `/v1/usage` takes an opaque
+install token the browser generated for itself, an event name from a fixed
+allowlist (`USAGE_EVENTS` in `src/app.js`), and when it happened. Free-form
+names are dropped, batches are capped, timestamps more than seven days out are
+discarded, and no IP address is stored. The app sends nothing unless the user
+turns the toggle on, and turning it off deletes the install token — so turning
+it back on does not rejoin a device to its own history.
+
+There is no authentication on `/v1/usage` on purpose: requiring an account would
+tie every event to a person, which is the thing being avoided. Its defences are
+the origin allowlist, a rate limit, and the shape of what it will accept.
+
 ## Configuration
 
-| Variable             | Required | Meaning                                                         |
-| -------------------- | -------- | --------------------------------------------------------------- |
-| `DATABASE_URL`       | yes      | e.g. `postgres://calendar:…@127.0.0.1:5437/calendar_sync`       |
-| `TOKEN_SECRET`       | yes      | ≥32 chars, signs bearer tokens. Rotating it signs everyone out. |
-| `ALLOWED_ORIGINS`    | yes      | comma-separated exact origins, e.g. `https://calendar.example`  |
-| `PORT`               | no       | default `8787`                                                  |
-| `HOST`               | no       | default `127.0.0.1` — bind to loopback and reverse-proxy        |
-| `ALLOW_REGISTRATION` | no       | `0` closes signup once your own accounts exist                  |
-| `TRUST_PROXY`        | no       | `1` to honour `X-Forwarded-For` for rate limiting               |
-| `MIGRATE_ON_BOOT`    | no       | `0` to skip the schema check on start                           |
+| Variable             | Required | Meaning                                                                 |
+| -------------------- | -------- | ----------------------------------------------------------------------- |
+| `DATABASE_URL`       | yes      | e.g. `postgres://calendar:…@127.0.0.1:5437/calendar_sync`               |
+| `TOKEN_SECRET`       | yes      | ≥32 chars, signs bearer tokens. Rotating it signs everyone out.         |
+| `ALLOWED_ORIGINS`    | yes      | comma-separated exact origins, e.g. `https://calendar.example`          |
+| `PORT`               | no       | default `8787`                                                          |
+| `HOST`               | no       | default `127.0.0.1` — bind to loopback and reverse-proxy                |
+| `ALLOW_REGISTRATION` | no       | `0` closes signup once your own accounts exist                          |
+| `TRUST_PROXY`        | no       | `1` to honour `X-Forwarded-For` for rate limiting                       |
+| `MIGRATE_ON_BOOT`    | no       | `0` to skip the schema check on start                                   |
+| `STATS_TOKEN`        | no       | bearer token for `GET /v1/stats`; unset and the endpoint does not exist |
 
 ## Deploying on the VPS
 
