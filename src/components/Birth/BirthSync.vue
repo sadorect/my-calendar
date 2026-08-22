@@ -20,6 +20,15 @@ const mode = ref('signin') // 'signin' | 'register'
 const form = ref({ email: '', password: '', confirm: '' })
 const confirmingDelete = ref(false)
 const acknowledged = ref(false)
+const revealed = ref({ password: false, confirm: false })
+
+/**
+ * Long, because it is the encryption key and not merely a login: it is stretched
+ * into the key that protects the vault, and nobody can reset it. Stated on the
+ * form rather than enforced silently — a disabled button that will not say why
+ * is not a password policy, it is a puzzle.
+ */
+const MIN_PASSWORD = 10
 
 onMounted(restore)
 
@@ -30,12 +39,32 @@ const passwordMismatch = computed(
     mode.value === 'register' && form.value.confirm && form.value.password !== form.value.confirm
 )
 
-const canSubmit = computed(() => {
-  if (busy.value) return false
-  if (!form.value.email.trim() || form.value.password.length < 10) return false
-  if (mode.value === 'register') return acknowledged.value && !passwordMismatch.value
-  return true
+const canSubmit = computed(() => !blockedReason.value)
+
+/**
+ * Why the button is disabled, in the user's words. Only ever shown once they
+ * have started filling the form in, so an untouched form is not scolded.
+ */
+const blockedReason = computed(() => {
+  if (busy.value) return 'Please wait…'
+  if (!form.value.email.trim()) return 'Enter your email address.'
+  if (form.value.password.length < MIN_PASSWORD) {
+    return `Your password needs at least ${MIN_PASSWORD} characters.`
+  }
+  if (mode.value === 'register') {
+    if (passwordMismatch.value || !form.value.confirm) return 'Confirm your password.'
+    if (!acknowledged.value) return 'Tick the box to confirm you understand.'
+  }
+  return ''
 })
+
+const showBlockedReason = computed(
+  () => Boolean(blockedReason.value) && Boolean(form.value.email || form.value.password)
+)
+
+function toggleReveal(field) {
+  revealed.value[field] = !revealed.value[field]
+}
 
 const lastSyncedLabel = computed(() => {
   if (!lastSyncedAt.value) return 'Not synced yet'
@@ -50,7 +79,10 @@ async function submit() {
     password: form.value.password,
     register: mode.value === 'register'
   })
-  if (ok) form.value = { email: '', password: '', confirm: '' }
+  if (ok) {
+    form.value = { email: '', password: '', confirm: '' }
+    revealed.value = { password: false, confirm: false }
+  }
 }
 
 async function confirmDelete() {
@@ -155,33 +187,69 @@ async function confirmDelete() {
           />
         </label>
 
-        <label class="block">
-          <span class="text-sm block mb-1">Password</span>
-          <input
-            v-model="form.password"
-            type="password"
-            :autocomplete="mode === 'register' ? 'new-password' : 'current-password'"
-            required
-            minlength="10"
-            class="bc-tap w-full px-4 py-2.5 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
-          />
-        </label>
+        <div>
+          <!-- The reveal button sits outside the <label>: nested inside it, its
+               text would become part of the field's accessible name. -->
+          <label for="sync-password" class="text-sm block mb-1">Password</label>
+          <div class="relative">
+            <input
+              id="sync-password"
+              v-model="form.password"
+              :type="revealed.password ? 'text' : 'password'"
+              :autocomplete="mode === 'register' ? 'new-password' : 'current-password'"
+              required
+              :minlength="MIN_PASSWORD"
+              aria-describedby="sync-password-hint"
+              class="bc-tap w-full pl-4 pr-16 py-2.5 rounded-xl border bg-transparent"
+              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            />
+            <button
+              type="button"
+              class="absolute inset-y-0 right-0 px-3 text-xs font-medium"
+              :style="{ color: 'var(--bc-accent)' }"
+              :aria-pressed="revealed.password"
+              :aria-label="revealed.password ? 'Hide password' : 'Show password'"
+              @click="toggleReveal('password')"
+            >
+              {{ revealed.password ? 'Hide' : 'Show' }}
+            </button>
+          </div>
+          <p id="sync-password-hint" class="text-xs bc-muted mt-1">
+            At least {{ MIN_PASSWORD }} characters.
+            <template v-if="mode === 'register'">
+              A phrase you will remember is better than a short, clever one — it is the key to your
+              data, and it cannot be reset.
+            </template>
+          </p>
+        </div>
 
-        <label v-if="mode === 'register'" class="block">
-          <span class="text-sm block mb-1">Confirm password</span>
-          <input
-            v-model="form.confirm"
-            type="password"
-            autocomplete="new-password"
-            required
-            class="bc-tap w-full px-4 py-2.5 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
-          />
+        <div v-if="mode === 'register'">
+          <label for="sync-confirm" class="text-sm block mb-1">Confirm password</label>
+          <div class="relative">
+            <input
+              id="sync-confirm"
+              v-model="form.confirm"
+              :type="revealed.confirm ? 'text' : 'password'"
+              autocomplete="new-password"
+              required
+              class="bc-tap w-full pl-4 pr-16 py-2.5 rounded-xl border bg-transparent"
+              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            />
+            <button
+              type="button"
+              class="absolute inset-y-0 right-0 px-3 text-xs font-medium"
+              :style="{ color: 'var(--bc-accent)' }"
+              :aria-pressed="revealed.confirm"
+              :aria-label="revealed.confirm ? 'Hide confirmed password' : 'Show confirmed password'"
+              @click="toggleReveal('confirm')"
+            >
+              {{ revealed.confirm ? 'Hide' : 'Show' }}
+            </button>
+          </div>
           <span v-if="passwordMismatch" class="text-xs mt-1 block" style="color: #b4413c">
             The passwords do not match.
           </span>
-        </label>
+        </div>
 
         <!-- The one thing nobody can fix for them later. -->
         <label v-if="mode === 'register'" class="flex items-start gap-3 text-sm">
@@ -200,6 +268,11 @@ async function confirmDelete() {
         >
           {{ busy ? 'Please wait…' : mode === 'register' ? 'Create account' : 'Sign in' }}
         </button>
+
+        <!-- Says what is still missing rather than leaving a dead button. -->
+        <p v-if="showBlockedReason" class="text-xs bc-muted text-center" aria-live="polite">
+          {{ blockedReason }}
+        </p>
       </form>
     </template>
 
