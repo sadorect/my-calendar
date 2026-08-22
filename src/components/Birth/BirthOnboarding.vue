@@ -1,6 +1,5 @@
 <script setup>
 import { computed, ref } from 'vue'
-import { track } from '../../services/analytics.js'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import {
   dueDateFromCurrentProgress,
@@ -49,7 +48,6 @@ async function save() {
       await store.setCurrentProgress(Number(weeksInput.value), Number(daysInput.value))
     }
     if (babyName.value.trim()) await store.setBabyName(babyName.value)
-    track('onboarding_complete')
     emit('done')
   } catch (e) {
     error.value = e.message || 'That did not look like a valid date.'

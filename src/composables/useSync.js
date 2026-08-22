@@ -14,7 +14,6 @@ import { ref, computed } from 'vue'
 import { getSetting, setSetting } from '../services/database.js'
 import { usePregnancyStore } from '../stores/pregnancy.js'
 import { mergeStates, statesDiffer } from '../services/mergeState.js'
-import { track } from '../services/analytics.js'
 import {
   isSyncConfigured,
   signIn as apiSignIn,
@@ -144,7 +143,6 @@ export function useSync() {
       revision.value = 0
       await saveSession({ email: result.email, token: result.token, encKey: result.encKey })
       status.value = 'idle'
-      track(register ? 'sync_registered' : 'sync_signed_in')
       await syncNow()
       return true
     } catch (e) {

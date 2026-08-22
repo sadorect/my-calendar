@@ -415,23 +415,20 @@ npm run build
 
 ### Analytics
 
-Three layers, deliberately separate:
+Two layers, deliberately shallow:
 
 - **Registrations and sync usage** come from the sync service's own tables — no
   tracking involved, since `accounts.created_at` and `vaults.updated_at` already
-  exist. `GET /v1/stats` on the sync API returns the aggregates behind a bearer
-  token (`STATS_TOKEN`).
+  exist. `GET /v1/stats` returns the aggregates behind a bearer token
+  (`STATS_TOKEN`), and it is what the tile on `dashboard.sadorect.com` reads.
 - **Visits** are Vercel Web Analytics: page views, referrers, country, device,
   installed-app versus browser. No cookies, no identifiers, nothing about what
   is inside the app.
-- **In-app usage** is opt-in and off by default — a toggle in birth Settings.
-  Turned on, `src/services/analytics.js` sends counts of event names from a
-  fixed allowlist against a random token the device made up for itself. It never
-  sends journal text, the baby's name, dates, or anything else written in the
-  app, and turning it off deletes the token rather than parking it.
 
-The default matters: onboarding tells people "nothing is uploaded", and that has
-to stay true for anyone who never touches the toggle.
+There is deliberately **no in-app event tracking**. An opt-in usage counter was
+built and then removed: on an app whose onboarding screen promises that nothing
+is uploaded, a self-selected minority sample was not worth the privacy surface
+or the code. Visits and registrations answer the questions that get asked.
 
 ### The deployment URL
 

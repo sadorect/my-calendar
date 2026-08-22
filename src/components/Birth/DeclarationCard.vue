@@ -1,7 +1,6 @@
 <script setup>
 import { computed, ref, onBeforeUnmount } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
-import { track } from '../../services/analytics.js'
 import { weekOfPregnancy } from '../../services/pregnancyTimeline.js'
 import { monthPalette, monthForDay } from '../../data/pregnancy/index.js'
 import {
@@ -93,7 +92,6 @@ async function share() {
   if (sharingImage.value) return
   shareNote.value = ''
   sharingImage.value = true
-  track('declaration_shared')
   try {
     if (canShareImage()) {
       const blob = await cardBlob()

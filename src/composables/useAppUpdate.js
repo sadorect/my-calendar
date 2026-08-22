@@ -1,5 +1,4 @@
 import { ref, computed, readonly } from 'vue'
-import { track, flush } from '../services/analytics.js'
 
 /**
  * The app's update state, kept deliberately free of any service-worker import.
@@ -81,9 +80,6 @@ export function useAppUpdate() {
    * so nothing after this call is guaranteed to run.
    */
   async function installUpdate() {
-    track('update_installed')
-    // The page is about to be replaced, so send now rather than queueing.
-    await flush()
     if (applyHandler) {
       await applyHandler()
       return

@@ -12,7 +12,6 @@ import {
   notificationPermission,
   requestNotificationPermission
 } from '../../services/birthReminders.js'
-import { analyticsAvailable, setAnalyticsEnabled, flush, track } from '../../services/analytics.js'
 
 const store = usePregnancyStore()
 const coverage = contentCoverage()
@@ -34,24 +33,6 @@ async function set(key, value) {
   await store.updateSettings({ [key]: value })
 }
 
-const analyticsOffered = analyticsAvailable()
-
-function openKeepsake() {
-  keepsakeOpen.value = true
-  track('keepsake_made')
-}
-
-/**
- * Turning it off takes effect immediately — the queue and the device's
- * identifier are dropped rather than kept "just in case".
- */
-async function toggleAnalytics() {
-  const next = !settings.value.usageAnalytics
-  if (!next) await flush()
-  await set('usageAnalytics', next)
-  await setAnalyticsEnabled(next)
-}
-
 /**
  * Turning reminders on asks for permission FIRST. Persisting an enabled flag
  * the browser will never honour would leave the user waiting for a reminder
@@ -65,7 +46,6 @@ async function toggleReminders() {
   notifyPermission.value = await requestNotificationPermission()
   if (notifyPermission.value === 'granted') {
     await set('remindersEnabled', true)
-    track('reminders_enabled')
   }
 }
 
@@ -350,40 +330,13 @@ async function doReset() {
       <button
         class="bc-tap px-4 py-2.5 rounded-xl text-sm font-medium text-white transition"
         :style="{ backgroundColor: 'var(--bc-accent)' }"
-        @click="openKeepsake"
+        @click="keepsakeOpen = true"
       >
         Make a keepsake
       </button>
     </section>
 
     <BirthKeepsake v-if="keepsakeOpen" @close="keepsakeOpen = false" />
-
-    <!-- Anonymous usage counters, off unless asked for -->
-    <section v-if="analyticsOffered" class="bc-card p-5">
-      <h2 class="font-medium mb-1">Help improve the app</h2>
-      <p class="text-sm bc-muted mb-4 leading-relaxed">
-        Off by default. Turned on, the app sends counts of which screens get used — never your
-        notes, your baby's name, your dates or anything you have written. It cannot be traced back
-        to you, and turning it off again forgets this device entirely.
-      </p>
-      <label class="flex items-center justify-between gap-4">
-        <span class="text-sm">Share anonymous usage</span>
-        <button
-          class="bc-tap relative w-12 h-7 rounded-full transition shrink-0"
-          role="switch"
-          :aria-checked="settings.usageAnalytics"
-          :style="{
-            backgroundColor: settings.usageAnalytics ? 'var(--bc-accent)' : 'var(--bc-hairline)'
-          }"
-          @click="toggleAnalytics"
-        >
-          <span
-            class="absolute top-1 w-5 h-5 rounded-full bg-white transition-all"
-            :style="{ left: settings.usageAnalytics ? '1.625rem' : '0.25rem' }"
-          />
-        </button>
-      </label>
-    </section>
 
     <!-- Honest about what is written -->
     <section class="bc-card p-5">

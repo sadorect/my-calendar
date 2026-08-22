@@ -2,7 +2,6 @@
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { useThemeStore } from '../../stores/theme.js'
-import { track } from '../../services/analytics.js'
 import { createDailyReminder } from '../../services/birthReminders.js'
 import { useSync } from '../../composables/useSync.js'
 import BirthOnboarding from './BirthOnboarding.vue'
@@ -32,14 +31,6 @@ const TABS = [
 ]
 
 const needsOnboarding = computed(() => !store.isConfigured && !browsing.value)
-
-// No-ops unless the user opted in; see services/analytics.js.
-track('birth_open')
-
-function selectView(next) {
-  view.value = next
-  track(`view_${next === 'saved' ? 'saved' : next}`)
-}
 
 /**
  * The month gradient, in the right key for the theme.
@@ -241,7 +232,7 @@ onBeforeUnmount(() => {
             class="bc-tap flex-1 py-3 text-xs font-medium transition"
             :aria-current="view === tab.id ? 'page' : undefined"
             :style="{ color: view === tab.id ? 'var(--bc-accent)' : 'var(--bc-muted)' }"
-            @click="selectView(tab.id)"
+            @click="view = tab.id"
           >
             {{ tab.label }}
           </button>

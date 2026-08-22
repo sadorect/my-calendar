@@ -7,7 +7,6 @@ import { useThemeStore } from './stores/theme'
 import { listenForInstallPrompt } from './composables/useShareApp.js'
 import { registerServiceWorker } from './services/registerServiceWorker.js'
 import { inject as injectVercelAnalytics } from '@vercel/analytics'
-import { startAnalytics } from './services/analytics.js'
 
 // Chrome fires `beforeinstallprompt` once and early — often before anything has
 // mounted — so the listener goes on before the app does.
@@ -17,11 +16,9 @@ listenForInstallPrompt()
 // arriving only after a hard refresh.
 registerServiceWorker()
 
-// Traffic only — page views, no cookies, no identifiers, nothing about what is
-// in the app. In-app usage counters are a separate, opt-in thing entirely
-// (src/services/analytics.js), and stay off until somebody turns them on.
+// Traffic only — page views, no cookies, no identifiers, and nothing about what
+// happens inside the app. Everything a person writes here stays on their device.
 injectVercelAnalytics({ mode: import.meta.env.PROD ? 'production' : 'development' })
-startAnalytics()
 
 const app = createApp(App)
 

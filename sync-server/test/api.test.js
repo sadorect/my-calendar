@@ -280,60 +280,6 @@ describe('CORS and hardening', () => {
   })
 })
 
-describe('usage counters', () => {
-  const installId = 'install-abcdefgh'
-  const event = (name, at = new Date()) => ({ name, occurredAt: at.toISOString() })
-
-  test('accepts a batch of allowlisted events', async () => {
-    const { status, body } = await call('/v1/usage', {
-      method: 'POST',
-      origin: ORIGIN,
-      body: { installId, events: [event('app_open'), event('view_today')] }
-    })
-    assert.equal(status, 202)
-    assert.equal(body.stored, 2)
-  })
-
-  test('drops names that are not on the allowlist', async () => {
-    const { status } = await call('/v1/usage', {
-      method: 'POST',
-      origin: ORIGIN,
-      body: { installId, events: [{ name: 'journal_text', occurredAt: new Date().toISOString() }] }
-    })
-    // Nothing survived the filter, so there is nothing to store.
-    assert.equal(status, 400)
-  })
-
-  test('drops events from a clock that is days out', async () => {
-    const longAgo = new Date(Date.now() - 30 * 86400000)
-    const { status } = await call('/v1/usage', {
-      method: 'POST',
-      origin: ORIGIN,
-      body: { installId, events: [event('app_open', longAgo)] }
-    })
-    assert.equal(status, 400)
-  })
-
-  test('rejects an install id that is not an opaque token', async () => {
-    const { status, body } = await call('/v1/usage', {
-      method: 'POST',
-      origin: ORIGIN,
-      body: { installId: 'someone@example.com', events: [event('app_open')] }
-    })
-    assert.equal(status, 400)
-    assert.equal(body.error, 'invalid_install_id')
-  })
-
-  test('refuses an oversized batch', async () => {
-    const { status } = await call('/v1/usage', {
-      method: 'POST',
-      origin: ORIGIN,
-      body: { installId, events: Array.from({ length: 51 }, () => event('app_open')) }
-    })
-    assert.equal(status, 400)
-  })
-})
-
 describe('stats', () => {
   test('needs the stats token', async () => {
     const anonymous = await call('/v1/stats', { origin: ORIGIN })
@@ -349,12 +295,9 @@ describe('stats', () => {
     assert.ok(Number.isInteger(body.accounts.total))
     assert.ok(Number.isInteger(body.accounts.new7d))
     assert.ok(Number.isInteger(body.vaults.total))
-    assert.ok(Number.isInteger(body.usage.installs7d))
-    assert.equal(typeof body.usage.events30d, 'object')
 
     const serialised = JSON.stringify(body)
     assert.ok(!serialised.includes('@'), 'no email should appear in the stats')
-    assert.ok(!serialised.includes('install-'), 'no install id should appear in the stats')
   })
 
   test('is absent entirely when no token is configured', async () => {
