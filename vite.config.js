@@ -23,6 +23,24 @@ export default defineConfig({
       // reload happens mid-sentence either.
       registerType: 'prompt',
       injectRegister: null,
+      workbox: {
+        // TRANSITIONAL — see README "PWA and app updates".
+        //
+        // Devices installed before the prompt-mode release are stuck: their old
+        // worker holds the page, the new worker installs and then waits
+        // forever, and no amount of refreshing (or reinstalling, which does not
+        // clear site data) moves them. Only closing every window frees it,
+        // which a phone rarely does.
+        //
+        // Taking over on activation breaks that deadlock: the old client's own
+        // registration reloads on an external activation, so the fleet heals
+        // itself. Revert both flags once the stuck installs have caught up —
+        // while they are set, the update banner cannot appear, because there is
+        // no waiting worker for it to announce.
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true
+      },
       includeAssets: [
         'icon-192x192.svg',
         'icon-512x512.svg',

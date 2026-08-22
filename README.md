@@ -399,6 +399,15 @@ npm run build
   needs to hard-refresh, and no reload happens mid-sentence.
 - A long-lived tab re-checks hourly, when it becomes visible again, and when
   the device comes back online.
+- **`skipWaiting` and `clientsClaim` are on, transitionally.** Devices that
+  installed the app before prompt mode shipped got stuck: their old worker held
+  the page, the new worker installed and waited forever, and neither refreshing
+  nor reinstalling helped — reinstalling a PWA does not clear site data, and only
+  closing every window frees a waiting worker, which a phone rarely does. Taking
+  over on activation breaks that deadlock; the stuck install picks up the new
+  version on its second open instead of never. **Remove both flags once those
+  installs have caught up** — while they are set there is no waiting worker, so
+  the update banner cannot appear.
 - The banner and the row read their state from `src/composables/useAppUpdate.js`,
   which has no service-worker import — that is what keeps it unit-testable and
   keeps a browser without service-worker support from breaking Settings (there,
