@@ -430,6 +430,21 @@ built and then removed: on an app whose onboarding screen promises that nothing
 is uploaded, a self-selected minority sample was not worth the privacy surface
 or the code. Visits and registrations answer the questions that get asked.
 
+### Android app
+
+The Android build is a **Trusted Web Activity**: a thin native shell around the
+same PWA, so a Vercel deploy updates the installed app with no release and no
+store round trip. There is no second codebase.
+
+`android/` holds the whole thing — `twa-manifest.json` is the source of truth,
+`npm run android:build` produces the signed APK, and `android/README.md`
+documents the signing key and the Digital Asset Links step that a TWA quietly
+breaks without. The build does **not** run on the VPS (no JDK, no Android SDK,
+and it does not belong there); build on a laptop or a CI runner.
+
+The signed APK is hosted on the VPS and linked from the app's tile on
+`dashboard.sadorect.com`.
+
 ### The deployment URL
 
 Nothing in the app hardcodes its own address — share links are built from

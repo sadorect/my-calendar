@@ -11,3 +11,19 @@ sync-server/.env
 .vercel
 .env*
 
+# Android (TWA) — the signing key, the build output, and the Gradle project
+# Bubblewrap regenerates from android/twa-manifest.json
+android/*.keystore
+android/dist/
+android/app/
+android/gradle/
+android/gradlew
+android/gradlew.bat
+android/build.gradle
+android/settings.gradle
+android/gradle.properties
+android/local.properties
+android/store_icon.png
+android/*.apk
+android/*.aab
+android/*.idsig
