@@ -150,12 +150,7 @@ async function doReset() {
     <section v-if="store.activeProfile?.kind === 'womb'" class="bc-card p-5">
       <h2 class="font-medium mb-1">Due date</h2>
       <p class="text-sm bc-muted mb-4">Everything else follows from this.</p>
-      <input
-        v-model="dueInput"
-        type="date"
-        class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-        :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
-      />
+      <input v-model="dueInput" type="date" class="bc-field bc-tap w-full px-4 py-3" />
       <label class="block text-sm font-medium mt-4 mb-2" for="bc-set-name">Baby's name</label>
       <input
         id="bc-set-name"
@@ -163,8 +158,7 @@ async function doReset() {
         type="text"
         maxlength="40"
         placeholder="Little one"
-        class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-        :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+        class="bc-field bc-tap w-full px-4 py-3"
         @change="store.setBabyName($event.target.value)"
       />
     </section>
@@ -235,8 +229,7 @@ async function doReset() {
         <input
           type="time"
           :value="settings.reminderTime"
-          class="bc-tap px-4 py-2 rounded-xl border bg-transparent"
-          :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+          class="bc-field bc-tap px-4 py-2"
           @change="set('reminderTime', $event.target.value)"
         />
       </label>

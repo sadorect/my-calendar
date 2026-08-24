@@ -119,8 +119,7 @@ async function save() {
             id="bc-due"
             v-model="dueInput"
             type="date"
-            class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            class="bc-field bc-tap w-full px-4 py-3"
           />
         </div>
 
@@ -133,8 +132,7 @@ async function save() {
               type="number"
               min="0"
               max="42"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
             />
           </div>
           <div>
@@ -145,8 +143,7 @@ async function save() {
               type="number"
               min="0"
               max="6"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
             />
           </div>
         </div>
@@ -161,8 +158,7 @@ async function save() {
             type="text"
             maxlength="40"
             placeholder="Little one"
-            class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            class="bc-field bc-tap w-full px-4 py-3"
           />
         </div>
 

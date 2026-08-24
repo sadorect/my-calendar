@@ -133,8 +133,7 @@ async function saveNote() {
             v-model="draft"
             rows="3"
             placeholder="What did you notice about them today?"
-            class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            class="bc-field bc-tap w-full px-4 py-3"
           />
           <div class="flex items-center gap-3 mt-3">
             <button

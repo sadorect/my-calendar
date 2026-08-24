@@ -244,6 +244,11 @@ test.describe('Several children', () => {
     await expect(page.getByText(/fearfully and wonderfully made/i).first()).toBeVisible()
     await expect(page.getByRole('button', { name: 'Speak this over Ada' })).toBeVisible()
 
+    // The parents' prayer says the child's name rather than "our child".
+    const prayer = page.getByText(/Amen\.$/).first()
+    await expect(prayer).toContainText('Ada')
+    await expect(prayer).not.toContainText('our child')
+
     // Saving it files it under the theme, not under a date.
     await page.getByRole('button', { name: 'Save to favourites' }).click()
     await page.getByRole('button', { name: 'Saved' }).click()
@@ -263,4 +268,58 @@ test.describe('Several children', () => {
       page.getByRole('navigation', { name: 'Choose a child' }).getByRole('button', { name: /Ada/ })
     ).toBeVisible()
   })
+})
+
+/** Parses `rgb()` / `rgba()` into channels, ignoring alpha. */
+function channels(colour) {
+  const parts = String(colour).match(/[\d.]+/g) || []
+  return parts.slice(0, 3).map(Number)
+}
+
+/** Crude perceived-brightness difference, enough to catch white-on-white. */
+function contrast(a, b) {
+  const lum = (c) => 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
+  return Math.abs(lum(channels(a)) - lum(channels(b)))
+}
+
+test.describe('Form fields in the birth calendar', () => {
+  // A transparent control with an explicit ink colour rendered near-white text
+  // on the white background a native <select> popup paints for itself. Only a
+  // real browser can prove this one, so it is asserted here rather than in a
+  // unit test.
+  for (const theme of ['light', 'dark']) {
+    test(`the life stage selector is readable in ${theme} mode`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: theme })
+      await openBirthCalendar(page)
+      await completeOnboarding(page)
+
+      await page.getByRole('button', { name: 'Settings' }).click()
+      await page.getByRole('button', { name: 'Add a child' }).click()
+      await page.getByLabel('Name', { exact: true }).fill('Ada')
+      await page.getByLabel('Birthday', { exact: true }).fill('2015-04-02')
+      await page.getByRole('button', { name: 'Add them' }).click()
+
+      await page.getByRole('button', { name: 'Settings' }).click()
+      await page.getByRole('button', { name: 'Edit' }).last().click()
+
+      const select = page.getByLabel('Life stage')
+      await expect(select).toBeVisible()
+
+      const style = await select.evaluate((el) => {
+        const s = getComputedStyle(el)
+        const option = el.querySelector('option')
+        return {
+          colour: s.color,
+          background: s.backgroundColor,
+          optionColour: option ? getComputedStyle(option).color : s.color,
+          optionBackground: option ? getComputedStyle(option).backgroundColor : s.backgroundColor
+        }
+      })
+
+      // Not transparent, and legible against its own background.
+      expect(style.background).not.toBe('rgba(0, 0, 0, 0)')
+      expect(contrast(style.colour, style.background)).toBeGreaterThan(60)
+      expect(contrast(style.optionColour, style.optionBackground)).toBeGreaterThan(60)
+    })
+  }
 })

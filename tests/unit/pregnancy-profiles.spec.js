@@ -330,6 +330,45 @@ describe('the born-stage track', () => {
     expect(cards[3].entry.title).toBe('You Are His')
   })
 
+  it('names the child in the parents\u2019 prayers', async () => {
+    store.selectStageDate(new Date(2027, 7, 3))
+    const prayer = store.activeStageWeekContent.parentsPrayer
+    expect(prayer).toContain('Ada')
+    expect(prayer).not.toContain('our child')
+  })
+
+  it('handles the possessive without leaving a stray apostrophe', () => {
+    expect(store.personaliseStage("build our child's private self")).toBe(
+      "build Ada's private self"
+    )
+    expect(store.personaliseStage('keep our child from harm')).toBe('keep Ada from harm')
+    expect(store.personaliseStage('thank You for this child')).toBe('thank You for Ada')
+  })
+
+  it('leaves the prayer alone when no name has been set', async () => {
+    const anon = await store.addProfile({ birthDate: '2015-04-02' })
+    store.selectStageDate(new Date(2027, 7, 3))
+    expect(store.activeProfile.id).toBe(anon.id)
+    expect(store.activeStageWeekContent.parentsPrayer).toContain('our child')
+  })
+
+  it('names the child on the weekly cards and in Saved too', async () => {
+    store.selectStageDate(new Date(2027, 7, 3))
+    const card = store.stageWeekCards.find((c) => c.entry)
+    expect(card.entry.parentsPrayer).toContain('Ada')
+
+    await store.toggleStageFavourite('week', 1)
+    const saved = store.stageFavourites.find((f) => f.kind === 'week')
+    expect(saved.entry.parentsPrayer).toContain('Ada')
+  })
+
+  it('does not touch the declarations, which have no vocative', () => {
+    store.selectStageDate(new Date(2027, 7, 3))
+    const before = store.activeStageDayContent.declaration
+    expect(before).not.toContain('Ada')
+    expect(before).not.toContain('our child')
+  })
+
   it('gives the womb child none of this', async () => {
     await store.setDueDate(new Date(2027, 5, 1))
     expect(store.activeTrack).toBe('womb')

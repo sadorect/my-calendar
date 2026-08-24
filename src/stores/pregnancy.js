@@ -415,6 +415,35 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   /** The theme for the month being read — the same twelve for every stage. */
   const activeTheme = computed(() => themeForMonth(activeStagePosition.value.month))
 
+  /**
+   * Puts the child's name into a parents' prayer.
+   *
+   * Born-stage *declarations* are written in the second person with no vocative,
+   * so they need no patching. The prayers are different: they are addressed to
+   * God about the child, so they have to say "our child" when no name is set —
+   * and should say the name when there is one. "Pray for Ada" is what a parent
+   * actually says out loud.
+   *
+   * The possessive is replaced first, because "our child" is a prefix of
+   * "our child's" and the plain rule would otherwise leave a stray apostrophe-s.
+   */
+  function personaliseStage(text) {
+    const name = activeProfile.value?.name?.trim()
+    if (!name || typeof text !== 'string') return text
+    return text
+      .replace(/\bour child['\u2019]s\b/g, `${name}'s`)
+      .replace(/\bthis child\b/g, name)
+      .replace(/\bour child\b/g, name)
+  }
+
+  /** A week entry with its prayer personalised. */
+  function personaliseStageEntry(entry) {
+    if (!entry) return entry
+    return typeof entry.parentsPrayer === 'string'
+      ? { ...entry, parentsPrayer: personaliseStage(entry.parentsPrayer) }
+      : entry
+  }
+
   const activeStageMonth = computed(() => {
     tracksContentLoads()
     return activeStage.value?.track === 'year'
@@ -435,7 +464,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     tracksContentLoads()
     if (activeStage.value?.track !== 'year') return null
     const { month, week } = activeStagePosition.value
-    return stageWeekContent(activeStage.value.id, month, week)
+    return personaliseStageEntry(stageWeekContent(activeStage.value.id, month, week))
   })
 
   /** The four weekly cards for the month being read, written or not. */
@@ -445,7 +474,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     const { year, month } = activeStagePosition.value
     const cards = []
     for (let w = 1; w <= WEEKS_PER_MONTH; w++) {
-      const entry = stageWeekContent(activeStage.value.id, month, w)
+      const entry = personaliseStageEntry(stageWeekContent(activeStage.value.id, month, w))
       cards.push({ week: w, ...weekRange(w, year, month), entry: entry || null })
     }
     return cards
@@ -525,7 +554,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
         const target = Number(match[3])
         const entry =
           kind === 'week'
-            ? stageWeekContent(activeStage.value.id, month, target)
+            ? personaliseStageEntry(stageWeekContent(activeStage.value.id, month, target))
             : stageDayContent(activeStage.value.id, month, target)
         if (!entry) return null
         return { key, kind, month, target, savedAt, entry, theme: themeForMonth(month) }
@@ -912,6 +941,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     stageFavourites,
     stageJournalEntries,
     ensureStageContent,
+    personaliseStage,
     contentRevision,
     dayKey,
     // content

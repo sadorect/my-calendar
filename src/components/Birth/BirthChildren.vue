@@ -108,8 +108,7 @@ async function remove(id) {
               type="text"
               maxlength="40"
               placeholder="Their name"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
               @change="store.updateProfile(profile.id, { name: $event.target.value })"
             />
           </div>
@@ -122,8 +121,7 @@ async function remove(id) {
               :id="`bc-dob-${profile.id}`"
               :value="toDateInput(profile.birthDate)"
               type="date"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
               @change="
                 store.updateProfile(profile.id, { birthDate: fromDateInput($event.target.value) })
               "
@@ -137,8 +135,7 @@ async function remove(id) {
             <select
               :id="`bc-stage-${profile.id}`"
               :value="profile.stage"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
               @change="store.updateProfile(profile.id, { stage: $event.target.value })"
             >
               <option value="auto">Follow their age</option>
@@ -159,8 +156,7 @@ async function remove(id) {
               :id="`bc-notes-${profile.id}`"
               :value="profile.notes"
               rows="2"
-              class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full px-4 py-3"
               @change="store.updateProfile(profile.id, { notes: $event.target.value })"
             />
           </div>
@@ -206,8 +202,7 @@ async function remove(id) {
           type="text"
           maxlength="40"
           placeholder="Their name"
-          class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-          :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+          class="bc-field bc-tap w-full px-4 py-3"
         />
       </div>
       <div>
@@ -216,8 +211,7 @@ async function remove(id) {
           id="bc-new-dob"
           v-model="newBirthDate"
           type="date"
-          class="bc-tap w-full px-4 py-3 rounded-xl border bg-transparent"
-          :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+          class="bc-field bc-tap w-full px-4 py-3"
         />
         <p class="text-xs bc-muted mt-1">This is all we need — their stage follows from it.</p>
       </div>

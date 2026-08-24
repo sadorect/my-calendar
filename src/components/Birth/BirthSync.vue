@@ -182,8 +182,7 @@ async function confirmDelete() {
             type="email"
             autocomplete="email"
             required
-            class="bc-tap w-full px-4 py-2.5 rounded-xl border bg-transparent"
-            :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+            class="bc-field bc-tap w-full px-4 py-2.5"
           />
         </label>
 
@@ -200,8 +199,7 @@ async function confirmDelete() {
               required
               :minlength="MIN_PASSWORD"
               aria-describedby="sync-password-hint"
-              class="bc-tap w-full pl-4 pr-16 py-2.5 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full pl-4 pr-16 py-2.5"
             />
             <button
               type="button"
@@ -232,8 +230,7 @@ async function confirmDelete() {
               :type="revealed.confirm ? 'text' : 'password'"
               autocomplete="new-password"
               required
-              class="bc-tap w-full pl-4 pr-16 py-2.5 rounded-xl border bg-transparent"
-              :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+              class="bc-field bc-tap w-full pl-4 pr-16 py-2.5"
             />
             <button
               type="button"
