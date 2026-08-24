@@ -72,7 +72,7 @@ function cardMeta() {
     dayLabel: `Day ${props.day}`,
     weekLabel: `Week ${weekOfPregnancy(props.day)}`,
     palette: monthPalette(monthForDay(props.day)),
-    babyName: store.state.babyName?.trim() || ''
+    babyName: store.babyName?.trim() || ''
   }
 }
 

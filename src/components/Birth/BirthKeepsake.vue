@@ -13,7 +13,7 @@ const store = usePregnancyStore()
 
 const selected = ref([...DEFAULT_SECTIONS])
 
-const keepsake = computed(() => buildKeepsake(store.state, selected.value))
+const keepsake = computed(() => buildKeepsake(store.activeAsLegacy, selected.value))
 const pages = computed(() => estimatePages(keepsake.value))
 
 function toggle(id) {

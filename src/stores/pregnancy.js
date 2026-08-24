@@ -30,50 +30,18 @@ import {
   weekContentForDay,
   monthPalette
 } from '../data/pregnancy/index.js'
+import {
+  emptyState,
+  emptyProfileData,
+  makeProfile,
+  migrateState,
+  orderedProfiles,
+  writeLegacyMirror,
+  LEGACY_PROFILE_ID
+} from '../services/familyState.js'
+import { resolveStage, ageInMonths, isStageId } from '../data/family/stages.js'
 
 const STORAGE_KEY = 'birthCalendar'
-
-/**
- * Everything the user owns in the birth calendar, in one serialisable object.
- *
- * Deliberately a single blob rather than a table per concern: it is written and
- * read atomically, and when cloud sync arrives it is one document to push, one
- * `updatedAt` to compare, and no cross-store consistency to reason about.
- */
-function emptyState() {
-  return {
-    version: 1,
-    dueDate: null, // ISO date string, the single source of truth for the timeline
-    babyName: '',
-    favourites: {}, // "day:47" | "week:12" -> ISO timestamp
-    journal: {}, // day number -> { text, updatedAt }
-    spoken: {}, // day number -> ISO timestamp
-    // Local day key ("2026-08-21") of the last delivered daily reminder. Kept
-    // outside `settings` because it is delivery bookkeeping, not a preference.
-    lastReminderKey: null,
-    settings: {
-      // Which calendar opens on launch. This is the toggle between the original
-      // productivity calendar and the birth calendar.
-      // The birth calendar is the app's front door; the productivity calendar
-      // is a tap away. Anyone who set this before keeps their own choice.
-      defaultMode: 'birth', // 'standard' | 'birth'
-      voice: 'parents', // 'parents' | 'partner' — rephrases where content provides it
-      reminderTime: '08:00',
-      remindersEnabled: false,
-      ambientSound: 'womb',
-      ambientVolume: 0.5,
-      fontScale: 1,
-      highContrast: false,
-      // Biometric app lock. `credentialId` is only ever set alongside a
-      // successful enrolment — never enable one without the other or the user
-      // is locked out of their own journal.
-      appLockEnabled: false,
-      credentialId: null,
-      lockGraceMinutes: 5
-    },
-    updatedAt: null
-  }
-}
 
 export const usePregnancyStore = defineStore('pregnancy', () => {
   const state = ref(emptyState())
@@ -87,15 +55,10 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   async function load() {
     const saved = await getSetting(STORAGE_KEY)
-    if (saved) {
-      // Merge rather than replace: a state shape gaining a field must not wipe
-      // a user's journal because their saved blob predates it.
-      state.value = {
-        ...emptyState(),
-        ...saved,
-        settings: { ...emptyState().settings, ...(saved.settings || {}) }
-      }
-    }
+    // `migrateState` handles absent, version 1 and version 2 blobs alike, and
+    // fills in any field a saved blob predates — so gaining a setting must
+    // never wipe somebody's journal.
+    state.value = migrateState(saved)
     loaded.value = true
   }
 
@@ -108,30 +71,162 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
    */
   async function persist({ touch = true } = {}) {
     if (touch) state.value.updatedAt = new Date().toISOString()
+    // Republished on every write so a device still running version 1 keeps
+    // reading the womb track correctly. See familyState.js.
+    writeLegacyMirror(state.value)
     await setSetting(STORAGE_KEY, JSON.parse(JSON.stringify(state.value)))
   }
 
   /** Replaces local state with a merged blob from sync. */
   async function applyState(next) {
-    state.value = {
-      ...emptyState(),
-      ...next,
-      settings: { ...emptyState().settings, ...(next?.settings || {}) }
-    }
+    state.value = migrateState(next)
     await persist({ touch: false })
+  }
+
+  /**
+   * The active child in the shape version 1 code expects.
+   *
+   * The keepsake builder and anything else written against the flat blob reads
+   * this rather than `state`, because `state`'s version 1 mirror always holds
+   * the *womb* child — printing that while another child is selected would be
+   * a quiet, convincing lie.
+   */
+  const activeAsLegacy = computed(() => ({
+    babyName: activeProfile.value?.name || '',
+    dueDate: activeProfile.value?.dueDate || null,
+    favourites: activeData.value.favourites,
+    journal: activeData.value.journal,
+    spoken: activeData.value.spoken,
+    settings: state.value.settings
+  }))
+
+  // ------------------------------------------------------------------ set-up
+
+  // ---------------------------------------------------------------- profiles
+
+  /** Every child on the account, oldest first — the order of the switcher. */
+  const profiles = computed(() => orderedProfiles(state.value))
+
+  const activeProfile = computed(() => state.value.profiles[state.value.activeProfileId] || null)
+
+  const hasProfiles = computed(() => profiles.value.length > 0)
+
+  /** Which content track the active child reads: 'womb', 'year', or none. */
+  const activeStage = computed(() => resolveStage(activeProfile.value, now.value))
+  const activeTrack = computed(() => activeStage.value?.track || null)
+
+  const activeAgeMonths = computed(() =>
+    activeProfile.value?.birthDate ? ageInMonths(activeProfile.value.birthDate, now.value) : null
+  )
+
+  /**
+   * The active child's own favourites, journal and spoken days.
+   *
+   * Always returns an object so a caller never has to null-check; it is only
+   * detached from the state when there is no active profile at all, in which
+   * case nothing can be written anyway.
+   */
+  const activeData = computed(() => {
+    const id = state.value.activeProfileId
+    if (!id) return emptyProfileData()
+    if (!state.value.data[id]) state.value.data[id] = emptyProfileData()
+    return state.value.data[id]
+  })
+
+  async function selectProfile(id) {
+    if (!state.value.profiles[id]) return false
+    state.value.activeProfileId = id
+    selectedDay.value = null
+    await persist()
+    return true
+  }
+
+  /** Adds a child and switches to them, because that is always what was meant. */
+  async function addProfile(attrs = {}) {
+    const profile = makeProfile(attrs)
+    state.value.profiles[profile.id] = profile
+    state.value.data[profile.id] = emptyProfileData()
+    state.value.activeProfileId = profile.id
+    selectedDay.value = null
+    await persist()
+    return profile
+  }
+
+  async function updateProfile(id, patch = {}) {
+    const profile = state.value.profiles[id]
+    if (!profile) return null
+    const next = { ...profile, ...patch, id }
+    if (next.kind === 'womb') next.stage = 'womb'
+    else if (!isStageId(next.stage) && next.stage !== 'auto') next.stage = 'auto'
+    next.name = String(next.name || '').trim()
+    next.updatedAt = new Date().toISOString()
+    state.value.profiles[id] = next
+    await persist()
+    return next
+  }
+
+  /**
+   * Removes a child and everything they own.
+   *
+   * Irreversible and the caller must confirm it: a journal written over years
+   * is the most valuable thing in this app and there is no undo.
+   */
+  async function removeProfile(id) {
+    if (!state.value.profiles[id]) return false
+    delete state.value.profiles[id]
+    delete state.value.data[id]
+    if (state.value.activeProfileId === id) {
+      state.value.activeProfileId = orderedProfiles(state.value)[0]?.id || null
+      selectedDay.value = null
+    }
+    await persist()
+    return true
   }
 
   // ------------------------------------------------------------------ set-up
 
-  const isConfigured = computed(() => isValidDueDate(state.value.dueDate))
+  /**
+   * Whether the active child is ready to show content. A womb profile needs a
+   * due date; a born child needs a birth date.
+   */
+  const isConfigured = computed(() => {
+    const profile = activeProfile.value
+    if (!profile) return false
+    if (profile.kind === 'womb') return isValidDueDate(profile.dueDate)
+    return Boolean(profile.birthDate) && !Number.isNaN(Date.parse(profile.birthDate))
+  })
 
-  const dueDate = computed(() => (isConfigured.value ? new Date(state.value.dueDate) : null))
+  const dueDate = computed(() => {
+    const raw = activeProfile.value?.dueDate
+    return raw && isValidDueDate(raw) ? new Date(raw) : null
+  })
 
+  const babyName = computed(() => activeProfile.value?.name || '')
+
+  /**
+   * Sets the due date, creating the womb profile if this is a first run.
+   *
+   * Onboarding calls this before any profile exists, and the id it mints is the
+   * fixed legacy one so that a user who later syncs with a device still holding
+   * a version 1 blob lands on the same child rather than a duplicate.
+   */
   async function setDueDate(value) {
     const d = value instanceof Date ? value : new Date(value)
     if (Number.isNaN(d.getTime())) throw new Error('Invalid due date')
     d.setHours(0, 0, 0, 0)
-    state.value.dueDate = d.toISOString()
+
+    let profile = activeProfile.value
+    if (!profile || profile.kind !== 'womb') {
+      profile = profiles.value.find((p) => p.kind === 'womb') || null
+    }
+    if (!profile) {
+      profile = makeProfile({ id: LEGACY_PROFILE_ID, kind: 'womb' })
+      state.value.profiles[profile.id] = profile
+      state.value.data[profile.id] = emptyProfileData()
+    }
+    state.value.activeProfileId = profile.id
+    profile.dueDate = d.toISOString()
+    profile.updatedAt = new Date().toISOString()
     await persist()
   }
 
@@ -141,7 +236,9 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   }
 
   async function setBabyName(name) {
-    state.value.babyName = String(name || '').trim()
+    if (!activeProfile.value) return
+    activeProfile.value.name = String(name || '').trim()
+    activeProfile.value.updatedAt = new Date().toISOString()
     await persist()
   }
 
@@ -150,7 +247,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     await persist()
   }
 
-  /** Clears the timeline and everything attached to it. Used by Settings. */
+  /** Clears every child and everything attached to them. Used by Settings. */
   async function reset() {
     state.value = emptyState()
     selectedDay.value = null
@@ -214,7 +311,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
    * here, so the name shows up on weeks and favourites and not just on today.
    */
   function personalise(text) {
-    const name = state.value.babyName?.trim()
+    const name = activeProfile.value?.name?.trim()
     if (!name || typeof text !== 'string') return text
     return text.replace(/Little one/g, name)
   }
@@ -279,22 +376,23 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   }
 
   function isFavourite(kind, id) {
-    return Boolean(state.value.favourites[favouriteKey(kind, id)])
+    return Boolean(activeData.value.favourites[favouriteKey(kind, id)])
   }
 
   async function toggleFavourite(kind, id) {
     const key = favouriteKey(kind, id)
-    if (state.value.favourites[key]) {
-      delete state.value.favourites[key]
+    const map = activeData.value.favourites
+    if (map[key]) {
+      delete map[key]
     } else {
-      state.value.favourites[key] = new Date().toISOString()
+      map[key] = new Date().toISOString()
     }
     await persist()
   }
 
   /** Favourites resolved back to their content, newest first. */
   const favourites = computed(() =>
-    Object.entries(state.value.favourites)
+    Object.entries(activeData.value.favourites)
       .map(([key, savedAt]) => {
         const [kind, rawId] = key.split(':')
         const id = Number(rawId)
@@ -308,21 +406,22 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   // ------------------------------------------------------------------ journal
 
   function journalFor(day) {
-    return state.value.journal[day]?.text || ''
+    return activeData.value.journal[day]?.text || ''
   }
 
   async function saveJournal(day, text) {
     const trimmed = String(text || '')
+    const map = activeData.value.journal
     if (!trimmed.trim()) {
-      delete state.value.journal[day]
+      delete map[day]
     } else {
-      state.value.journal[day] = { text: trimmed, updatedAt: new Date().toISOString() }
+      map[day] = { text: trimmed, updatedAt: new Date().toISOString() }
     }
     await persist()
   }
 
   const journalEntries = computed(() =>
-    Object.entries(state.value.journal)
+    Object.entries(activeData.value.journal)
       .map(([day, entry]) => ({ day: Number(day), ...entry }))
       .sort((a, b) => b.day - a.day)
   )
@@ -330,19 +429,20 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   // -------------------------------------------------------- spoken / progress
 
   function isSpoken(day) {
-    return Boolean(state.value.spoken[day])
+    return Boolean(activeData.value.spoken[day])
   }
 
   async function toggleSpoken(day) {
-    if (state.value.spoken[day]) {
-      delete state.value.spoken[day]
+    const map = activeData.value.spoken
+    if (map[day]) {
+      delete map[day]
     } else {
-      state.value.spoken[day] = new Date().toISOString()
+      map[day] = new Date().toISOString()
     }
     await persist()
   }
 
-  const spokenCount = computed(() => Object.keys(state.value.spoken).length)
+  const spokenCount = computed(() => Object.keys(activeData.value.spoken).length)
 
   /**
    * Consecutive days spoken, counting back from today. Encouragement, not
@@ -353,7 +453,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     if (!todayDay.value) return 0
     let streak = 0
     for (let day = todayDay.value; day >= 1; day--) {
-      if (!state.value.spoken[day]) break
+      if (!activeData.value.spoken[day]) break
       streak++
     }
     return streak
@@ -363,8 +463,8 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   /** Stamps a day as delivered so the same reminder cannot fire twice. */
   async function markReminderFired(key) {
-    if (state.value.lastReminderKey === key) return
-    state.value.lastReminderKey = key
+    if (activeData.value.lastReminderKey === key) return
+    activeData.value.lastReminderKey = key
     await persist()
   }
 
@@ -372,7 +472,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   const reminderConfig = computed(() => ({
     enabled: Boolean(state.value.settings.remindersEnabled),
     time: state.value.settings.reminderTime || '08:00',
-    lastFiredKey: state.value.lastReminderKey
+    lastFiredKey: activeData.value.lastReminderKey
   }))
 
   /**
@@ -478,9 +578,23 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     state,
     loaded,
     selectedDay,
+    // profiles
+    profiles,
+    activeProfile,
+    hasProfiles,
+    activeStage,
+    activeTrack,
+    activeAgeMonths,
+    activeData,
+    activeAsLegacy,
+    selectProfile,
+    addProfile,
+    updateProfile,
+    removeProfile,
     // setup
     isConfigured,
     dueDate,
+    babyName,
     setDueDate,
     setCurrentProgress,
     setBabyName,

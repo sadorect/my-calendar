@@ -10,6 +10,8 @@ import BirthMonth from './BirthMonth.vue'
 import BirthWeeks from './BirthWeeks.vue'
 import BirthFavourites from './BirthFavourites.vue'
 import BirthSettings from './BirthSettings.vue'
+import BirthProfileSwitcher from './BirthProfileSwitcher.vue'
+import BirthStagePlaceholder from './BirthStagePlaceholder.vue'
 import BirthDayModal from './BirthDayModal.vue'
 import BirthLock from './BirthLock.vue'
 
@@ -235,6 +237,7 @@ onBeforeUnmount(() => {
 
       <!-- pt clears the fixed "back to calendar" control in the corner. -->
       <main class="pt-12 pb-24">
+        <BirthProfileSwitcher />
         <Transition
           mode="out-in"
           enter-active-class="transition duration-200 ease-out"
@@ -242,11 +245,19 @@ onBeforeUnmount(() => {
           leave-active-class="transition duration-100 ease-in"
           leave-to-class="opacity-0"
         >
-          <BirthToday v-if="view === 'today'" @open-day="openDay" @open-weeks="view = 'weeks'" />
+          <BirthSettings v-if="view === 'settings'" />
+          <!-- Only the womb track has content written. A child in any other
+               stage gets an honest placeholder rather than a pregnancy screen
+               with nothing behind it. -->
+          <BirthStagePlaceholder v-else-if="store.activeTrack === 'year'" />
+          <BirthToday
+            v-else-if="view === 'today'"
+            @open-day="openDay"
+            @open-weeks="view = 'weeks'"
+          />
           <BirthMonth v-else-if="view === 'month'" @open-day="openDay" />
           <BirthWeeks v-else-if="view === 'weeks'" />
           <BirthFavourites v-else-if="view === 'saved'" @open-day="openDay" />
-          <BirthSettings v-else-if="view === 'settings'" />
         </Transition>
       </main>
 

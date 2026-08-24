@@ -16,7 +16,7 @@ const mode = ref('due')
 const dueInput = ref('')
 const weeksInput = ref(12)
 const daysInput = ref(0)
-const babyName = ref(store.state.babyName || '')
+const babyName = ref(store.babyName || '')
 const saving = ref(false)
 const error = ref('')
 

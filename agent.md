@@ -120,6 +120,90 @@ The biometric lock remains a *device* lock and is unrelated to the account.
 - One account = one blob. Sharing a pregnancy between two accounts (both
   parents, separate logins) would need a second concept and is not designed.
 
+### Phase 9: Family Whispers — many children, many stages (2026-08-24)
+
+The app grows from one pregnancy to a family. A profile per child, each in a
+life stage, each owning their own favourites, journal and spoken days. **The
+womb track is untouched** — same content, same date maths, same screens — and a
+household with one child never sees a switcher, a stage or anything else that
+implies a concept they did not ask for.
+
+Two content tracks, because the addressing genuinely differs:
+
+| Track  | Address                                  | Repeats |
+| ------ | ---------------------------------------- | ------- |
+| `womb` | day of pregnancy 1..280, 9 uneven months | never   |
+| `year` | calendar month 1..12 + day of month      | yearly  |
+
+The twelve evergreen themes belong to the seven post-birth stages. Pregnancy
+keeps its nine months: re-cutting 280 written declarations onto a structure the
+timeline does not use would break the validator, the tests and what current
+users see, to no one's benefit.
+
+#### Done
+
+- [x] `src/data/family/stages.js` — the seven stages, their age ranges and the
+      auto-derivation from a birth date. Ranges are half-open, so the birthday
+      belongs to the older stage and no child is ever in two at once.
+- [x] `src/services/familyState.js` — the version 2 blob, and `migrateState`,
+      which takes an absent, version 1 or version 2 blob and is idempotent.
+- [x] Profile-scoped store: `profiles`, `activeProfile`, `activeStage`,
+      `activeTrack`, `activeData`, and CRUD. The public surface the Birth
+      components use (`isFavourite`, `journalFor`, `toggleSpoken`, `babyName`)
+      kept its signatures, so they did not churn.
+- [x] `mergeState.js` merges per profile, and profiles union by id.
+- [x] `BirthProfileSwitcher.vue` (hidden below two children) and
+      `BirthChildren.vue` in Settings — add, rename, birthday, stage, notes,
+      remove with confirmation.
+- [x] `BirthStagePlaceholder.vue` — an honest "being written" screen for a
+      stage with no content yet, instead of a pregnancy screen with nothing
+      behind it.
+- [x] 34 new unit tests (184 total) and an e2e covering onboard → add child →
+      switch → restart.
+
+#### The version 1 mirror, and why it exists
+
+Sync is live and `VITE_SYNC_URL` is set on Vercel, so this migration runs
+against **real accounts**, not just local storage. This app's own history says
+installs lag: a device holding an old service worker can run version 1 code for
+days. A version 2 blob with no top-level `journal` would look, to that device,
+like a user who had cleared it — and it would push that back.
+
+So a version 2 blob carries a *mirror* of the primary womb child in the version
+1 fields, and `reconcileLegacyMirror` folds anything an old client wrote back
+into the profile on load. Two rules make it safe:
+
+- The migrated profile id is **fixed** (`womb-1`), not random. Two devices
+  migrating the same account offline would otherwise mint two ids and the union
+  would hand the user duplicate children.
+- **A merge never clears a field to empty.** A version 1 blob migrated for
+  merging is blank everywhere version 1 cannot reach and stamped with the moment
+  it synced, so it always looks newest; whole-record "newest wins" would let a
+  stale device erase the notes, photo and stage of a child it cannot see. Caught
+  by a test, not by inspection.
+
+Remove the mirror only once no version 1 client can plausibly still be out
+there.
+
+#### Decisions taken with the user
+
+- Womb keeps its nine months; the twelve themes are for the born stages.
+- Rebrand is **display name only** — the origin, the TWA package id and the
+  icons stay, so nobody loses their IndexedDB or their installed app.
+- Content for School Years and Teen Years is written one theme first, for the
+  voice to be corrected before the other 22 month-files are produced.
+
+#### Still open
+
+- **No born-stage content exists yet.** ~365 daily + 48 weekly declarations per
+  stage; School and Teen are the two to write first.
+- The `year` track resolver, month/weeks views and keepsake for born stages.
+- Photos: `photoId` is in the model but there is no photo store yet. Photos must
+  **not** sync — the server caps a body at 4MB and every push sends the whole
+  blob.
+- Reminders still follow the active child only. With several children this
+  should become one digest at the chosen time, not one notification each.
+
 ## Current Status
 
 - **Date**: August 21, 2026

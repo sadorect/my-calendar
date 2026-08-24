@@ -133,3 +133,155 @@ describe('statesDiffer', () => {
     expect(statesDiffer(null, blob())).toBe(true)
   })
 })
+
+describe('mergeStates — many children', () => {
+  const OLDER = '2026-08-19T10:00:00.000Z'
+
+  function child(id, name, over = {}) {
+    return {
+      id,
+      kind: 'child',
+      name,
+      birthDate: '2015-04-02',
+      stage: 'auto',
+      notes: '',
+      photoId: null,
+      createdAt: OLDER,
+      updatedAt: OLDER,
+      ...over
+    }
+  }
+
+  function v2(overrides = {}) {
+    return {
+      version: 2,
+      profiles: {},
+      data: {},
+      activeProfileId: null,
+      settings: { voice: 'parents' },
+      updatedAt: OLD,
+      ...overrides
+    }
+  }
+
+  it('keeps a child added on one device only', () => {
+    const local = v2({ profiles: { a: child('a', 'Ada') }, data: { a: {} } })
+    const remote = v2({ profiles: { b: child('b', 'Ben') }, data: { b: {} } })
+    const merged = mergeStates(local, remote)
+    expect(Object.keys(merged.profiles).sort()).toEqual(['a', 'b'])
+    expect(merged.profiles.a.name).toBe('Ada')
+    expect(merged.profiles.b.name).toBe('Ben')
+  })
+
+  it('takes the later edit of the same child', () => {
+    const local = v2({ profiles: { a: child('a', 'Ada', { updatedAt: NEW }) }, data: { a: {} } })
+    const remote = v2({
+      profiles: { a: child('a', 'Adaeze', { updatedAt: OLD }) },
+      data: { a: {} }
+    })
+    expect(mergeStates(local, remote).profiles.a.name).toBe('Ada')
+    expect(mergeStates(remote, local).profiles.a.name).toBe('Ada')
+  })
+
+  it('never lets one child’s journal land on another', () => {
+    const local = v2({
+      profiles: { a: child('a', 'Ada'), b: child('b', 'Ben') },
+      data: {
+        a: { journal: { '2026-08-20': { text: 'Ada had a hard day.', updatedAt: OLD } } },
+        b: { journal: {} }
+      }
+    })
+    const remote = v2({
+      profiles: { a: child('a', 'Ada'), b: child('b', 'Ben') },
+      data: {
+        a: { journal: {} },
+        b: { journal: { '2026-08-20': { text: 'Ben scored a goal.', updatedAt: OLD } } }
+      }
+    })
+    const merged = mergeStates(local, remote)
+    expect(merged.data.a.journal['2026-08-20'].text).toBe('Ada had a hard day.')
+    expect(merged.data.b.journal['2026-08-20'].text).toBe('Ben scored a goal.')
+  })
+
+  it('merges each child’s favourites independently', () => {
+    const local = v2({
+      profiles: { a: child('a', 'Ada') },
+      data: { a: { favourites: { 'school:m03:d17': NEW } } }
+    })
+    const remote = v2({
+      profiles: { a: child('a', 'Ada') },
+      data: { a: { favourites: { 'school:m03:d17': OLD, 'school:m04:w2': OLD } } }
+    })
+    const merged = mergeStates(local, remote)
+    expect(merged.data.a.favourites['school:m03:d17']).toBe(OLD)
+    expect(merged.data.a.favourites['school:m04:w2']).toBe(OLD)
+  })
+
+  it('does not leave the active profile pointing at nothing', () => {
+    const local = v2({
+      profiles: { a: child('a', 'Ada') },
+      data: { a: {} },
+      activeProfileId: 'gone'
+    })
+    const merged = mergeStates(local, v2({ updatedAt: OLDER }))
+    expect(merged.activeProfileId).toBe('a')
+  })
+
+  it('does not let a stale version 1 device erase what it cannot see', () => {
+    // The old client syncs later, so its migrated profile looks newest. It must
+    // still not clear the notes, photo or stage it has no way to represent.
+    const newClient = v2({
+      profiles: {
+        'womb-1': child('womb-1', 'Hope', {
+          kind: 'womb',
+          stage: 'womb',
+          birthDate: null,
+          dueDate: '2026-12-01T00:00:00.000Z',
+          notes: 'Consultant appointment on the 3rd.',
+          photoId: 'ph_1'
+        })
+      },
+      data: { 'womb-1': {} }
+    })
+    const oldClient = blob({ updatedAt: NEW })
+
+    const merged = mergeStates(newClient, oldClient)
+    expect(merged.profiles['womb-1'].notes).toBe('Consultant appointment on the 3rd.')
+    expect(merged.profiles['womb-1'].photoId).toBe('ph_1')
+    expect(merged.profiles['womb-1'].name).toBe('Hope')
+    expect(merged.profiles['womb-1'].dueDate).toBe('2026-12-01T00:00:00.000Z')
+  })
+
+  it('merges a version 1 blob from a device that has not updated', () => {
+    // The old device only knows the womb track and rewrites the mirror fields.
+    const oldClient = blob({
+      journal: { 47: { text: 'Written on the old app.', updatedAt: NEW } },
+      updatedAt: NEW
+    })
+    const newClient = v2({
+      profiles: {
+        'womb-1': child('womb-1', 'Hope', {
+          kind: 'womb',
+          stage: 'womb',
+          birthDate: null,
+          dueDate: '2026-12-01T00:00:00.000Z'
+        }),
+        b: child('b', 'Ben')
+      },
+      data: {
+        'womb-1': { journal: { 46: { text: 'Written on the new app.', updatedAt: OLD } } },
+        b: { journal: { '2026-08-20': { text: 'Ben’s note.', updatedAt: OLD } } }
+      }
+    })
+
+    const merged = mergeStates(newClient, oldClient)
+    // The old client's work arrives on the womb child...
+    expect(merged.data['womb-1'].journal[47].text).toBe('Written on the old app.')
+    expect(merged.data['womb-1'].journal[46].text).toBe('Written on the new app.')
+    // ...and the child it could not see is untouched.
+    expect(merged.data.b.journal['2026-08-20'].text).toBe('Ben’s note.')
+    // The result still speaks version 1 for the next device that has not updated.
+    expect(merged.journal[47].text).toBe('Written on the old app.')
+    expect(merged.babyName).toBe('Hope')
+  })
+})

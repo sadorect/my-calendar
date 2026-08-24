@@ -201,3 +201,47 @@ test.describe('birth calendar', () => {
     await expect(page.getByRole('heading', { name: /^(My |Personal )?Calendar$/ })).toBeVisible()
   })
 })
+
+test.describe('Several children', () => {
+  test('keeps each child’s journal to themselves', async ({ page }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    // Name the pregnancy, so the switcher has something to show.
+    await page.getByRole('button', { name: 'Settings' }).click()
+    await page.getByLabel("Baby's name").fill('Hope')
+    await page.getByLabel("Baby's name").blur()
+
+    // Add a school-age child.
+    await page.getByRole('button', { name: 'Add a child' }).click()
+    await page.getByLabel('Name', { exact: true }).fill('Ada')
+    await page.getByLabel('Birthday', { exact: true }).fill('2015-04-02')
+    await page.getByRole('button', { name: 'Add them' }).click()
+
+    // Adding switches to them, and their stage is derived from the birthday.
+    const switcher = page.getByRole('navigation', { name: 'Choose a child' })
+    await expect(switcher).toBeVisible()
+    await expect(switcher.getByRole('button', { name: /Ada/ })).toHaveAttribute(
+      'aria-current',
+      'true'
+    )
+    await expect(page.getByText(/School Years/).first()).toBeVisible()
+
+    // A stage with no content written says so rather than showing a pregnancy.
+    await page.getByRole('button', { name: 'Today' }).click()
+    await expect(page.getByRole('heading', { name: /declarations for ada/i })).toBeVisible()
+
+    // Switching back restores the pregnancy exactly as it was.
+    await switcher.getByRole('button', { name: /Hope/ }).click()
+    await expect(page.getByText('12w 3d')).toBeVisible()
+
+    // And it survives a restart. Deliberately not `page.reload()`: the helper
+    // arrived at `?calendar=standard`, which forces the productivity calendar
+    // for one launch, so a reload would reopen that instead of the birth one.
+    await page.goto('/')
+    await expect(page.getByText('12w 3d')).toBeVisible({ timeout: 20000 })
+    await expect(
+      page.getByRole('navigation', { name: 'Choose a child' }).getByRole('button', { name: /Ada/ })
+    ).toBeVisible()
+  })
+})

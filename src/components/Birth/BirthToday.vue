@@ -8,7 +8,7 @@ import BirthAmbient from './BirthAmbient.vue'
 const store = usePregnancyStore()
 const emit = defineEmits(['open-day', 'open-weeks'])
 
-const baby = computed(() => store.state.babyName || 'your little one')
+const baby = computed(() => store.babyName || 'your little one')
 
 const progressLabel = computed(() => {
   const age = store.activeAge

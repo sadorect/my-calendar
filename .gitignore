@@ -8,3 +8,8 @@ playwright-report/index.html
 test-results
 # Sync server deployment secrets
 sync-server/.env
+
+# Local build-time settings (VITE_SYNC_URL and friends) and the Vercel link
+.env.local
+.env.*.local
+.vercel
