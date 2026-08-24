@@ -19,7 +19,7 @@
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.0",
     "@fullcalendar/interaction": "^6.1.0",
-    "@fullcalendar/list": "^6.1.20",
+    "@fullcalendar/list": "^6.1.21",
     "@fullcalendar/timegrid": "^6.1.0",
     "@fullcalendar/vue3": "^6.1.0",
     "@vercel/analytics": "^2.0.1",
