@@ -227,12 +227,31 @@ test.describe('Several children', () => {
     )
     await expect(page.getByText(/School Years/).first()).toBeVisible()
 
-    // A stage with no content written says so rather than showing a pregnancy.
-    await page.getByRole('button', { name: 'Today' }).click()
-    await expect(page.getByRole('heading', { name: /declarations for ada/i })).toBeVisible()
+    // Ada reads the theme for whatever month it is. Only January is written so
+    // far, so step the month view round to it rather than depending on today's
+    // date — this test must pass in March as well as in January.
+    await page.getByRole('button', { name: 'Month' }).click()
+    const heading = page.getByRole('heading', { level: 1 })
+    for (let i = 0; i < 12; i++) {
+      if ((await heading.textContent())?.includes('Identity & Belonging')) break
+      await page.getByRole('button', { name: 'Previous month' }).click()
+    }
+    await expect(heading).toHaveText('Identity & Belonging')
+
+    // A written day opens on Today with its declaration and Scripture.
+    await page.getByRole('button', { name: /^Day 3:/ }).click()
+    await expect(page.getByRole('heading', { name: 'Wonderfully Made' })).toBeVisible()
+    await expect(page.getByText(/fearfully and wonderfully made/i).first()).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Speak this over Ada' })).toBeVisible()
+
+    // Saving it files it under the theme, not under a date.
+    await page.getByRole('button', { name: 'Save to favourites' }).click()
+    await page.getByRole('button', { name: 'Saved' }).click()
+    await expect(page.getByText('Identity & Belonging · Day 3')).toBeVisible()
 
     // Switching back restores the pregnancy exactly as it was.
     await switcher.getByRole('button', { name: /Hope/ }).click()
+    await page.getByRole('button', { name: 'Today' }).click()
     await expect(page.getByText('12w 3d')).toBeVisible()
 
     // And it survives a restart. Deliberately not `page.reload()`: the helper

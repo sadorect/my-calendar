@@ -11,7 +11,10 @@ import BirthWeeks from './BirthWeeks.vue'
 import BirthFavourites from './BirthFavourites.vue'
 import BirthSettings from './BirthSettings.vue'
 import BirthProfileSwitcher from './BirthProfileSwitcher.vue'
-import BirthStagePlaceholder from './BirthStagePlaceholder.vue'
+import BirthStageToday from './BirthStageToday.vue'
+import BirthStageMonth from './BirthStageMonth.vue'
+import BirthStageWeeks from './BirthStageWeeks.vue'
+import BirthStageSaved from './BirthStageSaved.vue'
 import BirthDayModal from './BirthDayModal.vue'
 import BirthLock from './BirthLock.vue'
 
@@ -90,6 +93,11 @@ const scopeStyle = computed(() => ({
 function startBrowsing() {
   browsing.value = true
   store.selectDay(1)
+}
+
+/** Named, not inline: see `startBrowsing` for why a formatting pass matters. */
+function showToday() {
+  view.value = 'today'
 }
 
 function openDay(day) {
@@ -246,10 +254,15 @@ onBeforeUnmount(() => {
           leave-to-class="opacity-0"
         >
           <BirthSettings v-if="view === 'settings'" />
-          <!-- Only the womb track has content written. A child in any other
-               stage gets an honest placeholder rather than a pregnancy screen
-               with nothing behind it. -->
-          <BirthStagePlaceholder v-else-if="store.activeTrack === 'year'" />
+          <!-- A born child reads the twelve evergreen themes; the womb reads
+               its own 280-day timeline. Two tracks, one shell. -->
+          <template v-else-if="store.activeTrack === 'year'">
+            <BirthStageToday v-if="view === 'today'" />
+            <!-- Choosing a day on the grid reads it, which happens on Today. -->
+            <BirthStageMonth v-else-if="view === 'month'" @open-day="showToday" />
+            <BirthStageWeeks v-else-if="view === 'weeks'" />
+            <BirthStageSaved v-else-if="view === 'saved'" />
+          </template>
           <BirthToday
             v-else-if="view === 'today'"
             @open-day="openDay"

@@ -193,16 +193,57 @@ there.
 - Content for School Years and Teen Years is written one theme first, for the
   voice to be corrected before the other 22 month-files are produced.
 
+#### The `year` track, and the first theme (same day)
+
+The born-stage track is built and readable in the app.
+
+- [x] `src/services/stageTimeline.js` — calendar month + day-of-month, four
+      weekly cards with the tail of the month absorbed into week 4 rather than a
+      fifth card most months would not fill.
+- [x] `src/data/family/themes.js` — the twelve evergreen themes, one per
+      calendar month, the same twelve for every stage.
+- [x] `src/data/family/index.js` — loader and a validator that throws at module
+      load on a file whose month, stage or slug disagree with where it sits.
+- [x] **Theme 1, Identity & Belonging, written for School Years and Teen
+      Years**: intro, key Scriptures, 4 weekly declarations with a parents'
+      prayer, and 31 daily declarations each.
+- [x] `BirthStageToday`, `BirthStageMonth`, `BirthStageWeeks`,
+      `BirthStageSaved`, `StageDeclarationCard` — speak, mark-as-spoken,
+      favourite, share as text or image, and a per-day journal.
+- [x] `src/data/family/README.md` — the authoring guide for the remaining 22
+      month-files.
+
+Three decisions inside that are worth not re-litigating:
+
+- **Born-stage content is written in the second person with no vocative.** The
+  pregnancy content uses `Little one` as an address the app swaps for a chosen
+  name; that is wrong over a fifteen-year-old and reads badly for the many users
+  who never set a name. A test asserts no born-stage declaration contains it.
+- **Favourites are filed by position** (`school:m01:d03`), so a declaration
+  saved last January is still saved this January — the point of an evergreen
+  theme. **Journal and spoken days are filed by real date**, because a note
+  about your teenager belongs to the day it happened.
+- **Month stepping exists because a theme is only "today" for one month a
+  year.** Without it, January's content would be unreachable until January, and
+  the e2e for it would only pass in January.
+
+`StageDeclarationCard` is a sibling of `DeclarationCard`, not a generalisation
+of it: that component addresses content by day of pregnancy and is the most-used
+screen in the shipped app, and the point of this change is that the womb track
+does not move.
+
 #### Still open
 
-- **No born-stage content exists yet.** ~365 daily + 48 weekly declarations per
-  stage; School and Teen are the two to write first.
-- The `year` track resolver, month/weeks views and keepsake for born stages.
+- **22 month-files to write** — 11 more themes each for School and Teen, then
+  the other four born stages. ~365 daily + 48 weekly per stage.
+- Keepsake and printable export for born stages (`keepsake.js` is womb-shaped).
 - Photos: `photoId` is in the model but there is no photo store yet. Photos must
   **not** sync — the server caps a body at 4MB and every push sends the whole
   blob.
 - Reminders still follow the active child only. With several children this
   should become one digest at the chosen time, not one notification each.
+- The app is still named "Birth Calendar" in the manifest; the agreed
+  display-name-only rebrand to Family Whispers has not been done.
 
 ## Current Status
 

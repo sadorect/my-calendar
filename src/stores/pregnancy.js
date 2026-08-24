@@ -40,14 +40,42 @@ import {
   LEGACY_PROFILE_ID
 } from '../services/familyState.js'
 import { resolveStage, ageInMonths, isStageId } from '../data/family/stages.js'
+import {
+  stageDayContent,
+  stageWeekContent,
+  stageMonthContent,
+  stagePalette,
+  themesForStage,
+  themeForMonth
+} from '../data/family/index.js'
+import {
+  stagePosition,
+  dateForPosition,
+  daysInMonth,
+  weekOfMonth,
+  weekRange,
+  monthProgress,
+  dayKey,
+  dateFromDayKey,
+  dayFavouriteKey,
+  weekFavouriteKey,
+  WEEKS_PER_MONTH
+} from '../services/stageTimeline.js'
 
 const STORAGE_KEY = 'birthCalendar'
 
 export const usePregnancyStore = defineStore('pregnancy', () => {
   const state = ref(emptyState())
   const loaded = ref(false)
-  /** Day the user is browsing. Null means "follow today". */
+  /** Day of pregnancy the user is browsing. Null means "follow today". */
   const selectedDay = ref(null)
+  /**
+   * Date the user is browsing on a born-stage track, as a `YYYY-MM-DD` key.
+   * Null means "follow today". Kept separate from `selectedDay` because the two
+   * tracks address content differently and sharing one ref would mean a day
+   * number landing in a date slot.
+   */
+  const selectedStageKey = ref(null)
   /** Recomputed at load and on demand so the app rolls over at midnight. */
   const now = ref(new Date())
 
@@ -296,12 +324,200 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   const activeMonth = computed(() => (activeDay.value ? monthForDay(activeDay.value) : null))
   const activeAge = computed(() => (activeDay.value ? gestationalAge(activeDay.value) : null))
   const trimester = computed(() => (activeDay.value ? trimesterForDay(activeDay.value) : null))
-  const palette = computed(() => monthPalette(activeMonth.value))
+  const palette = computed(() =>
+    activeStage.value?.track === 'year'
+      ? stagePalette(activeStage.value.id, activeStagePosition.value.month)
+      : monthPalette(activeMonth.value)
+  )
 
   const remaining = computed(() =>
     isConfigured.value ? daysRemaining(dueDate.value, now.value) : null
   )
   const progress = computed(() => (todayDay.value ? progressFraction(todayDay.value) : 0))
+
+  // -------------------------------------------------------------- born stages
+
+  /** The date being read on a born-stage track — the selected one, or today. */
+  const activeStageDate = computed(() => {
+    if (selectedStageKey.value) return dateFromDayKey(selectedStageKey.value) || now.value
+    return now.value
+  })
+
+  const activeStagePosition = computed(() => stagePosition(activeStageDate.value))
+
+  const isViewingStageToday = computed(() => selectedStageKey.value === null)
+
+  function selectStageDate(value) {
+    selectedStageKey.value = value == null ? null : dayKey(value)
+  }
+
+  function goToStageToday() {
+    selectedStageKey.value = null
+  }
+
+  /**
+   * Moves the born-stage view by whole theme months.
+   *
+   * Needed because a theme is only "today" for one month of the year: without
+   * this, content written for January would be unreachable until January. The
+   * day-of-month is clamped, so stepping from the 31st into a short month lands
+   * on its last day rather than spilling into the next one.
+   */
+  function stepStageMonth(delta) {
+    const { year, month, day } = activeStagePosition.value
+    const target = new Date(year, month - 1 + delta, 1)
+    const clamped = Math.min(day, daysInMonth(target.getFullYear(), target.getMonth() + 1))
+    target.setDate(clamped)
+    selectedStageKey.value = dayKey(target)
+  }
+
+  /** The theme for the month being read — the same twelve for every stage. */
+  const activeTheme = computed(() => themeForMonth(activeStagePosition.value.month))
+
+  const activeStageMonth = computed(() =>
+    activeStage.value?.track === 'year'
+      ? stageMonthContent(activeStage.value.id, activeStagePosition.value.month)
+      : null
+  )
+
+  const activeStageDayContent = computed(() => {
+    if (activeStage.value?.track !== 'year') return null
+    const { month, day } = activeStagePosition.value
+    const entry = stageDayContent(activeStage.value.id, month, day)
+    if (!entry) return null
+    return { ...entry, body: entry.declaration }
+  })
+
+  const activeStageWeekContent = computed(() => {
+    if (activeStage.value?.track !== 'year') return null
+    const { month, week } = activeStagePosition.value
+    return stageWeekContent(activeStage.value.id, month, week)
+  })
+
+  /** The four weekly cards for the month being read, written or not. */
+  const stageWeekCards = computed(() => {
+    if (activeStage.value?.track !== 'year') return []
+    const { year, month } = activeStagePosition.value
+    const cards = []
+    for (let w = 1; w <= WEEKS_PER_MONTH; w++) {
+      const entry = stageWeekContent(activeStage.value.id, month, w)
+      cards.push({ week: w, ...weekRange(w, year, month), entry: entry || null })
+    }
+    return cards
+  })
+
+  /** Every day of the month being read, for the month grid. */
+  const stageMonthDays = computed(() => {
+    if (activeStage.value?.track !== 'year') return []
+    const { year, month, day: today } = activeStagePosition.value
+    const total = daysInMonth(year, month)
+    const days = []
+    for (let d = 1; d <= total; d++) {
+      const key = dayKey(dateForPosition({ year, month, day: d }))
+      days.push({
+        day: d,
+        key,
+        week: weekOfMonth(d),
+        isToday: d === today,
+        entry: stageDayContent(activeStage.value.id, month, d),
+        spoken: Boolean(activeData.value.spoken[key])
+      })
+    }
+    return days
+  })
+
+  const stageThemes = computed(() =>
+    activeStage.value?.track === 'year' ? themesForStage(activeStage.value.id) : []
+  )
+
+  const stageProgress = computed(() => monthProgress(activeStagePosition.value))
+
+  // Favourites on this track are filed by position rather than by date: saving
+  // a declaration means "worth coming back to", and it comes back every year.
+
+  function stageFavouriteKeyFor(kind, target) {
+    const { month } = activeStagePosition.value
+    const id = activeStage.value?.id
+    if (!id) return null
+    return kind === 'week'
+      ? weekFavouriteKey(id, month, target)
+      : dayFavouriteKey(id, month, target)
+  }
+
+  function isStageFavourite(kind, target) {
+    const key = stageFavouriteKeyFor(kind, target)
+    return key ? Boolean(activeData.value.favourites[key]) : false
+  }
+
+  async function toggleStageFavourite(kind, target) {
+    const key = stageFavouriteKeyFor(kind, target)
+    if (!key) return
+    const map = activeData.value.favourites
+    if (map[key]) delete map[key]
+    else map[key] = new Date().toISOString()
+    await persist()
+  }
+
+  /**
+   * Saved declarations for the active child, resolved back to their content.
+   *
+   * Keys are positions (`school:m01:d03`), so a favourite saved last January is
+   * still here this January — which is the point of an evergreen theme.
+   */
+  const stageFavourites = computed(() => {
+    if (activeStage.value?.track !== 'year') return []
+    const prefix = `${activeStage.value.id}:`
+    return Object.entries(activeData.value.favourites)
+      .filter(([key]) => key.startsWith(prefix))
+      .map(([key, savedAt]) => {
+        const match = /^[^:]+:m(\d{2}):([dw])(\d+)$/.exec(key)
+        if (!match) return null
+        const month = Number(match[1])
+        const kind = match[2] === 'w' ? 'week' : 'day'
+        const target = Number(match[3])
+        const entry =
+          kind === 'week'
+            ? stageWeekContent(activeStage.value.id, month, target)
+            : stageDayContent(activeStage.value.id, month, target)
+        if (!entry) return null
+        return { key, kind, month, target, savedAt, entry, theme: themeForMonth(month) }
+      })
+      .filter(Boolean)
+      .sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt))
+  })
+
+  /**
+   * Journal entries for the active child on a born-stage track, newest first.
+   *
+   * Keyed by real date rather than by a position, so they read as a diary. The
+   * womb track's `journalEntries` keeps its day-number ordering.
+   */
+  const stageJournalEntries = computed(() =>
+    Object.entries(activeData.value.journal)
+      .filter(([key]) => /^\d{4}-\d{2}-\d{2}$/.test(key))
+      .map(([key, entry]) => ({ key, date: dateFromDayKey(key), ...entry }))
+      .sort((a, b) => (a.key < b.key ? 1 : -1))
+  )
+
+  /**
+   * Consecutive days spoken, counting back from today by real calendar days.
+   *
+   * The womb streak counts back through day numbers; here there is no numbered
+   * line to walk, so it walks dates. Encouragement, not accounting.
+   */
+  const stageSpokenStreak = computed(() => {
+    const spoken = activeData.value.spoken
+    let streak = 0
+    const cursor = new Date(now.value)
+    cursor.setHours(0, 0, 0, 0)
+    // A cap, so a corrupted map cannot spin this forever.
+    for (let i = 0; i < 3650; i++) {
+      if (!spoken[dayKey(cursor)]) break
+      streak++
+      cursor.setDate(cursor.getDate() - 1)
+    }
+    return streak
+  })
 
   // ----------------------------------------------------------------- content
 
@@ -420,8 +636,16 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     await persist()
   }
 
+  /**
+   * Womb-track journal entries, newest day first.
+   *
+   * Filtered to numeric keys: a born child's entries are filed under a real
+   * date, and `Number('2026-08-20')` is NaN — which would sort to nowhere and
+   * render as "Day NaN".
+   */
   const journalEntries = computed(() =>
     Object.entries(activeData.value.journal)
+      .filter(([key]) => /^\d+$/.test(key))
       .map(([day, entry]) => ({ day: Number(day), ...entry }))
       .sort((a, b) => b.day - a.day)
   )
@@ -619,6 +843,27 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     isViewingToday,
     selectDay,
     goToToday,
+    // born stages
+    activeStageDate,
+    activeStagePosition,
+    isViewingStageToday,
+    selectStageDate,
+    goToStageToday,
+    stepStageMonth,
+    activeTheme,
+    activeStageMonth,
+    activeStageDayContent,
+    activeStageWeekContent,
+    stageWeekCards,
+    stageMonthDays,
+    stageThemes,
+    stageProgress,
+    isStageFavourite,
+    toggleStageFavourite,
+    stageSpokenStreak,
+    stageFavourites,
+    stageJournalEntries,
+    dayKey,
     // content
     personalise,
     activeDayContent,

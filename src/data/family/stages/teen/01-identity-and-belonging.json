@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 1,
+  "slug": "identity-and-belonging",
+  "title": "Identity & Belonging",
+  "intro": "The teenage years ask a harder version of the same question, and they ask it in public. Who am I, who decides, and where do I actually belong? The answers on offer are image, comparison and approval, and all three run out. This month we say the older, steadier thing — your worth was settled before you achieved anything, and belonging is not the same as fitting in.",
+  "keyScriptures": [
+    {
+      "ref": "1 Samuel 16:7",
+      "text": "People look at the outward appearance, but the Lord looks at the heart."
+    },
+    {
+      "ref": "Ephesians 3:17-18",
+      "text": "Being rooted and established in love."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Not Your Image",
+      "declaration": "You are not the version of you that other people scroll past, rate or repeat. You were made deliberately, by someone who was not guessing, and your worth was settled before you achieved a thing.",
+      "parentsPrayer": "Father, in a world that measures our child constantly, tell them the truth about themselves louder than the noise does. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Belonging Is Not Fitting In",
+      "declaration": "Fitting in asks you to become smaller. Belonging lets you arrive whole. You do not have to audition for a place you have already been given.",
+      "parentsPrayer": "Lord, give our child at least one place — this home first — where they never have to perform to be welcome. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Kept Through the Changing",
+      "declaration": "You are changing fast, and you are kept through all of it. One bad day does not get to name you, and comparison does not get the last word.",
+      "parentsPrayer": "God, steady our child through everything that is changing in them. Where we would rush them, make us patient. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Rooted in Love",
+      "declaration": "You are being rooted in a love that has no season, so that when opinions blow through, you are not moved by every one of them. Before you know what you will do, you know whose you are.",
+      "parentsPrayer": "Father, root this one so deeply in Your love that no crowd can move them. Let them leave our house knowing whose they are. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "You Are Not Your Image",
+      "declaration": "You are not the version of you that other people scroll past. You are the one God knows, and He is not looking at the picture.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "People look at the outward appearance, but the Lord looks at the heart."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Worth You Did Not Earn",
+      "declaration": "Your worth was settled before you achieved anything, so nothing you achieve can raise it and nothing you fail can lower it.",
+      "scripture": {
+        "ref": "Ephesians 2:8-9",
+        "text": "It is by grace you have been saved, through faith — not by works."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Made, Not Assembled",
+      "declaration": "You were made, deliberately, by someone who wanted a person exactly like you to exist. You are not a set of parts other people rate.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I am fearfully and wonderfully made; your works are wonderful."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Belonging Is Not Fitting In",
+      "declaration": "Fitting in asks you to become smaller. Belonging lets you arrive whole. You already belong, so you do not have to shrink to be let in.",
+      "scripture": {
+        "ref": "Romans 15:7",
+        "text": "Accept one another, then, just as Christ accepted you."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Approved Already",
+      "declaration": "You do not have to audition. God's approval of you is not a decision He is still making.",
+      "scripture": {
+        "ref": "Galatians 1:10",
+        "text": "Am I now trying to win the approval of human beings, or of God?"
+      }
+    },
+    {
+      "day": 6,
+      "title": "Chosen Before You Knew",
+      "declaration": "You were chosen before you knew there was a choice being made — not because of what you would become, but because you were wanted.",
+      "scripture": {
+        "ref": "John 15:16",
+        "text": "You did not choose me, but I chose you."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Named",
+      "declaration": "You have been called by name. Whatever names you have been given at school or online, this is the one that holds.",
+      "scripture": {
+        "ref": "Isaiah 43:1",
+        "text": "Do not fear, for I have redeemed you; I have called you by name; you are mine."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Comparison Is a Thief",
+      "declaration": "Comparison will tell you that you are behind. It is lying. You are not late, and you are not competing.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions... without comparing themselves to someone else."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Not Defined by a Bad Day",
+      "declaration": "One bad day does not get to name you. You are more than the worst thing you did this week.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Fear of People",
+      "declaration": "The fear of what people think is a trap you can walk out of. God's opinion of you is settled, and it is kind.",
+      "scripture": {
+        "ref": "Proverbs 29:25",
+        "text": "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Hidden and Safe",
+      "declaration": "Your life is hidden with Christ. There is a part of you nobody at school gets a vote on.",
+      "scripture": {
+        "ref": "Colossians 3:3",
+        "text": "Your life is now hidden with Christ in God."
+      }
+    },
+    {
+      "day": 12,
+      "title": "A New Creation",
+      "declaration": "You are a new creation. You are not stuck being who you were at thirteen, or last year, or last week.",
+      "scripture": {
+        "ref": "2 Corinthians 5:17",
+        "text": "If anyone is in Christ, the new creation has come."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Loved at Your Least Impressive",
+      "declaration": "You are loved at your least impressive. That is the only kind of love strong enough to build a life on.",
+      "scripture": {
+        "ref": "Romans 5:8",
+        "text": "While we were still sinners, Christ died for us."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Not an Accident",
+      "declaration": "Your life is not a coincidence of timing. You were placed in this generation on purpose.",
+      "scripture": {
+        "ref": "Acts 17:26",
+        "text": "He marked out their appointed times in history and the boundaries of their lands."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Free",
+      "declaration": "You are free. Not free from everything hard, but free from having to prove you are worth keeping.",
+      "scripture": {
+        "ref": "John 8:36",
+        "text": "So if the Son sets you free, you will be free indeed."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Kept Through Change",
+      "declaration": "You are changing fast, and you are kept through all of it. God is not confused by who you are becoming.",
+      "scripture": {
+        "ref": "Psalm 73:23-24",
+        "text": "Yet I am always with you; you hold me by my right hand."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Your Days Are Written",
+      "declaration": "Your days were written before one of them happened. You do not have to have your whole life figured out tonight.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book before one of them came to be."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Not Too Much",
+      "declaration": "You are not too much. Your feelings, your questions, your intensity — none of it makes God want to hand you back.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him, for God is our refuge."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Not Too Little",
+      "declaration": "You are not too little either. Being quiet is not the same as being unimportant.",
+      "scripture": {
+        "ref": "1 Corinthians 12:22",
+        "text": "Those parts of the body that seem to be weaker are indispensable."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Belonging Without Performing",
+      "declaration": "In this family you do not have to perform to be welcome. Come home tired, come home wrong, come home anyway.",
+      "scripture": {
+        "ref": "Luke 15:20",
+        "text": "While he was still a long way off, his father saw him and was filled with compassion."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Engraved",
+      "declaration": "You are not forgettable. God says He has engraved you where He cannot look away.",
+      "scripture": {
+        "ref": "Isaiah 49:16",
+        "text": "See, I have engraved you on the palms of my hands."
+      }
+    },
+    {
+      "day": 22,
+      "title": "An Heir",
+      "declaration": "You are not staff in God's house. You are family, with everything that comes with it.",
+      "scripture": {
+        "ref": "Romans 8:17",
+        "text": "If we are children, then we are heirs — heirs of God."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Your Body Is Not the Verdict",
+      "declaration": "Your body is not a verdict on your worth. It is a gift you live in, and it is honoured by God.",
+      "scripture": {
+        "ref": "1 Corinthians 6:19-20",
+        "text": "You are not your own; you were bought at a price. Therefore honour God with your bodies."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Loved with an Everlasting Love",
+      "declaration": "This love does not have a season. It has been coming toward you your whole life and it has not slowed down.",
+      "scripture": {
+        "ref": "Jeremiah 31:3",
+        "text": "I have loved you with an everlasting love."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Rooted",
+      "declaration": "You are being rooted in love, so that when opinions blow through, you are not moved by every one of them.",
+      "scripture": {
+        "ref": "Ephesians 3:17-18",
+        "text": "Being rooted and established in love."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Called Friend",
+      "declaration": "God calls you a friend. He is not distant, and He is not disappointed you turned up.",
+      "scripture": {
+        "ref": "John 15:15",
+        "text": "I no longer call you servants... I have called you friends."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Held Together",
+      "declaration": "When you feel like you are coming apart, He is holding you together. That is not your job tonight.",
+      "scripture": {
+        "ref": "Colossians 1:17",
+        "text": "In him all things hold together."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Not Alone",
+      "declaration": "You are not the only one. God sets the lonely in families, and He is doing it for you too.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Your Portion",
+      "declaration": "God Himself is your portion — the part of your life that cannot be taken by anyone's opinion.",
+      "scripture": {
+        "ref": "Psalm 16:5-6",
+        "text": "Lord, you alone are my portion; the boundary lines have fallen for me in pleasant places."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Delighted In",
+      "declaration": "He does not merely tolerate you. He delights in you, and He is glad you exist.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will rejoice over you with singing."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Whose You Are",
+      "declaration": "Before you know what you will do, you know whose you are. Carry that into everything this year asks of you.",
+      "scripture": {
+        "ref": "1 John 3:1",
+        "text": "See what great love the Father has lavished on us, that we should be called children of God!"
+      }
+    }
+  ]
+}

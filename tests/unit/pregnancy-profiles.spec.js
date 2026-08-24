@@ -202,3 +202,122 @@ describe('the pregnancy store, with several children', () => {
     expect(ada.id).toBeTruthy()
   })
 })
+
+describe('the born-stage track', () => {
+  let store
+
+  beforeEach(async () => {
+    saved.clear()
+    setActivePinia(createPinia())
+    store = usePregnancyStore()
+    await store.load()
+    await store.addProfile({ name: 'Ada', birthDate: '2015-04-02' })
+  })
+
+  it('reads the theme for the month it is on', async () => {
+    store.selectStageDate(new Date(2027, 0, 3))
+    expect(store.activeTheme.title).toBe('Identity & Belonging')
+    expect(store.activeStagePosition).toMatchObject({ year: 2027, month: 1, day: 3, week: 1 })
+    expect(store.activeStageDayContent.title).toBe('Wonderfully Made')
+  })
+
+  it('shows nothing rather than the wrong thing for a month not written', () => {
+    store.selectStageDate(new Date(2027, 5, 3))
+    expect(store.activeTheme.title).toBe('Protection & Covering')
+    expect(store.activeStageDayContent).toBeNull()
+    expect(store.activeStageMonth).toBeNull()
+  })
+
+  it('steps whole months, and clamps rather than spilling into the next', () => {
+    store.selectStageDate(new Date(2027, 0, 31))
+    store.stepStageMonth(1)
+    // 31 January + one month is February, which has no 31st.
+    expect(store.activeStagePosition).toMatchObject({ year: 2027, month: 2, day: 28 })
+    store.stepStageMonth(-1)
+    expect(store.activeStagePosition.month).toBe(1)
+  })
+
+  it('steps across a year boundary', () => {
+    store.selectStageDate(new Date(2027, 11, 15))
+    store.stepStageMonth(1)
+    expect(store.activeStagePosition).toMatchObject({ year: 2028, month: 1, day: 15 })
+  })
+
+  it('files favourites by position so they come back every year', async () => {
+    store.selectStageDate(new Date(2027, 0, 3))
+    await store.toggleStageFavourite('day', 3)
+    expect(store.isStageFavourite('day', 3)).toBe(true)
+    expect(store.state.data[store.activeProfile.id].favourites['school:m01:d03']).toBeTruthy()
+
+    // A year later, the same theme day is still saved.
+    store.selectStageDate(new Date(2028, 0, 3))
+    expect(store.isStageFavourite('day', 3)).toBe(true)
+
+    expect(store.stageFavourites).toHaveLength(1)
+    expect(store.stageFavourites[0].entry.title).toBe('Wonderfully Made')
+    expect(store.stageFavourites[0].theme.title).toBe('Identity & Belonging')
+  })
+
+  it('keeps one child’s stage favourites out of another’s', async () => {
+    store.selectStageDate(new Date(2027, 0, 3))
+    await store.toggleStageFavourite('day', 3)
+    await store.addProfile({ name: 'Ben', birthDate: '2010-01-05' })
+    store.selectStageDate(new Date(2027, 0, 3))
+    // Ben is a teen, so even the same position is a different key.
+    expect(store.isStageFavourite('day', 3)).toBe(false)
+    expect(store.stageFavourites).toHaveLength(0)
+    expect(store.activeStageDayContent.title).toBe('Made, Not Assembled')
+  })
+
+  it('files journal notes by real date, and keeps them out of the womb list', async () => {
+    await store.saveJournal('2027-01-03', 'She asked whether God knows her name.')
+    expect(store.stageJournalEntries).toHaveLength(1)
+    expect(store.stageJournalEntries[0].key).toBe('2027-01-03')
+    // The womb list is day-numbered and must not try to render a date as one.
+    expect(store.journalEntries).toHaveLength(0)
+  })
+
+  it('counts a spoken streak back through calendar days', async () => {
+    const today = new Date()
+    const keyFor = (offset) => {
+      const d = new Date(today)
+      d.setDate(d.getDate() - offset)
+      return store.dayKey(d)
+    }
+    await store.toggleSpoken(keyFor(0))
+    await store.toggleSpoken(keyFor(1))
+    await store.toggleSpoken(keyFor(2))
+    expect(store.stageSpokenStreak).toBe(3)
+    // A gap ends the streak rather than being counted through.
+    await store.toggleSpoken(keyFor(4))
+    expect(store.stageSpokenStreak).toBe(3)
+  })
+
+  it('lays out every day of the month being read', () => {
+    store.selectStageDate(new Date(2027, 0, 15))
+    const days = store.stageMonthDays
+    expect(days).toHaveLength(31)
+    expect(days[14].isToday).toBe(true)
+    expect(days[0].entry.title).toBe('Known by Name')
+    expect(days[0].key).toBe('2027-01-01')
+  })
+
+  it('offers four weekly cards, with the ranges a real month has', () => {
+    store.selectStageDate(new Date(2027, 0, 15))
+    const cards = store.stageWeekCards
+    expect(cards.map((c) => c.week)).toEqual([1, 2, 3, 4])
+    expect(cards[0]).toMatchObject({ start: 1, end: 7 })
+    // Week four absorbs the tail rather than a fifth card being invented.
+    expect(cards[3]).toMatchObject({ start: 22, end: 31 })
+    expect(cards[3].entry.title).toBe('You Are His')
+  })
+
+  it('gives the womb child none of this', async () => {
+    await store.setDueDate(new Date(2027, 5, 1))
+    expect(store.activeTrack).toBe('womb')
+    expect(store.activeStageDayContent).toBeNull()
+    expect(store.stageWeekCards).toEqual([])
+    expect(store.stageMonthDays).toEqual([])
+    expect(store.stageThemes).toEqual([])
+  })
+})
