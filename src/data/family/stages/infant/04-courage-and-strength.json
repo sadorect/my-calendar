@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 4,
+  "slug": "courage-and-strength",
+  "title": "Courage & Strength",
+  "intro": "The first year is full of small terrors — a new room, a loud noise, being put down. It is also the bravest year a person ever has, because everything is attempted for the first time. This month names that, and asks for strength for the people doing the holding as much as for the child.",
+  "keyScriptures": [
+    {
+      "ref": "Isaiah 41:10",
+      "text": "Do not fear, for I am with you; I will strengthen you and help you."
+    },
+    {
+      "ref": "Joshua 1:9",
+      "text": "Be strong and courageous... for the Lord your God will be with you wherever you go."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "The Bravest Year",
+      "declaration": "Everything you do this year, you do for the first time. There has never been a braver year in anyone's life.",
+      "parentsPrayer": "Father, thank You for the courage already in this child. Let us not rush them through it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Strength for the Ones Holding You",
+      "declaration": "The people carrying you need strength too, and they are being given it, a day at a time.",
+      "parentsPrayer": "Lord, we are tired. Give us today's strength for today's holding, and let us come back tomorrow. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Not Alone in the Dark",
+      "declaration": "The dark is not empty. You are not left in it alone, tonight or ever, and the One who made the light is in it with you.",
+      "parentsPrayer": "God, be in this room tonight. Let sleep come to this child, and to us. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Held While You Try",
+      "declaration": "You are held while you try. That is why trying is safe here — you can reach for something and miss it and still be caught.",
+      "parentsPrayer": "Father, make our arms a safe place to fail from. Let this child grow up unafraid of trying. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "The Bravest Year",
+      "declaration": "Everything you do this year, you do for the first time. That is real courage.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Held While You Try",
+      "declaration": "You are held while you try. Falling here is safe.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "Though he may stumble, he will not fall, for the Lord upholds him."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Strong Hands",
+      "declaration": "The hands that lift you are strong enough, and where they are not, stronger ones are underneath.",
+      "scripture": {
+        "ref": "Isaiah 41:10",
+        "text": "I will strengthen you and help you."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Not Alone in the Dark",
+      "declaration": "The dark is not empty. You are not left alone in it.",
+      "scripture": {
+        "ref": "Psalm 139:12",
+        "text": "Even the darkness will not be dark to you."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Try Again",
+      "declaration": "You will try the same thing many times before it works. That is not failing; that is learning.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Loud Noises Pass",
+      "declaration": "Frightening sounds do not last. What holds you does.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength, an ever-present help in trouble."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Strength Given Daily",
+      "declaration": "The strength for today arrived this morning. It will arrive again tomorrow.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 8,
+      "title": "New Places",
+      "declaration": "New rooms and new faces are big. You are carried into all of them.",
+      "scripture": {
+        "ref": "Deuteronomy 31:6",
+        "text": "The Lord your God goes with you."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Small and Mighty",
+      "declaration": "You are small, and small has never limited what God does with a person.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord does not look at the things people look at."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Crying Is Not Weakness",
+      "declaration": "Crying is how you speak right now. It is strength, not weakness, to say something is wrong.",
+      "scripture": {
+        "ref": "Psalm 56:8",
+        "text": "Record my misery; list my tears on your scroll."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Carried When You Cannot Walk",
+      "declaration": "You are carried until you can walk, and then you will be walked beside.",
+      "scripture": {
+        "ref": "Deuteronomy 1:31",
+        "text": "The Lord your God carried you, as a father carries his son."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Growing Takes Effort",
+      "declaration": "Growing is hard work and you are doing it every hour, even in your sleep.",
+      "scripture": {
+        "ref": "Colossians 2:19",
+        "text": "Grows as God causes it to grow."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Brave Enough for Today",
+      "declaration": "You do not need courage for your whole life yet. Just for today, and today is provided for.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Comforted, Then Sent",
+      "declaration": "You are comforted so that one day you can be brave. Comfort comes first.",
+      "scripture": {
+        "ref": "Isaiah 66:13",
+        "text": "As a mother comforts her child, so will I comfort you."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Not Rushed",
+      "declaration": "Nobody is rushing you. You will do everything at the time it is right for you.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Held Through Illness",
+      "declaration": "On sick days you are held closer, not less. Being unwell does not make you a burden.",
+      "scripture": {
+        "ref": "Psalm 41:3",
+        "text": "The Lord sustains them on their sickbed."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Fear Is Not the Boss",
+      "declaration": "Fear will visit you all your life. It will never be in charge of you.",
+      "scripture": {
+        "ref": "2 Timothy 1:7",
+        "text": "God has not given us a spirit of fear, but of power, love and self-discipline."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Strength in Weakness",
+      "declaration": "You are weak in every way right now, and completely safe. That is how grace works.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My power is made perfect in weakness."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Practising Standing",
+      "declaration": "Every time you pull yourself up, something in you gets stronger. Keep pulling.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Someone Is Awake",
+      "declaration": "Someone is awake for you tonight, and behind them, someone who never sleeps.",
+      "scripture": {
+        "ref": "Psalm 121:4",
+        "text": "He will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Safe to Be Small",
+      "declaration": "You are allowed to be small. Nobody here needs you to be strong yet.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Courage Passed Down",
+      "declaration": "The courage in this family is being handed to you. You will need it and you will have it.",
+      "scripture": {
+        "ref": "2 Timothy 1:5",
+        "text": "I am reminded of your sincere faith, which first lived in your grandmother."
+      }
+    },
+    {
+      "day": 23,
+      "title": "A Body That Works Hard",
+      "declaration": "Your small body is working hard every day. Thank God for what it is doing.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Not Frightened of Us",
+      "declaration": "May you never be frightened of the people who love you. May our anger never teach you that.",
+      "scripture": {
+        "ref": "Colossians 3:21",
+        "text": "Fathers, do not embitter your children."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Rescued Before You Knew",
+      "declaration": "You have already been kept safe from things you will never know about.",
+      "scripture": {
+        "ref": "Psalm 91:11",
+        "text": "He will command his angels concerning you."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Strength to Let You Go",
+      "declaration": "One day we will need courage to let you go. That is being built in us now.",
+      "scripture": {
+        "ref": "Psalm 127:4",
+        "text": "Children are like arrows in the hands of a warrior."
+      }
+    },
+    {
+      "day": 27,
+      "title": "A Firm Place",
+      "declaration": "You are standing on something that does not move, long before you can stand at all.",
+      "scripture": {
+        "ref": "Psalm 40:2",
+        "text": "He set my feet on a rock and gave me a firm place to stand."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Braver Than Yesterday",
+      "declaration": "You are braver than you were a month ago. That will keep being true.",
+      "scripture": {
+        "ref": "Psalm 84:7",
+        "text": "They go from strength to strength."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept Through the Night",
+      "declaration": "However the night goes, you will be kept through it. So will we.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Made for a Life",
+      "declaration": "You were not made for safety alone. You were made for a whole life, and you are being made ready.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "Created in Christ Jesus to do good works."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Strength for the Years",
+      "declaration": "The strength you will need at twenty is being asked for now, before you can ask for it.",
+      "scripture": {
+        "ref": "Psalm 28:7",
+        "text": "The Lord is my strength and my shield."
+      }
+    }
+  ]
+}

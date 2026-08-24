@@ -14,7 +14,7 @@ import {
 } from '../../src/data/family/index.js'
 import { weekOfMonth, dayFavouriteKey, weekFavouriteKey } from '../../src/services/stageTimeline.js'
 
-const WRITTEN = ['school', 'teen']
+const WRITTEN = ['infant', 'school', 'teen']
 
 // Content is fetched per stage on demand, so it must be here before the
 // describe blocks below look anything up. Top-level await runs first.
@@ -144,10 +144,10 @@ describe('looking content up', () => {
   })
 
   it('returns null for content nobody has written yet', () => {
-    // No born stage other than school and teen is written.
-    expect(stageMonthContent('infant', 1)).toBeNull()
-    expect(stageWeekContent('infant', 1, 1)).toBeNull()
-    expect(stageDayContent('toddler', 1, 1)).toBeNull()
+    // Stages nobody has written yet.
+    expect(stageMonthContent('toddler', 1)).toBeNull()
+    expect(stageWeekContent('toddler', 1, 1)).toBeNull()
+    expect(stageDayContent('adult', 1, 1)).toBeNull()
     expect(stageDayContent('nonsense', 1, 1)).toBeNull()
     // And nothing exists outside the twelve months.
     expect(stageMonthContent('school', 13)).toBeNull()
@@ -199,7 +199,7 @@ describe('favourite keys', () => {
 
 describe('loading a stage on demand', () => {
   it('knows which stages have content on disk without loading any of it', () => {
-    expect(STAGES_WITH_CONTENT).toEqual(['school', 'teen'])
+    expect(STAGES_WITH_CONTENT).toEqual(['infant', 'school', 'teen'])
     expect(stageHasContent('school')).toBe(true)
     expect(stageHasContent('toddler')).toBe(false)
   })

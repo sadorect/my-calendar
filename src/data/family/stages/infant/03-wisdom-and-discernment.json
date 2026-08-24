@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 3,
+  "slug": "wisdom-and-discernment",
+  "title": "Wisdom & Discernment",
+  "intro": "It seems early to pray for wisdom over someone who cannot sit up. It is not. Wisdom starts as trust, and trust is built in the first year — in whether the world answers, whether faces are safe, whether the same voice comes back. This month prays forward, over a life that will need it.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 2:6",
+      "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding."
+    },
+    {
+      "ref": "Luke 2:52",
+      "text": "And Jesus grew in wisdom and stature, and in favour with God and man."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Wisdom Begins as Trust",
+      "declaration": "Long before you can think anything through, you are learning whether the world can be trusted. That is where wisdom starts.",
+      "parentsPrayer": "Father, build trust in this child through us. Let us be worth trusting. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Will Be Given What You Need",
+      "declaration": "You will not have to work life out alone. Wisdom is given to those who ask, and you will learn to ask.",
+      "parentsPrayer": "Lord, give us wisdom for the decisions we are making over this child now, before they can have any say. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Learning by Watching",
+      "declaration": "You are already learning by watching. What you see in us is your first lesson in how to live.",
+      "parentsPrayer": "God, make us worth copying. Where we are not, protect this child from learning it. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Growing in Wisdom",
+      "declaration": "You will grow in wisdom the way you are growing now — slowly, daily, without noticing.",
+      "parentsPrayer": "Father, grow this child in wisdom all their life. Start now, in ways we cannot see. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Wisdom Is Given",
+      "declaration": "Wisdom is not something you must invent. It is given, and the giving has already started.",
+      "scripture": {
+        "ref": "Proverbs 2:6",
+        "text": "The Lord gives wisdom; from his mouth come knowledge and understanding."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Learning to Trust",
+      "declaration": "You are learning that the world answers when you call. Everything sensible is built on that.",
+      "scripture": {
+        "ref": "Proverbs 3:5",
+        "text": "Trust in the Lord with all your heart."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Growing Slowly",
+      "declaration": "You are growing in wisdom the way you are growing in everything: slowly, and without noticing.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "Jesus grew in wisdom and stature."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Watching Us",
+      "declaration": "You are learning by watching. What you see is your first lesson in how a person lives.",
+      "scripture": {
+        "ref": "1 Corinthians 11:1",
+        "text": "Follow my example, as I follow the example of Christ."
+      }
+    },
+    {
+      "day": 5,
+      "title": "You May Always Ask",
+      "declaration": "You will never be too old or too young to ask. Asking is what wise people do.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "Ask God, who gives generously to all without finding fault."
+      }
+    },
+    {
+      "day": 6,
+      "title": "A Lamp for Later",
+      "declaration": "There will be a light for every step you take, and it will always be enough for the next one.",
+      "scripture": {
+        "ref": "Psalm 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not Left to Guess",
+      "declaration": "You will not be left to guess your way through life. You will be guided.",
+      "scripture": {
+        "ref": "Isaiah 30:21",
+        "text": "This is the way; walk in it."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Sense and Kindness Together",
+      "declaration": "May you be sensible and kind at once. The best wisdom leaves people better.",
+      "scripture": {
+        "ref": "James 3:17",
+        "text": "The wisdom from above is first pure, then peace-loving, considerate."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Safe Voices",
+      "declaration": "May the voices you trust be worth trusting. May you learn early which they are.",
+      "scripture": {
+        "ref": "Proverbs 13:20",
+        "text": "Walk with the wise and become wise."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Knowing When to Wait",
+      "declaration": "May you learn to wait, which is most of wisdom and almost none of instinct.",
+      "scripture": {
+        "ref": "Psalm 27:14",
+        "text": "Wait for the Lord; be strong and take heart."
+      }
+    },
+    {
+      "day": 11,
+      "title": "A Discerning Heart",
+      "declaration": "May you have a discerning heart — one that can tell good from nearly-good.",
+      "scripture": {
+        "ref": "1 Kings 3:9",
+        "text": "Give your servant a discerning heart to govern your people."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Learning from Small Things",
+      "declaration": "You will learn from small things first: a spoon, a step, a word. Nothing is beneath learning.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Curiosity Is a Gift",
+      "declaration": "Your curiosity is a gift, not a nuisance. May nobody ever talk you out of it.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Correctable",
+      "declaration": "May you always be someone who can be corrected. That one quality will carry you far.",
+      "scripture": {
+        "ref": "Proverbs 9:9",
+        "text": "Instruct the wise and they will be wiser still."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Honest with Yourself",
+      "declaration": "May you be honest with yourself, which is harder and more useful than being clever.",
+      "scripture": {
+        "ref": "Psalm 51:6",
+        "text": "You desired faithfulness even in the womb."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Not Fooled by Loud",
+      "declaration": "May you never mistake the loudest voice for the truest one.",
+      "scripture": {
+        "ref": "Proverbs 18:17",
+        "text": "The first to present a case seems right, till another comes forward."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Time to Think",
+      "declaration": "May you always be given a moment to think, and may you learn to take it.",
+      "scripture": {
+        "ref": "Proverbs 29:20",
+        "text": "Do you see someone who speaks in haste?"
+      }
+    },
+    {
+      "day": 18,
+      "title": "Wisdom in Your Hands",
+      "declaration": "One day you will make decisions we cannot make for you. May you be ready.",
+      "scripture": {
+        "ref": "Proverbs 4:26",
+        "text": "Give careful thought to the paths for your feet."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Sleep and Sense",
+      "declaration": "Even now, rest is making you able to learn. That will be true your whole life.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "He grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Learning the Word",
+      "declaration": "May the words we read over you now be there when you need them decades from now.",
+      "scripture": {
+        "ref": "Psalm 119:11",
+        "text": "I have hidden your word in my heart."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Fear of the Lord",
+      "declaration": "May you grow up knowing God is God. Everything sensible starts there.",
+      "scripture": {
+        "ref": "Proverbs 9:10",
+        "text": "The fear of the Lord is the beginning of wisdom."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Slow to Speak",
+      "declaration": "May you be quick to listen and slow to speak. It is rare and it is worth having.",
+      "scripture": {
+        "ref": "James 1:19",
+        "text": "Everyone should be quick to listen, slow to speak."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Thinking of the End",
+      "declaration": "May you learn to look one step further than you need to.",
+      "scripture": {
+        "ref": "Proverbs 14:15",
+        "text": "The prudent give thought to their steps."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Guided When We Cannot",
+      "declaration": "There will be rooms we are not in. May you be guided there too.",
+      "scripture": {
+        "ref": "Psalm 32:8",
+        "text": "I will instruct you and teach you in the way you should go."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Wise About People",
+      "declaration": "May you read people kindly and accurately, and know the difference between the two.",
+      "scripture": {
+        "ref": "Matthew 10:16",
+        "text": "Be as shrewd as snakes and as innocent as doves."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Failing and Learning",
+      "declaration": "You will get things wrong. May you learn from it rather than hide it.",
+      "scripture": {
+        "ref": "Proverbs 19:20",
+        "text": "Listen to advice and accept discipline."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Peace in Deciding",
+      "declaration": "May you make decisions without fear, knowing you are held whichever way it goes.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Wisdom Over Cleverness",
+      "declaration": "May you be wise rather than merely clever, if you ever have to choose.",
+      "scripture": {
+        "ref": "Proverbs 4:7",
+        "text": "Wisdom is supreme; therefore get wisdom."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Asking Again",
+      "declaration": "May you never feel foolish for asking twice. God does not tire of the question.",
+      "scripture": {
+        "ref": "Luke 11:9",
+        "text": "Ask and it will be given to you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "A Lifetime of Growing",
+      "declaration": "Wisdom will keep growing in you as long as you keep asking. There is no ceiling.",
+      "scripture": {
+        "ref": "Proverbs 1:5",
+        "text": "Let the wise listen and add to their learning."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Ours to Pray Now",
+      "declaration": "We are praying wisdom over you before you can want it. It will be here when you do.",
+      "scripture": {
+        "ref": "Colossians 1:9",
+        "text": "We continually ask God to fill you with the knowledge of his will."
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 6,
+  "slug": "protection-and-covering",
+  "title": "Protection & Covering",
+  "intro": "There is no year in which a parent prays this more. This month says the frightening thing plainly — that we cannot make the world safe — and then says the truer thing, that this child is covered by someone who does not sleep and does not leave.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 91:4",
+      "text": "He will cover you with his feathers, and under his wings you will find refuge."
+    },
+    {
+      "ref": "Psalm 121:3-4",
+      "text": "He who watches over you will not slumber... will neither slumber nor sleep."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Watched Over All Night",
+      "declaration": "Someone is awake on your behalf every night of your life, and He does not get tired.",
+      "parentsPrayer": "Father, watch over this child tonight. Let us sleep because You do not. Amen."
+    },
+    {
+      "week": 2,
+      "title": "We Cannot, but He Can",
+      "declaration": "There are things we cannot keep from you. There is nothing He cannot walk you through.",
+      "parentsPrayer": "Lord, we are afraid of what we cannot protect them from. Take that fear and keep this child. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Covered Where We Are Not",
+      "declaration": "You are covered in the rooms we are not in, and there will be more of those every year.",
+      "parentsPrayer": "God, go where we cannot. Be nearer to this child than we could ever be. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Kept",
+      "declaration": "You are kept. Not merely watched — kept, the way something precious is kept, by someone who fully intends to hold on.",
+      "parentsPrayer": "Father, keep this child all their life. Keep them when they are far from us. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Watched All Night",
+      "declaration": "Someone is awake for you every night, and He never needs to rest.",
+      "scripture": {
+        "ref": "Psalm 121:4",
+        "text": "He will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Under His Wings",
+      "declaration": "There is shelter over you, close enough to reach at any hour.",
+      "scripture": {
+        "ref": "Psalm 91:4",
+        "text": "Under his wings you will find refuge."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Safe to Sleep",
+      "declaration": "You can sleep deeply. You are not the one holding the night together.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Hemmed In",
+      "declaration": "You are surrounded — behind, before, and over. There is no gap in it.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before, and you lay your hand upon me."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Carried Everywhere",
+      "declaration": "Everywhere you go this year, you are carried. Later you will walk, and still be accompanied.",
+      "scripture": {
+        "ref": "Deuteronomy 1:31",
+        "text": "The Lord your God carried you."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Angels Sent",
+      "declaration": "Help you cannot see has been sent. You are looked after more than anyone can tell.",
+      "scripture": {
+        "ref": "Psalm 91:11",
+        "text": "He will command his angels concerning you to guard you in all your ways."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not Ours to Hold Alone",
+      "declaration": "We are not holding you alone. That is the only reason we can put you down.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 8,
+      "title": "A Shield Around",
+      "declaration": "There is a shield around you that goes where you go.",
+      "scripture": {
+        "ref": "Psalm 3:3",
+        "text": "But you, Lord, are a shield around me."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Hard Things Still Come",
+      "declaration": "Being covered does not mean nothing hard happens. It means nothing happens to you alone.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Kept in Sickness",
+      "declaration": "When you are unwell, you are held closer. He is not distant from a sick child.",
+      "scripture": {
+        "ref": "Psalm 41:3",
+        "text": "The Lord sustains them on their sickbed."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Every Coming and Going",
+      "declaration": "You are watched when you leave and when you come back, all your life.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Nothing Surprises Him",
+      "declaration": "Nothing about today or any day catches God out. He is already there.",
+      "scripture": {
+        "ref": "Isaiah 46:10",
+        "text": "I make known the end from the beginning."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Home as Shelter",
+      "declaration": "This home is meant to be a shelter for you. We are building it that way on purpose.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Guarded Heart",
+      "declaration": "Your heart will be guarded long before you know it needs guarding.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Peace Standing Guard",
+      "declaration": "There is a peace that stands guard over a mind. May it stand over yours all your life.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Held When You Fall",
+      "declaration": "When you fall — and you will, often, this year — you are not dropped.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "The Lord upholds him with his hand."
+      }
+    },
+    {
+      "day": 17,
+      "title": "A Strong Tower",
+      "declaration": "There is somewhere to run that cannot be knocked down. May you always know the way there.",
+      "scripture": {
+        "ref": "Proverbs 18:10",
+        "text": "The name of the Lord is a fortified tower."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Never Abandoned",
+      "declaration": "You will never be abandoned. Not when you are difficult, not when you are grown, not ever.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you; never will I forsake you."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Protected From What We Cannot See",
+      "declaration": "You have already been kept from things nobody will ever tell you about.",
+      "scripture": {
+        "ref": "Psalm 32:7",
+        "text": "You are my hiding place; you will protect me from trouble."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Rescued, Not Rescued From",
+      "declaration": "God does not always take the hard thing away. He goes through it, which is better.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you walk through the fire, you will not be burned."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Our Fear Handed Over",
+      "declaration": "Our fear for you is not a good guardian. He is. We are handing it over.",
+      "scripture": {
+        "ref": "Psalm 56:3",
+        "text": "When I am afraid, I put my trust in you."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Kept Through Growing",
+      "declaration": "Everything about you is changing. You are held steady through all of it.",
+      "scripture": {
+        "ref": "Malachi 3:6",
+        "text": "I the Lord do not change."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Covered, Not Contained",
+      "declaration": "You are covered so that you can go, not so that you stay small.",
+      "scripture": {
+        "ref": "Psalm 18:19",
+        "text": "He brought me out into a spacious place."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Safe Hands Only",
+      "declaration": "May only safe hands hold you. May you learn early what safe feels like.",
+      "scripture": {
+        "ref": "Matthew 18:6",
+        "text": "If anyone causes one of these little ones to stumble..."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Prayed Over Nightly",
+      "declaration": "You are prayed over most nights, including the ones nobody remembers.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:17",
+        "text": "Pray continually."
+      }
+    },
+    {
+      "day": 26,
+      "title": "No Weapon Prevails",
+      "declaration": "Things will be aimed at you in your life. None of them gets the last word.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail."
+      }
+    },
+    {
+      "day": 27,
+      "title": "A Firm Place to Stand",
+      "declaration": "Before you can stand at all, you are standing on something solid.",
+      "scripture": {
+        "ref": "Psalm 40:2",
+        "text": "He set my feet on a rock."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Guarded in the Small Hours",
+      "declaration": "In the hardest hours of the night, you are guarded, and so are we.",
+      "scripture": {
+        "ref": "Psalm 63:6",
+        "text": "On my bed I remember you; I think of you through the watches of the night."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept for a Whole Life",
+      "declaration": "This covering is not for babyhood only. It is for eighty years if you have them.",
+      "scripture": {
+        "ref": "Isaiah 46:4",
+        "text": "Even to your old age and grey hairs I am he."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Kept",
+      "declaration": "You are kept — deliberately, by someone who intends to hold on.",
+      "scripture": {
+        "ref": "Numbers 6:24",
+        "text": "The Lord bless you and keep you."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Handed Into Safe Keeping",
+      "declaration": "We are handing you into safer keeping than our own, every day, on purpose.",
+      "scripture": {
+        "ref": "Luke 23:46",
+        "text": "Father, into your hands I commit my spirit."
+      }
+    }
+  ]
+}

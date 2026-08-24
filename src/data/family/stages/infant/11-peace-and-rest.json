@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 11,
+  "slug": "peace-and-rest",
+  "title": "Peace & Rest",
+  "intro": "Sleep is the whole subject of the first year, and it is never only about sleep. This month asks for rest for a baby who is learning it and for parents who have forgotten it, and it says the thing worth saying at 4am: that peace here is given rather than achieved.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 4:8",
+      "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+    },
+    {
+      "ref": "Matthew 11:28",
+      "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Rest Is Given, Not Earned",
+      "declaration": "Rest is not a reward for a day gone well. It was made before anyone had achieved anything.",
+      "parentsPrayer": "Father, give rest in this house tonight. We cannot manufacture it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Safe Enough to Sleep",
+      "declaration": "You can sleep because you are safe, not because everything is finished. Nothing is finished, and you can sleep anyway.",
+      "parentsPrayer": "Lord, let this child feel safe enough to sleep. Let us feel safe enough to let them. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Quiet Is Not Empty",
+      "declaration": "There will be quiet in this house on purpose, and it will not be wasted time. Some of the best of God is only heard in it.",
+      "parentsPrayer": "God, teach us to be still even now. Let our child grow up unafraid of quiet. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Peace That Is Not Circumstantial",
+      "declaration": "The peace here does not depend on the night going well. It is steadier than that.",
+      "parentsPrayer": "Father, give us a peace that holds when nothing is resolved. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Rest Is Given",
+      "declaration": "Rest was made before anyone had achieved anything. It is not a reward.",
+      "scripture": {
+        "ref": "Genesis 2:2",
+        "text": "On the seventh day he rested from all his work."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Safe Enough to Sleep",
+      "declaration": "You can sleep because you are safe, not because the day is finished.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 3,
+      "title": "You Are Not Holding the Night",
+      "declaration": "You can sleep as deeply as you like. Holding the night together was never your job.",
+      "scripture": {
+        "ref": "Psalm 121:4",
+        "text": "He will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sleep Is a Gift",
+      "declaration": "Sleep is something given, not something achieved. May it be given generously here.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "He grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Come and Rest",
+      "declaration": "When you are worn out, there is somewhere to go. That offer never closes.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Quiet Waters",
+      "declaration": "God is not always speeding anyone up. Sometimes He leads to still water.",
+      "scripture": {
+        "ref": "Psalm 23:2",
+        "text": "He leads me beside quiet waters."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Peace Not Circumstantial",
+      "declaration": "The peace here does not depend on how the night goes.",
+      "scripture": {
+        "ref": "John 14:27",
+        "text": "I do not give to you as the world gives."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Held While You Sleep",
+      "declaration": "You are held while you sleep by hands that do not get tired.",
+      "scripture": {
+        "ref": "Deuteronomy 33:27",
+        "text": "The eternal God is your refuge, and underneath are the everlasting arms."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Nothing to Prove Tonight",
+      "declaration": "There is nothing to prove tonight, by you or by us. Nobody is being assessed.",
+      "scripture": {
+        "ref": "Ephesians 2:8",
+        "text": "It is by grace you have been saved."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Worry Is Not Watching",
+      "declaration": "Worrying over you does not keep you safer. Praying does more and costs less.",
+      "scripture": {
+        "ref": "Matthew 6:27",
+        "text": "Can any one of you by worrying add a single hour to your life?"
+      }
+    },
+    {
+      "day": 11,
+      "title": "The Weight Handed Over",
+      "declaration": "We are handing over what we cannot carry, tonight and every night.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Quiet Is Not Empty",
+      "declaration": "Quiet is not wasted. Some of the best things happen in a room with nothing on.",
+      "scripture": {
+        "ref": "Psalm 46:10",
+        "text": "Be still, and know that I am God."
+      }
+    },
+    {
+      "day": 13,
+      "title": "One Day at a Time",
+      "declaration": "Today had enough in it. Tomorrow is not ours to carry yet.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Tomorrow will worry about itself."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Slow Is Fine",
+      "declaration": "Nobody is behind here. This is being done at the pace it actually takes.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 15,
+      "title": "A Gentle Whisper",
+      "declaration": "God rarely shouts. That is a good reason to make room for quiet.",
+      "scripture": {
+        "ref": "1 Kings 19:12",
+        "text": "And after the fire came a gentle whisper."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Rest Before Empty",
+      "declaration": "We will try to rest before we have run out, not after. Recovery costs far more.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me by yourselves to a quiet place and get some rest."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Unfinished Is Allowed",
+      "declaration": "Things will be left undone tonight. That is a normal life, not a failure.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Peace at Four in the Morning",
+      "declaration": "There is a peace that stands guard over a mind at 4am. May it stand over ours.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Not in Charge of Everything",
+      "declaration": "Some of what we fear is not ours to fix. We are handing that back tonight.",
+      "scripture": {
+        "ref": "Psalm 55:22",
+        "text": "Cast your cares on the Lord and he will sustain you."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Held in the Small Hours",
+      "declaration": "In the hardest hour of the night, you are held. So are we.",
+      "scripture": {
+        "ref": "Psalm 63:6",
+        "text": "I think of you through the watches of the night."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Busy Is Not Better",
+      "declaration": "A quiet day is not a wasted day. You will learn that from us or not at all.",
+      "scripture": {
+        "ref": "Luke 10:41-42",
+        "text": "You are worried and upset about many things."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Rhythm, Not Collapse",
+      "declaration": "We are aiming for a rhythm rather than sprinting until something breaks.",
+      "scripture": {
+        "ref": "Exodus 20:9-10",
+        "text": "Six days you shall labour... the seventh is a sabbath."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Safe to Be Tired",
+      "declaration": "It is safe to be tired here. Nobody in this house has to perform.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Breathing Is a Prayer",
+      "declaration": "When it is too much, a breath and one word is a real prayer. That is enough.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Comforted in the Night",
+      "declaration": "When you are frightened in the night, you are comforted. Always, and without exception.",
+      "scripture": {
+        "ref": "Isaiah 66:13",
+        "text": "As a mother comforts her child, so will I comfort you."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Not Rushing You",
+      "declaration": "God is not in a hurry with you. You do not have to grow faster than you are.",
+      "scripture": {
+        "ref": "2 Peter 3:8",
+        "text": "With the Lord a day is like a thousand years."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Stillness Is Doing Something",
+      "declaration": "Sitting still with God is not idleness. It is where a great deal gets done.",
+      "scripture": {
+        "ref": "Psalm 62:1",
+        "text": "Truly my soul finds rest in God."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Sabbath for This House",
+      "declaration": "There will be a day off in this house. You will grow up thinking that is normal.",
+      "scripture": {
+        "ref": "Exodus 20:8",
+        "text": "Remember the Sabbath day by keeping it holy."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept in Perfect Peace",
+      "declaration": "There is a steadiness available that does not depend on anything being fixed.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Enough Has Been Done",
+      "declaration": "Enough has been done today. Whatever is left can be put down until the morning.",
+      "scripture": {
+        "ref": "John 19:30",
+        "text": "It is finished."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Rest to Carry Forward",
+      "declaration": "The rest we are learning now is for the loud years ahead. It is a habit, not a phase.",
+      "scripture": {
+        "ref": "Psalm 23:3",
+        "text": "He refreshes my soul."
+      }
+    }
+  ]
+}

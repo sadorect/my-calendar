@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 1,
+  "slug": "identity-and-belonging",
+  "title": "Identity & Belonging",
+  "intro": "The first year is where a person learns, before they have any words for it, whether the world is glad they came. Nothing is being taught yet and everything is being learned. This month we say the first true things out loud, over a baby who understands the tone long before the sentences.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 139:13-14",
+      "text": "You knit me together in my mother's womb. I praise you, for I am fearfully and wonderfully made."
+    },
+    {
+      "ref": "Isaiah 43:1",
+      "text": "I have called you by name; you are mine."
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Here, and You Are Wanted",
+      "declaration": "You arrived to people who were waiting for you. Your name was chosen before you could hear it, and your place was ready before you needed it.",
+      "parentsPrayer": "Father, thank You for this life in our arms. Let our voices be the first place they hear that they are wanted. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Known Before You Knew Anything",
+      "declaration": "You were known before you could know anything. Nothing about you is a surprise to the God who made you.",
+      "parentsPrayer": "Lord, You knew this child before we did. Teach us who they are, and give us patience while we learn. Amen."
+    },
+    {
+      "week": 3,
+      "title": "You Belong to This Family",
+      "declaration": "You belong here. Not because you have done anything, and not on any condition — you belong because you are ours and you are His.",
+      "parentsPrayer": "God, knit this child into our family. Let belonging be the first thing they are sure of. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Loved Before You Could Love Back",
+      "declaration": "You were loved long before you could love anyone back. That is where all your loving will start from.",
+      "parentsPrayer": "Father, let our love for this child be steady enough to build on. Where we are tired, be our strength. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "You Are Here",
+      "declaration": "You are here, and you are wanted. The waiting is over and the welcome is real.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord, offspring a reward from him."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Called by Name",
+      "declaration": "You have a name, and it was chosen for you. You are not one of many; you are you.",
+      "scripture": {
+        "ref": "Isaiah 43:1",
+        "text": "I have called you by name; you are mine."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Wonderfully Made",
+      "declaration": "Every part of you was made on purpose. There is nothing about you that was rushed.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I praise you, for I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Known Already",
+      "declaration": "You were known before you knew anything at all. God has been loving you longer than you have existed.",
+      "scripture": {
+        "ref": "Jeremiah 1:5",
+        "text": "Before I formed you in the womb I knew you."
+      }
+    },
+    {
+      "day": 5,
+      "title": "You Belong Here",
+      "declaration": "You belong in this family. Nothing you do or fail to do will change that.",
+      "scripture": {
+        "ref": "Ephesians 2:19",
+        "text": "You are members of God's household."
+      }
+    },
+    {
+      "day": 6,
+      "title": "A Gift, Not a Debt",
+      "declaration": "You are a gift to us. You owe us nothing for being here.",
+      "scripture": {
+        "ref": "James 1:17",
+        "text": "Every good and perfect gift is from above."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Safe in Arms",
+      "declaration": "You are held by people who mean to keep holding you. You can rest in that.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms and carries them close to his heart."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Loved Before You Could Love",
+      "declaration": "You were loved before you could love back. Love came to you first.",
+      "scripture": {
+        "ref": "1 John 4:19",
+        "text": "We love because he first loved us."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Counted",
+      "declaration": "Every hair on your head is counted. Nothing about you is too small to matter.",
+      "scripture": {
+        "ref": "Luke 12:7",
+        "text": "Indeed, the very hairs of your head are all numbered."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Chosen",
+      "declaration": "You were chosen, not merely received. God wanted a person exactly like you.",
+      "scripture": {
+        "ref": "Ephesians 1:4",
+        "text": "He chose us in him before the creation of the world."
+      }
+    },
+    {
+      "day": 11,
+      "title": "A Child of God",
+      "declaration": "You are a child of God, and that is truer about you than anything else will ever be.",
+      "scripture": {
+        "ref": "John 1:12",
+        "text": "He gave the right to become children of God."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Delighted In",
+      "declaration": "God is not simply looking after you. He is delighted by you.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will take great delight in you."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Made in His Image",
+      "declaration": "You were made in God's image. Something of Him is already visible in you.",
+      "scripture": {
+        "ref": "Genesis 1:27",
+        "text": "So God created mankind in his own image."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Nothing to Earn",
+      "declaration": "You have nothing to earn here. You are loved at the beginning, not at the end.",
+      "scripture": {
+        "ref": "Ephesians 2:8",
+        "text": "It is by grace you have been saved."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Your Own Person",
+      "declaration": "You are not a copy of anyone. You are your own person, and we are glad of it.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts in the body just as he wanted them."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Seen",
+      "declaration": "You are seen. Even in the dark, even when you are quiet, you are seen.",
+      "scripture": {
+        "ref": "Genesis 16:13",
+        "text": "You are the God who sees me."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Heard",
+      "declaration": "When you cry, you are heard. Your voice matters here and it always will.",
+      "scripture": {
+        "ref": "Psalm 34:15",
+        "text": "The eyes of the Lord are on the righteous, and his ears are attentive to their cry."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Precious",
+      "declaration": "You are precious and honoured. Not for what you give anyone — simply because you are His.",
+      "scripture": {
+        "ref": "Isaiah 43:4",
+        "text": "You are precious and honoured in my sight, and I love you."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Written Down",
+      "declaration": "Your days were written before one of them happened. Your life has a shape already.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Held Together",
+      "declaration": "You are being held together by hands stronger than ours. That is why we can put you down and sleep.",
+      "scripture": {
+        "ref": "Colossians 1:17",
+        "text": "In him all things hold together."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Enough as You Are",
+      "declaration": "You are enough exactly as you are today. You do not have to grow into being loved.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Never Forgotten",
+      "declaration": "You will not be forgotten. Not for a moment, not by God.",
+      "scripture": {
+        "ref": "Isaiah 49:16",
+        "text": "I have engraved you on the palms of my hands."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Part of Something Older",
+      "declaration": "You have arrived into a family and a faith older than any of us. You are part of a long story.",
+      "scripture": {
+        "ref": "Psalm 100:5",
+        "text": "His faithfulness continues through all generations."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Growing Is Enough",
+      "declaration": "Growing is your whole job right now, and you are doing it beautifully.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 25,
+      "title": "A Reason to Be Glad",
+      "declaration": "You are a reason to be glad. Our house is different because you are in it.",
+      "scripture": {
+        "ref": "Psalm 118:24",
+        "text": "This is the day the Lord has made; let us rejoice and be glad in it."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Belonging Without Conditions",
+      "declaration": "There is no condition on your place here. You do not have to be easy to be loved.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Prayed For",
+      "declaration": "You are prayed for every day, including the days you will never remember.",
+      "scripture": {
+        "ref": "Philippians 1:3",
+        "text": "I thank my God every time I remember you."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Wanted on the Hard Days",
+      "declaration": "On the difficult nights, you are still wanted. That does not waver with how tired we are.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Yours to Grow Into",
+      "declaration": "There is a whole life ahead of you, and it is yours. We will hold it with you until you can carry it.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "I know the plans I have for you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "A New Name",
+      "declaration": "God has a good name for you, better than anything anyone else will call you.",
+      "scripture": {
+        "ref": "Revelation 2:17",
+        "text": "I will give him a white stone with a new name written on it."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Said Over You Again",
+      "declaration": "Everything said over you this month will be said again. You will hear it until you know it.",
+      "scripture": {
+        "ref": "Deuteronomy 6:7",
+        "text": "Talk about them when you sit at home and when you walk along the road."
+      }
+    }
+  ]
+}

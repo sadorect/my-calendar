@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 8,
+  "slug": "character-and-integrity",
+  "title": "Character & Integrity",
+  "intro": "A baby has no character to speak of yet, and is absorbing ours at an alarming rate. This month is honest about that. It is mostly a prayer for the parents — that what this child copies would be worth copying, and that the home they learn honesty in would deserve their trust.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 20:7",
+      "text": "The righteous lead blameless lives; blessed are their children after them."
+    },
+    {
+      "ref": "Deuteronomy 6:6-7",
+      "text": "These commandments are to be on your hearts. Impress them on your children."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Will Copy Us",
+      "declaration": "You will learn how to be a person by watching people. That is a frightening privilege and we accept it.",
+      "parentsPrayer": "Father, make us worth copying. Where we are not, protect this child from learning it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "A Home Where Truth Is Safe",
+      "declaration": "This will be a house where the truth is safe to say. That has to be built before you can speak.",
+      "parentsPrayer": "Lord, make honesty easy here. Let our child never need to lie to us. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Kept Promises",
+      "declaration": "We will keep our small promises to you. That is how you will learn that words mean something.",
+      "parentsPrayer": "God, make us reliable in the small things. Let our child grow up trusting words. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Sorry Said Out Loud",
+      "declaration": "You will hear us apologise. That is deliberate, because you will need to know how.",
+      "parentsPrayer": "Father, give us the humility to say sorry in front of our child. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "You Will Copy Us",
+      "declaration": "You will learn to be a person by watching people. We are trying to be worth watching.",
+      "scripture": {
+        "ref": "1 Corinthians 11:1",
+        "text": "Follow my example, as I follow the example of Christ."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Truth Is Safe Here",
+      "declaration": "This is a house where the truth is safe. You will never need to lie to us.",
+      "scripture": {
+        "ref": "Ephesians 4:25",
+        "text": "Each of you must put off falsehood and speak truthfully."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Promises Kept",
+      "declaration": "We will keep our small promises. That is how you learn words mean something.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes, and your no be no."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sorry Out Loud",
+      "declaration": "You will hear us apologise. You will need to know how it is done.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other."
+      }
+    },
+    {
+      "day": 5,
+      "title": "The Same at Home",
+      "declaration": "We will try to be the same people at home as everywhere else. You will notice if we are not.",
+      "scripture": {
+        "ref": "Psalm 101:2",
+        "text": "I will conduct the affairs of my house with a blameless heart."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Gentle Under Pressure",
+      "declaration": "May you learn from us that tiredness is not permission to be unkind.",
+      "scripture": {
+        "ref": "Colossians 3:12",
+        "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Honest About Ourselves",
+      "declaration": "We will not pretend to be better than we are. You would see through it anyway.",
+      "scripture": {
+        "ref": "Proverbs 28:13",
+        "text": "Whoever conceals their sins does not prosper."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Fair",
+      "declaration": "May you grow up expecting fairness because you were treated fairly.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, walk humbly with your God."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Words Used Carefully",
+      "declaration": "The words spoken over you are chosen carefully. They are building something.",
+      "scripture": {
+        "ref": "Proverbs 18:21",
+        "text": "The tongue has the power of life and death."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Small Things Done Properly",
+      "declaration": "May you learn to do small things properly, because you watched us do them.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 11,
+      "title": "No Secrets That Harm",
+      "declaration": "There will be no secrets in this house that hurt you. You will always be told the truth.",
+      "scripture": {
+        "ref": "John 8:32",
+        "text": "The truth will set you free."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Trustworthy Grown-Ups",
+      "declaration": "May every adult who holds you be trustworthy. May you learn what safe adults are like.",
+      "scripture": {
+        "ref": "Psalm 15:2",
+        "text": "Whose walk is blameless, who does what is righteous."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Blessed After Us",
+      "declaration": "What is built in us gets handed to you. That is a reason to keep building.",
+      "scripture": {
+        "ref": "Proverbs 20:7",
+        "text": "Blessed are their children after them."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Corrected Kindly",
+      "declaration": "When you are corrected, it will be done kindly. Correction is not the same as rejection.",
+      "scripture": {
+        "ref": "Hebrews 12:11",
+        "text": "No discipline seems pleasant at the time, but painful."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Not Shamed",
+      "declaration": "You will be corrected but never shamed. There is a difference and we intend to keep it.",
+      "scripture": {
+        "ref": "Romans 8:1",
+        "text": "There is now no condemnation."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Work Done Well",
+      "declaration": "May you see work done well in this house, and think that is normal.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Work at it with all your heart, as working for the Lord."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Money Handled Honestly",
+      "declaration": "May you grow up in a house where money is handled honestly. You will learn more than we teach.",
+      "scripture": {
+        "ref": "Proverbs 11:1",
+        "text": "Accurate weights find favour with him."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Generous by Default",
+      "declaration": "May giving be normal to you because you never saw it as unusual.",
+      "scripture": {
+        "ref": "2 Corinthians 9:7",
+        "text": "God loves a cheerful giver."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Kept Confidences",
+      "declaration": "May you learn that some things are not repeated, from people who did not repeat them.",
+      "scripture": {
+        "ref": "Proverbs 11:13",
+        "text": "A trustworthy person keeps a secret."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Nothing Performed",
+      "declaration": "We are not raising you for an audience. What happens here does not need witnesses.",
+      "scripture": {
+        "ref": "Matthew 6:1",
+        "text": "Be careful not to practise your righteousness in front of others."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Kindness When Unseen",
+      "declaration": "May you become someone who is kind when nobody is looking, because that is what you saw.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Character Over Cleverness",
+      "declaration": "We would rather you be good than impressive, if it ever comes to a choice.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord looks at the heart."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Steady Rather Than Perfect",
+      "declaration": "We will not be perfect parents. We intend to be steady ones.",
+      "scripture": {
+        "ref": "Psalm 136:1",
+        "text": "His love endures forever."
+      }
+    },
+    {
+      "day": 24,
+      "title": "A Good Name to Inherit",
+      "declaration": "We are trying to leave you a good name. It is worth more than anything else we could.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Forgiveness Practised Here",
+      "declaration": "Forgiveness will be normal in this house. You will need it and you will give it.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Boundaries That Are Kind",
+      "declaration": "You will be given limits, and they are a form of love rather than a lack of it.",
+      "scripture": {
+        "ref": "Proverbs 3:12",
+        "text": "The Lord disciplines those he loves."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Honest About Hard Things",
+      "declaration": "When something is hard, we will say so rather than pretend. You will learn that honesty is survivable.",
+      "scripture": {
+        "ref": "2 Corinthians 1:8",
+        "text": "We do not want you to be uninformed about the troubles we experienced."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Faithful in Ordinary Weeks",
+      "declaration": "Most of character is ordinary weeks done properly. That is what you will see.",
+      "scripture": {
+        "ref": "1 Thessalonians 4:11",
+        "text": "Make it your ambition to lead a quiet life."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Built to Hold Weight",
+      "declaration": "What is being built in you now has to hold weight later. We are building slowly.",
+      "scripture": {
+        "ref": "Matthew 7:24",
+        "text": "The wise man built his house on the rock."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Grace When We Fail",
+      "declaration": "We will get this wrong. There is grace for us, and you will see us take it.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Handed Down",
+      "declaration": "Everything good in this house is meant to be handed to you. That is the whole point.",
+      "scripture": {
+        "ref": "Psalm 78:4",
+        "text": "We will tell the next generation."
+      }
+    }
+  ]
+}

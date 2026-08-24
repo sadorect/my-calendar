@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 5,
+  "slug": "purpose-and-calling",
+  "title": "Purpose & Calling",
+  "intro": "Nobody knows yet who this child will be, and that is the point. This month resists the temptation to decide it for them. It asks instead that their life would count, that they would be useful and glad, and that we would have the grace to raise a person rather than a plan.",
+  "keyScriptures": [
+    {
+      "ref": "Ephesians 2:10",
+      "text": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
+    },
+    {
+      "ref": "Jeremiah 29:11",
+      "text": "I know the plans I have for you, plans to prosper you and not to harm you."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "There Is a Reason You Are Here",
+      "declaration": "Your life has a point, and it did not have to be earned. There is good work with your name on it already.",
+      "parentsPrayer": "Father, thank You that this child's life has a purpose we did not have to invent. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Not Our Plan for You",
+      "declaration": "You are not here to complete anyone else's plan. What you are for is between you and God, and we will help you find it.",
+      "parentsPrayer": "Lord, keep us from making this child carry our ambitions. Give us open hands. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Useful and Glad",
+      "declaration": "May you be useful, and may you be glad while you are. Those two belong together, and a life with only one of them is a thin thing.",
+      "parentsPrayer": "God, let this child love what they end up doing. Let their work be good for them and for others. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Growing Is the Work",
+      "declaration": "Growing is your whole calling this year. It is enough, and you are doing it well.",
+      "parentsPrayer": "Father, help us be content with who this child is today rather than who they might become. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "A Reason You Are Here",
+      "declaration": "Your life has a point. It did not have to be earned and it cannot be lost.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "We are God's handiwork, created in Christ Jesus to do good works."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Plans Already Made",
+      "declaration": "There are plans for you, and they are good ones. You are not walking into nothing.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "I know the plans I have for you."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Not Our Plan",
+      "declaration": "You are not here to finish anyone else's story. Yours is your own.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "All the days ordained for me were written in your book."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Growing Is Your Work",
+      "declaration": "Growing is your whole job this year, and it is a real one.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Made With Care",
+      "declaration": "Whatever you end up doing, you were assembled carefully for it.",
+      "scripture": {
+        "ref": "Psalm 139:13",
+        "text": "You knit me together in my mother's womb."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Useful and Glad",
+      "declaration": "May you be useful, and glad while you are. Those two belong together.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:22",
+        "text": "There is nothing better for a person than to enjoy their work."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Needed Somewhere",
+      "declaration": "There is somewhere that will need exactly you. It is already waiting.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts in the body just as he wanted them."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Not Too Young to Matter",
+      "declaration": "You matter now, not once you are useful. Your value is not deferred.",
+      "scripture": {
+        "ref": "Matthew 18:10",
+        "text": "See that you do not despise one of these little ones."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Called Before Able",
+      "declaration": "God calls people long before they are able. Ability comes after the calling, not before.",
+      "scripture": {
+        "ref": "Judges 6:14",
+        "text": "Go in the strength you have."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Gifts Already In You",
+      "declaration": "Whatever you are good at is already in you, waiting to be discovered rather than installed.",
+      "scripture": {
+        "ref": "Romans 12:6",
+        "text": "We have different gifts, according to the grace given to each of us."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Your Own Pace",
+      "declaration": "You will do everything at the time it is right for you. There is no race.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Character First",
+      "declaration": "Who you become will matter more than what you do. God builds the person first.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord looks at the heart."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Placed in This Time",
+      "declaration": "You were born now rather than a century ago, and that was chosen.",
+      "scripture": {
+        "ref": "Acts 17:26",
+        "text": "He marked out their appointed times in history."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Small Things First",
+      "declaration": "You will start with small things. Everything significant is built out of them.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Willing Hands",
+      "declaration": "May you grow up willing. Willingness opens more doors than talent.",
+      "scripture": {
+        "ref": "Isaiah 6:8",
+        "text": "Here am I. Send me!"
+      }
+    },
+    {
+      "day": 16,
+      "title": "Not a Job Title",
+      "declaration": "Your purpose is bigger than whatever job you end up with. It is about how you live.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Whatever you do, work at it with all your heart."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Free to Change Course",
+      "declaration": "You will be allowed to change your mind, more than once. Redirection is not failure.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Made to Give",
+      "declaration": "You were made to give something away, not only to receive. That will make you happy.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 19,
+      "title": "A Life That Counts",
+      "declaration": "Your life will count. It counts already, before you have done a single thing.",
+      "scripture": {
+        "ref": "Psalm 8:5",
+        "text": "You have crowned them with glory and honour."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Learning Is Preparation",
+      "declaration": "Everything you are learning now is preparation for something. None of it is wasted.",
+      "scripture": {
+        "ref": "Proverbs 22:6",
+        "text": "Start children off on the way they should go."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not Behind",
+      "declaration": "You will never be behind. There is no schedule you can fail to keep.",
+      "scripture": {
+        "ref": "Psalm 31:15",
+        "text": "My times are in your hands."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Purpose Is Not Pressure",
+      "declaration": "Having a calling is a gift, not a weight. May you never feel crushed by it.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "My yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Ordinary Days Count",
+      "declaration": "Most of your purpose will happen on ordinary days with people you already know.",
+      "scripture": {
+        "ref": "1 Thessalonians 4:11",
+        "text": "Make it your ambition to lead a quiet life."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Something Only You",
+      "declaration": "There will be things only you are placed to do. Nobody can take your part.",
+      "scripture": {
+        "ref": "Esther 4:14",
+        "text": "Who knows but that you have come to your position for such a time as this?"
+      }
+    },
+    {
+      "day": 25,
+      "title": "Serving Comes Naturally",
+      "declaration": "May serving people be normal to you rather than a sacrifice you have to make.",
+      "scripture": {
+        "ref": "Galatians 5:13",
+        "text": "Serve one another humbly in love."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Held Through the Finding",
+      "declaration": "It may take years to find. You will be held for all of them.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Not Measured Against Siblings",
+      "declaration": "You will not be compared to anyone in this family. Your calling is not a competition.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Faithful Rather Than Famous",
+      "declaration": "May you be faithful. Whether anyone notices is God's business, not yours.",
+      "scripture": {
+        "ref": "1 Corinthians 4:2",
+        "text": "Those who have been given a trust must prove faithful."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Started, Not Finished",
+      "declaration": "God has started something in you and does not abandon what He starts.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Ours to Pray For",
+      "declaration": "We will pray this over you for years before you understand it. It will be here waiting.",
+      "scripture": {
+        "ref": "Colossians 1:9",
+        "text": "We continually ask God to fill you with the knowledge of his will."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Yours to Discover",
+      "declaration": "This is yours to discover, not ours to assign. We will be glad whatever it turns out to be.",
+      "scripture": {
+        "ref": "Proverbs 3:6",
+        "text": "In all your ways submit to him, and he will make your paths straight."
+      }
+    }
+  ]
+}

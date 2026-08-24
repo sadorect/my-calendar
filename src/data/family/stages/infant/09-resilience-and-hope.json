@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 9,
+  "slug": "resilience-and-hope",
+  "title": "Resilience & Hope",
+  "intro": "The first year has its own griefs — colic, illness, a birth that did not go to plan, a family under more strain than anyone expected. This month does not pretend otherwise. It says that hard seasons pass, that God is nearest to the exhausted, and that hope is a reasonable thing to hold at 3am.",
+  "keyScriptures": [
+    {
+      "ref": "Lamentations 3:22-23",
+      "text": "Because of the Lord's great love we are not consumed... they are new every morning."
+    },
+    {
+      "ref": "Psalm 34:18",
+      "text": "The Lord is close to the broken-hearted."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "This Season Will Pass",
+      "declaration": "Whatever is hard about right now, it is a season and not a shape. It will pass, and something else will be hard instead.",
+      "parentsPrayer": "Father, give us perspective at 3am. Remind us that this will not always be now. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Near the Exhausted",
+      "declaration": "God does not stand back from tired people. He comes closer, and He is not disappointed in us.",
+      "parentsPrayer": "Lord, be close to us in this. We are more tired than we know how to say. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Help Is Not Failure",
+      "declaration": "Asking for help is not failing at this. It is how families have always survived a first year.",
+      "parentsPrayer": "God, give us the humility to ask, and send us people who can be asked. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Hope Is Reasonable",
+      "declaration": "There is good ahead. Hoping for it is not naive; it is what people do who know how the story ends.",
+      "parentsPrayer": "Father, keep hope alive in this house. Let our child grow up in a home that expects good things. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "This Will Pass",
+      "declaration": "Whatever is hard right now is a season, not a shape. It will pass.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 2,
+      "title": "New Every Morning",
+      "declaration": "However the night went, the morning starts again. That is a promise, not a platitude.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Near the Exhausted",
+      "declaration": "God comes closer to tired people rather than standing back from them.",
+      "scripture": {
+        "ref": "Psalm 34:18",
+        "text": "The Lord is close to the broken-hearted."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Help Is Not Failure",
+      "declaration": "Needing help is not failing. No family has ever done a first year alone.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9",
+        "text": "Two are better than one."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Held When We Cannot Hold",
+      "declaration": "On the days we cannot hold anything, you are still held. So are we.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Crying Is Not Broken",
+      "declaration": "Crying does not mean something is broken. It means something is being said.",
+      "scripture": {
+        "ref": "Psalm 56:8",
+        "text": "List my tears on your scroll."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Strength for Today Only",
+      "declaration": "We are given today's strength today. That is why we can come back tomorrow.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow."
+      }
+    },
+    {
+      "day": 8,
+      "title": "No Chart to Fail",
+      "declaration": "You are not behind, whatever any chart says. You are on your own timetable.",
+      "scripture": {
+        "ref": "Psalm 31:15",
+        "text": "My times are in your hands."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Rest Is Allowed",
+      "declaration": "Rest is not a reward for coping well. It is part of surviving at all.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "I will give you rest."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Illness Is Not Punishment",
+      "declaration": "When you are unwell, it is not a judgement on anyone. It is a hard week.",
+      "scripture": {
+        "ref": "John 9:3",
+        "text": "Neither this man nor his parents sinned."
+      }
+    },
+    {
+      "day": 11,
+      "title": "A Difficult Start Is Not the Story",
+      "declaration": "However this began, it is not the whole story. Beginnings are not endings.",
+      "scripture": {
+        "ref": "Genesis 50:20",
+        "text": "You intended to harm me, but God intended it for good."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Getting Through Counts",
+      "declaration": "Some weeks getting through is the achievement. Count it as one.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Grief Is Allowed Here",
+      "declaration": "If something has been lost, it can be grieved out loud in this house.",
+      "scripture": {
+        "ref": "John 11:35",
+        "text": "Jesus wept."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Not the Only Ones",
+      "declaration": "Whatever this is, we are not the only family in it. It only feels that way.",
+      "scripture": {
+        "ref": "1 Corinthians 10:13",
+        "text": "Nothing has overtaken you except what is common to mankind."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Small Steps Count",
+      "declaration": "On a hard day, one small good thing is a real thing. It does not need to be more.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Held Through the Night",
+      "declaration": "The night will end. You will be kept through it and so will we.",
+      "scripture": {
+        "ref": "Psalm 30:5",
+        "text": "Weeping may stay for the night, but rejoicing comes in the morning."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Hope Anchored",
+      "declaration": "Hope here is not optimism. It is anchored to someone who does not move.",
+      "scripture": {
+        "ref": "Hebrews 6:19",
+        "text": "We have this hope as an anchor for the soul."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Nothing Wasted",
+      "declaration": "None of this is being wasted, even the parts that make no sense now.",
+      "scripture": {
+        "ref": "Romans 8:28",
+        "text": "In all things God works for the good of those who love him."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Tell Someone",
+      "declaration": "Saying it out loud to one person makes it smaller. That will be true all your life.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Kind to Ourselves",
+      "declaration": "We will speak to ourselves the way we would speak to a friend in this week.",
+      "scripture": {
+        "ref": "Matthew 22:39",
+        "text": "Love your neighbour as yourself."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not Ruined by a Bad Day",
+      "declaration": "A bad day does not ruin you and it does not ruin us. Tomorrow still comes.",
+      "scripture": {
+        "ref": "Micah 7:8",
+        "text": "Though I have fallen, I will rise."
+      }
+    },
+    {
+      "day": 22,
+      "title": "God Is Not Disappointed",
+      "declaration": "God is not disappointed in tired parents. That is not who He is.",
+      "scripture": {
+        "ref": "Psalm 103:14",
+        "text": "He knows how we are formed, he remembers that we are dust."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Made Stronger",
+      "declaration": "What we are getting through is making us people who can carry more.",
+      "scripture": {
+        "ref": "James 1:3",
+        "text": "The testing of your faith produces perseverance."
+      }
+    },
+    {
+      "day": 24,
+      "title": "A Record of Being Helped",
+      "declaration": "Look back: we have been helped every hard week so far. That is evidence.",
+      "scripture": {
+        "ref": "1 Samuel 7:12",
+        "text": "Thus far the Lord has helped us."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Comfort to Pass On",
+      "declaration": "What we are learning now will be useful to someone else later. It is not only for us.",
+      "scripture": {
+        "ref": "2 Corinthians 1:4",
+        "text": "So that we can comfort those in any trouble."
+      }
+    },
+    {
+      "day": 26,
+      "title": "The Middle Is Hard",
+      "declaration": "Most stories are worst in the middle. We may simply be in the middle.",
+      "scripture": {
+        "ref": "Psalm 27:14",
+        "text": "Wait for the Lord; be strong and take heart."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Good Comes Round",
+      "declaration": "Good things come round again. This is not the last of them.",
+      "scripture": {
+        "ref": "Psalm 30:11",
+        "text": "You turned my wailing into dancing."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Hope for You",
+      "declaration": "We have hope for your whole life, not only for this week. It is bigger than the year.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "Plans to give you hope and a future."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Carried, Not Dragged",
+      "declaration": "We are being carried through this rather than dragging ourselves. There is a difference.",
+      "scripture": {
+        "ref": "Isaiah 46:4",
+        "text": "I have made you and I will carry you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Still Being Made",
+      "declaration": "None of us is finished. God does not abandon what He has started, in you or in us.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Evidence for Later",
+      "declaration": "We will remember this year as proof for the next hard one. Keep the proof.",
+      "scripture": {
+        "ref": "Romans 5:4",
+        "text": "Perseverance produces character; and character, hope."
+      }
+    }
+  ]
+}

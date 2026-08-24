@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 2,
+  "slug": "love-and-healthy-relationships",
+  "title": "Love & Healthy Relationships",
+  "intro": "A baby learns what love is from how they are answered. Long before words, they are working out whether crying brings comfort and whether faces light up when they arrive. This month is as much a prayer for the parents as a declaration over the child, because in the first year the two are almost the same thing.",
+  "keyScriptures": [
+    {
+      "ref": "1 John 4:19",
+      "text": "We love because he first loved us."
+    },
+    {
+      "ref": "1 Corinthians 13:4",
+      "text": "Love is patient, love is kind."
+    }
+  ],
+  "palette": "blush",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Answered",
+      "declaration": "When you call, you are answered. That is the first thing love teaches, and you are learning it now.",
+      "parentsPrayer": "Father, give us the patience to keep answering. Let our child learn from us that calling out is safe. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Held Gently",
+      "declaration": "You are handled gently. The hands that hold you are careful with you, and they always will be.",
+      "parentsPrayer": "Lord, make our hands gentle when we are exhausted. Guard this child from our worst moments. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Faces That Light Up",
+      "declaration": "People are glad to see you. That gladness is not something you have to earn by being good.",
+      "parentsPrayer": "God, let our faces be glad when this child comes into the room, this year and every year. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Learning Love from Being Loved",
+      "declaration": "You will love people one day because you were loved first. This is where that begins.",
+      "parentsPrayer": "Father, let the love in this house be the pattern our child carries out into the world. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Answered When You Call",
+      "declaration": "When you cry, someone comes. That is the first thing you are learning about love.",
+      "scripture": {
+        "ref": "Psalm 34:15",
+        "text": "His ears are attentive to their cry."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Love Came First",
+      "declaration": "Love came to you before you could give any back. It started with someone else.",
+      "scripture": {
+        "ref": "1 John 4:19",
+        "text": "We love because he first loved us."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Held Gently",
+      "declaration": "You are held gently. The hands around you are careful with you.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Patient with You",
+      "declaration": "Love is patient, and you are being loved patiently while you learn everything at once.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love is patient, love is kind."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Glad Faces",
+      "declaration": "People light up when they see you. You do not have to earn that.",
+      "scripture": {
+        "ref": "Numbers 6:25",
+        "text": "The Lord make his face shine on you."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Fed and Kept",
+      "declaration": "You are fed, kept warm and kept close. Love is mostly ordinary work done again and again.",
+      "scripture": {
+        "ref": "1 Thessalonians 2:7",
+        "text": "We were like young children among you... like a nursing mother cares for her children."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not Too Much",
+      "declaration": "You are not too much. Your needs are not an inconvenience; they are why we are here.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Comforted",
+      "declaration": "When you are frightened, you are comforted. You will learn to trust that.",
+      "scripture": {
+        "ref": "Isaiah 66:13",
+        "text": "As a mother comforts her child, so will I comfort you."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Known Voices",
+      "declaration": "You are learning the voices that love you. They will be familiar all your life.",
+      "scripture": {
+        "ref": "John 10:27",
+        "text": "My sheep listen to my voice; I know them, and they follow me."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Loved When Difficult",
+      "declaration": "You are loved on the nights when nothing helps. That is when it counts.",
+      "scripture": {
+        "ref": "Romans 5:8",
+        "text": "While we were still sinners, Christ died for us."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Kindness Around You",
+      "declaration": "The kindness around you is teaching you how to be kind. You are learning it by being given it.",
+      "scripture": {
+        "ref": "Ephesians 4:32",
+        "text": "Be kind and compassionate to one another."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Safe to Need",
+      "declaration": "It is safe to need things here. You will never be shamed for needing.",
+      "scripture": {
+        "ref": "Psalm 55:22",
+        "text": "Cast your cares on the Lord and he will sustain you."
+      }
+    },
+    {
+      "day": 13,
+      "title": "A Family, Not Just Parents",
+      "declaration": "You have more people than you know. There is a whole family learning your face.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Love That Stays",
+      "declaration": "The love around you is not going anywhere. It is not a mood; it is a decision.",
+      "scripture": {
+        "ref": "1 Corinthians 13:7",
+        "text": "It always protects, always trusts, always hopes, always perseveres."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Touch and Nearness",
+      "declaration": "Being held is not a luxury. It is how you learn that the world is safe.",
+      "scripture": {
+        "ref": "Mark 10:16",
+        "text": "He took the children in his arms, placed his hands on them and blessed them."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Forgiven Before You Sin",
+      "declaration": "You will be forgiven long before you understand what forgiveness is. It is in the walls here.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Compared",
+      "declaration": "You are not being measured against anyone. Your growing is your own.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Watched Over While You Sleep",
+      "declaration": "You are watched over while you sleep by someone who never needs to.",
+      "scripture": {
+        "ref": "Psalm 121:3",
+        "text": "He who watches over you will not slumber."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Sung To",
+      "declaration": "You are sung over. There is music in this house because you are in it.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will rejoice over you with singing."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Spoken To",
+      "declaration": "You are spoken to, not just about. Your presence changes the conversation.",
+      "scripture": {
+        "ref": "Deuteronomy 6:7",
+        "text": "Talk about them when you sit at home."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Learning Trust",
+      "declaration": "Every time you are answered, trust grows. That trust will hold up a whole life.",
+      "scripture": {
+        "ref": "Proverbs 3:5",
+        "text": "Trust in the Lord with all your heart."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Loved by God First",
+      "declaration": "Before we loved you, God did. Our love is a small copy of a much bigger one.",
+      "scripture": {
+        "ref": "1 John 3:1",
+        "text": "See what great love the Father has lavished on us."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Room Made for You",
+      "declaration": "Room was made for you before you came. Nothing had to be taken from anyone to make it.",
+      "scripture": {
+        "ref": "John 14:2",
+        "text": "My Father's house has many rooms."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Gentle Words",
+      "declaration": "The words spoken over you are gentle. You will hear their tone long before their meaning.",
+      "scripture": {
+        "ref": "Proverbs 16:24",
+        "text": "Gracious words are a honeycomb, sweet to the soul."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Steady, Not Perfect",
+      "declaration": "The love around you is steady rather than perfect. Steady is what you actually need.",
+      "scripture": {
+        "ref": "Psalm 136:1",
+        "text": "His love endures forever."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Cared For by Many",
+      "declaration": "Other people will love you too — grandparents, friends, whole rooms of people. Love is not scarce.",
+      "scripture": {
+        "ref": "Acts 2:46",
+        "text": "They broke bread in their homes and ate together with glad and sincere hearts."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Held Through Change",
+      "declaration": "Everything about you is changing fast, and you are held through all of it.",
+      "scripture": {
+        "ref": "Hebrews 13:8",
+        "text": "Jesus Christ is the same yesterday and today and forever."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Loved, Not Owned",
+      "declaration": "You are loved, not owned. You are being raised to be free, not to be kept.",
+      "scripture": {
+        "ref": "Psalm 127:4",
+        "text": "Children are like arrows in the hands of a warrior."
+      }
+    },
+    {
+      "day": 29,
+      "title": "A Whole Person Already",
+      "declaration": "You are a whole person now, not a person in progress. Loved as you are today.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "Your eyes saw my unformed body."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Practising on Us",
+      "declaration": "You will practise loving on us first, and we can take it. That is what we are for.",
+      "scripture": {
+        "ref": "1 Corinthians 13:11",
+        "text": "When I was a child, I talked like a child."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Love Never Fails",
+      "declaration": "Everything else about this year will change. This will not.",
+      "scripture": {
+        "ref": "1 Corinthians 13:8",
+        "text": "Love never fails."
+      }
+    }
+  ]
+}
