@@ -6,11 +6,19 @@ import {
   stageDayContent,
   stageWeekContent,
   themesForStage,
-  stageCoverage
+  stageCoverage,
+  loadStageContent,
+  isStageLoaded,
+  stageHasContent,
+  STAGES_WITH_CONTENT
 } from '../../src/data/family/index.js'
 import { weekOfMonth, dayFavouriteKey, weekFavouriteKey } from '../../src/services/stageTimeline.js'
 
 const WRITTEN = ['school', 'teen']
+
+// Content is fetched per stage on demand, so it must be here before the
+// describe blocks below look anything up. Top-level await runs first.
+await Promise.all(WRITTEN.map((stage) => loadStageContent(stage)))
 
 describe('the twelve themes', () => {
   it('covers every calendar month exactly once', () => {
@@ -29,13 +37,19 @@ describe('the twelve themes', () => {
   })
 })
 
-describe.each(WRITTEN)('%s — Identity & Belonging', (stage) => {
-  const file = stageMonthContent(stage, 1)
+const COMBINATIONS = WRITTEN.flatMap((stage) =>
+  THEMES.map((theme) => [stage, theme.month, theme.title])
+)
+
+describe.each(COMBINATIONS)('%s — month %i, %s', (stage, month) => {
+  const file = stageMonthContent(stage, month)
 
   it('is written', () => {
     expect(file).toBeTruthy()
     expect(file.stage).toBe(stage)
-    expect(file.title).toBe('Identity & Belonging')
+    expect(file.month).toBe(month)
+    expect(file.title).toBe(themeForMonth(month).title)
+    expect(file.slug).toBe(themeForMonth(month).slug)
   })
 
   it('has an intro and one or two key Scriptures', () => {
@@ -86,6 +100,38 @@ describe.each(WRITTEN)('%s — Identity & Belonging', (stage) => {
   })
 })
 
+describe.each(WRITTEN)('%s — across the whole year', (stage) => {
+  const files = THEMES.map((t) => stageMonthContent(stage, t.month))
+
+  it('has all twelve themes written', () => {
+    expect(files.every(Boolean)).toBe(true)
+  })
+
+  it('never repeats a day title anywhere in the stage', () => {
+    // Titles are what the month grid, the Saved list and the share card show,
+    // so a repeat across the year reads as a bug rather than as a refrain.
+    const titles = files.flatMap((f) => f.days.map((d) => d.title))
+    expect(titles).toHaveLength(12 * 31)
+    expect(new Set(titles).size).toBe(titles.length)
+  })
+
+  it('never repeats a declaration', () => {
+    const declarations = files.flatMap((f) => f.days.map((d) => d.declaration))
+    expect(new Set(declarations).size).toBe(declarations.length)
+  })
+
+  it('draws on a wide range of Scripture rather than a handful', () => {
+    const refs = files.flatMap((f) => f.days.map((d) => d.scripture.ref))
+    expect(new Set(refs).size).toBeGreaterThan(200)
+  })
+
+  it('never repeats a weekly declaration', () => {
+    const weekly = files.flatMap((f) => f.weeks.map((w) => w.declaration))
+    expect(weekly).toHaveLength(12 * 4)
+    expect(new Set(weekly).size).toBe(weekly.length)
+  })
+})
+
 describe('looking content up', () => {
   it('finds a day and the month it belongs to', () => {
     const entry = stageDayContent('school', 1, 3)
@@ -98,21 +144,31 @@ describe('looking content up', () => {
   })
 
   it('returns null for content nobody has written yet', () => {
-    expect(stageMonthContent('school', 2)).toBeNull()
-    expect(stageDayContent('school', 2, 1)).toBeNull()
+    // No born stage other than school and teen is written.
+    expect(stageMonthContent('infant', 1)).toBeNull()
     expect(stageWeekContent('infant', 1, 1)).toBeNull()
+    expect(stageDayContent('toddler', 1, 1)).toBeNull()
     expect(stageDayContent('nonsense', 1, 1)).toBeNull()
+    // And nothing exists outside the twelve months.
+    expect(stageMonthContent('school', 13)).toBeNull()
   })
 
   it('reports honestly how much of a stage exists', () => {
-    expect(stageCoverage('school')).toEqual({ monthsWritten: 1, monthsTotal: 12, daysWritten: 31 })
+    for (const stage of WRITTEN) {
+      expect(stageCoverage(stage)).toEqual({
+        monthsWritten: 12,
+        monthsTotal: 12,
+        daysWritten: 12 * 31
+      })
+    }
     expect(stageCoverage('toddler').monthsWritten).toBe(0)
   })
 
   it('marks which themes a stage has', () => {
-    const themes = themesForStage('teen')
-    expect(themes[0].written).toBe(true)
-    expect(themes.filter((t) => t.written)).toHaveLength(1)
+    for (const stage of WRITTEN) {
+      expect(themesForStage(stage).filter((t) => t.written)).toHaveLength(12)
+    }
+    expect(themesForStage('adult').filter((t) => t.written)).toHaveLength(0)
   })
 })
 
@@ -138,5 +194,29 @@ describe('favourite keys', () => {
 
   it('cannot be confused with a womb favourite', () => {
     expect(dayFavouriteKey('school', 1, 3)).not.toBe('day:3')
+  })
+})
+
+describe('loading a stage on demand', () => {
+  it('knows which stages have content on disk without loading any of it', () => {
+    expect(STAGES_WITH_CONTENT).toEqual(['school', 'teen'])
+    expect(stageHasContent('school')).toBe(true)
+    expect(stageHasContent('toddler')).toBe(false)
+  })
+
+  it('reports a stage nobody has written rather than throwing', async () => {
+    expect(await loadStageContent('toddler')).toBe(false)
+    expect(isStageLoaded('toddler')).toBe(false)
+    expect(stageMonthContent('toddler', 1)).toBeNull()
+  })
+
+  it('is safe to call repeatedly and concurrently', async () => {
+    const results = await Promise.all([
+      loadStageContent('school'),
+      loadStageContent('school'),
+      loadStageContent('school')
+    ])
+    expect(results).toEqual([true, true, true])
+    expect(stageCoverage('school').monthsWritten).toBe(12)
   })
 })

@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 3,
+  "slug": "wisdom-and-discernment",
+  "title": "Wisdom & Discernment",
+  "intro": "Children this age are handed more choices than they have practice with, and most of them are made in a hurry with someone watching. Wisdom is not the same as being clever, and this month we say so — it is knowing what is worth doing, being willing to ask, and being able to wait a moment before you answer.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 2:6",
+      "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding."
+    },
+    {
+      "ref": "James 1:5",
+      "text": "If any of you lacks wisdom, you should ask God, who gives generously."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Wisdom Is Not the Same as Clever",
+      "declaration": "Being clever is knowing lots of things. Being wise is knowing what to do with them. You can grow in wisdom at any age, and it starts with wanting it.",
+      "parentsPrayer": "Father, give our child a hunger for wisdom rather than for being right. Make our home a place where questions are welcome. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Can Always Ask",
+      "declaration": "You do not have to work everything out alone. Asking is not cheating and it is not weakness — it is one of the wisest things a person ever does.",
+      "parentsPrayer": "Lord, make us the kind of parents our child comes to first. Keep our faces kind when they bring us hard questions. Amen."
+    },
+    {
+      "week": 3,
+      "title": "A Moment Before You Answer",
+      "declaration": "You are allowed to think before you speak. A moment of quiet has saved more friendships than any clever reply ever has.",
+      "parentsPrayer": "God, slow our child down in the moments that matter. Give them the pause that keeps them out of trouble. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Choosing Well",
+      "declaration": "Every day is made of small choices, and small choices become who you are. You are learning to choose well, and you are getting better at it.",
+      "parentsPrayer": "Father, guide our child's small decisions, the ones nobody sees. Let their ordinary choices build something good. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Ask for It",
+      "declaration": "If you do not know what to do, you can ask God for wisdom. He does not sigh or make you feel silly for asking.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "Ask God, who gives generously to all without finding fault."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Wisdom Starts with Awe",
+      "declaration": "Wisdom starts with knowing that God is God and you are not. That is not a small thought; it is where everything sensible begins.",
+      "scripture": {
+        "ref": "Proverbs 9:10",
+        "text": "The fear of the Lord is the beginning of wisdom."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Better Than Clever",
+      "declaration": "Being clever gets you marks. Being wise gets you a good life. If you can only have one, choose wise.",
+      "scripture": {
+        "ref": "Proverbs 4:7",
+        "text": "Wisdom is supreme; therefore get wisdom."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Listen First",
+      "declaration": "You will learn far more from listening than from having the best answer ready. Let people finish.",
+      "scripture": {
+        "ref": "Proverbs 18:13",
+        "text": "To answer before listening — that is folly and shame."
+      }
+    },
+    {
+      "day": 5,
+      "title": "A Moment Before You Speak",
+      "declaration": "You do not have to reply straight away. A short pause is not awkward; it is wise.",
+      "scripture": {
+        "ref": "Proverbs 29:20",
+        "text": "Do you see someone who speaks in haste? There is more hope for a fool."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Asking Is Not Cheating",
+      "declaration": "Asking for help is what sensible people do. Nobody wise got there by pretending they already knew.",
+      "scripture": {
+        "ref": "Proverbs 15:22",
+        "text": "Plans fail for lack of counsel, but with many advisers they succeed."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Who You Listen To",
+      "declaration": "Be careful whose advice you take. Not everyone who is loud is right.",
+      "scripture": {
+        "ref": "Proverbs 13:20",
+        "text": "Walk with the wise and become wise, for a companion of fools suffers harm."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Telling Good from Nearly-Good",
+      "declaration": "Some things look right and are not. Learning the difference is a skill, and you are learning it.",
+      "scripture": {
+        "ref": "Hebrews 5:14",
+        "text": "Who by constant use have trained themselves to distinguish good from evil."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Think About the End",
+      "declaration": "Before you start something, think about where it goes. Wise people look one step further than they need to.",
+      "scripture": {
+        "ref": "Proverbs 14:15",
+        "text": "The simple believe anything, but the prudent give thought to their steps."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Honest with Yourself",
+      "declaration": "Wisdom starts with being honest about what you actually did, not what you meant to do.",
+      "scripture": {
+        "ref": "Psalm 51:6",
+        "text": "You desired faithfulness even in the womb; you taught me wisdom in that secret place."
+      }
+    },
+    {
+      "day": 11,
+      "title": "It Is Fine Not to Know",
+      "declaration": "Saying 'I do not know' is a wise sentence. Pretending is how people get into trouble.",
+      "scripture": {
+        "ref": "Proverbs 12:23",
+        "text": "The prudent keep their knowledge to themselves."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Learning from Mistakes",
+      "declaration": "A mistake you learn from is not wasted. The only wasted mistake is the one you refuse to look at.",
+      "scripture": {
+        "ref": "Proverbs 19:20",
+        "text": "Listen to advice and accept discipline, and at the end you will be counted among the wise."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Not Every Thought Is True",
+      "declaration": "Not everything you think is true, and not everything you feel is a fact. You are allowed to question your own thoughts.",
+      "scripture": {
+        "ref": "2 Corinthians 10:5",
+        "text": "We take captive every thought to make it obedient to Christ."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Being Corrected",
+      "declaration": "Being corrected feels bad for a minute and helps for years. People who cannot be corrected stop growing.",
+      "scripture": {
+        "ref": "Proverbs 12:1",
+        "text": "Whoever loves discipline loves knowledge."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Choose Your Words",
+      "declaration": "Words cannot be taken back once they are out. Choose them like you would choose a gift.",
+      "scripture": {
+        "ref": "Proverbs 16:24",
+        "text": "Gracious words are a honeycomb, sweet to the soul."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Wisdom in Small Things",
+      "declaration": "How you do small things is how you will do big ones. Practise on the little things.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Do Not Follow the Crowd",
+      "declaration": "A crowd can be wrong together. Being the only one who stops is sometimes the wisest thing in the room.",
+      "scripture": {
+        "ref": "Exodus 23:2",
+        "text": "Do not follow the crowd in doing wrong."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Sleep on It",
+      "declaration": "Some decisions get much clearer by tomorrow. Waiting a night is a real strategy.",
+      "scripture": {
+        "ref": "Psalm 4:4",
+        "text": "When you are on your beds, search your hearts and be silent."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Read and Wonder",
+      "declaration": "Curiosity is a gift. Keep asking why, and keep reading — wisdom grows in people who stay interested.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Two Sides",
+      "declaration": "Almost every story has another side. Wait to hear it before you decide.",
+      "scripture": {
+        "ref": "Proverbs 18:17",
+        "text": "In a lawsuit the first to speak seems right, until someone comes forward and cross-examines."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Kind and Wise Together",
+      "declaration": "Wisdom without kindness is just being sharp. The best wisdom leaves people better than it found them.",
+      "scripture": {
+        "ref": "James 3:17",
+        "text": "The wisdom from above is first pure, then peace-loving, considerate."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Doing the Boring Bit",
+      "declaration": "A lot of wisdom is just doing the unexciting part properly. It is not glamorous and it works.",
+      "scripture": {
+        "ref": "Proverbs 21:5",
+        "text": "The plans of the diligent lead to profit."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Knowing When to Stop",
+      "declaration": "Wise people know when to stop — talking, playing, arguing. Stopping well is a skill worth having.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:7",
+        "text": "A time to be silent and a time to speak."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Advice Worth Taking",
+      "declaration": "Take advice from people who want good things for you, not from people who want you to be like them.",
+      "scripture": {
+        "ref": "Psalm 1:1",
+        "text": "Blessed is the one who does not walk in step with the wicked."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Truth Even When It Costs",
+      "declaration": "Sometimes the true answer is the harder one. Say it anyway; it costs less in the end.",
+      "scripture": {
+        "ref": "Proverbs 12:19",
+        "text": "Truthful lips endure forever."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Your Conscience",
+      "declaration": "That feeling that something is not right is worth listening to. God gave it to you on purpose.",
+      "scripture": {
+        "ref": "Romans 2:15",
+        "text": "Their consciences also bearing witness."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Plans and Surprises",
+      "declaration": "Make a plan, and hold it lightly. God is often doing something better than the plan.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Wisdom Is for Now",
+      "declaration": "Wisdom is not something you get when you are grown up. You can start using it today, in the next thing you do.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Ask Again",
+      "declaration": "If you asked for wisdom and still do not know, ask again. God does not get tired of the question.",
+      "scripture": {
+        "ref": "Luke 11:9",
+        "text": "Ask and it will be given to you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Wisdom Grows",
+      "declaration": "Nobody is born wise. It grows, a bit at a time, in people who keep asking and keep listening.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "Jesus grew in wisdom and stature."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Wisdom Goes With You",
+      "declaration": "Everything you have learned this month goes with you into next month, and into the next decision you make.",
+      "scripture": {
+        "ref": "Proverbs 3:5-6",
+        "text": "Trust in the Lord with all your heart and lean not on your own understanding."
+      }
+    }
+  ]
+}

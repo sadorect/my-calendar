@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 6,
+  "slug": "protection-and-covering",
+  "title": "Protection & Covering",
+  "intro": "By now a teenager knows the world is not safe, and knows their parents cannot make it so. Pretending otherwise loses their trust. This month says the harder, truer thing — that they are covered rather than sheltered, that some protection is theirs to exercise, and that they were never meant to carry any of it alone.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 91:1-2",
+      "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+    },
+    {
+      "ref": "Proverbs 4:23",
+      "text": "Above all else, guard your heart, for everything you do flows from it."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Covered, Not Sheltered",
+      "declaration": "You are not promised a life where nothing hard happens. You are promised that nothing hard happens to you alone, and that is a stronger thing than it sounds.",
+      "parentsPrayer": "Father, we cannot make the world safe for our child. Cover them where we cannot, and let them know it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Some Protection Is Yours to Use",
+      "declaration": "What you watch, who you let close, where you go, when you leave. A great deal of your safety is in your own hands, and that is not a burden — it is authority.",
+      "parentsPrayer": "Lord, give our child the sense to guard what matters and the nerve to act on it. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Nothing Is Too Big to Say",
+      "declaration": "There is no version of this where you are on your own with something. Whatever it is, it is smaller once it is said out loud.",
+      "parentsPrayer": "God, make us safe to tell. Keep our faces steady when our child brings us something hard. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Kept",
+      "declaration": "You are kept — the way something valuable is kept, deliberately and by someone who intends to hold on.",
+      "parentsPrayer": "Father, keep our child. When they are far from us and far from You, keep them still. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Covered, Not Exempt",
+      "declaration": "You are not promised a life with no hard days. You are promised you will not face one alone.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you; when you walk through the fire, you will not be burned."
+      }
+    },
+    {
+      "day": 2,
+      "title": "The Shelter Is Real",
+      "declaration": "There is an actual place to go when everything is too much, and it is available at any hour.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Guard What Shapes You",
+      "declaration": "What you take in shapes you. Guarding your heart is not fear; it is basic maintenance.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart, for everything you do flows from it."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Guard Your Eyes",
+      "declaration": "What you look at repeatedly, you become used to. Deciding that on purpose is one of the most protective things you can do.",
+      "scripture": {
+        "ref": "Psalm 101:3",
+        "text": "I will not look with approval on anything that is vile."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Leave Early",
+      "declaration": "The best protection is often leaving twenty minutes before it gets complicated. That is not paranoia; it is skill.",
+      "scripture": {
+        "ref": "Proverbs 27:12",
+        "text": "The prudent see danger and take refuge, but the simple keep going and pay the penalty."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Who You Let Close",
+      "declaration": "You get to decide who has access to you. That is not coldness, it is stewardship of something valuable.",
+      "scripture": {
+        "ref": "Proverbs 13:20",
+        "text": "Walk with the wise and become wise, for a companion of fools suffers harm."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Nothing Is Too Big to Say",
+      "declaration": "There is no situation where you are on your own with it. It gets smaller the moment it is said out loud.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him, for God is our refuge."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Secrets That Are Not Yours to Keep",
+      "declaration": "If someone asks you to keep a secret that makes you unsafe, it was never your secret to keep.",
+      "scripture": {
+        "ref": "Ephesians 5:11",
+        "text": "Have nothing to do with the fruitless deeds of darkness, but rather expose them."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Watched Over",
+      "declaration": "Someone is awake on your behalf. That is true at three in the morning as much as at midday.",
+      "scripture": {
+        "ref": "Psalm 121:3-4",
+        "text": "He who watches over you will not slumber... will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 10,
+      "title": "A Strong Tower",
+      "declaration": "When everything is moving, there is one thing that does not. You can run to it without an appointment.",
+      "scripture": {
+        "ref": "Proverbs 18:10",
+        "text": "The name of the Lord is a fortified tower; the righteous run to it and are safe."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Peace That Stands Guard",
+      "declaration": "God's peace does not explain the situation. It stands guard over your mind while the situation is unresolved.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God, which transcends all understanding, will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Anxiety, Handed Over",
+      "declaration": "Anxiety is not a moral failure. It is a weight, and you were not built to carry it alone.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Real Armour",
+      "declaration": "You have been given real equipment for real pressure — truth, faith, peace. It is not a metaphor for trying harder.",
+      "scripture": {
+        "ref": "Ephesians 6:11",
+        "text": "Put on the full armour of God, so that you can take your stand."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Online Is a Real Place",
+      "declaration": "What happens on a screen happens to an actual person. Protect yourself there as carefully as anywhere else.",
+      "scripture": {
+        "ref": "Proverbs 22:3",
+        "text": "The prudent see danger and take refuge."
+      }
+    },
+    {
+      "day": 15,
+      "title": "You Are Allowed to Block",
+      "declaration": "Removing someone's access to you is not rude. It is one of the few controls you actually have.",
+      "scripture": {
+        "ref": "Proverbs 4:14-15",
+        "text": "Do not set foot on the path of the wicked... turn from it and go on your way."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Rest Is Protection",
+      "declaration": "Sleep is not laziness and it is not optional. A tired mind makes worse decisions and takes more damage.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "He grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Surprised",
+      "declaration": "Nothing about today caught God out. He is already in the part of it you cannot see yet.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before, and you lay your hand upon me."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Held When You Fall",
+      "declaration": "Falling is not the same as being dropped. There are hands under you the whole way down.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "Though he may stumble, he will not fall, for the Lord upholds him with his hand."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Words Aimed at You",
+      "declaration": "What someone says about you is information about them. It does not have to become your inner voice.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail, and you will refute every tongue that accuses you."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Ask for Help Early",
+      "declaration": "Help asked for early is a conversation. Help asked for late is a crisis. Ask early.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:10",
+        "text": "If either of them falls down, one can help the other up."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Covered, Not Contained",
+      "declaration": "You are covered so that you can go, not so that you stay small. Protection is what makes risk possible.",
+      "scripture": {
+        "ref": "Psalm 18:19",
+        "text": "He brought me out into a spacious place; he rescued me because he delighted in me."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Your Body Is Worth Guarding",
+      "declaration": "Looking after your body is not vanity. It is looking after the only one you were given.",
+      "scripture": {
+        "ref": "1 Corinthians 6:19",
+        "text": "Your bodies are temples of the Holy Spirit."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Fear, Answered",
+      "declaration": "When fear tells you a story at night, you are allowed to answer it with something truer.",
+      "scripture": {
+        "ref": "Psalm 56:3",
+        "text": "When I am afraid, I put my trust in you."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Never Abandoned",
+      "declaration": "You will not be abandoned — not when you are difficult, not when you are far away, not when you have gone quiet.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you; never will I forsake you."
+      }
+    },
+    {
+      "day": 25,
+      "title": "The Cost of Isolation",
+      "declaration": "Isolation makes everything more dangerous. Whatever is happening, do not go through it on your own.",
+      "scripture": {
+        "ref": "Proverbs 18:1",
+        "text": "Whoever isolates himself seeks his own desire."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Boundaries Are Kind",
+      "declaration": "A boundary is not a punishment you hand someone. It is a description of what you can sustain.",
+      "scripture": {
+        "ref": "Galatians 6:5",
+        "text": "Each one should carry their own load."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Prayed For",
+      "declaration": "You are prayed for when you are not in the room and when you have no idea. You are covered by more than you can see.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Pray for each other so that you may be healed."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Return Is Always Open",
+      "declaration": "However far you go, the way back is not closed. That is the whole point of who God is.",
+      "scripture": {
+        "ref": "Luke 15:20",
+        "text": "While he was still a long way off, his father saw him and was filled with compassion."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept",
+      "declaration": "You are kept — the way something valuable is kept, deliberately, by someone who intends to hold on.",
+      "scripture": {
+        "ref": "Numbers 6:24",
+        "text": "The Lord bless you and keep you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Safe to Be Weak",
+      "declaration": "You do not have to be strong all the time. It is safe to be tired here, and safe to be tired with God.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms and carries them close to his heart."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carry It Forward",
+      "declaration": "Nothing about being covered changes when the month does. Take it with you.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    }
+  ]
+}

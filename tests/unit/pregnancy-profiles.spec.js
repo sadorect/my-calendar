@@ -20,6 +20,11 @@ vi.mock('@/services/biometric', () => ({
 
 const { usePregnancyStore } = await import('@/stores/pregnancy')
 const { LEGACY_PROFILE_ID } = await import('@/services/familyState')
+const { loadStageContent } = await import('@/data/family/index.js')
+
+// The store fetches a stage's content when a profile in it is opened. Loading
+// it up front keeps these tests synchronous.
+await Promise.all(['school', 'teen'].map((stage) => loadStageContent(stage)))
 
 describe('the pregnancy store, with several children', () => {
   let store
@@ -221,8 +226,21 @@ describe('the born-stage track', () => {
     expect(store.activeStageDayContent.title).toBe('Wonderfully Made')
   })
 
-  it('shows nothing rather than the wrong thing for a month not written', () => {
+  it('reads every month of the year, because all twelve are written', () => {
+    for (let month = 1; month <= 12; month++) {
+      store.selectStageDate(new Date(2027, month - 1, 3))
+      expect(store.activeTheme.month, `month ${month}`).toBe(month)
+      expect(store.activeStageDayContent, `month ${month}`).toBeTruthy()
+      expect(store.activeStageWeekContent, `month ${month}`).toBeTruthy()
+    }
+  })
+
+  it('shows nothing rather than the wrong thing for a stage not written', async () => {
+    // A toddler has no content yet; the theme is still named, so the placeholder
+    // can say which one is coming.
+    await store.addProfile({ name: 'Nia', birthDate: '2024-03-01' })
     store.selectStageDate(new Date(2027, 5, 3))
+    expect(store.activeStage.id).toBe('toddler')
     expect(store.activeTheme.title).toBe('Protection & Covering')
     expect(store.activeStageDayContent).toBeNull()
     expect(store.activeStageMonth).toBeNull()

@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 5,
+  "slug": "purpose-and-calling",
+  "title": "Purpose & Calling",
+  "intro": "Teenagers are asked what they are going to do with their life by people who mean it kindly, and it lands as pressure. This month we take the weight out of the question — purpose is not one dramatic assignment you might miss, it is direction, and it is available today in whatever is actually in front of them.",
+  "keyScriptures": [
+    {
+      "ref": "Ephesians 2:10",
+      "text": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
+    },
+    {
+      "ref": "Micah 6:8",
+      "text": "And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Not One Assignment You Could Miss",
+      "declaration": "Purpose is not a single secret plan you might walk past. It is a direction, and it is more forgiving than the pressure suggests.",
+      "parentsPrayer": "Father, take the fear out of our child's future. Let them walk rather than agonise. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Available Today",
+      "declaration": "You do not have to wait for a career to start being useful. Whatever is actually in front of you this week is where it begins.",
+      "parentsPrayer": "Lord, let our child see the good they are already doing, and stop waiting for permission to matter. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Character Before Calling",
+      "declaration": "Who you are becoming will matter more than what you end up doing. God has always cared more about the first than the second.",
+      "parentsPrayer": "God, build our child's character deep enough to carry whatever You give them later. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Faithful in the Unremarkable",
+      "declaration": "Almost everything significant is built out of unremarkable things done properly. That is not a consolation prize; it is the method.",
+      "parentsPrayer": "Father, teach our child to do ordinary work well. Build something lasting from their steadiness. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Not One Secret Plan",
+      "declaration": "Purpose is not a single hidden assignment you could miss by taking the wrong module. It is a direction.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Good Work Prepared",
+      "declaration": "There is good work with your name on it, and it was prepared before you existed. You are not inventing it from nothing.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "We are God's handiwork, created in Christ Jesus to do good works."
+      }
+    },
+    {
+      "day": 3,
+      "title": "The Question Underneath",
+      "declaration": "The real question is not 'what will I do' but 'who will I be while I do it'. Answer that one first.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, walk humbly with your God."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Available Today",
+      "declaration": "You do not need a job title to be useful. What is in front of you this week is where purpose starts.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Whatever you do, work at it with all your heart, as working for the Lord."
+      }
+    },
+    {
+      "day": 5,
+      "title": "You Are Not Behind",
+      "declaration": "Everyone looks more sorted than they are. Timelines are mostly invented, and you are not late.",
+      "scripture": {
+        "ref": "Psalm 31:15",
+        "text": "My times are in your hands."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Clues, Not Noise",
+      "declaration": "What you are drawn to and what you are good at were given to you. Take them seriously as evidence.",
+      "scripture": {
+        "ref": "Romans 12:6",
+        "text": "We have different gifts, according to the grace given to each of us."
+      }
+    },
+    {
+      "day": 7,
+      "title": "It Is Fine Not to Know",
+      "declaration": "Not knowing yet is a normal position, not a failure of faith. Keep walking; the light is enough for the next step.",
+      "scripture": {
+        "ref": "Psalm 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Character Before Calling",
+      "declaration": "God builds the person before He hands over the work. If this season feels slow, that may be exactly what it is for.",
+      "scripture": {
+        "ref": "1 Samuel 16:11-13",
+        "text": "David was tending the sheep when Samuel came for him."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Small and Unremarkable",
+      "declaration": "Almost everything significant is built out of unremarkable things done properly. That is the method, not the consolation.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Willing Beats Gifted",
+      "declaration": "God has always been more interested in willing people than in impressive ones. Willing is something you can choose today.",
+      "scripture": {
+        "ref": "Isaiah 6:8",
+        "text": "Here am I. Send me!"
+      }
+    },
+    {
+      "day": 11,
+      "title": "Money Is Not the Measure",
+      "declaration": "What something pays tells you almost nothing about whether it matters. Decide what you are optimising for.",
+      "scripture": {
+        "ref": "Matthew 6:21",
+        "text": "Where your treasure is, there your heart will be also."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Do Not Despise the Training",
+      "declaration": "The boring part is the training. People who skip it end up unable to hold what they wanted.",
+      "scripture": {
+        "ref": "Proverbs 22:29",
+        "text": "Do you see someone skilled in their work? They will serve before kings."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Purpose Is Not Pressure",
+      "declaration": "A calling is a gift, not a weight. If it feels like crushing pressure, something has been added that God did not.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "My yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Ask What Is Needed",
+      "declaration": "Purpose often begins with noticing. Walk into a room and ask what is actually needed here.",
+      "scripture": {
+        "ref": "Philippians 2:4",
+        "text": "Look not only to your own interests, but also to the interests of others."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Serve Where You Are",
+      "declaration": "Serving is not what you do until your real life begins. It is the shape your real life takes.",
+      "scripture": {
+        "ref": "Galatians 5:13",
+        "text": "Serve one another humbly in love."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Failure Is Information",
+      "declaration": "Being bad at something tells you which door is not yours. That is useful, and it is not a verdict on you.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Your Generation, on Purpose",
+      "declaration": "You were placed in this time deliberately. The problems you can see are part of why you are here.",
+      "scripture": {
+        "ref": "Acts 17:26",
+        "text": "He marked out their appointed times in history."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Not a Competition",
+      "declaration": "Someone else's calling is not a threat to yours. There is no fixed quantity of purpose being handed out.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions... without comparing themselves to someone else."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Faithfulness Over Impact",
+      "declaration": "Aim to be faithful rather than impressive. Impact is God's business; faithfulness is yours.",
+      "scripture": {
+        "ref": "1 Corinthians 4:2",
+        "text": "It is required that those who have been given a trust must prove faithful."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Learning Is Part of It",
+      "declaration": "Everything you are learning is a tool you will use, including the subjects you cannot see the point of yet.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Redirection Is Not Rejection",
+      "declaration": "Being turned from something is not being rejected. Closed doors are part of guidance, not evidence against you.",
+      "scripture": {
+        "ref": "Acts 16:6-7",
+        "text": "They were kept by the Holy Spirit from preaching the word in the province of Asia."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Be Where You Are",
+      "declaration": "You cannot do the next thing until you have done this thing properly. Be actually present in this season.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything, and a season for every activity under the heavens."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Trustworthy Is Rare",
+      "declaration": "The most employable thing about you will be that you do what you said. That is rarer than talent.",
+      "scripture": {
+        "ref": "Proverbs 20:6",
+        "text": "A faithful person who can find?"
+      }
+    },
+    {
+      "day": 24,
+      "title": "Purpose Includes People",
+      "declaration": "Your calling is not a solo project. Most of what you are for involves other people directly.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Each of you should use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Ambition Is Not the Enemy",
+      "declaration": "Wanting to do something significant is not pride. What matters is what the ambition is in service of.",
+      "scripture": {
+        "ref": "Nehemiah 2:5",
+        "text": "If it pleases the king, send me to the city... so that I can rebuild it."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Do Not Build on Applause",
+      "declaration": "If applause is the fuel, you will stop the moment it does. Build on something steadier.",
+      "scripture": {
+        "ref": "Galatians 1:10",
+        "text": "Am I now trying to win the approval of human beings, or of God?"
+      }
+    },
+    {
+      "day": 27,
+      "title": "The Long Game",
+      "declaration": "Most callings take decades and look like nothing for years. Do not judge the crop in the first season.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "At the proper time we will reap a harvest if we do not give up."
+      }
+    },
+    {
+      "day": 28,
+      "title": "You Were Made Different on Purpose",
+      "declaration": "You were not made to replicate anyone. The parts of you that do not fit the template are usually the point.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts in the body just as he wanted them."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Such a Time as This",
+      "declaration": "There is a reason you are here now rather than a hundred years ago. Do not waste the position you are in.",
+      "scripture": {
+        "ref": "Esther 4:14",
+        "text": "Who knows but that you have come to your position for such a time as this?"
+      }
+    },
+    {
+      "day": 30,
+      "title": "He Finishes What He Starts",
+      "declaration": "God does not begin things and lose interest. What He started in you, He intends to complete.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Purpose Is for Using",
+      "declaration": "Purpose is for using, not for agonising over. Take it into the very next thing you do.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "Created in Christ Jesus to do good works, which God prepared in advance for us to do."
+      }
+    }
+  ]
+}

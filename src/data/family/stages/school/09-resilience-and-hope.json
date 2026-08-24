@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 9,
+  "slug": "resilience-and-hope",
+  "title": "Resilience & Hope",
+  "intro": "Every child meets the thing they cannot do, the friend who moves away, the day that goes wrong from the start. This month is not about pretending those are small. It is about teaching them what to do next — that starting again is normal, that hard is not the same as forever, and that hope is a reasonable thing to hold.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 24:16",
+      "text": "For though the righteous fall seven times, they rise again."
+    },
+    {
+      "ref": "Romans 15:13",
+      "text": "May the God of hope fill you with all joy and peace as you trust in him."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Falling Down Is Not Failing",
+      "declaration": "Everyone falls down. What makes someone strong is not never falling — it is that they get up, and they get up again after that.",
+      "parentsPrayer": "Father, teach our child that falling is part of learning. Take the shame out of it for them. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Hard Is Not Forever",
+      "declaration": "A hard day is a hard day. It is not a hard life, and it is not a verdict on you. Most hard things pass.",
+      "parentsPrayer": "Lord, give our child perspective when today feels enormous. Remind them that this will not always be now. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Try It Again",
+      "declaration": "The thing you cannot do yet has the word 'yet' in it. Almost everything you are good at was once impossible.",
+      "parentsPrayer": "God, give our child patience with themselves. Let them keep going long enough to get good. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Hope Is Reasonable",
+      "declaration": "Hoping is not naive. It is what people do who know that God is not finished with the story.",
+      "parentsPrayer": "Father, keep hope alive in our child. Let them expect good things without being afraid to. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Everyone Falls Down",
+      "declaration": "Everyone falls down. The difference is what happens next, and next is always available.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 2,
+      "title": "The Word Yet",
+      "declaration": "You cannot do it yet. Yet is a very important word and it changes the whole sentence.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Hard Is Not Forever",
+      "declaration": "This is a hard day. It is not a hard life, and today is not the shape of everything.",
+      "scripture": {
+        "ref": "2 Corinthians 4:17",
+        "text": "Our light and momentary troubles are achieving for us an eternal glory."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Starting Again",
+      "declaration": "Starting again is not going backwards. It is the normal way people get anywhere.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning; great is your faithfulness."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Mistakes Teach",
+      "declaration": "A mistake you learn from has done its job. You do not have to be ashamed of it as well.",
+      "scripture": {
+        "ref": "Romans 8:28",
+        "text": "In all things God works for the good of those who love him."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Practice Feels Bad First",
+      "declaration": "Everything feels bad while you are learning it. That is what learning feels like from the inside.",
+      "scripture": {
+        "ref": "Hebrews 12:11",
+        "text": "No discipline seems pleasant at the time, but painful."
+      }
+    },
+    {
+      "day": 7,
+      "title": "You Are Not the Only One",
+      "declaration": "Whatever you are finding hard, you are not the only one. It just looks that way from inside.",
+      "scripture": {
+        "ref": "1 Corinthians 10:13",
+        "text": "No temptation has overtaken you except what is common to mankind."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Tell Someone",
+      "declaration": "Hard things get smaller when you say them out loud to someone who loves you.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Crying Is Allowed",
+      "declaration": "Crying is not weakness. It is what a person does when something matters and it hurt.",
+      "scripture": {
+        "ref": "John 11:35",
+        "text": "Jesus wept."
+      }
+    },
+    {
+      "day": 10,
+      "title": "God Is Near the Sad",
+      "declaration": "God does not stand back when you are sad. He comes closer.",
+      "scripture": {
+        "ref": "Psalm 34:18",
+        "text": "The Lord is close to the broken-hearted."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Losing Is Survivable",
+      "declaration": "Losing is not the end of anything. You can lose and be completely fine.",
+      "scripture": {
+        "ref": "Philippians 4:12",
+        "text": "I have learned the secret of being content in any and every situation."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Small Steps Count",
+      "declaration": "On a hard day, a small step is a real step. You do not have to do it all today.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Being Left Out",
+      "declaration": "Being left out hurts. It is not evidence that something is wrong with you.",
+      "scripture": {
+        "ref": "Psalm 27:10",
+        "text": "Though my father and mother forsake me, the Lord will receive me."
+      }
+    },
+    {
+      "day": 14,
+      "title": "It Will Not Always Be Now",
+      "declaration": "Whatever is heavy right now, it will not always be now. Seasons genuinely change.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything, and a season for every activity."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Rest and Restart",
+      "declaration": "Sometimes the right answer is to stop, rest and try again tomorrow. That is not quitting.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Hope Is Not Pretending",
+      "declaration": "Hope does not pretend the hard thing is not hard. It just refuses to believe it is the last word.",
+      "scripture": {
+        "ref": "Romans 15:13",
+        "text": "May the God of hope fill you with all joy and peace as you trust in him."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Strong in the Broken Places",
+      "declaration": "People are often kindest and strongest in the exact place they were once hurt.",
+      "scripture": {
+        "ref": "2 Corinthians 1:4",
+        "text": "So that we can comfort those in any trouble."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Do Not Give Up on Yourself",
+      "declaration": "On the days you disappoint yourself, do not walk away from yourself. Stay.",
+      "scripture": {
+        "ref": "Psalm 42:5",
+        "text": "Why, my soul, are you downcast? Put your hope in God."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Someone Is Holding On",
+      "declaration": "When you cannot hold on, someone is holding on to you. You are not the only thing keeping you here.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Ask for Help Early",
+      "declaration": "Asking for help early makes the problem smaller. Waiting makes it bigger.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:10",
+        "text": "If either of them falls down, one can help the other up."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not Everything Is Fixable Today",
+      "declaration": "Some things take time to mend. Waiting well is part of being strong.",
+      "scripture": {
+        "ref": "Psalm 27:14",
+        "text": "Wait for the Lord; be strong and take heart."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Your Best Is Enough",
+      "declaration": "Your best on a hard day is not the same as your best on a good day. Both count.",
+      "scripture": {
+        "ref": "2 Corinthians 8:12",
+        "text": "The gift is acceptable according to what one has."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Changing Your Mind",
+      "declaration": "Stopping something that is wrong for you is not failing. It is paying attention.",
+      "scripture": {
+        "ref": "Proverbs 14:15",
+        "text": "The prudent give thought to their steps."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Kindness to Yourself",
+      "declaration": "Talk to yourself the way you would talk to a friend having the same day.",
+      "scripture": {
+        "ref": "Matthew 22:39",
+        "text": "Love your neighbour as yourself."
+      }
+    },
+    {
+      "day": 25,
+      "title": "The Middle Is Hard",
+      "declaration": "Most stories are worst in the middle. You may simply be in the middle.",
+      "scripture": {
+        "ref": "Genesis 50:20",
+        "text": "You intended to harm me, but God intended it for good."
+      }
+    },
+    {
+      "day": 26,
+      "title": "You Have Survived Every Hard Day So Far",
+      "declaration": "Look at your record. You have got through every difficult day you have ever had.",
+      "scripture": {
+        "ref": "Psalm 34:19",
+        "text": "The righteous person may have many troubles, but the Lord delivers him from them all."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Try a Different Way",
+      "declaration": "If one way is not working, try another. Being stuck is often just a sign to change the route.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing! Now it springs up; do you not perceive it?"
+      }
+    },
+    {
+      "day": 28,
+      "title": "Good Comes Back",
+      "declaration": "Good things come round again. This is not the last good thing that will ever happen to you.",
+      "scripture": {
+        "ref": "Psalm 30:5",
+        "text": "Weeping may stay for the night, but rejoicing comes in the morning."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Made Stronger",
+      "declaration": "The hard things you get through do not just hurt. They also make you someone who can handle more.",
+      "scripture": {
+        "ref": "James 1:3",
+        "text": "The testing of your faith produces perseverance."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Hope Anchored",
+      "declaration": "Hope is not wishful thinking. It is anchored to someone who does not change.",
+      "scripture": {
+        "ref": "Hebrews 6:19",
+        "text": "We have this hope as an anchor for the soul, firm and secure."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep the Proof",
+      "declaration": "Everything you have got through this month is proof for the next hard thing. Keep the proof.",
+      "scripture": {
+        "ref": "Romans 5:4",
+        "text": "Perseverance produces character; and character, hope."
+      }
+    }
+  ]
+}

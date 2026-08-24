@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 2,
+  "slug": "love-and-healthy-relationships",
+  "title": "Love & Healthy Relationships",
+  "intro": "The teenage years put love and belonging on the same shelf and charge for both. Attention gets confused with affection, loyalty gets confused with silence, and nobody explains the difference between a relationship that is close and one that is safe. This month we say it plainly — love is patient and kind, it is honest, and it never requires you to disappear.",
+  "keyScriptures": [
+    {
+      "ref": "1 Corinthians 13:4-7",
+      "text": "Love is patient, love is kind... It always protects, always trusts, always hopes, always perseveres."
+    },
+    {
+      "ref": "Proverbs 4:23",
+      "text": "Above all else, guard your heart, for everything you do flows from it."
+    }
+  ],
+  "palette": "blush",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Love Is Not the Same as Attention",
+      "declaration": "Attention is easy to get and easy to lose. Love is slower, quieter and far more solid. Learn to tell them apart now and it will save you years.",
+      "parentsPrayer": "Father, teach our child the difference between being wanted and being loved. Let them hold out for the real thing. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Nobody Good for You Asks You to Disappear",
+      "declaration": "Anyone who needs you smaller, quieter or more alone to stay close is not offering you love. Real closeness makes you more yourself, not less.",
+      "parentsPrayer": "Lord, give our child the clarity to see control for what it is, and the courage to walk away from it. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Honest and Kind, Both",
+      "declaration": "You do not have to choose between being honest and being kind. The people worth keeping manage both, and so can you.",
+      "parentsPrayer": "God, make our child someone who can be trusted with the truth and gentle when they tell it. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Forgiveness Is Not the Same as Access",
+      "declaration": "You can forgive someone and still not give them the run of your life. Forgiveness releases you. Boundaries keep you.",
+      "parentsPrayer": "Father, help our child forgive freely and still choose wisely who they let close. Give them both mercy and sense. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Not the Same as Attention",
+      "declaration": "Attention is easy to get and easy to lose. Love is slower, quieter and much harder to shake. They are not the same thing.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love is patient, love is kind."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Loved Before You Were Wanted",
+      "declaration": "You were loved before anyone found you interesting. That love is the floor, and nothing anyone does can take it up.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Guard Your Heart",
+      "declaration": "Guarding your heart is not closing it. It is deciding on purpose who gets a key, instead of handing them out to whoever asks.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart, for everything you do flows from it."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Nobody Good Asks You to Shrink",
+      "declaration": "If someone needs you quieter, smaller or more alone to stay close, that is not love. Real closeness makes you more yourself.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "It is not self-seeking, it is not easily angered."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Slow Is Not a Waste",
+      "declaration": "Good things build slowly. Anything real can survive being taken at a sensible pace.",
+      "scripture": {
+        "ref": "Song of Songs 8:4",
+        "text": "Do not arouse or awaken love until it so desires."
+      }
+    },
+    {
+      "day": 6,
+      "title": "You Are Allowed to Say No",
+      "declaration": "No is a full sentence. Someone who cannot hear it kindly was never offering you safety.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes, and your no be no."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Loyalty Is Not Silence",
+      "declaration": "Being loyal does not mean covering for someone who is hurting you or someone else. That is not friendship; it is a trap.",
+      "scripture": {
+        "ref": "Proverbs 27:6",
+        "text": "Wounds from a friend can be trusted."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Jealousy Is Not Love",
+      "declaration": "Jealousy dressed up as caring is still jealousy. Love does not need to check up on you to feel secure.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love does not envy, it does not boast, it is not proud."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Your Body Is Yours to Steward",
+      "declaration": "Your body is not currency and it is not a bargaining chip. It is yours to steward, and it is honoured by God.",
+      "scripture": {
+        "ref": "1 Corinthians 6:19-20",
+        "text": "You are not your own; you were bought at a price."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Friends Who Make You Better",
+      "declaration": "Look at who you are becoming around someone. That tells you more about the friendship than how it feels.",
+      "scripture": {
+        "ref": "Proverbs 13:20",
+        "text": "Walk with the wise and become wise."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Being Known Beats Being Liked",
+      "declaration": "Being liked by many is thin. Being known by a few is what actually holds you up.",
+      "scripture": {
+        "ref": "Proverbs 18:24",
+        "text": "There is a friend who sticks closer than a brother."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Say Sorry Properly",
+      "declaration": "A real apology has no 'but' in it. Learning to give one is one of the most useful things you will ever do.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other and pray for each other."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Forgive, and Still Choose",
+      "declaration": "You can forgive someone and still not give them the run of your life. Forgiveness releases you; boundaries keep you.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Not Keeping Score",
+      "declaration": "Love keeps no record of wrongs. A relationship run on scorekeeping will run out.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Speak the Truth in Love",
+      "declaration": "Say the hard thing, and say it kindly. People can take almost anything from someone who is clearly for them.",
+      "scripture": {
+        "ref": "Ephesians 4:15",
+        "text": "Speaking the truth in love, we will grow."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Alone Is Not the Same as Lonely",
+      "declaration": "Being on your own is a skill, not a punishment. People who cannot be alone end up settling for anyone.",
+      "scripture": {
+        "ref": "Psalm 62:5",
+        "text": "Yes, my soul, find rest in God; my hope comes from him."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Do Not Audition",
+      "declaration": "You should not have to audition for a place beside someone. The right people make room without being persuaded.",
+      "scripture": {
+        "ref": "Romans 15:7",
+        "text": "Accept one another, then, just as Christ accepted you."
+      }
+    },
+    {
+      "day": 18,
+      "title": "The Pattern Tells You",
+      "declaration": "Anyone can have a bad day. Watch the pattern, not the apology. What repeats is the truth.",
+      "scripture": {
+        "ref": "Matthew 7:20",
+        "text": "By their fruit you will recognise them."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Honour Your Parents, Even Now",
+      "declaration": "Honouring us does not mean agreeing with us. It means keeping the door open while you work out who you are.",
+      "scripture": {
+        "ref": "Ephesians 6:2",
+        "text": "Honour your father and mother — which is the first commandment with a promise."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Love Protects",
+      "declaration": "Love does not pass on what would hurt someone. If a story is not yours, it is not yours to tell.",
+      "scripture": {
+        "ref": "1 Corinthians 13:7",
+        "text": "It always protects, always trusts, always hopes, always perseveres."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Kind to the Overlooked",
+      "declaration": "Notice who nobody is talking to. Going to them costs you almost nothing and changes their week.",
+      "scripture": {
+        "ref": "Matthew 25:40",
+        "text": "Whatever you did for one of the least of these, you did for me."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Not Rude Under Pressure",
+      "declaration": "How you treat people when you are tired or embarrassed is the real measure. Aim to be someone who is safe on a bad day.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "It does not dishonour others."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Trust Is Built Small",
+      "declaration": "Trust is built in small promises kept, not grand ones made. Be someone whose ordinary word is good.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 24,
+      "title": "You Are Not Responsible for Everyone",
+      "declaration": "Caring about people does not make you responsible for fixing them. You are allowed to have limits.",
+      "scripture": {
+        "ref": "Galatians 6:5",
+        "text": "Each one should carry their own load."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Let People Help You",
+      "declaration": "Being loved means letting people in, not only being useful to them. You are allowed to need things.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Not Every Ending Is a Failure",
+      "declaration": "Some friendships end and that is not a verdict on you. People grow at different speeds and in different directions.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Love the Hard-to-Love",
+      "declaration": "Some people will be hard to love. Loving them anyway is not weakness, and it does not mean staying where you are harmed.",
+      "scripture": {
+        "ref": "Matthew 5:44",
+        "text": "Love your enemies and pray for those who persecute you."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Peace, Where It Depends on You",
+      "declaration": "You cannot make peace on your own, and you are only responsible for your half of it. Do your half well.",
+      "scripture": {
+        "ref": "Romans 12:18",
+        "text": "If it is possible, as far as it depends on you, live at peace with everyone."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Pray for Them",
+      "declaration": "Praying for someone changes how you see them. It is also the kindest thing you can do for someone who will never know.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:17",
+        "text": "Pray continually."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Love Never Fails",
+      "declaration": "Everything else you are chasing will run out. This will not. Build on it.",
+      "scripture": {
+        "ref": "1 Corinthians 13:8",
+        "text": "Love never fails."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carry It Out of Here",
+      "declaration": "What you have learned about love this month is meant to leave this house with you. Start with whoever is nearest.",
+      "scripture": {
+        "ref": "John 13:34",
+        "text": "As I have loved you, so you must love one another."
+      }
+    }
+  ]
+}

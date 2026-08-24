@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { getSetting, setSetting } from '../services/database.js'
 import {
   isBiometricAvailable,
@@ -46,7 +46,10 @@ import {
   stageMonthContent,
   stagePalette,
   themesForStage,
-  themeForMonth
+  themeForMonth,
+  loadStageContent,
+  isStageLoaded,
+  stageHasContent
 } from '../data/family/index.js'
 import {
   stagePosition,
@@ -160,6 +163,10 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     if (!state.value.data[id]) state.value.data[id] = emptyProfileData()
     return state.value.data[id]
   })
+
+  // Content follows the child: switching to a stage nobody has opened yet
+  // fetches it once, and switching back is instant.
+  watch(() => activeStage.value?.id, ensureStageContent, { immediate: true })
 
   async function selectProfile(id) {
     if (!state.value.profiles[id]) return false
@@ -337,6 +344,40 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   // -------------------------------------------------------------- born stages
 
+  /**
+   * Bumped when a stage's content finishes loading.
+   *
+   * The content cache lives outside Vue — it is a plain module-level object, so
+   * that lookups can stay synchronous — which means nothing here would ever
+   * recompute when a fetch lands. Reading this counter inside the content
+   * computeds is what wires the two together.
+   */
+  const contentRevision = ref(0)
+
+  /**
+   * Registers the calling computed as depending on loaded content.
+   *
+   * Called for its dependency, not its value: reading the counter is what makes
+   * a computed recompute when a stage's content lands after first render,
+   * instead of staying blank until something else happens to change.
+   */
+  function tracksContentLoads() {
+    return contentRevision.value
+  }
+
+  /**
+   * Fetches the active child's stage content if it is not already here.
+   *
+   * Called from a watcher rather than from a computed: a computed that started
+   * a fetch would fire again on the result and be very hard to reason about.
+   */
+  async function ensureStageContent() {
+    const id = activeStage.value?.id
+    if (!id || activeStage.value.track !== 'year') return
+    if (isStageLoaded(id) || !stageHasContent(id)) return
+    if (await loadStageContent(id)) contentRevision.value += 1
+  }
+
   /** The date being read on a born-stage track — the selected one, or today. */
   const activeStageDate = computed(() => {
     if (selectedStageKey.value) return dateFromDayKey(selectedStageKey.value) || now.value
@@ -374,13 +415,15 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   /** The theme for the month being read — the same twelve for every stage. */
   const activeTheme = computed(() => themeForMonth(activeStagePosition.value.month))
 
-  const activeStageMonth = computed(() =>
-    activeStage.value?.track === 'year'
+  const activeStageMonth = computed(() => {
+    tracksContentLoads()
+    return activeStage.value?.track === 'year'
       ? stageMonthContent(activeStage.value.id, activeStagePosition.value.month)
       : null
-  )
+  })
 
   const activeStageDayContent = computed(() => {
+    tracksContentLoads()
     if (activeStage.value?.track !== 'year') return null
     const { month, day } = activeStagePosition.value
     const entry = stageDayContent(activeStage.value.id, month, day)
@@ -389,6 +432,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   })
 
   const activeStageWeekContent = computed(() => {
+    tracksContentLoads()
     if (activeStage.value?.track !== 'year') return null
     const { month, week } = activeStagePosition.value
     return stageWeekContent(activeStage.value.id, month, week)
@@ -396,6 +440,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   /** The four weekly cards for the month being read, written or not. */
   const stageWeekCards = computed(() => {
+    tracksContentLoads()
     if (activeStage.value?.track !== 'year') return []
     const { year, month } = activeStagePosition.value
     const cards = []
@@ -408,6 +453,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
 
   /** Every day of the month being read, for the month grid. */
   const stageMonthDays = computed(() => {
+    tracksContentLoads()
     if (activeStage.value?.track !== 'year') return []
     const { year, month, day: today } = activeStagePosition.value
     const total = daysInMonth(year, month)
@@ -426,9 +472,10 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     return days
   })
 
-  const stageThemes = computed(() =>
-    activeStage.value?.track === 'year' ? themesForStage(activeStage.value.id) : []
-  )
+  const stageThemes = computed(() => {
+    tracksContentLoads()
+    return activeStage.value?.track === 'year' ? themesForStage(activeStage.value.id) : []
+  })
 
   const stageProgress = computed(() => monthProgress(activeStagePosition.value))
 
@@ -465,6 +512,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
    * still here this January — which is the point of an evergreen theme.
    */
   const stageFavourites = computed(() => {
+    tracksContentLoads()
     if (activeStage.value?.track !== 'year') return []
     const prefix = `${activeStage.value.id}:`
     return Object.entries(activeData.value.favourites)
@@ -863,6 +911,8 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     stageSpokenStreak,
     stageFavourites,
     stageJournalEntries,
+    ensureStageContent,
+    contentRevision,
     dayKey,
     // content
     personalise,

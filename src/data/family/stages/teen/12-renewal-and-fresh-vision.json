@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 12,
+  "slug": "renewal-and-fresh-vision",
+  "title": "Renewal & Fresh Vision",
+  "intro": "The end of a year invites a teenager to audit themselves, and most of them do it savagely. This month offers a different review — honest about what went wrong, unwilling to let it be the summary, and clear that they are not the version of themselves they were in January. Mercy is new every morning, and that includes tomorrow.",
+  "keyScriptures": [
+    {
+      "ref": "Lamentations 3:22-23",
+      "text": "Because of the Lord's great love we are not consumed... they are new every morning."
+    },
+    {
+      "ref": "Isaiah 43:18-19",
+      "text": "Forget the former things; do not dwell on the past. See, I am doing a new thing!"
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Review Honestly, Not Savagely",
+      "declaration": "You can be honest about a year without being cruel about it. Most self-audits at your age are far harsher than the facts justify.",
+      "parentsPrayer": "Father, let our child look back clearly and kindly. Do not let them summarise the year by its worst week. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Are Not Who You Were in January",
+      "declaration": "You have changed more than you have noticed. Growth is nearly invisible from the inside and obvious from outside.",
+      "parentsPrayer": "Lord, show our child how far they have come. Let them see the growth we can see. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Mercy Is Not Annual",
+      "declaration": "You do not have to wait for January to start again. The offer renews every morning, including tomorrow.",
+      "parentsPrayer": "God, teach our child that starting again is always available, and never a last chance. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Go In Expectant",
+      "declaration": "God is already in next year. Whatever is waiting there, He arrived first, and He is not anxious about it.",
+      "parentsPrayer": "Father, go before our child into everything ahead. Let them walk in expectant rather than braced. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Honest, Not Savage",
+      "declaration": "You can review a year honestly without being cruel about it. Your self-audit is probably harsher than the facts.",
+      "scripture": {
+        "ref": "Psalm 103:14",
+        "text": "He knows how we are formed, he remembers that we are dust."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Not the Worst Week",
+      "declaration": "A year is not summarised by its worst week. Do not let one month write the whole report.",
+      "scripture": {
+        "ref": "Psalm 30:5",
+        "text": "Weeping may stay for the night, but rejoicing comes in the morning."
+      }
+    },
+    {
+      "day": 3,
+      "title": "You Have Changed",
+      "declaration": "You are not who you were in January. Growth is nearly invisible from the inside and obvious from outside.",
+      "scripture": {
+        "ref": "2 Corinthians 5:17",
+        "text": "The old has gone, the new is here!"
+      }
+    },
+    {
+      "day": 4,
+      "title": "Mercy Is Not Annual",
+      "declaration": "You do not have to wait for a new year. The offer renews every morning, including tomorrow morning.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His compassions never fail. They are new every morning."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Nothing Wasted",
+      "declaration": "Even the parts of the year that went badly are being used. That is not the same as saying they were good.",
+      "scripture": {
+        "ref": "Romans 8:28",
+        "text": "In all things God works for the good of those who love him."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Put One Thing Down",
+      "declaration": "Choose one thing you will not carry into next year. Resentment, a label, a habit. You are allowed to leave it.",
+      "scripture": {
+        "ref": "Hebrews 12:1",
+        "text": "Let us throw off everything that hinders and the sin that so easily entangles."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Forward Is Not Forgetting",
+      "declaration": "Moving on does not mean pretending it did not happen. It means it stops being the thing you are facing.",
+      "scripture": {
+        "ref": "Philippians 3:13-14",
+        "text": "Forgetting what is behind and straining toward what is ahead."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Repair Something",
+      "declaration": "If something is broken with someone, this is a good week to say the first sentence.",
+      "scripture": {
+        "ref": "Matthew 5:24",
+        "text": "First go and be reconciled to them; then come and offer your gift."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Name What Grew",
+      "declaration": "Find three things that grew this year. Be specific; vague gratitude does not stick.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "The seed sprouts and grows, though he does not know how."
+      }
+    },
+    {
+      "day": 10,
+      "title": "No Schedule to Fail",
+      "declaration": "There is no schedule you are failing. The timeline you are measuring against was invented by nobody in particular.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Pick It Back Up",
+      "declaration": "The thing you abandoned can be picked up again. Very little is permanently closed at your age.",
+      "scripture": {
+        "ref": "Joel 2:25",
+        "text": "I will repay you for the years the locusts have eaten."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Resolutions Fail on Size",
+      "declaration": "Most resolutions fail because they are too large. Aim for something small enough to still be doing in March.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Direction Over Speed",
+      "declaration": "Where you are pointed matters more than how fast you are going. Check the direction first.",
+      "scripture": {
+        "ref": "Proverbs 4:26",
+        "text": "Give careful thought to the paths for your feet and be steadfast in all your ways."
+      }
+    },
+    {
+      "day": 14,
+      "title": "God Was There",
+      "declaration": "Look back for where God turned up. It is usually much clearer in retrospect than it was at the time.",
+      "scripture": {
+        "ref": "Genesis 28:16",
+        "text": "Surely the Lord is in this place, and I was not aware of it."
+      }
+    },
+    {
+      "day": 15,
+      "title": "A Clean Page",
+      "declaration": "You are offered a genuinely clean page, not a page with the old writing faintly showing through.",
+      "scripture": {
+        "ref": "Isaiah 1:18",
+        "text": "Though your sins are like scarlet, they shall be as white as snow."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Do Not Carry Old Names",
+      "declaration": "Whatever you were called this year — by others or by yourself — you do not have to take it forward.",
+      "scripture": {
+        "ref": "Isaiah 62:2",
+        "text": "You will be called by a new name that the mouth of the Lord will bestow."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Hope Without Bracing",
+      "declaration": "You are allowed to expect good things without treating hope as a setup for disappointment.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "Plans to prosper you and not to harm you, plans to give you hope and a future."
+      }
+    },
+    {
+      "day": 18,
+      "title": "New Feels Wrong at First",
+      "declaration": "New things feel uncomfortable before they feel normal. Discomfort is not evidence you should stop.",
+      "scripture": {
+        "ref": "Isaiah 42:9",
+        "text": "See, the former things have taken place, and new things I declare."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Say What You Want",
+      "declaration": "It is not arrogant to want something and say it out loud. God is not irritated by your hopes.",
+      "scripture": {
+        "ref": "Psalm 37:4",
+        "text": "Take delight in the Lord, and he will give you the desires of your heart."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Rest Before You Restart",
+      "declaration": "Rest at the end of a year before charging into the next. Starting depleted is how good plans die in February.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me by yourselves to a quiet place and get some rest."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Thank Someone Specifically",
+      "declaration": "Before the year ends, tell someone exactly what they did and what it meant. Specific is the whole gift.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:11",
+        "text": "Encourage one another and build each other up."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Still Under Construction",
+      "declaration": "You are not finished, and you are not supposed to be. God does not abandon half-built things.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Same God in January",
+      "declaration": "Everything else about next year is unknown. The One going with you is not one of the variables.",
+      "scripture": {
+        "ref": "Hebrews 13:8",
+        "text": "Jesus Christ is the same yesterday and today and forever."
+      }
+    },
+    {
+      "day": 24,
+      "title": "You Got Through It",
+      "declaration": "You got through the whole year. That is worth marking rather than skipping past.",
+      "scripture": {
+        "ref": "1 Samuel 7:12",
+        "text": "Thus far the Lord has helped us."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Streams in the Wasteland",
+      "declaration": "God does good things in unpromising places. Do not write off any part of your life as finished.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "I am making a way in the wilderness and streams in the wasteland."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Habits Over Intentions",
+      "declaration": "You will not rise to your intentions; you will fall to your habits. Change one habit rather than making ten promises.",
+      "scripture": {
+        "ref": "1 Corinthians 9:27",
+        "text": "I strike a blow to my body and make it my slave."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Remember on Purpose",
+      "declaration": "Deliberately remembering what God has done is how you get through what He has not done yet.",
+      "scripture": {
+        "ref": "Psalm 77:11",
+        "text": "I will remember the deeds of the Lord; yes, I will remember your miracles of long ago."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Walk In, Do Not Charge",
+      "declaration": "You do not have to sprint at the new year. Walking into it is entirely acceptable and usually lasts longer.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Walk humbly with your God."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Loved All the Way Through",
+      "declaration": "You were loved on every day of this year, including the ones you would rather not think about.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing... will be able to separate us from the love of God that is in Christ Jesus our Lord."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Vision, Not Pressure",
+      "declaration": "A fresh vision is meant to pull you forward, not push you down. If it only weighs, it is not from God.",
+      "scripture": {
+        "ref": "Habakkuk 2:2",
+        "text": "Write down the revelation and make it plain."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It All With You",
+      "declaration": "Everything you have learned this year goes with you. You start the next one carrying all of it.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing! Now it springs up; do you not perceive it?"
+      }
+    }
+  ]
+}

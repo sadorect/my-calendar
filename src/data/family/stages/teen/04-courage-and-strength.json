@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 4,
+  "slug": "courage-and-strength",
+  "title": "Courage & Strength",
+  "intro": "The teenage version of courage is rarely dramatic. It is telling the truth when a lie is easier, leaving a room you should not be in, and being the only one who does not laugh. This month we name that as strength, and we say the other thing too — that being tired, anxious or in need of help is not the opposite of being strong.",
+  "keyScriptures": [
+    {
+      "ref": "Joshua 1:9",
+      "text": "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."
+    },
+    {
+      "ref": "2 Corinthians 12:9",
+      "text": "My grace is sufficient for you, for my power is made perfect in weakness."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Courage Is Not a Feeling",
+      "declaration": "Courage is not the absence of fear; it is the decision you make while the fear is still there. Waiting to feel brave before you act is waiting for something that does not come.",
+      "parentsPrayer": "Father, teach our child to act on conviction rather than on how they feel. Steady their hands while their heart is still racing. Amen."
+    },
+    {
+      "week": 2,
+      "title": "The Bravest Things Are Quiet",
+      "declaration": "Leaving the room. Telling the truth when a lie is easier. Being the one who does not laugh. Nobody applauds these, and they are the ones that build you.",
+      "parentsPrayer": "Lord, make our child brave where nobody is watching. Let their private courage shape their public life. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Strong Is Not the Same as Fine",
+      "declaration": "You are allowed to be struggling and strong at the same time. Needing help is not the opposite of courage; refusing it is what actually costs you.",
+      "parentsPrayer": "God, take the shame out of our child's struggle. Make them the kind of person who asks. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Strength You Did Not Manufacture",
+      "declaration": "You are not asked to generate your own strength. It is given, daily, for exactly what today holds and no further.",
+      "parentsPrayer": "Father, give our child what today needs. Teach them to come back tomorrow rather than to stockpile. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Not a Feeling",
+      "declaration": "Courage is not the absence of fear. It is the decision you make while the fear is still there.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous. Do not be afraid; do not be discouraged."
+      }
+    },
+    {
+      "day": 2,
+      "title": "The Quiet Kind",
+      "declaration": "The bravest things you will do this year are quiet: leaving, refusing, telling the truth. Nobody will clap.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, and walk humbly with your God."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Strong and Struggling",
+      "declaration": "You can be struggling and strong at the same time. Those are not opposites, whatever anyone implies.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you, for my power is made perfect in weakness."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Asking Is Strength",
+      "declaration": "Refusing help is not toughness; it is just expensive. Asking is what strong people actually do.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9-10",
+        "text": "Two are better than one... if either of them falls down, one can help the other up."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Leaving the Room",
+      "declaration": "Walking out of a situation you should not be in is one of the most underrated forms of courage.",
+      "scripture": {
+        "ref": "1 Corinthians 15:33",
+        "text": "Do not be misled: bad company corrupts good character."
+      }
+    },
+    {
+      "day": 6,
+      "title": "The One Who Does Not Laugh",
+      "declaration": "Being the only one who does not join in is genuinely hard. It also gives permission to everyone else who wanted to stop.",
+      "scripture": {
+        "ref": "Romans 12:2",
+        "text": "Do not conform to the pattern of this world."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Fear Does Not Command You",
+      "declaration": "You will feel afraid. You are not obliged to obey it. Fear can be present without being in charge.",
+      "scripture": {
+        "ref": "2 Timothy 1:7",
+        "text": "The Spirit God gave us does not make us timid, but gives us power, love and self-discipline."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Owning It",
+      "declaration": "Admitting what you did, without excuses, takes more nerve than defending it. It is also the fastest way out.",
+      "scripture": {
+        "ref": "Proverbs 28:13",
+        "text": "Whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Strength for Today Only",
+      "declaration": "You are not given strength for the whole year in advance. You are given today's, which is why you have to come back.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Anxiety Is Not a Character Flaw",
+      "declaration": "Being anxious does not mean you lack faith or courage. It means you are a person, and you can be helped.",
+      "scripture": {
+        "ref": "Philippians 4:6",
+        "text": "Do not be anxious about anything, but in every situation, by prayer... present your requests to God."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Doing It Tired",
+      "declaration": "Some days courage is just carrying on when you are exhausted. That is not less brave; it is more.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good, for at the proper time we will reap a harvest."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Standing Alone",
+      "declaration": "Sometimes nobody stands with you. Doing the right thing alone is still worth it and it is still seen.",
+      "scripture": {
+        "ref": "2 Timothy 4:16-17",
+        "text": "At my first defence, no one came to my support... But the Lord stood at my side."
+      }
+    },
+    {
+      "day": 13,
+      "title": "You Have Done Hard Things",
+      "declaration": "You have already survived things you thought you could not. Look back at them when today looks impossible.",
+      "scripture": {
+        "ref": "1 Samuel 17:37",
+        "text": "The Lord who rescued me from the paw of the lion... will rescue me."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Not the Loudest",
+      "declaration": "Strength does not need an audience. The people who talk most about being tough are usually not.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Facing What You Are Avoiding",
+      "declaration": "The thing you are avoiding is costing you more than facing it would. Go at it a piece at a time.",
+      "scripture": {
+        "ref": "Philippians 4:13",
+        "text": "I can do all this through him who gives me strength."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Brave With Your Body",
+      "declaration": "Looking after your body when you do not feel like it — sleeping, eating, moving — is a quiet act of courage.",
+      "scripture": {
+        "ref": "1 Corinthians 6:19",
+        "text": "Do you not know that your bodies are temples of the Holy Spirit?"
+      }
+    },
+    {
+      "day": 17,
+      "title": "Speaking Up",
+      "declaration": "Saying 'that is not okay' out loud, in the moment, is hard. It is also how things actually change.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak for themselves."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Knowing When Not To",
+      "declaration": "Restraint is courage too. Not every provocation deserves your response, and silence is sometimes the strong move.",
+      "scripture": {
+        "ref": "Proverbs 29:11",
+        "text": "Fools give full vent to their rage, but the wise bring calm in the end."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Starting Again",
+      "declaration": "Starting again after you have failed publicly takes more courage than starting the first time. Do it anyway.",
+      "scripture": {
+        "ref": "Micah 7:8",
+        "text": "Though I have fallen, I will rise."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Not Numbing It",
+      "declaration": "Numbing a hard feeling does not remove it, it postpones it with interest. Facing it is the braver and cheaper route.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him, for God is our refuge."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Held While You Try",
+      "declaration": "You are held while you are trying, not only when you succeed. That is precisely why you can risk it.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand and says to you, Do not fear."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Courage to Be Known",
+      "declaration": "Letting people see the real you is frightening and it is the only route to actually being known.",
+      "scripture": {
+        "ref": "Psalm 139:1",
+        "text": "You have searched me, Lord, and you know me."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Not Rescued From, Walked Through",
+      "declaration": "God does not usually take the hard thing away. He goes through it with you, which turns out to be better.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you."
+      }
+    },
+    {
+      "day": 24,
+      "title": "The Strength to Wait",
+      "declaration": "Waiting well is a form of strength. Not everything worth having arrives at the speed you would like.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Gentle Is Not Weak",
+      "declaration": "Staying gentle when you could be cutting is strength under control. That is the whole definition.",
+      "scripture": {
+        "ref": "Colossians 3:12",
+        "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Under Pressure",
+      "declaration": "Who you are under pressure is who you are. Pressure does not build character so much as reveal it — and reveal what to work on.",
+      "scripture": {
+        "ref": "James 1:2-3",
+        "text": "The testing of your faith produces perseverance."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Everyone Looks Further Ahead",
+      "declaration": "Everyone else looks further ahead than they are. You are not late, and panic is a poor navigator.",
+      "scripture": {
+        "ref": "Psalm 31:15",
+        "text": "My times are in your hands."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Small and Consequential",
+      "declaration": "You are not too young for what you are being asked to do. God has never been particular about that.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young, but set an example."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Strength That Is Given",
+      "declaration": "You are not asked to manufacture strength. It is supplied, daily, for exactly what today holds.",
+      "scripture": {
+        "ref": "Psalm 28:7",
+        "text": "The Lord is my strength and my shield; my heart trusts in him."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Courage Compounds",
+      "declaration": "Every brave thing you do makes the next one slightly easier. That is how this works.",
+      "scripture": {
+        "ref": "Psalm 84:7",
+        "text": "They go from strength to strength."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carry the Courage",
+      "declaration": "Everything you have faced this month has made you stronger for what comes next. Carry it.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous... for the Lord your God will be with you wherever you go."
+      }
+    }
+  ]
+}

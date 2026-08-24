@@ -2,7 +2,7 @@
 
 Content is plain JSON, one file per stage per theme, so it can be written,
 edited or translated without touching application code. `index.js` is the only
-thing that imports these files; everything else goes through the store.
+thing that reaches these files; everything else goes through the store.
 
 This is the **born-stage** content. Pregnancy is a different track with a
 different shape — see `src/data/pregnancy/README.md`.
@@ -107,22 +107,38 @@ Scriptures where they fit, different weight.
 
 ## Adding a stage or a theme
 
-1. Write the JSON file into `stages/<stage>/`.
-2. Import it in `index.js` and add it to `CONTENT`.
-3. Run `npx vitest run tests/unit/familyContent.spec.js`.
+1. Write the JSON file into `stages/<stage>/`, named `<NN>-<theme-slug>.json`.
+2. Run `npx vitest run tests/unit/familyContent.spec.js`.
 
-`validate()` runs at module load and throws on a file whose month, stage or slug
-disagree with where it sits, a repeated or out-of-range day, a missing day in
-1–28, or a missing week. A content edit that breaks the shape fails the build
-rather than showing a user the wrong declaration for the rest of the month.
+There is no step where you edit `index.js`. It picks files up with
+`import.meta.glob`, so the filename is the registration — which also means a
+file in the wrong directory or with the wrong number silently becomes a
+different month, and the validator is what catches that.
+
+**Content is loaded one stage at a time, on demand.** A finished stage is 372
+daily declarations; six of them imported statically would be downloaded by every
+visitor before first paint, including the five stages they have no child in. So
+each stage is its own lazy chunk, fetched when a profile in that stage is first
+opened. Lookups stay synchronous and answer `null` until it arrives — the same
+answer they give for a stage nobody has written, so the UI needs no extra state.
+
+`validate()` runs when a stage is loaded and throws on a file whose month, stage
+or slug disagree with where it sits, a repeated or out-of-range day, a missing
+day in 1–28, or a missing week. A content edit that breaks the shape fails the
+test rather than showing a user the wrong declaration for the rest of the month.
 
 ## What is written
 
-| Stage                              | Themes written                 |
-| ---------------------------------- | ------------------------------ |
-| school                             | 1 of 12 — Identity & Belonging |
-| teen                               | 1 of 12 — Identity & Belonging |
-| infant, toddler, youngAdult, adult | none yet                       |
+| Stage                              | Themes written      | Daily | Weekly |
+| ---------------------------------- | ------------------- | ----- | ------ |
+| school                             | 12 of 12 — complete | 372   | 48     |
+| teen                               | 12 of 12 — complete | 372   | 48     |
+| infant, toddler, youngAdult, adult | none yet            | —     | —      |
+
+Within a stage, **every day title and every declaration is unique across the
+whole year**, and the tests assert it. Titles are what the month grid, the Saved
+list and the share card display, so a repeat eleven months later reads as a bug
+rather than as a refrain.
 
 A stage or theme with nothing written is a normal answer of `null`, not an
 error: the app shows a gentle "being written" card and everything a parent has

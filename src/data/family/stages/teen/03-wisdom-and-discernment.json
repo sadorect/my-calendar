@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 3,
+  "slug": "wisdom-and-discernment",
+  "title": "Wisdom & Discernment",
+  "intro": "Teenagers are given real decisions and an endless supply of confident opinions to make them with. Discernment is the skill of telling the difference between what is loud and what is true, and it is learned rather than inherited. This month we hand over the tools — ask, wait, watch the pattern, and check the source.",
+  "keyScriptures": [
+    {
+      "ref": "James 1:5",
+      "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault."
+    },
+    {
+      "ref": "Romans 12:2",
+      "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Loud Is Not the Same as True",
+      "declaration": "The most confident voice in the room is often just the loudest. Discernment is the habit of asking who is speaking and why, before you decide they are right.",
+      "parentsPrayer": "Father, give our child ears that can tell truth from noise. In a world of confident opinions, make them thoughtful. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Are Allowed to Wait",
+      "declaration": "Urgency is how people get talked into things. Almost nothing good is lost by taking a night to think, and a great deal of trouble is avoided by it.",
+      "parentsPrayer": "Lord, slow our child down at the moments that matter most. Give them the pause that changes the outcome. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Watch the Pattern",
+      "declaration": "Anyone can say the right thing once. What repeats is the truth — about a person, a habit, a plan. Learn to watch the pattern rather than the promise.",
+      "parentsPrayer": "God, give our child clear eyes. Where we would rush to reassure them, help us tell them the truth instead. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Wisdom Is Kind",
+      "declaration": "Wisdom that leaves everyone feeling small is not wisdom, it is just sharpness. The real thing is peaceable, considerate and worth being near.",
+      "parentsPrayer": "Father, let our child's growing understanding make them gentler, not harder. Keep them humble as they grow wise. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Ask, Without Embarrassment",
+      "declaration": "You can ask God for wisdom and He does not make you feel stupid for needing it. That offer does not expire.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "Ask God, who gives generously to all without finding fault, and it will be given to you."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Loud Is Not True",
+      "declaration": "The most confident voice in the room is often just the loudest. Confidence is not evidence.",
+      "scripture": {
+        "ref": "Proverbs 18:17",
+        "text": "The first to present a case seems right, till another comes forward and questions him."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Check the Source",
+      "declaration": "Before you believe it, ask who is saying it and what they get if you agree. That single question will save you a lot.",
+      "scripture": {
+        "ref": "1 John 4:1",
+        "text": "Do not believe every spirit, but test the spirits."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Urgency Is a Tactic",
+      "declaration": "People who need an answer right now are usually trying to stop you thinking. You are allowed to wait.",
+      "scripture": {
+        "ref": "Proverbs 21:5",
+        "text": "The plans of the diligent lead to profit as surely as haste leads to poverty."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Watch the Pattern",
+      "declaration": "Anyone can say the right thing once. What repeats is the truth. Watch the pattern, not the promise.",
+      "scripture": {
+        "ref": "Matthew 7:16",
+        "text": "By their fruit you will recognise them."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Not Every Thought Is True",
+      "declaration": "You are not obliged to believe everything your own mind tells you at 2am. Thoughts can be examined.",
+      "scripture": {
+        "ref": "2 Corinthians 10:5",
+        "text": "We take captive every thought to make it obedient to Christ."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Renew, Do Not Absorb",
+      "declaration": "You are being shaped by whatever you take in most. Choose it on purpose rather than by accident.",
+      "scripture": {
+        "ref": "Romans 12:2",
+        "text": "Do not conform to the pattern of this world, but be transformed by the renewing of your mind."
+      }
+    },
+    {
+      "day": 8,
+      "title": "The Difference Between Good and Nearly",
+      "declaration": "Most bad decisions are not between good and evil. They are between good and nearly-good, and that takes practice to see.",
+      "scripture": {
+        "ref": "Hebrews 5:14",
+        "text": "Who by constant use have trained themselves to distinguish good from evil."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Think Two Steps On",
+      "declaration": "Ask where this ends, not just how it starts. Wise people look one step further than they need to.",
+      "scripture": {
+        "ref": "Proverbs 14:15",
+        "text": "The prudent give thought to their steps."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Advice from People Who Are For You",
+      "declaration": "Take counsel from people who want good things for you, not from people who want you to be like them.",
+      "scripture": {
+        "ref": "Proverbs 15:22",
+        "text": "Plans fail for lack of counsel, but with many advisers they succeed."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Say I Do Not Know",
+      "declaration": "'I do not know' is a strong sentence, not a weak one. Pretending is how people end up committed to nonsense.",
+      "scripture": {
+        "ref": "Proverbs 12:23",
+        "text": "The prudent keep their knowledge to themselves, but a fool's heart blurts out folly."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Being Corrected Is Not an Attack",
+      "declaration": "Correction stings for a minute and helps for years. People who cannot be corrected stop growing at the age they refused.",
+      "scripture": {
+        "ref": "Proverbs 9:9",
+        "text": "Instruct the wise and they will be wiser still."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Your Conscience Is Data",
+      "declaration": "That sense that something is off is worth listening to, even before you can explain it.",
+      "scripture": {
+        "ref": "Romans 2:15",
+        "text": "Their consciences also bearing witness."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Sleep on It",
+      "declaration": "A decision made at midnight looks different at nine in the morning. Very little is lost by waiting.",
+      "scripture": {
+        "ref": "Psalm 4:4",
+        "text": "When you are on your beds, search your hearts and be silent."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Crowds Can Be Wrong Together",
+      "declaration": "A whole group can be confidently wrong. Being the one who stops is sometimes the most intelligent thing in the room.",
+      "scripture": {
+        "ref": "Exodus 23:2",
+        "text": "Do not follow the crowd in doing wrong."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Read Past the Headline",
+      "declaration": "The first version of any story is the least reliable. Discernment is often just patience with the facts.",
+      "scripture": {
+        "ref": "Proverbs 18:13",
+        "text": "To answer before listening — that is folly and shame."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Wisdom Is Kind",
+      "declaration": "Wisdom that leaves people feeling small is not wisdom. The real thing is peaceable and considerate.",
+      "scripture": {
+        "ref": "James 3:17",
+        "text": "The wisdom that comes from heaven is first of all pure; then peace-loving, considerate."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Motives Matter",
+      "declaration": "Ask yourself why you want what you want. Half of discernment is being honest about your own reasons.",
+      "scripture": {
+        "ref": "Jeremiah 17:9",
+        "text": "The heart is deceitful above all things."
+      }
+    },
+    {
+      "day": 19,
+      "title": "The Cost Nobody Mentions",
+      "declaration": "Everything has a cost. If nobody will name it, that is the thing to find out before you agree.",
+      "scripture": {
+        "ref": "Luke 14:28",
+        "text": "Suppose one of you wants to build a tower. Won't you first sit down and estimate the cost?"
+      }
+    },
+    {
+      "day": 20,
+      "title": "Small Choices Are the Real Ones",
+      "declaration": "Your life is being decided by small ordinary choices far more than by dramatic ones.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Truth That Costs Something",
+      "declaration": "Sometimes the honest answer is the expensive one. Pay it. Lies compound.",
+      "scripture": {
+        "ref": "Proverbs 12:19",
+        "text": "Truthful lips endure forever, but a lying tongue lasts only a moment."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Do Not Argue to Win",
+      "declaration": "Arguing to win teaches you nothing. Arguing to understand changes you, and it changes the room.",
+      "scripture": {
+        "ref": "Proverbs 15:1",
+        "text": "A gentle answer turns away wrath, but a harsh word stirs up anger."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Knowing When to Stop",
+      "declaration": "Knowing when to stop talking, scrolling or pushing is a real skill and almost nobody teaches it.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:7",
+        "text": "A time to be silent and a time to speak."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Test It Against Scripture",
+      "declaration": "You have a fixed point to measure things by. Use it, rather than measuring by how you feel this week.",
+      "scripture": {
+        "ref": "Psalm 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Wise About Yourself",
+      "declaration": "The hardest discernment is about your own habits. Be as honest with yourself as you are about everyone else.",
+      "scripture": {
+        "ref": "Psalm 139:23",
+        "text": "Search me, God, and know my heart."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Plans Held Lightly",
+      "declaration": "Make plans, and hold them loosely. Being redirected is not the same as failing.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Not Late",
+      "declaration": "Comparison will tell you that everyone else has it worked out. They do not, and you are not late.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Wisdom Now, Not Later",
+      "declaration": "Wisdom is not something that arrives with age. Start using it today and you will not have to unlearn as much.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Ask Again",
+      "declaration": "If you asked and still do not know, ask again. God does not get tired of the question.",
+      "scripture": {
+        "ref": "Luke 11:9",
+        "text": "Ask and it will be given to you; seek and you will find."
+      }
+    },
+    {
+      "day": 30,
+      "title": "It Grows",
+      "declaration": "Nobody is born discerning. It grows in people who keep asking, keep reading and keep being honest.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "Jesus grew in wisdom and stature, and in favour with God and man."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Use It, Do Not Admire It",
+      "declaration": "What you have learned this month is meant to be used, not admired. Take it into the next decision you make.",
+      "scripture": {
+        "ref": "Proverbs 3:5-6",
+        "text": "Trust in the Lord with all your heart and lean not on your own understanding."
+      }
+    }
+  ]
+}

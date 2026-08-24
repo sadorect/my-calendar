@@ -232,10 +232,38 @@ of it: that component addresses content by day of pregnancy and is the most-used
 screen in the shipped app, and the point of this change is that the womb track
 does not move.
 
+#### All twelve themes, both stages (same day)
+
+School Years and Teen Years are **content-complete**: 12 themes each, 372 daily
+and 48 weekly declarations per stage, 840 declarations in total. Within a stage
+every day title and every declaration is unique across the whole year, and the
+tests assert it — titles are what the month grid, the Saved list and the share
+card show, so a repeat eleven months later reads as a bug rather than a refrain.
+
+**Content is now lazy, per stage, and that was a bug fix rather than a nicety.**
+Importing all 24 files statically put them in the *eagerly loaded* bundle —
+`App.vue` imports the pregnancy store, so anything the store imports is on the
+first-paint path — and the main chunk went from 389KB to 622KB. Six finished
+stages would have been about a megabyte, downloaded by every visitor including
+the five stages they have no child in. `index.js` now uses `import.meta.glob`
+without `eager` and fetches one stage on demand; the main chunk is back to
+399KB. Lookups stay synchronous and answer `null` until the fetch lands, which
+is the same answer they already gave for unwritten content, so no UI changed.
+
+The one subtlety: the content cache is a plain module-level object, outside Vue,
+so nothing would recompute when a fetch resolves. `tracksContentLoads()` is
+called inside each content computed for its dependency rather than its value,
+and a watcher on the active stage does the fetching — a computed that started
+its own fetch would fire again on the result.
+
+Adding a month file now needs no code edit at all: the glob makes the filename
+the registration, which also means a file in the wrong directory quietly becomes
+a different month. The validator is what catches that.
+
 #### Still open
 
-- **22 month-files to write** — 11 more themes each for School and Teen, then
-  the other four born stages. ~365 daily + 48 weekly per stage.
+- The other four born stages have no content: infant, toddler, youngAdult,
+  adult. ~372 daily + 48 weekly each. `src/data/family/README.md` is the guide.
 - Keepsake and printable export for born stages (`keepsake.js` is womb-shaped).
 - Photos: `photoId` is in the model but there is no photo store yet. Photos must
   **not** sync — the server caps a body at 4MB and every push sends the whole

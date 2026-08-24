@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 10,
+  "slug": "generosity-and-legacy",
+  "title": "Generosity & Legacy",
+  "intro": "Children are told to share long before anyone explains why. This month gives them the reason — that everything they have was given first, that generous people are happier, and that the small kind things they do are already the beginning of what they will be remembered for.",
+  "keyScriptures": [
+    {
+      "ref": "Acts 20:35",
+      "text": "It is more blessed to give than to receive."
+    },
+    {
+      "ref": "Proverbs 11:25",
+      "text": "A generous person will prosper; whoever refreshes others will be refreshed."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "It Was Given to You First",
+      "declaration": "Everything you have, you were given. Generosity is not losing something — it is passing on what came to you free.",
+      "parentsPrayer": "Father, make our family open-handed. Let our child grow up seeing us give without counting. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Generous People Are Happier",
+      "declaration": "Giving something away makes you gladder than keeping it. That is strange, and it is reliably true.",
+      "parentsPrayer": "Lord, let our child discover the gladness of giving early, before the world teaches them to grip. Amen."
+    },
+    {
+      "week": 3,
+      "title": "You Already Have Something to Give",
+      "declaration": "You do not have to wait until you have money. You have time, attention, kindness and a seat next to you.",
+      "parentsPrayer": "God, open our child's eyes to what they already have to give. Let them start today. Amen."
+    },
+    {
+      "week": 4,
+      "title": "What You Will Be Remembered For",
+      "declaration": "The small kind things you do are already the beginning of what people will remember about you.",
+      "parentsPrayer": "Father, let our child build a life worth remembering, out of ordinary kindnesses. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Given to You First",
+      "declaration": "Everything you have was given to you. Sharing is just passing on something that came to you free.",
+      "scripture": {
+        "ref": "1 Chronicles 29:14",
+        "text": "Everything comes from you, and we have given you only what comes from your hand."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Gladder for Giving",
+      "declaration": "Giving something away makes you happier than keeping it. Try it and see.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 3,
+      "title": "You Already Have Something",
+      "declaration": "You do not need money to be generous. You have time, kindness and a seat next to you.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Each of you should use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sharing Is Not Losing",
+      "declaration": "When you share, you do not end up with less of what matters. That is the odd maths of generosity.",
+      "scripture": {
+        "ref": "Proverbs 11:24",
+        "text": "One person gives freely, yet gains even more."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Notice Who Has Less",
+      "declaration": "Generosity starts with noticing. Look for who has been left out or left short.",
+      "scripture": {
+        "ref": "Proverbs 19:17",
+        "text": "Whoever is kind to the poor lends to the Lord."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Give Without Announcing",
+      "declaration": "The best giving is quiet. You do not need anyone to know it was you.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Your Time Is a Gift",
+      "declaration": "Sitting with someone who is lonely costs you nothing but time, and time is one of the best gifts.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Not Just Leftovers",
+      "declaration": "Give something you would actually have liked to keep. That is when it starts to mean something.",
+      "scripture": {
+        "ref": "2 Samuel 24:24",
+        "text": "I will not sacrifice to the Lord my God burnt offerings that cost me nothing."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Generous with Words",
+      "declaration": "Encouragement is free and it is one of the most valuable things you can hand someone.",
+      "scripture": {
+        "ref": "Ephesians 4:29",
+        "text": "Only what is helpful for building others up."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Generous with Credit",
+      "declaration": "Say who helped you. Giving credit away costs nothing and makes you bigger.",
+      "scripture": {
+        "ref": "Romans 12:10",
+        "text": "Honour one another above yourselves."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Cheerful, Not Grudging",
+      "declaration": "Give because you want to, not because someone made you. God likes a cheerful giver.",
+      "scripture": {
+        "ref": "2 Corinthians 9:7",
+        "text": "God loves a cheerful giver."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Enough to Share",
+      "declaration": "You have enough. Once you see that, sharing stops feeling like a risk.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "My God will meet all your needs."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Small Gifts Count",
+      "declaration": "A small gift given with thought is worth more than a big one given carelessly.",
+      "scripture": {
+        "ref": "Mark 12:43",
+        "text": "This poor widow has put more into the treasury than all the others."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Room at the Table",
+      "declaration": "There is always room for one more. Making room is a kind of generosity.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Lending and Letting Go",
+      "declaration": "When you lend something, lend it kindly. Things matter less than people.",
+      "scripture": {
+        "ref": "Luke 6:35",
+        "text": "Lend to them without expecting to get anything back."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Generous When You Are Tired",
+      "declaration": "It is easy to be kind when you are in a good mood. It counts more when you are not.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Passing It On",
+      "declaration": "When someone is kind to you, pass it on to someone else. That is how kindness travels.",
+      "scripture": {
+        "ref": "Matthew 10:8",
+        "text": "Freely you have received; freely give."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Put the Ledger Down",
+      "declaration": "Generous people do not keep track of who owes them. Put the ledger down.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Giving Your Best Bit",
+      "declaration": "Give the good one, not the broken one. It changes what the gift means.",
+      "scripture": {
+        "ref": "Proverbs 3:9",
+        "text": "Honour the Lord with your wealth, with the firstfruits of all your crops."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Being Generous at Home",
+      "declaration": "Start at home. The people you live with are the hardest and most important place to practise.",
+      "scripture": {
+        "ref": "1 Timothy 5:8",
+        "text": "Anyone who does not provide for their relatives... has denied the faith."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Sharing What You Know",
+      "declaration": "If you understand something, help someone else understand it. Knowledge is meant to be handed on.",
+      "scripture": {
+        "ref": "2 Timothy 2:2",
+        "text": "Entrust to reliable people who will also be qualified to teach others."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Generous with Forgiveness",
+      "declaration": "Forgiveness is a kind of generosity. It gives someone something they cannot earn.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 23,
+      "title": "What You Leave Behind",
+      "declaration": "People will remember how you made them feel long after they forget what you did.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 24,
+      "title": "A Family Habit",
+      "declaration": "Generosity runs in families. What you practise now is what your children will think is normal.",
+      "scripture": {
+        "ref": "Psalm 78:4",
+        "text": "We will tell the next generation the praiseworthy deeds of the Lord."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Giving Changes the Giver",
+      "declaration": "Generosity does something to you, not just to the person you gave to. It makes you less afraid.",
+      "scripture": {
+        "ref": "Luke 6:38",
+        "text": "Give, and it will be given to you."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Not Only to Friends",
+      "declaration": "It is easy to be generous to people who will be generous back. Try it on someone who cannot.",
+      "scripture": {
+        "ref": "Luke 14:13-14",
+        "text": "Invite the poor... and you will be blessed."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Looking After Things",
+      "declaration": "Looking after what you have been given is part of being generous. It keeps it useful for someone else.",
+      "scripture": {
+        "ref": "Luke 16:11",
+        "text": "If you have not been trustworthy in handling worldly wealth..."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Sowing",
+      "declaration": "Kindness is like seed. You do not see the crop the same day, and it still grows.",
+      "scripture": {
+        "ref": "Galatians 6:7",
+        "text": "A man reaps what he sows."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Started by Someone Else",
+      "declaration": "Somebody was generous to you before you could say thank you. You are part of a long chain.",
+      "scripture": {
+        "ref": "Deuteronomy 6:10-11",
+        "text": "Cities you did not build, vineyards you did not plant."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Beginning Now",
+      "declaration": "What you will be remembered for has already started. It is being built out of ordinary days.",
+      "scripture": {
+        "ref": "Ecclesiastes 11:1",
+        "text": "Cast your bread upon the waters, for after many days you will find it again."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep Giving It Away",
+      "declaration": "Everything you have given away this month is still yours in the way that counts. Keep giving.",
+      "scripture": {
+        "ref": "Proverbs 11:25",
+        "text": "A generous person will prosper; whoever refreshes others will be refreshed."
+      }
+    }
+  ]
+}
