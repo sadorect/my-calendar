@@ -199,15 +199,15 @@ describe('favourite keys', () => {
 
 describe('loading a stage on demand', () => {
   it('knows which stages have content on disk without loading any of it', () => {
-    expect(STAGES_WITH_CONTENT).toEqual(['infant', 'school', 'teen'])
+    expect(STAGES_WITH_CONTENT).toEqual(['infant', 'school', 'teen', 'toddler'])
     expect(stageHasContent('school')).toBe(true)
-    expect(stageHasContent('toddler')).toBe(false)
+    expect(stageHasContent('youngAdult')).toBe(false)
   })
 
   it('reports a stage nobody has written rather than throwing', async () => {
-    expect(await loadStageContent('toddler')).toBe(false)
-    expect(isStageLoaded('toddler')).toBe(false)
-    expect(stageMonthContent('toddler', 1)).toBeNull()
+    expect(await loadStageContent('youngAdult')).toBe(false)
+    expect(isStageLoaded('youngAdult')).toBe(false)
+    expect(stageMonthContent('youngAdult', 1)).toBeNull()
   })
 
   it('is safe to call repeatedly and concurrently', async () => {

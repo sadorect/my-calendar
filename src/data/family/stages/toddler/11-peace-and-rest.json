@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 11,
+  "slug": "peace-and-rest",
+  "title": "Peace & Rest",
+  "intro": "Small children are wound up by a world with too much in it, and they cannot say so. This month is quieter than the rest on purpose. It is about bedtime, big feelings, and learning that stopping is safe.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 4:8",
+      "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+    },
+    {
+      "ref": "Matthew 11:28",
+      "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Stopping Is Safe",
+      "declaration": "You are allowed to stop. Nothing goes wrong when you rest, and nobody is disappointed.",
+      "parentsPrayer": "Father, slow this house down. Let our child learn that stopping is safe. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Big Feelings Get Smaller",
+      "declaration": "When a feeling is very big, it gets smaller if you say it out loud to someone who loves you.",
+      "parentsPrayer": "Lord, help us stay calm when our child cannot. Let us be the quiet in their storm. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Quiet Is Nice",
+      "declaration": "Quiet is not boring. Some of the best bits of the day are the quiet ones.",
+      "parentsPrayer": "God, give our child a taste for quiet in a very loud world. Amen."
+    },
+    {
+      "week": 4,
+      "title": "You Can Sleep",
+      "declaration": "You can go to sleep because you are safe, not because everything is tidy.",
+      "parentsPrayer": "Father, give sleep to this child and to us. We cannot make it happen. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Stopping Is Safe",
+      "declaration": "You are allowed to stop and rest. Nothing goes wrong when you do.",
+      "scripture": {
+        "ref": "Genesis 2:2",
+        "text": "On the seventh day he rested."
+      }
+    },
+    {
+      "day": 2,
+      "title": "You Can Sleep",
+      "declaration": "You can go to sleep because you are safe. Someone else is awake.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Big Feelings Get Smaller",
+      "declaration": "When a feeling is huge, saying it out loud makes it smaller.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Quiet Is Nice",
+      "declaration": "Quiet is not boring. Some of the best bits of the day are quiet.",
+      "scripture": {
+        "ref": "Psalm 46:10",
+        "text": "Be still, and know that I am God."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Come and Rest",
+      "declaration": "When you are worn out, come to us. That is what we are for.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary."
+      }
+    },
+    {
+      "day": 6,
+      "title": "God Does Not Sleep",
+      "declaration": "You can sleep. The One looking after you never needs to.",
+      "scripture": {
+        "ref": "Psalm 121:4",
+        "text": "He will neither slumber nor sleep."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not Your Job to Worry",
+      "declaration": "Worrying is not your job. You are allowed to let us carry things.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Slow Down",
+      "declaration": "Going slowly is allowed. Fast is not always better.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 9,
+      "title": "A Cuddle Helps",
+      "declaration": "When everything is too much, a cuddle is a very good plan.",
+      "scripture": {
+        "ref": "Isaiah 66:13",
+        "text": "As a mother comforts her child."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Breathing Slowly",
+      "declaration": "When you are cross or scared, breathing slowly helps. Try it with us.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Not Everything at Once",
+      "declaration": "You do not have to do everything today. One thing is fine.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Bedtime Is Good",
+      "declaration": "Bedtime is not a punishment. It is how tomorrow gets to be good.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "He grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Peace Is a Present",
+      "declaration": "A quiet, calm feeling is a present from God. You can ask for it.",
+      "scripture": {
+        "ref": "John 14:27",
+        "text": "Peace I leave with you."
+      }
+    },
+    {
+      "day": 14,
+      "title": "It Is Fine to Be Tired",
+      "declaration": "Being tired is not naughty. Tired people need rest, not telling off.",
+      "scripture": {
+        "ref": "Psalm 103:14",
+        "text": "He knows how we are formed."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Nothing to Finish",
+      "declaration": "You do not have to finish everything before you rest.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "My yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Loud Places End",
+      "declaration": "Loud busy places end and then it is quiet again. You will be fine.",
+      "scripture": {
+        "ref": "Psalm 23:2",
+        "text": "He leads me beside quiet waters."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Sitting Still",
+      "declaration": "Sitting still with someone is a lovely thing to do. Try it for a minute.",
+      "scripture": {
+        "ref": "Psalm 62:1",
+        "text": "Truly my soul finds rest in God."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Bad Dreams Finish",
+      "declaration": "Bad dreams are not real and they finish. We are nearby.",
+      "scripture": {
+        "ref": "Proverbs 3:24",
+        "text": "When you lie down, your sleep will be sweet."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Being Cross Passes",
+      "declaration": "Being very cross does not last. It goes, like weather.",
+      "scripture": {
+        "ref": "Psalm 30:5",
+        "text": "Weeping may stay for the night."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Nobody Is Rushing You",
+      "declaration": "Nobody here is rushing you. You can take your time.",
+      "scripture": {
+        "ref": "2 Peter 3:8",
+        "text": "With the Lord a day is like a thousand years."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Rest Before You Melt",
+      "declaration": "Resting before you are completely worn out works better than after.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me... and get some rest."
+      }
+    },
+    {
+      "day": 22,
+      "title": "A Day Off",
+      "declaration": "We have days when we do nothing much. Those are good days too.",
+      "scripture": {
+        "ref": "Exodus 20:8",
+        "text": "Remember the Sabbath day by keeping it holy."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Safe to Be Tired",
+      "declaration": "It is safe to be tired here. Nobody has to be good all the time.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Say It to God",
+      "declaration": "You can tell God when you feel funny inside. He is always listening.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Hands Down",
+      "declaration": "When your hands are tight, you can let them go. Try it now.",
+      "scripture": {
+        "ref": "Psalm 55:22",
+        "text": "Cast your cares on the Lord."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Peace Guards You",
+      "declaration": "God gives a peace that looks after your thoughts, especially at bedtime.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God will guard your hearts."
+      }
+    },
+    {
+      "day": 27,
+      "title": "One Story, Then Sleep",
+      "declaration": "Ordinary things at the same time each night help you feel safe. That is why we do them.",
+      "scripture": {
+        "ref": "Psalm 90:17",
+        "text": "Establish the work of our hands."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Enough for Today",
+      "declaration": "Today was enough. You do not have to do any more of it.",
+      "scripture": {
+        "ref": "John 19:30",
+        "text": "It is finished."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Quiet Voices",
+      "declaration": "We will try to use quiet voices here. Quiet helps everyone.",
+      "scripture": {
+        "ref": "1 Kings 19:12",
+        "text": "And after the fire came a gentle whisper."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Morning Comes",
+      "declaration": "The night ends and the morning comes. It always has.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep the Quiet",
+      "declaration": "We will keep having quiet times, even when life gets busier.",
+      "scripture": {
+        "ref": "Psalm 23:3",
+        "text": "He refreshes my soul."
+      }
+    }
+  ]
+}

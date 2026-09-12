@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 2,
+  "slug": "love-and-healthy-relationships",
+  "title": "Love & Healthy Relationships",
+  "intro": "This is the age of sharing, hitting, hugging and apologising, often within the same minute. It is where kindness is first practised rather than admired. This month gives a child the simplest possible words for love, and gives their parents the harder job of showing it while exhausted.",
+  "keyScriptures": [
+    {
+      "ref": "1 Corinthians 13:4",
+      "text": "Love is patient, love is kind."
+    },
+    {
+      "ref": "Ephesians 4:32",
+      "text": "Be kind and compassionate to one another, forgiving each other."
+    }
+  ],
+  "palette": "blush",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Kind Hands",
+      "declaration": "Your hands are for helping, not hurting. You are learning that, and you will get there.",
+      "parentsPrayer": "Father, make our hands gentle so our child learns gentleness from them. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Sharing Is Not Losing",
+      "declaration": "When you share, you do not lose. There is enough here, and there always will be.",
+      "parentsPrayer": "Lord, take the fear out of sharing for our child. Let them feel how much there is. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Sorry and Sorted",
+      "declaration": "When you get it wrong you can say sorry, and then it is sorted. That is how this family works.",
+      "parentsPrayer": "God, let us say sorry too, out loud, so our child knows how. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Everyone Is Included",
+      "declaration": "Look for the person who is on their own, and go to them. That is one of the best things a person can do.",
+      "parentsPrayer": "Father, give our child eyes for whoever is left out. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Kind Hands",
+      "declaration": "Your hands are for helping, not for hurting. You are still learning, and that is fine.",
+      "scripture": {
+        "ref": "Ephesians 4:32",
+        "text": "Be kind and compassionate to one another."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Gentle Words",
+      "declaration": "Gentle words make people feel better. Loud angry words make them feel worse.",
+      "scripture": {
+        "ref": "Proverbs 15:1",
+        "text": "A gentle answer turns away wrath."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Sharing Is Not Losing",
+      "declaration": "When you share, you do not lose. There is enough for everyone here.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Saying Sorry",
+      "declaration": "When you get it wrong, you can say sorry. Then it is sorted.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Forgiving",
+      "declaration": "When someone says sorry to you, you can let it go. That is called forgiving.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Taking Turns",
+      "declaration": "Waiting for your turn is hard. Doing hard things makes you stronger.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love is patient, love is kind."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Helping",
+      "declaration": "Helping someone is one of the best things you can do all day.",
+      "scripture": {
+        "ref": "Galatians 5:13",
+        "text": "Serve one another humbly in love."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Being Left Out Hurts",
+      "declaration": "It hurts to be left out. So look for whoever is on their own and go to them.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak for themselves."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Love Waits",
+      "declaration": "Love waits for people. It does not rush them or give up on them.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love is patient."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Not Grabbing",
+      "declaration": "You do not have to grab. You can ask, and asking usually works better.",
+      "scripture": {
+        "ref": "James 4:2",
+        "text": "You do not have because you do not ask."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Big Feelings, Kind Hands",
+      "declaration": "You can feel very angry and still be gentle. Feelings and hands are different things.",
+      "scripture": {
+        "ref": "Ephesians 4:26",
+        "text": "In your anger do not sin."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Everyone Gets Some",
+      "declaration": "There is enough for everyone. Nobody has to go without so you can have more.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "My God will meet all your needs."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Saying Thank You",
+      "declaration": "Thank you is a small thing that makes people glad. Say it often.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Being a Friend",
+      "declaration": "A good friend shares, waits and comes back. You can be one of those.",
+      "scripture": {
+        "ref": "Proverbs 17:17",
+        "text": "A friend loves at all times."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Loved When You Hit",
+      "declaration": "When you hurt someone, you are still loved. But we will help you stop.",
+      "scripture": {
+        "ref": "Hebrews 12:11",
+        "text": "No discipline seems pleasant at the time."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Hugs Are Good",
+      "declaration": "Hugs from safe people are good. You can always ask for one.",
+      "scripture": {
+        "ref": "Mark 10:16",
+        "text": "He took the children in his arms and blessed them."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Your Voice Matters",
+      "declaration": "If you do not like something, you can say so with your words.",
+      "scripture": {
+        "ref": "Proverbs 15:23",
+        "text": "How good is a timely word!"
+      }
+    },
+    {
+      "day": 18,
+      "title": "Kind to Small Things",
+      "declaration": "Be gentle with animals, babies and little things. Strong people are gentle.",
+      "scripture": {
+        "ref": "Proverbs 12:10",
+        "text": "The righteous care for the needs of their animals."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Not Everyone Is Nice",
+      "declaration": "Some people will not be kind to you. That is about them, not about you.",
+      "scripture": {
+        "ref": "Psalm 27:10",
+        "text": "Though my father and mother forsake me, the Lord will receive me."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Telling a Grown-Up",
+      "declaration": "If someone is unkind or scary, tell a grown-up you trust. That is the right thing.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:10",
+        "text": "If either of them falls down, one can help the other up."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Playing Together",
+      "declaration": "Playing with someone is better than playing alone, most of the time.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9",
+        "text": "Two are better than one."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Not Keeping Score",
+      "declaration": "You do not have to remember who did what. You can just start again.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Loving Your Family",
+      "declaration": "The people in your house are the first people you get to love. Start here.",
+      "scripture": {
+        "ref": "Exodus 20:12",
+        "text": "Honour your father and your mother."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Being Glad for Someone",
+      "declaration": "When someone else gets a turn, you can be glad for them. Try it.",
+      "scripture": {
+        "ref": "Romans 12:15",
+        "text": "Rejoice with those who rejoice."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Kind When Nobody Sees",
+      "declaration": "Being kind when nobody is looking is the best kind of kind.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Words Can Hurt",
+      "declaration": "Words can hurt more than hands. Choose them carefully.",
+      "scripture": {
+        "ref": "Proverbs 18:21",
+        "text": "The tongue has the power of life and death."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Coming Back After a Fight",
+      "declaration": "After a fight, you can come back. Nothing is broken forever here.",
+      "scripture": {
+        "ref": "Matthew 18:15",
+        "text": "Go and point out their fault, just between the two of you."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Loving God",
+      "declaration": "You can love God back. Talking to Him is a good way to start.",
+      "scripture": {
+        "ref": "Mark 12:30",
+        "text": "Love the Lord your God with all your heart."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Making Room",
+      "declaration": "There is always room for one more. Make some.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Love Is Strong",
+      "declaration": "Love is not soft or weak. It is the strongest thing there is.",
+      "scripture": {
+        "ref": "1 Corinthians 13:8",
+        "text": "Love never fails."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Practise Again Tomorrow",
+      "declaration": "You will practise all this again tomorrow. Nobody gets it right first time.",
+      "scripture": {
+        "ref": "Philippians 3:14",
+        "text": "I press on toward the goal."
+      }
+    }
+  ]
+}

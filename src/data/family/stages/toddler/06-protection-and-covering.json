@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 6,
+  "slug": "protection-and-covering",
+  "title": "Protection & Covering",
+  "intro": "Small children need to hear that they are safe far more often than adults think, and they need it in words that do not promise more than is true. This month says: you are watched, you are kept, you can always tell us, and there is somewhere to run.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 91:4",
+      "text": "He will cover you with his feathers, and under his wings you will find refuge."
+    },
+    {
+      "ref": "Psalm 121:8",
+      "text": "The Lord will watch over your coming and going."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Watched Over",
+      "declaration": "Someone is looking after you all the time, even when you cannot see anyone. He does not go to sleep.",
+      "parentsPrayer": "Father, watch over this child in every room we are not in. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Can Always Tell Us",
+      "declaration": "There is nothing too big or too bad to tell us. Nothing you say will make us stop loving you.",
+      "parentsPrayer": "Lord, make us safe to tell. Keep our faces kind when our child brings us something hard. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Somewhere to Run",
+      "declaration": "When you are frightened, you can run to us and you can run to God. Both doors are always open.",
+      "parentsPrayer": "God, be the first place our child runs, not the last. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Kept Safe",
+      "declaration": "You are kept. That means someone is holding on to you on purpose and does not intend to let go.",
+      "parentsPrayer": "Father, keep this child all their life, and keep us faithful in praying it. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Watched Over",
+      "declaration": "Someone is looking after you all the time, even when you cannot see anyone.",
+      "scripture": {
+        "ref": "Psalm 121:3",
+        "text": "He who watches over you will not slumber."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Under His Wings",
+      "declaration": "There is a safe place close by. You can go there any time.",
+      "scripture": {
+        "ref": "Psalm 91:4",
+        "text": "Under his wings you will find refuge."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Tell Us Anything",
+      "declaration": "There is nothing too big to tell us. Nothing will make us love you less.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Somewhere to Run",
+      "declaration": "When you are scared, run to us. And you can talk to God from anywhere.",
+      "scripture": {
+        "ref": "Proverbs 18:10",
+        "text": "The righteous run to it and are safe."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Safe in Bed",
+      "declaration": "You are safe in your bed. Someone is awake who never needs to sleep.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 6,
+      "title": "We Come Back",
+      "declaration": "When we leave, we come back. That has always happened and it always will.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Safe Grown-Ups",
+      "declaration": "Some grown-ups are safe and some are not. We will help you know the difference.",
+      "scripture": {
+        "ref": "Proverbs 22:3",
+        "text": "The prudent see danger and take refuge."
+      }
+    },
+    {
+      "day": 8,
+      "title": "No Secrets That Hurt",
+      "declaration": "If a grown-up asks you to keep a secret that feels wrong, tell us. Always.",
+      "scripture": {
+        "ref": "Ephesians 5:11",
+        "text": "Rather expose them."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Your Body Is Yours",
+      "declaration": "Your body belongs to you. You can say no to hugs you do not want.",
+      "scripture": {
+        "ref": "1 Corinthians 6:19",
+        "text": "Your bodies are temples of the Holy Spirit."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Holding Hands",
+      "declaration": "Holding hands near roads is not because you are little. It is because we love you.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Guard your heart."
+      }
+    },
+    {
+      "day": 11,
+      "title": "God Sees in the Dark",
+      "declaration": "God can see perfectly in the dark. Nothing is hidden from Him.",
+      "scripture": {
+        "ref": "Psalm 139:12",
+        "text": "Even the darkness will not be dark to you."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Hard Things Happen",
+      "declaration": "Sometimes hard things happen anyway. You will never face them on your own.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "I will be with you."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Angels Are Real",
+      "declaration": "God sends help you cannot see. You are looked after more than you know.",
+      "scripture": {
+        "ref": "Psalm 91:11",
+        "text": "He will command his angels concerning you."
+      }
+    },
+    {
+      "day": 14,
+      "title": "This House Is Safe",
+      "declaration": "This house is a safe place. You can put down whatever the day was like.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Held When You Fall",
+      "declaration": "When you fall over, you are picked up. You are not left there.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "The Lord upholds him with his hand."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Not Your Job to Worry",
+      "declaration": "Worrying is not your job. You are allowed to be little and let us carry it.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Nothing Surprises God",
+      "declaration": "Nothing that happens today is a surprise to God. He is already there.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Peace at Bedtime",
+      "declaration": "God gives a quiet feeling for the end of the day. You can ask for it.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God will guard your hearts."
+      }
+    },
+    {
+      "day": 19,
+      "title": "When Someone Is Unkind",
+      "declaration": "If someone is unkind to you, that is about them. You are still safe and still loved.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Doctors Help",
+      "declaration": "Doctors and nurses are helpers, even when it hurts a bit. We stay with you.",
+      "scripture": {
+        "ref": "Psalm 41:3",
+        "text": "The Lord sustains them on their sickbed."
+      }
+    },
+    {
+      "day": 21,
+      "title": "You Can Say No",
+      "declaration": "You are allowed to say no to things that feel wrong, even to grown-ups.",
+      "scripture": {
+        "ref": "Daniel 1:8",
+        "text": "Daniel resolved not to defile himself."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Kept When You Are Out",
+      "declaration": "You are looked after at nursery and at the park, not only at home.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going."
+      }
+    },
+    {
+      "day": 23,
+      "title": "A Strong Tower",
+      "declaration": "There is a safe place that nothing can knock down. You can always run there.",
+      "scripture": {
+        "ref": "Psalm 18:2",
+        "text": "The Lord is my rock, my fortress."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Rest Is Safe",
+      "declaration": "You can stop and rest. Nothing falls apart when you do.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "I will give you rest."
+      }
+    },
+    {
+      "day": 25,
+      "title": "We Pray for You",
+      "declaration": "We pray for you when you are asleep and when you are out. You are covered.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Pray for each other."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Never Thrown Away",
+      "declaration": "You will never be sent away or given up on. Not for anything.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Being Brave and Safe",
+      "declaration": "Being safe does not mean staying still. You are covered so you can go and do things.",
+      "scripture": {
+        "ref": "Psalm 18:19",
+        "text": "He brought me out into a spacious place."
+      }
+    },
+    {
+      "day": 28,
+      "title": "God Is Bigger",
+      "declaration": "Whatever is scary, God is bigger than it. That is always true.",
+      "scripture": {
+        "ref": "1 John 4:4",
+        "text": "Greater is he that is in you."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept",
+      "declaration": "You are kept. Someone is holding on to you on purpose.",
+      "scripture": {
+        "ref": "Numbers 6:24",
+        "text": "The Lord bless you and keep you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Safe to Be Little",
+      "declaration": "You are allowed to be little. Nobody needs you to be big yet.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Still Safe Tomorrow",
+      "declaration": "All of this is still true tomorrow. Nothing about it wears off.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "Both now and forevermore."
+      }
+    }
+  ]
+}

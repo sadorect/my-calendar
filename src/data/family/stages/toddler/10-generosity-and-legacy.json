@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 10,
+  "slug": "generosity-and-legacy",
+  "title": "Generosity & Legacy",
+  "intro": "Sharing is the great battle of these years, and it is really a question about whether there is enough. This month answers that question rather than repeating the instruction, and it says what a small child can actually understand about legacy: that kindness travels.",
+  "keyScriptures": [
+    {
+      "ref": "Acts 20:35",
+      "text": "It is more blessed to give than to receive."
+    },
+    {
+      "ref": "Proverbs 11:25",
+      "text": "A generous person will prosper; whoever refreshes others will be refreshed."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "There Is Enough",
+      "declaration": "There is enough here. You do not have to hold on tightly, because nothing is going to run out on you.",
+      "parentsPrayer": "Father, take the fear of not-enough out of our child's hands. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Giving Feels Good",
+      "declaration": "Giving something away feels better than keeping it. That is odd, and it is true, and you can test it.",
+      "parentsPrayer": "Lord, let our child discover the gladness of giving rather than being made to give. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Kindness Travels",
+      "declaration": "When someone is kind to you, you can pass it on to someone else. That is how kindness gets everywhere.",
+      "parentsPrayer": "God, let kindness travel out of this house through our child. Amen."
+    },
+    {
+      "week": 4,
+      "title": "You Have Something to Give",
+      "declaration": "You already have things to give: a turn, a toy, a place next to you, a kind word.",
+      "parentsPrayer": "Father, show our child what they already have to give away. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "There Is Enough",
+      "declaration": "There is enough here. You do not have to hold on tightly.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "My God will meet all your needs."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Giving Feels Good",
+      "declaration": "Giving something away feels better than keeping it. Try it and see.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Kindness Travels",
+      "declaration": "When someone is kind to you, pass it on. That is how kindness gets everywhere.",
+      "scripture": {
+        "ref": "Matthew 10:8",
+        "text": "Freely you have received; freely give."
+      }
+    },
+    {
+      "day": 4,
+      "title": "You Have Something to Give",
+      "declaration": "You have things to give already: a turn, a toy, a place beside you.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Sharing Is Not Losing",
+      "declaration": "Sharing does not mean you end up with less of what matters.",
+      "scripture": {
+        "ref": "Proverbs 11:24",
+        "text": "One person gives freely, yet gains even more."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Giving to Someone Small",
+      "declaration": "Be generous to whoever is smaller than you. That is a good habit to start now.",
+      "scripture": {
+        "ref": "Matthew 25:40",
+        "text": "Whatever you did for one of the least of these."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Notice Who Has None",
+      "declaration": "Look for whoever has not got any. Then give them some.",
+      "scripture": {
+        "ref": "Proverbs 19:17",
+        "text": "Whoever is kind to the poor lends to the Lord."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Giving Quietly",
+      "declaration": "You do not have to tell everybody you shared. Doing it is enough.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Give a Good One",
+      "declaration": "Give the good one, not the broken one. That is what makes it a present.",
+      "scripture": {
+        "ref": "2 Samuel 24:24",
+        "text": "I will not sacrifice... offerings that cost me nothing."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Sharing Your Time",
+      "declaration": "Playing with someone who is on their own is a real present. It costs nothing.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Kind Words Are Free",
+      "declaration": "Saying something kind costs nothing and people remember it for ages.",
+      "scripture": {
+        "ref": "Ephesians 4:29",
+        "text": "Only what is helpful for building others up."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Happy to Give",
+      "declaration": "Give because you want to, not because someone made you. God likes that best.",
+      "scripture": {
+        "ref": "2 Corinthians 9:7",
+        "text": "God loves a cheerful giver."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Being Glad for Others",
+      "declaration": "When someone else gets something nice, you can be glad. That makes you bigger.",
+      "scripture": {
+        "ref": "Romans 12:15",
+        "text": "Rejoice with those who rejoice."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Room for One More",
+      "declaration": "There is always room for one more person. Move up.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Lending Kindly",
+      "declaration": "When you lend something, lend it nicely. Things matter less than people.",
+      "scripture": {
+        "ref": "Luke 6:35",
+        "text": "Lend to them without expecting to get anything back."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Giving When You Are Tired",
+      "declaration": "It is easy to be kind when you feel good. It counts more when you do not.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Counting",
+      "declaration": "Generous people do not keep count of who owes them. Put it down.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Helping at Home",
+      "declaration": "Helping at home counts. It is the hardest place and the most important one.",
+      "scripture": {
+        "ref": "1 Timothy 5:8",
+        "text": "Anyone who does not provide for their relatives..."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Teaching Someone",
+      "declaration": "If you know how to do something, show someone else. That is generous too.",
+      "scripture": {
+        "ref": "2 Timothy 2:2",
+        "text": "Entrust to reliable people."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Giving Away a Turn",
+      "declaration": "Letting someone go first is one of the biggest things you can do at your age.",
+      "scripture": {
+        "ref": "Philippians 2:3",
+        "text": "Value others above yourselves."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Looking After Things",
+      "declaration": "Looking after your things means someone else can use them later.",
+      "scripture": {
+        "ref": "Luke 16:11",
+        "text": "If you have not been trustworthy..."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Forgiving Is Giving",
+      "declaration": "Forgiving someone is a kind of present. It is one of the best ones.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 23,
+      "title": "What People Remember",
+      "declaration": "People will remember how you made them feel. That is what you leave behind.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Planting Something",
+      "declaration": "Kindness is like a seed. You do not see it grow the same day.",
+      "scripture": {
+        "ref": "Galatians 6:7",
+        "text": "A man reaps what he sows."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Someone Gave to You",
+      "declaration": "Somebody gave you things before you could say thank you. You are in a long line.",
+      "scripture": {
+        "ref": "Deuteronomy 6:10-11",
+        "text": "Cities you did not build."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Giving to People Who Cannot Give Back",
+      "declaration": "Give to someone who cannot give you anything back. That is the best kind.",
+      "scripture": {
+        "ref": "Luke 14:13-14",
+        "text": "Invite the poor... and you will be blessed."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Our Family Gives",
+      "declaration": "This family gives things away. You will grow up thinking that is normal.",
+      "scripture": {
+        "ref": "2 Corinthians 9:8",
+        "text": "You will abound in every good work."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Not Only Toys",
+      "declaration": "You can give help, time, a hug or a turn. Not everything you give is a thing.",
+      "scripture": {
+        "ref": "Galatians 5:13",
+        "text": "Serve one another humbly in love."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Open Hands",
+      "declaration": "An open hand can give and take. A tight fist cannot do either.",
+      "scripture": {
+        "ref": "Proverbs 11:25",
+        "text": "Whoever refreshes others will be refreshed."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Starting Now",
+      "declaration": "What you will be like when you are big is starting now, today.",
+      "scripture": {
+        "ref": "Ecclesiastes 11:1",
+        "text": "Cast your bread upon the waters."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep Giving It Away",
+      "declaration": "Keep giving things away. It is one of the happiest habits there is.",
+      "scripture": {
+        "ref": "Luke 6:38",
+        "text": "Give, and it will be given to you."
+      }
+    }
+  ]
+}

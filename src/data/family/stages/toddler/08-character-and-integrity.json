@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 8,
+  "slug": "character-and-integrity",
+  "title": "Character & Integrity",
+  "intro": "This is the age of the broken thing nobody admits to and the biscuit that vanished. It is the first real practice at honesty, and how it is handled sets the tone for years. This month keeps it simple: tell the truth, do what you said, and be the same person wherever you are.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 20:11",
+      "text": "Even small children are known by their actions."
+    },
+    {
+      "ref": "Luke 16:10",
+      "text": "Whoever can be trusted with very little can also be trusted with much."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Telling the Truth",
+      "declaration": "Telling the truth is always better, even about the broken thing. We would much rather know.",
+      "parentsPrayer": "Father, make truth easy here. Let telling us never be frightening. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Doing What You Said",
+      "declaration": "When you say you will, do it. That is how people learn they can trust you.",
+      "parentsPrayer": "Lord, make us people who keep our word to a small child. Amen."
+    },
+    {
+      "week": 3,
+      "title": "The Same Everywhere",
+      "declaration": "Be the same person at nursery as you are at home. One person is much easier to be than two.",
+      "parentsPrayer": "God, let there be no gap in our child between home and everywhere else. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Sorry Properly",
+      "declaration": "A real sorry has no 'but' in it. It is short and it fixes things.",
+      "parentsPrayer": "Father, let our child hear us apologise properly. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Tell the Truth",
+      "declaration": "Telling the truth is always better, even about the broken thing.",
+      "scripture": {
+        "ref": "Ephesians 4:25",
+        "text": "Speak truthfully to your neighbour."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Own Up Fast",
+      "declaration": "Owning up quickly is much easier than being found out slowly.",
+      "scripture": {
+        "ref": "Proverbs 28:13",
+        "text": "Whoever conceals their sins does not prosper."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Do What You Said",
+      "declaration": "When you say you will, do it. That is how people trust you.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sorry Without But",
+      "declaration": "A real sorry has no 'but' in it. Just sorry.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Same Everywhere",
+      "declaration": "Be the same person at nursery and at home. One person is easier.",
+      "scripture": {
+        "ref": "Psalm 101:2",
+        "text": "I will conduct the affairs of my house with a blameless heart."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Not Taking Things",
+      "declaration": "If it is not yours, do not take it. Ask instead.",
+      "scripture": {
+        "ref": "Exodus 20:15",
+        "text": "You shall not steal."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Playing Fair",
+      "declaration": "Playing fair is better than winning. Winning by cheating is not winning.",
+      "scripture": {
+        "ref": "Proverbs 11:1",
+        "text": "Accurate weights find favour with him."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Doing It Properly",
+      "declaration": "Do it properly even if nobody is checking. Especially then.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Work at it with all your heart."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Not Blaming",
+      "declaration": "Do not say your sister did it. Say what you did.",
+      "scripture": {
+        "ref": "Genesis 3:12",
+        "text": "The woman you put here with me — she gave me some fruit."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Keeping a Secret Kindly",
+      "declaration": "If someone tells you something private, keep it. That makes you a good friend.",
+      "scripture": {
+        "ref": "Proverbs 11:13",
+        "text": "A trustworthy person keeps a secret."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Not Joining In",
+      "declaration": "When everyone is being unkind, you can just not join in.",
+      "scripture": {
+        "ref": "Exodus 23:2",
+        "text": "Do not follow the crowd in doing wrong."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Tidying Up",
+      "declaration": "Putting things back is boring and it is part of being trustworthy.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Kind When Nobody Sees",
+      "declaration": "Being kind when nobody is looking is the best sort.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Being Told Off Well",
+      "declaration": "When you are told off, listening is better than shouting. It gets over faster too.",
+      "scripture": {
+        "ref": "Proverbs 12:1",
+        "text": "Whoever loves discipline loves knowledge."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Small Lies Grow",
+      "declaration": "A small lie needs another one to hold it up. It is easier to stop at the first.",
+      "scripture": {
+        "ref": "Proverbs 12:19",
+        "text": "Truthful lips endure forever."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Finish What You Start",
+      "declaration": "Finishing is the part that counts. Anyone can start something.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Saying What Happened",
+      "declaration": "Say what actually happened, not the version that sounds better.",
+      "scripture": {
+        "ref": "Proverbs 12:22",
+        "text": "He delights in people who are trustworthy."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Being Gentle When Cross",
+      "declaration": "You can be very cross and still have kind hands. That is being strong.",
+      "scripture": {
+        "ref": "Ephesians 4:26",
+        "text": "In your anger do not sin."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Sharing the Credit",
+      "declaration": "If someone helped you, say so. That is being fair.",
+      "scripture": {
+        "ref": "Romans 13:7",
+        "text": "Give to everyone what you owe them."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Not Pretending",
+      "declaration": "You do not have to pretend to be someone else. We like the real you.",
+      "scripture": {
+        "ref": "Galatians 1:10",
+        "text": "Am I now trying to win the approval of human beings?"
+      }
+    },
+    {
+      "day": 21,
+      "title": "Trying Again Tomorrow",
+      "declaration": "You will get this wrong sometimes. Tomorrow you try again.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Grown-Ups Say Sorry Too",
+      "declaration": "We will say sorry to you when we get it wrong. Everyone has to.",
+      "scripture": {
+        "ref": "Romans 3:23",
+        "text": "All have sinned and fall short."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Words Matter",
+      "declaration": "What you say makes a difference to people. Choose good words.",
+      "scripture": {
+        "ref": "Proverbs 18:21",
+        "text": "The tongue has the power of life and death."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Being Careful With Things",
+      "declaration": "Looking after your things and other people's is part of being good.",
+      "scripture": {
+        "ref": "Luke 16:11",
+        "text": "If you have not been trustworthy in handling worldly wealth..."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Helping Without Being Asked",
+      "declaration": "Helping before someone asks is a lovely thing to do.",
+      "scripture": {
+        "ref": "Philippians 2:4",
+        "text": "Look to the interests of others."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Not Boasting",
+      "declaration": "You can be good at something without telling everybody about it.",
+      "scripture": {
+        "ref": "Proverbs 27:2",
+        "text": "Let someone else praise you."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Being Honest About Feelings",
+      "declaration": "Saying how you feel is a kind of truth-telling too. Try it.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Doing the Right Thing Alone",
+      "declaration": "Sometimes nobody else does the right thing. Do it anyway.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, walk humbly."
+      }
+    },
+    {
+      "day": 29,
+      "title": "A Good Name",
+      "declaration": "People remember what you are like. That is worth more than anything.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Loved While You Learn",
+      "declaration": "You are loved while you are learning all this. It is not a test you can fail.",
+      "scripture": {
+        "ref": "Romans 8:1",
+        "text": "There is now no condemnation."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Practising Being Good",
+      "declaration": "Being good is something you practise, not something you either are or are not.",
+      "scripture": {
+        "ref": "Luke 9:23",
+        "text": "Take up their cross daily."
+      }
+    }
+  ]
+}
