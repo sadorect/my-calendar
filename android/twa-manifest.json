@@ -1,0 +1,53 @@
+{
+  "packageId": "com.sadorect.birthcalendar",
+  "host": "my-birthcalendar.vercel.app",
+  "name": "Birth Calendar",
+  "launcherName": "Birth",
+  "display": "standalone",
+  "orientation": "portrait",
+  "themeColor": "#c9788a",
+  "themeColorDark": "#c9788a",
+  "navigationColor": "#fdf2f4",
+  "navigationColorDark": "#1f1417",
+  "navigationDividerColor": "#fdf2f4",
+  "navigationDividerColorDark": "#1f1417",
+  "backgroundColor": "#fdf2f4",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "https://my-birthcalendar.vercel.app/icon-512x512.png",
+  "maskableIconUrl": "https://my-birthcalendar.vercel.app/icon-maskable-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./birth-calendar.keystore",
+    "alias": "birth-calendar"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Today's declaration",
+      "shortName": "Today",
+      "url": "/?calendar=birth",
+      "chosenIconUrl": "https://my-birthcalendar.vercel.app/icon-192x192.png"
+    },
+    {
+      "name": "My calendar",
+      "shortName": "Calendar",
+      "url": "/?calendar=standard",
+      "chosenIconUrl": "https://my-birthcalendar.vercel.app/icon-192x192.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://my-birthcalendar.vercel.app/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://my-birthcalendar.vercel.app/",
+  "minSdkVersion": 21,
+  "appVersion": "1.0.0"
+}

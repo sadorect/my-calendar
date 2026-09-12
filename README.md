@@ -430,6 +430,21 @@ built and then removed: on an app whose onboarding screen promises that nothing
 is uploaded, a self-selected minority sample was not worth the privacy surface
 or the code. Visits and registrations answer the questions that get asked.
 
+### Android app
+
+The Android build is a **Trusted Web Activity**: a thin native shell around the
+same PWA, so a Vercel deploy updates the installed app with no release and no
+store round trip. There is no second codebase.
+
+`android/` holds the whole thing — `twa-manifest.json` is the source of truth,
+`npm run android:build` produces the signed APK, and `android/README.md`
+documents the signing key and the Digital Asset Links step that a TWA quietly
+breaks without. The build does **not** run on the VPS (no JDK, no Android SDK,
+and it does not belong there); build on a laptop or a CI runner.
+
+The signed APK is hosted on the VPS and linked from the app's tile on
+`dashboard.sadorect.com`.
+
 ### The deployment URL
 
 Nothing in the app hardcodes its own address — share links are built from
@@ -448,60 +463,25 @@ change. Two things do follow from a rename:
 
 ## 🚀 CI/CD Pipeline
 
-This project uses GitHub Actions for automated testing, building, and deployment.
+This project uses GitHub Actions for automated testing and build verification.
+**Deployment is not one of its jobs** — the Vercel project is linked to this
+repository, so Vercel builds and deploys on its own: pushes to `main` go to
+production, and every pull request gets a preview URL posted by the Vercel bot.
+Nothing here needs a `VERCEL_TOKEN` or any other deployment secret.
 
 ### Workflows
 
-- **CI/CD** (`ci-cd.yml`): Runs on every push to main and pull requests
+- **CI** (`ci-cd.yml`): Runs on every push to main and pull requests
   - Code linting with ESLint
   - Code formatting checks with Prettier
   - Unit and E2E tests with Playwright
+  - Sync server tests
   - Production build verification
-  - Automatic deployment to Vercel
-
-- **Preview Deployments** (`preview.yml`): Runs on pull requests
-  - Full test suite
-  - Preview deployment to Vercel
-  - Automatic PR comments with preview URLs
 
 - **Security & Quality** (`security.yml`): Weekly automated checks
   - Dependency vulnerability scanning
   - Lighthouse performance audits
   - Outdated dependency reports
-
-### Setup Vercel Deployment
-
-1. **Create Vercel Account**: Sign up at [vercel.com](https://vercel.com)
-
-2. **Install Vercel CLI**:
-
-   ```bash
-   npm i -g vercel
-   ```
-
-3. **Deploy Manually First**:
-
-   ```bash
-   vercel --prod
-   ```
-
-   Follow the prompts to link your GitHub repository.
-
-4. **Get Vercel Secrets**:
-
-   ```bash
-   vercel env pull .env.local
-   ```
-
-5. **Add Secrets to GitHub**:
-   Go to your repository Settings → Secrets and variables → Actions
-
-   Add these secrets:
-   - `VERCEL_TOKEN`: Your Vercel token (get from [vercel.com/account/tokens](https://vercel.com/account/tokens))
-   - `VERCEL_ORG_ID`: Your Vercel organization ID
-   - `VERCEL_PROJECT_ID`: Your Vercel project ID
-
-6. **Automatic Deployments**: Push to main branch to trigger production deployment
 
 ### Local Development
 

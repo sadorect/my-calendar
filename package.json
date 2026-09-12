@@ -14,7 +14,9 @@
     "test:unit:watch": "vitest",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug"
+    "test:debug": "playwright test --debug",
+    "android:build": "./android/bin/build.sh",
+    "android:assetlinks": "node android/bin/assetlinks.mjs"
   },
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.0",

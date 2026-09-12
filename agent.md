@@ -109,7 +109,7 @@ earliest, and settings/dueDate come from the newer blob as a set. Deletions can
 resurrect in a true concurrent conflict — the alternative is tombstones, and
 losing a journal entry is worse than an unwanted favourite coming back.
 
-The biometric lock remains a *device* lock and is unrelated to the account.
+The biometric lock remains a _device_ lock and is unrelated to the account.
 
 #### Still open on sync
 
@@ -277,6 +277,31 @@ a different month. The validator is what catches that.
 - **Phase 10, planned:** a family-level prayer journal opened from a floating
   card, like the Calendar pill. Plan and resumable state in
   `docs/prayer-journal-plan.md`.
+
+### Phase 8: Android packaging (2026-08-22)
+
+The Android app is a **Trusted Web Activity**, not a second codebase — a native
+shell around the same PWA, so a Vercel deploy updates installed apps with no
+release. `android/twa-manifest.json` is the source of truth; the Gradle project
+is generated from it and deliberately not committed.
+
+- [x] `android/bin/build.sh` — toolchain check, project generation, signed build
+- [x] `android/bin/assetlinks.mjs` — writes `public/.well-known/assetlinks.json`
+      from the signing key's fingerprint (verified that Vite copies `.well-known`
+      out of `public/`, which the whole scheme depends on)
+- [x] Download link on the Birth Calendar card at `dashboard.sadorect.com`,
+      driven by the file on disk so it can never 404
+- [x] **APK built 2026-09-12** in the `grinmuzik/bubblewrap` Docker image
+      that already lived on the VPS (JDK 17 + SDK), so no tooling was installed
+      on the host. Keystore + password live in
+      `/home/deploy/.birth-calendar-android/` — **back it up**. The signed APK
+      is committed at `public/downloads/birth-calendar.apk` and offered by the
+      in-app Share/Install panel on Android; `public/.well-known/assetlinks.json`
+      carries the key's fingerprint.
+
+The assetlinks step is the one that silently breaks a TWA: without a live,
+matching fingerprint on the origin, the app installs and runs but with a browser
+URL bar across the top, which reads as an app bug rather than a cert mismatch.
 
 ## Current Status
 
