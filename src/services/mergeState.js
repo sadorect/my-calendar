@@ -19,6 +19,9 @@
  *                not history, and a half-and-half merge would be incoherent.
  *   dueDate      per profile, from the winning copy of that profile. Changing
  *                it re-dates everything, so the two halves must not disagree.
+ *   prayers      union by id, later updatedAt wins. Deletion is a tombstone,
+ *                so it is just another edit and cannot be undone by a device
+ *                that never saw it — the one place here that has tombstones.
  *
  * A deletion made on one device while the other was editing can come back: a
  * union cannot tell "never had it" from "deleted it" without tombstones. That
@@ -36,6 +39,7 @@ import {
   emptyProfileData,
   orderedProfiles,
   writeLegacyMirror,
+  unionPrayers,
   STATE_VERSION
 } from './familyState.js'
 
@@ -159,6 +163,7 @@ export function mergeStates(local, remote) {
     version: STATE_VERSION,
     profiles,
     data,
+    prayers: unionPrayers(a.prayers, b.prayers),
     settings: { ...(dominant.settings || {}) },
     updatedAt: new Date().toISOString()
   }

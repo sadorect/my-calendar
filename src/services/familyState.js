@@ -17,6 +17,18 @@
  * their merge rules — is unchanged, so migrating a womb user is a move rather
  * than a rewrite and they see no difference at all.
  *
+ * ## Prayers (added without a version bump)
+ *
+ * `prayers` is a top-level map of the family's prayer journal — a request, and
+ * later the answer — keyed by id. It is family-scoped rather than per child
+ * because a prayer need not be about anyone in particular; an entry may point
+ * at a child, and at the declaration it grew from. Adding a key is additive:
+ * a version 1 client never reads or writes it, and the mirror is untouched.
+ *
+ * Deletion is a tombstone (`deletedAt`), because without one a union cannot
+ * tell "deleted here" from "never seen there" and a device that had not synced
+ * would bring the entry back.
+ *
  * ## Why version 1 fields are still written
  *
  * Sync is live, and this app's own history says installs lag: a device holding
@@ -76,6 +88,7 @@ export function emptyState() {
     activeProfileId: null,
     data: {}, // id -> profile data
     settings: emptySettings(),
+    prayers: {}, // id -> prayer entry, see makePrayer
 
     // --- version 1 mirror, for clients that have not updated yet ---
     dueDate: null,
@@ -122,6 +135,108 @@ export function makeProfile({
     createdAt,
     updatedAt: createdAt
   }
+}
+
+export const PRAYER_STATUSES = ['praying', 'answered']
+
+/** Unique enough for a family's prayer list, and readable in a blob. */
+export function newPrayerId() {
+  profileCounter += 1
+  const random = Math.random().toString(36).slice(2, 8)
+  return `pr_${Date.now().toString(36)}${profileCounter.toString(36)}${random}`
+}
+
+/**
+ * One prayer. `source` is the declaration it came from, if any, addressed the
+ * way favourites are (`day:47`, `week:12`, `school:m03:d17`) so it can link
+ * back to its card.
+ */
+export function makePrayer({
+  id = newPrayerId(),
+  text = '',
+  profileId = null,
+  source = null,
+  status = 'praying',
+  answer = '',
+  createdAt = new Date().toISOString(),
+  updatedAt = createdAt,
+  answeredAt = null,
+  deletedAt = null
+} = {}) {
+  const cleanSource =
+    isPlainObject(source) && source.key
+      ? {
+          stage: source.stage ? String(source.stage) : null,
+          key: String(source.key),
+          title: String(source.title || '')
+        }
+      : null
+  return {
+    id,
+    text: String(text || ''),
+    profileId: profileId ? String(profileId) : null,
+    source: cleanSource,
+    status: PRAYER_STATUSES.includes(status) ? status : 'praying',
+    answer: String(answer || ''),
+    createdAt,
+    updatedAt,
+    answeredAt: answeredAt || null,
+    deletedAt: deletedAt || null
+  }
+}
+
+/** A prayers map with every entry brought to shape and junk dropped. */
+export function cleanPrayers(map) {
+  const out = {}
+  if (!isPlainObject(map)) return out
+  for (const [id, entry] of Object.entries(map)) {
+    if (!isPlainObject(entry)) continue
+    out[id] = makePrayer({ ...entry, id })
+  }
+  return out
+}
+
+/** Prayers still standing — no tombstone — open first, then newest first. */
+export function livePrayers(state) {
+  return Object.values(state?.prayers || {})
+    .filter((p) => !p.deletedAt)
+    .sort((a, b) => {
+      if (a.status !== b.status) return a.status === 'praying' ? -1 : 1
+      const at = Date.parse(a.createdAt || '') || 0
+      const bt = Date.parse(b.createdAt || '') || 0
+      if (at !== bt) return bt - at
+      return String(a.id).localeCompare(String(b.id))
+    })
+}
+
+/**
+ * Union of two prayer maps, later `updatedAt` winning per entry. A tombstone is
+ * just a newer edit, so it wins or loses by the same clock. Same-timestamp
+ * disagreements over the text keep both, as the journal does: a visible join
+ * is better than a silent loss.
+ */
+export function unionPrayers(a = {}, b = {}) {
+  const out = { ...b }
+  for (const [id, entry] of Object.entries(a)) {
+    const existing = out[id]
+    if (!existing) {
+      out[id] = entry
+      continue
+    }
+    const at = Date.parse(entry?.updatedAt || '') || 0
+    const bt = Date.parse(existing?.updatedAt || '') || 0
+    if (at > bt) out[id] = entry
+    else if (at === bt && !entry?.deletedAt && !existing?.deletedAt) {
+      const text =
+        entry.text !== existing.text ? `${existing.text}\n\n— — —\n\n${entry.text}` : existing.text
+      const answer =
+        entry.answer !== existing.answer && entry.answer && existing.answer
+          ? `${existing.answer}\n\n— — —\n\n${entry.answer}`
+          : existing.answer || entry.answer
+      out[id] = { ...existing, text, answer }
+    }
+  }
+  return out
 }
 
 /** Profiles in a stable order for the switcher: oldest profile first. */
@@ -299,6 +414,8 @@ function normalise(saved) {
       lastReminderKey: data.lastReminderKey || null
     }
   }
+
+  next.prayers = cleanPrayers(saved.prayers)
 
   // Carry the mirror across so `reconcileLegacyMirror` can see what an old
   // client wrote; it is rewritten from the profile immediately afterwards.
