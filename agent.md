@@ -272,6 +272,11 @@ a different month. The validator is what catches that.
   should become one digest at the chosen time, not one notification each.
 - The app is still named "Birth Calendar" in the manifest; the agreed
   display-name-only rebrand to Family Whispers has not been done.
+- Toddler Years content landed 2026-09-12 (12 themes). youngAdult and adult
+  remain unwritten.
+- **Phase 10, planned:** a family-level prayer journal opened from a floating
+  card, like the Calendar pill. Plan and resumable state in
+  `docs/prayer-journal-plan.md`.
 
 ## Current Status
 
