@@ -323,3 +323,54 @@ test.describe('Form fields in the birth calendar', () => {
     })
   }
 })
+
+test.describe('Prayer journal', () => {
+  test('opens from the pill beside the calendar switch, keeps a prayer, and marks it answered', async ({
+    page
+  }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    const pill = page.getByRole('button', { name: 'Open the prayer journal' })
+    await expect(pill).toBeVisible()
+    await expect(pill).toHaveText(/Prayers/)
+
+    // Same top row as the "← Calendar" control, to its left.
+    const calendarBox = await page.getByRole('button', { name: '← Calendar' }).boundingBox()
+    const pillBox = await pill.boundingBox()
+    expect(Math.abs(pillBox.y - calendarBox.y)).toBeLessThan(4)
+    expect(pillBox.x + pillBox.width).toBeLessThanOrEqual(calendarBox.x)
+
+    await pill.click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeVisible()
+
+    await page.getByLabel('A new prayer').fill('A safe and gentle delivery.')
+    await page.getByRole('button', { name: 'Add prayer' }).click()
+    await expect(page.getByText('A safe and gentle delivery.')).toBeVisible()
+    await expect(pill).toHaveText(/1 praying/)
+
+    // It is in IndexedDB, not component state. The URL still carries
+    // `?calendar=standard`, so re-enter the way the other reload test does.
+    await openBirthCalendar(page)
+    await expect(page.getByRole('button', { name: 'Open the prayer journal' })).toHaveText(
+      /1 praying/,
+      { timeout: 20000 }
+    )
+    await page.getByRole('button', { name: 'Open the prayer journal' }).click()
+    await expect(page.getByText('A safe and gentle delivery.')).toBeVisible()
+
+    await page.getByRole('button', { name: 'Answered', exact: true }).click()
+    await page.getByLabel('How was it answered?').fill('She arrived on a Tuesday morning.')
+    await page.getByRole('button', { name: 'Mark answered' }).click()
+    await expect(page.getByRole('heading', { name: 'Answered' })).toBeVisible()
+    await expect(page.getByText('She arrived on a Tuesday morning.')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Open the prayer journal' })).toHaveText(
+      /Prayers/
+    )
+
+    // Back returns to the tab the journal was opened from.
+    await page.getByRole('button', { name: 'Back' }).click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeHidden()
+    await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible()
+  })
+})

@@ -82,22 +82,23 @@ journal spans children, while every tab is scoped to the active child.
 
 ### Phase 3 — the floating card and the view
 
-- [ ] `components/Birth/BirthPrayerCard.vue`: fixed, bottom-right, above the
-      tab bar (`bottom: calc(env(safe-area-inset-bottom) + 4.5rem)`), same
-      `bg-black/25 backdrop-blur-md rounded-full` treatment as the Calendar
-      pill, 44px min hit target. Shows a hands/candle glyph and the open
+- [x] `components/Birth/BirthPrayerCard.vue`: fixed top row, left of the
+      "← Calendar" pill (`top-3; right: 7.25rem`) — the user chose the top
+      row over bottom-right, where it would sit on content. Same
+      `bg-black/25 backdrop-blur-md rounded-full` treatment as the pill, 44px
+      min hit target. Shows a hands/candle glyph and the open
       count ("3 praying"). Hidden during onboarding and while locked
       (`BirthLock`). Click → `view = 'prayers'`.
-- [ ] `BirthCalendar.vue`: add `'prayers'` to the view switch (not to
+- [x] `BirthCalendar.vue`: add `'prayers'` to the view switch (not to
       `TABS`); the tab bar shows no tab as current while in it; a back
       affordance returns to the previous tab.
-- [ ] `components/Birth/BirthPrayers.vue`: two sections, *Praying* and
+- [x] `components/Birth/BirthPrayers.vue`: two sections, *Praying* and
       *Answered*; add form at the top (text, optional child chip from
       `orderedProfiles`); per-entry: edit, "Answered" → inline answer text,
       reopen, delete with confirm. Empty state written in the app's voice.
-- [ ] Dark mode via the existing `--bc-*` custom properties; the birth scope
+- [x] Dark mode via the existing `--bc-*` custom properties; the birth scope
       uses inline palette vars, not Tailwind's `dark:`.
-- [ ] e2e in `tests/birth-calendar.spec.js`: card visible on Today, opens
+- [x] e2e in `tests/birth-calendar.spec.js`: card visible on Today, opens
       the view, add → answered → survives reload (IndexedDB).
 
 ### Phase 4 — links from the declarations
