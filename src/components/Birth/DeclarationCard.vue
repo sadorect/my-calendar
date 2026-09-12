@@ -25,6 +25,13 @@ let utterance = null
 const isFavourite = computed(() => store.isFavourite('day', props.day))
 const isSpoken = computed(() => store.isSpoken(props.day))
 
+const prayerKey = computed(() => `day:${props.day}`)
+const isPrayed = computed(() => Boolean(store.prayerForSource(prayerKey.value)))
+
+function prayThis() {
+  store.prayDeclaration({ key: prayerKey.value, title: props.content.title, text: body.value })
+}
+
 // Content is written with "Little one" as the address; the store swaps in the
 // chosen name. Done here too because the card is also handed raw content.
 const body = computed(() => store.personalise(props.content.body))
@@ -72,7 +79,7 @@ function cardMeta() {
     dayLabel: `Day ${props.day}`,
     weekLabel: `Week ${weekOfPregnancy(props.day)}`,
     palette: monthPalette(monthForDay(props.day)),
-    babyName: store.state.babyName?.trim() || ''
+    babyName: store.babyName?.trim() || ''
   }
 }
 
@@ -223,6 +230,19 @@ async function saveImage() {
         @click="share"
       >
         {{ shareNote || 'Share' }}
+      </button>
+
+      <button
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 flex items-center gap-2"
+        :style="{
+          borderColor: isPrayed ? 'var(--bc-accent)' : 'var(--bc-hairline)',
+          color: isPrayed ? 'var(--bc-accent)' : 'inherit'
+        }"
+        :aria-pressed="isPrayed"
+        title="Keep this declaration in the prayer journal"
+        @click="prayThis"
+      >
+        {{ isPrayed ? 'In your prayers' : 'Pray this' }}
       </button>
 
       <button

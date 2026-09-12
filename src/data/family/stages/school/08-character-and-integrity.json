@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 8,
+  "slug": "character-and-integrity",
+  "title": "Character & Integrity",
+  "intro": "Character is what you do when the teacher is out of the room, and children work that out long before adults admit it. This month is about the private version of a person — telling the truth when a lie would be easier, finishing what you started, and being the same whoever is watching.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 10:9",
+      "text": "Whoever walks in integrity walks securely."
+    },
+    {
+      "ref": "Luke 16:10",
+      "text": "Whoever can be trusted with very little can also be trusted with much."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Who You Are When Nobody Sees",
+      "declaration": "The real you is the one that turns up when nobody is watching. That person is worth building carefully.",
+      "parentsPrayer": "Father, build our child's private self as carefully as their public one. Let the two be the same person. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Telling the Truth",
+      "declaration": "The truth is easier in the long run, even when it is harder in the moment. Honest people sleep better.",
+      "parentsPrayer": "Lord, make truth the ordinary habit of this house. Make it safe enough here that our child never needs to lie. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Doing What You Said",
+      "declaration": "Being someone whose word can be trusted is worth more than being clever. People decide about you from small promises.",
+      "parentsPrayer": "God, make our child reliable. Teach them to keep the small promises nobody would notice breaking. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Finishing",
+      "declaration": "Starting is easy and finishing is where character is made. Do the last ten per cent properly.",
+      "parentsPrayer": "Father, give our child the steadiness to finish. Let them learn the satisfaction of a thing done all the way. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "The Real You",
+      "declaration": "The real you is who you are when nobody is watching. That person is worth building carefully.",
+      "scripture": {
+        "ref": "Proverbs 10:9",
+        "text": "Whoever walks in integrity walks securely."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Truth Is Easier Later",
+      "declaration": "The truth is harder in the moment and much easier afterwards. Lies have to be maintained.",
+      "scripture": {
+        "ref": "Proverbs 12:19",
+        "text": "Truthful lips endure forever, but a lying tongue lasts only a moment."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Owning Up",
+      "declaration": "Owning up quickly costs less than being found out slowly. Get it over with.",
+      "scripture": {
+        "ref": "Proverbs 28:13",
+        "text": "Whoever conceals their sins does not prosper, but the one who confesses them finds mercy."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Doing What You Said",
+      "declaration": "When you say you will, do. People work out whether you can be trusted from small things.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes, and your no be no."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Finishing Properly",
+      "declaration": "Starting is easy. Character is in the last ten per cent, when it has stopped being interesting.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Same Everywhere",
+      "declaration": "Be the same person at school, at home and at your grandmother's. One person is easier to be than three.",
+      "scripture": {
+        "ref": "James 1:8",
+        "text": "Such a person is double-minded and unstable in all they do."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not Taking What Is Not Yours",
+      "declaration": "Small dishonesty is still dishonesty. What you would not take in front of someone, do not take behind them.",
+      "scripture": {
+        "ref": "Exodus 20:15",
+        "text": "You shall not steal."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Fair When You Could Cheat",
+      "declaration": "Playing fair when you could get away with cheating is the whole test. Winning that way is not winning.",
+      "scripture": {
+        "ref": "Proverbs 11:1",
+        "text": "The Lord detests dishonest scales, but accurate weights find favour with him."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Doing the Job Properly",
+      "declaration": "Do the job properly even if nobody checks. Especially if nobody checks.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Whatever you do, work at it with all your heart, as working for the Lord."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Not Blaming",
+      "declaration": "Blaming someone else for what you did makes it worse, not smaller. Take your own bit.",
+      "scripture": {
+        "ref": "Genesis 3:12",
+        "text": "The man said, The woman you put here with me — she gave me some fruit."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Keeping a Confidence",
+      "declaration": "If someone tells you something private, keep it. Being trustworthy with words is a rare thing.",
+      "scripture": {
+        "ref": "Proverbs 11:13",
+        "text": "A gossip betrays a confidence, but a trustworthy person keeps a secret."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Not Joining In",
+      "declaration": "When everyone is being unkind about someone, you can just not join in. That is a real act of character.",
+      "scripture": {
+        "ref": "Exodus 23:2",
+        "text": "Do not follow the crowd in doing wrong."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Admitting You Do Not Know",
+      "declaration": "Pretending to know is a small lie that grows. It is fine to say you do not know.",
+      "scripture": {
+        "ref": "Proverbs 12:23",
+        "text": "The prudent keep their knowledge to themselves."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Apologising Without Excuses",
+      "declaration": "A real sorry has no 'but' in it. Practise the short version.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other and pray for each other."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Being Kind When It Is Not Noticed",
+      "declaration": "Kindness that nobody sees is the purest kind. Do it anyway.",
+      "scripture": {
+        "ref": "Matthew 6:3-4",
+        "text": "Your Father, who sees what is done in secret, will reward you."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Money and Small Things",
+      "declaration": "How you handle small amounts is how you will handle large ones. Start honest.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Exaggerating",
+      "declaration": "Making a story bigger than it was is a kind of untruth. The plain version is usually enough.",
+      "scripture": {
+        "ref": "Proverbs 19:1",
+        "text": "Better the poor whose walk is blameless than a fool whose lips are perverse."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Being Reliable",
+      "declaration": "Turning up when you said you would is one of the most valuable things about a person.",
+      "scripture": {
+        "ref": "Psalm 15:4",
+        "text": "Who keeps an oath even when it hurts, and does not change their mind."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Standing By Someone",
+      "declaration": "Standing next to someone unpopular when they are right is what integrity looks like at your age.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak for themselves."
+      }
+    },
+    {
+      "day": 20,
+      "title": "What You Watch",
+      "declaration": "What you look at when nobody is checking shapes you. Choose it on purpose.",
+      "scripture": {
+        "ref": "Psalm 101:3",
+        "text": "I will not look with approval on anything that is vile."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not Cutting Corners",
+      "declaration": "The shortcut usually costs more later. Do the boring middle part.",
+      "scripture": {
+        "ref": "Proverbs 21:5",
+        "text": "The plans of the diligent lead to profit as surely as haste leads to poverty."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Saying the Hard Thing Kindly",
+      "declaration": "You can be honest and gentle at the same time. Aim for both, not one.",
+      "scripture": {
+        "ref": "Ephesians 4:15",
+        "text": "Speaking the truth in love."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Not Pretending to Be Someone Else",
+      "declaration": "You do not have to become a different person to be liked. The people worth having like the actual you.",
+      "scripture": {
+        "ref": "Galatians 1:10",
+        "text": "Am I now trying to win the approval of human beings, or of God?"
+      }
+    },
+    {
+      "day": 24,
+      "title": "Doing It Again Tomorrow",
+      "declaration": "Character is not one big decision. It is the same small decision made again tomorrow.",
+      "scripture": {
+        "ref": "Luke 9:23",
+        "text": "Whoever wants to be my disciple must take up their cross daily."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Being Corrected Well",
+      "declaration": "How you take being told off says as much about you as what you did. Take it well.",
+      "scripture": {
+        "ref": "Proverbs 12:1",
+        "text": "Whoever loves discipline loves knowledge."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Giving Credit",
+      "declaration": "Say who actually did it. Taking credit for someone else's work is a small theft.",
+      "scripture": {
+        "ref": "Romans 13:7",
+        "text": "Give to everyone what you owe them... if honour, then honour."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Keeping Going When It Is Dull",
+      "declaration": "Some good things are boring in the middle. Staying is part of what makes them good.",
+      "scripture": {
+        "ref": "Hebrews 12:1",
+        "text": "Let us run with perseverance the race marked out for us."
+      }
+    },
+    {
+      "day": 28,
+      "title": "What People Say When You Leave",
+      "declaration": "A good name is built slowly and quietly. It is worth more than being popular this term.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Getting It Wrong Is Not the End",
+      "declaration": "You will fail at this sometimes. Character includes what you do the day after you got it wrong.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Built to Last",
+      "declaration": "What you are building in yourself now is meant to hold weight later. Build it properly.",
+      "scripture": {
+        "ref": "Matthew 7:24",
+        "text": "The wise man built his house on the rock."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Character Goes With You",
+      "declaration": "Everything you have practised this month is who you are becoming. Keep practising.",
+      "scripture": {
+        "ref": "Proverbs 10:9",
+        "text": "Whoever walks in integrity walks securely."
+      }
+    }
+  ]
+}

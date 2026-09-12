@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 3,
+  "slug": "wisdom-and-discernment",
+  "title": "Wisdom & Discernment",
+  "intro": "A toddler's wisdom is mostly about listening, stopping, and telling the truth about the broken cup. These are not small things — they are the whole foundation. This month uses the plainest words for them and tries not to make being good sound like being quiet.",
+  "keyScriptures": [
+    {
+      "ref": "Proverbs 2:6",
+      "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding."
+    },
+    {
+      "ref": "Proverbs 1:8",
+      "text": "Listen, my son, to your father's instruction."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Stop and Listen",
+      "declaration": "Stopping when someone calls you is one of the wisest things you can learn. It keeps you safe.",
+      "parentsPrayer": "Father, help our child learn to stop and listen. Make our voice one they want to obey. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Telling the Truth",
+      "declaration": "When something goes wrong, you can tell us. We would always rather know.",
+      "parentsPrayer": "Lord, make this house safe for the truth. Let our child never be afraid to tell us. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Asking Is Good",
+      "declaration": "If you do not know, you can ask. Asking is what clever people do.",
+      "parentsPrayer": "God, keep our child curious. Give us patience for the hundredth question. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Choosing Well",
+      "declaration": "You are learning to choose. Some choices are good and some are not, and you are getting better at telling.",
+      "parentsPrayer": "Father, guide the small choices our child is learning to make. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Stop and Listen",
+      "declaration": "When someone calls your name, stopping is the wise thing. It keeps you safe.",
+      "scripture": {
+        "ref": "Proverbs 1:8",
+        "text": "Listen, my son, to your father's instruction."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Telling the Truth",
+      "declaration": "When something breaks, you can tell us. We would rather know than be surprised.",
+      "scripture": {
+        "ref": "Ephesians 4:25",
+        "text": "Speak truthfully to your neighbour."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Asking Is Good",
+      "declaration": "If you do not know, ask. Clever people ask lots of questions.",
+      "scripture": {
+        "ref": "James 1:5",
+        "text": "Ask God, who gives generously."
+      }
+    },
+    {
+      "day": 4,
+      "title": "God Helps You Know",
+      "declaration": "When you do not know what to do, God can help. You can ask Him too.",
+      "scripture": {
+        "ref": "Proverbs 2:6",
+        "text": "The Lord gives wisdom."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Wait a Moment",
+      "declaration": "Waiting a moment before you do something is a very good habit.",
+      "scripture": {
+        "ref": "Proverbs 29:20",
+        "text": "Do you see someone who speaks in haste?"
+      }
+    },
+    {
+      "day": 6,
+      "title": "Some Things Are Not Safe",
+      "declaration": "Some things are not safe, even when they look fun. We will help you learn which.",
+      "scripture": {
+        "ref": "Proverbs 27:12",
+        "text": "The prudent see danger and take refuge."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Listening to Kind Grown-Ups",
+      "declaration": "Listen to the grown-ups who look after you. They are trying to keep you safe.",
+      "scripture": {
+        "ref": "Proverbs 6:20",
+        "text": "Keep your father's command."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Not Everyone Is Right",
+      "declaration": "Just because someone says something loudly does not make it true.",
+      "scripture": {
+        "ref": "Proverbs 18:17",
+        "text": "The first to speak seems right, till another comes forward."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Try It Again",
+      "declaration": "If something does not work, try a different way. That is being clever.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Being Told Off",
+      "declaration": "Being told off does not mean you are bad. It means we are helping you learn.",
+      "scripture": {
+        "ref": "Proverbs 3:12",
+        "text": "The Lord disciplines those he loves."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Owning Up",
+      "declaration": "Owning up is brave. It is much better than hiding.",
+      "scripture": {
+        "ref": "Proverbs 28:13",
+        "text": "Whoever conceals their sins does not prosper."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Thinking First",
+      "declaration": "Thinking before you do it is called being wise. You can practise that.",
+      "scripture": {
+        "ref": "Proverbs 14:15",
+        "text": "The prudent give thought to their steps."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Words Are Powerful",
+      "declaration": "What you say makes a difference. Pick good words.",
+      "scripture": {
+        "ref": "Proverbs 16:24",
+        "text": "Gracious words are a honeycomb."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Not Copying Everything",
+      "declaration": "You do not have to do something just because someone else did.",
+      "scripture": {
+        "ref": "Exodus 23:2",
+        "text": "Do not follow the crowd in doing wrong."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Learning Every Day",
+      "declaration": "You learn something new every single day. That never stops.",
+      "scripture": {
+        "ref": "Proverbs 1:5",
+        "text": "Let the wise listen and add to their learning."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Saying I Do Not Know",
+      "declaration": "It is fine to say you do not know. Pretending is what causes trouble.",
+      "scripture": {
+        "ref": "Proverbs 12:23",
+        "text": "The prudent keep their knowledge to themselves."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Being Careful",
+      "declaration": "Being careful is not being scared. Careful people get to do more things.",
+      "scripture": {
+        "ref": "Proverbs 22:3",
+        "text": "The prudent see danger and take refuge."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Kind and Clever",
+      "declaration": "The best clever people are kind as well. Be both.",
+      "scripture": {
+        "ref": "James 3:17",
+        "text": "The wisdom from above is peace-loving, considerate."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Listening to Your Tummy",
+      "declaration": "When something feels wrong, that feeling is worth listening to. Tell someone.",
+      "scripture": {
+        "ref": "Romans 2:15",
+        "text": "Their consciences also bearing witness."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Doing What You Said",
+      "declaration": "If you said you would, do it. That is how people learn to trust you.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Books and Questions",
+      "declaration": "Books are full of things nobody has told you yet. Keep looking in them.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Slow Down",
+      "declaration": "Slowing down helps you do things properly. Fast is not always better.",
+      "scripture": {
+        "ref": "Proverbs 21:5",
+        "text": "The plans of the diligent lead to profit."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Two Sides",
+      "declaration": "When two people are cross, both of them have something to say. Listen to both.",
+      "scripture": {
+        "ref": "Proverbs 18:13",
+        "text": "To answer before listening is folly."
+      }
+    },
+    {
+      "day": 24,
+      "title": "God Is God",
+      "declaration": "God is God and we are not. Knowing that is where all wisdom starts.",
+      "scripture": {
+        "ref": "Proverbs 9:10",
+        "text": "The fear of the Lord is the beginning of wisdom."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Practice Makes Better",
+      "declaration": "Doing something over and over is how you get good. That is not failing.",
+      "scripture": {
+        "ref": "Philippians 3:14",
+        "text": "I press on toward the goal."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Sharing What You Know",
+      "declaration": "If you know something helpful, tell someone else. Knowing is for sharing.",
+      "scripture": {
+        "ref": "2 Timothy 2:2",
+        "text": "Entrust to reliable people."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Rest Helps You Think",
+      "declaration": "When you are tired, everything is harder. Sleep helps you be clever.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "He grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Not Too Small to Be Wise",
+      "declaration": "You are not too small to be wise. Wise is not the same as big.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Ask Again",
+      "declaration": "If you asked and still do not understand, ask again. Nobody minds.",
+      "scripture": {
+        "ref": "Luke 11:9",
+        "text": "Ask and it will be given to you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Growing Wiser",
+      "declaration": "You get a bit wiser every year, for your whole life. There is no end to it.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "Jesus grew in wisdom and stature."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It With You",
+      "declaration": "What you learned today comes with you tomorrow. None of it gets lost.",
+      "scripture": {
+        "ref": "Proverbs 3:5",
+        "text": "Trust in the Lord with all your heart."
+      }
+    }
+  ]
+}

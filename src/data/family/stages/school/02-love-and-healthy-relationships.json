@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 2,
+  "slug": "love-and-healthy-relationships",
+  "title": "Love & Healthy Relationships",
+  "intro": "By six or seven a child has learned that friendship can be given and taken away, and they have started to trade themselves for it. This month we teach a different kind of love — the sort that keeps its promises, tells the truth kindly, and does not need anyone to be small in order to be safe.",
+  "keyScriptures": [
+    {
+      "ref": "1 Corinthians 13:4-5",
+      "text": "Love is patient, love is kind. It does not envy, it does not boast."
+    },
+    {
+      "ref": "John 13:34",
+      "text": "A new command I give you: love one another."
+    }
+  ],
+  "palette": "blush",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Loved So You Can Love",
+      "declaration": "You were loved first, and that is where your love comes from. You are not making it up out of nothing — you are passing on what you have already been given.",
+      "parentsPrayer": "Father, let our home be the first place our child learns what love feels like. Make our love steady enough to be copied. Amen."
+    },
+    {
+      "week": 2,
+      "title": "A Real Friend",
+      "declaration": "A real friend is glad when you do well and stays when you do badly. You can be that kind of friend, and you are allowed to look for that kind of friend.",
+      "parentsPrayer": "Lord, give our child true friends and make our child a true friend. Guard them from the ones who would ask them to be someone else. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Kind and Honest",
+      "declaration": "Love tells the truth, and it tells it kindly. You do not have to choose between being honest and being gentle — the best people are both.",
+      "parentsPrayer": "God, teach our child to speak truth without cruelty and kindness without pretending. Teach us first. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Forgiving",
+      "declaration": "Love forgives, because everybody gets it wrong sometimes, including you. Forgiveness is not saying it did not hurt. It is saying it will not decide everything.",
+      "parentsPrayer": "Father, make our child quick to forgive and quick to say sorry. Let them see both in us this week. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Love Starts Somewhere",
+      "declaration": "You were loved before you knew how to love anyone back. That is where all your loving starts.",
+      "scripture": {
+        "ref": "1 John 4:19",
+        "text": "We love because he first loved us."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Love Is Patient",
+      "declaration": "Love waits. When someone is slow, or having a hard day, love does not rush them or give up on them.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "Love is patient, love is kind."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Love Is Kind",
+      "declaration": "Kindness is not weak. It takes strength to be gentle with someone when you could be sharp instead.",
+      "scripture": {
+        "ref": "Ephesians 4:32",
+        "text": "Be kind and compassionate to one another."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Not Keeping Score",
+      "declaration": "Love does not keep a list of everything someone did wrong. You are allowed to put the list down.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 5,
+      "title": "A Friend Who Stays",
+      "declaration": "The best friends are the ones who stay when things are not fun. Be that friend, and look for that friend.",
+      "scripture": {
+        "ref": "Proverbs 17:17",
+        "text": "A friend loves at all times."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Telling the Truth",
+      "declaration": "Love tells the truth. A friendship built on pretending is not really a friendship yet.",
+      "scripture": {
+        "ref": "Ephesians 4:15",
+        "text": "Speaking the truth in love."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Saying Sorry",
+      "declaration": "Saying sorry is brave, not weak. It takes a strong person to admit they got it wrong.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other and pray for each other."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Forgiving Again",
+      "declaration": "Forgiving does not mean it did not hurt. It means you will not let it decide everything from now on.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 9,
+      "title": "You Do Not Have to Buy Friends",
+      "declaration": "You never have to give away what is yours to be allowed to sit with someone. Real friends do not charge.",
+      "scripture": {
+        "ref": "Proverbs 22:24",
+        "text": "Do not make friends with a hot-tempered person."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Standing Up for People",
+      "declaration": "Love notices who is left out. You can be the one who goes and sits with them.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak for themselves."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Sharing Gladly",
+      "declaration": "Sharing is not losing. What you give away with a glad heart comes back in ways you cannot count.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Not Jealous",
+      "declaration": "Love does not envy. Someone else being good at something does not take anything away from you.",
+      "scripture": {
+        "ref": "1 Corinthians 13:4",
+        "text": "It does not envy, it does not boast."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Gentle Words",
+      "declaration": "Words are strong. A gentle answer can cool a whole room down, and a sharp one can set it alight.",
+      "scripture": {
+        "ref": "Proverbs 15:1",
+        "text": "A gentle answer turns away wrath."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Listening",
+      "declaration": "Loving someone means letting them finish. Listening is a gift you can give anybody, any day.",
+      "scripture": {
+        "ref": "James 1:19",
+        "text": "Everyone should be quick to listen, slow to speak."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Honouring Your Family",
+      "declaration": "The people you live with are the first people you get to practise love on. Start where you are.",
+      "scripture": {
+        "ref": "Exodus 20:12",
+        "text": "Honour your father and your mother."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Loved on Your Worst Day",
+      "declaration": "You are loved on your worst day. That is the kind of love you can learn to give away.",
+      "scripture": {
+        "ref": "Romans 5:8",
+        "text": "While we were still sinners, Christ died for us."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Rude",
+      "declaration": "Love has good manners. How you treat someone when you are tired says more than how you treat them when you are happy.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "It does not dishonour others."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Keeping a Promise",
+      "declaration": "When you say you will, do. People learn whether they can trust you from small promises, not big ones.",
+      "scripture": {
+        "ref": "Matthew 5:37",
+        "text": "Let your yes be yes, and your no be no."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Making Room",
+      "declaration": "There is always room for one more. Groups that will not let anyone else in are not as strong as they look.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 20,
+      "title": "When Friends Fall Out",
+      "declaration": "Falling out with a friend is not the end. Most good friendships have been mended at least once.",
+      "scripture": {
+        "ref": "Matthew 18:15",
+        "text": "Go and point out their fault, just between the two of you."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Loving the Hard-to-Love",
+      "declaration": "Some people are harder to love. Loving them anyway is not being a pushover — it is being like God.",
+      "scripture": {
+        "ref": "Matthew 5:44",
+        "text": "Love your enemies and pray for those who persecute you."
+      }
+    },
+    {
+      "day": 22,
+      "title": "You Are Allowed to Say No",
+      "declaration": "Love does not mean letting people treat you badly. You can be kind and still say no.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Cheering for Others",
+      "declaration": "You can be genuinely glad when someone else wins. It costs you nothing and it makes you bigger.",
+      "scripture": {
+        "ref": "Romans 12:15",
+        "text": "Rejoice with those who rejoice."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Quiet Kindness",
+      "declaration": "The best kindness usually happens where nobody is watching. Do it anyway.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Love Protects",
+      "declaration": "Love looks after people. If you know something would hurt someone, love does not pass it on.",
+      "scripture": {
+        "ref": "1 Corinthians 13:7",
+        "text": "It always protects, always trusts, always hopes."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Family Beyond This House",
+      "declaration": "You will belong to more people than the ones in this house. God keeps giving you family.",
+      "scripture": {
+        "ref": "Mark 3:35",
+        "text": "Whoever does God's will is my brother and sister."
+      }
+    },
+    {
+      "day": 27,
+      "title": "When You Get It Wrong",
+      "declaration": "You will get love wrong sometimes. That is not the end of you being a loving person.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "The righteous fall seven times and rise again."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Love Never Fails",
+      "declaration": "Everything else runs out eventually. Love does not. It is the one thing worth building on.",
+      "scripture": {
+        "ref": "1 Corinthians 13:8",
+        "text": "Love never fails."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Praying for People",
+      "declaration": "One of the kindest things you can do for someone is pray for them, even when they never find out.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:17",
+        "text": "Pray continually."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Peacemaker",
+      "declaration": "You can be the one who calms things down instead of the one who stirs them up. God calls that person blessed.",
+      "scripture": {
+        "ref": "Matthew 5:9",
+        "text": "Blessed are the peacemakers."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carrying It Forward",
+      "declaration": "Everything you have learned about love this month is yours to give away. Start with whoever is nearest.",
+      "scripture": {
+        "ref": "John 13:34",
+        "text": "As I have loved you, so you must love one another."
+      }
+    }
+  ]
+}

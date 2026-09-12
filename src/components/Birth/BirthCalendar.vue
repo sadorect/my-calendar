@@ -10,13 +10,22 @@ import BirthMonth from './BirthMonth.vue'
 import BirthWeeks from './BirthWeeks.vue'
 import BirthFavourites from './BirthFavourites.vue'
 import BirthSettings from './BirthSettings.vue'
+import BirthProfileSwitcher from './BirthProfileSwitcher.vue'
+import BirthStageToday from './BirthStageToday.vue'
+import BirthStageMonth from './BirthStageMonth.vue'
+import BirthStageWeeks from './BirthStageWeeks.vue'
+import BirthStageSaved from './BirthStageSaved.vue'
 import BirthDayModal from './BirthDayModal.vue'
 import BirthLock from './BirthLock.vue'
+import BirthPrayerCard from './BirthPrayerCard.vue'
+import BirthPrayers from './BirthPrayers.vue'
 
 const store = usePregnancyStore()
 const theme = useThemeStore()
 
 const view = ref('today')
+/** The tab to return to when the prayer journal closes; it is not a tab itself. */
+const viewBeforePrayers = ref('today')
 const modalDay = ref(null)
 /** Set when the user skips onboarding — browse without a due date. */
 const browsing = ref(false)
@@ -90,9 +99,50 @@ function startBrowsing() {
   store.selectDay(1)
 }
 
+/** Named, not inline: see `startBrowsing` for why a formatting pass matters. */
+function showToday() {
+  view.value = 'today'
+}
+
 function openDay(day) {
   store.selectDay(day)
   modalDay.value = day
+}
+
+function openPrayers() {
+  if (view.value === 'prayers') return
+  viewBeforePrayers.value = view.value
+  view.value = 'prayers'
+}
+
+function closePrayers() {
+  view.value = viewBeforePrayers.value || 'today'
+}
+
+/**
+ * Jump from a prayer to the declaration it came from. A womb day opens the day
+ * modal; a born-stage day selects that date in the current year and reads it
+ * on Today; a week lands on the Weeks tab for that month.
+ */
+function openPrayerSource(source) {
+  const key = String(source?.key || '')
+  const womb = key.match(/^(day|week):(\d+)$/)
+  if (womb) {
+    closePrayers()
+    if (womb[1] === 'day') openDay(Number(womb[2]))
+    else view.value = 'weeks'
+    return
+  }
+  const stage = key.match(/^[a-zA-Z]+:m(\d{2}):([dw])(\d+)$/)
+  if (stage && store.activeTrack === 'year') {
+    const month = Number(stage[1])
+    const year = new Date().getFullYear()
+    const day = stage[2] === 'd' ? Number(stage[3]) : 1
+    store.selectStageDate(new Date(year, month - 1, day))
+    view.value = stage[2] === 'd' ? 'today' : 'weeks'
+    return
+  }
+  closePrayers()
 }
 
 /**
@@ -235,6 +285,7 @@ onBeforeUnmount(() => {
 
       <!-- pt clears the fixed "back to calendar" control in the corner. -->
       <main class="pt-12 pb-24">
+        <BirthProfileSwitcher />
         <Transition
           mode="out-in"
           enter-active-class="transition duration-200 ease-out"
@@ -242,13 +293,33 @@ onBeforeUnmount(() => {
           leave-active-class="transition duration-100 ease-in"
           leave-to-class="opacity-0"
         >
-          <BirthToday v-if="view === 'today'" @open-day="openDay" @open-weeks="view = 'weeks'" />
+          <BirthSettings v-if="view === 'settings'" />
+          <BirthPrayers
+            v-else-if="view === 'prayers'"
+            @close="closePrayers"
+            @open-source="openPrayerSource"
+          />
+          <!-- A born child reads the twelve evergreen themes; the womb reads
+               its own 280-day timeline. Two tracks, one shell. -->
+          <template v-else-if="store.activeTrack === 'year'">
+            <BirthStageToday v-if="view === 'today'" />
+            <!-- Choosing a day on the grid reads it, which happens on Today. -->
+            <BirthStageMonth v-else-if="view === 'month'" @open-day="showToday" />
+            <BirthStageWeeks v-else-if="view === 'weeks'" />
+            <BirthStageSaved v-else-if="view === 'saved'" />
+          </template>
+          <BirthToday
+            v-else-if="view === 'today'"
+            @open-day="openDay"
+            @open-weeks="view = 'weeks'"
+          />
           <BirthMonth v-else-if="view === 'month'" @open-day="openDay" />
           <BirthWeeks v-else-if="view === 'weeks'" />
           <BirthFavourites v-else-if="view === 'saved'" @open-day="openDay" />
-          <BirthSettings v-else-if="view === 'settings'" />
         </Transition>
       </main>
+
+      <BirthPrayerCard :active="view === 'prayers'" @open="openPrayers" />
 
       <!-- Bottom tabs -->
       <nav

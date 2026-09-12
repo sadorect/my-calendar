@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 4,
+  "slug": "courage-and-strength",
+  "title": "Courage & Strength",
+  "intro": "Small children are frightened of specific, enormous things: the hoover, the dark, the drop, being left. This month does not talk them out of being scared. It tells them what to do while they are, and it says that brave and scared happen at the same time.",
+  "keyScriptures": [
+    {
+      "ref": "Joshua 1:9",
+      "text": "Be strong and courageous. Do not be afraid; the Lord your God will be with you."
+    },
+    {
+      "ref": "Isaiah 41:10",
+      "text": "Do not fear, for I am with you."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Brave Means Doing It Anyway",
+      "declaration": "Being brave does not mean you are not scared. It means you do it even though you are, and that is much better.",
+      "parentsPrayer": "Father, take the shame out of our child's fear. Let brave mean the right thing in this house. Amen."
+    },
+    {
+      "week": 2,
+      "title": "God Comes With You",
+      "declaration": "You never go anywhere on your own. God comes into every room with you, even the ones we cannot follow you into.",
+      "parentsPrayer": "Lord, go with our child everywhere. Be with them where we cannot be. Amen."
+    },
+    {
+      "week": 3,
+      "title": "You Can Try",
+      "declaration": "You are allowed to try and get it wrong. Trying is the whole point and nobody minds the mess.",
+      "parentsPrayer": "God, make our home safe to fail in. Let our child never be afraid to attempt something. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Strong Enough for Today",
+      "declaration": "You do not need to be brave about everything at once. Just today, and today is looked after.",
+      "parentsPrayer": "Father, give our child what today needs. Teach them to come back tomorrow for more. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Brave and Scared",
+      "declaration": "Being brave does not mean you are not scared. It means you do it anyway.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous."
+      }
+    },
+    {
+      "day": 2,
+      "title": "God Comes With You",
+      "declaration": "You never go anywhere alone. God comes into every room with you.",
+      "scripture": {
+        "ref": "Deuteronomy 31:6",
+        "text": "The Lord your God goes with you."
+      }
+    },
+    {
+      "day": 3,
+      "title": "The Dark Is Not Empty",
+      "declaration": "The dark is not empty. God is in it, and He can see perfectly well.",
+      "scripture": {
+        "ref": "Psalm 139:12",
+        "text": "The night will shine like the day."
+      }
+    },
+    {
+      "day": 4,
+      "title": "You Can Try",
+      "declaration": "You are allowed to try and get it wrong. That is how everything gets learned.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Loud Things Stop",
+      "declaration": "Loud scary noises stop. What is holding you does not.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Ask for Help",
+      "declaration": "Asking for help is brave, not babyish. Big people do it all the time.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9",
+        "text": "Two are better than one."
+      }
+    },
+    {
+      "day": 7,
+      "title": "New Places",
+      "declaration": "New places feel big at first and then they feel normal. Both are true.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing!"
+      }
+    },
+    {
+      "day": 8,
+      "title": "Telling the Truth Is Brave",
+      "declaration": "Owning up when you broke something takes real courage. We will notice that.",
+      "scripture": {
+        "ref": "Psalm 51:6",
+        "text": "You desired faithfulness."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Saying No",
+      "declaration": "Sometimes the brave thing is to say no when other children say yes.",
+      "scripture": {
+        "ref": "Daniel 1:8",
+        "text": "Daniel resolved not to defile himself."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Going First",
+      "declaration": "Being the first one to be kind takes courage. You can be that one.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Do not be discouraged."
+      }
+    },
+    {
+      "day": 11,
+      "title": "You Are Strong",
+      "declaration": "You are stronger than you think, and God is stronger than that.",
+      "scripture": {
+        "ref": "Philippians 4:13",
+        "text": "I can do all this through him who gives me strength."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Crying Is Allowed",
+      "declaration": "Crying is not being a baby. It is how you say something hurts.",
+      "scripture": {
+        "ref": "John 11:35",
+        "text": "Jesus wept."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Someone Holds You",
+      "declaration": "When you feel wobbly, someone is holding on to you. You will not be dropped.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Fall Down, Get Up",
+      "declaration": "Falling over is part of learning to run. Get up and go again.",
+      "scripture": {
+        "ref": "Micah 7:8",
+        "text": "Though I have fallen, I will rise."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Being Left for a Bit",
+      "declaration": "When we go, we come back. Every time, without fail.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Doctors and Needles",
+      "declaration": "Some safe things feel scary. We will stay with you through them.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you."
+      }
+    },
+    {
+      "day": 17,
+      "title": "You Did It Before",
+      "declaration": "You have already done things that scared you. Remember those today.",
+      "scripture": {
+        "ref": "1 Samuel 17:37",
+        "text": "The Lord who rescued me from the lion."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Small and Strong",
+      "declaration": "Being small does not mean being weak. God uses small people all the time.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord looks at the heart."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Practising Something Hard",
+      "declaration": "Something hard gets easier every time you try it. That is how it works.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Not Scared of Us",
+      "declaration": "You never have to be frightened of us. If you are, we have got it wrong.",
+      "scripture": {
+        "ref": "Colossians 3:21",
+        "text": "Fathers, do not embitter your children."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Bad Dreams End",
+      "declaration": "Bad dreams are not real and they finish. We are just down the hall.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Being Brave for Someone",
+      "declaration": "It is easier to be brave for someone else. Start there if you need to.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Waiting Is Hard",
+      "declaration": "Waiting is one of the hardest things there is. Doing it is real strength.",
+      "scripture": {
+        "ref": "Psalm 27:14",
+        "text": "Wait for the Lord; be strong and take heart."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Keep Going",
+      "declaration": "On hard days, brave just means carrying on. That counts.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 25,
+      "title": "God Is Not Scared",
+      "declaration": "Nothing frightens God. Whatever worries you, it does not worry Him.",
+      "scripture": {
+        "ref": "Isaiah 41:10",
+        "text": "Do not fear, for I am with you."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Big Feelings Are Not Bad",
+      "declaration": "Feeling something very strongly is not naughty. We will help you carry it.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Kind Is Brave",
+      "declaration": "Being gentle when you are angry is one of the strongest things anyone does.",
+      "scripture": {
+        "ref": "Colossians 3:12",
+        "text": "Clothe yourselves with gentleness and patience."
+      }
+    },
+    {
+      "day": 28,
+      "title": "You Are Not Alone",
+      "declaration": "Whatever it is, you are not doing it on your own. Not once, not ever.",
+      "scripture": {
+        "ref": "Matthew 28:20",
+        "text": "I am with you always."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Strength Comes Every Day",
+      "declaration": "Strength arrives every morning, fresh, exactly enough for the day.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Braver Than Last Year",
+      "declaration": "You are braver than you were last year. That will keep happening.",
+      "scripture": {
+        "ref": "Psalm 84:7",
+        "text": "They go from strength to strength."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It With You",
+      "declaration": "The brave things you did today make tomorrow a bit easier. Keep them.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "The Lord your God will be with you wherever you go."
+      }
+    }
+  ]
+}

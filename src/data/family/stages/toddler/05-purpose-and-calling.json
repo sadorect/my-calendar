@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 5,
+  "slug": "purpose-and-calling",
+  "title": "Purpose & Calling",
+  "intro": "A three-year-old's purpose is to help, badly and enthusiastically. That is not a rehearsal for a real life; it is a real life. This month tells a small child that they are useful now, that being helpful is joyful, and that God is not waiting for them to grow up.",
+  "keyScriptures": [
+    {
+      "ref": "Ephesians 2:10",
+      "text": "For we are God's handiwork, created in Christ Jesus to do good works."
+    },
+    {
+      "ref": "1 Timothy 4:12",
+      "text": "Do not let anyone look down on you because you are young."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Useful Now",
+      "declaration": "You are not waiting to be useful when you are big. You are useful today, in this house, at your size.",
+      "parentsPrayer": "Father, help us let our child help, even when it is slower. Amen."
+    },
+    {
+      "week": 2,
+      "title": "God Made You for Good Things",
+      "declaration": "God made you to do good things, and He already knows what they are. Some of them are for today.",
+      "parentsPrayer": "Lord, thank You that this small life has a purpose we did not invent. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Helping Is Happy",
+      "declaration": "Helping someone makes you feel good inside. That is not an accident — it is how you were made.",
+      "parentsPrayer": "God, let our child find joy in helping rather than duty. Amen."
+    },
+    {
+      "week": 4,
+      "title": "You Are Good at Things",
+      "declaration": "There are things you are good at, and there will be more. God gave them to you on purpose.",
+      "parentsPrayer": "Father, show us what You have put in our child, and let us say it out loud. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Useful Today",
+      "declaration": "You are useful today, at your size. Not one day when you are bigger.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Made for Good Things",
+      "declaration": "God made you to do good things. He already knows what they are.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "We are God's handiwork, created to do good works."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Helping Feels Good",
+      "declaration": "Helping someone makes you feel good inside. That is how you were made.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 4,
+      "title": "You Are Good at Things",
+      "declaration": "There are things you are good at. There will be lots more.",
+      "scripture": {
+        "ref": "Romans 12:6",
+        "text": "We have different gifts."
+      }
+    },
+    {
+      "day": 5,
+      "title": "God Has a Plan",
+      "declaration": "God has a plan for your whole life, and it is a good one.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "I know the plans I have for you."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Little Jobs Count",
+      "declaration": "Carrying one plate is a real job. Little jobs are not pretend.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Growing Is Your Work",
+      "declaration": "Growing and learning is your work right now. You are doing it well.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Nobody Else Is You",
+      "declaration": "There are things only you can do, because nobody else is you.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts just as he wanted them."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Trying Counts",
+      "declaration": "Trying counts even when it goes wrong. We are glad you tried.",
+      "scripture": {
+        "ref": "Ecclesiastes 9:10",
+        "text": "Whatever your hand finds to do, do it with all your might."
+      }
+    },
+    {
+      "day": 10,
+      "title": "God Uses Children",
+      "declaration": "God has always used children to do important things. You are not too small.",
+      "scripture": {
+        "ref": "1 Samuel 3:10",
+        "text": "Speak, for your servant is listening."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Practise Now",
+      "declaration": "What you practise now, you will be able to do later. Nothing is wasted.",
+      "scripture": {
+        "ref": "Proverbs 22:6",
+        "text": "Start children off on the way they should go."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Doing It Properly",
+      "declaration": "Doing something properly feels better than rushing it. Try the slow way.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Work at it with all your heart."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Noticing What Is Needed",
+      "declaration": "Look around and see what is needed. That is how helping starts.",
+      "scripture": {
+        "ref": "Philippians 2:4",
+        "text": "Look to the interests of others."
+      }
+    },
+    {
+      "day": 14,
+      "title": "You Do Not Have to Know Yet",
+      "declaration": "You do not have to know what you will be when you grow up. Not for years.",
+      "scripture": {
+        "ref": "Proverbs 3:6",
+        "text": "He will make your paths straight."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Made Different on Purpose",
+      "declaration": "You were not made to be like anyone else. Different was the plan.",
+      "scripture": {
+        "ref": "Psalm 139:13",
+        "text": "You knit me together."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Being Kind Is a Job",
+      "declaration": "Being kind is real work and it makes a real difference. Do lots of it.",
+      "scripture": {
+        "ref": "Galatians 6:10",
+        "text": "Let us do good to all people."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Boring Bits Matter",
+      "declaration": "Some jobs are boring and still matter. Tidying up is one of them.",
+      "scripture": {
+        "ref": "Proverbs 21:5",
+        "text": "The plans of the diligent lead to profit."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Finish It",
+      "declaration": "Finishing what you started feels good. Try to get to the end.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 19,
+      "title": "God Made Your Hands",
+      "declaration": "God made your hands to build things and help people. Use them for both.",
+      "scripture": {
+        "ref": "Psalm 90:17",
+        "text": "Establish the work of our hands."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Someone Needs You",
+      "declaration": "Somebody today needs exactly what you can do. Keep your eyes open.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not a Race",
+      "declaration": "This is not a race against anybody. You are going at your own speed.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Learning Is Good Work",
+      "declaration": "Asking questions and learning things is proper work. Keep doing it.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Willing Helps",
+      "declaration": "Being willing matters more than being good at it. Willing is a choice.",
+      "scripture": {
+        "ref": "Isaiah 6:8",
+        "text": "Here am I. Send me!"
+      }
+    },
+    {
+      "day": 24,
+      "title": "Where You Are",
+      "declaration": "You cannot do the next thing yet. Be here first, and here is enough.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Born Now on Purpose",
+      "declaration": "You were born now, not any other time. God chose when.",
+      "scripture": {
+        "ref": "Acts 17:26",
+        "text": "He marked out their appointed times."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Being Good at Something",
+      "declaration": "When you are good at something, it is a gift to use, not to show off.",
+      "scripture": {
+        "ref": "Exodus 35:31",
+        "text": "He has filled him with the Spirit of God."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Failing Is Fine",
+      "declaration": "Being bad at one thing tells you nothing except that it is not your thing yet.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "The Lord establishes their steps."
+      }
+    },
+    {
+      "day": 28,
+      "title": "God Finishes Things",
+      "declaration": "God started something good in you and He does not give up halfway.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He will carry it on to completion."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Small Now, Not Small Always",
+      "declaration": "You are small now. You will not always be, and your job will grow with you.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Made to Enjoy It",
+      "declaration": "You were made to enjoy what you do. God is not against that.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:22",
+        "text": "There is nothing better than to enjoy their work."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It With You",
+      "declaration": "What you helped with today mattered. Do some more of it tomorrow.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "Prepared in advance for us to do."
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 11,
+  "slug": "peace-and-rest",
+  "title": "Peace & Rest",
+  "intro": "Children are busier than they have ever been, and many of them have learned to be worried without having the words for it. This month is quieter than the others on purpose — it is about being allowed to stop, knowing where to put the worry, and learning that rest is something God made rather than something you earn.",
+  "keyScriptures": [
+    {
+      "ref": "Matthew 11:28",
+      "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+    },
+    {
+      "ref": "Psalm 23:2",
+      "text": "He makes me lie down in green pastures, he leads me beside quiet waters."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Allowed to Stop",
+      "declaration": "Rest is not a reward for finishing everything. It is something God made on purpose, and you are allowed to have it.",
+      "parentsPrayer": "Father, slow our house down this week. Teach us to stop, so our child learns that stopping is safe. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Where the Worry Goes",
+      "declaration": "You do not have to hold the worry yourself. There is somewhere to put it down, and you can put it down as often as you need.",
+      "parentsPrayer": "Lord, take what our child is carrying that is too big for them. Let them sleep without it. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Quiet Is Not Empty",
+      "declaration": "Being quiet is not being bored. Some of the best things happen in a room with nothing on in it.",
+      "parentsPrayer": "God, give our child a taste for quiet in a loud world. Let them be comfortable with their own thoughts. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Peace That Is Given",
+      "declaration": "Peace is not something you have to build. It is given, and it is a different kind from the sort the world sells.",
+      "parentsPrayer": "Father, give our child a peace that does not depend on everything going well. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Allowed to Stop",
+      "declaration": "Rest is not a prize for finishing everything. God made it on purpose, and it is for you.",
+      "scripture": {
+        "ref": "Genesis 2:2",
+        "text": "On the seventh day he rested from all his work."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Come and Rest",
+      "declaration": "When you are tired out, there is somewhere to go. The invitation is open and it does not expire.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Put the Worry Down",
+      "declaration": "You do not have to carry the worry yourself. Hand it over; you can do it as often as you need.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sleep Safely",
+      "declaration": "You can go to sleep. The One looking after you does not need to sleep at all.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Green Pastures",
+      "declaration": "God is not always speeding you up. Sometimes He makes you lie down, and that is kindness.",
+      "scripture": {
+        "ref": "Psalm 23:2",
+        "text": "He makes me lie down in green pastures."
+      }
+    },
+    {
+      "day": 6,
+      "title": "A Different Kind of Peace",
+      "declaration": "The peace God gives is not the same as everything being easy. It works even when things are not.",
+      "scripture": {
+        "ref": "John 14:27",
+        "text": "Peace I leave with you... I do not give to you as the world gives."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Worrying Does Not Help",
+      "declaration": "Worrying feels like doing something, but it does not change tomorrow. Praying does more.",
+      "scripture": {
+        "ref": "Matthew 6:27",
+        "text": "Can any one of you by worrying add a single hour to your life?"
+      }
+    },
+    {
+      "day": 8,
+      "title": "One Day at a Time",
+      "declaration": "Today has enough in it. You do not have to carry tomorrow as well.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow, for tomorrow will worry about itself."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Quiet Is Not Empty",
+      "declaration": "Being quiet is not being bored. Good things happen in a room with nothing switched on.",
+      "scripture": {
+        "ref": "Psalm 46:10",
+        "text": "Be still, and know that I am God."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Tell Someone the Worry",
+      "declaration": "A worry said out loud gets smaller. Tell somebody who loves you.",
+      "scripture": {
+        "ref": "Proverbs 12:25",
+        "text": "Anxiety weighs down the heart, but a kind word cheers it up."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Busy Is Not Better",
+      "declaration": "Being busy is not the same as being important. You are allowed to have an empty afternoon.",
+      "scripture": {
+        "ref": "Luke 10:41-42",
+        "text": "Martha, Martha, you are worried and upset about many things."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Rest Is Part of Work",
+      "declaration": "People who rest properly do better work. Stopping is part of doing well, not the opposite.",
+      "scripture": {
+        "ref": "Exodus 20:8-9",
+        "text": "Remember the Sabbath day by keeping it holy."
+      }
+    },
+    {
+      "day": 13,
+      "title": "You Are Not in Charge of Everything",
+      "declaration": "There are things that are not yours to fix. You are allowed to hand those back.",
+      "scripture": {
+        "ref": "Psalm 55:22",
+        "text": "Cast your cares on the Lord and he will sustain you."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Peace on Guard",
+      "declaration": "God's peace stands guard over your thoughts, especially the ones that turn up at bedtime.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God, which transcends all understanding, will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 15,
+      "title": "A Still Small Voice",
+      "declaration": "God does not usually shout. That is a good reason to be quiet sometimes.",
+      "scripture": {
+        "ref": "1 Kings 19:12",
+        "text": "And after the fire came a gentle whisper."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Nothing to Prove",
+      "declaration": "You do not have to earn your place by being busy. It was given, not sold.",
+      "scripture": {
+        "ref": "Ephesians 2:8",
+        "text": "It is by grace you have been saved."
+      }
+    },
+    {
+      "day": 17,
+      "title": "When Your Head Is Loud",
+      "declaration": "When your thoughts get loud, you can say one true thing to yourself and hold on to it.",
+      "scripture": {
+        "ref": "Psalm 94:19",
+        "text": "When anxiety was great within me, your consolation brought me joy."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Slow Down",
+      "declaration": "Slowing down is not falling behind. Most good things happen at walking pace.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Rest for Your Mind",
+      "declaration": "Your mind needs a rest as much as your body. Put the screen down and let it be quiet.",
+      "scripture": {
+        "ref": "Romans 12:2",
+        "text": "Be transformed by the renewing of your mind."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Being Still Is Doing Something",
+      "declaration": "Sitting still with God is not wasting time. It is one of the most useful things you can do.",
+      "scripture": {
+        "ref": "Psalm 62:1",
+        "text": "Truly my soul finds rest in God."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Not Everything Is Urgent",
+      "declaration": "Very little is actually urgent. Learning the difference makes life much calmer.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Peace With People",
+      "declaration": "Some of your peace depends on sorting things out with people. Do your half.",
+      "scripture": {
+        "ref": "Romans 12:18",
+        "text": "If it is possible, as far as it depends on you, live at peace with everyone."
+      }
+    },
+    {
+      "day": 23,
+      "title": "The Weight You Were Not Given",
+      "declaration": "If something feels far too heavy, it may not be yours to carry. Ask before you pick it up.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "My yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Enough Has Been Done Today",
+      "declaration": "Some days you will not finish. Enough has been done for today, and tomorrow is allowed to have some.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Play Is Rest",
+      "declaration": "Playing is not a waste of time. God made you to enjoy things, not only to complete them.",
+      "scripture": {
+        "ref": "Zechariah 8:5",
+        "text": "The city streets will be filled with boys and girls playing."
+      }
+    },
+    {
+      "day": 26,
+      "title": "God Is Not Rushing You",
+      "declaration": "God is not in a hurry with you. You do not have to grow up faster than you are.",
+      "scripture": {
+        "ref": "2 Peter 3:8",
+        "text": "With the Lord a day is like a thousand years."
+      }
+    },
+    {
+      "day": 27,
+      "title": "A Safe Place to Be Tired",
+      "declaration": "Home is meant to be somewhere you can be tired. You do not have to perform here.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Breathing",
+      "declaration": "When everything is too much, breathe slowly and say one word to God. That is a real prayer.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength, an ever-present help in trouble."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Rest Before You Are Empty",
+      "declaration": "Rest before you have run out, not after. That is the skill worth learning early.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me by yourselves to a quiet place and get some rest."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Kept in Perfect Peace",
+      "declaration": "There is a peace that holds steady when everything else does not, and it comes from keeping your mind on God.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep the Quiet",
+      "declaration": "The quiet you have practised this month goes with you into the busy months. Keep it.",
+      "scripture": {
+        "ref": "Psalm 23:3",
+        "text": "He refreshes my soul."
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 10,
+  "slug": "generosity-and-legacy",
+  "title": "Generosity & Legacy",
+  "intro": "Teenagers are the most generous people alive when they believe something matters, and the most guarded when they feel short of everything. This month works on both — that giving is how you stop being afraid of scarcity, and that legacy is not what you leave at the end but what you are building now, in ordinary weeks nobody is recording.",
+  "keyScriptures": [
+    {
+      "ref": "2 Corinthians 9:7",
+      "text": "Each of you should give what you have decided in your heart to give... for God loves a cheerful giver."
+    },
+    {
+      "ref": "Psalm 78:4",
+      "text": "We will tell the next generation the praiseworthy deeds of the Lord."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are Not Short",
+      "declaration": "Generosity is difficult when you feel you are running out. The odd truth is that giving is what dismantles the feeling of scarcity, not having more.",
+      "parentsPrayer": "Father, free our child from the fear of not having enough. Make them open-handed while they are still young. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Give What You Actually Have",
+      "declaration": "You have time, attention, skill, a platform and a seat next to you. Waiting until you have money is a way of never starting.",
+      "parentsPrayer": "Lord, show our child what they already hold. Let them use it now rather than later. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Generous with Credit and Attention",
+      "declaration": "The rarest generosity at your age is not money. It is sharing credit, and giving someone your full attention when there is somewhere else to look.",
+      "parentsPrayer": "God, make our child someone who builds others up. Let them be safe to succeed around. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Legacy Is Being Built Now",
+      "declaration": "Legacy is not what you leave at the end. It is what you are laying down now, in ordinary weeks nobody is recording.",
+      "parentsPrayer": "Father, let our child build something that outlasts them, one ordinary decision at a time. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Given Before Earned",
+      "declaration": "Everything you have was given before it was earned. Generosity is passing on what arrived free.",
+      "scripture": {
+        "ref": "1 Chronicles 29:14",
+        "text": "Everything comes from you, and we have given you only what comes from your hand."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Giving Kills Scarcity",
+      "declaration": "Giving is what dismantles the fear of running out. Having more never has, for anyone.",
+      "scripture": {
+        "ref": "Luke 6:38",
+        "text": "Give, and it will be given to you. A good measure, pressed down, shaken together and running over."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Decide, Do Not React",
+      "declaration": "Decide in advance what you will give. Generosity that depends on how you feel that day is not reliable.",
+      "scripture": {
+        "ref": "2 Corinthians 9:7",
+        "text": "Each of you should give what you have decided in your heart to give."
+      }
+    },
+    {
+      "day": 4,
+      "title": "You Already Have Capital",
+      "declaration": "Time, attention, skill, a platform, a seat next to you. Waiting for money is a way of never starting.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Each of you should use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Share the Credit",
+      "declaration": "The rarest generosity at your age is sharing credit. Be someone it is safe to succeed around.",
+      "scripture": {
+        "ref": "Romans 12:10",
+        "text": "Honour one another above yourselves."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Full Attention",
+      "declaration": "Giving someone your undivided attention when there is somewhere else to look is a real and increasingly rare gift.",
+      "scripture": {
+        "ref": "Philippians 2:4",
+        "text": "Look not only to your own interests, but also to the interests of others."
+      }
+    },
+    {
+      "day": 7,
+      "title": "It Has to Cost",
+      "declaration": "A gift that costs you nothing has not really been given. Give something you would have liked to keep.",
+      "scripture": {
+        "ref": "2 Samuel 24:24",
+        "text": "I will not sacrifice to the Lord my God burnt offerings that cost me nothing."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Quietly",
+      "declaration": "Announced generosity has already been paid for in attention. Give some of it where nobody will find out.",
+      "scripture": {
+        "ref": "Matthew 6:3-4",
+        "text": "Your Father, who sees what is done in secret, will reward you."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Generous with Words",
+      "declaration": "Encouragement costs nothing and is remembered for decades. Be specific and say it out loud.",
+      "scripture": {
+        "ref": "Ephesians 4:29",
+        "text": "Only what is helpful for building others up according to their needs."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Not Keeping a Ledger",
+      "declaration": "Generous people do not track who owes them. The ledger is heavier than whatever is on it.",
+      "scripture": {
+        "ref": "1 Corinthians 13:5",
+        "text": "Love keeps no record of wrongs."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Money Is a Tool",
+      "declaration": "Money is a tool with an opinion about you. Learn to hold it before you have much of it.",
+      "scripture": {
+        "ref": "1 Timothy 6:10",
+        "text": "The love of money is a root of all kinds of evil."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Start While It Is Small",
+      "declaration": "Learn to give while the amounts are small. Habits do not appear when the numbers get bigger.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 13,
+      "title": "The Widow's Two Coins",
+      "declaration": "Proportion matters more than amount. What you give relative to what you have is the actual measure.",
+      "scripture": {
+        "ref": "Mark 12:43-44",
+        "text": "This poor widow has put more into the treasury than all the others."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Generous to People Who Cannot Repay",
+      "declaration": "It is easy to be generous to people who can return the favour. Try it where there is no return.",
+      "scripture": {
+        "ref": "Luke 14:13-14",
+        "text": "Invite the poor... and you will be blessed."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Hospitality",
+      "declaration": "Making room for someone — at a table, in a group, in a conversation — is generosity that costs only intention.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Forgiveness Is Generous",
+      "declaration": "Forgiveness gives someone something they cannot earn. It is one of the most expensive gifts there is.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Teach What You Know",
+      "declaration": "If you understand something, hand it on. Knowledge hoarded stops growing.",
+      "scripture": {
+        "ref": "2 Timothy 2:2",
+        "text": "Entrust to reliable people who will also be qualified to teach others."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Generous When Depleted",
+      "declaration": "Kindness when you are tired counts more than kindness when you are fine. It is also harder, so plan for it.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good, for at the proper time we will reap a harvest."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Stewardship, Not Ownership",
+      "declaration": "You are looking after things rather than owning them outright. That makes them easier to hold and easier to give.",
+      "scripture": {
+        "ref": "Psalm 24:1",
+        "text": "The earth is the Lord's, and everything in it."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Legacy Is Now",
+      "declaration": "Legacy is not what you leave at the end. It is what you are laying down this month, unrecorded.",
+      "scripture": {
+        "ref": "Ecclesiastes 11:1",
+        "text": "Cast your bread upon the waters, for after many days you will find it again."
+      }
+    },
+    {
+      "day": 21,
+      "title": "What People Will Remember",
+      "declaration": "People remember how you made them feel far longer than they remember what you achieved.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Sowing Without Seeing",
+      "declaration": "You will not see the result of most of the good you do. Do it anyway; that is what sowing is.",
+      "scripture": {
+        "ref": "Galatians 6:7",
+        "text": "A man reaps what he sows."
+      }
+    },
+    {
+      "day": 23,
+      "title": "The Chain You Are In",
+      "declaration": "Someone was generous to you before you could thank them. You are in a chain, not at the start of one.",
+      "scripture": {
+        "ref": "Deuteronomy 6:10-11",
+        "text": "Cities you did not build, vineyards and olive groves you did not plant."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Tell the Next One",
+      "declaration": "What you have learned is meant to be handed down. Somebody younger is watching how you do this.",
+      "scripture": {
+        "ref": "Psalm 78:4",
+        "text": "We will tell the next generation the praiseworthy deeds of the Lord."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Generous at Home First",
+      "declaration": "Home is the hardest place to be generous and the one that matters most. Start there.",
+      "scripture": {
+        "ref": "1 Timothy 5:8",
+        "text": "Anyone who does not provide for their relatives has denied the faith."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Do Not Wait to Be Rich",
+      "declaration": "'When I have more, I will give' is a sentence people repeat their whole lives. Start at the current amount.",
+      "scripture": {
+        "ref": "Ecclesiastes 11:4",
+        "text": "Whoever watches the wind will not plant; whoever looks at the clouds will not reap."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Giving Changes You",
+      "declaration": "Generosity does more to the giver than the receiver. It is how you stop being afraid.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Justice Is Generous Too",
+      "declaration": "Some generosity is structural: speaking up, changing something unfair, giving up an advantage.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, walk humbly with your God."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Build Something That Outlasts You",
+      "declaration": "Aim to build something that keeps working when you are not in the room. That is the test.",
+      "scripture": {
+        "ref": "1 Corinthians 3:12-13",
+        "text": "If anyone builds... their work will be shown for what it is."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Open-Handed",
+      "declaration": "An open hand can give and receive. A closed one can do neither, and it gets tired.",
+      "scripture": {
+        "ref": "Proverbs 11:25",
+        "text": "A generous person will prosper; whoever refreshes others will be refreshed."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep the Hand Open",
+      "declaration": "What you gave away this month is still yours in the way that counts. Keep going.",
+      "scripture": {
+        "ref": "2 Corinthians 9:8",
+        "text": "God is able to bless you abundantly, so that... you will abound in every good work."
+      }
+    }
+  ]
+}

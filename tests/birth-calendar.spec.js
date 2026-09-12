@@ -201,3 +201,197 @@ test.describe('birth calendar', () => {
     await expect(page.getByRole('heading', { name: /^(My |Personal )?Calendar$/ })).toBeVisible()
   })
 })
+
+test.describe('Several children', () => {
+  test('keeps each child’s journal to themselves', async ({ page }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    // Name the pregnancy, so the switcher has something to show.
+    await page.getByRole('button', { name: 'Settings' }).click()
+    await page.getByLabel("Baby's name").fill('Hope')
+    await page.getByLabel("Baby's name").blur()
+
+    // Add a school-age child.
+    await page.getByRole('button', { name: 'Add a child' }).click()
+    await page.getByLabel('Name', { exact: true }).fill('Ada')
+    await page.getByLabel('Birthday', { exact: true }).fill('2015-04-02')
+    await page.getByRole('button', { name: 'Add them' }).click()
+
+    // Adding switches to them, and their stage is derived from the birthday.
+    const switcher = page.getByRole('navigation', { name: 'Choose a child' })
+    await expect(switcher).toBeVisible()
+    await expect(switcher.getByRole('button', { name: /Ada/ })).toHaveAttribute(
+      'aria-current',
+      'true'
+    )
+    await expect(page.getByText(/School Years/).first()).toBeVisible()
+
+    // Ada reads the theme for whatever month it is. Only January is written so
+    // far, so step the month view round to it rather than depending on today's
+    // date — this test must pass in March as well as in January.
+    await page.getByRole('button', { name: 'Month' }).click()
+    const heading = page.getByRole('heading', { level: 1 })
+    for (let i = 0; i < 12; i++) {
+      if ((await heading.textContent())?.includes('Identity & Belonging')) break
+      await page.getByRole('button', { name: 'Previous month' }).click()
+    }
+    await expect(heading).toHaveText('Identity & Belonging')
+
+    // A written day opens on Today with its declaration and Scripture.
+    await page.getByRole('button', { name: /^Day 3:/ }).click()
+    await expect(page.getByRole('heading', { name: 'Wonderfully Made' })).toBeVisible()
+    await expect(page.getByText(/fearfully and wonderfully made/i).first()).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Speak this over Ada' })).toBeVisible()
+
+    // The parents' prayer says the child's name rather than "our child".
+    const prayer = page.getByText(/Amen\.$/).first()
+    await expect(prayer).toContainText('Ada')
+    await expect(prayer).not.toContainText('our child')
+
+    // Saving it files it under the theme, not under a date.
+    await page.getByRole('button', { name: 'Save to favourites' }).click()
+    await page.getByRole('button', { name: 'Saved' }).click()
+    await expect(page.getByText('Identity & Belonging · Day 3')).toBeVisible()
+
+    // Switching back restores the pregnancy exactly as it was.
+    await switcher.getByRole('button', { name: /Hope/ }).click()
+    await page.getByRole('button', { name: 'Today' }).click()
+    await expect(page.getByText('12w 3d')).toBeVisible()
+
+    // And it survives a restart. Deliberately not `page.reload()`: the helper
+    // arrived at `?calendar=standard`, which forces the productivity calendar
+    // for one launch, so a reload would reopen that instead of the birth one.
+    await page.goto('/')
+    await expect(page.getByText('12w 3d')).toBeVisible({ timeout: 20000 })
+    await expect(
+      page.getByRole('navigation', { name: 'Choose a child' }).getByRole('button', { name: /Ada/ })
+    ).toBeVisible()
+  })
+})
+
+/** Parses `rgb()` / `rgba()` into channels, ignoring alpha. */
+function channels(colour) {
+  const parts = String(colour).match(/[\d.]+/g) || []
+  return parts.slice(0, 3).map(Number)
+}
+
+/** Crude perceived-brightness difference, enough to catch white-on-white. */
+function contrast(a, b) {
+  const lum = (c) => 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
+  return Math.abs(lum(channels(a)) - lum(channels(b)))
+}
+
+test.describe('Form fields in the birth calendar', () => {
+  // A transparent control with an explicit ink colour rendered near-white text
+  // on the white background a native <select> popup paints for itself. Only a
+  // real browser can prove this one, so it is asserted here rather than in a
+  // unit test.
+  for (const theme of ['light', 'dark']) {
+    test(`the life stage selector is readable in ${theme} mode`, async ({ page }) => {
+      await page.emulateMedia({ colorScheme: theme })
+      await openBirthCalendar(page)
+      await completeOnboarding(page)
+
+      await page.getByRole('button', { name: 'Settings' }).click()
+      await page.getByRole('button', { name: 'Add a child' }).click()
+      await page.getByLabel('Name', { exact: true }).fill('Ada')
+      await page.getByLabel('Birthday', { exact: true }).fill('2015-04-02')
+      await page.getByRole('button', { name: 'Add them' }).click()
+
+      await page.getByRole('button', { name: 'Settings' }).click()
+      await page.getByRole('button', { name: 'Edit' }).last().click()
+
+      const select = page.getByLabel('Life stage')
+      await expect(select).toBeVisible()
+
+      const style = await select.evaluate((el) => {
+        const s = getComputedStyle(el)
+        const option = el.querySelector('option')
+        return {
+          colour: s.color,
+          background: s.backgroundColor,
+          optionColour: option ? getComputedStyle(option).color : s.color,
+          optionBackground: option ? getComputedStyle(option).backgroundColor : s.backgroundColor
+        }
+      })
+
+      // Not transparent, and legible against its own background.
+      expect(style.background).not.toBe('rgba(0, 0, 0, 0)')
+      expect(contrast(style.colour, style.background)).toBeGreaterThan(60)
+      expect(contrast(style.optionColour, style.optionBackground)).toBeGreaterThan(60)
+    })
+  }
+})
+
+test.describe('Prayer journal', () => {
+  test('opens from the pill beside the calendar switch, keeps a prayer, and marks it answered', async ({
+    page
+  }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    const pill = page.getByRole('button', { name: 'Open the prayer journal' })
+    await expect(pill).toBeVisible()
+    await expect(pill).toHaveText(/Prayers/)
+
+    // Same top row as the "← Calendar" control, to its left.
+    const calendarBox = await page.getByRole('button', { name: '← Calendar' }).boundingBox()
+    const pillBox = await pill.boundingBox()
+    expect(Math.abs(pillBox.y - calendarBox.y)).toBeLessThan(4)
+    expect(pillBox.x + pillBox.width).toBeLessThanOrEqual(calendarBox.x)
+
+    await pill.click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeVisible()
+
+    await page.getByLabel('A new prayer').fill('A safe and gentle delivery.')
+    await page.getByRole('button', { name: 'Add prayer' }).click()
+    await expect(page.getByText('A safe and gentle delivery.')).toBeVisible()
+    await expect(pill).toHaveText(/1 praying/)
+
+    // It is in IndexedDB, not component state. The URL still carries
+    // `?calendar=standard`, so re-enter the way the other reload test does.
+    await openBirthCalendar(page)
+    await expect(page.getByRole('button', { name: 'Open the prayer journal' })).toHaveText(
+      /1 praying/,
+      { timeout: 20000 }
+    )
+    await page.getByRole('button', { name: 'Open the prayer journal' }).click()
+    await expect(page.getByText('A safe and gentle delivery.')).toBeVisible()
+
+    await page.getByRole('button', { name: 'Answered', exact: true }).click()
+    await page.getByLabel('How was it answered?').fill('She arrived on a Tuesday morning.')
+    await page.getByRole('button', { name: 'Mark answered' }).click()
+    await expect(page.getByRole('heading', { name: 'Answered' })).toBeVisible()
+    await expect(page.getByText('She arrived on a Tuesday morning.')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Open the prayer journal' })).toHaveText(
+      /Prayers/
+    )
+
+    // Back returns to the tab the journal was opened from.
+    await page.getByRole('button', { name: 'Back' }).click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeHidden()
+    await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible()
+  })
+
+  test('a declaration can be taken into the journal, and links back', async ({ page }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    const pill = page.getByRole('button', { name: 'Open the prayer journal' })
+    await page.getByRole('button', { name: 'Pray this' }).first().click()
+    await expect(page.getByRole('button', { name: 'In your prayers' }).first()).toBeVisible()
+    await expect(pill).toHaveText(/1 praying/)
+
+    // Pressing it again does not file a duplicate.
+    await page.getByRole('button', { name: 'In your prayers' }).first().click()
+    await expect(pill).toHaveText(/1 praying/)
+
+    await pill.click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeVisible()
+    const sourceLink = page.locator('[data-prayer-id] button.bc-accent').first()
+    await sourceLink.click()
+    // A womb day opens its day dialog.
+    await expect(page.getByRole('dialog')).toBeVisible()
+  })
+})

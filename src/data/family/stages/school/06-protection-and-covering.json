@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 6,
+  "slug": "protection-and-covering",
+  "title": "Protection & Covering",
+  "intro": "Children this age start to notice that the world contains things their parents cannot fix. This month is not about pretending otherwise. It is about saying, steadily and often, that they are watched over, that they are not carrying anything alone, and that there is always somewhere to run.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 91:4",
+      "text": "He will cover you with his feathers, and under his wings you will find refuge."
+    },
+    {
+      "ref": "Psalm 121:3",
+      "text": "He will not let your foot slip — he who watches over you will not slumber."
+    }
+  ],
+  "palette": "ocean",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Watched Over",
+      "declaration": "Someone is awake all night on your behalf. You are watched over while you sleep and while you play and while you are worried.",
+      "parentsPrayer": "Father, be the watchman over this house tonight and every night. Let our child sleep like someone who is guarded. Amen."
+    },
+    {
+      "week": 2,
+      "title": "A Place to Run",
+      "declaration": "When you are frightened, there is somewhere to go. God is not a last resort; He is the first place to run.",
+      "parentsPrayer": "Lord, be our child's first thought when they are afraid, not their last. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Not Carrying It Alone",
+      "declaration": "You do not have to carry the heavy things by yourself. You can hand them over, and you can tell us.",
+      "parentsPrayer": "God, make our home a place where nothing is too big to say out loud. Give us ears that can hear hard things. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Covered",
+      "declaration": "You are covered — not wrapped in cotton wool, but sheltered by someone stronger than whatever is out there.",
+      "parentsPrayer": "Father, cover our child where we cannot. Go with them into every place we are not allowed to follow. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Watched Over",
+      "declaration": "Someone is awake on your behalf all night. You are watched over while you sleep.",
+      "scripture": {
+        "ref": "Psalm 121:3",
+        "text": "He who watches over you will not slumber."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Under His Wings",
+      "declaration": "There is a safe place, and it is close. You can go there whenever you need to.",
+      "scripture": {
+        "ref": "Psalm 91:4",
+        "text": "He will cover you with his feathers, and under his wings you will find refuge."
+      }
+    },
+    {
+      "day": 3,
+      "title": "A Place to Run",
+      "declaration": "When you are frightened, you have somewhere to run. You do not have to stand there on your own.",
+      "scripture": {
+        "ref": "Proverbs 18:10",
+        "text": "The name of the Lord is a fortified tower; the righteous run to it and are safe."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Not Alone in the Dark",
+      "declaration": "The dark is not empty. The One who made the light is in it with you.",
+      "scripture": {
+        "ref": "Psalm 139:12",
+        "text": "Even the darkness will not be dark to you; the night will shine like the day."
+      }
+    },
+    {
+      "day": 5,
+      "title": "You Can Tell Us",
+      "declaration": "Nothing you could tell us would make us stop loving you. There is nothing too big to say out loud here.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him, for God is our refuge."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Not Carrying It Alone",
+      "declaration": "You do not have to carry the heavy things by yourself. Hand them over; you are allowed.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Angels Are Real",
+      "declaration": "God sends help you cannot see. You are more looked after than you know.",
+      "scripture": {
+        "ref": "Psalm 91:11",
+        "text": "He will command his angels concerning you to guard you in all your ways."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Safe to Sleep",
+      "declaration": "You can sleep. The One looking after you does not need a rest.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep, for you alone, Lord, make me dwell in safety."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Going Out and Coming In",
+      "declaration": "You are watched over when you leave and when you come home, and all the way in between.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    },
+    {
+      "day": 10,
+      "title": "A Shield",
+      "declaration": "God is a shield around you. Not a wall that stops life, a shield that goes where you go.",
+      "scripture": {
+        "ref": "Psalm 3:3",
+        "text": "But you, Lord, are a shield around me."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Hard Things Still Happen",
+      "declaration": "Being protected does not mean nothing hard ever happens. It means nothing hard happens to you alone.",
+      "scripture": {
+        "ref": "Isaiah 43:2",
+        "text": "When you pass through the waters, I will be with you."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Say Something",
+      "declaration": "If someone makes you feel unsafe, tell a grown-up you trust. Keeping a secret like that is never your job.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:10",
+        "text": "If either of them falls down, one can help the other up."
+      }
+    },
+    {
+      "day": 13,
+      "title": "The Right Kind of Careful",
+      "declaration": "Being careful is not being afraid. Wise people look before they cross and it does not make them cowards.",
+      "scripture": {
+        "ref": "Proverbs 27:12",
+        "text": "The prudent see danger and take refuge."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Home Is a Shelter",
+      "declaration": "This home is meant to be a shelter for you. When the day has been rough, you can come in and put it down.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Guarded Heart",
+      "declaration": "Your heart is worth guarding — what you watch, what you listen to, who you let speak into it.",
+      "scripture": {
+        "ref": "Proverbs 4:23",
+        "text": "Above all else, guard your heart, for everything you do flows from it."
+      }
+    },
+    {
+      "day": 16,
+      "title": "He Is Not Surprised",
+      "declaration": "Nothing that happens today takes God by surprise. He is already there, in the part you cannot see yet.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before, and you lay your hand upon me."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Held When You Are Falling",
+      "declaration": "When you stumble, you are not dropped. There are hands under you.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "Though he may stumble, he will not fall, for the Lord upholds him with his hand."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Peace That Guards",
+      "declaration": "God gives a peace that stands guard over your thoughts, especially at night when everything feels bigger.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 19,
+      "title": "When You Are Worried",
+      "declaration": "Worrying does not protect you. Praying about it does more, and it costs less.",
+      "scripture": {
+        "ref": "Matthew 6:27",
+        "text": "Can any one of you by worrying add a single hour to your life?"
+      }
+    },
+    {
+      "day": 20,
+      "title": "A Strong Tower",
+      "declaration": "When everything feels wobbly, there is something that does not move. Run to it.",
+      "scripture": {
+        "ref": "Psalm 18:2",
+        "text": "The Lord is my rock, my fortress and my deliverer."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Watched in the Playground",
+      "declaration": "You are watched over in the places we cannot see — the corridor, the bus, the playground.",
+      "scripture": {
+        "ref": "2 Chronicles 16:9",
+        "text": "The eyes of the Lord range throughout the earth to strengthen those whose hearts are fully committed to him."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Never Left",
+      "declaration": "You will not be abandoned. Not when you are difficult, not when you are far away, not ever.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you; never will I forsake you."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Fear Told the Truth Back",
+      "declaration": "When fear tells you a story, you are allowed to answer it with something truer.",
+      "scripture": {
+        "ref": "Psalm 56:3",
+        "text": "When I am afraid, I put my trust in you."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Protected, Not Trapped",
+      "declaration": "Being looked after is not being held back. You are covered so that you can go, not so that you stay small.",
+      "scripture": {
+        "ref": "Psalm 18:19",
+        "text": "He brought me out into a spacious place."
+      }
+    },
+    {
+      "day": 25,
+      "title": "The Armour You Have",
+      "declaration": "You have been given real protection for real trouble — truth, faith, peace. It is not pretend.",
+      "scripture": {
+        "ref": "Ephesians 6:11",
+        "text": "Put on the full armour of God."
+      }
+    },
+    {
+      "day": 26,
+      "title": "When Someone Is Unkind",
+      "declaration": "Someone being unkind to you says something about them, not about you. You are still covered.",
+      "scripture": {
+        "ref": "Isaiah 54:17",
+        "text": "No weapon forged against you will prevail."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Rest Is Allowed",
+      "declaration": "You are allowed to stop and rest. The world does not fall over when you do.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Praying for Each Other",
+      "declaration": "We pray for you when you are not in the room. You are covered by more than you can see.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Pray for each other so that you may be healed."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Kept",
+      "declaration": "You are kept. Not just watched — kept, the way you keep something precious.",
+      "scripture": {
+        "ref": "Numbers 6:24",
+        "text": "The Lord bless you and keep you."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Safe to Be Small",
+      "declaration": "You do not have to be strong all the time. It is safe to be small here.",
+      "scripture": {
+        "ref": "Isaiah 40:11",
+        "text": "He gathers the lambs in his arms and carries them close to his heart."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carry It Forward",
+      "declaration": "You go into next month covered. Nothing about that changes when the theme does.",
+      "scripture": {
+        "ref": "Psalm 121:8",
+        "text": "The Lord will watch over your coming and going both now and forevermore."
+      }
+    }
+  ]
+}

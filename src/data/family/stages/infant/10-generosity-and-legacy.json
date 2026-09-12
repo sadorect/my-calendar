@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 10,
+  "slug": "generosity-and-legacy",
+  "title": "Generosity & Legacy",
+  "intro": "A baby can give nothing back, which makes this the purest month of the year. Everything is one-directional, and that is the shape of the love being taught. This month is about what is being handed down — a faith, a family, a way of holding an open hand.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 78:4",
+      "text": "We will tell the next generation the praiseworthy deeds of the Lord."
+    },
+    {
+      "ref": "Acts 20:35",
+      "text": "It is more blessed to give than to receive."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Everything Given, Nothing Owed",
+      "declaration": "You are given everything and you owe nothing. That is what love looks like before anyone can repay it.",
+      "parentsPrayer": "Father, let us give this year without keeping account. Amen."
+    },
+    {
+      "week": 2,
+      "title": "A Faith Handed Down",
+      "declaration": "You are being handed a faith older than any of us. It is not ours to invent, only to pass on.",
+      "parentsPrayer": "Lord, let the faith in this house be real enough to be worth inheriting. Amen."
+    },
+    {
+      "week": 3,
+      "title": "An Open Hand",
+      "declaration": "You will learn whether hands in this family are open or closed. We intend them to be open.",
+      "parentsPrayer": "God, make us generous while our child is watching. Let open-handedness be normal here. Amen."
+    },
+    {
+      "week": 4,
+      "title": "What We Leave You",
+      "declaration": "What we leave you will mostly not be things. It will be how we treated people, and whether our hands were open or closed.",
+      "parentsPrayer": "Father, help us build something worth inheriting out of ordinary days. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Given Everything",
+      "declaration": "You are given everything and asked for nothing. That is how love starts.",
+      "scripture": {
+        "ref": "1 John 4:10",
+        "text": "This is love: not that we loved God, but that he loved us."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Nothing Owed",
+      "declaration": "You owe nobody for being here. Not us, not anyone.",
+      "scripture": {
+        "ref": "Romans 8:15",
+        "text": "You did not receive a spirit that makes you a slave again to fear."
+      }
+    },
+    {
+      "day": 3,
+      "title": "A Faith Handed Down",
+      "declaration": "You are being handed something older than all of us. It was never ours to invent.",
+      "scripture": {
+        "ref": "2 Timothy 1:5",
+        "text": "Your sincere faith, which first lived in your grandmother."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Told the Story",
+      "declaration": "We will tell you the story until you know it, and then you will tell someone else.",
+      "scripture": {
+        "ref": "Psalm 78:4",
+        "text": "We will tell the next generation."
+      }
+    },
+    {
+      "day": 5,
+      "title": "An Open Hand",
+      "declaration": "You will learn whether hands here are open or closed. We mean them to be open.",
+      "scripture": {
+        "ref": "Proverbs 11:25",
+        "text": "A generous person will prosper."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Given Before You Could Ask",
+      "declaration": "Most of what you have was given before you knew to want it. That is grace.",
+      "scripture": {
+        "ref": "Ephesians 2:8",
+        "text": "It is by grace you have been saved."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Someone Prayed for You",
+      "declaration": "People prayed for you before you existed. You are already in a chain.",
+      "scripture": {
+        "ref": "Deuteronomy 6:10-11",
+        "text": "Cities you did not build, vineyards you did not plant."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Room Made",
+      "declaration": "Room was made for you without being taken from anyone. There was enough.",
+      "scripture": {
+        "ref": "John 14:2",
+        "text": "My Father's house has many rooms."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Time Is the Gift",
+      "declaration": "The best thing given to you this year is time, and it cannot be bought.",
+      "scripture": {
+        "ref": "Ephesians 5:16",
+        "text": "Making the most of every opportunity."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Given Gladly",
+      "declaration": "Nothing here is given grudgingly. You will learn the difference in tone before the words.",
+      "scripture": {
+        "ref": "2 Corinthians 9:7",
+        "text": "God loves a cheerful giver."
+      }
+    },
+    {
+      "day": 11,
+      "title": "What We Will Leave",
+      "declaration": "What we leave you will mostly not be things. It will be how we treated people.",
+      "scripture": {
+        "ref": "Proverbs 22:1",
+        "text": "A good name is more desirable than great riches."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Passing On Kindness",
+      "declaration": "Kindness done to you now will travel out of you later. That is how it works.",
+      "scripture": {
+        "ref": "Matthew 10:8",
+        "text": "Freely you have received; freely give."
+      }
+    },
+    {
+      "day": 13,
+      "title": "A Family Beyond Us",
+      "declaration": "You have people who will love you that we have not met yet. Family keeps growing.",
+      "scripture": {
+        "ref": "Mark 3:35",
+        "text": "Whoever does God's will is my brother and sister."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Enough to Share",
+      "declaration": "There is enough here. That is the first thing to know before learning to share.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "My God will meet all your needs."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Looked After Well",
+      "declaration": "Looking after what you are given is part of generosity. It keeps it useful for the next person.",
+      "scripture": {
+        "ref": "Luke 16:11",
+        "text": "If you have not been trustworthy in handling worldly wealth..."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Sowing Without Seeing",
+      "declaration": "Most of what we do for you now we will never see the result of. We do it anyway.",
+      "scripture": {
+        "ref": "Galatians 6:7",
+        "text": "A man reaps what he sows."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Not Kept, Raised",
+      "declaration": "You are not being kept. You are being raised, which means being prepared to leave.",
+      "scripture": {
+        "ref": "Psalm 127:4",
+        "text": "Children are like arrows in the hands of a warrior."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Hospitality Learned Early",
+      "declaration": "May you grow up in a house where people come in. May a full table seem normal.",
+      "scripture": {
+        "ref": "Romans 12:13",
+        "text": "Practise hospitality."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Forgiveness Given Freely",
+      "declaration": "Forgiveness will be given to you before you can ask for it. That is the most generous thing there is.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Named in Our Prayers",
+      "declaration": "You are named in our prayers daily. That is an inheritance you cannot spend.",
+      "scripture": {
+        "ref": "Philippians 1:3",
+        "text": "I thank my God every time I remember you."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Generous with Words",
+      "declaration": "May you grow up hearing encouragement given away freely. It costs nothing and lasts decades.",
+      "scripture": {
+        "ref": "Ephesians 4:29",
+        "text": "Only what is helpful for building others up."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Small and Real",
+      "declaration": "Generosity here will mostly be small and real rather than large and rare.",
+      "scripture": {
+        "ref": "Mark 12:43",
+        "text": "This poor widow has put more in than all the others."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Handed the Good Bits",
+      "declaration": "We will hand you the best of what we have rather than the leftovers.",
+      "scripture": {
+        "ref": "Proverbs 3:9",
+        "text": "Honour the Lord with the firstfruits of all your crops."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Not for Show",
+      "declaration": "Nothing given to you is for anyone else's benefit or admiration.",
+      "scripture": {
+        "ref": "Matthew 6:3",
+        "text": "Do not let your left hand know what your right hand is doing."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Grateful Givers",
+      "declaration": "May you learn that giving makes people glad. You will see it in us before you feel it.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Justice as Generosity",
+      "declaration": "Some giving is standing up for someone. May you learn that kind too.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Beyond This Family",
+      "declaration": "May your generosity reach further than the people who can return it.",
+      "scripture": {
+        "ref": "Luke 14:13-14",
+        "text": "Invite the poor... and you will be blessed."
+      }
+    },
+    {
+      "day": 28,
+      "title": "A Long Chain",
+      "declaration": "You are in the middle of a chain, not at the start. Others gave before us.",
+      "scripture": {
+        "ref": "Psalm 100:5",
+        "text": "His faithfulness continues through all generations."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Starting Now",
+      "declaration": "What you will be remembered for has already started, in a year you will not recall.",
+      "scripture": {
+        "ref": "Ecclesiastes 11:1",
+        "text": "Cast your bread upon the waters."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Built to Outlast",
+      "declaration": "We are trying to build something that works when we are not in the room.",
+      "scripture": {
+        "ref": "1 Corinthians 3:12-13",
+        "text": "Their work will be shown for what it is."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Yours to Give Away",
+      "declaration": "Everything given to you this year is meant to leave you again one day. That is not a loss.",
+      "scripture": {
+        "ref": "2 Corinthians 9:8",
+        "text": "You will abound in every good work."
+      }
+    }
+  ]
+}

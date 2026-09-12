@@ -135,8 +135,7 @@ async function saveJournal() {
                 v-model="journal"
                 rows="5"
                 placeholder="A prayer, a hope, something you noticed today…"
-                class="w-full px-4 py-3 rounded-xl border bg-transparent resize-none bc-scripture text-sm"
-                :style="{ borderColor: 'var(--bc-hairline)', color: 'var(--bc-ink)' }"
+                class="bc-field w-full px-4 py-3 resize-none bc-scripture text-sm"
               />
               <div class="flex items-center justify-between mt-3">
                 <p class="text-xs bc-muted">Private, and stored only on this device.</p>

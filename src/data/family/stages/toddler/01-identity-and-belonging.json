@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 1,
+  "slug": "identity-and-belonging",
+  "title": "Identity & Belonging",
+  "intro": "Between one and five a child works out that they are a separate person, and tests whether that is allowed. The no, the wandering off, the coming back — all of it is asking the same question. This month answers it in words short enough to be understood and repeated.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 139:14",
+      "text": "I praise you, for I am fearfully and wonderfully made."
+    },
+    {
+      "ref": "Isaiah 43:1",
+      "text": "I have called you by name; you are mine."
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "You Are You",
+      "declaration": "You are your own person, and that is exactly what God wanted. Nobody else is you, and nobody else could be.",
+      "parentsPrayer": "Father, thank You for who this child is. Help us love the person in front of us. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Belong Here",
+      "declaration": "This is your home and these are your people. You do not have to be good to belong here.",
+      "parentsPrayer": "Lord, let belonging never be something our child has to earn in this house. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Loved Even When Cross",
+      "declaration": "You are loved when you are happy and loved when you are furious. Love does not go away when you are difficult.",
+      "parentsPrayer": "God, let our love hold steady through the hardest hours of the day. Amen."
+    },
+    {
+      "week": 4,
+      "title": "God Made You",
+      "declaration": "God made you on purpose. He was not in a hurry and He did not make a mistake.",
+      "parentsPrayer": "Father, thank You for making this child exactly as they are. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "You Are You",
+      "declaration": "You are your own person. Nobody else is you, and nobody else could be.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 2,
+      "title": "God Made You",
+      "declaration": "God made you on purpose. He was not in a hurry and He did not get it wrong.",
+      "scripture": {
+        "ref": "Genesis 1:27",
+        "text": "So God created mankind in his own image."
+      }
+    },
+    {
+      "day": 3,
+      "title": "You Have a Name",
+      "declaration": "You have a name and it was chosen for you. God knows it too.",
+      "scripture": {
+        "ref": "Isaiah 43:1",
+        "text": "I have called you by name; you are mine."
+      }
+    },
+    {
+      "day": 4,
+      "title": "You Belong Here",
+      "declaration": "This is your home. You belong here and nobody can send you away.",
+      "scripture": {
+        "ref": "Ephesians 2:19",
+        "text": "You are members of God's household."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Loved When Cross",
+      "declaration": "You are loved when you are happy. You are loved when you are cross too.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Not Too Loud",
+      "declaration": "You are not too loud or too much. You are exactly the right amount of you.",
+      "scripture": {
+        "ref": "Psalm 100:1",
+        "text": "Shout for joy to the Lord, all the earth."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Wanted",
+      "declaration": "We wanted you before you were here. We are glad you came.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord."
+      }
+    },
+    {
+      "day": 8,
+      "title": "God Sees You",
+      "declaration": "God sees you all the time, and He likes what He sees.",
+      "scripture": {
+        "ref": "Genesis 16:13",
+        "text": "You are the God who sees me."
+      }
+    },
+    {
+      "day": 9,
+      "title": "You Are Safe",
+      "declaration": "You are safe here. There is nothing in this house you need to be afraid of.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "You alone, Lord, make me dwell in safety."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Your Own Face",
+      "declaration": "There is nobody with your face. God only made one of you.",
+      "scripture": {
+        "ref": "Psalm 139:13",
+        "text": "You knit me together in my mother's womb."
+      }
+    },
+    {
+      "day": 11,
+      "title": "A Child of God",
+      "declaration": "You are a child of God. That is who you are, even when you forget.",
+      "scripture": {
+        "ref": "John 1:12",
+        "text": "He gave the right to become children of God."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Big Feelings Are Allowed",
+      "declaration": "Your big feelings are allowed here. You can be sad or angry and still be loved.",
+      "scripture": {
+        "ref": "Psalm 62:8",
+        "text": "Pour out your hearts to him."
+      }
+    },
+    {
+      "day": 13,
+      "title": "You Can Come Back",
+      "declaration": "When you run off, you can always come back. The door does not close.",
+      "scripture": {
+        "ref": "Luke 15:20",
+        "text": "While he was still a long way off, his father saw him."
+      }
+    },
+    {
+      "day": 14,
+      "title": "God Is Happy About You",
+      "declaration": "God is not just putting up with you. He is happy you are here.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will take great delight in you."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Nothing to Earn",
+      "declaration": "You do not have to be good to be loved. You are loved first.",
+      "scripture": {
+        "ref": "1 John 4:19",
+        "text": "We love because he first loved us."
+      }
+    },
+    {
+      "day": 16,
+      "title": "You Are Growing",
+      "declaration": "You are getting bigger every day. God is helping you do it.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Held When You Fall",
+      "declaration": "When you fall over, someone picks you up. That is what we are here for.",
+      "scripture": {
+        "ref": "Psalm 37:24",
+        "text": "The Lord upholds him with his hand."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Your Place at the Table",
+      "declaration": "There is a place at this table that is yours. It is always yours.",
+      "scripture": {
+        "ref": "Psalm 23:5",
+        "text": "You prepare a table before me."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Made Different",
+      "declaration": "You are not the same as anyone else, and that is a good thing.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts just as he wanted them."
+      }
+    },
+    {
+      "day": 20,
+      "title": "God Knows Your Name",
+      "declaration": "God knows your name and He never forgets it.",
+      "scripture": {
+        "ref": "Isaiah 49:16",
+        "text": "I have engraved you on the palms of my hands."
+      }
+    },
+    {
+      "day": 21,
+      "title": "You Are Enough",
+      "declaration": "You are enough right now. You do not have to be bigger to be loved.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My grace is sufficient for you."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Someone Is Glad",
+      "declaration": "Someone is glad to see you every single day. That is not going to stop.",
+      "scripture": {
+        "ref": "Numbers 6:25",
+        "text": "The Lord make his face shine on you."
+      }
+    },
+    {
+      "day": 23,
+      "title": "You Are Not a Bother",
+      "declaration": "You are not a bother. Wanting us is not a problem.",
+      "scripture": {
+        "ref": "Matthew 19:14",
+        "text": "Let the little children come to me."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Small Is Fine",
+      "declaration": "Being small is fine. God is not waiting for you to be big.",
+      "scripture": {
+        "ref": "Matthew 18:10",
+        "text": "See that you do not despise one of these little ones."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Your Body Is Good",
+      "declaration": "Your hands, your feet, your voice — God made all of it and it is good.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "Your works are wonderful."
+      }
+    },
+    {
+      "day": 26,
+      "title": "We Are Your People",
+      "declaration": "We are your people, and you are ours. That does not change.",
+      "scripture": {
+        "ref": "Ruth 1:16",
+        "text": "Your people will be my people."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Loved Every Day",
+      "declaration": "You are loved on good days and hard days. Every day, all the way through.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 28,
+      "title": "God Has Plans",
+      "declaration": "God has good plans for you. You do not need to know them yet.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "I know the plans I have for you."
+      }
+    },
+    {
+      "day": 29,
+      "title": "You Are Precious",
+      "declaration": "You are precious. That means very, very special.",
+      "scripture": {
+        "ref": "Isaiah 43:4",
+        "text": "You are precious and honoured in my sight."
+      }
+    },
+    {
+      "day": 30,
+      "title": "God Will Not Leave",
+      "declaration": "God will never go away from you. Not ever, not once.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Never will I leave you; never will I forsake you."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Said Again Tomorrow",
+      "declaration": "All of this is still true tomorrow. We will say it again.",
+      "scripture": {
+        "ref": "Deuteronomy 6:7",
+        "text": "Talk about them when you sit at home."
+      }
+    }
+  ]
+}

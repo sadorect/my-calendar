@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 7,
+  "slug": "joy-and-gratitude",
+  "title": "Joy & Gratitude",
+  "intro": "The first year is exhausting and it is also the funniest, gladdest year most families ever have. This month is permission to enjoy it — to notice out loud, to be thankful in the middle of the mess, and to let a baby learn that delight is the normal weather of this house.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 118:24",
+      "text": "This is the day the Lord has made; let us rejoice and be glad in it."
+    },
+    {
+      "ref": "Zephaniah 3:17",
+      "text": "He will take great delight in you... he will rejoice over you with singing."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Glad You Are Here",
+      "declaration": "You are a reason to be glad. This house sounds different because you are in it, and we would not have it quiet again.",
+      "parentsPrayer": "Father, thank You for the gladness this child has brought. Let us not be too tired to notice it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Delighted In",
+      "declaration": "You are delighted in, not merely managed. God is glad about you and so are we, on the good days and the long ones alike.",
+      "parentsPrayer": "Lord, let this child grow up knowing they are a delight rather than a duty. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Thankful in the Middle",
+      "declaration": "The year is hard and it is good at the same time. Both are true and we will say both.",
+      "parentsPrayer": "God, make us thankful in the middle of it rather than only afterwards. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Laughter in This House",
+      "declaration": "There is laughter here, and you are learning it. May it be one of your earliest memories.",
+      "parentsPrayer": "Father, fill this house with laughter our child remembers when they are grown. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Glad You Are Here",
+      "declaration": "You are a reason to be glad. This house is different because you are in it.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Today Was Made",
+      "declaration": "This ordinary day was made on purpose, and you are in it.",
+      "scripture": {
+        "ref": "Psalm 118:24",
+        "text": "This is the day the Lord has made; let us rejoice and be glad in it."
+      }
+    },
+    {
+      "day": 3,
+      "title": "God Is Glad About You",
+      "declaration": "You are delighted in, not merely managed. God is glad about you.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will take great delight in you."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Sung Over",
+      "declaration": "You are sung over, badly and often. May you always be somebody's song.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will rejoice over you with singing."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Your First Laugh",
+      "declaration": "Your laugh changes a room. It is one of the best things God made.",
+      "scripture": {
+        "ref": "Proverbs 17:22",
+        "text": "A cheerful heart is good medicine."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Thankful for Small Things",
+      "declaration": "Warm milk, a clean blanket, a hand to hold. Most of a good life is small.",
+      "scripture": {
+        "ref": "Psalm 103:2",
+        "text": "Forget not all his benefits."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Good Gifts",
+      "declaration": "Everything good in your life came from somewhere. You are surrounded by gifts.",
+      "scripture": {
+        "ref": "James 1:17",
+        "text": "Every good and perfect gift is from above."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Made to Enjoy",
+      "declaration": "God did not have to make anything enjoyable. Delight was designed in.",
+      "scripture": {
+        "ref": "1 Timothy 6:17",
+        "text": "God, who richly provides us with everything for our enjoyment."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Hard and Good Together",
+      "declaration": "This year is hard and it is good. Both are true and we will say both out loud.",
+      "scripture": {
+        "ref": "Habakkuk 3:17-18",
+        "text": "Yet I will rejoice in the Lord."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Noticing You",
+      "declaration": "We are noticing you on purpose — the new sound, the new grip, the new look.",
+      "scripture": {
+        "ref": "Luke 2:19",
+        "text": "Mary treasured up all these things and pondered them in her heart."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Joy That Is Not Earned",
+      "declaration": "Nobody had to earn the joy you brought. It arrived with you.",
+      "scripture": {
+        "ref": "Luke 2:10",
+        "text": "I bring you good news that will cause great joy."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Enough Today",
+      "declaration": "There is enough today. We do not need more than this to be glad.",
+      "scripture": {
+        "ref": "1 Timothy 6:6",
+        "text": "Godliness with contentment is great gain."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Grateful for Your Body",
+      "declaration": "Thank God for what your small body is doing every hour without being told.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I praise you, for I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Somebody Else's Gladness",
+      "declaration": "Other people are glad about you too — grandparents, friends, strangers in shops.",
+      "scripture": {
+        "ref": "Romans 12:15",
+        "text": "Rejoice with those who rejoice."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Thank You Out Loud",
+      "declaration": "We will say thank you out loud in front of you until you say it too.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Joy Deeper Than Mood",
+      "declaration": "There is a gladness underneath a hard day. May you learn to find it.",
+      "scripture": {
+        "ref": "Nehemiah 8:10",
+        "text": "The joy of the Lord is your strength."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Remembering This Year",
+      "declaration": "We will remember this year. Some of it we will forget, and it will still have shaped you.",
+      "scripture": {
+        "ref": "Psalm 77:11",
+        "text": "I will remember the deeds of the Lord."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Not Comparing You",
+      "declaration": "We are not comparing you to anyone. Your growing is yours and it is a joy.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Gladness at the Door",
+      "declaration": "May people be glad when you arrive, all your life. It starts with our faces now.",
+      "scripture": {
+        "ref": "Numbers 6:25",
+        "text": "The Lord make his face shine on you."
+      }
+    },
+    {
+      "day": 20,
+      "title": "A Full Table",
+      "declaration": "There is enough at this table for you. There always will be.",
+      "scripture": {
+        "ref": "Psalm 23:5",
+        "text": "You prepare a table before me."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Singing Anyway",
+      "declaration": "We sing even when we are exhausted. You are learning that joy is a decision.",
+      "scripture": {
+        "ref": "Psalm 100:2",
+        "text": "Come before him with joyful songs."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Gratitude Before Sleep",
+      "declaration": "Naming one good thing before sleep is a habit worth having for eighty years.",
+      "scripture": {
+        "ref": "Psalm 4:8",
+        "text": "In peace I will lie down and sleep."
+      }
+    },
+    {
+      "day": 23,
+      "title": "New Mercy Each Morning",
+      "declaration": "Every morning starts again, however the night went.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Given, Not Owed",
+      "declaration": "You were given to us. Nobody was owed you, and that makes you better, not less.",
+      "scripture": {
+        "ref": "1 Samuel 1:27",
+        "text": "The Lord has granted me what I asked of him."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Play Is Holy",
+      "declaration": "Playing with you is not time off from something more important. It is the important thing.",
+      "scripture": {
+        "ref": "Zechariah 8:5",
+        "text": "The streets will be filled with boys and girls playing."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Thankful for Help",
+      "declaration": "Thank God for everyone who has helped this year. We were not meant to do it alone.",
+      "scripture": {
+        "ref": "Galatians 6:2",
+        "text": "Carry each other's burdens."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Gladness Is Contagious",
+      "declaration": "Cheerfulness spreads. You are already changing the mood of rooms.",
+      "scripture": {
+        "ref": "Proverbs 15:30",
+        "text": "A cheerful look brings joy to the heart."
+      }
+    },
+    {
+      "day": 28,
+      "title": "More Good Coming",
+      "declaration": "This is not the last good thing that will happen. God has not run out.",
+      "scripture": {
+        "ref": "Psalm 84:11",
+        "text": "No good thing does he withhold."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Joy Nobody Takes",
+      "declaration": "There is a joy that cannot be taken from you, because nobody gave it.",
+      "scripture": {
+        "ref": "John 16:22",
+        "text": "No one will take away your joy."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Grateful for This House",
+      "declaration": "Somewhere to belong is a real gift. Not everyone has one, and you do.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carrying the Gladness",
+      "declaration": "The noticing we are practising now is a habit we will keep. It is for the years ahead.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:16",
+        "text": "Rejoice always."
+      }
+    }
+  ]
+}

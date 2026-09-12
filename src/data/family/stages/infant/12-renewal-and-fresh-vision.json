@@ -1,0 +1,325 @@
+{
+  "stage": "infant",
+  "month": 12,
+  "slug": "renewal-and-fresh-vision",
+  "title": "Renewal & Fresh Vision",
+  "intro": "The end of a first year is a strange thing to mark, because so little of it will be remembered by the person who lived it. This month looks back on it honestly and forward without dread — a year that changed everyone, a child who is becoming themselves, and mercy that does not run out.",
+  "keyScriptures": [
+    {
+      "ref": "Isaiah 43:19",
+      "text": "See, I am doing a new thing! Now it springs up; do you not perceive it?"
+    },
+    {
+      "ref": "Lamentations 3:22-23",
+      "text": "His compassions never fail. They are new every morning."
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "A Year That Changed Everyone",
+      "declaration": "This year changed everyone in this house, not only you. That is worth saying out loud.",
+      "parentsPrayer": "Father, thank You for what this year did in us. We would not undo it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Look Back Kindly",
+      "declaration": "There were parts of this year we got wrong. They are covered, and they are not the summary.",
+      "parentsPrayer": "Lord, take the shame out of what we got wrong this year. Let mercy have the last word. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Becoming Yourself",
+      "declaration": "You are becoming a particular person, and it is happening in front of us. We are trying to pay attention while it does.",
+      "parentsPrayer": "God, thank You for who this child is turning out to be. Help us love that person, not an imagined one. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Into the Next Year",
+      "declaration": "God is already in the next year. Whatever it holds, He arrived there first and is not anxious about any of it.",
+      "parentsPrayer": "Father, go before us into this next year. Let us walk into it expectant. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "A Year That Changed Us",
+      "declaration": "This year changed everyone here, not only you. That is worth saying out loud.",
+      "scripture": {
+        "ref": "2 Corinthians 5:17",
+        "text": "The new creation has come."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Look Back Kindly",
+      "declaration": "There is much we got wrong. It is covered, and it is not the summary of the year.",
+      "scripture": {
+        "ref": "Psalm 103:14",
+        "text": "He knows how we are formed."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Every Morning Started Again",
+      "declaration": "Every morning this year started again, however the night went. That never ran out.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Becoming Someone",
+      "declaration": "You are becoming a particular person, and we are watching it happen.",
+      "scripture": {
+        "ref": "Psalm 139:16",
+        "text": "Your eyes saw my unformed body."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Something New",
+      "declaration": "God is doing something new, and some of it is already starting where nobody can see.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing!"
+      }
+    },
+    {
+      "day": 6,
+      "title": "Count What Grew",
+      "declaration": "Look at what grew this year. Almost all of it happened while nobody was watching.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "The seed sprouts and grows, though he does not know how."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Even the Hard Parts Used",
+      "declaration": "Even the hard parts of this year were used. That is not the same as saying they were good.",
+      "scripture": {
+        "ref": "Romans 8:28",
+        "text": "In all things God works for the good of those who love him."
+      }
+    },
+    {
+      "day": 8,
+      "title": "No Schedule Being Failed",
+      "declaration": "You are not behind and neither are we. There is no schedule being failed here.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Remembering For You",
+      "declaration": "We will remember this year for you until you are old enough to be told about it.",
+      "scripture": {
+        "ref": "Luke 2:19",
+        "text": "Mary treasured up all these things."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Name Who Helped",
+      "declaration": "Thank God for everyone who helped this year. We will name them out loud.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances."
+      }
+    },
+    {
+      "day": 11,
+      "title": "A Clean Page",
+      "declaration": "There is a clean page ahead — not a page with the old writing showing through.",
+      "scripture": {
+        "ref": "Isaiah 1:18",
+        "text": "They shall be as white as snow."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Put One Thing Down",
+      "declaration": "There is one thing we will not carry into next year. We are choosing it deliberately.",
+      "scripture": {
+        "ref": "Hebrews 12:1",
+        "text": "Let us throw off everything that hinders."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Grown More Than We Noticed",
+      "declaration": "You have changed almost beyond recognition, gradually, without any of it being obvious.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Hope for the Year Ahead",
+      "declaration": "We are allowed to expect good things. Hoping is not asking for disappointment.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "Plans to give you hope and a future."
+      }
+    },
+    {
+      "day": 15,
+      "title": "God Was Here",
+      "declaration": "Look back and find where God turned up. It is clearer now than it was at the time.",
+      "scripture": {
+        "ref": "Genesis 28:16",
+        "text": "Surely the Lord is in this place, and I was not aware of it."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Same God Next Year",
+      "declaration": "Everything else about next year is unknown. The One going with us is not.",
+      "scripture": {
+        "ref": "Hebrews 13:8",
+        "text": "Jesus Christ is the same yesterday and today and forever."
+      }
+    },
+    {
+      "day": 17,
+      "title": "We Made It",
+      "declaration": "We got through the whole year. That is not nothing and it deserves marking.",
+      "scripture": {
+        "ref": "1 Samuel 7:12",
+        "text": "Thus far the Lord has helped us."
+      }
+    },
+    {
+      "day": 18,
+      "title": "New Things Feel Odd",
+      "declaration": "The next stage will feel strange before it feels normal. That is not a warning.",
+      "scripture": {
+        "ref": "Isaiah 42:9",
+        "text": "New things I declare."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Rest Before Starting",
+      "declaration": "We will rest before charging into the next year. Starting depleted is how good plans die.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Get some rest."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Nobody Here Is Finished",
+      "declaration": "None of us is finished. God does not abandon half-built things, in you or in us.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He will carry it on to completion."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Forgiven for This Year",
+      "declaration": "Whatever we got wrong is forgiven, not filed away. We can start again.",
+      "scripture": {
+        "ref": "1 John 1:9",
+        "text": "He is faithful and just and will forgive us our sins."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Say Thank You",
+      "declaration": "Before the year ends, tell someone what they did for us. Do not save it up.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:11",
+        "text": "Encourage one another and build each other up."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Streams in Dry Places",
+      "declaration": "God does good things in unpromising places. Nothing here is written off.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "Streams in the wasteland."
+      }
+    },
+    {
+      "day": 24,
+      "title": "A New Name Ahead",
+      "declaration": "There are good names waiting for you that nobody has called you yet.",
+      "scripture": {
+        "ref": "Isaiah 62:2",
+        "text": "You will be called by a new name."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Walk, Do Not Charge",
+      "declaration": "We will walk into the next year rather than sprint at it. Walking lasts longer.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Walk humbly with your God."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Loved All the Way Through",
+      "declaration": "You were loved on every day of this year, including the ones we would rather forget.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Habits Over Resolutions",
+      "declaration": "We will change one habit rather than make ten promises. That is how anything sticks.",
+      "scripture": {
+        "ref": "1 Corinthians 9:27",
+        "text": "I make it my slave."
+      }
+    },
+    {
+      "day": 28,
+      "title": "More Ahead Than Behind",
+      "declaration": "There is far more ahead of you than behind. This was only the first year of it.",
+      "scripture": {
+        "ref": "Proverbs 4:18",
+        "text": "The path of the righteous is like the morning sun, shining ever brighter."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Told Again Next Year",
+      "declaration": "Everything said over you this year will be said again. You will hear it until you know it.",
+      "scripture": {
+        "ref": "Deuteronomy 6:7",
+        "text": "Impress them on your children."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Given Back Daily",
+      "declaration": "You were given to us and we give you back daily. That will not change as you grow.",
+      "scripture": {
+        "ref": "1 Samuel 1:28",
+        "text": "So now I give him to the Lord."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Carried Into the New",
+      "declaration": "Everything from this year comes with us. We start the next one carrying all of it.",
+      "scripture": {
+        "ref": "Isaiah 46:4",
+        "text": "I have made you and I will carry you."
+      }
+    }
+  ]
+}

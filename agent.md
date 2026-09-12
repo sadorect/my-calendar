@@ -120,6 +120,164 @@ The biometric lock remains a *device* lock and is unrelated to the account.
 - One account = one blob. Sharing a pregnancy between two accounts (both
   parents, separate logins) would need a second concept and is not designed.
 
+### Phase 9: Family Whispers — many children, many stages (2026-08-24)
+
+The app grows from one pregnancy to a family. A profile per child, each in a
+life stage, each owning their own favourites, journal and spoken days. **The
+womb track is untouched** — same content, same date maths, same screens — and a
+household with one child never sees a switcher, a stage or anything else that
+implies a concept they did not ask for.
+
+Two content tracks, because the addressing genuinely differs:
+
+| Track  | Address                                  | Repeats |
+| ------ | ---------------------------------------- | ------- |
+| `womb` | day of pregnancy 1..280, 9 uneven months | never   |
+| `year` | calendar month 1..12 + day of month      | yearly  |
+
+The twelve evergreen themes belong to the seven post-birth stages. Pregnancy
+keeps its nine months: re-cutting 280 written declarations onto a structure the
+timeline does not use would break the validator, the tests and what current
+users see, to no one's benefit.
+
+#### Done
+
+- [x] `src/data/family/stages.js` — the seven stages, their age ranges and the
+      auto-derivation from a birth date. Ranges are half-open, so the birthday
+      belongs to the older stage and no child is ever in two at once.
+- [x] `src/services/familyState.js` — the version 2 blob, and `migrateState`,
+      which takes an absent, version 1 or version 2 blob and is idempotent.
+- [x] Profile-scoped store: `profiles`, `activeProfile`, `activeStage`,
+      `activeTrack`, `activeData`, and CRUD. The public surface the Birth
+      components use (`isFavourite`, `journalFor`, `toggleSpoken`, `babyName`)
+      kept its signatures, so they did not churn.
+- [x] `mergeState.js` merges per profile, and profiles union by id.
+- [x] `BirthProfileSwitcher.vue` (hidden below two children) and
+      `BirthChildren.vue` in Settings — add, rename, birthday, stage, notes,
+      remove with confirmation.
+- [x] `BirthStagePlaceholder.vue` — an honest "being written" screen for a
+      stage with no content yet, instead of a pregnancy screen with nothing
+      behind it.
+- [x] 34 new unit tests (184 total) and an e2e covering onboard → add child →
+      switch → restart.
+
+#### The version 1 mirror, and why it exists
+
+Sync is live and `VITE_SYNC_URL` is set on Vercel, so this migration runs
+against **real accounts**, not just local storage. This app's own history says
+installs lag: a device holding an old service worker can run version 1 code for
+days. A version 2 blob with no top-level `journal` would look, to that device,
+like a user who had cleared it — and it would push that back.
+
+So a version 2 blob carries a *mirror* of the primary womb child in the version
+1 fields, and `reconcileLegacyMirror` folds anything an old client wrote back
+into the profile on load. Two rules make it safe:
+
+- The migrated profile id is **fixed** (`womb-1`), not random. Two devices
+  migrating the same account offline would otherwise mint two ids and the union
+  would hand the user duplicate children.
+- **A merge never clears a field to empty.** A version 1 blob migrated for
+  merging is blank everywhere version 1 cannot reach and stamped with the moment
+  it synced, so it always looks newest; whole-record "newest wins" would let a
+  stale device erase the notes, photo and stage of a child it cannot see. Caught
+  by a test, not by inspection.
+
+Remove the mirror only once no version 1 client can plausibly still be out
+there.
+
+#### Decisions taken with the user
+
+- Womb keeps its nine months; the twelve themes are for the born stages.
+- Rebrand is **display name only** — the origin, the TWA package id and the
+  icons stay, so nobody loses their IndexedDB or their installed app.
+- Content for School Years and Teen Years is written one theme first, for the
+  voice to be corrected before the other 22 month-files are produced.
+
+#### The `year` track, and the first theme (same day)
+
+The born-stage track is built and readable in the app.
+
+- [x] `src/services/stageTimeline.js` — calendar month + day-of-month, four
+      weekly cards with the tail of the month absorbed into week 4 rather than a
+      fifth card most months would not fill.
+- [x] `src/data/family/themes.js` — the twelve evergreen themes, one per
+      calendar month, the same twelve for every stage.
+- [x] `src/data/family/index.js` — loader and a validator that throws at module
+      load on a file whose month, stage or slug disagree with where it sits.
+- [x] **Theme 1, Identity & Belonging, written for School Years and Teen
+      Years**: intro, key Scriptures, 4 weekly declarations with a parents'
+      prayer, and 31 daily declarations each.
+- [x] `BirthStageToday`, `BirthStageMonth`, `BirthStageWeeks`,
+      `BirthStageSaved`, `StageDeclarationCard` — speak, mark-as-spoken,
+      favourite, share as text or image, and a per-day journal.
+- [x] `src/data/family/README.md` — the authoring guide for the remaining 22
+      month-files.
+
+Three decisions inside that are worth not re-litigating:
+
+- **Born-stage content is written in the second person with no vocative.** The
+  pregnancy content uses `Little one` as an address the app swaps for a chosen
+  name; that is wrong over a fifteen-year-old and reads badly for the many users
+  who never set a name. A test asserts no born-stage declaration contains it.
+- **Favourites are filed by position** (`school:m01:d03`), so a declaration
+  saved last January is still saved this January — the point of an evergreen
+  theme. **Journal and spoken days are filed by real date**, because a note
+  about your teenager belongs to the day it happened.
+- **Month stepping exists because a theme is only "today" for one month a
+  year.** Without it, January's content would be unreachable until January, and
+  the e2e for it would only pass in January.
+
+`StageDeclarationCard` is a sibling of `DeclarationCard`, not a generalisation
+of it: that component addresses content by day of pregnancy and is the most-used
+screen in the shipped app, and the point of this change is that the womb track
+does not move.
+
+#### All twelve themes, both stages (same day)
+
+School Years and Teen Years are **content-complete**: 12 themes each, 372 daily
+and 48 weekly declarations per stage, 840 declarations in total. Within a stage
+every day title and every declaration is unique across the whole year, and the
+tests assert it — titles are what the month grid, the Saved list and the share
+card show, so a repeat eleven months later reads as a bug rather than a refrain.
+
+**Content is now lazy, per stage, and that was a bug fix rather than a nicety.**
+Importing all 24 files statically put them in the *eagerly loaded* bundle —
+`App.vue` imports the pregnancy store, so anything the store imports is on the
+first-paint path — and the main chunk went from 389KB to 622KB. Six finished
+stages would have been about a megabyte, downloaded by every visitor including
+the five stages they have no child in. `index.js` now uses `import.meta.glob`
+without `eager` and fetches one stage on demand; the main chunk is back to
+399KB. Lookups stay synchronous and answer `null` until the fetch lands, which
+is the same answer they already gave for unwritten content, so no UI changed.
+
+The one subtlety: the content cache is a plain module-level object, outside Vue,
+so nothing would recompute when a fetch resolves. `tracksContentLoads()` is
+called inside each content computed for its dependency rather than its value,
+and a watcher on the active stage does the fetching — a computed that started
+its own fetch would fire again on the result.
+
+Adding a month file now needs no code edit at all: the glob makes the filename
+the registration, which also means a file in the wrong directory quietly becomes
+a different month. The validator is what catches that.
+
+#### Still open
+
+- The other four born stages have no content: infant, toddler, youngAdult,
+  adult. ~372 daily + 48 weekly each. `src/data/family/README.md` is the guide.
+- Keepsake and printable export for born stages (`keepsake.js` is womb-shaped).
+- Photos: `photoId` is in the model but there is no photo store yet. Photos must
+  **not** sync — the server caps a body at 4MB and every push sends the whole
+  blob.
+- Reminders still follow the active child only. With several children this
+  should become one digest at the chosen time, not one notification each.
+- The app is still named "Birth Calendar" in the manifest; the agreed
+  display-name-only rebrand to Family Whispers has not been done.
+- Toddler Years content landed 2026-09-12 (12 themes). youngAdult and adult
+  remain unwritten.
+- **Phase 10, planned:** a family-level prayer journal opened from a floating
+  card, like the Calendar pill. Plan and resumable state in
+  `docs/prayer-journal-plan.md`.
+
 ## Current Status
 
 - **Date**: August 21, 2026

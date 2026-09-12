@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 12,
+  "slug": "renewal-and-fresh-vision",
+  "title": "Renewal & Fresh Vision",
+  "intro": "Small children understand fresh starts better than adults do — they forgive by lunchtime and forget by teatime. This month borrows that and makes it a habit: today is new, sorry works, and you are not stuck being whoever you were this morning.",
+  "keyScriptures": [
+    {
+      "ref": "Lamentations 3:23",
+      "text": "His mercies are new every morning."
+    },
+    {
+      "ref": "Isaiah 43:19",
+      "text": "See, I am doing a new thing!"
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Today Is New",
+      "declaration": "Today is a new day. Whatever happened yesterday does not have to come with you into it.",
+      "parentsPrayer": "Father, make every morning here a fresh start. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Are Not Stuck",
+      "declaration": "You are not stuck being whoever you were this morning. People can change, and you already have.",
+      "parentsPrayer": "Lord, help us see who our child is becoming rather than who they were last week. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Sorry Works",
+      "declaration": "Sorry actually works here. It is not just a word you have to say.",
+      "parentsPrayer": "God, let forgiveness be real in this house, not just a rule. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Look How You Have Grown",
+      "declaration": "You can do things now that you could not do a little while ago. Look how you have grown.",
+      "parentsPrayer": "Father, thank You for how much this child has grown. Help us notice out loud. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Today Is New",
+      "declaration": "Today is a new day. Yesterday does not have to come with you.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 2,
+      "title": "You Are Not Stuck",
+      "declaration": "You are not stuck being who you were this morning. You can change.",
+      "scripture": {
+        "ref": "2 Corinthians 5:17",
+        "text": "The new creation has come."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Sorry Works",
+      "declaration": "Sorry really works. It is not just a word you have to say.",
+      "scripture": {
+        "ref": "1 John 1:9",
+        "text": "He is faithful and just and will forgive us."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Look How You Have Grown",
+      "declaration": "You can do things now you could not do before. Look at that.",
+      "scripture": {
+        "ref": "Luke 2:40",
+        "text": "The child grew and became strong."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Starting Again",
+      "declaration": "You can start again as many times as you need. Nobody is counting.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 6,
+      "title": "God Does New Things",
+      "declaration": "God is always doing something new. Some of it is happening in you.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing!"
+      }
+    },
+    {
+      "day": 7,
+      "title": "A Clean Page",
+      "declaration": "This morning is a clean page. Nothing is written on it yet.",
+      "scripture": {
+        "ref": "Isaiah 1:18",
+        "text": "They shall be as white as snow."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Not the Same as Last Year",
+      "declaration": "You are not the same as you were last year. That is a good thing.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He will carry it on to completion."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Letting Something Go",
+      "declaration": "There is one thing you can stop carrying today. Put it down.",
+      "scripture": {
+        "ref": "Hebrews 12:1",
+        "text": "Let us throw off everything that hinders."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Forgiving Quickly",
+      "declaration": "You are very good at forgiving quickly. Do not lose that.",
+      "scripture": {
+        "ref": "Colossians 3:13",
+        "text": "Forgive as the Lord forgave you."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Trying Something New",
+      "declaration": "New things feel funny before they feel normal. That is not a reason to stop.",
+      "scripture": {
+        "ref": "Isaiah 42:9",
+        "text": "New things I declare."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Yesterday Is Finished",
+      "declaration": "Yesterday is finished. It cannot follow you around.",
+      "scripture": {
+        "ref": "Philippians 3:13",
+        "text": "Forgetting what is behind."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Being Loved While You Change",
+      "declaration": "You are loved the same while you change. Love does not have to catch up.",
+      "scripture": {
+        "ref": "Hebrews 13:8",
+        "text": "Jesus Christ is the same yesterday and today and forever."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Good Things Ahead",
+      "declaration": "There are good things coming that have not happened yet.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "Plans to give you hope and a future."
+      }
+    },
+    {
+      "day": 15,
+      "title": "God Is in Tomorrow",
+      "declaration": "God is already in tomorrow. He got there first.",
+      "scripture": {
+        "ref": "Psalm 139:5",
+        "text": "You hem me in behind and before."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Growing Takes Time",
+      "declaration": "Growing takes ages and it is happening anyway, every day.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "The seed sprouts and grows."
+      }
+    },
+    {
+      "day": 17,
+      "title": "A New Name",
+      "declaration": "God has good names for you that nobody has called you yet.",
+      "scripture": {
+        "ref": "Isaiah 62:2",
+        "text": "You will be called by a new name."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Nobody Is Finished",
+      "declaration": "Nobody in this house is finished. We are all still growing.",
+      "scripture": {
+        "ref": "2 Corinthians 3:18",
+        "text": "Being transformed into his image."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Hoping Is Allowed",
+      "declaration": "You are allowed to look forward to things. Hoping is a good thing to do.",
+      "scripture": {
+        "ref": "Romans 15:13",
+        "text": "May the God of hope fill you with all joy."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Mistakes Do Not Stick",
+      "declaration": "Your mistakes do not stick to you. They get washed off.",
+      "scripture": {
+        "ref": "Psalm 103:12",
+        "text": "As far as the east is from the west."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Remembering Good Bits",
+      "declaration": "Remembering the good bits of a day is a nice thing to do at bedtime.",
+      "scripture": {
+        "ref": "Psalm 77:11",
+        "text": "I will remember the deeds of the Lord."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Trying the Hard Thing",
+      "declaration": "The thing you could not do yesterday might work today. Have a go.",
+      "scripture": {
+        "ref": "Philippians 4:13",
+        "text": "I can do all this through him who gives me strength."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Not Rushing to Grow Up",
+      "declaration": "You do not have to hurry to be big. Being your age is good.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Saying Thank You for the Year",
+      "declaration": "Say thank you for the things that happened. Name a few out loud.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Being Braver Than Before",
+      "declaration": "You are braver than you used to be. That keeps happening.",
+      "scripture": {
+        "ref": "Psalm 84:7",
+        "text": "They go from strength to strength."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Doing One Thing Differently",
+      "declaration": "You can change one thing. One is easier than lots and it works better.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Loved All the Way Through",
+      "declaration": "You were loved on every single day, even the horrible ones.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing can separate us from the love of God."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Walking Into It",
+      "declaration": "We will walk into the new bit rather than run at it. Walking lasts longer.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Walk humbly with your God."
+      }
+    },
+    {
+      "day": 29,
+      "title": "More Ahead Than Behind",
+      "declaration": "There is much more in front of you than behind you. You have only just started.",
+      "scripture": {
+        "ref": "Proverbs 4:18",
+        "text": "Shining ever brighter till the full light of day."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Still the Same God",
+      "declaration": "Everything changes and God does not. That is why we are not worried.",
+      "scripture": {
+        "ref": "Malachi 3:6",
+        "text": "I the Lord do not change."
+      }
+    },
+    {
+      "day": 31,
+      "title": "All of It Comes With Us",
+      "declaration": "Everything good you learned comes with you into what is next.",
+      "scripture": {
+        "ref": "Isaiah 46:4",
+        "text": "I have made you and I will carry you."
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "stage": "toddler",
+  "month": 7,
+  "slug": "joy-and-gratitude",
+  "title": "Joy & Gratitude",
+  "intro": "Small children are naturally delighted and naturally ungrateful, both at full volume. This month leans into the first and gently builds the second — noticing out loud, saying thank you, and learning that gladness is not the same as getting your way.",
+  "keyScriptures": [
+    {
+      "ref": "Psalm 118:24",
+      "text": "This is the day the Lord has made; let us rejoice and be glad in it."
+    },
+    {
+      "ref": "1 Thessalonians 5:18",
+      "text": "Give thanks in all circumstances."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Today Is a Gift",
+      "declaration": "Today was made and given to you. It is not owed to anyone, which is exactly what makes it good.",
+      "parentsPrayer": "Father, let this family notice today rather than rushing past it. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Saying Thank You",
+      "declaration": "Thank you is a small thing to say and it changes the person saying it. We will practise it here.",
+      "parentsPrayer": "Lord, make gratitude a habit in this house rather than a rule we enforce. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Glad Is Not Getting Your Way",
+      "declaration": "You can be happy even when you did not get what you wanted. That takes practice and it is worth having.",
+      "parentsPrayer": "God, teach our child a gladness that does not depend on getting their way. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Laughing Together",
+      "declaration": "There is a lot of laughing in this family, and you are part of why. May you remember that.",
+      "parentsPrayer": "Father, fill this house with laughter our child remembers when they are grown. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Today Is a Gift",
+      "declaration": "Today was made and given to you. Nobody was owed it.",
+      "scripture": {
+        "ref": "Psalm 118:24",
+        "text": "This is the day the Lord has made."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Say Thank You",
+      "declaration": "Thank you is small to say and it makes people glad. Say it lots.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:18",
+        "text": "Give thanks in all circumstances."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Find One Good Thing",
+      "declaration": "There is something good in today. Find it and say it out loud.",
+      "scripture": {
+        "ref": "Philippians 4:8",
+        "text": "Whatever is true, whatever is noble... think about such things."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Glad Without Getting Your Way",
+      "declaration": "You can be happy even when you did not get what you wanted. That is a big thing to learn.",
+      "scripture": {
+        "ref": "Philippians 4:11",
+        "text": "I have learned to be content."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Everything Good Is a Gift",
+      "declaration": "Everything good came from somewhere. God gave it.",
+      "scripture": {
+        "ref": "James 1:17",
+        "text": "Every good and perfect gift is from above."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Laughing Is Good for You",
+      "declaration": "Laughing is good for you. God made it on purpose.",
+      "scripture": {
+        "ref": "Proverbs 17:22",
+        "text": "A cheerful heart is good medicine."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Small Things Are Most Things",
+      "declaration": "Warm food, a story, someone to hold. Most of a good day is small.",
+      "scripture": {
+        "ref": "Psalm 103:2",
+        "text": "Forget not all his benefits."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Thank the People",
+      "declaration": "Tell people thank you while they are standing there. Do not save it.",
+      "scripture": {
+        "ref": "Colossians 3:15",
+        "text": "And be thankful."
+      }
+    },
+    {
+      "day": 9,
+      "title": "You Have Enough",
+      "declaration": "You have enough today. Noticing that is what being grateful means.",
+      "scripture": {
+        "ref": "1 Timothy 6:6",
+        "text": "Godliness with contentment is great gain."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Singing",
+      "declaration": "Singing makes a day better. Sing even if it sounds funny.",
+      "scripture": {
+        "ref": "Psalm 100:2",
+        "text": "Come before him with joyful songs."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Glad for Someone Else",
+      "declaration": "When someone else gets a turn or a treat, you can be glad for them.",
+      "scripture": {
+        "ref": "Romans 12:15",
+        "text": "Rejoice with those who rejoice."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Wanting Everything",
+      "declaration": "Wanting everything makes you enjoy nothing. Wanting less works better.",
+      "scripture": {
+        "ref": "Hebrews 13:5",
+        "text": "Be content with what you have."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Grateful on a Bad Day",
+      "declaration": "Even on a bad day there is something to be thankful for. It does not make the bad bit fake.",
+      "scripture": {
+        "ref": "Habakkuk 3:18",
+        "text": "Yet I will rejoice in the Lord."
+      }
+    },
+    {
+      "day": 14,
+      "title": "God Is Glad About You",
+      "declaration": "God is glad about you. That is a reason to be happy that never runs out.",
+      "scripture": {
+        "ref": "Zephaniah 3:17",
+        "text": "He will rejoice over you with singing."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Say It at Dinner",
+      "declaration": "At dinner we will each say one good thing. That is a habit worth keeping.",
+      "scripture": {
+        "ref": "Psalm 107:1",
+        "text": "Give thanks to the Lord, for he is good."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Made to Enjoy Things",
+      "declaration": "God made things taste nice and feel nice on purpose. Enjoy them.",
+      "scripture": {
+        "ref": "1 Timothy 6:17",
+        "text": "God richly provides us with everything for our enjoyment."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Thankful for People",
+      "declaration": "People are the best presents. Notice who you have got.",
+      "scripture": {
+        "ref": "Philippians 1:3",
+        "text": "I thank my God every time I remember you."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Not Comparing",
+      "declaration": "Looking at what someone else has makes you sad. Look at what you have.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Playing Is Good",
+      "declaration": "Playing is not a waste of time. God made you to play.",
+      "scripture": {
+        "ref": "Zechariah 8:5",
+        "text": "The streets will be filled with boys and girls playing."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Thank You Before",
+      "declaration": "You can say thank you before you get it, if you know it is coming.",
+      "scripture": {
+        "ref": "Philippians 4:6",
+        "text": "With thanksgiving, present your requests to God."
+      }
+    },
+    {
+      "day": 21,
+      "title": "A New Day",
+      "declaration": "Every morning starts again. Yesterday does not have to come with you.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Being Cheerful Helps",
+      "declaration": "A cheerful face makes other people feel better. You can give that away for free.",
+      "scripture": {
+        "ref": "Proverbs 15:30",
+        "text": "A cheerful look brings joy to the heart."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Giving Makes You Glad",
+      "declaration": "Giving something away makes you gladder than keeping it. It is strange and true.",
+      "scripture": {
+        "ref": "Acts 20:35",
+        "text": "It is more blessed to give than to receive."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Thankful for Your Body",
+      "declaration": "Your legs run and your hands hold. Say thank you for what your body does.",
+      "scripture": {
+        "ref": "Psalm 139:14",
+        "text": "I am fearfully and wonderfully made."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Remembering Good Days",
+      "declaration": "Remembering a good day makes you happy twice.",
+      "scripture": {
+        "ref": "Psalm 77:11",
+        "text": "I will remember the deeds of the Lord."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Enough to Share",
+      "declaration": "There is enough here to share. You will not run out.",
+      "scripture": {
+        "ref": "Philippians 4:19",
+        "text": "My God will meet all your needs."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Thankful for Home",
+      "declaration": "Having somewhere to come home to is a big gift. Not everyone has one.",
+      "scripture": {
+        "ref": "Psalm 68:6",
+        "text": "God sets the lonely in families."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Joy Nobody Can Take",
+      "declaration": "There is a happy that nobody can take away, because nobody gave it to you.",
+      "scripture": {
+        "ref": "John 16:22",
+        "text": "No one will take away your joy."
+      }
+    },
+    {
+      "day": 29,
+      "title": "More Good Coming",
+      "declaration": "More good things are coming. God has not run out of them.",
+      "scripture": {
+        "ref": "Psalm 84:11",
+        "text": "No good thing does he withhold."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Glad You Are Here",
+      "declaration": "We are glad you are here. That is not because of anything you did.",
+      "scripture": {
+        "ref": "Psalm 127:3",
+        "text": "Children are a heritage from the Lord."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Noticing Tomorrow Too",
+      "declaration": "We will keep noticing good things tomorrow. It is what we do here.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:16",
+        "text": "Rejoice always."
+      }
+    }
+  ]
+}

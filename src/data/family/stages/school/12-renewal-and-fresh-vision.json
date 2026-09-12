@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 12,
+  "slug": "renewal-and-fresh-vision",
+  "title": "Renewal & Fresh Vision",
+  "intro": "The last month of the year is where children learn what to do with the year they have had. This month teaches them to look back without shame and forward without dread — that mercy is new every morning, that they are not stuck as whoever they were in January, and that God is already in next year.",
+  "keyScriptures": [
+    {
+      "ref": "Isaiah 43:19",
+      "text": "See, I am doing a new thing! Now it springs up; do you not perceive it?"
+    },
+    {
+      "ref": "Lamentations 3:22-23",
+      "text": "His compassions never fail. They are new every morning."
+    }
+  ],
+  "palette": "dawn",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Looking Back Without Shame",
+      "declaration": "You can look at the year honestly without being ashamed of it. Every part of it, including the bad bits, has been used.",
+      "parentsPrayer": "Father, let our child look back on this year and see Your hand in it. Take the shame out of the hard parts. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Are Not Stuck",
+      "declaration": "You are not stuck as whoever you were in January. People change, and you have already changed more than you noticed.",
+      "parentsPrayer": "Lord, show our child how much they have grown. Let them believe change is possible for them. Amen."
+    },
+    {
+      "week": 3,
+      "title": "New Every Morning",
+      "declaration": "You do not have to wait for a new year to start again. Mercy turns up new every single morning.",
+      "parentsPrayer": "God, teach our child that starting again is always available. Make our home a place of fresh starts. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Something New Is Coming",
+      "declaration": "God is already in next year. Whatever is coming, He is there first, and He is bringing something new.",
+      "parentsPrayer": "Father, go before our child into the year ahead. Let them step into it expectant rather than afraid. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Look Back Kindly",
+      "declaration": "You can look at this year honestly without being ashamed of it. Be as kind to yourself as you would be to a friend.",
+      "scripture": {
+        "ref": "Psalm 103:14",
+        "text": "He knows how we are formed, he remembers that we are dust."
+      }
+    },
+    {
+      "day": 2,
+      "title": "It Was All Used",
+      "declaration": "Even the parts of this year that went wrong have been used for something. Nothing was wasted.",
+      "scripture": {
+        "ref": "Romans 8:28",
+        "text": "In all things God works for the good of those who love him."
+      }
+    },
+    {
+      "day": 3,
+      "title": "You Are Not Who You Were",
+      "declaration": "You are not stuck as whoever you were in January. You have already changed more than you noticed.",
+      "scripture": {
+        "ref": "2 Corinthians 5:17",
+        "text": "If anyone is in Christ, the new creation has come."
+      }
+    },
+    {
+      "day": 4,
+      "title": "New Every Morning",
+      "declaration": "You do not need a new year to start again. Mercy arrives new every single morning.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His compassions never fail. They are new every morning."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Something New",
+      "declaration": "God is doing something new, and some of it is already starting where you cannot see it yet.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing! Now it springs up; do you not perceive it?"
+      }
+    },
+    {
+      "day": 6,
+      "title": "Count What Grew",
+      "declaration": "Look for what grew this year — a skill, a friendship, a bit of courage. Growth is easy to miss from inside.",
+      "scripture": {
+        "ref": "Mark 4:27",
+        "text": "The seed sprouts and grows, though he does not know how."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Forgive the Year",
+      "declaration": "Some things went wrong that were not your fault. You are allowed to put them down before the new year.",
+      "scripture": {
+        "ref": "Philippians 3:13",
+        "text": "Forgetting what is behind and straining toward what is ahead."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Say Sorry Before the Year Ends",
+      "declaration": "If something is unfinished with someone, this is a good week to fix it.",
+      "scripture": {
+        "ref": "Matthew 5:24",
+        "text": "First go and be reconciled to them."
+      }
+    },
+    {
+      "day": 9,
+      "title": "What You Learned",
+      "declaration": "Write down one thing you learned this year. It is worth keeping where you can find it.",
+      "scripture": {
+        "ref": "Deuteronomy 6:12",
+        "text": "Be careful that you do not forget the Lord."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Not Behind",
+      "declaration": "You are not behind. There is no schedule you are failing to keep up with.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:11",
+        "text": "He has made everything beautiful in its time."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Try Again in the New Year",
+      "declaration": "The thing you gave up on can be picked up again. Nothing is closed permanently at your age.",
+      "scripture": {
+        "ref": "Joel 2:25",
+        "text": "I will repay you for the years the locusts have eaten."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Thank Someone",
+      "declaration": "Before this year finishes, tell someone what they meant to you. Do not wait for a better moment.",
+      "scripture": {
+        "ref": "1 Thessalonians 5:11",
+        "text": "Encourage one another and build each other up."
+      }
+    },
+    {
+      "day": 13,
+      "title": "God Was There",
+      "declaration": "Look back and find the places God turned up. They are usually clearer afterwards than at the time.",
+      "scripture": {
+        "ref": "Genesis 28:16",
+        "text": "Surely the Lord is in this place, and I was not aware of it."
+      }
+    },
+    {
+      "day": 14,
+      "title": "A Clean Page",
+      "declaration": "A new year is a clean page, and so is a new day. You get more fresh starts than you think.",
+      "scripture": {
+        "ref": "Isaiah 1:18",
+        "text": "Though your sins are like scarlet, they shall be as white as snow."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Hope for Next Year",
+      "declaration": "You are allowed to expect good things. Hoping is not asking to be disappointed.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "Plans to give you hope and a future."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Grown More Than You Know",
+      "declaration": "You are taller, kinder and braver than you were. Growth happens quietly.",
+      "scripture": {
+        "ref": "Luke 2:52",
+        "text": "Jesus grew in wisdom and stature."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Let Go of One Thing",
+      "declaration": "Choose one thing to stop carrying into next year. You do not have to take everything with you.",
+      "scripture": {
+        "ref": "Hebrews 12:1",
+        "text": "Let us throw off everything that hinders."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Someone to Be Kinder To",
+      "declaration": "Pick one person to be kinder to next year. Small plans work better than big ones.",
+      "scripture": {
+        "ref": "Galatians 6:10",
+        "text": "Let us do good to all people."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Rest Before You Start",
+      "declaration": "Rest at the end of a year before you charge into the next. You have earned the pause.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me by yourselves to a quiet place and get some rest."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Same God Next Year",
+      "declaration": "Everything else changes. The One looking after you is exactly the same in January.",
+      "scripture": {
+        "ref": "Hebrews 13:8",
+        "text": "Jesus Christ is the same yesterday and today and forever."
+      }
+    },
+    {
+      "day": 21,
+      "title": "You Made It",
+      "declaration": "You got through this whole year. That is not nothing, and it is worth saying out loud.",
+      "scripture": {
+        "ref": "1 Samuel 7:12",
+        "text": "Thus far the Lord has helped us."
+      }
+    },
+    {
+      "day": 22,
+      "title": "New Things Feel Odd",
+      "declaration": "New things feel strange before they feel normal. That is not a sign you should not do them.",
+      "scripture": {
+        "ref": "Isaiah 42:9",
+        "text": "See, the former things have taken place, and new things I declare."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Dream a Bit",
+      "declaration": "It is fine to want something and say it out loud. God is not annoyed by your hopes.",
+      "scripture": {
+        "ref": "Psalm 37:4",
+        "text": "Take delight in the Lord, and he will give you the desires of your heart."
+      }
+    },
+    {
+      "day": 24,
+      "title": "One Step Is a Plan",
+      "declaration": "A plan does not have to be big. One step is a plan, and it is more than most people make.",
+      "scripture": {
+        "ref": "Proverbs 16:3",
+        "text": "Commit to the Lord whatever you do, and he will establish your plans."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Do Not Carry Old Names",
+      "declaration": "Whatever anyone called you this year, you do not have to take it into the next one.",
+      "scripture": {
+        "ref": "Isaiah 62:2",
+        "text": "You will be called by a new name."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Remember on Purpose",
+      "declaration": "Remembering good things on purpose is how you get through the next hard bit.",
+      "scripture": {
+        "ref": "Psalm 77:11",
+        "text": "I will remember the deeds of the Lord."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Still Being Made",
+      "declaration": "You are not finished. God is still working, and He does not abandon half-done things.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Springs in the Desert",
+      "declaration": "God makes good things happen in unpromising places. Do not write off any part of your life.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "I am making a way in the wilderness and streams in the wasteland."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Go Gently Into It",
+      "declaration": "You do not have to charge at the new year. Walking into it is completely acceptable.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Walk humbly with your God."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Loved All the Way Through",
+      "declaration": "You were loved every day of this year, including the ones you would rather forget.",
+      "scripture": {
+        "ref": "Romans 8:38-39",
+        "text": "Nothing... will be able to separate us from the love of God."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It All With You",
+      "declaration": "Everything you have learned this year goes with you. You start the new one carrying all of it.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing! Do you not perceive it?"
+      }
+    }
+  ]
+}

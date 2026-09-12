@@ -1,0 +1,325 @@
+{
+  "stage": "teen",
+  "month": 11,
+  "slug": "peace-and-rest",
+  "title": "Peace & Rest",
+  "intro": "Teenagers are tired in a way that is not always about sleep. Between the noise, the pressure and a phone that never finishes, rest has become something they have to be given permission for. This month gives it — plainly, without making rest another thing to be good at.",
+  "keyScriptures": [
+    {
+      "ref": "Matthew 11:28-30",
+      "text": "Come to me, all you who are weary and burdened, and I will give you rest... my yoke is easy and my burden is light."
+    },
+    {
+      "ref": "Isaiah 26:3",
+      "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you."
+    }
+  ],
+  "palette": "twilight",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Rest Is Not Earned",
+      "declaration": "Rest is not the reward for having finished. It was built into the week before anyone had achieved anything, and it is available to you unfinished.",
+      "parentsPrayer": "Father, break the belief in our child that rest must be deserved. Let them stop without guilt. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Where the Weight Goes",
+      "declaration": "You are carrying things that were never assigned to you. There is somewhere to put them down, and doing so is not irresponsible.",
+      "parentsPrayer": "Lord, take from our child what is too heavy and not theirs. Show us what we have added. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Quiet Is a Skill",
+      "declaration": "Silence is uncomfortable at first because you are not used to it. It is a skill, and it is worth acquiring before you need it.",
+      "parentsPrayer": "God, give our child a taste for quiet. Let them be able to sit with their own thoughts. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Peace That Does Not Depend on Circumstances",
+      "declaration": "The peace on offer is not the absence of pressure. It is steadiness inside the pressure, which is the only kind that would be any use.",
+      "parentsPrayer": "Father, give our child a peace that holds when nothing is resolved. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Not Earned",
+      "declaration": "Rest is not a reward for finishing. It was built into the week before anyone had achieved anything.",
+      "scripture": {
+        "ref": "Genesis 2:2-3",
+        "text": "By the seventh day God had finished the work... and he rested."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Come as You Are",
+      "declaration": "The invitation is to the weary, not to the sorted. You do not have to tidy yourself up first.",
+      "scripture": {
+        "ref": "Matthew 11:28",
+        "text": "Come to me, all you who are weary and burdened, and I will give you rest."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Tired Is Not Only Sleep",
+      "declaration": "Some tiredness is not fixed by sleeping. Noise, pressure and comparison exhaust you differently.",
+      "scripture": {
+        "ref": "Psalm 23:3",
+        "text": "He refreshes my soul."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Set the Weight Down",
+      "declaration": "You are carrying things that were never assigned to you. Putting them down is not irresponsible.",
+      "scripture": {
+        "ref": "1 Peter 5:7",
+        "text": "Cast all your anxiety on him because he cares for you."
+      }
+    },
+    {
+      "day": 5,
+      "title": "The Phone Never Finishes",
+      "declaration": "There is no bottom to the feed. Nothing will tell you when to stop, so you have to decide it yourself.",
+      "scripture": {
+        "ref": "1 Corinthians 6:12",
+        "text": "I have the right to do anything, but I will not be mastered by anything."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Sleep Is Not Weakness",
+      "declaration": "Sleep is not lost time or lack of ambition. It is maintenance on the only body you were issued.",
+      "scripture": {
+        "ref": "Psalm 127:2",
+        "text": "In vain you rise early and stay up late... for he grants sleep to those he loves."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Quiet Is a Skill",
+      "declaration": "Silence is uncomfortable because you are out of practice. It is worth learning before you need it.",
+      "scripture": {
+        "ref": "Psalm 46:10",
+        "text": "Be still, and know that I am God."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Worry Is Not Preparation",
+      "declaration": "Worrying feels like doing something about tomorrow. It is not, and it charges you for the privilege.",
+      "scripture": {
+        "ref": "Matthew 6:27",
+        "text": "Can any one of you by worrying add a single hour to your life?"
+      }
+    },
+    {
+      "day": 9,
+      "title": "One Day's Worth",
+      "declaration": "Today has enough in it. You are not required to carry next year this evening.",
+      "scripture": {
+        "ref": "Matthew 6:34",
+        "text": "Do not worry about tomorrow, for tomorrow will worry about itself."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Peace That Guards",
+      "declaration": "God's peace does not explain the situation. It stands guard over your mind while it stays unresolved.",
+      "scripture": {
+        "ref": "Philippians 4:7",
+        "text": "The peace of God, which transcends all understanding, will guard your hearts and your minds."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Busy Is Not Important",
+      "declaration": "Busyness is not evidence of a life that matters. It is often evidence of not having chosen.",
+      "scripture": {
+        "ref": "Luke 10:41-42",
+        "text": "You are worried and upset about many things, but few things are needed."
+      }
+    },
+    {
+      "day": 12,
+      "title": "Say It Out Loud",
+      "declaration": "An anxiety said out loud to a person loses a surprising amount of its size.",
+      "scripture": {
+        "ref": "Proverbs 12:25",
+        "text": "Anxiety weighs down the heart, but a kind word cheers it up."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Not in Charge of Everything",
+      "declaration": "Some things are genuinely not yours to fix. Handing those back is maturity, not indifference.",
+      "scripture": {
+        "ref": "Psalm 55:22",
+        "text": "Cast your cares on the Lord and he will sustain you."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Rest Before Empty",
+      "declaration": "Rest before you have run out rather than after. Recovery is far more expensive than maintenance.",
+      "scripture": {
+        "ref": "Mark 6:31",
+        "text": "Come with me by yourselves to a quiet place and get some rest."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Stillness Is Not Laziness",
+      "declaration": "Sitting still with God is not wasted time. It is where a great deal of the actual work gets done.",
+      "scripture": {
+        "ref": "Psalm 62:1",
+        "text": "Truly my soul finds rest in God; my salvation comes from him."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Perfectionism Is Not a Virtue",
+      "declaration": "Perfectionism is not high standards. It is fear wearing a respectable coat, and it will not let you rest.",
+      "scripture": {
+        "ref": "Ecclesiastes 7:16",
+        "text": "Do not be overrighteous, neither be overwise — why destroy yourself?"
+      }
+    },
+    {
+      "day": 17,
+      "title": "You Do Not Have to Perform Here",
+      "declaration": "Home is meant to be a place where you can be unimpressive. You do not have to be on.",
+      "scripture": {
+        "ref": "Psalm 91:1",
+        "text": "Whoever dwells in the shelter of the Most High will rest in the shadow of the Almighty."
+      }
+    },
+    {
+      "day": 18,
+      "title": "A Whisper, Not a Shout",
+      "declaration": "God rarely competes with the noise. That is a practical argument for turning some of it down.",
+      "scripture": {
+        "ref": "1 Kings 19:12",
+        "text": "And after the fire came a gentle whisper."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Nothing to Prove",
+      "declaration": "You do not have to earn your place by being productive. It was given, and it is not on review.",
+      "scripture": {
+        "ref": "Ephesians 2:8-9",
+        "text": "It is by grace you have been saved, through faith... not by works."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Slow Is Not Behind",
+      "declaration": "Slowing down is not falling behind. Most things worth having are built at walking pace.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In repentance and rest is your salvation, in quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Rest for Your Mind",
+      "declaration": "Your mind needs rest as much as your body, and it does not get it from a different screen.",
+      "scripture": {
+        "ref": "Romans 12:2",
+        "text": "Be transformed by the renewing of your mind."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Not Everything Is Urgent",
+      "declaration": "Almost nothing is genuinely urgent. Learning that distinction will calm your whole decade.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything, and a season for every activity."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Peace With People",
+      "declaration": "Part of your peace depends on unresolved things with people. Do your half and let the rest be theirs.",
+      "scripture": {
+        "ref": "Romans 12:18",
+        "text": "If it is possible, as far as it depends on you, live at peace with everyone."
+      }
+    },
+    {
+      "day": 24,
+      "title": "The Weight You Were Not Given",
+      "declaration": "If it feels crushing, check whether it was ever yours. His yoke is described as light for a reason.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "For my yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Unfinished Is Allowed",
+      "declaration": "You will go to bed with things unfinished. That is a normal life, not a failed day.",
+      "scripture": {
+        "ref": "Lamentations 3:22-23",
+        "text": "His mercies... are new every morning."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Rhythm, Not Collapse",
+      "declaration": "Aim for a rhythm of work and rest rather than sprinting until you break. The second is not more dedicated.",
+      "scripture": {
+        "ref": "Exodus 20:9-10",
+        "text": "Six days you shall labour... but the seventh day is a sabbath."
+      }
+    },
+    {
+      "day": 27,
+      "title": "Play Is Not Childish",
+      "declaration": "Doing something purely because you enjoy it is not immature. It is part of being a person.",
+      "scripture": {
+        "ref": "Zechariah 8:5",
+        "text": "The city streets will be filled with boys and girls playing."
+      }
+    },
+    {
+      "day": 28,
+      "title": "God Is Not Rushing You",
+      "declaration": "God is not impatient with how long you are taking. The urgency you feel is usually not from Him.",
+      "scripture": {
+        "ref": "2 Peter 3:8-9",
+        "text": "With the Lord a day is like a thousand years... he is patient with you."
+      }
+    },
+    {
+      "day": 29,
+      "title": "Breathe and Say One Word",
+      "declaration": "When it is all too much, breathe slowly and say one word to God. That counts as prayer.",
+      "scripture": {
+        "ref": "Psalm 46:1",
+        "text": "God is our refuge and strength, an ever-present help in trouble."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Kept in Perfect Peace",
+      "declaration": "There is a steadiness available that does not depend on anything being resolved. It comes from where your mind rests.",
+      "scripture": {
+        "ref": "Isaiah 26:3",
+        "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Keep the Quiet",
+      "declaration": "The quiet you have practised this month is meant for the loud months. Keep it.",
+      "scripture": {
+        "ref": "Psalm 23:2-3",
+        "text": "He leads me beside quiet waters, he refreshes my soul."
+      }
+    }
+  ]
+}

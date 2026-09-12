@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 5,
+  "slug": "purpose-and-calling",
+  "title": "Purpose & Calling",
+  "intro": "Ask a seven-year-old what they will be and you get a job title. This month we widen it — that God has good work for them starting today, that being useful is not the same as being impressive, and that who they are becoming matters more than what they will eventually do.",
+  "keyScriptures": [
+    {
+      "ref": "Ephesians 2:10",
+      "text": "For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."
+    },
+    {
+      "ref": "Jeremiah 29:11",
+      "text": "For I know the plans I have for you, plans to prosper you and not to harm you."
+    }
+  ],
+  "palette": "meadow",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Made for Something",
+      "declaration": "You were made on purpose, for a purpose. God has good work with your name on it, and some of it is for today rather than for when you are grown.",
+      "parentsPrayer": "Father, show our child that their life has a point, and that it has already started. Amen."
+    },
+    {
+      "week": 2,
+      "title": "Your Purpose Starts Now",
+      "declaration": "You do not have to wait until you are older to be useful. The kindness you do this week is real work, and it counts.",
+      "parentsPrayer": "Lord, let our child see the good they are already doing. Do not let them wait for permission to matter. Amen."
+    },
+    {
+      "week": 3,
+      "title": "What You Are Good At",
+      "declaration": "The things you enjoy and the things you are good at are not accidents. They were given to you, and they are clues.",
+      "parentsPrayer": "God, help us notice what You have put in our child, and to say it out loud often enough that they believe it. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Faithful in Small Things",
+      "declaration": "Big things are made of small things done well. Whoever can be trusted with a little is trusted with more.",
+      "parentsPrayer": "Father, teach our child to do ordinary things properly. Build something lasting out of their small faithfulness. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Made for Good Work",
+      "declaration": "You were made for good work. God prepared things for you to do before you could hold a pencil.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "We are God's handiwork, created in Christ Jesus to do good works."
+      }
+    },
+    {
+      "day": 2,
+      "title": "Plans for You",
+      "declaration": "God has plans for you, and they are good ones. You are not walking into an empty future.",
+      "scripture": {
+        "ref": "Jeremiah 29:11",
+        "text": "I know the plans I have for you, plans to prosper you and not to harm you."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Starting Today",
+      "declaration": "Your purpose does not start when you are grown up. It started the day you were born and it includes today.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Set an example for the believers in speech, in conduct, in love, in faith."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Clues in What You Love",
+      "declaration": "The things you love doing were put in you. Pay attention to them; they are clues, not distractions.",
+      "scripture": {
+        "ref": "Psalm 37:4",
+        "text": "Take delight in the Lord, and he will give you the desires of your heart."
+      }
+    },
+    {
+      "day": 5,
+      "title": "You Are Needed",
+      "declaration": "There is something only you are placed to do, in your class, in this family, this week.",
+      "scripture": {
+        "ref": "1 Corinthians 12:18",
+        "text": "God has placed the parts in the body just as he wanted them."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Small Things Done Well",
+      "declaration": "Do the small thing properly. That is how people end up trusted with the big ones.",
+      "scripture": {
+        "ref": "Luke 16:10",
+        "text": "Whoever can be trusted with very little can also be trusted with much."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Not a Job Title",
+      "declaration": "Your purpose is bigger than a job. It is about who you are while you do whatever you do.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Whatever you do, work at it with all your heart."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Helping Is Real Work",
+      "declaration": "Helping someone is not a small thing you do until real life starts. It is real life.",
+      "scripture": {
+        "ref": "Galatians 5:13",
+        "text": "Serve one another humbly in love."
+      }
+    },
+    {
+      "day": 9,
+      "title": "God Uses Young People",
+      "declaration": "God has never waited for people to grow up before using them. Samuel was a boy; David was the youngest.",
+      "scripture": {
+        "ref": "1 Samuel 3:10",
+        "text": "Speak, for your servant is listening."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Practise Now",
+      "declaration": "What you practise now is what you will be able to do later. Nothing you are learning is wasted.",
+      "scripture": {
+        "ref": "Proverbs 22:6",
+        "text": "Start children off on the way they should go."
+      }
+    },
+    {
+      "day": 11,
+      "title": "Being Good at Something",
+      "declaration": "Being good at something is not showing off. It is a gift being used the way it was meant to be.",
+      "scripture": {
+        "ref": "Exodus 35:31",
+        "text": "He has filled him with the Spirit of God, with wisdom, understanding and knowledge."
+      }
+    },
+    {
+      "day": 12,
+      "title": "What You Do Not Enjoy",
+      "declaration": "Some of your purpose will be things you do not enjoy at first. Do them well anyway; they are part of it.",
+      "scripture": {
+        "ref": "Ecclesiastes 9:10",
+        "text": "Whatever your hand finds to do, do it with all your might."
+      }
+    },
+    {
+      "day": 13,
+      "title": "You Are Not a Spare Part",
+      "declaration": "There are no spare parts in God's family. You were included on purpose, not to make up the numbers.",
+      "scripture": {
+        "ref": "1 Corinthians 12:22",
+        "text": "Those parts of the body that seem to be weaker are indispensable."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Ask What Is Needed",
+      "declaration": "A good question to ask any room is: what is needed here? Purpose often starts with noticing.",
+      "scripture": {
+        "ref": "Philippians 2:4",
+        "text": "Look not only to your own interests, but also to the interests of others."
+      }
+    },
+    {
+      "day": 15,
+      "title": "Following, Not Guessing",
+      "declaration": "You do not have to guess your way forward. You can follow, one step at a time, and the light is enough.",
+      "scripture": {
+        "ref": "Psalm 119:105",
+        "text": "Your word is a lamp for my feet, a light on my path."
+      }
+    },
+    {
+      "day": 16,
+      "title": "It Is Fine Not to Know Yet",
+      "declaration": "You do not have to know what you will be. Knowing whose you are is the part that matters now.",
+      "scripture": {
+        "ref": "Proverbs 3:6",
+        "text": "In all your ways submit to him, and he will make your paths straight."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Made Different on Purpose",
+      "declaration": "You were not made to do what everyone else is doing. Different was the plan, not the problem.",
+      "scripture": {
+        "ref": "Romans 12:6",
+        "text": "We have different gifts, according to the grace given to each of us."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Doing It for God",
+      "declaration": "You can do ordinary things for God — homework, tidying, being kind to your brother. He notices all of it.",
+      "scripture": {
+        "ref": "Colossians 3:23",
+        "text": "Work at it with all your heart, as working for the Lord."
+      }
+    },
+    {
+      "day": 19,
+      "title": "When You Fail at Something",
+      "declaration": "Being bad at one thing tells you nothing about your purpose except which door is not it.",
+      "scripture": {
+        "ref": "Proverbs 16:9",
+        "text": "In their hearts humans plan their course, but the Lord establishes their steps."
+      }
+    },
+    {
+      "day": 20,
+      "title": "Your Story Is Being Written",
+      "declaration": "Your life is a story that is still being written, and the author is good. The middle is not the ending.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Being Trustworthy",
+      "declaration": "The most useful thing you can be is someone people can rely on. That opens more doors than talent.",
+      "scripture": {
+        "ref": "Proverbs 20:6",
+        "text": "Many claim to have unfailing love, but a faithful person who can find?"
+      }
+    },
+    {
+      "day": 22,
+      "title": "Purpose in the Ordinary",
+      "declaration": "Most of your purpose will happen on ordinary days, in ordinary places, with people you already know.",
+      "scripture": {
+        "ref": "1 Thessalonians 4:11",
+        "text": "Make it your ambition to lead a quiet life."
+      }
+    },
+    {
+      "day": 23,
+      "title": "Someone Needs What You Have",
+      "declaration": "Someone this week needs exactly what you are good at. Keep your eyes open for them.",
+      "scripture": {
+        "ref": "1 Peter 4:10",
+        "text": "Each of you should use whatever gift you have received to serve others."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Not a Competition",
+      "declaration": "Your purpose is not a race against anyone else. Nobody can take yours and you cannot take theirs.",
+      "scripture": {
+        "ref": "Galatians 6:4",
+        "text": "Each one should test their own actions."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Keep Learning",
+      "declaration": "Learning is part of your purpose, not a delay before it. Every skill you gain is a tool you will use.",
+      "scripture": {
+        "ref": "Proverbs 18:15",
+        "text": "The heart of the discerning acquires knowledge."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Willing Beats Talented",
+      "declaration": "God has always been more interested in willing people than in talented ones. Willing is something you can choose.",
+      "scripture": {
+        "ref": "Isaiah 6:8",
+        "text": "Here am I. Send me!"
+      }
+    },
+    {
+      "day": 27,
+      "title": "Be Where You Are",
+      "declaration": "You cannot do the next thing until you have done this thing. Be properly where you are.",
+      "scripture": {
+        "ref": "Ecclesiastes 3:1",
+        "text": "There is a time for everything, and a season for every activity."
+      }
+    },
+    {
+      "day": 28,
+      "title": "You Were Put Here Now",
+      "declaration": "You were born in this time, in this place, on purpose. It is not an accident of timing.",
+      "scripture": {
+        "ref": "Esther 4:14",
+        "text": "Who knows but that you have come to your position for such a time as this?"
+      }
+    },
+    {
+      "day": 29,
+      "title": "Purpose Is Not Pressure",
+      "declaration": "Having a purpose is not a weight to carry. It is a gift to unwrap slowly, and there is no deadline.",
+      "scripture": {
+        "ref": "Matthew 11:30",
+        "text": "My yoke is easy and my burden is light."
+      }
+    },
+    {
+      "day": 30,
+      "title": "God Finishes What He Starts",
+      "declaration": "God does not begin things and abandon them. What He started in you, He intends to finish.",
+      "scripture": {
+        "ref": "Psalm 138:8",
+        "text": "The Lord will vindicate me; your love, Lord, endures forever."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Purpose Goes With You",
+      "declaration": "What you have learned about purpose this month is for using, starting with the very next thing you do.",
+      "scripture": {
+        "ref": "Ephesians 2:10",
+        "text": "Created in Christ Jesus to do good works, which God prepared in advance for us to do."
+      }
+    }
+  ]
+}

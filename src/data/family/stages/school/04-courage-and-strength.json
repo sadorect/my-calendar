@@ -1,0 +1,325 @@
+{
+  "stage": "school",
+  "month": 4,
+  "slug": "courage-and-strength",
+  "title": "Courage & Strength",
+  "intro": "Somewhere around this age a child works out that being brave and being unafraid are not the same thing, and it can knock them sideways. This month we tell them the truth — courage is doing the right thing while your heart is still going fast, and they are not expected to do any of it on their own.",
+  "keyScriptures": [
+    {
+      "ref": "Joshua 1:9",
+      "text": "Be strong and courageous. Do not be afraid; the Lord your God will be with you wherever you go."
+    },
+    {
+      "ref": "Isaiah 41:10",
+      "text": "Do not fear, for I am with you; I will strengthen you and help you."
+    }
+  ],
+  "palette": "amber",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Brave Is Not Unafraid",
+      "declaration": "Being brave does not mean you stop feeling scared. It means you do the right thing while you are still scared, and that counts double.",
+      "parentsPrayer": "Father, take the shame out of our child's fear. Let them know that being afraid is not failing. Amen."
+    },
+    {
+      "week": 2,
+      "title": "You Are Not Alone in It",
+      "declaration": "You are never sent anywhere on your own. God goes with you into the hard room, the new place, the difficult conversation.",
+      "parentsPrayer": "Lord, go with our child where we cannot follow. Be nearer to them in the hard moments than we could be. Amen."
+    },
+    {
+      "week": 3,
+      "title": "Strength for Today",
+      "declaration": "You do not need enough strength for the whole year. You need enough for today, and that is what you are given.",
+      "parentsPrayer": "God, give our child what today needs and no more, so they learn to come back tomorrow. Amen."
+    },
+    {
+      "week": 4,
+      "title": "Standing Up",
+      "declaration": "Some of the bravest things are quiet: telling the truth, saying no, sitting with the person nobody is sitting with.",
+      "parentsPrayer": "Father, make our child brave in small ordinary ways. Let them be the one who does the right thing first. Amen."
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Brave and Scared at Once",
+      "declaration": "Being brave does not mean you are not scared. It means you do the right thing anyway, and that counts double.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous. Do not be afraid."
+      }
+    },
+    {
+      "day": 2,
+      "title": "He Goes With You",
+      "declaration": "You are not sent anywhere alone. God goes with you into every room you are nervous about.",
+      "scripture": {
+        "ref": "Deuteronomy 31:6",
+        "text": "The Lord your God goes with you; he will never leave you."
+      }
+    },
+    {
+      "day": 3,
+      "title": "Strength for Today",
+      "declaration": "You do not need enough strength for the whole year. You only need enough for today.",
+      "scripture": {
+        "ref": "Lamentations 3:23",
+        "text": "His mercies are new every morning."
+      }
+    },
+    {
+      "day": 4,
+      "title": "Strong Where You Are Weak",
+      "declaration": "You do not have to be strong all by yourself. God is strongest in the places where you are not.",
+      "scripture": {
+        "ref": "2 Corinthians 12:9",
+        "text": "My power is made perfect in weakness."
+      }
+    },
+    {
+      "day": 5,
+      "title": "Try Again",
+      "declaration": "Being brave often just means having another go. People who keep trying end up further than people who were never scared.",
+      "scripture": {
+        "ref": "Proverbs 24:16",
+        "text": "Though the righteous fall seven times, they rise again."
+      }
+    },
+    {
+      "day": 6,
+      "title": "Telling the Truth Is Brave",
+      "declaration": "Owning up is one of the bravest things anyone does. It takes more courage than hiding.",
+      "scripture": {
+        "ref": "Psalm 51:6",
+        "text": "You desired faithfulness even in the womb."
+      }
+    },
+    {
+      "day": 7,
+      "title": "Saying No",
+      "declaration": "Saying no when everyone else is saying yes takes real strength. You are allowed to be the one who stops.",
+      "scripture": {
+        "ref": "Daniel 1:8",
+        "text": "Daniel resolved not to defile himself."
+      }
+    },
+    {
+      "day": 8,
+      "title": "Going First",
+      "declaration": "Someone has to be first to be kind in a room. It might as well be you, and it usually changes everything.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Do not be discouraged, for the Lord your God will be with you."
+      }
+    },
+    {
+      "day": 9,
+      "title": "Fear Does Not Get the Last Word",
+      "declaration": "You are allowed to feel afraid. You are not required to obey it.",
+      "scripture": {
+        "ref": "2 Timothy 1:7",
+        "text": "God has not given us a spirit of fear, but of power, love and self-discipline."
+      }
+    },
+    {
+      "day": 10,
+      "title": "Asking for Help Is Brave",
+      "declaration": "Asking for help is not giving up. It is one of the strongest things a person can do.",
+      "scripture": {
+        "ref": "Ecclesiastes 4:9",
+        "text": "Two are better than one."
+      }
+    },
+    {
+      "day": 11,
+      "title": "New Places",
+      "declaration": "New things feel big before they feel normal. Almost everything you are good at started as something new.",
+      "scripture": {
+        "ref": "Isaiah 43:19",
+        "text": "See, I am doing a new thing!"
+      }
+    },
+    {
+      "day": 12,
+      "title": "Wrong in Front of People",
+      "declaration": "Getting it wrong in front of people is survivable. It is not the end of you, and tomorrow still comes.",
+      "scripture": {
+        "ref": "Micah 7:8",
+        "text": "Though I have fallen, I will rise."
+      }
+    },
+    {
+      "day": 13,
+      "title": "Small Brave Things",
+      "declaration": "Most courage is small and quiet: putting your hand up, going in, starting the conversation.",
+      "scripture": {
+        "ref": "Zechariah 4:10",
+        "text": "Do not despise these small beginnings."
+      }
+    },
+    {
+      "day": 14,
+      "title": "Standing With Someone",
+      "declaration": "Being brave for someone else is often easier than being brave for yourself. Start there if you need to.",
+      "scripture": {
+        "ref": "Proverbs 31:8",
+        "text": "Speak up for those who cannot speak for themselves."
+      }
+    },
+    {
+      "day": 15,
+      "title": "You Have Been Brave Before",
+      "declaration": "You have already done things that frightened you. Look back at them when today looks big.",
+      "scripture": {
+        "ref": "1 Samuel 17:37",
+        "text": "The Lord who rescued me from the lion will rescue me."
+      }
+    },
+    {
+      "day": 16,
+      "title": "Strength Is Quiet",
+      "declaration": "Strong people do not need everyone to know. Real strength does not shout about itself.",
+      "scripture": {
+        "ref": "Isaiah 30:15",
+        "text": "In quietness and trust is your strength."
+      }
+    },
+    {
+      "day": 17,
+      "title": "Nervous Is Normal",
+      "declaration": "Feeling nervous before something that matters is not a warning. It is just your body noticing it matters.",
+      "scripture": {
+        "ref": "Psalm 56:3",
+        "text": "When I am afraid, I put my trust in you."
+      }
+    },
+    {
+      "day": 18,
+      "title": "Keep Going",
+      "declaration": "Some days brave just means carrying on. That is enough, and it counts.",
+      "scripture": {
+        "ref": "Galatians 6:9",
+        "text": "Let us not become weary in doing good."
+      }
+    },
+    {
+      "day": 19,
+      "title": "Not the Biggest in the Room",
+      "declaration": "You do not have to be the biggest or the loudest to be strong. David was neither.",
+      "scripture": {
+        "ref": "1 Samuel 16:7",
+        "text": "The Lord does not look at the things people look at."
+      }
+    },
+    {
+      "day": 20,
+      "title": "When You Are Left Out",
+      "declaration": "Being left out hurts and it is not a sign that something is wrong with you. It is a sign that today was hard.",
+      "scripture": {
+        "ref": "Psalm 27:10",
+        "text": "Though my father and mother forsake me, the Lord will receive me."
+      }
+    },
+    {
+      "day": 21,
+      "title": "Doing the Right Thing Alone",
+      "declaration": "Sometimes nobody joins in. Doing the right thing on your own is still worth it.",
+      "scripture": {
+        "ref": "Micah 6:8",
+        "text": "Act justly, love mercy, walk humbly with your God."
+      }
+    },
+    {
+      "day": 22,
+      "title": "Courage to Say Sorry",
+      "declaration": "Apologising properly takes more nerve than arguing. It is a strength worth practising early.",
+      "scripture": {
+        "ref": "James 5:16",
+        "text": "Confess your sins to each other."
+      }
+    },
+    {
+      "day": 23,
+      "title": "The Strength to Wait",
+      "declaration": "Waiting is hard and it is a kind of strength. Not everything worth having arrives quickly.",
+      "scripture": {
+        "ref": "Isaiah 40:31",
+        "text": "Those who hope in the Lord will renew their strength."
+      }
+    },
+    {
+      "day": 24,
+      "title": "Not Giving Up on Yourself",
+      "declaration": "On the days you disappoint yourself, do not walk away from yourself. Start again tomorrow.",
+      "scripture": {
+        "ref": "Philippians 1:6",
+        "text": "He who began a good work in you will carry it on to completion."
+      }
+    },
+    {
+      "day": 25,
+      "title": "Kind and Brave",
+      "declaration": "The bravest people are usually the kindest. It takes strength to stay gentle when you could be sharp.",
+      "scripture": {
+        "ref": "Colossians 3:12",
+        "text": "Clothe yourselves with compassion, kindness, humility, gentleness and patience."
+      }
+    },
+    {
+      "day": 26,
+      "title": "Facing the Hard Subject",
+      "declaration": "The subject you dread is not stronger than you. Go at it a little at a time.",
+      "scripture": {
+        "ref": "Philippians 4:13",
+        "text": "I can do all this through him who gives me strength."
+      }
+    },
+    {
+      "day": 27,
+      "title": "You Are Held While You Try",
+      "declaration": "You are held while you are trying, not only when you succeed. That is why you can risk it.",
+      "scripture": {
+        "ref": "Isaiah 41:13",
+        "text": "I am the Lord your God who takes hold of your right hand."
+      }
+    },
+    {
+      "day": 28,
+      "title": "Brave With Your Words",
+      "declaration": "Speaking up when something is unfair is brave. So is staying quiet when speaking would only hurt.",
+      "scripture": {
+        "ref": "Proverbs 15:23",
+        "text": "How good is a timely word!"
+      }
+    },
+    {
+      "day": 29,
+      "title": "You Are Not Too Small",
+      "declaration": "You are not too young or too small to do something that matters. God has never been fussy about that.",
+      "scripture": {
+        "ref": "1 Timothy 4:12",
+        "text": "Do not let anyone look down on you because you are young."
+      }
+    },
+    {
+      "day": 30,
+      "title": "Strength That Is Given",
+      "declaration": "You are not asked to make your own strength. It is given to you, daily, for exactly what today holds.",
+      "scripture": {
+        "ref": "Psalm 28:7",
+        "text": "The Lord is my strength and my shield."
+      }
+    },
+    {
+      "day": 31,
+      "title": "Take It Into Tomorrow",
+      "declaration": "Everything you have been brave about this month has made you stronger for the next thing.",
+      "scripture": {
+        "ref": "Joshua 1:9",
+        "text": "Be strong and courageous... for the Lord your God will be with you wherever you go."
+      }
+    }
+  ]
+}
