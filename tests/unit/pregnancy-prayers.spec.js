@@ -95,6 +95,36 @@ describe('the prayer journal in the store', () => {
     expect(store.prayerForSource('school:m03:d17')).toBeNull()
   })
 
+  it('takes a declaration into the journal once, for the active child', async () => {
+    const child = await store.addProfile({ name: 'Ada', birthDate: '2018-01-01' })
+    const first = await store.prayDeclaration({
+      key: 'day:47',
+      title: 'Known',
+      text: 'You are known.'
+    })
+    const again = await store.prayDeclaration({
+      key: 'day:47',
+      title: 'Known',
+      text: 'You are known.'
+    })
+    expect(again.id).toBe(first.id)
+    expect(store.prayers).toHaveLength(1)
+    expect(first.profileId).toBe(child.id)
+    expect(first.source).toEqual({
+      stage: store.activeStage?.id || null,
+      key: 'day:47',
+      title: 'Known'
+    })
+    // Once answered it can be prayed afresh.
+    await store.markAnswered(first.id)
+    const fresh = await store.prayDeclaration({
+      key: 'day:47',
+      title: 'Known',
+      text: 'You are known.'
+    })
+    expect(fresh.id).not.toBe(first.id)
+  })
+
   it('survives a reload', async () => {
     await store.addPrayer({ text: 'Persisted' })
     setActivePinia(createPinia())

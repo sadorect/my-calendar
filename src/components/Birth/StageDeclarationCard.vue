@@ -35,6 +35,13 @@ let utterance = null
 const isFavourite = computed(() => store.isStageFavourite('day', props.dayOfMonth))
 const isSpoken = computed(() => store.isSpoken(props.dateKey))
 
+const prayerKey = computed(() => store.stageFavouriteKeyFor('day', props.dayOfMonth))
+const isPrayed = computed(() => Boolean(store.prayerForSource(prayerKey.value)))
+
+function prayThis() {
+  store.prayDeclaration({ key: prayerKey.value, title: props.content.title, text: body.value })
+}
+
 /** Born-stage content is written in the second person, so no name is patched in. */
 const body = computed(() => props.content.declaration)
 
@@ -225,6 +232,19 @@ async function saveImage() {
         @click="share"
       >
         {{ shareNote || 'Share' }}
+      </button>
+
+      <button
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 flex items-center gap-2"
+        :style="{
+          borderColor: isPrayed ? 'var(--bc-accent)' : 'var(--bc-hairline)',
+          color: isPrayed ? 'var(--bc-accent)' : 'inherit'
+        }"
+        :aria-pressed="isPrayed"
+        title="Keep this declaration in the prayer journal"
+        @click="prayThis"
+      >
+        {{ isPrayed ? 'In your prayers' : 'Pray this' }}
       </button>
 
       <button

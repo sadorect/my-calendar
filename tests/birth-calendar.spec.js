@@ -373,4 +373,25 @@ test.describe('Prayer journal', () => {
     await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeHidden()
     await expect(page.getByRole('button', { name: '← Calendar' })).toBeVisible()
   })
+
+  test('a declaration can be taken into the journal, and links back', async ({ page }) => {
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    const pill = page.getByRole('button', { name: 'Open the prayer journal' })
+    await page.getByRole('button', { name: 'Pray this' }).first().click()
+    await expect(page.getByRole('button', { name: 'In your prayers' }).first()).toBeVisible()
+    await expect(pill).toHaveText(/1 praying/)
+
+    // Pressing it again does not file a duplicate.
+    await page.getByRole('button', { name: 'In your prayers' }).first().click()
+    await expect(pill).toHaveText(/1 praying/)
+
+    await pill.click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeVisible()
+    const sourceLink = page.locator('[data-prayer-id] button.bc-accent').first()
+    await sourceLink.click()
+    // A womb day opens its day dialog.
+    await expect(page.getByRole('dialog')).toBeVisible()
+  })
 })

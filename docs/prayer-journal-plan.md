@@ -103,10 +103,10 @@ journal spans children, while every tab is scoped to the active child.
 
 ### Phase 4 — links from the declarations
 
-- [ ] "Pray this" action on `DeclarationCard.vue` and `StageDeclarationCard.vue`
+- [x] "Pray this" action on `DeclarationCard.vue` and `StageDeclarationCard.vue`
       (next to favourite/spoken): creates an entry with `source` and the
       active `profileId`, then shows the card count tick up.
-- [ ] Entries with a `source` render the title as a link that jumps to that
+- [x] Entries with a `source` render the title as a link that jumps to that
       day/week.
 
 ### Phase 5 — keepsake and reminders (optional, after 1–4 ship)

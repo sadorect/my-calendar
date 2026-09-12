@@ -813,6 +813,22 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     return true
   }
 
+  /**
+   * Takes a declaration into the journal for the active child. Idempotent
+   * while that prayer is open: pressing the button twice returns the one
+   * already there rather than filing a duplicate.
+   */
+  async function prayDeclaration({ key, title, text }) {
+    if (!key) return null
+    const existing = prayerForSource(key)
+    if (existing) return existing
+    return addPrayer({
+      text,
+      profileId: state.value.activeProfileId,
+      source: { stage: activeStage.value?.id || null, key, title }
+    })
+  }
+
   /** A tombstone, not a delete: the entry has to outlive the sync merge. */
   async function deletePrayer(id) {
     const prayer = prayerById(id)
@@ -1069,6 +1085,8 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     markAnswered,
     reopenPrayer,
     deletePrayer,
+    prayDeclaration,
+    stageFavouriteKeyFor,
     // spoken
     isSpoken,
     toggleSpoken,
