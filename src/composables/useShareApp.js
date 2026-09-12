@@ -40,6 +40,27 @@ export function listenForInstallPrompt() {
   }
 }
 
+/**
+ * The Android app, as a file.
+ *
+ * A Trusted Web Activity built from android/twa-manifest.json and committed
+ * under public/downloads, so it is served from the same origin it wraps. The
+ * path is stable on purpose: it is what the install link points at, and a
+ * versioned name would leave every shared link pointing at a stale build.
+ */
+export const ANDROID_APK_PATH = '/downloads/birth-calendar.apk'
+
+export function androidApkUrl() {
+  if (typeof window === 'undefined') return ANDROID_APK_PATH
+  return `${window.location.origin}${ANDROID_APK_PATH}`
+}
+
+/** Android gets the APK offered first; the browser prompt is the fallback everywhere else. */
+export function isAndroid() {
+  if (typeof navigator === 'undefined') return false
+  return /android/i.test(navigator.userAgent || '')
+}
+
 /** The canonical URL to hand someone else. */
 export function appUrl() {
   if (typeof window === 'undefined') return ''
@@ -105,6 +126,8 @@ export function useShareApp() {
     busy: readonly(busy),
     canInstall: readonly(deferredPrompt),
     installed: readonly(installed),
-    appUrl
+    appUrl,
+    androidApkUrl,
+    isAndroid: isAndroid()
   }
 }

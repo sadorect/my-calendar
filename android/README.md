@@ -28,13 +28,31 @@ a second, quietly diverging copy of every value in that file.
 
 ## Prerequisites
 
-**Not on the production VPS.** It has no JDK and no Android SDK, and this build
-does not belong on a machine whose job is serving other people's sites. Build on
-a laptop or a CI runner:
+On a laptop or CI runner:
 
 ```bash
 npm i -g @bubblewrap/cli   # offers to fetch the Android SDK and a JDK on first run
 ```
+
+On the VPS the toolchain is not installed on the host — it is the
+`grinmuzik/bubblewrap` Docker image (Bubblewrap, JDK 17, Android SDK), and the
+build runs inside it with the repo mounted. Bubblewrap needs a config that
+names the JDK and SDK, and the passwords come in as environment variables:
+
+```bash
+mkdir -p bwhome/.bubblewrap
+echo '{"jdkPath":"/opt/java/openjdk","androidSdkPath":"/opt/android-sdk"}' > bwhome/.bubblewrap/config.json
+. /home/deploy/.birth-calendar-android/keystore.env
+cp /home/deploy/.birth-calendar-android/birth-calendar.keystore android/
+sudo docker run --rm -u "$(id -u):$(id -g)" -e HOME=/home/bw \
+  -v "$PWD/bwhome:/home/bw" -v "$PWD:/work" -w /work/android \
+  -e BUBBLEWRAP_KEYSTORE_PASSWORD="$KEYSTORE_PASSWORD" -e BUBBLEWRAP_KEY_PASSWORD="$KEYSTORE_PASSWORD" \
+  grinmuzik/bubblewrap:latest sh -c 'bubblewrap update --skipVersionUpgrade && bubblewrap build --skipPwaValidation' < /dev/null
+cp android/app-release-signed.apk public/downloads/birth-calendar.apk
+```
+
+Bump `appVersionCode` (and `appVersionName`) in `twa-manifest.json` before a
+rebuild, or Android will refuse the update over the installed copy.
 
 ## Building
 
@@ -45,6 +63,15 @@ npm i -g @bubblewrap/cli   # offers to fetch the Android SDK and a JDK on first 
 It refuses to guess: no JDK, no Bubblewrap, or no keystore each stop the build
 with the exact command that fixes it. Output lands in `android/dist/` as
 `birth-calendar-<version>.apk`.
+
+## Where the APK is served from
+
+`public/downloads/birth-calendar.apk` — committed, so Vercel serves it from the
+same origin the app wraps. The in-app Share panel offers it on Android in place
+of the browser install prompt, and links to it everywhere else. The path is
+stable on purpose; the service worker is told to neither precache it nor answer
+its navigation with `index.html` (`globIgnores` / `navigateFallbackDenylist` in
+`vite.config.js`).
 
 ## The signing key
 

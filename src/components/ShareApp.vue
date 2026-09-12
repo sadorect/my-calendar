@@ -13,7 +13,8 @@ const props = defineProps({
   text: { type: String, default: '' }
 })
 
-const { share, install, note, busy, canInstall, installed, appUrl } = useShareApp()
+const { share, install, note, busy, canInstall, installed, appUrl, androidApkUrl, isAndroid } =
+  useShareApp()
 
 const label = computed(() => note.value || 'Share app')
 
@@ -45,8 +46,17 @@ function doShare() {
       <span class="text-lg" aria-hidden="true">🔗</span>
       <span class="font-medium">{{ label }}</span>
     </button>
+    <a
+      v-if="isAndroid && !installed"
+      class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
+      :href="androidApkUrl()"
+      download="birth-calendar.apk"
+    >
+      <span class="text-lg" aria-hidden="true">⬇️</span>
+      <span class="font-medium">Install Android app</span>
+    </a>
     <button
-      v-if="canInstall"
+      v-else-if="canInstall"
       class="w-full text-left p-4 rounded-2xl hover:bg-theme-secondary transition-colors flex items-center space-x-3"
       @click="install"
     >
@@ -72,8 +82,17 @@ function doShare() {
       >
         {{ label }}
       </button>
+      <a
+        v-if="isAndroid && !installed"
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70 inline-flex items-center"
+        :style="{ borderColor: 'var(--bc-hairline)' }"
+        :href="androidApkUrl()"
+        download="birth-calendar.apk"
+      >
+        Install Android app
+      </a>
       <button
-        v-if="canInstall"
+        v-else-if="canInstall"
         class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70"
         :style="{ borderColor: 'var(--bc-hairline)' }"
         @click="install"
@@ -84,5 +103,12 @@ function doShare() {
     </div>
 
     <p class="text-xs bc-muted mt-3 break-all">{{ appUrl() }}</p>
+    <p class="text-xs bc-muted mt-1">
+      On Android the install is a small app file (.apk) that opens this same site full-screen —
+      <a class="underline" :href="androidApkUrl()" download="birth-calendar.apk"
+        >download it here</a
+      >
+      to install by hand or send to someone.
+    </p>
   </section>
 </template>

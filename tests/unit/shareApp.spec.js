@@ -1,10 +1,38 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { useShareApp, appUrl } from '../../src/composables/useShareApp.js'
+import {
+  useShareApp,
+  appUrl,
+  androidApkUrl,
+  isAndroid,
+  ANDROID_APK_PATH
+} from '../../src/composables/useShareApp.js'
 
 describe('appUrl', () => {
   it('is the origin root, so a recipient lands on the app itself', () => {
     expect(appUrl()).toBe(`${window.location.origin}/`)
     expect(appUrl().endsWith('/')).toBe(true)
+  })
+})
+
+describe('the Android app file', () => {
+  it('lives on the same origin at a stable path', () => {
+    expect(androidApkUrl()).toBe(`${window.location.origin}${ANDROID_APK_PATH}`)
+    expect(ANDROID_APK_PATH).toBe('/downloads/birth-calendar.apk')
+  })
+
+  it('is offered by user agent', () => {
+    const original = navigator.userAgent
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) Chrome/128 Mobile',
+      configurable: true
+    })
+    expect(isAndroid()).toBe(true)
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)',
+      configurable: true
+    })
+    expect(isAndroid()).toBe(false)
+    Object.defineProperty(navigator, 'userAgent', { value: original, configurable: true })
   })
 })
 

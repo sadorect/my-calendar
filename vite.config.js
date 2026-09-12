@@ -39,7 +39,13 @@ export default defineConfig({
         // no waiting worker for it to announce.
         skipWaiting: true,
         clientsClaim: true,
-        cleanupOutdatedCaches: true
+        cleanupOutdatedCaches: true,
+        // The Android APK and the asset-links file are served, never cached:
+        // a 2MB binary has no place in the precache, and a download link is a
+        // navigation as far as the worker is concerned — without this it would
+        // answer with index.html instead of the file.
+        globIgnores: ['**/downloads/**', '**/.well-known/**'],
+        navigateFallbackDenylist: [/^\/downloads\//, /^\/\.well-known\//]
       },
       includeAssets: [
         'icon-192x192.svg',

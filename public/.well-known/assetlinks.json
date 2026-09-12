@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sadorect.birthcalendar",
+      "sha256_cert_fingerprints": [
+        "F0:2E:4D:13:FC:2D:B4:4E:31:EF:B6:06:7C:0A:A2:66:C0:98:DC:E4:BD:41:68:49:27:94:DE:71:AE:14:05:8B"
+      ]
+    }
+  }
+]
