@@ -53,19 +53,19 @@ journal spans children, while every tab is scoped to the active child.
 
 ### Phase 1 — state and merge (no UI)
 
-- [ ] `familyState.js`: `emptyState().prayers = {}`; `normalise()` copies it
+- [x] `familyState.js`: `emptyState().prayers = {}`; `normalise()` copies it
       via a `cleanPrayers()` that drops non-objects and fills defaults;
       `fromLegacy()` gives `{}`; `makePrayer({...})` factory.
       **`normalise` rebuilds from `emptyState()` and only copies known keys —
       without this step the field is silently dropped on every load.**
-- [ ] `mergeState.js`: `mergePrayers(local, remote)` — union by id, later
+- [x] `mergeState.js`: `unionPrayers(local, remote)` — union by id, later
       `updatedAt` wins, a tombstone beats a live entry only if newer; wire it
       into `mergeStates()` (which currently spreads `dominant` and would
       otherwise take whichever side is newer wholesale). `statesDiffer`
       must see it.
-- [ ] Removing a profile clears `profileId` on its prayers rather than
+- [x] Removing a profile clears `profileId` on its prayers rather than
       deleting them.
-- [ ] Tests in `tests/unit/familyState.spec.js` and `mergeState.spec.js`:
+- [x] Tests in `tests/unit/prayers-state.spec.js`:
       migrate v1 → `{}`; v2 without the key → `{}`; round-trip; a stale
       device pushing no `prayers` does not erase the other side's; tombstone
       vs edit ordering; same-timestamp conflict keeps both texts (mirror the
@@ -73,12 +73,12 @@ journal spans children, while every tab is scoped to the active child.
 
 ### Phase 2 — store
 
-- [ ] `stores/pregnancy.js`: `prayers` computed (live, not deleted, sorted
+- [x] `stores/pregnancy.js`: `prayers` computed (live, not deleted, sorted
       open-first then newest); `openPrayerCount`; actions `addPrayer`,
       `updatePrayer`, `markAnswered(id, answer)`, `reopenPrayer`,
       `deletePrayer` (tombstone). All `await persist()`.
-- [ ] `prayersFor(profileId)` for the child-scoped views.
-- [ ] Store tests.
+- [x] `prayersFor(profileId)` for the child-scoped views.
+- [x] Store tests (`tests/unit/pregnancy-prayers.spec.js`).
 
 ### Phase 3 — the floating card and the view
 

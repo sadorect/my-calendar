@@ -37,6 +37,8 @@ import {
   migrateState,
   orderedProfiles,
   writeLegacyMirror,
+  makePrayer,
+  livePrayers,
   LEGACY_PROFILE_ID
 } from '../services/familyState.js'
 import { resolveStage, ageInMonths, isStageId } from '../data/family/stages.js'
@@ -210,6 +212,15 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     if (!state.value.profiles[id]) return false
     delete state.value.profiles[id]
     delete state.value.data[id]
+    // Their prayers stay — a prayer outlives the record it was filed under —
+    // but no longer point at a child who is gone.
+    const now = new Date().toISOString()
+    for (const prayer of Object.values(state.value.prayers)) {
+      if (prayer.profileId === id) {
+        prayer.profileId = null
+        prayer.updatedAt = now
+      }
+    }
     if (state.value.activeProfileId === id) {
       state.value.activeProfileId = orderedProfiles(state.value)[0]?.id || null
       selectedDay.value = null
@@ -727,6 +738,92 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
       .sort((a, b) => b.day - a.day)
   )
 
+  // ----------------------------------------------------------------- prayers
+
+  /** Everything still standing, open first then newest first. */
+  const prayers = computed(() => livePrayers(state.value))
+  const openPrayers = computed(() => prayers.value.filter((p) => p.status === 'praying'))
+  const answeredPrayers = computed(() => prayers.value.filter((p) => p.status === 'answered'))
+  const openPrayerCount = computed(() => openPrayers.value.length)
+
+  function prayersFor(profileId) {
+    return prayers.value.filter((p) => p.profileId === profileId)
+  }
+
+  function prayerById(id) {
+    const prayer = state.value.prayers[id]
+    return prayer && !prayer.deletedAt ? prayer : null
+  }
+
+  /** True when a declaration has already been taken into the journal and is still open. */
+  function prayerForSource(key) {
+    return openPrayers.value.find((p) => p.source?.key === key) || null
+  }
+
+  async function addPrayer({ text, profileId = null, source = null } = {}) {
+    const trimmed = String(text || '').trim()
+    if (!trimmed) return null
+    const prayer = makePrayer({
+      text: trimmed,
+      profileId: profileId && state.value.profiles[profileId] ? profileId : null,
+      source
+    })
+    state.value.prayers[prayer.id] = prayer
+    await persist()
+    return prayer
+  }
+
+  async function updatePrayer(id, patch = {}) {
+    const prayer = prayerById(id)
+    if (!prayer) return false
+    if ('text' in patch) {
+      const trimmed = String(patch.text || '').trim()
+      if (!trimmed) return false
+      prayer.text = trimmed
+    }
+    if ('answer' in patch) prayer.answer = String(patch.answer || '').trim()
+    if ('profileId' in patch) {
+      prayer.profileId =
+        patch.profileId && state.value.profiles[patch.profileId] ? patch.profileId : null
+    }
+    prayer.updatedAt = new Date().toISOString()
+    await persist()
+    return true
+  }
+
+  async function markAnswered(id, answer = '') {
+    const prayer = prayerById(id)
+    if (!prayer) return false
+    const now = new Date().toISOString()
+    prayer.status = 'answered'
+    prayer.answer = String(answer || '').trim()
+    prayer.answeredAt = now
+    prayer.updatedAt = now
+    await persist()
+    return true
+  }
+
+  async function reopenPrayer(id) {
+    const prayer = prayerById(id)
+    if (!prayer) return false
+    prayer.status = 'praying'
+    prayer.answeredAt = null
+    prayer.updatedAt = new Date().toISOString()
+    await persist()
+    return true
+  }
+
+  /** A tombstone, not a delete: the entry has to outlive the sync merge. */
+  async function deletePrayer(id) {
+    const prayer = prayerById(id)
+    if (!prayer) return false
+    const now = new Date().toISOString()
+    prayer.deletedAt = now
+    prayer.updatedAt = now
+    await persist()
+    return true
+  }
+
   // -------------------------------------------------------- spoken / progress
 
   function isSpoken(day) {
@@ -959,6 +1056,19 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     journalFor,
     saveJournal,
     journalEntries,
+    // prayers
+    prayers,
+    openPrayers,
+    answeredPrayers,
+    openPrayerCount,
+    prayersFor,
+    prayerById,
+    prayerForSource,
+    addPrayer,
+    updatePrayer,
+    markAnswered,
+    reopenPrayer,
+    deletePrayer,
     // spoken
     isSpoken,
     toggleSpoken,
