@@ -43,9 +43,16 @@ export default defineConfig({
         // The Android APK and the asset-links file are served, never cached:
         // a 2MB binary has no place in the precache, and a download link is a
         // navigation as far as the worker is concerned — without this it would
-        // answer with index.html instead of the file.
+        // answer with index.html instead of the file. The privacy and terms
+        // pages are real documents for the same reason: a link to them is a
+        // navigation, and the fallback would swap in the app.
         globIgnores: ['**/downloads/**', '**/.well-known/**'],
-        navigateFallbackDenylist: [/^\/downloads\//, /^\/\.well-known\//]
+        navigateFallbackDenylist: [
+          /^\/downloads\//,
+          /^\/\.well-known\//,
+          /^\/privacy\.html$/,
+          /^\/terms\.html$/
+        ]
       },
       includeAssets: [
         'icon-192x192.svg',

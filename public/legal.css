@@ -1,0 +1,100 @@
+/* Shared by privacy.html and terms.html: plain static pages, readable without
+   the app's JavaScript (a store listing has to be able to link to them). */
+:root {
+  --bg: #fdf2f4;
+  --card: #ffffff;
+  --ink: #3b2a30;
+  --muted: #7a636b;
+  --accent: #b05a6e;
+  --hairline: #f0d9df;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f171a;
+    --card: #2a1f23;
+    --ink: #f4e7eb;
+    --muted: #c3aab2;
+    --accent: #e39aab;
+    --hairline: #3d2d33;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.65 system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+main {
+  max-width: 42rem;
+  margin: 1.5rem auto 3rem;
+  padding: 1.75rem 1.25rem;
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 1.25rem;
+}
+
+@media (max-width: 44rem) {
+  main {
+    margin: 0;
+    border-radius: 0;
+    border-width: 0;
+  }
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 1rem 0 0.25rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  margin: 2rem 0 0.5rem;
+}
+
+p,
+li {
+  color: var(--ink);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.back {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.meta,
+.foot {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.foot {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hairline);
+}

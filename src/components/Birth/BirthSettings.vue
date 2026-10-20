@@ -344,7 +344,17 @@ async function doReset() {
         every day of the pregnancy, each with its own Scripture and a closing prayer for you.
       </p>
       <p class="text-sm bc-muted leading-relaxed mt-3">
-        Everything you save — favourites, notes, progress — stays on this device.
+        Everything you save — favourites, notes, progress — is kept on this device. If you turn on
+        sync, a copy is encrypted here first, so the server stores only what it cannot read.
+      </p>
+      <p class="text-sm mt-3">
+        <a href="/privacy.html" class="underline hover:opacity-70" style="color: var(--bc-accent)"
+          >Privacy policy</a
+        >
+        <span class="bc-muted" aria-hidden="true"> · </span>
+        <a href="/terms.html" class="underline hover:opacity-70" style="color: var(--bc-accent)"
+          >Terms of use</a
+        >
       </p>
     </section>
 

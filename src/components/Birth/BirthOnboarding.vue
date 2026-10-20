@@ -195,7 +195,13 @@ async function save() {
       </div>
 
       <p class="text-xs text-center bc-muted mt-6 leading-relaxed">
-        Everything stays on this device. Nothing is uploaded and no account is needed.
+        Everything stays on this device. Nothing is uploaded and no account is needed — unless you
+        choose to turn on sync later.
+      </p>
+      <p class="text-xs text-center bc-muted mt-2">
+        <a href="/privacy.html" class="underline">Privacy policy</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/terms.html" class="underline">Terms of use</a>
       </p>
     </div>
   </div>

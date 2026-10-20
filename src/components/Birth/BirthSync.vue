@@ -266,6 +266,15 @@ async function confirmDelete() {
           {{ busy ? 'Please wait…' : mode === 'register' ? 'Create account' : 'Sign in' }}
         </button>
 
+        <p v-if="mode === 'register'" class="text-xs bc-muted text-center">
+          By creating an account you agree to the
+          <a href="/terms.html" class="underline" style="color: var(--bc-accent)">Terms of use</a>
+          and
+          <a href="/privacy.html" class="underline" style="color: var(--bc-accent)"
+            >Privacy policy</a
+          >.
+        </p>
+
         <!-- Says what is still missing rather than leaving a dead button. -->
         <p v-if="showBlockedReason" class="text-xs bc-muted text-center" aria-live="polite">
           {{ blockedReason }}
