@@ -90,7 +90,7 @@ describe('watch reminder timing', () => {
   it('is due once the time has come and while the watch is open', () => {
     const due = dueWatches({ selection: { w4: '03:00' }, now: at(3, 10) })
     expect(due.map((d) => d.watch.id)).toEqual(['w4'])
-    expect(due[0].key).toBe('2026-11-19')
+    expect(due[0].key).toBe('2026-11-19 03:00')
   })
 
   it('is not due before its time', () => {
@@ -109,10 +109,10 @@ describe('watch reminder timing', () => {
 
   it('does not repeat an occurrence already delivered', () => {
     expect(
-      dueWatches({ selection: { w4: '03:00' }, now: at(3, 10), fired: { w4: '2026-11-19' } })
+      dueWatches({ selection: { w4: '03:00' }, now: at(3, 10), fired: { w4: '2026-11-19 03:00' } })
     ).toEqual([])
     expect(
-      dueWatches({ selection: { w4: '03:00' }, now: at(3, 10), fired: { w4: '2026-11-18' } })
+      dueWatches({ selection: { w4: '03:00' }, now: at(3, 10), fired: { w4: '2026-11-18 03:00' } })
     ).toHaveLength(1)
   })
 
@@ -165,7 +165,7 @@ describe('createWatchReminders', () => {
     expect(delivered).toEqual(['w4'])
     await r.sync()
     expect(delivered).toEqual(['w4'])
-    expect(loadFired(storage)).toEqual({ w4: '2026-11-19' })
+    expect(loadFired(storage)).toEqual({ w4: '2026-11-19 03:00' })
     r.stop()
   })
 
@@ -173,6 +173,21 @@ describe('createWatchReminders', () => {
     vi.setSystemTime(at(4, 0))
     const r = make({ w3: '00:00', w4: '03:00' })
     await r.start()
+    expect(delivered).toEqual(['w4'])
+    r.stop()
+  })
+
+  it('switched on mid-watch, then moved a few minutes ahead, it still rings', async () => {
+    vi.setSystemTime(at(3, 30))
+    // Switching on stamps the 03:00 occurrence so it does not ring at once…
+    skipCurrentOccurrence('w4', '03:00', new Date(), storage)
+    // …then the user moves the reminder to 03:32.
+    const selection = { w4: '03:32' }
+    skipCurrentOccurrence('w4', '03:32', new Date(), storage)
+    const r = make(selection)
+    await r.start()
+    expect(delivered).toEqual([])
+    await vi.advanceTimersByTimeAsync(2 * 60 * 1000)
     expect(delivered).toEqual(['w4'])
     r.stop()
   })

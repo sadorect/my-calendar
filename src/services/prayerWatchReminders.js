@@ -53,7 +53,10 @@ export function dueWatches({ selection, now = new Date(), fired = {} }) {
     if (!time) continue
     const at = lastOccurrence(time, now)
     if (!at || now >= watchEnd(watch, at)) continue
-    const key = dayKey(at)
+    // Day AND time: moving a reminder later inside an open watch is a new
+    // occurrence. Keyed on the day alone, switching a watch on mid-watch (which
+    // stamps the current occurrence) silenced any later time chosen that day.
+    const key = `${dayKey(at)} ${time}`
     if (fired[watch.id] === key) continue
     out.push({ watch, key })
   }
