@@ -15,6 +15,7 @@ import UpdateBanner from './components/UpdateBanner.vue'
 import CheckForUpdate from './components/CheckForUpdate.vue'
 import NaturalLanguageInput from './components/NaturalLanguageInput.vue'
 import { usePregnancyStore } from './stores/pregnancy'
+import { queueWatchFromUrl } from './composables/usePendingWatch.js'
 
 // The birth calendar is a whole second calendar, so it is loaded on demand —
 // users who never open it should not pay for its content bundle.
@@ -61,6 +62,17 @@ onMounted(async () => {
       ? requested
       : pregnancyStore.state.settings.defaultMode || 'birth'
 
+  // A tapped prayer-watch reminder, or a calendar entry's link, opens that
+  // watch. The parameter is then dropped so a refresh does not reopen it.
+  if (queueWatchFromUrl(window.location.href)) {
+    mode.value = 'birth'
+    const clean = new URL(window.location.href)
+    clean.searchParams.delete('watch')
+    window.history.replaceState(null, '', clean.pathname + clean.search + clean.hash)
+  }
+  navigator.serviceWorker?.addEventListener('message', handleWorkerMessage)
+  window.addEventListener('bc-open-url', handleOpenUrl)
+
   // Initialize alert system
   notificationService.setAlertStore(alertStore)
 
@@ -71,7 +83,21 @@ onMounted(async () => {
   window.addEventListener('keydown', handleGlobalKeydown)
 })
 
+function openUrl(url) {
+  if (queueWatchFromUrl(url)) mode.value = 'birth'
+}
+
+function handleWorkerMessage(event) {
+  if (event.data?.type === 'bc-open-url') openUrl(event.data.url)
+}
+
+function handleOpenUrl(event) {
+  openUrl(event.detail)
+}
+
 onUnmounted(() => {
+  navigator.serviceWorker?.removeEventListener('message', handleWorkerMessage)
+  window.removeEventListener('bc-open-url', handleOpenUrl)
   // Clean up periodic checking
   notificationService.stopPeriodicCheck()
   window.removeEventListener('keydown', handleGlobalKeydown)

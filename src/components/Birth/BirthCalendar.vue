@@ -3,6 +3,8 @@ import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
 import { useThemeStore } from '../../stores/theme.js'
 import { createDailyReminder } from '../../services/birthReminders.js'
+import { createWatchReminders } from '../../services/prayerWatchReminders.js'
+import { pendingWatch } from '../../composables/usePendingWatch.js'
 import { useSync } from '../../composables/useSync.js'
 import BirthOnboarding from './BirthOnboarding.vue'
 import BirthToday from './BirthToday.vue'
@@ -19,6 +21,7 @@ import BirthDayModal from './BirthDayModal.vue'
 import BirthLock from './BirthLock.vue'
 import BirthPrayerCard from './BirthPrayerCard.vue'
 import BirthPrayers from './BirthPrayers.vue'
+import BirthWatches from './BirthWatches.vue'
 
 const store = usePregnancyStore()
 const theme = useThemeStore()
@@ -26,6 +29,10 @@ const theme = useThemeStore()
 const view = ref('today')
 /** The tab to return to when the prayer journal closes; it is not a tab itself. */
 const viewBeforePrayers = ref('today')
+/** Same for the prayer watches, which open from the journal or Settings. */
+const viewBeforeWatches = ref('today')
+/** The watch to open on arrival, e.g. from a tapped reminder. */
+const focusWatch = ref(null)
 const modalDay = ref(null)
 /** Set when the user skips onboarding — browse without a due date. */
 const browsing = ref(false)
@@ -119,6 +126,33 @@ function closePrayers() {
   view.value = viewBeforePrayers.value || 'today'
 }
 
+function openWatches(id = null) {
+  focusWatch.value = typeof id === 'string' ? id : null
+  if (view.value === 'watches') return
+  viewBeforeWatches.value = view.value
+  view.value = 'watches'
+}
+
+function closeWatches() {
+  focusWatch.value = null
+  view.value = viewBeforeWatches.value || 'today'
+}
+
+// A reminder tapped, or a calendar entry's link followed, names a watch.
+watch(
+  pendingWatch,
+  (id) => {
+    if (!id) return
+    pendingWatch.value = null
+    // Someone who skipped setup still gets the watch, not the onboarding.
+    if (!store.isConfigured) browsing.value = true
+    // BirthWatches is keyed on the focus, so a tap for another watch while the
+    // screen is open re-mounts it scrolled to that watch.
+    openWatches(id)
+  },
+  { immediate: true }
+)
+
 /**
  * Jump from a prayer to the declaration it came from. A womb day opens the day
  * modal; a born-stage day selects that date in the current year and reads it
@@ -126,6 +160,11 @@ function closePrayers() {
  */
 function openPrayerSource(source) {
   const key = String(source?.key || '')
+  const watchKey = key.match(/^watch:(w\d)$/)
+  if (watchKey) {
+    openWatches(watchKey[1])
+    return
+  }
   const womb = key.match(/^(day|week):(\d+)$/)
   if (womb) {
     closePrayers()
@@ -203,6 +242,23 @@ watch(
   { deep: true }
 )
 
+// Prayer-watch reminders. Same shape as the daily reminder: the selection is
+// read live, the watch only decides whether the scheduler runs at all.
+const watchReminders = createWatchReminders({
+  getSelection: () => store.watchSelection
+})
+
+watch(
+  () => store.watchSelection,
+  (selection) => {
+    const any = Object.keys(selection).length > 0
+    if (any && !watchReminders.isRunning) watchReminders.start()
+    else if (!any && watchReminders.isRunning) watchReminders.stop()
+    else watchReminders.sync()
+  },
+  { deep: true }
+)
+
 // Sync: restore the session, pull on open and on returning to the tab, and push
 // a short while after any local change. Everything here no-ops when no sync
 // server is configured at build time.
@@ -223,6 +279,7 @@ function handleVisibility() {
   // Timers are throttled or killed in a backgrounded tab, so a reminder that
   // was owed while we were away is delivered on the way back in.
   reminder.sync()
+  watchReminders.sync()
   sync.syncNow({ silent: true })
 }
 
@@ -231,6 +288,7 @@ onMounted(() => {
   store.detectBiometric()
   document.addEventListener('visibilitychange', handleVisibility)
   if (store.reminderConfig.enabled) reminder.start()
+  if (Object.keys(store.watchSelection).length) watchReminders.start()
   sync.restore().then(() => sync.syncNow({ silent: true }))
 })
 
@@ -238,6 +296,7 @@ onBeforeUnmount(() => {
   clearTimeout(midnightTimer)
   document.removeEventListener('visibilitychange', handleVisibility)
   reminder.stop()
+  watchReminders.stop()
 })
 </script>
 
@@ -293,11 +352,18 @@ onBeforeUnmount(() => {
           leave-active-class="transition duration-100 ease-in"
           leave-to-class="opacity-0"
         >
-          <BirthSettings v-if="view === 'settings'" />
+          <BirthSettings v-if="view === 'settings'" @open-watches="openWatches" />
           <BirthPrayers
             v-else-if="view === 'prayers'"
             @close="closePrayers"
             @open-source="openPrayerSource"
+            @open-watches="openWatches"
+          />
+          <BirthWatches
+            v-else-if="view === 'watches'"
+            :key="focusWatch || 'watches'"
+            :focus-id="focusWatch"
+            @close="closeWatches"
           />
           <!-- A born child reads the twelve evergreen themes; the womb reads
                its own 280-day timeline. Two tracks, one shell. -->

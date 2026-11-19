@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { usePregnancyStore } from '../../stores/pregnancy.js'
+import { watchAt, watchWindowLabel } from '../../data/prayerWatches.js'
 
 /**
  * The prayer journal: what the family is praying for, and what was answered.
@@ -10,7 +11,7 @@ import { usePregnancyStore } from '../../stores/pregnancy.js'
  * link back to it.
  */
 const store = usePregnancyStore()
-const emit = defineEmits(['close', 'open-source'])
+const emit = defineEmits(['close', 'open-source', 'open-watches'])
 
 const draft = ref('')
 const draftProfileId = ref('')
@@ -21,6 +22,7 @@ const answerText = ref('')
 const confirmingDelete = ref(null)
 
 const children = computed(() => store.profiles)
+const currentWatch = watchAt(new Date())
 
 function childName(prayer) {
   if (!prayer.profileId) return null
@@ -85,9 +87,22 @@ async function remove(id) {
         ← Back
       </button>
     </div>
-    <p class="text-sm bc-muted mb-6">
+    <p class="text-sm bc-muted mb-4">
       What you are asking for, kept in one place — and what was answered, so you can look back.
     </p>
+    <button
+      type="button"
+      class="bc-tap bc-card w-full px-4 py-3 mb-6 flex items-center justify-between gap-3 text-left"
+      @click="emit('open-watches')"
+    >
+      <span>
+        <span class="block text-sm font-medium">Prayer watches</span>
+        <span class="block text-xs bc-muted">
+          Now: {{ currentWatch.name }} · {{ watchWindowLabel(currentWatch) }}
+        </span>
+      </span>
+      <span class="bc-accent text-sm" aria-hidden="true">→</span>
+    </button>
 
     <!-- New prayer -->
     <form class="bc-card p-4 mb-8 space-y-3" @submit.prevent="add">

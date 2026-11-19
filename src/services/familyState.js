@@ -71,6 +71,9 @@ export function emptySettings() {
     voice: 'parents', // 'parents' | 'partner'
     reminderTime: '08:00',
     remindersEnabled: false,
+    // Prayer watches with a reminder: { w3: '00:30', ... }. See
+    // src/data/prayerWatches.js; read through cleanWatchSelection().
+    prayerWatches: {},
     ambientSound: 'womb',
     ambientVolume: 0.5,
     fontScale: 1,

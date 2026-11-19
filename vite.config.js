@@ -40,6 +40,8 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,
+        // Opens the right screen when a reminder notification is tapped.
+        importScripts: ['sw-notifications.js'],
         // The Android APK and the asset-links file are served, never cached:
         // a 2MB binary has no place in the precache, and a download link is a
         // navigation as far as the worker is concerned — without this it would

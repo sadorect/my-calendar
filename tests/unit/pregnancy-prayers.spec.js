@@ -133,3 +133,45 @@ describe('the prayer journal in the store', () => {
     expect(again.prayers[0].text).toBe('Persisted')
   })
 })
+
+describe('prayer watches in the store', () => {
+  let store
+
+  beforeEach(async () => {
+    saved.clear()
+    setActivePinia(createPinia())
+    store = usePregnancyStore()
+    await store.load()
+  })
+
+  it('switches watch reminders on and off, and keeps them across a reload', async () => {
+    expect(store.watchSelection).toEqual({})
+    await store.setWatchReminder('w3', '00:30')
+    await store.setWatchReminder('w5', '06:00')
+    await store.setWatchReminder('w5', null)
+    expect(store.watchSelection).toEqual({ w3: '00:30' })
+
+    setActivePinia(createPinia())
+    const reloaded = usePregnancyStore()
+    await reloaded.load()
+    expect(reloaded.watchSelection).toEqual({ w3: '00:30' })
+  })
+
+  it('refuses a time outside the watch by resetting it to the watch opening', async () => {
+    await store.setWatchReminder('w4', '09:00')
+    expect(store.watchSelection).toEqual({ w4: '03:00' })
+  })
+
+  it('"Pray this" on a watch adds one family-wide prayer, idempotently', async () => {
+    const { PRAYER_WATCHES } = await import('@/data/prayerWatches.js')
+    const third = PRAYER_WATCHES[2]
+    const first = await store.prayWatch(third)
+    const again = await store.prayWatch(third)
+    expect(again.id).toBe(first.id)
+    expect(store.openPrayerCount).toBe(1)
+    expect(first.profileId).toBeNull()
+    expect(first.source.key).toBe('watch:w3')
+    expect(first.source.title).toBe('Third watch (12am–3am)')
+    expect(first.text).toBe(third.prompt)
+  })
+})

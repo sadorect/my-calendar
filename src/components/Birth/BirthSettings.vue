@@ -15,6 +15,7 @@ import {
 } from '../../services/birthReminders.js'
 
 const store = usePregnancyStore()
+const emit = defineEmits(['open-watches'])
 const coverage = contentCoverage()
 const confirmingReset = ref(false)
 const persisted = ref(false)
@@ -29,6 +30,7 @@ onMounted(async () => {
 })
 
 const settings = computed(() => store.state.settings)
+const watchCount = computed(() => Object.keys(store.watchSelection).length)
 
 async function set(key, value) {
   await store.updateSettings({ [key]: value })
@@ -234,6 +236,25 @@ async function doReset() {
         />
       </label>
       <p v-if="reminderNote" class="text-sm bc-muted leading-relaxed mt-4">{{ reminderNote }}</p>
+    </section>
+
+    <!-- Prayer watches: chosen and configured on their own screen. -->
+    <section class="bc-card p-5">
+      <h2 class="font-medium mb-1">Prayer watches</h2>
+      <p class="text-sm bc-muted mb-4">
+        {{
+          watchCount
+            ? `Reminders on for ${watchCount} of the eight watches.`
+            : 'Be reminded when the watches you keep begin, day and night.'
+        }}
+      </p>
+      <button
+        class="bc-tap px-4 py-2.5 rounded-xl text-sm border transition hover:opacity-70"
+        :style="{ borderColor: 'var(--bc-hairline)' }"
+        @click="emit('open-watches')"
+      >
+        {{ watchCount ? 'Manage prayer watches' : 'Choose prayer watches' }}
+      </button>
     </section>
 
     <!-- Privacy / biometric lock -->

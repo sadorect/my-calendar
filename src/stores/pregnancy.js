@@ -41,6 +41,7 @@ import {
   livePrayers,
   LEGACY_PROFILE_ID
 } from '../services/familyState.js'
+import { cleanWatchSelection, watchWindowLabel } from '../data/prayerWatches.js'
 import { resolveStage, ageInMonths, isStageId } from '../data/family/stages.js'
 import {
   stageDayContent,
@@ -818,6 +819,22 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
    * while that prayer is open: pressing the button twice returns the one
    * already there rather than filing a duplicate.
    */
+  /**
+   * A watch's prompt into the journal. Family-wide, not for the active child —
+   * a watch is kept for the whole household. Idempotent while it is open.
+   */
+  async function prayWatch(watch) {
+    if (!watch?.id) return null
+    const key = `watch:${watch.id}`
+    const existing = prayerForSource(key)
+    if (existing) return existing
+    return addPrayer({
+      text: watch.prompt,
+      profileId: null,
+      source: { stage: null, key, title: `${watch.name} (${watchWindowLabel(watch)})` }
+    })
+  }
+
   async function prayDeclaration({ key, title, text }) {
     if (!key) return null
     const existing = prayerForSource(key)
@@ -874,6 +891,17 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
   })
 
   // ---------------------------------------------------------------- reminders
+
+  /** The prayer watches switched on, brought to shape. */
+  const watchSelection = computed(() => cleanWatchSelection(state.value.settings.prayerWatches))
+
+  /** Switches a watch on at `time`, or off with `null`. */
+  async function setWatchReminder(id, time) {
+    const next = { ...watchSelection.value }
+    if (time === null) delete next[id]
+    else next[id] = time
+    await updateSettings({ prayerWatches: cleanWatchSelection(next) })
+  }
 
   /** Stamps a day as delivered so the same reminder cannot fire twice. */
   async function markReminderFired(key) {
@@ -1086,6 +1114,7 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     reopenPrayer,
     deletePrayer,
     prayDeclaration,
+    prayWatch,
     stageFavouriteKeyFor,
     // spoken
     isSpoken,
@@ -1096,6 +1125,8 @@ export const usePregnancyStore = defineStore('pregnancy', () => {
     markReminderFired,
     reminderConfig,
     reminderPayload,
+    watchSelection,
+    setWatchReminder,
     // app lock
     isLocked,
     lockEnabled,

@@ -14,6 +14,7 @@
  * The scheduling maths is pure and separately tested; the class below only
  * handles timers, permission and the notification itself.
  */
+import { showAppNotification } from './showNotification.js'
 
 /** Local calendar day, not UTC — a reminder belongs to the user's day. */
 export function dayKey(date = new Date()) {
@@ -105,25 +106,13 @@ export function createDailyReminder({ getConfig, onFired, getPayload, now = () =
 
   function deliver() {
     const payload = getPayload?.()
-    if (!payload) return false
-    if (notificationPermission() !== 'granted') return false
-    try {
-      const notification = new window.Notification(payload.title, {
-        body: payload.body,
-        tag: payload.tag || 'birth-daily-reminder',
-        icon: '/icon-192x192.svg',
-        badge: '/icon-192x192.svg'
-      })
-      notification.onclick = () => {
-        window.focus?.()
-        notification.close()
-      }
-      return true
-    } catch {
-      // Some platforms (notably iOS Safari outside an installed PWA) expose the
-      // constructor but throw on use. Nothing to recover from — just don't crash.
-      return false
-    }
+    if (!payload) return Promise.resolve(false)
+    return showAppNotification({
+      title: payload.title,
+      body: payload.body,
+      tag: payload.tag || 'birth-daily-reminder',
+      url: '/?calendar=birth'
+    })
   }
 
   /**
@@ -138,7 +127,7 @@ export function createDailyReminder({ getConfig, onFired, getPayload, now = () =
 
     const current = now()
     if (isDue({ time: config.time, now: current, lastFiredKey: config.lastFiredKey })) {
-      deliver()
+      await deliver()
       // Stamp the day even when delivery failed (permission revoked, platform
       // refused). Retrying every tick would achieve nothing but noise.
       await onFired?.(dayKey(current))

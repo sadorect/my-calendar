@@ -395,3 +395,79 @@ test.describe('Prayer journal', () => {
     await expect(page.getByRole('dialog')).toBeVisible()
   })
 })
+
+test.describe('Prayer watches', () => {
+  test('opens from the journal, prays a watch, sets a reminder and offers the calendar file', async ({
+    page,
+    context,
+    browserName
+  }) => {
+    // Notification permission can only be pre-granted in Chromium.
+    if (browserName === 'chromium') await context.grantPermissions(['notifications'])
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+
+    await page.getByRole('button', { name: 'Open the prayer journal' }).click()
+    await page.getByRole('button', { name: /Prayer watches/ }).click()
+    await expect(page.getByRole('heading', { name: 'Prayer watches' })).toBeVisible()
+    await expect(page.locator('[data-watch-id]')).toHaveCount(8)
+
+    // The watch we are in now is open on arrival and marked.
+    const nowCard = page.locator('[data-watch-id]').filter({ hasText: 'Now' })
+    await expect(nowCard).toHaveCount(1)
+    await expect(nowCard.getByText('Pray', { exact: true })).toBeVisible()
+
+    // Open the third watch and keep its prayer.
+    const third = page.locator('[data-watch-id="w3"]')
+    if (!(await third.getByRole('switch').count())) {
+      await third.getByRole('button', { name: /Third watch/ }).click()
+    }
+    await expect(third).toContainText('at midnight Paul and Silas prayed')
+    await third.getByRole('button', { name: 'Pray this' }).click()
+    await expect(third.getByRole('button', { name: 'In your prayers' })).toBeVisible()
+
+    // Reminder on: shows its time and brings up the calendar section.
+    await third.getByRole('switch', { name: /third watch/i }).click()
+    await expect(third.getByRole('switch', { name: /third watch/i })).toHaveAttribute(
+      'aria-checked',
+      'true'
+    )
+    await expect(third.getByLabel(/Reminder time/)).toHaveValue('00:00')
+    await expect(third).toContainText('Reminder 12am')
+
+    const calendar = page.getByTestId('watch-calendar')
+    await expect(calendar).toBeVisible()
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      calendar.getByRole('button', { name: /Download calendar file \(1 watch\)/ }).click()
+    ])
+    expect(download.suggestedFilename()).toBe('prayer-watches.ics')
+
+    // Back lands on the journal, which now holds the watch prayer with a link
+    // back to the watch.
+    await page.getByRole('button', { name: 'Back' }).click()
+    await expect(page.getByRole('heading', { name: 'Prayer journal' })).toBeVisible()
+    await page.getByRole('button', { name: /Third watch \(12am–3am\)/ }).click()
+    await expect(page.getByRole('heading', { name: 'Prayer watches' })).toBeVisible()
+    await expect(page.locator('[data-watch-id="w3"]')).toContainText('Paul and Silas')
+
+    // Settings reflects the choice.
+    await page.getByRole('button', { name: 'Back' }).click()
+    await page.getByRole('button', { name: 'Back' }).click()
+    await page.getByRole('button', { name: 'Settings' }).click()
+    await expect(page.getByText('Reminders on for 1 of the eight watches.')).toBeVisible()
+  })
+
+  test('a reminder link (?watch=) opens that watch', async ({ page }) => {
+    await page.goto('/?calendar=standard')
+    await openBirthCalendar(page)
+    await completeOnboarding(page)
+    await page.goto('/?watch=w6')
+    await expect(page.getByRole('heading', { name: 'Prayer watches' })).toBeVisible({
+      timeout: 20000
+    })
+    await expect(page.locator('[data-watch-id="w6"]')).toContainText('pour out of my Spirit')
+    // The parameter is dropped so a refresh does not reopen it.
+    await expect(page).not.toHaveURL(/watch=/)
+  })
+})
